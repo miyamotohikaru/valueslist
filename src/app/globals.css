@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* ============================================================
+   価値観一覧図鑑 — デザイントークン（アメリカンレトロ）
+   紙=クリーム / インク=焦げ茶黒 / 赤 / 紺 / マスタード
+   ============================================================ */
+:root {
+  --vl-paper: #f1eacf;
+  --vl-paper-2: #e6dbb9;
+  --vl-card: #faf4e3;
+  --vl-ink: #1f1b17;
+  --vl-ink-soft: rgba(31, 27, 23, 0.62);
+  --vl-line: rgba(31, 27, 23, 0.22);
+  --vl-red: #c8433b;
+  --vl-red-deep: #9e2f2a;
+  --vl-navy: #2c2e55;
+  --vl-mustard: #e9b949;
+  --vl-teal: #3e8e7e;
+  --vl-brown: #7a4b2a;
+}
+
+@theme inline {
+  --color-vl-paper: var(--vl-paper);
+  --color-vl-paper-2: var(--vl-paper-2);
+  --color-vl-card: var(--vl-card);
+  --color-vl-ink: var(--vl-ink);
+  --color-vl-ink-soft: var(--vl-ink-soft);
+  --color-vl-line: var(--vl-line);
+  --color-vl-red: var(--vl-red);
+  --color-vl-red-deep: var(--vl-red-deep);
+  --color-vl-navy: var(--vl-navy);
+  --color-vl-mustard: var(--vl-mustard);
+  --color-vl-teal: var(--vl-teal);
+  --color-vl-brown: var(--vl-brown);
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--vl-paper);
+  color: var(--vl-ink);
+  font-family: var(--font-zen-kaku), "Hiragino Sans", "Noto Sans JP", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 見出し（和文ディスプレイ） */
+.font-display-ja {
+  font-family: var(--font-dela), var(--font-zen-kaku), sans-serif;
+}
+/* 見出し（欧文コンデンス） */
+.font-display-en {
+  font-family: var(--font-anton), "Impact", sans-serif;
+}
+/* スラブセリフ（棚札・見出し補助） */
+.font-slab {
+  font-family: var(--font-alfa), "Rockwell", serif;
+}
+/* 筆記体（飾り文句） */
+.font-script {
+  font-family: var(--font-yellowtail), cursive;
+}
+/* タイプライター（型番・仕様） */
+.font-type {
+  font-family: var(--font-courier), "Courier New", monospace;
+}

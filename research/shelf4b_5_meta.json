@@ -1,0 +1,1206 @@
+[
+  {
+    "draft_no": 57,
+    "name_ja": "婚活",
+    "reading": "こんかつ",
+    "name_en": "Konkatsu (marriage hunting)",
+    "category": "人生観",
+    "shelf": 4,
+    "evidence_type": "law",
+    "made": {
+      "label": "2007 AERA初出",
+      "year": 2007,
+      "approx": false,
+      "fact": "『AERA』2007年11月5日号（20巻49号・通号1077）の記事「備え 結婚したいなら「婚活」のススメ」（白河桃子・木村恵子）で、家族社会学者・山田昌弘が就職活動（就活）になぞらえて提唱した造語として登場した。",
+      "source": "国立国会図書館サーチ 雑誌記事 R000000004-I8962785（掲載誌 Aera 2007-11-05）／imidas「婚活／離活」"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "steady",
+    "keyfacts": [
+      {
+        "text": "「婚活」の初出は『AERA』2007年11月5日号の記事「備え 結婚したいなら「婚活」のススメ」（白河桃子・木村恵子）。imidasは「婚活は2007年11月、雑誌AERAでの山田昌弘（家族社会学者）が初出」と記す。",
+        "source": "https://ndlsearch.ndl.go.jp/books/R000000004-I8962785 ／ https://imidas.jp/genre/detail/F-102-0062.html"
+      },
+      {
+        "text": "山田昌弘・白河桃子『「婚活」時代』（ディスカヴァー携書21、ディスカヴァー・トゥエンティワン）は2008年2月29日発売（NDL書誌は2008年3月刊）。",
+        "source": "国立国会図書館サーチ（「婚活」時代 2008.3）／BOOK☆WALKER 発売日 2008/2/29"
+      },
+      {
+        "text": "新語・流行語大賞では2008年（第25回）にノミネート語（60語）に入ったがトップテン外。2009年（第26回）にも再度ノミネートされ、やはりトップテンには入っていない。2008年の年間大賞は「アラフォー」「グ〜！」。",
+        "source": "自由国民社 公式 https://www.jiyu.co.jp/singo/index.php?eid=00025 ／ eid=00026"
+      },
+      {
+        "text": "山田昌弘編著『「婚活」現象の社会学 日本の配偶者選択のいま』（東洋経済新報社）が2010年6月に刊行され、学術的な検討対象になった。",
+        "source": "国立国会図書館サーチ（2010.6）"
+      },
+      {
+        "text": "自治体の結婚支援を財政的に後押しする「地域少子化対策強化交付金」は平成25年度（2013年度）補正予算で創設され、結婚・妊娠・出産・育児の「切れ目ない支援」を目的とした（のち「地域少子化対策重点推進交付金」）。",
+        "source": "内閣府 予算資料 https://www.cao.go.jp/yosan/pdf/h28/27010600_naikakufu_kokai_sankou04.pdf ／ 国立国会図書館デジタル info:ndljp/pid/10268804"
+      }
+    ],
+    "curve": {
+      "title": "国会会議録「婚活」年別発言数",
+      "unit": "件",
+      "source": "国会会議録検索システム API（年別ヒット数は別担当が取得中）",
+      "points": []
+    },
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「2008年 新語・流行語大賞トップテン」は誤り。2008年はノミネート語止まりで、2009年にも再ノミネートされたがトップテンには入っていない（自由国民社公式記録）。",
+      "初出記事の署名は白河桃子・木村恵子。山田昌弘は記事内で提唱者として登場する（NDL書誌）。「製造元：山田昌弘・白河桃子」は共著『「婚活」時代』（2008）の著者としては正しい。",
+      "『「婚活」時代』はNDL書誌では2008年3月刊。発売日は2008年2月29日（書店データ）。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "初出の号数・日付、書籍の刊行月、流行語大賞の区分、交付金の創設年度まで一次資料で特定できる。",
+    "hitokoto": "結婚は「する」ものから「活動」になった。その日付は雑誌の号数で言える。",
+    "body_ja": [
+      "「婚活」は2007年11月5日号の『AERA』で生まれた。家族社会学者の山田昌弘が、就職活動を略した「就活」になぞらえ、結婚も待っていれば訪れるものではなく活動して手に入れるものだと説いた記事が初出である。翌2008年2月には白河桃子との共著『「婚活」時代』が刊行され、語は一気に広まった。",
+      "自由国民社の新語・流行語大賞では、2008年と2009年の二年連続でノミネート語に入ったが、いずれもトップテンには届いていない。それでも語は定着し、2010年には山田の編著で『「婚活」現象の社会学』が出て、学術的な検討対象になった。",
+      "国の側も動いた。2013年度の補正予算で「地域少子化対策強化交付金」が創設され、自治体の結婚支援事業が国費で後押しされるようになる。個人の人生観として売り出された語が、数年で行政の施策名に転じた例である。"
+    ],
+    "sources": [
+      "国立国会図書館サーチ 雑誌記事 https://ndlsearch.ndl.go.jp/books/R000000004-I8962785",
+      "imidas 時事用語事典「婚活／離活」 https://imidas.jp/genre/detail/F-102-0062.html",
+      "国立国会図書館サーチ OpenSearch（『「婚活」時代』2008.3／『「婚活」現象の社会学』2010.6）",
+      "自由国民社 新語・流行語大賞 第25回(2008) https://www.jiyu.co.jp/singo/index.php?eid=00025",
+      "自由国民社 新語・流行語大賞 第26回(2009) https://www.jiyu.co.jp/singo/index.php?eid=00026",
+      "内閣府 行政事業レビュー資料（地域少子化対策強化交付金〈平成25年度補正予算〉） https://www.cao.go.jp/yosan/pdf/h28/27010600_naikakufu_kokai_sankou04.pdf"
+    ]
+  },
+  {
+    "draft_no": 58,
+    "name_ja": "終活",
+    "reading": "しゅうかつ",
+    "name_en": "Shukatsu (end-of-life preparation)",
+    "category": "人生観",
+    "shelf": 4,
+    "evidence_type": "law",
+    "made": {
+      "label": "2009 週刊朝日連載「現代終活事情」",
+      "year": 2009,
+      "approx": false,
+      "fact": "『週刊朝日』2009年8月14日号（114巻37号・通号4960）から同年12月25日号（通号4985）まで連載された「現代終活事情」が語の初出。命名者は同誌副編集長だった佐々木広人とされる。",
+      "source": "国立国会図書館サーチ 雑誌記事索引 R000000004-I10294379（初回 2009-08-14）／R000000004-I10468471（最終回 2009-12-25）／Wikipedia「終活」"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "up",
+    "keyfacts": [
+      {
+        "text": "連載初回は『週刊朝日』2009年8月14日号「現代終活事情 おわりよければすべてよし 変わりゆく葬儀のかたち」、最終回は2009年12月25日号「現代終活事情（最終回）葬儀、お墓のホンネ座談会」。",
+        "source": "https://ndlsearch.ndl.go.jp/books/R000000004-I10294379 ／ https://ndlsearch.ndl.go.jp/books/R000000004-I10468471"
+      },
+      {
+        "text": "命名者は当時の週刊朝日副編集長・佐々木広人とされる（本人も「終活の生みの親」として活動）。",
+        "source": "Wikipedia「終活」「佐々木広人」／佐々木広人 note https://note.com/hiroto_sasaki/n/na2ffc74e4421"
+      },
+      {
+        "text": "新語・流行語大賞では2010年（第27回）にノミネート語、2012年（第29回）にトップテン入り。2012年の受賞者は同年10月に41歳で急逝した流通ジャーナリスト金子哲雄（週刊朝日編集部が代理）。",
+        "source": "自由国民社 公式 https://www.jiyu.co.jp/singo/index.php?eid=00027 ／ eid=00029"
+      },
+      {
+        "text": "内閣府「令和6年度 高齢者の経済生活に関する調査」（2024年10月実施、60歳以上、n=2049）では、葬儀・墓・財産整理・所有物整理・エンディングノート・リビングウィル等7項目のいずれかを準備している＝「終活をしている」が60.0%、していないが40.0%。",
+        "source": "内閣府 https://www8.cao.go.jp/kourei/ishiki/r06/html/chapter3_3.html"
+      },
+      {
+        "text": "同調査の項目別実施率は、身の回りの所有物の整理29.8%、葬儀の準備21.8%、お墓の準備21.8%、財産の整理13.6%、エンディングノート作成8.3%、リビングウィル作成3.5%。",
+        "source": "内閣府 同上"
+      }
+    ],
+    "curve": {
+      "title": "国会会議録「終活」年別発言数",
+      "unit": "件",
+      "source": "国会会議録検索システム API（年別ヒット数は別担当が取得中）",
+      "points": []
+    },
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「週刊朝日2009年8月の連載が初出」は正しい。初回は2009年8月14日号、最終回は12月25日号とNDL雑誌記事索引で号数まで特定できる。",
+      "「2010年ノミネート、2012年トップテン」は自由国民社の公式記録と一致。",
+      "実施率は民間調査（楽天インサイト等）ではなく内閣府調査（2024年10月）で60.0%が取れる。ただし定義は「7項目のいずれかを準備」と広く、他調査の数値とは比較できない。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "初出の号数・日付、流行語大賞の区分、政府統計の実施率まで一次資料で押さえられる。",
+    "hitokoto": "死に支度に名前がついたのは2009年8月14日号。命名から流行語まで3年。",
+    "body_ja": [
+      "「終活」は2009年8月14日号の『週刊朝日』から始まった連載「現代終活事情」で生まれた語である。葬儀や墓の準備を「就活」になぞらえて名づけたのは、当時の副編集長・佐々木広人とされる。連載は同年12月25日号まで続き、葬儀・墓・寺の変化を追った。",
+      "翌2010年には新語・流行語大賞のノミネート語に入り、2012年にはトップテンに選ばれた。受賞者は、自らの通夜と葬儀を生前に準備して同年10月に41歳で急逝した流通ジャーナリスト金子哲雄で、週刊朝日編集部が代理で登壇した。",
+      "内閣府が2024年10月に60歳以上を対象に行った調査では、葬儀・墓・財産や持ち物の整理、エンディングノートなど7項目のいずれかを準備している人が60.0%にのぼる。雑誌の連載名だった語が、十五年で高齢者の過半数の行動を指す統計項目になった。"
+    ],
+    "sources": [
+      "国立国会図書館サーチ 雑誌記事索引（現代終活事情 各回） https://ndlsearch.ndl.go.jp/books/R000000004-I10294379",
+      "自由国民社 新語・流行語大賞 第27回(2010) https://www.jiyu.co.jp/singo/index.php?eid=00027",
+      "自由国民社 新語・流行語大賞 第29回(2012) https://www.jiyu.co.jp/singo/index.php?eid=00029",
+      "内閣府 令和6年度 高齢者の経済生活に関する調査 第3章「終活」 https://www8.cao.go.jp/kourei/ishiki/r06/html/chapter3_3.html",
+      "Wikipedia「終活」 https://ja.wikipedia.org/wiki/終活"
+    ]
+  },
+  {
+    "draft_no": 59,
+    "name_ja": "親ガチャ",
+    "reading": "おやガチャ",
+    "name_en": "Oya-gacha (parent lottery)",
+    "category": "判断基準",
+    "shelf": 4,
+    "evidence_type": "law",
+    "made": {
+      "label": "2015頃 ネットスラング → 2021 一般化",
+      "year": 2021,
+      "approx": false,
+      "fact": "スマホゲームの「ガチャ」になぞらえた自虐スラングとして2015年頃からネット上で使われ、2021年9月7日配信の土井隆義「『親ガチャ』という言葉が、現代の若者に刺さりまくった『本質的な理由』」（現代ビジネス）を機に論争化。同年12月1日発表の新語・流行語大賞トップテン、大辞泉が選ぶ新語大賞2021の大賞。",
+      "source": "Wikipedia「親ガチャ」（withnews 2021-11-08、現代ビジネス 2021-09-07を引用）／自由国民社 第38回／小学館プレスリリース 2021-12-01"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "up",
+    "keyfacts": [
+      {
+        "text": "「2015年頃からスマホゲームの流行とともに『親ガチャ』という言葉がネット上で流行した。当時は愚痴を言う感覚で使う自虐的なスラングであった」。",
+        "source": "withnews 2021-11-08「『親ガチャで激論』に抱いた違和感」／Wikipedia「親ガチャ」"
+      },
+      {
+        "text": "2021年9月7日、現代ビジネスに土井隆義（筑波大）の論考が配信され、SNSで論争化。以後、毒親や経済格差を論じるシリアスな語に転じた。",
+        "source": "https://gendai.media/articles/-/87010"
+      },
+      {
+        "text": "2021年（第38回）新語・流行語大賞トップテン（受賞者なし）。年間大賞は「リアル二刀流／ショータイム」。",
+        "source": "自由国民社 公式 https://www.jiyu.co.jp/singo/index.php?eid=00038"
+      },
+      {
+        "text": "小学館『大辞泉』が選ぶ新語大賞2021の大賞（次点「人流」）、2021年12月1日発表。",
+        "source": "https://kyodonewsprwire.jp/release/202112014170 ／ https://daijisen.jp/shingo/archive/archive_2021.html"
+      },
+      {
+        "text": "松岡亮二『教育格差 階層・地域・学歴』（ちくま新書1422）は2019年7月4日刊、新書大賞2020第3位。「出身家庭と地域という本人にはどうしようもない初期条件によって子供の最終学歴は異なり」と実証した。",
+        "source": "筑摩書房 https://www.chikumashobo.co.jp/product/9784480072375/ ／NDL（2019.7）"
+      },
+      {
+        "text": "読売新聞は2022年2月12日〜4月4日の「親ガチャ」を含む18,232ツイートを分析し、最頻の共起語は「失敗」だったと報じた。土井隆義は「親を責める言葉ではなく、子が自分を守る言葉」と評した。",
+        "source": "読売新聞（Wikipedia「親ガチャ」経由）"
+      }
+    ],
+    "curve": {
+      "title": "国会会議録「親ガチャ」年別発言数",
+      "unit": "件",
+      "source": "国会会議録検索システム API（年別ヒット数は別担当が取得中）",
+      "points": []
+    },
+    "lineage": {
+      "from": "生まれで決まる",
+      "to": "親ガチャ",
+      "note": "士農工商の身分制（No.6）が制度として廃された後、「生まれで決まる」認識が統計的傾向（教育格差）を背景に自虐語として再入荷した。制度から確率へ、という形の変化。"
+    },
+    "draft_corrections": [
+      "叩き台の「初出：2010年代後半のSNS」は概ね妥当だが、より具体的には2015年頃（スマホゲームのガチャ流行期）とされる（withnews 2021-11-08）。",
+      "「12月1日発表」は自由国民社の第38回発表日と一致。区分はトップテンで正しい。",
+      "内閣府等の「生まれで人生が決まる」意識の時系列データは今回確認できなかった（日本財団18歳意識調査にも該当設問を確認できず）。curve型にはできない。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "2021年の一般化の日付・記録は一次資料で確定。語の発生時期はネット言説ベースでB相当だが、カードの主張には十分。",
+    "hitokoto": "身分制が消えて150年、「生まれで決まる」は自虐の言葉として戻ってきた。",
+    "body_ja": [
+      "「親ガチャ」はスマホゲームの「ガチャ」に由来する。どの親のもとに生まれるかは引き直せない抽選だ、という自虐が2015年頃からネット上で使われ、2021年9月7日に社会学者・土井隆義が現代ビジネスで論じたことをきっかけに、格差を語る言葉として一気に表に出た。",
+      "同年12月1日、自由国民社の新語・流行語大賞はこの語をトップテンに選び、小学館の『大辞泉』は新語大賞の大賞に選んだ。背景には、松岡亮二『教育格差』（2019年）が示したように、出身家庭と地域で最終学歴が統計的に決まってしまう実態がある。",
+      "士農工商の身分制が明治で廃されて150年、「生まれで決まる」という判断基準は制度としては消えた。それが確率の言葉として、しかも自分を守る自虐として再入荷したのが親ガチャである。土井は「親を責める言葉ではなく、子が自分を守る言葉」と論じている。"
+    ],
+    "sources": [
+      "Wikipedia「親ガチャ」 https://ja.wikipedia.org/wiki/親ガチャ",
+      "土井隆義 現代ビジネス 2021-09-07 https://gendai.media/articles/-/87010",
+      "自由国民社 新語・流行語大賞 第38回(2021) https://www.jiyu.co.jp/singo/index.php?eid=00038",
+      "小学館 大辞泉が選ぶ新語大賞2021 https://daijisen.jp/shingo/archive/archive_2021.html",
+      "筑摩書房『教育格差』 https://www.chikumashobo.co.jp/product/9784480072375/"
+    ]
+  },
+  {
+    "draft_no": 60,
+    "name_ja": "好きなことで、生きていく",
+    "reading": "すきなことで、いきていく",
+    "name_en": "\"Live by doing what you love\" (YouTube Japan campaign)",
+    "category": "人生観",
+    "shelf": 4,
+    "evidence_type": "law",
+    "made": {
+      "label": "2014-10-02 YouTube TVCM公開",
+      "year": 2014,
+      "approx": false,
+      "fact": "YouTube Japan公式チャンネルが2014年10月2日に「好きなことで、生きていく - HIKAKIN - YouTube TVCM」「同 [Long ver.]」を公開し、同月からGoogleのYouTubeブランドCMとしてテレビ・交通広告で展開した。",
+      "source": "YouTube 動画メタデータ uploadDate 2014-10-02（PKcsiiaiDUQ／X4ABxxkx6YU／fIhLHQ2tXQM）／Wikipedia「HIKAKIN」CM一覧（2014年10月 Google「YouTube」）"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "steady",
+    "keyfacts": [
+      {
+        "text": "キャンペーン動画「好きなことで、生きていく - HIKAKIN - YouTube [Long ver.]」等の公開日は2014年10月2日（YouTubeのuploadDate）。",
+        "source": "https://www.youtube.com/watch?v=PKcsiiaiDUQ ／ https://www.youtube.com/watch?v=X4ABxxkx6YU"
+      },
+      {
+        "text": "ITmediaは「2014年10月公開のYouTubeキャンペーン動画」と記し、4Gamerは「2014年10月には『好きなことで、生きていく』というキャッチコピーをひっさげて、テレビCMや…」と記す。",
+        "source": "https://www.itmedia.co.jp/pcuser/articles/1806/24/news012.html ／ https://www.4gamer.net/games/148/G014877/20251206003/"
+      },
+      {
+        "text": "日本FP協会「2017年 小学生の『将来なりたい職業』ランキング」（2018年4月24日公表、作文3,974点を集計）で「ユーチューバー」が前回14位から6位に上がり、初めてトップ10に入った。",
+        "source": "https://kyodonewsprwire.jp/release/201804203156 ／ ダイヤモンド・オンライン 2018-07-13 https://diamond.jp/articles/-/174702"
+      },
+      {
+        "text": "学研教育総合研究所「小学生白書」2019年8月調査では、男子ランキングで「YouTuberなどのネット配信者」が1989年の調査開始以来初めて1位。「YouTuber」は2016年度調査の自由回答欄に初登場して以降3年連続で順位を上げた。全体では1位パティシエ、2位YouTuber、3位医師。",
+        "source": "学研 2019-12-20 https://www.gakken.co.jp/ja/news/news20191220103023.html ／ ITmedia 2019-12-24"
+      }
+    ],
+    "curve": {
+      "title": "国会会議録「ユーチューバー」年別発言数",
+      "unit": "件",
+      "source": "国会会議録検索システム API（年別ヒット数は別担当が取得中）",
+      "points": []
+    },
+    "lineage": null,
+    "draft_corrections": [
+      "「2014年10月開始」は正しい。動画公開日は2014年10月2日と特定できる。",
+      "「小学生のなりたい職業にYouTuberが入った年」は調査主体で異なる。日本FP協会は2017年調査（2018年4月公表）で初のトップ10（6位）、学研は2016年に自由回答で初登場し2019年に男子1位。叩き台の「日本FP協会 2017年」は妥当。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "広告公開日が動画メタデータで日付まで確定し、職業ランキングも各調査主体の一次発表で裏付けられる。",
+    "hitokoto": "「好きなことで生きていく」は格言ではなく、2014年10月2日公開の広告コピーだ。",
+    "body_ja": [
+      "「好きなことで、生きていく」は人生訓のように流通しているが、出どころはGoogleが2014年10月2日に公開したYouTubeのブランドCMである。HIKAKINらの映像に添えられたこのコピーは、テレビと駅の広告で反復され、YouTuberという職業名とともに一般に浸透した。",
+      "効果は子どもの将来像に現れた。日本FP協会の作文集計では、2017年に「ユーチューバー」が前回の14位から6位へ上がって初めてトップ10に入り、学研の小学生白書では2016年に自由回答欄へ初登場した「YouTuber」が2019年に男子の1位になった。1989年の調査開始以来、初めてのことだった。",
+      "人生観の「製造元」が広告代理店であることが、この語の特徴である。1990年代の「自分探し」が出版から生まれたように、2010年代の「好きなことで生きる」は動画プラットフォームの広告から生まれ、数年で職業選択の統計に痕跡を残した。"
+    ],
+    "sources": [
+      "YouTube「好きなことで、生きていく - HIKAKIN - YouTube [ Long ver. ]」（2014-10-02） https://www.youtube.com/watch?v=PKcsiiaiDUQ",
+      "Wikipedia「HIKAKIN」CM出演一覧",
+      "日本FP協会 2017年 小学生の「将来なりたい職業」ランキング（2018-04-24） https://kyodonewsprwire.jp/release/201804203156",
+      "学研教育総合研究所 小学生白書 2019年8月調査（2019-12-20） https://www.gakken.co.jp/ja/news/news20191220103023.html"
+    ]
+  },
+  {
+    "draft_no": 61,
+    "name_ja": "FIRE",
+    "reading": "ファイア",
+    "name_en": "FIRE (Financial Independence, Retire Early)",
+    "category": "人生観",
+    "shelf": 4,
+    "evidence_type": "law",
+    "made": {
+      "label": "1992 米『Your Money or Your Life』→ 2020 日本",
+      "year": 2020,
+      "approx": true,
+      "fact": "米国ではVicki Robin & Joe Dominguez『Your Money or Your Life』（1992）が思想的原点で、2011年開始のブログ Mr. Money Mustache（Peter Adeney）が2010年代に運動として広めた。日本では2020年3月に訳書『FIRE 最強の早期リタイア術』（ダイヤモンド社）、同年7月に穂高唯希『本気でFIREをめざす人のための資産形成入門』（実務教育出版）が刊行され、2021年に「若者を中心にムーブメント」と報じられた。",
+      "source": "英語版Wikipedia「FIRE movement」／国立国会図書館サーチ（2020.3／2020.7）／ビジネス+IT 2021-02-06"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "up",
+    "keyfacts": [
+      {
+        "text": "Vicki Robin & Joe Dominguez『Your Money or Your Life』（1992年）が「投資収入で経済的自立を達成するシンプルライフの基本テンプレート」を示した。Jacob Lund Fisker『Early Retirement Extreme』（2010）が貯蓄率と退職までの年数の関係を定式化。",
+        "source": "https://en.wikipedia.org/wiki/FIRE_movement"
+      },
+      {
+        "text": "ブログ Mr. Money Mustache（Peter Adeney）は2011年開始で、FIRE運動の普及に寄与した。2018年のHarris Pollでは45歳以上の富裕層米国人の11%がFIREを名前で知っていた。",
+        "source": "https://en.wikipedia.org/wiki/FIRE_movement"
+      },
+      {
+        "text": "日本語のFIRE本は、Kristy Shen & Bryce Leung『FIRE 最強の早期リタイア術』（岩本正明訳、ダイヤモンド社）が2020年3月、穂高唯希『本気でFIREをめざす人のための資産形成入門』（実務教育出版）が2020年7月2日。",
+        "source": "国立国会図書館サーチ（2020.3／2020.7）／実務教育出版 https://books.jitsumu.co.jp/book/b497988.html"
+      },
+      {
+        "text": "原点の『Your Money or Your Life』の邦訳『お金か人生か』（ダイヤモンド社）は2021年5月で、原著から29年遅れて出た。",
+        "source": "国立国会図書館サーチ（2021.5）"
+      },
+      {
+        "text": "2021年2月には「経済的に自立し、早期リタイアを実現する『FIRE』が若者を中心にムーブメントとなっている」と報じられた。",
+        "source": "ビジネス+IT 2021-02-06 https://www.sbbit.jp/article/fj/53109"
+      },
+      {
+        "text": "新語・流行語大賞の公式ノミネート語（2019〜2023年）に「FIRE」は含まれない。",
+        "source": "自由国民社 公式 各年ページ"
+      }
+    ],
+    "curve": {
+      "title": "国会会議録「早期リタイア」年別発言数",
+      "unit": "件",
+      "source": "国会会議録検索システム API（年別ヒット数は別担当が取得中）",
+      "points": []
+    },
+    "lineage": {
+      "from": "隠居",
+      "to": "FIRE",
+      "note": "近世の隠居（家督を譲って引く）が、資産運用で労働から早期に退くという米国発の人生設計として再入荷した。隠居側の根拠は別担当。"
+    },
+    "draft_corrections": [
+      "叩き台の「2019頃〜日本」は根拠が弱い。書籍ベースでは日本初の本格的FIRE本は2020年3月（訳書）と2020年7月（穂高）で、報道でムーブメントと呼ばれるのは2021年。製造年は「2020」とするのが安全。",
+      "米国起源（1992年 Robin & Dominguez、2011年 Mr. Money Mustache）は英語版Wikipediaで確認。",
+      "流行語大賞の記録はない。"
+    ],
+    "confidence": "B",
+    "verdict": "include",
+    "verdict_reason": "米国起源と日本の書籍刊行月は一次資料で確定。日本での「普及」の年は報道ベースでB。",
+    "hitokoto": "隠居は再入荷された。今度は英語の頭字語で、原典は1992年の米国だ。",
+    "body_ja": [
+      "FIREは Financial Independence, Retire Early の頭字語で、資産運用の収入だけで生活できる状態をつくり、定年を待たずに働くことをやめる人生設計を指す。原点は1992年に米国で出た『Your Money or Your Life』で、2011年に始まったブログ Mr. Money Mustache が2010年代に運動として広めた。",
+      "日本に商品として入ったのは2020年である。3月に米国のFIRE実践者による訳書『FIRE 最強の早期リタイア術』が、7月に元会社員・穂高唯希の『本気でFIREをめざす人のための資産形成入門』が刊行され、2021年には「若者を中心にムーブメント」と報じられた。原点の1992年の本の邦訳が出たのは、その後の2021年5月だった。",
+      "家督を譲って第一線を退く近世の隠居と、運用益で労働から降りるFIREは、見た目は違う。しかし「働き盛りのうちに退く」という人生観が、いったん途絶えて別の言葉で戻ってきたという意味では、隠居の再入荷品と言える。"
+    ],
+    "sources": [
+      "Wikipedia (en) FIRE movement https://en.wikipedia.org/wiki/FIRE_movement",
+      "国立国会図書館サーチ OpenSearch（FIRE最強の早期リタイア術 2020.3／本気でFIREをめざす人のための資産形成入門 2020.7／お金か人生か 2021.5）",
+      "実務教育出版 https://books.jitsumu.co.jp/book/b497988.html",
+      "ビジネス+IT 2021-02-06 https://www.sbbit.jp/article/fj/53109"
+    ]
+  },
+  {
+    "draft_no": 62,
+    "name_ja": "無理しない・頑張らない",
+    "reading": "むりしない・がんばらない",
+    "name_en": "\"Don't overdo it\" ethos (ganbaranai)",
+    "category": "規範",
+    "shelf": 4,
+    "evidence_type": "curve",
+    "made": {
+      "label": "2000 鎌田實『がんばらない』→ 2010s 定着",
+      "year": 2000,
+      "approx": true,
+      "fact": "鎌田實『がんばらない』（集英社、2000年）がベストセラーになり、「がんばらない」が肯定的な標語として流通した。新入社員の意識では「人並みで十分」が2013年度以降一貫して増え、2019年度に63.5%と調査開始以来の最高になった。",
+      "source": "集英社／国立国会図書館サーチ（2000）／日本生産性本部 平成31年度 新入社員「働くことの意識」調査（2019-06-27）"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "up",
+    "keyfacts": [
+      {
+        "text": "鎌田實『がんばらない』は集英社から2000年（発売2000年9月26日）に刊行され、ベストセラーとなった。続編『それでもやっぱりがんばらない』（2005）等が続く。",
+        "source": "集英社 https://www.shueisha.co.jp/books/items/contents.html?isbn=4-08-747589-1 ／Wikipedia「鎌田實」"
+      },
+      {
+        "text": "日本生産性本部の新入社員「働くことの意識」調査は1969（昭和44）年から毎年実施され、2019年度で51回目（n=1,792）。",
+        "source": "日本生産性本部 2019-06-27 https://www.jpc-net.jp/research/detail/002741.html"
+      },
+      {
+        "text": "「人並み以上に働きたいか」への回答で「人並みで十分」は2013年度から49.1%→52.5%→53.5%→58.3%→57.6%→61.6%→63.5%（2019年度、過去最高）と増加。「人並み以上に働きたい」は42.7%→…→29.0%（過去最低）に減少し、差は調査開始以来最大の34.5ポイント。",
+        "source": "同調査 添付資料 https://www.jpc-net.jp/research/assets/pdf/R12attached.pdf"
+      },
+      {
+        "text": "同年度、「好んで苦労することはない」も37.3%で過去最高を更新した。",
+        "source": "日本生産性本部 2019-06-27"
+      },
+      {
+        "text": "生産性本部は「バブル経済末期の平成2〜3年度には『人並み以上』が大きく減り『人並みで十分』が大きく増えた」「平成24年度に厳しい就職状況を背景に『人並み以上』が『人並みで十分』を一旦逆転した」と、景況感との連動を指摘している。",
+        "source": "同上"
+      }
+    ],
+    "curve": {
+      "title": "新入社員「人並み以上に働きたいか」で「人並みで十分」と答えた割合",
+      "unit": "%",
+      "source": "日本生産性本部「新入社員『働くことの意識』調査」平成31年度（2019年6月27日）添付資料",
+      "points": [
+        [
+          2013,
+          49.1
+        ],
+        [
+          2014,
+          52.5
+        ],
+        [
+          2015,
+          53.5
+        ],
+        [
+          2016,
+          58.3
+        ],
+        [
+          2017,
+          57.6
+        ],
+        [
+          2018,
+          61.6
+        ],
+        [
+          2019,
+          63.5
+        ]
+      ]
+    },
+    "lineage": {
+      "from": "根性",
+      "to": "無理しない・頑張らない",
+      "note": "対消滅ペア（根性 No.34）。根性側の廃番の根拠は別担当。"
+    },
+    "draft_corrections": [
+      "「無理しない・頑張らない／2010s」は言説としては存在するが、単一の初出は特定できない。法令型なら鎌田實『がんばらない』（2000）、カーブ型なら日本生産性本部の「人並みで十分」（2013→2019年度で49.1%→63.5%）が使える。項目名を「がんばらない」に寄せ、evidence_typeはcurveを推奨。",
+      "「ゆるく生きる」等の言説の時期は今回確認できなかった。",
+      "生産性本部の同調査は1969年開始で、2019年度分が手元の最新。以後の継続は未確認。"
+    ],
+    "confidence": "B",
+    "verdict": "include",
+    "verdict_reason": "書籍の刊行年と、政府系ではないが半世紀続く定点調査の実数で裏付けられる。ただし語の初出は特定不能なので、カード名を「がんばらない」に寄せる前提。",
+    "hitokoto": "「人並みで十分」と答える新入社員は7年で49%から63%に増えた。",
+    "body_ja": [
+      "「がんばらない」が肯定的な標語として流通した起点は、諏訪中央病院の医師・鎌田實が2000年に出した『がんばらない』である。患者に無理を強いない医療を綴ったこの本はベストセラーになり、以後「無理しない」「頑張らない」は介護・育児・働き方の各領域で繰り返し使われる言い回しになった。",
+      "数字で見えるのは働く側の意識である。日本生産性本部が1969年から毎年行う新入社員調査で、「人並み以上に働きたいか」に「人並みで十分」と答えた割合は2013年度の49.1%から2019年度の63.5%まで、ほぼ一貫して増えた。「人並み以上に働きたい」は同じ期間に42.7%から29.0%へ減り、差は調査開始以来最大になった。",
+      "同本部はこの項目が景況感と就職活動の厳しさで敏感に動くと注記しており、単純な価値観の変化と読むには注意がいる。それでも根性という規範が売れなくなり、対になる「頑張らない」が棚に並んだことは、この七年の線で確かめられる。"
+    ],
+    "sources": [
+      "集英社『がんばらない』 https://www.shueisha.co.jp/books/items/contents.html?isbn=4-08-747589-1",
+      "日本生産性本部 平成31年度 新入社員「働くことの意識」調査結果 https://www.jpc-net.jp/research/detail/002741.html",
+      "同 添付資料PDF https://www.jpc-net.jp/research/assets/pdf/R12attached.pdf",
+      "Wikipedia「鎌田實」"
+    ]
+  },
+  {
+    "draft_no": 63,
+    "name_ja": "心理的安全性",
+    "reading": "しんりてきあんぜんせい",
+    "name_en": "Psychological safety",
+    "category": "規範",
+    "shelf": 4,
+    "evidence_type": "law",
+    "made": {
+      "label": "1999 Edmondson → 2016 Google報道 → 2020 日本で書籍化",
+      "year": 2016,
+      "approx": true,
+      "fact": "Amy Edmondson「Psychological Safety and Learning Behavior in Work Teams」（Administrative Science Quarterly 44(2), 1999年6月, pp.350–383）が概念を確立。Googleの Project Aristotle の知見は2015年11月17日に re:Work で公開され（Julia Rozovsky）、2016年2月25日の New York Times Magazine 記事（Charles Duhigg）で広まった。日本では石井遼介『心理的安全性のつくりかた』（日本能率協会マネジメントセンター、2020年9月1日）が20万部を超えた。",
+      "source": "Edmondson 1999 ASQ／re:Work（Wayback 2016年保存）／Wayback CDX（NYT記事の最初の保存 2016-02-25）／JMAM プレスリリース 2025-06-20"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "up",
+    "keyfacts": [
+      {
+        "text": "Amy Edmondson, \"Psychological Safety and Learning Behavior in Work Teams\", Administrative Science Quarterly, Vol.44, No.2 (June 1999), pp.350–383。概念自体は Schein & Bennis (1965) に遡り、Kahn (1990) が再提起した。",
+        "source": "https://en.wikipedia.org/wiki/Psychological_safety ／ https://journals.sagepub.com/doi/10.2307/2666999"
+      },
+      {
+        "text": "Google re:Work「The five keys to a successful Google team」（Julia Rozovsky, 2015年11月17日）が Project Aristotle の結果として心理的安全性を最重要要因と公表。",
+        "source": "https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/（Wayback 2016年保存版で日付確認）"
+      },
+      {
+        "text": "Charles Duhigg \"What Google Learned From Its Quest to Build the Perfect Team\"（The New York Times Magazine）はオンライン2016年2月25日公開（紙面2月28日）。",
+        "source": "Wayback Machine CDX 最古保存 20160225165628 https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html"
+      },
+      {
+        "text": "石井遼介『心理的安全性のつくりかた』（日本能率協会マネジメントセンター）は2020年9月1日発行。累計20万部突破（監修書含む）。",
+        "source": "JMAM プレスリリース https://prtimes.jp/main/html/rd/p/000000374.000082530.html ／NDL（2020.9）"
+      },
+      {
+        "text": "同書の受賞は「読者が選ぶビジネス書グランプリ2021 マネジメント部門賞」と「HRアワード2021 書籍部門 優秀賞」。",
+        "source": "JMAM プレスリリース 同上"
+      }
+    ],
+    "curve": {
+      "title": "国会会議録「心理的安全性」年別発言数",
+      "unit": "件",
+      "source": "国会会議録検索システム API（年別ヒット数は別担当が取得中）",
+      "points": []
+    },
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「ビジネス書大賞2021」は誤り。受賞は「読者が選ぶビジネス書グランプリ2021 マネジメント部門賞」と「HRアワード2021 書籍部門 優秀賞」（JMAMプレスリリース）。",
+      "Google「Project Aristotle」の結果公表は2015年11月17日（re:Workブログ）。NYT記事はオンライン2016年2月25日、紙面2月28日。叩き台の「2015年社内発表、2016年2月NYT」は整合。",
+      "石井本の刊行日は2020年9月1日で叩き台と整合。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "論文・ブログ・記事・書籍の日付がすべて一次資料またはアーカイブで確定。",
+    "hitokoto": "「安心して発言できる職場」は1999年の論文の翻訳語で、2020年に日本で商品化された。",
+    "body_ja": [
+      "心理的安全性は、チームの中で恥をかかされたり罰せられたりする恐れなく発言や挑戦ができるという信念を指す。用語はハーバードのエイミー・エドモンドソンが1999年に『Administrative Science Quarterly』に載せた論文で確立した。概念の萌芽は1965年のシャインとベニスまで遡る。",
+      "これが規範として世界に広まったのはGoogleを経由してである。同社の Project Aristotle は「成功するチームの五つの鍵」の筆頭に心理的安全性を置き、2015年11月17日に社外向けブログで公表、2016年2月25日のニューヨーク・タイムズ・マガジンの記事で一般に知られた。",
+      "日本では2020年9月1日に石井遼介『心理的安全性のつくりかた』が出て、累計20万部を超えた。受賞したのは読者が選ぶビジネス書グランプリ2021のマネジメント部門賞とHRアワード2021の優秀賞で、ビジネス書大賞ではない。二十年前の学術用語が、経営書の棚で商品になった。"
+    ],
+    "sources": [
+      "Edmondson, A. (1999). Psychological Safety and Learning Behavior in Work Teams. ASQ 44(2), 350–383. https://journals.sagepub.com/doi/10.2307/2666999",
+      "Google re:Work, The five keys to a successful Google team (2015-11-17) https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/",
+      "Duhigg, C. (2016-02-25). What Google Learned From Its Quest to Build the Perfect Team. NYT Magazine.",
+      "日本能率協会マネジメントセンター プレスリリース（20万部突破） https://prtimes.jp/main/html/rd/p/000000374.000082530.html",
+      "Wikipedia (en) Psychological safety https://en.wikipedia.org/wiki/Psychological_safety"
+    ]
+  },
+  {
+    "draft_no": 64,
+    "name_ja": "ウェルビーイング",
+    "reading": "ウェルビーイング",
+    "name_en": "Well-being",
+    "category": "判断基準",
+    "shelf": 4,
+    "evidence_type": "law",
+    "made": {
+      "label": "1946 WHO憲章 → 2021 骨太の方針に明記",
+      "year": 2021,
+      "approx": false,
+      "fact": "WHO憲章（1946年7月22日採択、1948年4月7日発効）の前文が健康を「肉体的、精神的及び社会的に完全に良好な状態（well-being）」と定義。日本の政府文書では「経済財政運営と改革の基本方針2021」（2021年6月18日閣議決定）が「政府の各種の基本計画等について、Well-being に関するＫＰＩを設定する」と明記した。",
+      "source": "WHO憲章／内閣府 骨太の方針2021 本文PDF（PDF 24頁・42頁）"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "up",
+    "keyfacts": [
+      {
+        "text": "WHO憲章は1946年7月22日に国際保健会議で採択され1948年4月7日に発効。前文で \"Health is a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity\" と定義。",
+        "source": "日本WHO協会「健康の定義」 https://japan-who.or.jp/about/who-what/identification-health/ ／Wikipedia (en) Constitution of the WHO"
+      },
+      {
+        "text": "OECD「Better Life Index」は2011年5月24日に初公開。スティグリッツ委員会の勧告を受け、11領域でwell-beingを測る。",
+        "source": "https://en.wikipedia.org/wiki/OECD_Better_Life_Index"
+      },
+      {
+        "text": "内閣府「満足度・生活の質に関する調査」は2019年開始。第1次報告書2019年5月24日、第2次報告書2019年7月30日、以後毎年報告（2026年7月31日版まで）。",
+        "source": "内閣府 https://www5.cao.go.jp/keizai2/wellbeing/manzoku/reportarchive.html"
+      },
+      {
+        "text": "骨太の方針2021（2021年6月18日閣議決定）は教育の項で「個人と社会全体の Well-being の実現を目指す」（PDF24頁）、政策評価の項で「政府の各種の基本計画等について、Well-being に関するＫＰＩを設定する」（PDF42頁）と記す。",
+        "source": "https://www5.cao.go.jp/keizai-shimon/kaigi/cabinet/honebuto/2021/2021_basicpolicies_ja.pdf"
+      },
+      {
+        "text": "第4期教育振興基本計画（2023年6月16日閣議決定）はウェルビーイングを主要テーマに据え、文科省は「計画ポイント解説〜ウェルビーイング編〜」を公開している。",
+        "source": "文部科学省 https://www.mext.go.jp/a_menu/keikaku/index.htm"
+      }
+    ],
+    "curve": {
+      "title": "国会会議録「ウェルビーイング」年別発言数",
+      "unit": "件",
+      "source": "国会会議録検索システム API（年別ヒット数は別担当が取得中）",
+      "points": []
+    },
+    "lineage": null,
+    "draft_corrections": [
+      "WHO憲章は1946年7月22日採択（発効は1948年4月7日）。叩き台の「WHO憲章（1946）」で問題ない。",
+      "骨太の方針2021へのウェルビーイング明記は本文2箇所で確認（2021年6月18日閣議決定）。",
+      "内閣府調査の開始は2019年（第1次報告書2019年5月24日）で叩き台と整合。",
+      "OECD Better Life Index は2011年5月24日公開で叩き台と整合。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "国際文書・政府文書の日付がすべて一次資料で特定できる。",
+    "hitokoto": "健康の定義に潜んで75年、2021年に日本政府の KPI になった英語。",
+    "body_ja": [
+      "well-being という語が公的文書に定着したのは1946年7月22日に採択されたWHO憲章である。前文は健康を「肉体的、精神的及び社会的に完全に良好な状態」と定義し、この「良好な状態」の原語が well-being だった。以後、この語は健康の同義語として国際機関の文書に生き続ける。",
+      "経済指標としての再登場は2011年5月24日、OECDが「Better Life Index」を公開したときである。GDPで測れない生活の質を11領域で数値化する試みは各国政府に波及し、日本の内閣府も2019年5月24日に「満足度・生活の質に関する調査」の第1次報告書を出した。",
+      "そして2021年6月18日に閣議決定された骨太の方針2021は、「政府の各種の基本計画等について、Well-being に関するＫＰＩを設定する」と書いた。判断基準がGDPから幸福へ、という言い方は古くからあるが、政府の評価指標として明文化された日付はこの一行で特定できる。"
+    ],
+    "sources": [
+      "日本WHO協会 健康の定義 https://japan-who.or.jp/about/who-what/identification-health/",
+      "Wikipedia (en) OECD Better Life Index https://en.wikipedia.org/wiki/OECD_Better_Life_Index",
+      "内閣府 満足度・生活の質に関する調査 報告書一覧 https://www5.cao.go.jp/keizai2/wellbeing/manzoku/reportarchive.html",
+      "内閣府 経済財政運営と改革の基本方針2021（本文） https://www5.cao.go.jp/keizai-shimon/kaigi/cabinet/honebuto/2021/2021_basicpolicies_ja.pdf",
+      "文部科学省 教育振興基本計画 https://www.mext.go.jp/a_menu/keikaku/index.htm"
+    ]
+  },
+  {
+    "draft_no": 65,
+    "name_ja": "サステナブル",
+    "reading": "サステナブル",
+    "name_en": "Sustainable / SDGs",
+    "category": "規範",
+    "shelf": 4,
+    "evidence_type": "curve",
+    "made": {
+      "label": "2015 SDGs採択 → 2019〜2021 日本で急伸",
+      "year": 2019,
+      "approx": true,
+      "fact": "国連総会は2015年9月25日に「持続可能な開発のための2030アジェンダ」（SDGs、17目標169ターゲット）を採択。電通の生活者調査ではSDGsの認知率が2018年2月14.8%→2019年2月16.0%→2020年1月29.1%→2021年1月54.2%→2022年1月86.0%→2023年2月91.6%と、2019〜2021年に急伸した。",
+      "source": "Wikipedia「持続可能な開発目標」（UNDP）／電通「SDGsに関する生活者調査」第1〜6回 各リリース"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "up",
+    "keyfacts": [
+      {
+        "text": "SDGsは2015年9月25日、国連持続可能な開発サミット（国連総会）で「我々の世界を変革する：持続可能な開発のための2030アジェンダ」の中核として採択された。",
+        "source": "https://ja.wikipedia.org/wiki/持続可能な開発目標 ／ UNDP 2015-09-24"
+      },
+      {
+        "text": "電通 第3回調査（2020年1月18〜19日）：SDGs認知率29.1%。「2019年2月に実施した第2回調査」から13.1ポイント上昇（第2回16.0%）、「2018年の第1回調査の認知率（14.8%）」。",
+        "source": "https://www.dentsu.co.jp/news/release/2020/0427-010047.html"
+      },
+      {
+        "text": "電通 第4回調査（2021年1月22〜25日）：認知率54.2%（第3回の29.1%からほぼ倍増）、「内容まで含めて知っている」20.5%。",
+        "source": "https://kyodonewsprwire.jp/release/202104264130"
+      },
+      {
+        "text": "電通 第5回調査（2022年1月17〜21日）：認知率86.0%、「内容まで理解している」34.2%。10代は52.5%。",
+        "source": "https://www.dentsu.co.jp/news/release/2022/0427-010518.html"
+      },
+      {
+        "text": "電通 第6回調査（2023年2月7〜10日、n=1,400）：認知率91.6%、「内容まで含めて知っている」40.4%（第1回の3.6%から11倍超）。",
+        "source": "https://www.dentsu.co.jp/news/release/2023/0512-010608.html"
+      },
+      {
+        "text": "新語・流行語大賞では2021年（第38回）に「ＳＤＧｓ」がノミネート語（トップテン外）。「サステナブル」単体の授賞・ノミネート記録は2005〜2024年に存在しない。",
+        "source": "自由国民社 公式 https://www.jiyu.co.jp/singo/index.php?eid=00038"
+      }
+    ],
+    "curve": {
+      "title": "「SDGs」という言葉の認知率（「内容まで含めて知っている」＋「内容はわからないが名前は聞いたことがある」）",
+      "unit": "%",
+      "source": "電通「SDGsに関する生活者調査」第1回（2018年2月）〜第6回（2023年2月）各リリース。第2回は設計が異なり電通自身が「参考値」と注記",
+      "points": [
+        [
+          2018,
+          14.8
+        ],
+        [
+          2019,
+          16.0
+        ],
+        [
+          2020,
+          29.1
+        ],
+        [
+          2021,
+          54.2
+        ],
+        [
+          2022,
+          86.0
+        ],
+        [
+          2023,
+          91.6
+        ]
+      ]
+    },
+    "lineage": null,
+    "draft_corrections": [
+      "電通調査の各年数値は確認済み。ただし第2回（2019年2月）はサンプル数・対象地域が異なり電通が「参考値」と注記している。第7回以降（2024年〜）の同一設計の調査は確認できなかった。",
+      "「サステナブル」単体の新語・流行語大賞記録はない。2021年に「ＳＤＧｓ」がノミネート（トップテン外）。",
+      "「2019頃〜」は認知率カーブ（2019年16.0%→2021年54.2%）と整合する。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "採択日は国連文書、普及は同一主体の定点調査6点で実数が取れる。",
+    "hitokoto": "SDGs の認知率は4年で15%から86%へ。世論でこれほど速く動いた語は少ない。",
+    "body_ja": [
+      "「持続可能」という規範の現在の在庫は、2015年9月25日に国連総会で採択されたSDGs（持続可能な開発目標）から出荷されている。17の目標と169のターゲットを2030年までに達成するという国際合意で、翌2016年から各国で取り組みが始まった。",
+      "日本の生活者への浸透は電通の定点調査で線として見える。SDGsという言葉の認知率は2018年2月に14.8%、2019年に16.0%と低迷したあと、2020年に29.1%、2021年に54.2%、2022年に86.0%、2023年には91.6%へ達した。「内容まで知っている」層も3.6%から40.4%に増えている。",
+      "自由国民社の新語・流行語大賞では2021年に「ＳＤＧｓ」がノミネートされたが、「サステナブル」そのものの記録はない。語が賞を取る前に、認知率の線が先に垂直に立ち上がった。規範が世論に入る速さでは、この数十年で最も急な例である。"
+    ],
+    "sources": [
+      "Wikipedia「持続可能な開発目標」 https://ja.wikipedia.org/wiki/持続可能な開発目標",
+      "電通 第3回「SDGsに関する生活者調査」 https://www.dentsu.co.jp/news/release/2020/0427-010047.html",
+      "電通 第4回 https://kyodonewsprwire.jp/release/202104264130",
+      "電通 第5回 https://www.dentsu.co.jp/news/release/2022/0427-010518.html",
+      "電通 第6回 https://www.dentsu.co.jp/news/release/2023/0512-010608.html",
+      "自由国民社 新語・流行語大賞 第38回(2021) https://www.jiyu.co.jp/singo/index.php?eid=00038"
+    ]
+  },
+  {
+    "draft_no": 66,
+    "name_ja": "ミニマリズム・断捨離",
+    "reading": "ミニマリズム・だんしゃり",
+    "name_en": "Minimalism / Danshari",
+    "category": "人生観",
+    "shelf": 4,
+    "evidence_type": "law",
+    "made": {
+      "label": "2009 断捨離 → 2015 ミニマリスト",
+      "year": 2009,
+      "approx": false,
+      "fact": "やましたひでこ『新・片づけ術「断捨離」』（マガジンハウス、2009年12月）がヒットして2010年の新語・流行語大賞にノミネート。佐々木典士『ぼくたちに、もうモノは必要ない。』（ワニブックス、2015年6月）を機に2015年に「ミニマリスト」がノミネートされた。",
+      "source": "国立国会図書館サーチ（2009.12／2015.6）／自由国民社 第27回・第32回"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "steady",
+    "keyfacts": [
+      {
+        "text": "やましたひでこ『新・片づけ術「断捨離」 「片づけ」で、人生が変わる。』（マガジンハウス）は2009年12月刊。語は沖正弘のヨーガ思想「断行・捨行・離行」に由来し、やましたが商標登録している。",
+        "source": "国立国会図書館サーチ（2009.12）／Wikipedia「断捨離」"
+      },
+      {
+        "text": "「断捨離」は2010年（第27回）新語・流行語大賞のノミネート語（60語中）。トップテンには入っていない。",
+        "source": "自由国民社 公式 https://www.jiyu.co.jp/singo/index.php?eid=00027"
+      },
+      {
+        "text": "近藤麻理恵『人生がときめく片づけの魔法』（サンマーク出版）はNDL書誌で2011年1月刊。英語版 The Life-Changing Magic of Tidying Up は2014年10月（Ten Speed Press）、2015年にTIME誌「世界で最も影響力のある100人」に選出。",
+        "source": "国立国会図書館サーチ（2011.1）／Wikipedia「近藤麻理恵」"
+      },
+      {
+        "text": "佐々木典士『ぼくたちに、もうモノは必要ない。』（ワニブックス）は2015年6月刊。英訳 Goodbye, Things（Penguin, 2017）ほか各国語に翻訳。",
+        "source": "国立国会図書館サーチ（2015.6）"
+      },
+      {
+        "text": "「ミニマリスト」は2015年（第32回）新語・流行語大賞のノミネート語。トップテン外。",
+        "source": "自由国民社 公式 https://www.jiyu.co.jp/singo/index.php?eid=00032"
+      }
+    ],
+    "curve": {
+      "title": "国会会議録「断捨離」年別発言数",
+      "unit": "件",
+      "source": "国会会議録検索システム API（年別ヒット数は別担当が取得中）",
+      "points": []
+    },
+    "lineage": {
+      "from": "持ち家",
+      "to": "ミニマリズム・断捨離",
+      "note": "対面配置（持ち家 No.43）。所有を増やす人生観と減らす人生観の対比。持ち家側の根拠は別担当。"
+    },
+    "draft_corrections": [
+      "近藤麻理恵『人生がときめく片づけの魔法』のNDL書誌は2011年1月刊（叩き台は2010年12月。発売日と奥付の差の範囲だが、引用時はNDLに合わせるのが安全）。",
+      "「2010年ノミネート」「2015年『ミニマリスト』ノミネート」は自由国民社の公式記録と一致。いずれもトップテンではない。",
+      "『新・片づけ術「断捨離」』2009年12月、『ぼくたちに、もうモノは必要ない。』2015年6月はNDLで確認。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "書籍の刊行月と流行語大賞の区分が一次資料で確定。",
+    "hitokoto": "捨てる技術は2009年12月に商品になり、翌年には流行語候補になった。",
+    "body_ja": [
+      "モノを減らして暮らす人生観が日本で商品になった日付は、2009年12月である。やましたひでこの『新・片づけ術「断捨離」』がマガジンハウスから出て売れ、翌2010年には新語・流行語大賞のノミネート語に入った。語の元はヨーガの「断行・捨行・離行」で、やましたはこれを商標登録している。",
+      "続いて近藤麻理恵の『人生がときめく片づけの魔法』（2011年1月刊）が世界に出た。英語版は2014年10月に出て、2015年にはTIME誌の「世界で最も影響力のある100人」に選ばれる。片づけの手法が、日本発の輸出品になった珍しい例である。",
+      "2015年6月には佐々木典士『ぼくたちに、もうモノは必要ない。』が出て、同年の新語・流行語大賞に「ミニマリスト」がノミネートされた。持ち家と耐久消費財を積み上げる戦後の人生観の向かいに、六年かけて「持たない」棚が組み上がった。"
+    ],
+    "sources": [
+      "国立国会図書館サーチ OpenSearch（断捨離 2009.12／人生がときめく片づけの魔法 2011.1／ぼくたちに、もうモノは必要ない。2015.6）",
+      "Wikipedia「断捨離」 https://ja.wikipedia.org/wiki/断捨離",
+      "Wikipedia「近藤麻理恵」 https://ja.wikipedia.org/wiki/近藤麻理恵",
+      "自由国民社 新語・流行語大賞 第27回(2010) https://www.jiyu.co.jp/singo/index.php?eid=00027",
+      "自由国民社 新語・流行語大賞 第32回(2015) https://www.jiyu.co.jp/singo/index.php?eid=00032"
+    ]
+  },
+  {
+    "draft_no": 67,
+    "name_ja": "リスキリング",
+    "reading": "リスキリング",
+    "name_en": "Reskilling",
+    "category": "規範",
+    "shelf": 4,
+    "evidence_type": "law",
+    "made": {
+      "label": "2021 経産省検討会 → 2022-10-03 所信表明",
+      "year": 2022,
+      "approx": false,
+      "fact": "経済産業省「デジタル時代の人材政策に関する検討会」の第1回は2021年2月4日。岸田文雄首相は2022年10月3日の第210回国会所信表明演説で、個人のリスキリングに対する公的支援を含む「人への投資」の施策を「五年間で一兆円」のパッケージに拡充すると表明した。同年の新語・流行語大賞にノミネート。",
+      "source": "経産省 検討会ページ（Wayback）／首相官邸 所信表明演説 2022-10-03／日本経済新聞／自由国民社 第39回"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "up",
+    "keyfacts": [
+      {
+        "text": "世界経済フォーラムは2020年1月のダボス会議で「Reskilling Revolution」（2030年までに10億人により良いスキルを）を立ち上げた。",
+        "source": "World Economic Forum, Reskilling Revolution initiative（2020年1月）※本件は公式ページ未取得のため通説レベル"
+      },
+      {
+        "text": "経済産業省「デジタル時代の人材政策に関する検討会」は第1回2021年2月4日、第2回2月26日、第3回3月11日、第4回6月1日と続き、2023年8月7日に報告書を公表した。",
+        "source": "https://www.meti.go.jp/shingikai/mono_info_service/digital_jinzai/index.html（Wayback 2023年保存版）"
+      },
+      {
+        "text": "岸田首相 所信表明演説（2022年10月3日）：個人のリスキリングに対する公的支援について、人への投資の施策を「五年間で一兆円」のパッケージに拡充。労働移動円滑化の指針を翌年6月までに取りまとめると表明。",
+        "source": "首相官邸 https://www.kantei.go.jp/jp/101_kishida/statement/2022/1003shoshinhyomei.html ／日本経済新聞「リスキリング支援『5年で1兆円』岸田首相が所信表明」"
+      },
+      {
+        "text": "「リスキリング」は2022年（第39回）新語・流行語大賞のノミネート語（30語）。トップテンは「キーウ」「きつねダンス」「国葬儀」「宗教2世」「知らんけど」「スマホショルダー」「てまえどり」「ヤクルト1000」「悪い円安」、年間大賞は「村神様」。",
+        "source": "自由国民社 公式 https://www.jiyu.co.jp/singo/index.php?eid=00039"
+      }
+    ],
+    "curve": {
+      "title": "国会会議録「リスキリング」年別発言数",
+      "unit": "件",
+      "source": "国会会議録検索システム API（年別ヒット数は別担当が取得中）",
+      "points": []
+    },
+    "lineage": {
+      "from": "終身雇用",
+      "to": "リスキリング",
+      "note": "叩き台の位置づけは「終身雇用の死亡診断書」。終身雇用側の廃番根拠は別担当。"
+    },
+    "draft_corrections": [
+      "叩き台の「2022年 新語・流行語大賞トップテン」は誤り。2022年はノミネート語止まりでトップテンには入っていない（自由国民社公式記録）。",
+      "経産省の検討会名は「デジタル時代の人材政策に関する検討会」（第1回2021年2月4日）。「リスキリング検討会」という名称の会議ではない。",
+      "所信表明演説の日付（2022年10月3日）と「五年間で一兆円」は確認済み。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "演説の日付・文言、検討会の開催日、流行語大賞の区分がすべて公式記録で確定。",
+    "hitokoto": "学び直しは、首相が「五年間で一兆円」と言った日に国策になった。",
+    "body_ja": [
+      "リスキリングは、技術の変化に合わせて働き手が新しい職務のスキルを身につけ直すことを指す。世界経済フォーラムが2020年1月のダボス会議で「リスキリング革命」を掲げ、日本では経済産業省が2021年2月4日に「デジタル時代の人材政策に関する検討会」を始めて、この語を政策用語として使い始めた。",
+      "規範として国民に配られた日付は2022年10月3日である。岸田文雄首相は所信表明演説で、個人のリスキリングへの公的支援を含む「人への投資」を「五年間で一兆円」のパッケージに拡充すると述べた。同年の新語・流行語大賞では30語のノミネートに入ったが、トップテンには届いていない。",
+      "会社が一生面倒を見る代わりに社員は会社の言う通りに働く、という終身雇用の取引が成り立たなくなったとき、学び直しの責任は個人に移る。リスキリングという語は、その移転を国が公式に認めた文書名として読める。"
+    ],
+    "sources": [
+      "首相官邸 第二百十回国会における岸田内閣総理大臣所信表明演説（2022-10-03） https://www.kantei.go.jp/jp/101_kishida/statement/2022/1003shoshinhyomei.html",
+      "日本経済新聞「リスキリング支援『5年で1兆円』 岸田首相が所信表明」 https://www.nikkei.com/article/DGXZQOUA30ACD0Q2A930C2000000/",
+      "経済産業省 デジタル時代の人材政策に関する検討会 https://www.meti.go.jp/shingikai/mono_info_service/digital_jinzai/index.html",
+      "自由国民社 新語・流行語大賞 第39回(2022) https://www.jiyu.co.jp/singo/index.php?eid=00039"
+    ]
+  },
+  {
+    "draft_no": 70,
+    "restock_of": "無常観・禅",
+    "name_ja": "マインドフルネス",
+    "restocked": {
+      "label": "2013〜2016 日本ブーム（米国経由の逆輸入）",
+      "year": 2016,
+      "approx": true,
+      "as": "マインドフルネス",
+      "fact": "医療技法としてのマインドフルネスは1979年にジョン・カバット・ジンがマサチューセッツ大学医学部にストレス低減クリニックを開いてMBSR（8週間プログラム）として体系化。Googleでは2007年にチャディー・メン・タンが社内研修「Search Inside Yourself」を開発。日本では2013年に日本マインドフルネス学会が設立され、2016年6月18日・19日のNHKスペシャル「シリーズ キラーストレス」がマインドフルネスを対処法として紹介して一般化した。",
+      "source": "英語版Wikipedia「Mindfulness-based stress reduction」／SIYLI（siyli.org/about）／日本マインドフルネス学会／NHK"
+    },
+    "keyfacts": [
+      {
+        "text": "1979年、ジョン・カバット・ジンがマサチューセッツ大学医学部にStress Reduction Clinicを設立し、MBSR（8週間の標準プログラム）を開発した。日本語版Wikipediaも「医療行為としてのマインドフルネスは、1979年にジョン・カバット・ジンが…臨床的な技法として体系化した」と記す。",
+        "source": "https://en.wikipedia.org/wiki/Mindfulness-based_stress_reduction ／ https://ja.wikipedia.org/wiki/マインドフルネス（北川・武藤 2013）"
+      },
+      {
+        "text": "Google社内プログラム「Search Inside Yourself」は2007年にチャディー・メン・タンが専門家を集めて開発。2012年に社外組織 Search Inside Yourself Leadership Institute（SIYLI）として独立。",
+        "source": "https://siyli.org/about"
+      },
+      {
+        "text": "日本マインドフルネス学会は2013年設立。",
+        "source": "https://mindfulness.smoosy.atlas.jp/ja"
+      },
+      {
+        "text": "NHKスペシャル「シリーズ キラーストレス」第1回「あなたを蝕むストレスの正体」2016年6月18日、第2回「ストレスから脳を守れ〜最新科学で迫る対処法〜」2016年6月19日放送。",
+        "source": "NHK番組ページ https://www.web.nhk/tv/an/special/pl/series-tep-2NY2QQLPM3/ep/775RN581L2"
+      },
+      {
+        "text": "宗教情報リサーチセンターの丹羽宣子は「マインドフルネスという言葉は21世紀になって、日本社会で一つの流行語」になったと論じ、日本仏教界の反応を整理している。",
+        "source": "丹羽宣子「マインドフルネスの流行と日本仏教界」 https://www.rirc.or.jp/20th/Rirc20th_inbound9_Niwa(ver2).pdf"
+      }
+    ],
+    "draft_corrections": [
+      "叩き台の年号（MBSR 1979、SIY 2007、学会 2013、NHK 2016）はすべて確認済み。",
+      "NHKスペシャルは6月18日（第1回）・19日（第2回）の2夜連続で、「2016年」だけでなく日付まで特定できる。",
+      "日本語のマインドフルネス関連書籍の初出年は今回未調査（別途要確認）。"
+    ],
+    "confidence": "A",
+    "sources": [
+      "Wikipedia (en) Mindfulness-based stress reduction https://en.wikipedia.org/wiki/Mindfulness-based_stress_reduction",
+      "Search Inside Yourself Leadership Institute, About https://siyli.org/about",
+      "日本マインドフルネス学会 https://mindfulness.smoosy.atlas.jp/ja",
+      "NHKスペシャル シリーズ キラーストレス（2016-06-18/19）",
+      "Wikipedia「マインドフルネス」 https://ja.wikipedia.org/wiki/マインドフルネス"
+    ]
+  },
+  {
+    "draft_no": 71,
+    "restock_of": "結・講（頼母子講）",
+    "name_ja": "シェアリングエコノミー／クラウドファンディング",
+    "restocked": {
+      "label": "2011 クラウドファンディング → 2016 協会・政府検討",
+      "year": 2011,
+      "approx": false,
+      "as": "クラウドファンディング／シェアリングエコノミー",
+      "fact": "READYFORが2011年3月29日に日本初のクラウドファンディングサービスとして開始、CAMPFIREは2011年6月にローンチ（運営会社ハイパーインターネッツは2011年1月設立）。Airbnb Japan株式会社は2014年5月に東京で設立。一般社団法人シェアリングエコノミー協会は2016年1月設立、政府（IT総合戦略室）の「シェアリングエコノミー検討会議 中間報告書」は2016年11月。",
+      "source": "Wikipedia「READYFOR」「CAMPFIRE (企業)」「Airbnb」／シェアリングエコノミー協会／デジタル庁アーカイブPDF"
+    },
+    "keyfacts": [
+      {
+        "text": "READYFORは2011年3月29日、東京大学発ベンチャー・オーマ株式会社の一事業として開始した「日本初のクラウドファンディングサービス」（代表 米良はるか）。",
+        "source": "https://ja.wikipedia.org/wiki/READYFOR"
+      },
+      {
+        "text": "CAMPFIRE：2011年1月に前身の株式会社ハイパーインターネッツ設立（家入一真）、2011年6月にクラウドファンディング「CAMPFIRE」ローンチ。2019年2月に累計流通額100億円突破。",
+        "source": "https://ja.wikipedia.org/wiki/CAMPFIRE_(企業) 沿革"
+      },
+      {
+        "text": "2014年5月、日本法人 Airbnb Japan株式会社が東京に設立された。",
+        "source": "https://ja.wikipedia.org/wiki/Airbnb「日本におけるAirbnbの状況」"
+      },
+      {
+        "text": "一般社団法人シェアリングエコノミー協会は「2016年1月設立」。",
+        "source": "https://sharing-economy.jp/ja/"
+      },
+      {
+        "text": "内閣官房IT総合戦略室「シェアリングエコノミー検討会議 中間報告書 −シェアリングエコノミー推進プログラム−」は2016年11月。",
+        "source": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/5adb8030-21f5-4c2b-8f03-0e3e01508472/20211101_policies_posts_interconnected_fields_share_eco_01.pdf"
+      },
+      {
+        "text": "住宅宿泊事業法（民泊新法、平成29年法律第65号）は2017年6月16日公布、2018年6月15日施行。※法令番号ベースの通説で、今回e-Govを直接参照していない。",
+        "source": "e-Gov 法令検索 平成29年法律第65号（要再確認）"
+      },
+      {
+        "text": "「クラウドファンディング」は2005〜2024年の新語・流行語大賞のノミネート語一覧に存在しない。",
+        "source": "自由国民社 公式 各年ページ（第22回〜第41回を全文照合）"
+      }
+    ],
+    "draft_corrections": [
+      "叩き台の「『クラウドファンディング』の流行語大賞ノミネート年（2013？）」は確認できない。2005〜2024年の公式ノミネート語一覧に「クラウドファンディング」はない。",
+      "CAMPFIREは会社設立2011年1月、サービス開始2011年6月。叩き台の「2011年6月」はサービス開始として正しい。",
+      "READYFOR 2011年3月（29日）、シェアリングエコノミー協会 2016年1月、Airbnb日本法人 2014年（5月）はいずれも確認済み。"
+    ],
+    "confidence": "A",
+    "sources": [
+      "Wikipedia「READYFOR」 https://ja.wikipedia.org/wiki/READYFOR",
+      "Wikipedia「CAMPFIRE (企業)」 https://ja.wikipedia.org/wiki/CAMPFIRE_(企業)",
+      "Wikipedia「Airbnb」 https://ja.wikipedia.org/wiki/Airbnb",
+      "一般社団法人シェアリングエコノミー協会 https://sharing-economy.jp/ja/",
+      "シェアリングエコノミー検討会議 中間報告書（2016年11月） デジタル庁アーカイブ",
+      "自由国民社 新語・流行語大賞 各年ページ https://www.jiyu.co.jp/singo/"
+    ]
+  },
+  {
+    "draft_no": 72,
+    "restock_of": "兼業標準（百姓の多業）",
+    "name_ja": "副業解禁",
+    "restocked": {
+      "label": "2018-01 モデル就業規則改定・ガイドライン策定",
+      "year": 2018,
+      "approx": false,
+      "as": "副業・兼業の解禁",
+      "fact": "厚生労働省は2018年（平成30年）1月に「副業・兼業の促進に関するガイドライン」を策定し、同時にモデル就業規則から「許可なく他の会社等の業務に従事しないこと」の規定を削除、第14章「副業・兼業」第67条「労働者は、勤務時間外において、他の会社等の業務に従事することができる。」を新設した。日経は2018年を「副業元年」と呼んだ。",
+      "source": "厚労省 ガイドラインPDF（平成30年1月策定、令和2年9月・令和4年7月改定）／厚労省 モデル就業規則 平成30年1月版 p.87／日本経済新聞 2018-10-02"
+    },
+    "keyfacts": [
+      {
+        "text": "「副業・兼業の促進に関するガイドライン」は平成30年1月策定（令和2年9月、令和4年7月改定）。同文書は「厚生労働省が平成30年1月に改定したモデル就業規則においても、『労働者は、勤務時間外において、他の会社等の業務に従事することができる。』とされている」と記す。",
+        "source": "https://www.mhlw.go.jp/content/11200000/000962665.pdf（pdftotextで本文確認）"
+      },
+      {
+        "text": "モデル就業規則（平成30年1月）第14章 副業・兼業 第67条「労働者は、勤務時間外において、他の会社等の業務に従事することができる。」（p.87）。",
+        "source": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11200000-Roudoukijunkyoku/0000118951.pdf"
+      },
+      {
+        "text": "ガイドライン策定の前提は2017年3月28日の「働き方改革実行計画」（働き方改革実現会議）。",
+        "source": "厚労省 ガイドライン冒頭（背景）／日本経済新聞 2019-08-05「ポイント解説 働き方関連法(7) 副業・兼業」"
+      },
+      {
+        "text": "日本経済新聞 2018年10月2日「『副業元年』に考えるべき心構え」：「2018年は『副業元年』…厚生労働省が1月、…『モデル就業規則』について、副業を認める内容に改正したからだ」。",
+        "source": "https://www.nikkei.com/article/DGXMZO35948170R01C18A0SHE000/"
+      },
+      {
+        "text": "経団連「副業・兼業に関するアンケート調査結果」（2022年10月11日、回答275社）：社員の社外での副業・兼業を「認めている」53.1%、「認める予定」17.5%、合計70.5%。",
+        "source": "https://www.keidanren.or.jp/policy/2022/090.html ／ 経団連タイムス 2022-10-27 ／ JILPT ビジネス・レーバー・トレンド 2022年12月号"
+      },
+      {
+        "text": "パーソル総合研究所「副業の実態・意識に関する定量調査」：企業の副業容認率（全面容認＋条件付き容認）は第二回（2021年3月）55.0%（2018年比+3.8pt、第一回は51.2%相当）、第四回（2025年8月）64.3%（2023年比+3.4pt）。",
+        "source": "https://rc.persol-group.co.jp/thinktank/data/sidejob2/ ／ https://rc.persol-group.co.jp/thinktank/data/sidejob4/"
+      }
+    ],
+    "curve": {
+      "title": "企業の副業容認率（全面容認＋条件付き容認）",
+      "unit": "%",
+      "source": "パーソル総合研究所「副業の実態・意識に関する定量調査」第一〜四回。2018年・2023年の値は各回リリースの差分（+3.8pt、+3.4pt）からの逆算",
+      "points": [
+        [
+          2018,
+          51.2
+        ],
+        [
+          2021,
+          55.0
+        ],
+        [
+          2023,
+          60.9
+        ],
+        [
+          2025,
+          64.3
+        ]
+      ]
+    },
+    "draft_corrections": [
+      "叩き台の「モデル就業規則改定（2018年1月、副業・兼業禁止規定の削除）」「ガイドライン（2018年1月）」「2018年が副業元年」はすべて確認済み。追加で、新設条文は第67条であること、ガイドラインは2020年9月と2022年7月に改定されていることを補足。",
+      "副業容認企業の割合は経団連（2022年、53.1%）とパーソル（2021年55.0%→2025年64.3%）で取れる。パーソルの第一回（2018）は公表値が資料により50.0〜51.2%と揺れるので、curveでは差分逆算値を採用し注記した。"
+    ],
+    "confidence": "A",
+    "sources": [
+      "厚生労働省 副業・兼業の促進に関するガイドライン https://www.mhlw.go.jp/content/11200000/000962665.pdf",
+      "厚生労働省 モデル就業規則（平成30年1月） https://www.mhlw.go.jp/file/06-Seisakujouhou-11200000-Roudoukijunkyoku/0000118951.pdf",
+      "日本経済新聞 2018-10-02「『副業元年』に考えるべき心構え」 https://www.nikkei.com/article/DGXMZO35948170R01C18A0SHE000/",
+      "経団連 副業・兼業に関するアンケート調査結果（2022-10-11） https://www.keidanren.or.jp/policy/2022/090.html",
+      "パーソル総合研究所 第二回／第四回 副業の実態・意識に関する定量調査"
+    ]
+  },
+  {
+    "draft_no": 73,
+    "name_ja": "もったいない",
+    "reading": "もったいない",
+    "name_en": "Mottainai",
+    "category": "規範",
+    "shelf": 5,
+    "evidence_type": "law",
+    "made": {
+      "label": "室町期に語が成立、近世に倹約規範として普及",
+      "year": 1444,
+      "approx": true,
+      "fact": "「勿体無し」は室町期に現れ、1444年成立の辞書『下学集』言辞門に「勿体」「勿体無し」の項がある。古語辞典では①もってのほかだ・不届きだ（『宇治拾遺物語』）、②恐れ多い・ありがたい（狂言『武悪』）、③惜しい、の順で意味が展開し、現在はほぼ③のみで使われる。③の意味が主流になった時期を示す一次資料は今回特定できなかった。",
+      "source": "Wikipedia「もったいない」（『下学集』宮内庁書陵部所蔵本の画像リンクあり）／Weblio 学研全訳古語辞典「もったいなし」／広辞苑第3版（1983）"
+    },
+    "discontinued": {
+      "label": "大量消費期に後退（要検証）",
+      "year": 1970,
+      "approx": true,
+      "fact": "「大量消費期に下落」は叩き台の主張で、今回は一次資料で裏付けできなかった。国会会議録の年別発言数（別担当が取得中）で検証すること。",
+      "source": null
+    },
+    "restocked": {
+      "label": "2005 MOTTAINAI ／ 2019 食品ロス削減推進法",
+      "year": 2005,
+      "approx": false,
+      "as": "MOTTAINAI（ワンガリ・マータイ）→ 食品ロス削減",
+      "fact": "2005年2月、京都議定書発効関連行事のため毎日新聞社の招聘で来日したワンガリ・マータイ（2004年ノーベル平和賞）が「もったいない」を知り、同年3月4日にニューヨーク国連本部（国連女性の地位委員会）で「MOTTAINAIを世界に広めましょう」と提案。同日、毎日新聞社が社内に事務局を置きMOTTAINAIキャンペーンを開始した。二度目の再入荷は「食品ロスの削減の推進に関する法律」（令和元年法律第19号、2019年5月31日公布、10月1日施行）。",
+      "source": "MOTTAINAIキャンペーンのあゆみ http://www.mottainai.info/jp/about/history/ ／Wikipedia「ワンガリ・マータイ」／消費者庁"
+    },
+    "trend": "restocked",
+    "keyfacts": [
+      {
+        "text": "室町時代の辞書『下学集』（1444）言辞門は「勿体」を「正体無し」の意とし、「勿体無し」を「大いに正理を失う」と説く。「勿体無し」はおよそ室町期から使われるようになった語。",
+        "source": "Wikipedia「もったいない」／宮内庁書陵部『下學集』画像 https://shoryobu.kunaicho.go.jp/Toshoryo/Viewer/1000074720002/"
+      },
+      {
+        "text": "古語辞典の語釈は①もってのほかだ・不届きだ（『宇治拾遺物語』一・一五「あはれ、もったいなき主かな」）、②恐れ多い・ありがたい（狂言『武悪』「ああ、もったいない、まずこの手を取って立たしめ」）、③もったいない・惜しい。",
+        "source": "Weblio 学研全訳古語辞典 https://kobun.weblio.jp/content/もったいなし"
+      },
+      {
+        "text": "広辞苑第3版（1983）は「①神仏・貴人に対して不都合である。不届きである。②畏れ多い。かたじけない。ありがたい。③むやみに費やすのが惜しい」の三義を挙げ、現在はほぼ③のみで使われる。",
+        "source": "Wikipedia「もったいない」"
+      },
+      {
+        "text": "ワンガリ・マータイは2005年2月に毎日新聞社の招聘で来日し「もったいない」に出会い、2005年3月4日にニューヨーク国連本部での演説で「MOTTAINAIを世界に広めましょう」と提案。同日、毎日新聞社が事務局を設置してキャンペーンを開始。同年7月のLIVE 8でも発信した。",
+        "source": "http://www.mottainai.info/jp/about/history/"
+      },
+      {
+        "text": "「食品ロスの削減の推進に関する法律」は令和元年法律第19号、2019年5月31日公布、2019年10月1日施行。",
+        "source": "消費者庁 https://www.caa.go.jp/policies/policy/consumer_policy/information/food_loss/promote/"
+      },
+      {
+        "text": "2005年（第22回）新語・流行語大賞のノミネート語・授賞語に「もったいない」「MOTTAINAI」は含まれない。",
+        "source": "自由国民社 公式 https://www.jiyu.co.jp/singo/index.php?eid=00022"
+      }
+    ],
+    "curve": {
+      "title": "国会会議録「もったいない」年別発言数",
+      "unit": "件",
+      "source": "国会会議録検索システム API（年別ヒット数は別担当が取得中）",
+      "points": []
+    },
+    "lineage": {
+      "from": "もったいない（近世の倹約規範）",
+      "to": "MOTTAINAI／食品ロス削減",
+      "note": "再入荷2回。1回目は2005年に外国人環境活動家の口からローマ字で逆輸入、2回目は2019年の法律で行政用語化。"
+    },
+    "draft_corrections": [
+      "『太平記』での用例は今回確認できない。古語辞典の用例は『宇治拾遺物語』（不届きだの意）と狂言『武悪』（恐れ多いの意）。室町期成立の根拠は『下学集』（1444）。",
+      "「大量消費期に下落」は未検証。国会会議録の年別ヒット数で検証すること。",
+      "マータイの国連演説は2005年3月4日（国連女性の地位委員会）。叩き台の「2005年 国連での『MOTTAINAI』演説」は正しい。来日は2005年2月。",
+      "2005年の新語・流行語大賞に「もったいない」はノミネートされていない。"
+    ],
+    "confidence": "B",
+    "verdict": "include",
+    "verdict_reason": "語の成立（室町期）と2005年・2019年の再入荷は一次資料で確定。廃番期（大量消費期の後退）だけが未検証で、国会会議録カーブで補う前提。",
+    "hitokoto": "日本語の倹約は2005年、ケニア人の口からローマ字で再入荷された。",
+    "body_ja": [
+      "「もったいない」は室町期に現れた語で、1444年の辞書『下学集』に「勿体無し」が載る。もとは「不届きだ」「恐れ多い」の意で、『宇治拾遺物語』の「もったいなき主かな」は「なんと不届きな人だ」の意味だった。物を粗末にするのを惜しむ現在の用法は、三つの意味の最後に出てきたものである。",
+      "この語が世界商品になった日付は2005年3月4日である。同年2月に来日したケニアの環境活動家ワンガリ・マータイが毎日新聞社の取材で「もったいない」を知り、国連本部の演説で「MOTTAINAIを世界に広めましょう」と提案した。同じ日に毎日新聞社が事務局を置き、キャンペーンが始まった。",
+      "二度目の再入荷は法律の形をとった。2019年5月31日公布、10月1日施行の食品ロス削減推進法は、国と自治体と事業者に食品ロス削減の責務を課す。倹約という近世の規範が、いったん高度成長の消費文化に押されたあと、外国人の口と法律の条文という二つの経路で戻ってきた。ただし高度成長期の後退は、国会会議録の発言数で別途確かめる必要がある。"
+    ],
+    "sources": [
+      "Wikipedia「もったいない」 https://ja.wikipedia.org/wiki/もったいない",
+      "Weblio 古語辞典「もったいなし」 https://kobun.weblio.jp/content/もったいなし",
+      "MOTTAINAIキャンペーンのあゆみ http://www.mottainai.info/jp/about/history/",
+      "Wikipedia「ワンガリ・マータイ」 https://ja.wikipedia.org/wiki/ワンガリ・マータイ",
+      "消費者庁 食品ロスの削減の推進に関する法律 https://www.caa.go.jp/policies/policy/consumer_policy/information/food_loss/promote/",
+      "自由国民社 新語・流行語大賞 第22回(2005) https://www.jiyu.co.jp/singo/index.php?eid=00022"
+    ]
+  },
+  {
+    "draft_no": null,
+    "id": "meta_edo_shigusa",
+    "name_ja": "江戸しぐさ",
+    "reading": "えどしぐさ",
+    "name_en": "Edo shigusa (invented \"Edo manners\")",
+    "category": "規範",
+    "shelf": "meta",
+    "evidence_type": "law",
+    "made": {
+      "label": "1981 語の初出 ／ 1980s 芝三光が創作",
+      "year": 1981,
+      "approx": true,
+      "fact": "「江戸しぐさ」の語の文献上の初出は1981年の読売新聞「編集手帳」。提唱者・芝三光（本名 小林和雄、1928年–1999年1月22日）は社会教育団体「江戸の良さを見なおす会」を名乗り、1983年3月23日の「よみうり寸評」でも取り上げられた。弟子の越川禮子『江戸の繁盛しぐさ こうして江戸っ子になった』（日本経済新聞社、1992年12月）で書籍化された。",
+      "source": "Wikipedia「江戸しぐさ」「芝三光」「越川禮子」（原田実の調査を引用）／国立国会図書館サーチ（1992.12）"
+    },
+    "discontinued": {
+      "label": "2014 偽史批判 → 2016 育鵬社が掲載中止",
+      "year": 2016,
+      "approx": true,
+      "fact": "原田実『江戸しぐさの正体 教育をむしばむ偽りの伝統』（星海社新書、2014年8月25日）が江戸時代の史料に一切現れないことを指摘。2015年から批判が強まり、2012年度から公民教科書に載せていた育鵬社は2016年度から掲載を中止した。一方、文部科学省の『私たちの道徳 小学校5・6年』は2016年度の改訂でも江戸しぐさを残した。",
+      "source": "星海社 https://seikaisha.co.jp/books/shinsho/5_ht8k647o/ ／Wikipedia「江戸しぐさ」／BuzzFeed News 2016-04-04"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "芝三光（しば・みつあきら）、本名 小林和雄、別名 浦嶋太郎、1928年–1999年1月22日。「江戸講」の講元の子孫を名乗り、昭和期に「江戸の良さを見なおす会」として江戸講を復活させたと称した。",
+        "source": "https://ja.wikipedia.org/wiki/江戸しぐさ「芝三光（本名：小林和雄）」節"
+      },
+      {
+        "text": "「江戸しぐさ」という語の文献上の初出は1981年の読売新聞「編集手帳」。1983年3月23日の読売新聞「よみうり寸評」（村尾清一）でも紹介された。",
+        "source": "同上（原田実『江戸しぐさの正体』を引用）"
+      },
+      {
+        "text": "越川禮子『江戸の繁盛しぐさ こうして江戸っ子になった』は日本経済新聞社 1992年12月、『商人道「江戸しぐさ」の知恵袋』は講談社+α新書 2001年9月。",
+        "source": "国立国会図書館サーチ OpenSearch"
+      },
+      {
+        "text": "越川は『商人道「江戸しぐさ」の知恵袋』第七章「抹殺された江戸しぐさ」で、江戸開城時に新政府軍が「江戸講」を恐れて伝承者の江戸っ子を虐殺し（「江戸っ子狩り」）、そのため史料が残らないと主張している。",
+        "source": "https://ja.wikipedia.org/wiki/江戸しぐさ「江戸講と『江戸っ子狩り』」節（越川 2001, pp.157–）"
+      },
+      {
+        "text": "公共広告機構（現ACジャパン）は2004年度の東京地域キャンペーン「江戸しぐさ」、2005年度の「続・江戸しぐさ」でCM化した（テーマ「東京のマナー」）。",
+        "source": "ACジャパン 広告作品アーカイブ https://www.ad-c.or.jp/campaign/search/index.php?id=434 ／ id=444"
+      },
+      {
+        "text": "NPO法人江戸しぐさ（現・NPO法人日本のこころ・江戸しぐさ）は東京都知事の認証2007年8月24日、設立日2007年9月5日（法人登記9月11日）。理事長は越川禮子。",
+        "source": "NPO法人江戸しぐさ 団体概要（Wayback 2015年保存） http://www.edoshigusa.org/about/outline/"
+      },
+      {
+        "text": "文部科学省『私たちの道徳 小学校5・6年』（平成26年度＝2014年度から全国配布）に「江戸しぐさ」が掲載。育鵬社は2012年度から公民教科書に採用。",
+        "source": "文部科学省 https://www.mext.go.jp/a_menu/shotou/doutoku/detail/1344254.htm ／国立国会図書館サーチ（[2014]）／Wikipedia「江戸しぐさ」"
+      },
+      {
+        "text": "原田実『江戸しぐさの正体 教育をむしばむ偽りの伝統』（星海社新書52）2014年8月25日刊。「江戸しぐさは、そのネーミングとは裏腹に、一九八〇年代に芝三光という反骨の知識人によって生み出されたもの」。批判の要点は、江戸期史料に一切現れないこと、「傘かしげ」が和傘の使用実態と合わないこと、「時泥棒」が当時の時間観念と矛盾すること、「江戸っ子狩り」という虐殺説が荒唐無稽なこと。続編『江戸しぐさの終焉』は2016年2月。",
+        "source": "https://seikaisha.co.jp/books/shinsho/5_ht8k647o/ ／国立国会図書館サーチ（2014.8／2016.2）／Wikipedia「江戸しぐさ」批判節"
+      },
+      {
+        "text": "2016年4月、文科省は『私たちの道徳』改訂でも江戸しぐさを残すと決定。担当係長は「道徳の教材は江戸しぐさの真偽を教えるものではない。正しいか間違っているかではなく、礼儀について考えてもらうのが趣旨」と回答した。",
+        "source": "BuzzFeed News 2016-04-04 https://www.buzzfeed.com/jp/satoruishido/mext-edoshigusa"
+      }
+    ],
+    "curve": {
+      "title": "国会会議録「江戸しぐさ」年別発言数",
+      "unit": "件",
+      "source": "国会会議録検索システム API（年別ヒット数は別担当が取得中）",
+      "points": []
+    },
+    "lineage": null,
+    "draft_corrections": [
+      "ACジャパンのCMは「2010年度」ではない。公共広告機構（ACジャパンの前身）の2004年度東京地域キャンペーン「江戸しぐさ」と2005年度「続・江戸しぐさ」（ACジャパン作品アーカイブで年度確認）。",
+      "NPO法人江戸しぐさの設立は「1999/2006」ではなく2007年9月5日（東京都認証2007年8月24日）。",
+      "『商人道「江戸しぐさ」の知恵袋』は講談社+α新書 2001年9月、『江戸の繁盛しぐさ』は日本経済新聞社 1992年12月（NDL）。",
+      "「教材からの削除（2016年頃）」は半分正しい。育鵬社は2016年度から掲載中止だが、文科省『私たちの道徳』は2016年度改訂でも残した。2018年度からの「特別の教科 道徳」検定教科書での扱いは今回確認できなかった。",
+      "語の初出は1981年（読売新聞「編集手帳」）で、叩き台の「1980s」と整合。芝三光の生没年（1928–1999）も一致。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "創作者・初出年・書籍化・広告・NPO設立・教材掲載・批判書の日付がすべて一次資料またはNDL書誌で確定。「伝統に見えて製造年がある」の最も純粋な標本。",
+    "hitokoto": "「江戸の伝統」の初出は1981年の新聞コラムで、江戸の史料には一行もない。",
+    "body_ja": [
+      "「傘かしげ」「こぶし腰浮かせ」で知られる江戸しぐさは、江戸の史料に一行も現れない。語の初出は1981年の読売新聞のコラムで、提唱者の芝三光（本名小林和雄、1928–1999）が「江戸講」の末裔を名乗って語り始めたものである。弟子の越川禮子が1992年に『江戸の繁盛しぐさ』として書籍化し、2001年の講談社+α新書で商人道として売り出した。",
+      "史料がない理由を、越川は江戸開城のとき新政府軍が伝承者の江戸っ子を虐殺したからだと説明した。それでも語は広まり、公共広告機構が2004年度と2005年度に東京のマナー広告に使い、2007年にNPO法人が設立され、2014年度からは文部科学省の『私たちの道徳』で全国の小学5・6年生に配られた。",
+      "2014年8月、歴史研究家の原田実が『江戸しぐさの正体』で創作であることを検証すると、育鵬社は2016年度から公民教科書への掲載をやめた。文科省は同年の改訂でも「真偽を教えるものではない」として残した。ホブズボウムの言う「創られた伝統」が、製造年月日つきで棚に並んだ標本である。"
+    ],
+    "sources": [
+      "Wikipedia「江戸しぐさ」 https://ja.wikipedia.org/wiki/江戸しぐさ",
+      "Wikipedia「越川禮子」 https://ja.wikipedia.org/wiki/越川禮子",
+      "星海社『江戸しぐさの正体 教育をむしばむ偽りの伝統』 https://seikaisha.co.jp/books/shinsho/5_ht8k647o/",
+      "国立国会図書館サーチ OpenSearch（江戸の繁盛しぐさ 1992.12／商人道「江戸しぐさ」の知恵袋 2001.9／江戸しぐさの正体 2014.8／江戸しぐさの終焉 2016.2／私たちの道徳 [2014]）",
+      "ACジャパン 広告作品アーカイブ「江戸しぐさ」(2004年度) / 「続・江戸しぐさ」(2005年度) https://www.ad-c.or.jp/campaign/search/index.php?id=434",
+      "NPO法人江戸しぐさ 団体概要（Wayback） https://web.archive.org/web/2015/http://www.edoshigusa.org/about/outline/",
+      "文部科学省『私たちの道徳 小学校5・6年』 https://www.mext.go.jp/a_menu/shotou/doutoku/detail/1344254.htm",
+      "BuzzFeed News 2016-04-04「それは偽りの伝統 教材に残り続ける『江戸しぐさ』」 https://www.buzzfeed.com/jp/satoruishido/mext-edoshigusa",
+      "J-CAST 2017-04-12（東京書籍の小6道徳教科書〈2015年改訂版〉に江戸しぐさの単元） https://www.j-cast.com/2017/04/12295456.html"
+    ]
+  }
+]

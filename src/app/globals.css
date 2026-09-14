@@ -65,3 +65,116 @@ body {
 .font-type {
   font-family: var(--font-courier), "Courier New", monospace;
 }
+
+/* ============================================================
+   紙・印刷の質感
+   ============================================================ */
+/* 紙の粒子（薄い点） */
+.vl-grain {
+  background-image: radial-gradient(rgba(31, 27, 23, 0.07) 0.7px, transparent 0.8px);
+  background-size: 4px 4px;
+}
+/* ハーフトーン（大きめの網点）: 親要素に position:relative が要る */
+.vl-halftone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(currentColor 1.2px, transparent 1.3px);
+  background-size: 7px 7px;
+  opacity: 0.14;
+}
+/* 市松（ダイナーの床） */
+.vl-checker {
+  background: conic-gradient(var(--vl-ink) 25%, transparent 0 50%, var(--vl-ink) 0 75%, transparent 0)
+    0 0 / 18px 18px;
+}
+.vl-checker-red {
+  background: conic-gradient(var(--vl-red) 25%, transparent 0 50%, var(--vl-red) 0 75%, transparent 0)
+    0 0 / 18px 18px;
+}
+/* 斜めストライプ（危険テープ風） */
+.vl-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--vl-ink) 0 10px,
+    var(--vl-mustard) 10px 20px
+  );
+}
+/* オフセット印刷のズレ影 */
+.vl-offset {
+  box-shadow: 5px 5px 0 var(--vl-ink);
+}
+.vl-offset-sm {
+  box-shadow: 3px 3px 0 var(--vl-ink);
+}
+.vl-offset-red {
+  box-shadow: 5px 5px 0 var(--vl-red);
+}
+/* 二重罫（古いカタログの区切り） */
+.vl-rule {
+  height: 7px;
+  border-top: 3px solid var(--vl-ink);
+  border-bottom: 1px solid var(--vl-ink);
+}
+/* ゴム印 */
+.vl-stamp {
+  display: inline-block;
+  border: 3px double currentColor;
+  border-radius: 8px;
+  padding: 0.15em 0.55em 0.1em;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(-7deg);
+  mix-blend-mode: multiply;
+  mask-image: radial-gradient(rgba(0, 0, 0, 0.92) 60%, rgba(0, 0, 0, 0.75) 100%);
+}
+/* 値札の切れ込み */
+.vl-tag {
+  clip-path: polygon(0 50%, 12px 0, 100% 0, 100% 100%, 12px 100%);
+}
+/* チケットの穴 */
+.vl-ticket {
+  mask:
+    radial-gradient(circle at 0 50%, transparent 9px, #000 9.5px) 0 0 / 100% 100% no-repeat,
+    radial-gradient(circle at 100% 50%, transparent 9px, #000 9.5px) 0 0 / 100% 100% no-repeat;
+  mask-composite: intersect;
+}
+
+/* リンクの下線（赤の太線） */
+.vl-link {
+  text-decoration: underline;
+  text-decoration-color: var(--vl-red);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.vl-link:hover {
+  color: var(--vl-red);
+}
+
+/* カード出現 */
+@keyframes vl-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.vl-rise {
+  animation: vl-rise 0.4s ease both;
+}
+
+/* スクロールバーを持つ横並びの帯 */
+.vl-scroll-x {
+  scrollbar-width: thin;
+  scrollbar-color: var(--vl-ink) transparent;
+}
+
+/* 本文の和文: 句点改行を尊重（自動折り返しは端末幅で） */
+.vl-prose p + p {
+  margin-top: 0.9em;
+}

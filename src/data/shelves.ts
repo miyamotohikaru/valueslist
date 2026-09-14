@@ -1,0 +1,74 @@
+import type { ShelfMeta, Trend, Category, Evidence } from "./types";
+
+export const shelves: ShelfMeta[] = [
+  {
+    id: 1,
+    no: "1",
+    name: "前近代製・廃番ゾーン",
+    en: "PRE-MODERN / DISCONTINUED",
+    lead: "中世・近世に普及し、明治の法令や戦後の制度改正で正式に廃番になった価値観。",
+    evidenceNote: "証拠＝法令・制度の廃止日。廃番の日付が公文書で特定できる標本を優先。",
+  },
+  {
+    id: 2,
+    no: "2",
+    name: "明治製造ゾーン",
+    en: "MADE IN MEIJI",
+    lead: "人間の本性に見えて、じつは明治・大正に製造された価値観。この店の奥の間。",
+    evidenceNote: "証拠＝翻訳語の初出・法令の施行日。",
+  },
+  {
+    id: 3,
+    no: "3",
+    name: "戦後製造・下落ゾーン",
+    en: "POSTWAR / FALLING",
+    lead: "高度成長期に標準装備になり、いま賛成率が下がりつづけている価値観。",
+    evidenceNote: "証拠＝世論調査・統計の推移（カーブ）。",
+  },
+  {
+    id: 4,
+    no: "4",
+    name: "現役・上昇ゾーン",
+    en: "CURRENT / RISING",
+    lead: "製造年が流行語・書籍・政策文書で日付特定できる、いちばん新しい在庫。",
+    evidenceNote: "証拠＝初出の記録（流行語大賞・憲章・書籍）。",
+  },
+  {
+    id: 5,
+    no: "5",
+    name: "長距離再入荷ゾーン",
+    en: "BACK IN STOCK",
+    lead: "中世・近世の在庫が、廃番から百年前後たって別の名前で再入荷したもの。初回普及・廃番・再入荷の三点を並べる。",
+    evidenceNote: "証拠＝元の商品の廃番日と、再入荷品の初出。",
+    virtual: true,
+  },
+  {
+    id: "meta",
+    no: "M",
+    name: "メタ標本",
+    en: "COUNTERFEIT",
+    lead: "「江戸の伝統」として製造された、本物の偽物。この一枚が店全体のコンセプトを回収する。",
+    evidenceNote: "証拠＝偽史検証。",
+  },
+];
+
+export const shelfById = (id: ShelfMeta["id"]) => shelves.find((s) => s.id === id)!;
+
+export const trendMeta: Record<Trend, { mark: string; ja: string; en: string; tone: string }> = {
+  up: { mark: "↑", ja: "上昇", en: "RISING", tone: "teal" },
+  steady: { mark: "→", ja: "安定", en: "STEADY", tone: "navy" },
+  down: { mark: "↘", ja: "下落", en: "FALLING", tone: "mustard" },
+  discontinued: { mark: "×", ja: "廃番", en: "DISCONTINUED", tone: "red" },
+  restocked: { mark: "↻", ja: "再入荷", en: "RESTOCKED", tone: "red" },
+};
+
+export const categoryMeta: Record<Category, { en: string }> = {
+  規範: { en: "NORM" },
+  人生観: { en: "LIFE VIEW" },
+  判断基準: { en: "CRITERION" },
+};
+
+export const evidenceMeta: Record<Evidence, { ja: string; en: string }> = {
+  law: { ja: "法令・初出型", en: "DATED BY DOCUMENT" },
+  curve: { ja: "カーブ型", en: "DATED BY CURVE" },
+};

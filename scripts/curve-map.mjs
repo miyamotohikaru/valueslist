@@ -122,6 +122,11 @@ export const CURVE_MAP = {
     note: "「羈絆」「脚絆」を含む発言も数に入っている。",
     marks: [{ year: 2011, text: "東日本大震災" }],
   },
+  学歴がすべて: {
+    key: "D9_university_enrollment",
+    series: ["大学（学部）進学率"],
+    note: "文部科学省が2025年12月に算定式を改め、過去にさかのぼって集計し直した値。",
+  },
   サステナブル: { research: true },
   リスキリング: {
     key: "D4_kokkai_リスキリング",

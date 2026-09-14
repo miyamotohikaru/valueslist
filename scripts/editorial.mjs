@@ -275,7 +275,6 @@ export const EDITS = {
     trend: "steady",
     evidence: "law",
     restocked: null,
-    noCurve: true,
     made: { label: "1960年代 「学歴社会」" },
     hitokoto: "「学歴不問」から30年あまり、大学進学率は2024年度に過去最高を更新した。",
     replace: [["body_ja.2", "消えたのではなく名前が変わった。", "言葉が変わっても、選抜は続いている。"]],

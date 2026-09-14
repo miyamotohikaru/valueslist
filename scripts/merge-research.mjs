@@ -7,12 +7,15 @@
  * 2. scripts/editorial.mjs の EDITS を当てる（置換前の文字列が見つからなければ止まる）
  * 3. scripts/curve-map.mjs でグラフを組む（datasets.json の全年次を優先）
  * 4. 棚順 → 叩き台の番号順に並べて NO.001〜 を振る
+ * 5. research/audit/*.json（独立した監査の修正案）を当てる
+ * 6. scripts/final-overrides.mjs を重ねる
  */
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { EXCLUDE, EDITS } from "./editorial.mjs";
 import { CURVE_MAP, KOKKAI_NOTE } from "./curve-map.mjs";
+import { FINAL, GLOBAL_REPLACE } from "./final-overrides.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const RESEARCH = path.join(ROOT, "research");
@@ -186,7 +189,69 @@ const values = items.map((it, i) => {
   };
 });
 
+// ── 監査の修正案 ───────────────────────────────────────
+const AUDIT_DIR = path.join(RESEARCH, "audit");
+// 監査のあとに別の修正で同じ結果になった（修正案が不要になった）もの
+const AUDIT_OBSOLETE = new Set(["持ち家こそ一人前|curve.series.0.name"]);
+const byName = new Map(values.map((v) => [v.name, v]));
+let auditApplied = 0;
+for (const f of fs.existsSync(AUDIT_DIR) ? fs.readdirSync(AUDIT_DIR).filter((x) => x.endsWith(".json")).sort() : []) {
+  for (const a of JSON.parse(fs.readFileSync(path.join(AUDIT_DIR, f), "utf8"))) {
+    if (a.field === "lineages.ts") continue; // 系譜は lineages.ts 側で直す
+    if (AUDIT_OBSOLETE.has(`${a.name}|${a.field}`)) continue;
+    const v = byName.get(a.name);
+    if (!v) {
+      problems.push(`[監査 ${f}] 「${a.name}」が掲載データにない`);
+      continue;
+    }
+    const cur = getAt(v, a.field);
+    if (typeof cur !== "string" || !cur.includes(a.from)) {
+      problems.push(`[監査 ${f}] ${a.name} ${a.field}: 置換前が見つからない「${String(a.from).slice(0, 30)}…」`);
+      continue;
+    }
+    setAt(v, a.field, cur.replace(a.from, a.to));
+    auditApplied++;
+  }
+}
+// 置換で空になった keyfacts や、句読点の重なりを掃除する
+for (const v of values) {
+  v.keyfacts = v.keyfacts.filter((k) => k.text && k.text.trim());
+  v.body = v.body.map((p) => p.replace(/\s{2,}/g, " ").trim()).filter(Boolean);
+}
+
+// ── 最終調整 ───────────────────────────────────────────
+for (const [name, e] of Object.entries(FINAL)) {
+  const v = byName.get(name);
+  if (!v) {
+    problems.push(`[最終調整] 「${name}」が掲載データにない`);
+    continue;
+  }
+  if (e.hitokoto) v.hitokoto = e.hitokoto;
+  for (const k of ["made", "discontinued", "restocked"]) if (e[k]) v[k] = { ...v[k], ...e[k] };
+  for (const [p, from, to] of e.replace ?? []) {
+    const cur = getAt(v, p);
+    if (typeof cur !== "string" || !cur.includes(from)) {
+      problems.push(`[最終調整] ${name} ${p}: 置換前が見つからない「${from.slice(0, 30)}…」`);
+      continue;
+    }
+    setAt(v, p, cur.replace(from, to));
+  }
+}
+// 研究用の注記の掃除（全フィールド。グラフの点は除く）
+const scrub = (o) => {
+  if (typeof o === "string") return GLOBAL_REPLACE.reduce((s, [a, b]) => s.split(a).join(b), o);
+  if (Array.isArray(o)) return o.map(scrub);
+  if (o && typeof o === "object") {
+    for (const k of Object.keys(o)) if (k !== "points") o[k] = scrub(o[k]);
+    return o;
+  }
+  return o;
+};
+values.forEach(scrub);
+for (const v of values) if (v.hitokoto.length > 42) problems.push(`[${v.name}] ひとことが長い（${v.hitokoto.length}字）`);
+
 fs.writeFileSync(OUT, JSON.stringify(values, null, 2) + "\n");
+console.log(`audit patches applied: ${auditApplied}`);
 console.log(`wrote ${values.length} items → ${path.relative(ROOT, OUT)}\n`);
 for (const v of values) {
   const c = v.curve ? `${v.curve.kind}:${v.curve.series.map((s) => s.points.length).join("+")}` : "-";

@@ -4,6 +4,7 @@ import IndexView from "@/components/IndexView";
 import ExplodedCard from "@/components/ExplodedCard";
 import TrendStamp from "@/components/TrendStamp";
 import type { Trend } from "@/data/types";
+import MobileBreak from "@/components/MobileBreak";
 
 const TRENDS: Trend[] = ["up", "steady", "down", "discontinued", "restocked"];
 
@@ -31,11 +32,11 @@ export default function Home() {
             明治の翻訳語や、高度成長期の新製品が少なくない。
             <br />
             逆に、いちばん新しく見える言葉が、
-            <br className="md:hidden" />
+            <MobileBreak />
             150年前の在庫の再出荷だったりする。
             <br />
             日本の価値観を、製造・廃番・再入荷の年で棚に並べ、
-            <br className="md:hidden" />
+            <MobileBreak />
             一つずつ出典で裏を取った。
           </p>
 

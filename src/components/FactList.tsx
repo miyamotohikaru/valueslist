@@ -1,5 +1,4 @@
 import type { Value } from "@/data/types";
-import { Ja } from "@/lib/ja";
 import { SourceText } from "@/lib/source";
 
 /**
@@ -49,9 +48,7 @@ export default function FactList({ v }: { v: Value }) {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="min-w-0">
-                  <p className="text-[14px] leading-[1.9] md:text-[15px]">
-                    <Ja text={k.text} />
-                  </p>
+                  <p className="vl-justify text-[14px] leading-[1.9] md:text-[15px]">{k.text}</p>
                   {k.source && (
                     <p className="font-type mt-1.5 text-[10px] leading-relaxed tracking-[0.06em] text-vl-ink-soft md:text-[11px]">
                       <Source s={k.source} />

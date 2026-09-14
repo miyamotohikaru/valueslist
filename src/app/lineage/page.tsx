@@ -4,6 +4,7 @@ import Link from "next/link";
 import { lineages } from "@/data/lineages";
 import LineageIndex from "@/components/LineageIndex";
 import LineageDiagram from "@/components/LineageDiagram";
+import MobileBreak from "@/components/MobileBreak";
 
 export const metadata: Metadata = {
   title: "系譜 | 価値観一覧図鑑",
@@ -23,7 +24,7 @@ export default function LineagePage() {
           </p>
           <p className="mt-6 text-[16px] font-bold leading-relaxed md:text-[19px]">
             廃番になった価値観は、
-            <br className="md:hidden" />
+            <MobileBreak />
             しばしば別の名前で再入荷する。
           </p>
           <p className="mt-3 text-[13px] leading-[1.9] text-vl-ink-soft md:text-[14px]">

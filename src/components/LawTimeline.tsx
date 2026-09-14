@@ -1,5 +1,4 @@
 import type { Value, DatePoint } from "@/data/types";
-import { Ja } from "@/lib/ja";
 import { SourceText } from "@/lib/source";
 
 /**
@@ -54,9 +53,7 @@ function Row({ kind, d }: { kind: Kind; d: DatePoint }) {
             )}
           </p>
           {d.fact && (
-            <p className="mt-1.5 text-[13px] leading-[1.8] md:text-[14px]">
-              <Ja text={d.fact} />
-            </p>
+            <p className="vl-justify mt-1.5 text-[13px] leading-[1.8] md:text-[14px]">{d.fact}</p>
           )}
           {d.source && (
             <p className="font-type mt-1.5 text-[10px] leading-relaxed tracking-[0.06em] text-vl-ink-soft md:text-[11px]">

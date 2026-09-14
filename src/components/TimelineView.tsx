@@ -5,9 +5,9 @@ import { values, byMadeYear } from "@/data/values";
 import { shelfById } from "@/data/shelves";
 import { lineageById, resolveNode, type Lineage, type LineageNode } from "@/data/lineages";
 import { scaleYear, ERAS, ERA_MIN, ERA_MAX } from "@/lib/timescale";
-import { Ja } from "@/lib/ja";
 import { SHELF_ACCENT } from "./ValueCard";
 import EraBars, { countByEra } from "./EraBars";
+import MobileBreak from "@/components/MobileBreak";
 
 /** 年の目盛（ヘッダーに数字で出す年） */
 const TICKS = [1200, 1600, 1868, 1945, 2000];
@@ -371,8 +371,8 @@ function LoopPanel({ lineage }: { lineage: Lineage }) {
               </Fragment>
             ))}
           </p>
-          <p className="mt-3 text-[13px] leading-[1.9] text-vl-ink-soft md:text-[14px]">
-            <Ja text={lineage.lead} />
+          <p className="vl-justify mt-3 max-w-[48em] text-[13px] leading-[1.9] text-vl-ink-soft md:text-[14px]">
+            {lineage.lead}
           </p>
           <RingH nodes={nodes} />
           <RingV nodes={nodes} />
@@ -442,7 +442,7 @@ export default function TimelineView() {
           価値観を、製造年の順に並べる。
           <br />
           いちばん古い在庫と、いちばん新しい在庫は、
-          <br className="md:hidden" />
+          <MobileBreak />
           しばしば同じ商品だ。
         </p>
         <p className="font-type mt-5 text-[11px] tracking-[0.22em] text-vl-ink-soft">
@@ -466,7 +466,7 @@ export default function TimelineView() {
             出荷がいちばん多いのは、{topEra.ja}の工場。
             <br />
             「昔からある」に見える在庫ほど、
-            <br className="md:hidden" />
+            <MobileBreak />
             新しい工場の出荷だったりする。
           </p>
         </div>

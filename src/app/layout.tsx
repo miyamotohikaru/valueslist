@@ -10,6 +10,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TabBar from "@/components/TabBar";
+import { SITE_URL, OG_IMAGE } from "@/lib/site";
 import "./globals.css";
 
 const anton = Anton({ weight: "400", subsets: ["latin"], variable: "--font-anton" });
@@ -27,9 +28,9 @@ const zenKaku = Zen_Kaku_Gothic_New({
   variable: "--font-zen-kaku",
 });
 
-const SITE_URL = "https://valueslist.vercel.app";
 const DESCRIPTION =
-  "その価値観には、製造年がある。日本の価値観を、製造・廃番・再入荷の年で棚に並べる図鑑。";
+  "その価値観には、製造年がある。日本の価値観を、製造・廃番・再入荷の年で棚に並べ、一次資料で裏を取った図鑑。";
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -43,6 +44,13 @@ export const metadata: Metadata = {
     siteName: "価値観一覧図鑑",
     locale: "ja_JP",
     type: "website",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "価値観一覧図鑑" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "価値観一覧図鑑",
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fragment } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { OG_IMAGE, SITE_NAME } from "@/lib/site";
 import type { Value } from "@/data/types";
 import { values, byNo, byShelf, prevNext } from "@/data/values";
 import { shelfById } from "@/data/shelves";
@@ -14,6 +15,7 @@ import CurveChart from "@/components/CurveChart";
 import LawTimeline from "@/components/LawTimeline";
 import FactList from "@/components/FactList";
 import LineageStrip from "@/components/LineageStrip";
+import MobileBreak from "@/components/MobileBreak";
 
 type Params = { params: Promise<{ no: string }> };
 
@@ -31,13 +33,15 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: `${v.name} | 価値観一覧図鑑`,
     description: v.hitokoto,
     openGraph: {
-      title: "価値観一覧図鑑",
+      title: SITE_NAME,
       description: v.hitokoto,
       url: `/values/${v.no}`,
-      siteName: "価値観一覧図鑑",
+      siteName: SITE_NAME,
       locale: "ja_JP",
       type: "article",
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: SITE_NAME }],
     },
+    twitter: { card: "summary_large_image", title: SITE_NAME, description: v.hitokoto, images: [OG_IMAGE] },
   };
 }
 
@@ -78,7 +82,7 @@ function Lead({ text }: { text: string }) {
             {parts.map((p, j) => (
               <Fragment key={j}>
                 {p}
-                {j < parts.length - 1 && <br className="md:hidden" />}
+                {j < parts.length - 1 && <MobileBreak />}
               </Fragment>
             ))}
             {i < sentences.length - 1 && <br />}
@@ -290,13 +294,13 @@ export default async function ValuePage({ params }: Params) {
       {/* 5. 本文 */}
       <section className="mt-14 md:mt-20" aria-labelledby="description">
         <SectionHead id="description" en="DESCRIPTION" ja="商品説明" right={`${v.body.length} PARAGRAPHS`} />
-        <div className="vl-prose mt-6 max-w-[44rem] text-[15px] leading-[2] md:text-[16px]">
+        <div className="vl-prose vl-justify mt-6 max-w-[44rem] text-[15px] leading-[2] md:text-[16px]">
           {v.body.map((p, i) => (
             <p key={i}>
               <span className="font-type mr-1.5 text-[0.85em] font-bold text-vl-red" aria-hidden>
                 ¶
               </span>
-              <Ja text={p} />
+              {p}
             </p>
           ))}
         </div>

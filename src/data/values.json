@@ -2013,7 +2013,8 @@
       "marks": [
         {
           "year": 2022,
-          "text": "郵送法に変更"
+          "text": "郵送法に変更",
+          "break": true
         }
       ]
     },
@@ -3564,7 +3565,7 @@
       "kind": "bar",
       "title": "国会会議録における「根性」を含む発言数（「島国根性」など根性論以外の用法も含む、〜2024年）",
       "unit": "件",
-      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech — 取得スクリプト kokkai.mjs、生データ kokkai_results.json",
+      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech",
       "note": "国会会議録検索システムで、その語を含む発言の数を年ごとに数えたもの。直近年は会議録の収録が遅れるため2024年までを載せる。",
       "series": [
         {
@@ -4003,7 +4004,8 @@
       "marks": [
         {
           "year": 2020,
-          "text": "設問を4択に変更"
+          "text": "設問を4択に変更",
+          "break": true
         }
       ]
     },
@@ -4324,7 +4326,8 @@
       "marks": [
         {
           "year": 2020,
-          "text": "意識調査が郵送法に"
+          "text": "意識調査が郵送法に",
+          "break": true
         }
       ]
     },
@@ -4755,7 +4758,7 @@
       "kind": "bar",
       "title": "国会会議録における「自己責任」を含む発言数（〜2024年）",
       "unit": "件",
-      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech — 取得スクリプト kokkai.mjs、生データ kokkai_results.json",
+      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech",
       "note": "国会会議録検索システムで、その語を含む発言の数を年ごとに数えたもの。直近年は会議録の収録が遅れるため2024年までを載せる。",
       "series": [
         {
@@ -5198,7 +5201,7 @@
       "kind": "bar",
       "title": "国会会議録における「ワーク・ライフ・バランス」を含む発言数（〜2024年）",
       "unit": "件",
-      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech — 取得スクリプト kokkai.mjs、生データ kokkai_results.json",
+      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech",
       "note": "国会会議録検索システムで、その語を含む発言の数を年ごとに数えたもの。直近年は会議録の収録が遅れるため2024年までを載せる。",
       "series": [
         {
@@ -5392,7 +5395,7 @@
       "kind": "bar",
       "title": "国会会議録における「多様性」を含む発言数（〜2024年）",
       "unit": "件",
-      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech — 取得スクリプト kokkai.mjs、生データ kokkai_results.json",
+      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech",
       "note": "国会会議録検索システムで、その語を含む発言の数を年ごとに数えたもの。直近年は会議録の収録が遅れるため2024年までを載せる。 「生物多様性」を含む発言も数に入っている。",
       "series": [
         {
@@ -5798,7 +5801,7 @@
       "kind": "bar",
       "title": "国会会議録における「絆」を含む発言数（〜2024年）",
       "unit": "件",
-      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech — 取得スクリプト kokkai.mjs、生データ kokkai_results.json",
+      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech",
       "note": "国会会議録検索システムで、その語を含む発言の数を年ごとに数えたもの。直近年は会議録の収録が遅れるため2024年までを載せる。 「羈絆」「脚絆」「絆創膏」や、会議録の誤字（「新絆線」など）を含む発言も数に入っている。",
       "series": [
         {
@@ -6732,7 +6735,7 @@
       "kind": "bar",
       "title": "国会会議録における「リスキリング」を含む発言数（〜2024年）",
       "unit": "件",
-      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech — 取得スクリプト kokkai.mjs、生データ kokkai_results.json",
+      "source": "国会会議録検索システム API（国立国会図書館）https://kokkai.ndl.go.jp/api/speech",
       "note": "国会会議録検索システムで、その語を含む発言の数を年ごとに数えたもの。直近年は会議録の収録が遅れるため2024年までを載せる。",
       "series": [
         {

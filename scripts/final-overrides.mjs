@@ -45,5 +45,6 @@ export const GLOBAL_REPLACE = [
   ["賃金慣行そのものの起点（戦後の電産型賃金など）は今回未検証。", ""],
   ["（any=語, maximumRecords=1 で年別に走査）", ""],
   ["（年別ヒット数）", "（年別の発言数）"],
+  [" — 取得スクリプト kokkai.mjs、生データ kokkai_results.json", ""],
 ];
 

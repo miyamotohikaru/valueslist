@@ -23,8 +23,11 @@ export type Curve = {
   source: string;
   note?: string;
   series: Series[];
-  /** 図に打つ注記（年 → 短い文） */
-  marks?: { year: number; text: string }[];
+  /**
+   * 図に打つ注記（年 → 短い文）。
+   * break: true のとき、その年の前で線を切って点線でつなぐ（調査方法の変更などで前後を比べられない）
+   */
+  marks?: { year: number; text: string; break?: boolean }[];
 };
 
 export type Value = {

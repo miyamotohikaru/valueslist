@@ -36,7 +36,7 @@ export const CURVE_MAP = {
   "夫は外で働き、妻は家庭を守る": {
     key: "D1_gender_role",
     series: ["賛成計", "反対計"],
-    marks: [{ year: 2022, text: "郵送法に変更" }],
+    marks: [{ year: 2022, text: "郵送法に変更", break: true }],
     extra: [
       {
         key: "D3_households",
@@ -76,14 +76,14 @@ export const CURVE_MAP = {
   },
   飲みニケーション: {
     research: true,
-    marks: [{ year: 2020, text: "設問を4択に変更" }],
+    marks: [{ year: 2020, text: "設問を4択に変更", break: true }],
   },
   持ち家こそ一人前: {
     research: true,
     seriesName: "土地は有利な資産だと思う",
     extraSeries: { key: "D8_homeownership", series: ["持ち家率"] },
     title: "「土地は預貯金や株式より有利な資産だ」と思う人と、持ち家率",
-    marks: [{ year: 2020, text: "意識調査が郵送法に" }],
+    marks: [{ year: 2020, text: "意識調査が郵送法に", break: true }],
   },
   自己責任: {
     key: "D4_kokkai_自己責任",

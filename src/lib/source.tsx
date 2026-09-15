@@ -5,7 +5,7 @@ import { Fragment } from "react";
  * - URL はドメイン名だけの短いリンクにする（全文は href に残る）
  * - compact: 図の出典欄など狭い場所用。URL を落として資料名だけにする（名前がないときはドメイン名）
  */
-const URL_RE = /https?:\/\/[^\s）)」』，,、；;<>]+/g;
+const URL_RE = /https?:\/\/[^\s（(「『）)」』，,、；;<>]+/g;
 
 export function splitSources(s: string): string[] {
   return s

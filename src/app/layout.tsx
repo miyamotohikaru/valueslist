@@ -61,7 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         className={`${anton.variable} ${alfa.variable} ${yellowtail.variable} ${courier.variable} ${dela.variable} ${zenKaku.variable} vl-grain`}
       >
         <Header />
-        <main className="pb-24 md:pb-0">{children}</main>
+        <main className="pb-[calc(64px+env(safe-area-inset-bottom))] md:pb-0">{children}</main>
         <Footer />
         <TabBar />
       </body>

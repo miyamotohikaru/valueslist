@@ -49,9 +49,9 @@ export default function NotFound() {
 
             <Link
               href="/"
-              className="vl-offset-sm font-type mt-8 inline-flex items-center gap-3 border-2 border-vl-ink bg-vl-ink px-5 py-3 text-[12px] font-bold tracking-[0.2em] text-vl-paper hover:bg-vl-red"
+              className="vl-offset-sm mt-8 inline-flex items-baseline gap-3 border-2 border-vl-ink bg-vl-ink px-5 py-3 text-[14px] font-bold text-vl-paper hover:bg-vl-red"
             >
-              索引へ戻る <span className="font-display-en text-[13px] tracking-[0.2em]">INDEX →</span>
+              索引へ戻る <span className="font-display-en text-[14px] tracking-[0.12em]">INDEX →</span>
             </Link>
           </div>
 

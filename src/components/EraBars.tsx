@@ -2,7 +2,7 @@ import type { Value } from "@/data/types";
 import { ERAS, eraOf } from "@/lib/timescale";
 
 /**
- * FIG.2 製造工場別 出荷数。
+ * FIG.1 製造工場別 出荷数。
  * 時代（＝工場）ごとに、そこで製造された価値観の数を横向きの棒で描く。
  * 棚の色は使わず、赤一色＋クリーム。数字は Anton、ラベルは Courier。
  */
@@ -14,11 +14,11 @@ const COURIER = "var(--font-courier), monospace";
 const ANTON = "var(--font-anton), Impact, sans-serif";
 
 const W = 360; // viewBox の幅（携帯でほぼ等倍になる）
-const LABEL_W = 112; // 左のラベル欄
+const LABEL_W = 118; // 左のラベル欄
 const NUM_W = 44; // 右の数字欄
-const ROW = 40;
+const ROW = 46;
 const TOP = 14;
-const BAR_H = 20;
+const BAR_H = 22;
 
 /** 時代ごとの製造数（made の無いものは数えない） */
 export function countByEra(items: Value[]) {
@@ -33,17 +33,22 @@ export default function EraBars({ items, className = "" }: { items: Value[]; cla
   const barMax = W - LABEL_W - NUM_W;
   const x = (n: number) => LABEL_W + (n / gridMax) * barMax;
   const baseY = TOP + ROW * ERAS.length;
-  const H = baseY + 30;
+  const H = baseY + 36;
   const ticks: number[] = [];
   for (let t = 0; t <= gridMax; t += step) ticks.push(t);
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className={className} role="img" aria-label="製造時代別の出荷数">
+      <defs>
+        <pattern id="era-dots" width="5" height="5" patternUnits="userSpaceOnUse">
+          <circle cx="2.5" cy="2.5" r="1" fill="var(--vl-red-deep)" />
+        </pattern>
+      </defs>
       {/* 目盛（点線） */}
       {ticks.map((t) => (
         <g key={t}>
           <line x1={x(t)} y1={TOP - 4} x2={x(t)} y2={baseY} stroke={LINE} strokeWidth="0.8" strokeDasharray="2 2.5" />
-          <text x={x(t)} y={baseY + 11} textAnchor="middle" fontSize="7.5" fill={SOFT} fontFamily={COURIER}>
+          <text x={x(t)} y={baseY + 15} textAnchor="middle" fontSize="11" fill={INK} fontFamily={COURIER}>
             {t}
           </text>
         </g>
@@ -55,17 +60,17 @@ export default function EraBars({ items, className = "" }: { items: Value[]; cla
         const w = (n / gridMax) * barMax;
         return (
           <g key={e.from}>
-            <text x={0} y={y + 9} fontSize="11" fontWeight="700" fill={INK} fontFamily={COURIER}>
+            <text x={0} y={y + 11} fontSize="14" fontWeight="700" fill={INK} fontFamily="var(--font-zen-kaku), sans-serif">
               {e.ja}
             </text>
-            <text x={0} y={y + 19.5} fontSize="7.5" fill={SOFT} fontFamily={COURIER} letterSpacing="0.5">
-              FACTORY {i + 1} · {e.from}–{e.to}
+            <text x={0} y={y + 25} fontSize="11" fill={SOFT} fontFamily={COURIER}>
+              {e.from}–{e.to === 2030 ? "" : e.to}
             </text>
             {n > 0 && (
               <>
-                {/* ズレ影 */}
-                <rect x={LABEL_W + 3} y={y + 3} width={w} height={BAR_H} fill={INK} />
+                {/* 棒は赤の面に網点を重ねる（影は付けない＝長さを飾りで変えない） */}
                 <rect x={LABEL_W} y={y} width={w} height={BAR_H} fill={RED} stroke={INK} strokeWidth="1.5" />
+                <rect x={LABEL_W} y={y} width={w} height={BAR_H} fill="url(#era-dots)" />
               </>
             )}
             <text
@@ -88,12 +93,12 @@ export default function EraBars({ items, className = "" }: { items: Value[]; cla
         x={W}
         y={H - 3}
         textAnchor="end"
-        fontSize="7"
+        fontSize="11"
         fill={RED}
         fontFamily={COURIER}
-        letterSpacing="1.5"
+        letterSpacing="0.8"
       >
-        FIG.2 SHIPMENTS BY FACTORY
+        FIG.1 SHIPMENTS BY FACTORY
       </text>
     </svg>
   );

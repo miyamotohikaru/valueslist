@@ -28,7 +28,7 @@ export default function Header() {
           </span>
           <span className="flex flex-col leading-none">
             <span className="font-display-ja text-[17px] md:text-[19px]">価値観一覧図鑑</span>
-            <span className="font-type mt-1 text-[9px] tracking-[0.28em] text-vl-ink-soft">
+            <span className="font-type mt-1 text-[11px] tracking-[0.14em] text-vl-ink-soft">
               VALUES CATALOG · {stats.total} ITEMS
             </span>
           </span>
@@ -46,7 +46,7 @@ export default function Header() {
               >
                 <span className="text-[14px] font-bold tracking-[0.2em]">{n.ja}</span>
                 <span
-                  className={`font-display-en mt-1 text-[10px] tracking-[0.18em] ${
+                  className={`font-display-en mt-1 text-[11px] tracking-[0.14em] ${
                     active ? "border-b-2 border-vl-red" : "text-vl-ink-soft"
                   }`}
                 >

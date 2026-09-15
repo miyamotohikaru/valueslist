@@ -18,7 +18,10 @@ export type Series = { name: string; points: [number, number][] };
 
 export type Curve = {
   kind?: "line" | "bar"; // 省略時は line。年ごとの件数など密なデータは bar
+  /** 見出し。◆ は携帯だけの改行 */
   title: string;
+  /** 小見出し（見出しの括弧書き・定義）。◆◇ の改行記号を含むことがある */
+  subtitle?: string;
   unit: string;
   source: string;
   note?: string;

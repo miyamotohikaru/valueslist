@@ -78,18 +78,6 @@ function CurveIcon({ className = "" }: { className?: string }) {
       {pts.map(([x, y]) => (
         <circle key={x} cx={x} cy={y} r="3" fill={PAPER} stroke={RED} strokeWidth="2" />
       ))}
-      <text x="30" y="14" fontSize="8" fontWeight="700" fontFamily={MONO} fill={RED}>
-        72.6
-      </text>
-      <text x="100" y="60" textAnchor="end" fontSize="8" fontWeight="700" fontFamily={MONO} fill={RED}>
-        33.5
-      </text>
-      <text x="22" y="93" fontSize="7" fontFamily={MONO} fill={INK} opacity="0.65" letterSpacing="0.5">
-        1979
-      </text>
-      <text x="108" y="93" textAnchor="end" fontSize="7" fontFamily={MONO} fill={INK} opacity="0.65" letterSpacing="0.5">
-        2022
-      </text>
     </svg>
   );
 }
@@ -111,16 +99,16 @@ function Panel({ ja, en, icon, head, lead, specimenNo, specimenName, specimenBig
     <article className="vl-offset flex flex-col border-2 border-vl-ink bg-vl-card">
       {/* 帯 */}
       <div className="flex items-center justify-between gap-3 bg-vl-ink px-4 py-2 text-vl-paper">
-        <span className="font-type text-[11px] font-bold tracking-[0.2em]">{ja}</span>
-        <span className="font-display-en text-[12px] tracking-[0.18em] text-vl-mustard">{en}</span>
+        <span className="text-[14px] font-bold">{ja}</span>
+        <span className="font-display-en text-[13px] tracking-[0.12em] text-vl-mustard">{en}</span>
       </div>
 
       {/* 図と説明 */}
-      <div className="grid grid-cols-[92px_1fr] items-start gap-4 px-4 pt-5 pb-4 md:grid-cols-[108px_1fr] md:px-5">
+      <div className="grid grid-cols-[64px_1fr] items-start gap-4 px-4 pt-5 pb-4 md:grid-cols-[108px_1fr] md:px-5">
         <div className="w-full">{icon}</div>
         <div>
           <p className="font-display-ja text-[20px] leading-tight md:text-[22px]">{head}</p>
-          <p className="mt-2 text-[13px] leading-[1.9] text-vl-ink-soft">
+          <p className="mt-2 text-[14px] leading-[1.9]">
             <Ja text={lead} />
           </p>
         </div>
@@ -128,18 +116,20 @@ function Panel({ ja, en, icon, head, lead, specimenNo, specimenName, specimenBig
 
       {/* 標本 */}
       <div className="mx-4 mb-4 mt-auto border-2 border-dashed border-vl-line px-4 py-3 md:mx-5 md:mb-5">
-        <p className="font-type flex flex-wrap items-baseline gap-x-2 text-[9px] tracking-[0.3em] text-vl-ink-soft">
-          <span className="whitespace-nowrap">SPECIMEN · NO.{specimenNo}</span>
-          <span className="font-bold text-vl-ink">{specimenName}</span>
+        <p className="flex flex-wrap items-baseline gap-x-2 text-[12px]">
+          <span className="font-type whitespace-nowrap font-bold tracking-[0.1em] text-vl-red">SPECIMEN · NO.{specimenNo}</span>
+          <span className="font-bold">{specimenName}</span>
         </p>
         <p className="font-display-en mt-1 text-[30px] leading-none tracking-[0.02em] md:text-[34px]">{specimenBig}</p>
-        <p className="font-type mt-2 text-[11px] font-bold leading-[1.6] tracking-[0.06em]">{specimenNote}</p>
+        <p className="mt-2 text-[13px] font-bold leading-[1.6]">
+          <Ja text={specimenNote} />
+        </p>
       </div>
     </article>
   );
 }
 
-export default function EvidenceTwo({ className = "" }: { className?: string }) {
+export default function EvidenceTwo({ className = "", fig = "FIG.2" }: { className?: string; fig?: string }) {
   return (
     <div className={className}>
       <div className="grid gap-8 md:grid-cols-2 md:gap-6">
@@ -148,7 +138,7 @@ export default function EvidenceTwo({ className = "" }: { className?: string }) 
           en={evidenceMeta.law.en}
           icon={<StampIcon className="w-full" />}
           head="「点」で語る"
-          lead="禁止令の日付、翻訳語の初出、制度の廃止年。年月日まで特定できる一点で、製造か廃番の年を決める。"
+          lead="禁止令の日付、翻訳語の初出、◆制度の廃止年。年月日まで特定できる一点で、◆製造か廃番の年を決める。"
           specimenNo={noOf("仇討ち")}
           specimenName="仇討ち"
           specimenBig="1873.02.07"
@@ -159,28 +149,28 @@ export default function EvidenceTwo({ className = "" }: { className?: string }) 
           en={evidenceMeta.curve.en}
           icon={<CurveIcon className="w-full" />}
           head="「線」で語る"
-          lead="世論調査の賛成率、統計の推移。実際の数値を結んだ線で、上昇か下落かを決める。"
+          lead="世論調査の賛成率、統計の推移。実際の数値を結んだ線で、◆上昇か下落かを決める。"
           specimenNo={noOf("夫は外で働き、妻は家庭を守る")}
           specimenName="夫は外で働き、妻は家庭を守る"
           specimenBig={
             <>
               72.6<span className="text-[0.55em]">%</span>
               <span className="mx-2 text-vl-red">→</span>
-              33.5<span className="text-[0.55em]">%</span>
+              33.1<span className="text-[0.55em]">%</span>
             </>
           }
-          specimenNote="賛成率 1979 → 2022〔総理府・内閣府 世論調査〕"
+          specimenNote="賛成の計 1979 → 2024◆〔総理府・内閣府の世論調査〕。◇2022年から郵送調査に変わったため、◆前後は単純に比べられない。"
         />
       </div>
 
       {/* 注記 */}
       <div className="mt-6 flex flex-col gap-2 border-t-2 border-vl-ink pt-3 md:flex-row md:items-baseline md:justify-between">
-        <p className="text-[13px] leading-[1.9]">
-          前近代側に賛成率の欄を置くと嘘になるので、
+        <p className="text-[14px] leading-[1.9]">
+          前近代の項目に賛成率の欄を置くと嘘になるので、
           <br />
-          カードの形式を分けた。
+          項目ページの図を、二種に分けた。
         </p>
-        <p className="font-type shrink-0 text-[9px] tracking-[0.3em] text-vl-red">FIG.2 TWO KINDS OF EVIDENCE</p>
+        <p className="font-type shrink-0 text-[12px] font-bold tracking-[0.1em] text-vl-red">{fig} TWO KINDS OF EVIDENCE</p>
       </div>
     </div>
   );

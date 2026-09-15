@@ -1,46 +1,48 @@
 /**
  * 「価値観の解剖図」— 一枚のカードを層に分解して、何が書いてあるかを示す分解図。
- * サンドイッチの分解図のように、左に札、右に浮いた層。赤の線画＋クリーム。
+ * サンドイッチの分解図のように、左に札、右に浮いた層。赤一色の線画と網点の面。
  */
 const RED = "var(--vl-red)";
 const INK = "var(--vl-ink)";
 const PAPER = "var(--vl-card)";
 
-type Layer = { label: string; en: string; text: string; h?: number; gap?: number; dots?: boolean };
+type Layer = { label: string; en: string; text: string; h: number; face: "plain" | "dots" | "hatch" };
 
 const LAYERS: Layer[] = [
-  { label: "傾向", en: "TREND", text: "× 廃番", h: 10 },
-  { label: "商品名", en: "NAME", text: "仇討ち", h: 26 },
-  { label: "製造", en: "MFD.", text: "近世 届出制で公認", h: 14 },
-  { label: "廃番", en: "DISC.", text: "1873.02.07 太政官布告第37号", h: 14, dots: true },
-  { label: "再入荷", en: "RESTOCK", text: "—", h: 12 },
-  { label: "証拠", en: "EVIDENCE", text: "法令・初出型／カーブ型", h: 18, dots: true },
+  { label: "傾向", en: "TREND", text: "× 廃番", h: 12, face: "plain" },
+  { label: "商品名", en: "NAME", text: "仇討ち", h: 28, face: "dots" },
+  { label: "製造", en: "MFD.", text: "近世 届出制で公認", h: 14, face: "plain" },
+  { label: "廃番", en: "DISC.", text: "1873.02.07 太政官布告第37号", h: 14, face: "hatch" },
+  { label: "証拠", en: "EVIDENCE", text: "法令・初出型", h: 18, face: "dots" },
 ];
 
-const W = 200; // 層の幅
-const SK = 46; // 奥行きの横ずれ
-const DP = 22; // 奥行きの縦
-const X0 = 150; // 層の左端
-const GAP = 22; // 層と層のすきま
+const W = 240; // 層の幅
+const SK = 50; // 奥行きの横ずれ
+const DP = 26; // 奥行きの縦
+const X0 = 138; // 層の左端
+const GAP = 20; // 層と層のすきま
 
 export default function ExplodedCard({ className = "" }: { className?: string }) {
-  let y = 24;
+  let y = 14;
   const rows = LAYERS.map((l) => {
-    const h = l.h ?? 14;
-    const r = { ...l, y, h };
-    y += DP + h + GAP;
+    const r = { ...l, y };
+    y += DP + l.h + GAP;
     return r;
   });
-  const H = y + 10;
+  const H = y + 28;
+  const VW = X0 + W + SK + 8;
 
   return (
-    <svg viewBox={`0 0 ${X0 + W + SK + 24} ${H}`} className={className} role="img" aria-label="価値観カードの分解図">
+    <svg viewBox={`0 0 ${VW} ${H}`} className={className} role="img" aria-label="価値観カードの分解図">
       <defs>
-        <pattern id="ex-dots" width="5" height="5" patternUnits="userSpaceOnUse">
-          <circle cx="2.5" cy="2.5" r="1.1" fill={RED} opacity="0.55" />
+        <pattern id="ex-dots" width="6" height="6" patternUnits="userSpaceOnUse">
+          <circle cx="3" cy="3" r="1.4" fill={RED} opacity="0.7" />
         </pattern>
-        <pattern id="ex-lines" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-          <rect width="2" height="6" fill={RED} opacity="0.35" />
+        <pattern id="ex-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="2.2" height="6" fill={RED} opacity="0.55" />
+        </pattern>
+        <pattern id="ex-dots-top" width="7" height="7" patternUnits="userSpaceOnUse">
+          <circle cx="3.5" cy="3.5" r="1" fill={RED} opacity="0.35" />
         </pattern>
       </defs>
       {rows.map((r, i) => {
@@ -48,44 +50,50 @@ export default function ExplodedCard({ className = "" }: { className?: string })
         const top = `${x + SK},${r.y} ${x + SK + W},${r.y} ${x + W},${r.y + DP} ${x},${r.y + DP}`;
         const front = `${x},${r.y + DP} ${x + W},${r.y + DP} ${x + W},${r.y + DP + r.h} ${x},${r.y + DP + r.h}`;
         const side = `${x + W},${r.y + DP} ${x + SK + W},${r.y} ${x + SK + W},${r.y + r.h} ${x + W},${r.y + DP + r.h}`;
-        const cy = r.y + DP / 2 + 2;
+        const cy = r.y + DP / 2 + 3;
+        const faceFill = r.face === "dots" ? "url(#ex-dots)" : r.face === "hatch" ? "url(#ex-hatch)" : RED;
+        const isName = r.label === "商品名";
         return (
           <g key={i}>
             {/* 引き出し線と札 */}
-            <line x1={112} y1={cy} x2={x + 8} y2={r.y + DP - 4} stroke={RED} strokeWidth="1.4" strokeDasharray="3 3" />
-            <circle cx={x + 8} cy={r.y + DP - 4} r="2.4" fill={RED} />
-            <rect x={8} y={cy - 11} width={104} height={22} rx="11" fill={RED} />
-            <text x={60} y={cy + 4} textAnchor="middle" fontSize="11" fontWeight="700" fill={PAPER} fontFamily="var(--font-zen-kaku), sans-serif">
+            <line x1={120} y1={cy} x2={x + 10} y2={r.y + DP - 5} stroke={RED} strokeWidth="1.8" strokeDasharray="4 3" />
+            <circle cx={x + 10} cy={r.y + DP - 5} r="3" fill={RED} />
+            {/* 値札（左に紐の穴、右が矢印の形） */}
+            <polygon
+              points={`4,${cy - 14} 104,${cy - 14} 118,${cy} 104,${cy + 14} 4,${cy + 14}`}
+              fill={RED}
+              stroke={INK}
+              strokeWidth="1.6"
+              strokeLinejoin="round"
+            />
+            <circle cx={15} cy={cy} r="3" fill={PAPER} stroke={INK} strokeWidth="1.2" />
+            <text x={62} y={cy + 5.5} textAnchor="middle" fontSize="15" fontWeight="700" fill={PAPER} fontFamily="var(--font-zen-kaku), sans-serif">
               {r.label}
-              <tspan fontSize="8" fontFamily="var(--font-courier), monospace" dx="5" dy="0">
-                {r.en}
-              </tspan>
             </text>
-            {/* 層 */}
-            <polygon points={side} fill={r.dots ? "url(#ex-lines)" : PAPER} stroke={RED} strokeWidth="2" strokeLinejoin="round" />
-            <polygon points={front} fill={r.dots ? "url(#ex-dots)" : PAPER} stroke={RED} strokeWidth="2" strokeLinejoin="round" />
-            <polygon points={top} fill={PAPER} stroke={RED} strokeWidth="2" strokeLinejoin="round" />
+            {/* 層（側面・前面・天面） */}
+            <polygon points={side} fill="url(#ex-hatch)" stroke={RED} strokeWidth="2.2" strokeLinejoin="round" />
+            <polygon points={front} fill={faceFill} opacity={r.face === "plain" ? 0.9 : 1} stroke={RED} strokeWidth="2.2" strokeLinejoin="round" />
+            <polygon points={top} fill={PAPER} stroke={RED} strokeWidth="2.2" strokeLinejoin="round" />
+            <polygon points={top} fill="url(#ex-dots-top)" />
             <text
               x={x + SK / 2 + W / 2}
-              y={r.y + DP / 2 + 4}
+              y={r.y + DP / 2 + (isName ? 7 : 4.5)}
               textAnchor="middle"
-              fontSize={r.label === "商品名" ? 15 : 10}
+              fontSize={isName ? 20 : 14}
               fontWeight="700"
               fill={INK}
-              fontFamily={r.label === "商品名" ? "var(--font-dela), sans-serif" : "var(--font-courier), monospace"}
+              fontFamily={isName ? "var(--font-dela), sans-serif" : "var(--font-zen-kaku), sans-serif"}
             >
               {r.text}
             </text>
           </g>
         );
       })}
-      {/* 台座 */}
-      <g>
-        <line x1={X0 - 10} y1={H - 6} x2={X0 + W + SK + 10} y2={H - 6} stroke={RED} strokeWidth="2" />
-        <text x={X0 + W + SK + 10} y={H - 12} textAnchor="end" fontSize="8" fill={RED} fontFamily="var(--font-courier), monospace" letterSpacing="1.5">
-          FIG.1 ANATOMY OF A VALUE
-        </text>
-      </g>
+      {/* 台座と図番号 */}
+      <line x1={X0 - 6} y1={H - 16} x2={X0 + W + SK + 4} y2={H - 16} stroke={RED} strokeWidth="2.2" />
+      <text x={X0 + W + SK + 4} y={H - 1} textAnchor="end" fontSize="13" fontWeight="700" fill={RED} fontFamily="var(--font-courier), monospace" letterSpacing="0.8">
+        FIG.1 ANATOMY OF A VALUE
+      </text>
     </svg>
   );
 }

@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Fragment } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { OG_IMAGE, SITE_NAME } from "@/lib/site";
-import type { Value } from "@/data/types";
+import type { Curve, Value } from "@/data/types";
 import { values, byNo, byShelf, prevNext } from "@/data/values";
 import { shelfById } from "@/data/shelves";
-import { Ja } from "@/lib/ja";
-import ValueCard, { SHELF_ACCENT } from "@/components/ValueCard";
+import ValueCard, { SHELF_ACCENT, nameLines } from "@/components/ValueCard";
 import SpanStrip from "@/components/SpanStrip";
 import TrendStamp from "@/components/TrendStamp";
 import DetailSpec from "@/components/DetailSpec";
@@ -15,7 +13,8 @@ import CurveChart from "@/components/CurveChart";
 import LawTimeline from "@/components/LawTimeline";
 import FactList from "@/components/FactList";
 import LineageStrip from "@/components/LineageStrip";
-import MobileBreak from "@/components/MobileBreak";
+import FitLines from "@/components/FitLines";
+import TypeLabel from "@/components/TypeLabel";
 
 type Params = { params: Promise<{ no: string }> };
 
@@ -45,21 +44,15 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-/** 商品名を読点で 2 行に分け、長いほうの行の文字数で大きさを決める */
-function titleLines(name: string): string[] {
-  if (name.length <= 8) return [name];
-  const parts = name.split(/(?<=[、，,])/).filter(Boolean);
-  return parts.length > 1 ? parts : [name];
-}
-
+/** 見出しの大きさ。最長の行の文字数で決める */
 function titleSize(lines: string[]): string {
-  const n = Math.max(...lines.map((l) => l.length));
-  if (n <= 3) return "clamp(64px, 20vw, 120px)";
-  if (n <= 4) return "clamp(56px, 16vw, 104px)";
-  if (n <= 6) return "clamp(44px, 12.5vw, 84px)";
-  if (n <= 8) return "clamp(36px, 10vw, 66px)";
-  if (n <= 10) return "clamp(30px, 8vw, 54px)";
-  return "clamp(26px, 6.8vw, 46px)";
+  const n = Math.max(...lines.map((l) => [...l].reduce((a, ch) => a + (/[\x20-\x7e]/.test(ch) ? 0.55 : 1), 0)));
+  if (n <= 3) return "clamp(64px, 19vw, 128px)";
+  if (n <= 4) return "clamp(56px, 16vw, 108px)";
+  if (n <= 6) return "clamp(44px, 12.5vw, 86px)";
+  if (n <= 8) return "clamp(34px, 9.6vw, 68px)";
+  if (n <= 10) return "clamp(28px, 7.8vw, 56px)";
+  return "clamp(24px, 6.6vw, 48px)";
 }
 
 /** おなじ棚の他の商品。自分の後ろに続くものを優先して最大 4 枚 */
@@ -70,122 +63,125 @@ function sameShelf(v: Value, max = 4) {
   return ordered.filter((x) => x.no !== v.no).slice(0, max);
 }
 
-/** hitokoto 用。句点では必ず改行し、読点では携帯だけ改行する */
-function Lead({ text }: { text: string }) {
-  const sentences = text.split(/(?<=。)/).filter(Boolean);
-  return (
-    <>
-      {sentences.map((s, i) => {
-        const parts = s.split(/(?<=、)/).filter(Boolean);
-        return (
-          <Fragment key={i}>
-            {parts.map((p, j) => (
-              <Fragment key={j}>
-                {p}
-                {j < parts.length - 1 && <MobileBreak />}
-              </Fragment>
-            ))}
-            {i < sentences.length - 1 && <br />}
-          </Fragment>
-        );
-      })}
-    </>
-  );
-}
-
 function SectionHead({ en, ja, right, id }: { en: string; ja: string; right?: string; id: string }) {
   return (
     <header className="flex flex-wrap items-end gap-x-3 gap-y-1 border-b-[3px] border-vl-ink pb-2">
       <h2 id={id} className="flex items-baseline gap-3">
-        <span className="font-display-en text-[24px] leading-none tracking-[0.04em] text-vl-red md:text-[30px]">{en}</span>
-        <span className="font-display-ja text-[15px] leading-none md:text-[18px]">{ja}</span>
+        <span className="font-display-en text-[28px] leading-none tracking-[0.03em] text-vl-red md:text-[34px]">{en}</span>
+        <span className="font-display-ja text-[18px] leading-none md:text-[20px]">{ja}</span>
       </h2>
-      {right && <span className="font-type ml-auto text-[10px] tracking-[0.25em] text-vl-ink-soft">{right}</span>}
+      {right && <span className="ml-auto text-[12px] font-bold text-vl-ink-soft">{right}</span>}
     </header>
   );
 }
 
-function SpanBox({ v, accent }: { v: Value; accent: string }) {
-  const start = v.made ? `${v.made.approx ? "c." : ""}${v.made.year}` : "—";
-  const end = v.restocked ? `${v.restocked.year} RESTOCK` : v.discontinued ? `${v.discontinued.year} DISC.` : "NOW";
+/** 紐で吊るした値札（型番と棚） */
+function HangingTag({ v }: { v: Value }) {
+  const shelf = shelfById(v.shelf);
+  const acc = SHELF_ACCENT[String(v.shelf)];
   return (
-    <div className="vl-offset-sm border-2 border-vl-ink bg-vl-card px-4 pt-3 pb-3 md:px-5">
+    <div className="relative h-[270px] w-[230px]" aria-label={`型番 ${v.no}・棚 ${shelf.no} ${shelf.name}`}>
+      <svg viewBox="0 0 230 80" className="absolute top-0 left-0 h-[80px] w-[230px]" aria-hidden>
+        <path d="M18 0 C 60 30, 120 20, 122 64" fill="none" stroke="var(--vl-ink)" strokeWidth="2" strokeDasharray="1 0" />
+      </svg>
+      <div
+        className="absolute top-[52px] left-[38px] w-[176px] rotate-[7deg] border-2 border-vl-ink px-4 pt-8 pb-4 text-center"
+        style={{ background: acc.bg, color: acc.fg, clipPath: "polygon(22% 0, 78% 0, 100% 14%, 100% 100%, 0 100%, 0 14%)" }}
+      >
+        <span className="absolute top-3 left-1/2 h-[14px] w-[14px] -translate-x-1/2 rounded-full border-2 border-vl-ink bg-vl-paper" />
+        <p className="font-type text-[11px] font-bold tracking-[0.14em]">CAT. NO.</p>
+        <p className="font-display-en text-[76px] leading-none">{v.no}</p>
+        <div className="mt-2 border-t-2 pt-2" style={{ borderColor: acc.fg }}>
+          <p className="font-type text-[11px] font-bold tracking-[0.12em]">SHELF {shelf.no}</p>
+          <p className="mt-0.5 text-[12px] leading-snug font-bold">{shelf.name}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SpanBox({ v, accent, outline }: { v: Value; accent: string; outline: boolean }) {
+  const start = v.made ? `${v.made.approx ? "c." : ""}${v.made.year}` : "—";
+  const end = v.restocked ? `${v.restocked.year} 再入荷` : v.discontinued ? `${v.discontinued.year} 廃番` : "いま";
+  const persists = !!v.discontinued && v.trend !== "discontinued" && !v.restocked;
+  return (
+    <figure className="vl-offset border-2 border-vl-ink bg-vl-card px-4 pt-3 pb-4 md:px-5">
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
-        <p className="font-type text-[10px] tracking-[0.3em] whitespace-nowrap text-vl-ink-soft">FIG.1 · SPAN · 流通期間</p>
-        <p className="font-type text-[10px] font-bold tracking-[0.15em] whitespace-nowrap">
-          {start} — {end}
+        <p className="text-[12px] font-bold text-vl-ink-soft">
+          <TypeLabel text="FIG.1 · 流通期間" />
+        </p>
+        <p className="font-type text-[13px] font-bold">
+          {start} → {end}
         </p>
       </div>
-      <div className="mt-2 text-[18px] md:text-[21px]">
-        <SpanStrip v={v} accent={accent} showLabels />
+      <div className="mt-3 text-[18px]">
+        <SpanStrip v={v} accent={accent} outline={outline} showLabels />
       </div>
-      <ul className="font-type mt-1 flex flex-wrap gap-x-4 gap-y-1 text-[9px] tracking-[0.15em] text-vl-ink-soft">
+      <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[12px]">
         <li className="flex items-center gap-1.5">
-          <span className="inline-block h-[6px] w-[14px]" style={{ background: accent }} aria-hidden />
-          MFD. 製造〜
+          <span className="inline-block h-[8px] w-[16px] border border-vl-ink" style={{ background: accent }} aria-hidden />
+          流通していた期間
         </li>
         {v.made?.approx && (
           <li className="flex items-center gap-1.5">
             <span
-              className="inline-block h-[6px] w-[14px]"
-              style={{ background: `repeating-linear-gradient(90deg, ${accent} 0 2px, transparent 2px 4px)` }}
+              className="inline-block h-[8px] w-[16px]"
+              style={{ background: `repeating-linear-gradient(90deg, var(--vl-ink) 0 2px, transparent 2px 4px)` }}
               aria-hidden
             />
-            APPROX. 概算
+            製造年は概算
           </li>
         )}
         {v.discontinued && (
           <li className="flex items-center gap-1.5">
-            <span className="font-bold text-vl-red">✕</span>
-            DISC. 廃番
+            <span className="font-bold text-vl-red">×</span>廃番
+          </li>
+        )}
+        {persists && (
+          <li className="flex items-center gap-1.5">
+            <span
+              className="inline-block h-[3px] w-[16px]"
+              style={{ background: `repeating-linear-gradient(90deg, ${outline ? "var(--vl-ink)" : accent} 0 4px, transparent 4px 7px)` }}
+              aria-hidden
+            />
+            制度の廃止後も残る
           </li>
         )}
         {v.restocked && (
           <li className="flex items-center gap-1.5">
-            <span className="inline-block h-[8px] w-[8px] rounded-full border-2 border-vl-red" aria-hidden />
-            RESTOCK 再入荷
-          </li>
-        )}
-        {v.discontinued && v.trend !== "discontinued" && !v.restocked && (
-          <li className="flex items-center gap-1.5">
-            <span
-              className="inline-block h-[2px] w-[14px]"
-              style={{ background: `repeating-linear-gradient(90deg, ${accent} 0 3px, transparent 3px 5px)` }}
-              aria-hidden
-            />
-            STILL HELD 制度の廃止後も残る
-          </li>
-        )}
-        {!v.discontinued && (
-          <li className="flex items-center gap-1.5">
-            <span className="font-bold">▶</span>
-            IN STOCK 現役
+            <span className="inline-block h-[10px] w-[10px] rounded-full border-2 border-vl-red" aria-hidden />
+            再入荷
           </li>
         )}
       </ul>
-    </div>
+    </figure>
   );
 }
 
 function NavButton({ dir, v }: { dir: "prev" | "next"; v: Value }) {
   const isPrev = dir === "prev";
+  const acc = SHELF_ACCENT[String(v.shelf)];
   return (
     <Link
       href={`/values/${v.no}`}
-      className={`vl-offset group block border-2 border-vl-ink bg-vl-card px-5 py-4 transition-transform duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 md:px-6 md:py-5 ${
-        isPrev ? "text-left" : "text-right"
+      className={`vl-offset group flex min-w-0 items-stretch border-2 border-vl-ink bg-vl-card transition-transform hover:-translate-y-0.5 ${
+        isPrev ? "" : "flex-row-reverse text-right"
       }`}
     >
-      <p className="font-type text-[10px] tracking-[0.3em] text-vl-ink-soft">
-        {isPrev ? "← PREV" : "NEXT →"}
-        <span className="ml-2 font-bold text-vl-ink">NO.{v.no}</span>
-      </p>
-      <p className="font-display-ja mt-1.5 text-[18px] leading-tight group-hover:text-vl-red md:text-[24px]">
-        {isPrev && <span className="mr-2 text-vl-red">←</span>}
-        {v.name}
-        {!isPrev && <span className="ml-2 text-vl-red">→</span>}
-      </p>
-      <p className="font-type mt-1 text-[10px] tracking-[0.12em] text-vl-ink-soft">{v.reading}</p>
+      <span
+        className="font-display-en flex w-[56px] shrink-0 items-center justify-center text-[22px]"
+        style={{ background: acc.bg, color: acc.fg }}
+        aria-hidden
+      >
+        {isPrev ? "←" : "→"}
+      </span>
+      <span className="min-w-0 flex-1 px-4 py-3">
+        <span className="block text-[12px] font-bold text-vl-ink-soft">
+          <TypeLabel text={`${isPrev ? "前の標本" : "次の標本"} · NO.${v.no}`} />
+        </span>
+        <span className="font-display-ja mt-1 block truncate text-[20px] leading-tight group-hover:text-vl-red">{v.name}</span>
+        <span className="mt-1 block truncate text-[13px]">{v.hitokoto}</span>
+      </span>
     </Link>
   );
 }
@@ -199,126 +195,134 @@ export default async function ValuePage({ params }: Params) {
   const acc = SHELF_ACCENT[String(v.shelf)];
   const { prev, next } = prevNext(v.no);
   const siblings = sameShelf(v);
-  const lines = titleLines(v.name);
+  const lines = nameLines(v.name);
   const hasCurve = v.evidence === "curve" && !!v.curve;
+
+  // 図番号: FIG.1 流通期間 → FIG.2 主の証拠 → FIG.3〜 日付の帳票（カーブ型）・補助の図
+  let figNo = 2;
+  const nextFig = () => `FIG.${++figNo}`;
+  const extras: Curve[] = [...(!hasCurve && v.curve ? [v.curve] : []), ...(v.extraCurves ?? [])];
+  const ledgerFig = hasCurve ? nextFig() : null;
+  const extraFigs = extras.map(() => nextFig());
 
   return (
     <article className="mx-auto max-w-6xl px-4 md:px-8">
-      {/* 1. パンくず */}
+      {/* パンくず */}
       <div className="flex items-center justify-between gap-3 pt-5 md:pt-8">
-        <Link href={`/#shelf-${shelf.no}`} className="vl-link font-type text-[11px] tracking-[0.15em] md:text-[12px]">
+        <Link href={`/#shelf-${shelf.no}`} className="vl-link text-[13px] font-bold">
           ← 索引にもどる
         </Link>
-        <p className="font-type text-[10px] tracking-[0.25em] text-vl-ink-soft md:text-[11px]">
-          NO.{v.no} · SHELF {shelf.no} · {v.category}
+        <p className="font-type text-[12px] font-bold tracking-[0.08em] text-vl-ink-soft">
+          NO.{v.no} · SHELF {shelf.no}
         </p>
       </div>
 
-      {/* 2. 見出し */}
-      <header className="mt-6 grid gap-6 md:mt-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-10">
+      {/* 見出し */}
+      <header className="relative mt-6 grid gap-6 md:mt-8 md:grid-cols-[minmax(0,1fr)_240px] md:items-center">
         <div className="min-w-0">
-          <p className="font-display-en text-[18px] leading-none tracking-[0.12em] text-vl-red uppercase md:text-[26px]">
-            {v.en}
-          </p>
-          <h1 className="font-display-ja mt-3 leading-[1.12]" style={{ fontSize: titleSize(lines) }}>
+          <p className="font-display-en text-[20px] leading-none tracking-[0.08em] text-vl-red uppercase md:text-[28px]">{v.en}</p>
+          <h1 className="font-display-ja mt-3 leading-[1.1]" style={{ fontSize: titleSize(lines) }}>
             {lines.map((l, i) => (
               <span key={i} className="block">
                 {l}
               </span>
             ))}
           </h1>
-          <p className="font-type mt-3 text-[12px] tracking-[0.2em] text-vl-ink-soft md:text-[13px]">{v.reading}</p>
-          <div className="mt-5">
-            <TrendStamp trend={v.trend} className="text-[15px] md:text-[19px]" />
+          <p className="mt-3 text-[14px] tracking-[0.1em] text-vl-ink-soft">{v.reading}</p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 md:mt-7">
+            <span className="text-[22px] md:text-[30px]">
+              <TrendStamp trend={v.trend} seed={v.no} ja />
+            </span>
+            <span className="text-[13px] font-bold whitespace-nowrap md:hidden">
+              {shelf.no}. {shelf.name}
+            </span>
           </div>
         </div>
-
-        {/* 型番タグ（PC のみ） */}
         <div className="hidden md:block">
-          <div
-            className="vl-offset relative w-[172px] border-2 border-vl-ink px-4 pt-6 pb-4 text-center"
-            style={{ background: acc.bg, color: acc.fg }}
-          >
-            <span
-              className="absolute top-2 left-1/2 h-[12px] w-[12px] -translate-x-1/2 rounded-full border-2 border-vl-ink bg-vl-paper"
-              aria-hidden
-            />
-            <p className="font-type mt-1 text-[9px] tracking-[0.35em]">CAT. NO.</p>
-            <p className="font-display-en text-[84px] leading-none tracking-[0.02em]">{v.no}</p>
-            <div className="mt-3 border-t pt-2" style={{ borderColor: acc.fg }}>
-              <p className="font-type text-[9px] tracking-[0.3em]">SHELF {shelf.no}</p>
-              <p className="font-display-ja mt-1 text-[11px] leading-snug">{shelf.name}</p>
-            </div>
-          </div>
+          <HangingTag v={v} />
         </div>
       </header>
 
-      {/* 3. hitokoto */}
-      <p className="mt-7 max-w-[42rem] text-[17px] leading-[1.75] font-bold md:mt-9 md:text-[22px]">
-        <Lead text={v.hitokoto} />
-      </p>
+      {/* ひとこと（全幅の色の帯） */}
+      <section
+        className="relative mt-8 overflow-hidden border-2 border-vl-ink px-6 py-8 md:mt-10 md:px-14 md:py-11"
+        style={{ background: acc.bg, color: acc.fg }}
+        aria-label="ひとこと"
+      >
+        <span
+          className="pointer-events-none absolute -top-3 left-3 text-[110px] leading-none font-bold opacity-30 md:-top-6 md:left-5 md:text-[170px]"
+          style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+          aria-hidden
+        >
+          “
+        </span>
+        <div className="relative @container">
+          <FitLines text={v.hitokoto} className="leading-[1.65] font-bold" />
+        </div>
+        <p className="font-type relative mt-4 text-[12px] font-bold tracking-[0.12em] opacity-90">— {v.en.toUpperCase()} · NO.{v.no}</p>
+      </section>
 
-      <div className="vl-rule mt-8 md:mt-10" />
-
-      {/* 4. 仕様表 ＋ 証拠 */}
-      <section className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-10" aria-label="仕様と証拠">
+      {/* 仕様表・流通期間 ＋ 主の証拠 */}
+      <section className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-10" aria-label="仕様と証拠">
         <div className="space-y-7">
           <DetailSpec v={v} />
-          <SpanBox v={v} accent={acc.bar} />
+          <SpanBox v={v} accent={acc.bar} outline={v.shelf === 3} />
         </div>
-        <div>{hasCurve ? <CurveChart curve={v.curve!} /> : <LawTimeline v={v} />}</div>
+        <div>{hasCurve ? <CurveChart curve={v.curve!} fig="FIG.2" /> : <LawTimeline v={v} fig="FIG.2" />}</div>
       </section>
-      {/* カーブ型でも、製造・廃番・再入荷の根拠は日付の帳票で示す */}
-      {hasCurve && (v.made?.fact || v.discontinued?.fact || v.restocked?.fact) && (
+
+      {hasCurve && ledgerFig && (v.made?.fact || v.discontinued?.fact || v.restocked?.fact) && (
         <section className="mt-8" aria-label="日付の根拠">
-          <LawTimeline v={v} />
+          <LawTimeline v={v} fig={ledgerFig} />
         </section>
       )}
 
-      {/* 補助の図: 法令・初出型に添える統計と、カーブ型の二枚目以降 */}
-      {(() => {
-        const extras = [...(!hasCurve && v.curve ? [v.curve] : []), ...(v.extraCurves ?? [])];
-        if (extras.length === 0) return null;
-        return (
-          <section
-            className={`mt-8 grid gap-8 ${extras.length > 1 ? "lg:grid-cols-2 lg:gap-10" : ""}`}
-            aria-label="補助の統計"
-          >
-            {extras.map((c, i) => (
-              <CurveChart key={c.title} curve={c} fig={`FIG.${3 + i}`} />
-            ))}
-          </section>
-        );
-      })()}
-
-      {/* 5. 本文 */}
-      <section className="mt-14 md:mt-20" aria-labelledby="description">
-        <SectionHead id="description" en="DESCRIPTION" ja="商品説明" right={`${v.body.length} PARAGRAPHS`} />
-        <div className="vl-prose vl-justify mt-6 max-w-[44rem] text-[15px] leading-[2] md:text-[16px]">
-          {v.body.map((p, i) => (
-            <p key={i}>
-              <span className="font-type mr-1.5 text-[0.85em] font-bold text-vl-red" aria-hidden>
-                ¶
-              </span>
-              {p}
-            </p>
+      {extras.length > 0 && (
+        <section className={`mt-8 grid gap-8 ${extras.length > 1 ? "lg:grid-cols-2 lg:gap-10" : "lg:max-w-[760px]"}`} aria-label="補助の統計">
+          {extras.map((c, i) => (
+            <CurveChart key={c.title} curve={c} fig={extraFigs[i]} />
           ))}
+        </section>
+      )}
+
+      {/* 本文 ＋ この標本のカード */}
+      <section className="mt-14 md:mt-20" aria-labelledby="description">
+        <SectionHead id="description" en="DESCRIPTION" ja="商品説明" />
+        <div className="mt-6 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-14">
+          <div className="vl-prose vl-justify max-w-[40em] text-[16px] leading-[2]">
+            {v.body.map((p, i) => (
+              <p key={i}>
+                <span className="font-display-en mr-2 text-[1.05em] text-vl-red" aria-hidden>
+                  §{i + 1}
+                </span>
+                {p}
+              </p>
+            ))}
+          </div>
+          <aside className="mt-10 hidden lg:mt-0 lg:block" aria-label="この標本のカード">
+            <div className="sticky top-28">
+              <p className="mb-3 text-[12px] font-bold text-vl-ink-soft">
+                <TypeLabel text="THE CARD · この標本" />
+              </p>
+              <ValueCard v={v} />
+            </div>
+          </aside>
         </div>
       </section>
 
-      {/* 6. 裏取りメモ */}
+      {/* 裏取りメモ */}
       <div className="mt-14 md:mt-20">
         <FactList v={v} />
       </div>
 
-      {/* 7. 系譜 */}
+      {/* 系譜 */}
       <LineageStrip v={v} />
 
-      {/* 8. おなじ棚の商品 */}
+      {/* おなじ棚の商品 */}
       {siblings.length > 0 && (
         <section className="mt-14 md:mt-20" aria-labelledby="same-shelf">
-          <SectionHead id="same-shelf" en="SAME SHELF" ja="おなじ棚の商品" right={`SHELF ${shelf.no} · ${shelf.name}`} />
-          <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-6 md:gap-x-6 lg:grid-cols-4">
+          <SectionHead id="same-shelf" en="SAME SHELF" ja="おなじ棚の商品" right={`${shelf.no}. ${shelf.name}`} />
+          <ul className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {siblings.map((s, i) => (
               <li key={s.no}>
                 <ValueCard v={s} index={i} />
@@ -328,8 +332,8 @@ export default async function ValuePage({ params }: Params) {
         </section>
       )}
 
-      {/* 9. 前後の商品 */}
-      <nav className="mt-14 grid gap-4 sm:grid-cols-2 md:mt-20" aria-label="前後の商品">
+      {/* 前後の標本 */}
+      <nav className="mt-14 grid gap-4 md:mt-20 md:grid-cols-2" aria-label="前後の標本">
         {prev ? <NavButton dir="prev" v={prev} /> : <span aria-hidden />}
         {next ? <NavButton dir="next" v={next} /> : <span aria-hidden />}
       </nav>

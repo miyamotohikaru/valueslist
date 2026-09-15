@@ -15,7 +15,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { EXCLUDE, EDITS } from "./editorial.mjs";
 import { CURVE_MAP, KOKKAI_NOTE } from "./curve-map.mjs";
-import { FINAL, GLOBAL_REPLACE } from "./final-overrides.mjs";
+import { FINAL, GLOBAL_REPLACE, CURVE_TITLES } from "./final-overrides.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const RESEARCH = path.join(ROOT, "research");
@@ -236,6 +236,21 @@ for (const [name, e] of Object.entries(FINAL)) {
     }
     setAt(v, p, cur.replace(from, to));
   }
+}
+// グラフの見出し（長い括弧書きを小見出しへ）
+{
+  const used = new Set();
+  for (const v of values) {
+    for (const c of [v.curve, ...(v.extraCurves ?? [])]) {
+      if (!c) continue;
+      const t = CURVE_TITLES[c.title];
+      if (!t) continue;
+      used.add(c.title);
+      c.title = t.title;
+      if (t.subtitle) c.subtitle = t.subtitle;
+    }
+  }
+  for (const k of Object.keys(CURVE_TITLES)) if (!used.has(k)) problems.push(`[グラフ見出し] 「${k.slice(0, 30)}…」が掲載データにない`);
 }
 // 研究用の注記の掃除（全フィールド。グラフの点は除く）
 const scrub = (o) => {

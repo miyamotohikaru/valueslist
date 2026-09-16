@@ -120,9 +120,9 @@ body {
     3px 4px 0 -1.5px var(--vl-card),
     3px 4px 0 0 var(--vl-red);
 }
-/* 2色刷りの版ずれ（大見出し用） */
+/* 2色刷りの版ずれ（大見出し用）。題字と同じく、墨の版が先に刷られて赤が少しずれて乗る */
 .vl-misreg {
-  text-shadow: 0.045em 0.045em 0 var(--vl-navy);
+  text-shadow: 0.04em 0.04em 0 var(--vl-ink);
 }
 /* 放射状の光（サンバースト）。色は currentColor */
 .vl-sunburst {

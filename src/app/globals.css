@@ -135,6 +135,13 @@ body {
   background-image: radial-gradient(currentColor 1.1px, transparent 1.4px);
   background-size: 6px 6px;
 }
+/* 全幅の色帯（ページの区切りに1〜2か所） */
+.vl-band {
+  background: var(--vl-red-deep);
+  color: var(--vl-paper);
+  border-top: 3px solid var(--vl-ink);
+  border-bottom: 3px solid var(--vl-ink);
+}
 /* 細かい網点（説明図の地紋） */
 .vl-dots-fine {
   background-image: radial-gradient(currentColor 0.9px, transparent 1.2px);

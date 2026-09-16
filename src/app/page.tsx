@@ -53,14 +53,18 @@ export default function Home() {
           </div>
 
           {/* 右: サンバースト＋紋章＋分解図 */}
-          <div className="relative mx-auto w-full max-w-[520px] pt-14 pb-10 md:pt-0 md:pb-0">
-            <div className="vl-sunburst pointer-events-none absolute top-1/2 left-1/2 aspect-square w-[140%] -translate-x-1/2 -translate-y-1/2 text-vl-red opacity-[0.10]" aria-hidden />
+          <div className="relative mx-auto w-full max-w-[520px] pt-14 pb-10 md:mr-0 md:ml-auto md:pt-20 md:pb-0">
+            {/* 放射は紋章から出す（理由のある光にする） */}
+            <div
+              className="vl-sunburst pointer-events-none absolute -top-[120px] -right-[90px] aspect-square w-[520px] text-vl-red opacity-[0.07]"
+              aria-hidden
+            />
             <div className="relative">
-              {/* 紋章は図の外（右上）に置く。図の1行目に重ねない */}
-              <div className="absolute -top-14 right-0 rotate-[10deg] md:-top-12 md:-right-6">
-                <Emblem size={132} className="block h-auto w-[92px] md:w-[132px]" />
-              </div>
               <ExplodedCard className="relative block h-auto w-full" />
+              {/* 紋章は図の上に貼ったシールとして、いちばん手前に置く */}
+              <div className="absolute -top-14 right-0 z-10 rotate-[-12deg] md:-top-16 md:-right-4">
+                <Emblem size={132} className="block h-auto w-[92px] md:w-[112px]" />
+              </div>
               <span className="font-script absolute -bottom-1 left-0 rotate-[-8deg] text-[28px] text-vl-red md:bottom-4 md:text-[34px]">
                 fact-checked!
               </span>

@@ -32,7 +32,7 @@ const PARTS: Part[] = [
 ];
 
 const DISC = 26; // 番号札の直径
-const GAP = 26; // 説明どうしの最小の間隔
+const GAP = 16; // 説明どうしの最小の間隔
 const ELBOW = 30; // 線がカードの手前で折れる位置
 
 type Geo = {
@@ -135,10 +135,12 @@ export default function CardAnatomy({ v, fig = "FIG.1" }: { v: Value; fig?: stri
         const ax = side === "l" ? cr.right - b.left + 6 : cr.left - b.left - 6;
         const ex = side === "l" ? pins[i].x - ELBOW : pins[i].x + ELBOW;
         // 高さがそろっているときは水平1本。ずれたときだけ、カードの手前で1回折る
-        const same = Math.abs(ay - pins[i].y) < 1.5;
-        lines[i] = same
-          ? `M${ax.toFixed(1)},${pins[i].y} H${pins[i].x}`
-          : `M${ax.toFixed(1)},${ay.toFixed(1)} H${ex.toFixed(1)} L${pins[i].x},${pins[i].y}`;
+        // 札が押し出されて高さがずれたときは、札の手前で1回だけ折る（斜めの区間は最小にする）
+        const dy = Math.abs(ay - pins[i].y);
+        lines[i] =
+          dy < 10
+            ? `M${ax.toFixed(1)},${pins[i].y} H${pins[i].x}`
+            : `M${ax.toFixed(1)},${ay.toFixed(1)} H${(side === "l" ? ax - 14 : ax + 14).toFixed(1)} V${pins[i].y} H${pins[i].x}`;
       });
     }
 
@@ -208,7 +210,7 @@ export default function CardAnatomy({ v, fig = "FIG.1" }: { v: Value; fig?: stri
         />
         <div className="relative grid grid-cols-[minmax(0,280px)] justify-center lg:grid-cols-[minmax(0,1fr)_300px_minmax(0,1fr)] lg:gap-x-12 xl:grid-cols-[minmax(0,1fr)_320px_minmax(0,1fr)] xl:gap-x-16">
           {column("l")}
-          <div ref={cardRef} className="w-full">
+          <div ref={cardRef} className="w-full lg:py-10">
             <ValueCard v={v} />
           </div>
           {column("r")}

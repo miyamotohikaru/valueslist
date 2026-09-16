@@ -14,7 +14,7 @@ import { Ja } from "@/lib/ja";
 type Side = "l" | "r";
 type Part = { side: Side; sel: string; ja: string; en: string; text: string };
 
-/** 上から順に。番号は並び順 */
+/** 左の列（上から）→ 右の列（上から）の順に番号を振る */
 const PARTS: Part[] = [
   { side: "l", sel: ".vl-card__no", ja: "型番", en: "NO.", text: "棚の並び順の、三桁の番号。" },
   { side: "r", sel: ".vl-card__cat", ja: "分類", en: "CATEGORY", text: "規範・人生観・判断基準。帯の色は、棚の色。" },
@@ -32,7 +32,7 @@ const PARTS: Part[] = [
 ];
 
 const DISC = 26; // 番号札の直径
-const GAP = 14; // 説明どうしの最小の間隔
+const GAP = 26; // 説明どうしの最小の間隔
 const ELBOW = 30; // 線がカードの手前で折れる位置
 
 type Geo = {
@@ -42,6 +42,13 @@ type Geo = {
 };
 
 const useIsoLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
+
+/** 番号は、左の列を上から、続けて右の列を上から（カードを何度も横断させない） */
+const ORDER = [
+  ...PARTS.map((_, i) => i).filter((i) => PARTS[i].side === "l"),
+  ...PARTS.map((_, i) => i).filter((i) => PARTS[i].side === "r"),
+];
+const numberOf = (i: number) => ORDER.indexOf(i) + 1;
 
 function Disc({ n }: { n: number }) {
   return (
@@ -64,7 +71,7 @@ function Label({ p, n, align }: { p: Part; n: number; align: "left" | "right" })
       <div className="min-w-0 pt-[3px]">
         <p className={`flex flex-wrap items-baseline gap-x-2 ${right ? "justify-end" : ""}`}>
           <span className="text-[15px] leading-tight font-bold">{p.ja}</span>
-          <span className="font-type text-[12px] leading-tight font-bold tracking-[0.08em] text-vl-red">{p.en}</span>
+          <span className="font-type text-[12px] leading-tight font-bold tracking-[0.08em] text-vl-red-deep">{p.en}</span>
         </p>
         <p className="mt-1 text-[13.5px] leading-[1.75] lg:text-[13px] xl:text-[13.5px]">
           <Ja text={p.text} />
@@ -127,7 +134,11 @@ export default function CardAnatomy({ v, fig = "FIG.1" }: { v: Value; fig?: stri
         const ay = colTop + top + DISC / 2;
         const ax = side === "l" ? cr.right - b.left + 6 : cr.left - b.left - 6;
         const ex = side === "l" ? pins[i].x - ELBOW : pins[i].x + ELBOW;
-        lines[i] = `M${ax.toFixed(1)},${ay.toFixed(1)} H${ex.toFixed(1)} L${pins[i].x},${pins[i].y}`;
+        // 高さがそろっているときは水平1本。ずれたときだけ、カードの手前で1回折る
+        const same = Math.abs(ay - pins[i].y) < 1.5;
+        lines[i] = same
+          ? `M${ax.toFixed(1)},${pins[i].y} H${pins[i].x}`
+          : `M${ax.toFixed(1)},${ay.toFixed(1)} H${ex.toFixed(1)} L${pins[i].x},${pins[i].y}`;
       });
     }
 
@@ -166,7 +177,7 @@ export default function CardAnatomy({ v, fig = "FIG.1" }: { v: Value; fig?: stri
             // 実測の前は等間隔に置いておく
             style={{ top: geo?.tops[i] ?? `${(j / items.length) * 100}%` }}
           >
-            <Label p={p} n={i + 1} align={side === "l" ? "right" : "left"} />
+            <Label p={p} n={numberOf(i)} align={side === "l" ? "right" : "left"} />
           </div>
         ))}
       </div>
@@ -188,7 +199,11 @@ export default function CardAnatomy({ v, fig = "FIG.1" }: { v: Value; fig?: stri
       <div ref={bodyRef} className="relative px-4 pt-9 pb-8 md:px-8 lg:pt-12 lg:pb-12">
         {/* 背景の網点 */}
         <div
-          className="vl-dots pointer-events-none absolute inset-y-6 left-1/2 w-[min(78%,520px)] -translate-x-1/2 text-vl-ink opacity-[0.12]"
+          className="vl-dots-fine pointer-events-none absolute inset-y-4 left-1/2 w-[min(84%,620px)] -translate-x-1/2 text-vl-ink opacity-[0.18]"
+          style={{
+            maskImage: "radial-gradient(ellipse at center, #000 52%, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(ellipse at center, #000 52%, transparent 100%)",
+          }}
           aria-hidden
         />
         <div className="relative grid grid-cols-[minmax(0,280px)] justify-center lg:grid-cols-[minmax(0,1fr)_300px_minmax(0,1fr)] lg:gap-x-12 xl:grid-cols-[minmax(0,1fr)_320px_minmax(0,1fr)] xl:gap-x-16">
@@ -213,7 +228,7 @@ export default function CardAnatomy({ v, fig = "FIG.1" }: { v: Value; fig?: stri
                 className="font-display-en absolute grid h-6 w-6 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-2 border-vl-ink bg-vl-red text-[13px] leading-none text-vl-paper lg:h-[11px] lg:w-[11px] lg:text-[0px]"
                 style={{ left: pt.x, top: pt.y }}
               >
-                {i + 1}
+                {numberOf(i)}
               </span>
             ))}
           </div>
@@ -222,9 +237,9 @@ export default function CardAnatomy({ v, fig = "FIG.1" }: { v: Value; fig?: stri
 
       {/* 携帯・タブレットの凡例 */}
       <ol className="grid gap-x-8 gap-y-4 border-t-2 border-dashed border-vl-ink/40 px-4 py-6 sm:grid-cols-2 md:px-8 lg:hidden">
-        {PARTS.map((p, i) => (
-          <li key={p.ja}>
-            <Label p={p} n={i + 1} align="left" />
+        {ORDER.map((i, n) => (
+          <li key={PARTS[i].ja}>
+            <Label p={PARTS[i]} n={n + 1} align="left" />
           </li>
         ))}
       </ol>

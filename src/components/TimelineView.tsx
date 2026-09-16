@@ -59,7 +59,7 @@ function RestockDot({ className = "" }: { className?: string }) {
 function LoopTag({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`font-type inline-block shrink-0 border border-vl-red px-1 text-[11px] font-bold leading-[1.5] tracking-[0.08em] text-vl-red ${className}`}
+      className={`font-type inline-block shrink-0 border border-vl-red px-1 text-[11px] font-bold leading-[1.5] tracking-[0.08em] text-vl-red-deep ${className}`}
     >
       LOOP
     </span>
@@ -217,7 +217,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
             {endYear !== null &&
               (labelAt > 62 ? (
                 <span
-                  className="absolute top-[1px] text-right text-[11px] leading-none font-bold whitespace-nowrap text-vl-red"
+                  className="absolute top-[1px] text-right text-[11px] leading-none font-bold whitespace-nowrap text-vl-red-deep"
                   style={{ right: `calc(${100 - labelAt}% + 4px)` }}
                 >
                   <span className="font-type">{endYear}</span>
@@ -225,7 +225,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 </span>
               ) : (
                 <span
-                  className="absolute top-1/2 -translate-y-1/2 text-[11px] leading-none font-bold whitespace-nowrap text-vl-red"
+                  className="absolute top-1/2 -translate-y-1/2 text-[11px] leading-none font-bold whitespace-nowrap text-vl-red-deep"
                   style={{ left: `calc(${labelAt}% + 12px)` }}
                 >
                   <span className="font-type">{endYear}</span>
@@ -387,7 +387,7 @@ function RingV({ nodes }: { nodes: RingNode[] }) {
             <span className="font-display-ja mt-0.5 text-[18px] leading-[1.3]">
               <NodeName node={node} />
               {node.v && (
-                <span className="font-type ml-2 text-[11px] font-bold text-vl-red">NO.{node.v.no}</span>
+                <span className="font-type ml-2 text-[11px] font-bold text-vl-red-deep">NO.{node.v.no}</span>
               )}
             </span>
             {node.n.note && (
@@ -407,7 +407,7 @@ function LoopPanel({ lineage }: { lineage: Lineage }) {
     <div className="relative">
       <div className="vl-offset border-2 border-vl-ink bg-vl-card">
         <div className="border-b-2 border-vl-ink px-4 py-3 md:px-8 md:py-4">
-          <h2 className="text-[12px] font-bold text-vl-red">
+          <h2 className="text-[12px] font-bold text-vl-red-deep">
             <TypeLabel text="FIG.3 · 150年の円環" />
           </h2>
           <p className="font-display-en mt-1 text-[24px] leading-none tracking-[0.04em] uppercase md:text-[30px]">{lineage.en}</p>
@@ -544,7 +544,7 @@ export default function TimelineView() {
   return (
     <div className="mx-auto max-w-6xl px-4 md:px-8">
       {/* 見出し */}
-      <section className="grid gap-10 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:items-center md:py-16">
+      <section className="grid gap-10 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:items-stretch md:py-16">
         <div>
         <p className="text-[12px] font-bold">
           <TypeLabel text="TIMELINE · 製造年順" />
@@ -569,15 +569,26 @@ export default function TimelineView() {
           <span className="whitespace-nowrap">· SORTED BY MFD. YEAR</span>
         </p>
         </div>
-        <EraRuler />
+        <div className="flex flex-col justify-between gap-6">
+          <EraRuler />
+          {/* 台帳を読む前に、記号の意味を先に置く */}
+          <div className="vl-offset-sm border-2 border-vl-ink bg-vl-card px-4 py-3 md:px-5 md:py-4">
+            <p className="text-[12px] font-bold text-vl-ink-soft">
+              <TypeLabel text="KEY · 台帳の記号" />
+            </p>
+            <div className="mt-2.5">
+              <Legend />
+            </div>
+          </div>
+        </div>
       </section>
 
       <div className="vl-rule" />
 
       {/* FIG.2 製造工場別 出荷数 */}
-      <section className="grid gap-8 py-12 md:grid-cols-[1fr_1.25fr] md:items-center md:gap-12 md:py-16">
+      <section className="grid gap-8 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start md:gap-12 md:py-14">
         <div>
-          <h2 className="text-[12px] font-bold text-vl-red">
+          <h2 className="text-[12px] font-bold text-vl-red-deep">
             <TypeLabel text="FIG.1 · 製造工場別 出荷数" />
           </h2>
           <p className="font-display-ja mt-3 text-[24px] leading-[1.3] md:text-[30px]">工場は五つある。</p>
@@ -600,7 +611,7 @@ export default function TimelineView() {
       <section className="py-12 md:py-16">
         <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-[12px] font-bold text-vl-red">
+            <p className="text-[12px] font-bold text-vl-red-deep">
               <TypeLabel text="FIG.2 · 在庫台帳" />
             </p>
             <h2 className="font-display-ja text-[24px] leading-tight md:text-[30px]">全在庫、製造年順</h2>
@@ -614,7 +625,6 @@ export default function TimelineView() {
               行を押すとカードに飛ぶ。
             </p>
           </div>
-          <Legend />
         </div>
 
         <div

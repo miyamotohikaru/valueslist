@@ -80,7 +80,7 @@ function SectionHead({ id }: { id: (typeof SECTIONS)[number]["id"] }) {
       </span>
       <div>
         <h2 className="font-display-ja text-[24px] leading-tight md:text-[30px]">{s.ja}</h2>
-        <p className="font-display-en mt-1 text-[13px] tracking-[0.14em] text-vl-red">{s.en}</p>
+        <p className="font-display-en mt-1 text-[13px] tracking-[0.14em] text-vl-red-deep">{s.en}</p>
       </div>
     </div>
   );
@@ -204,7 +204,7 @@ export default function AboutPage() {
                   href={`#${s.id}`}
                   className="flex items-baseline gap-3 border-b border-dashed border-vl-line py-2 hover:text-vl-red"
                 >
-                  <span className="font-type text-[12px] font-bold tracking-[0.08em] text-vl-red">{s.no}</span>
+                  <span className="font-type text-[12px] font-bold tracking-[0.08em] text-vl-red-deep">{s.no}</span>
                   <span className="text-[14px] font-bold">{s.ja}</span>
                   <span className="font-type ml-auto hidden text-[12px] tracking-[0.06em] text-vl-ink-soft sm:inline">
                     {s.en}
@@ -229,7 +229,7 @@ export default function AboutPage() {
             <ul className="mt-3 grid gap-3">
               {DATES.map((d) => (
                 <li key={d.en} className="vl-offset-sm flex items-center gap-4 border-2 border-vl-ink bg-vl-card px-4 py-3">
-                  <span className="font-type w-[5.5em] shrink-0 text-[12px] font-bold tracking-[0.08em] text-vl-red">
+                  <span className="font-type w-[5.5em] shrink-0 text-[12px] font-bold tracking-[0.08em] text-vl-red-deep">
                     {d.en}
                   </span>
                   <span className="text-[16px] leading-none font-bold">{d.ja}</span>
@@ -358,7 +358,7 @@ export default function AboutPage() {
                   <Link href={`/#shelf-${s.no}`} className="vl-link text-[17px] font-bold">
                     {s.name}
                   </Link>
-                  <p className="font-display-en mt-1 text-[12px] tracking-[0.12em] text-vl-red">{s.en}</p>
+                  <p className="font-display-en mt-1 text-[12px] tracking-[0.12em] text-vl-red-deep">{s.en}</p>
                 </div>
                 <p className="text-[14px] leading-[1.85]">
                   <Ja text={s.lead} />
@@ -398,7 +398,7 @@ export default function AboutPage() {
               <div key={r.en} className="grid grid-cols-[6.5em_1fr] items-center gap-x-4 border-b border-vl-line px-4 py-3 last:border-b-0">
                 <dt>
                   <span className="text-[15px] leading-none font-bold">{r.ja}</span>
-                  <span className="font-type mt-1 block text-[12px] tracking-[0.1em] text-vl-red">{r.en}</span>
+                  <span className="font-type mt-1 block text-[12px] tracking-[0.1em] text-vl-red-deep">{r.en}</span>
                 </dt>
                 <dd className="text-[14px] leading-[1.7]">{r.text}</dd>
               </div>

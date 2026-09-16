@@ -170,7 +170,7 @@ export default function EvidenceTwo({ className = "", fig = "FIG.2" }: { classNa
           <br />
           項目ページの図を、二種に分けた。
         </p>
-        <p className="font-type shrink-0 text-[12px] font-bold tracking-[0.1em] text-vl-red">{fig} TWO KINDS OF EVIDENCE</p>
+        <p className="font-type shrink-0 text-[12px] font-bold tracking-[0.1em] text-vl-red-deep">{fig} TWO KINDS OF EVIDENCE</p>
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ export default function LineageIndex({ lineages }: { lineages: Lineage[] }) {
               <a href={`#${l.id}`} className="vl-ticket group block h-full bg-vl-ink p-[2px] transition-transform duration-150 hover:-translate-y-0.5">
                 <span className="vl-ticket grid h-full grid-cols-[minmax(0,1fr)_76px] bg-vl-card transition-colors group-hover:bg-vl-mustard">
                   <span className="min-w-0 py-2.5 pr-2 pl-5">
-                    <span className="font-type block text-[11px] font-bold text-vl-red">
+                    <span className="font-type block text-[11px] font-bold text-vl-red-deep">
                       {String(i + 1).padStart(2, "0")} · {lineageKindMeta[l.kind].ja}
                     </span>
                     <span className="mt-0.5 block text-[13px] leading-[1.45] font-bold">

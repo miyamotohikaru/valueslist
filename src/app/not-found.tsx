@@ -39,7 +39,7 @@ export default function NotFound() {
               <br />
               ありません
             </h1>
-            <p className="font-display-en mt-2 text-[15px] tracking-[0.2em] text-vl-red md:text-[17px]">
+            <p className="font-display-en mt-2 text-[15px] tracking-[0.2em] text-vl-red-deep md:text-[17px]">
               NO SUCH ITEM ON THE SHELVES
             </p>
 

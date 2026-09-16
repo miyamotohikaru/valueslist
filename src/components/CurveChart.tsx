@@ -347,7 +347,7 @@ export default function CurveChart({
           <p className="text-[12px] font-bold text-vl-ink-soft">
             <TypeLabel text={`${fig} · ${isBar ? "年ごとの件数" : "統計の推移"}`} />
           </p>
-          <span className="vl-stamp font-display-en shrink-0 text-[12px] text-vl-red md:text-[13px]">DATED BY CURVE</span>
+          <span className="vl-stamp font-display-en shrink-0 text-[12px] text-vl-red-deep md:text-[13px]">DATED BY CURVE</span>
         </div>
         <p className="mt-2 text-[15px] leading-snug font-bold md:text-[16px]">
           <BreakText text={curve.title} />

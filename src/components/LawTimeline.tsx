@@ -73,7 +73,7 @@ export default function LawTimeline({ v, fig = "FIG.2" }: { v: Value; fig?: stri
           <p className="text-[12px] font-bold text-vl-ink-soft">
             <TypeLabel text={`${fig} · 日付の帳票`} />
           </p>
-          <span className="vl-stamp font-display-en shrink-0 text-[12px] text-vl-red md:text-[13px]">DATED BY DOCUMENT</span>
+          <span className="vl-stamp font-display-en shrink-0 text-[12px] text-vl-red-deep md:text-[13px]">DATED BY DOCUMENT</span>
         </div>
         <p className="mt-2 text-[15px] leading-snug font-bold md:text-[16px]">
           {v.name}の日付は、

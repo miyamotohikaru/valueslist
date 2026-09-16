@@ -36,7 +36,7 @@ export default function LineageStrip({ v }: { v: Value }) {
         {ls.map((l) => (
           <div key={l.id} className="vl-offset border-2 border-vl-ink bg-vl-card">
             <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b-2 border-vl-ink px-4 py-3 md:px-6">
-              <p className="font-display-en text-[14px] tracking-[0.12em] text-vl-red uppercase">{l.en}</p>
+              <p className="font-display-en text-[14px] tracking-[0.12em] text-vl-red-deep uppercase">{l.en}</p>
               <h3 className="text-[16px] leading-snug font-bold md:text-[18px]">
                 <ChainTitle title={l.title} />
               </h3>

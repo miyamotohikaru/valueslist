@@ -16,7 +16,7 @@ export default function ShelfHeader({ shelf, count }: { shelf: ShelfMeta; count:
         <span className="font-display-en text-[40px] leading-[0.9] md:text-[48px]">{shelf.no}</span>
       </div>
       <div className="min-w-0 pt-1">
-        <p className="font-display-en text-[13px] tracking-[0.18em] text-vl-red md:text-[14px]">{shelf.en}</p>
+        <p className="font-display-en text-[13px] tracking-[0.18em] text-vl-red-deep md:text-[14px]">{shelf.en}</p>
         <h2 className="font-display-ja mt-1 text-[24px] leading-tight md:text-[32px]">{shelf.name}</h2>
         <p className="mt-2 text-[14px] leading-[1.75] md:text-[15px]">
           <BreakText text={shelf.lead} />

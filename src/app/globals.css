@@ -135,6 +135,11 @@ body {
   background-image: radial-gradient(currentColor 1.1px, transparent 1.4px);
   background-size: 6px 6px;
 }
+/* 細かい網点（説明図の地紋） */
+.vl-dots-fine {
+  background-image: radial-gradient(currentColor 0.9px, transparent 1.2px);
+  background-size: 8px 8px;
+}
 /* 二重罫（古いカタログの区切り） */
 .vl-rule {
   height: 7px;

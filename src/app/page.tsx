@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <div className="mx-auto max-w-6xl overflow-x-clip px-4 md:px-8">
-        <section className="relative grid gap-10 pt-8 pb-12 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:items-center md:gap-8 md:pt-14 md:pb-16">
+        <section className="relative grid gap-10 pt-8 pb-8 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:items-center md:gap-10 md:pt-14 md:pb-10">
           <div className="relative z-10">
             <p className="text-[13px] font-bold">
               <TypeLabel text="情報を並べるシリーズ 14 · SERIES No.14" />
@@ -33,7 +33,7 @@ export default function Home() {
               <TitleLockup />
             </h1>
             <p className="font-display-ja mt-6 text-[22px] leading-snug md:text-[26px]">その価値観には、製造年がある。</p>
-            <p className="mt-4 max-w-[30em] text-[15px] leading-[1.9]">
+            <p className="mt-4 max-w-[32em] text-[16px] leading-[1.95]">
               「昔からの伝統」に見える価値観には、
               <br />
               明治の翻訳語や、
@@ -50,52 +50,52 @@ export default function Home() {
               <br />
               一つずつ出典で裏を取った。
             </p>
-
-            {/* 在庫の数字（1枚の半券） */}
-            <div className="vl-offset mt-8 grid grid-cols-2 border-2 border-vl-ink bg-vl-card sm:grid-cols-4">
-              {tickets.map(([n, label], i) => (
-                <div
-                  key={label}
-                  className={`px-4 py-3 ${i % 2 === 1 ? "border-l-2 border-dashed border-vl-ink/40" : ""} ${
-                    i >= 2 ? "border-t-2 border-dashed border-vl-ink/40 sm:border-t-0" : ""
-                  } ${i === 2 ? "sm:border-l-2" : ""}`}
-                >
-                  <p className="font-display-en text-[44px] leading-none text-vl-red">{n}</p>
-                  <p className="mt-1 text-[12px] font-bold whitespace-nowrap">{label}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* 傾向の印の凡例 */}
-            <div className="mt-6">
-              <p className="text-[12px] font-bold text-vl-ink-soft">傾向の印</p>
-              <ul className="mt-2 grid grid-cols-2 gap-x-3 gap-y-3 sm:grid-cols-3 lg:grid-cols-5">
-                {TRENDS.map((t) => (
-                  <li key={t} className="flex flex-col items-start gap-1">
-                    <span className="text-[11px]">
-                      <TrendStamp trend={t} seed={t} />
-                    </span>
-                    <span className="text-[12px] font-bold">{trendMeta[t].ja}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
           {/* 右: サンバースト＋紋章＋分解図 */}
-          <div className="relative mx-auto w-full max-w-[520px]">
-            <div className="vl-sunburst pointer-events-none absolute top-1/2 left-1/2 aspect-square w-[140%] -translate-x-1/2 -translate-y-1/2 text-vl-red opacity-[0.16]" aria-hidden />
+          <div className="relative mx-auto w-full max-w-[520px] pt-14 pb-10 md:pt-0 md:pb-0">
+            <div className="vl-sunburst pointer-events-none absolute top-1/2 left-1/2 aspect-square w-[140%] -translate-x-1/2 -translate-y-1/2 text-vl-red opacity-[0.10]" aria-hidden />
             <div className="relative">
-              <ExplodedCard className="relative block h-auto w-full" />
-              <div className="absolute -top-8 -right-2 rotate-[10deg] md:-top-12 md:-right-6">
-                <Emblem size={132} className="block h-auto w-[104px] md:w-[132px]" />
+              {/* 紋章は図の外（右上）に置く。図の1行目に重ねない */}
+              <div className="absolute -top-14 right-0 rotate-[10deg] md:-top-12 md:-right-6">
+                <Emblem size={132} className="block h-auto w-[92px] md:w-[132px]" />
               </div>
-              <span className="font-script absolute bottom-4 left-0 rotate-[-8deg] text-[28px] text-vl-red md:text-[34px]">
+              <ExplodedCard className="relative block h-auto w-full" />
+              <span className="font-script absolute -bottom-1 left-0 rotate-[-8deg] text-[28px] text-vl-red md:bottom-4 md:text-[34px]">
                 fact-checked!
               </span>
             </div>
           </div>
         </section>
+
+        {/* 在庫の数字（全幅の半券）と、傾向の印の凡例 */}
+        <div className="vl-offset grid grid-cols-2 border-2 border-vl-ink bg-vl-card sm:grid-cols-4">
+          {tickets.map(([n, label], i) => (
+            <div
+              key={label}
+              className={`px-4 py-4 md:px-6 md:py-5 ${i % 2 === 1 ? "border-l-2 border-dashed border-vl-ink/40" : ""} ${
+                i >= 2 ? "border-t-2 border-dashed border-vl-ink/40 sm:border-t-0" : ""
+              } ${i === 2 ? "sm:border-l-2" : ""}`}
+            >
+              <p className="font-display-en text-[48px] leading-none text-vl-red md:text-[60px]">{n}</p>
+              <p className="mt-1 text-[13px] font-bold whitespace-nowrap md:text-[14px]">{label}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6 mb-12 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6 md:mb-16">
+          <p className="text-[13px] font-bold whitespace-nowrap">傾向の印は、五種</p>
+          <ul className="grid flex-1 grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3 lg:grid-cols-5">
+            {TRENDS.map((t) => (
+              <li key={t} className="flex items-center gap-2">
+                <span className="text-[11px]">
+                  <TrendStamp trend={t} seed={t} />
+                </span>
+                <span className="text-[13px] font-bold">{trendMeta[t].ja}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       {/* 全幅の帯 */}

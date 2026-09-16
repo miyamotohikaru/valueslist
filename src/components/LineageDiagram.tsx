@@ -165,7 +165,7 @@ function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
             ))}
           </p>
           {v ? (
-            <span className="font-type mt-1 shrink-0 border-b-2 border-vl-red pb-[1px] text-[12px] font-bold text-vl-red">NO.{v.no} →</span>
+            <span className="font-type mt-1 shrink-0 border-b-2 border-vl-red pb-[1px] text-[12px] font-bold text-vl-red-deep">NO.{v.no} →</span>
           ) : (
             <span className="mt-1 shrink-0 text-[12px] font-bold text-vl-ink-soft">出来事</span>
           )}

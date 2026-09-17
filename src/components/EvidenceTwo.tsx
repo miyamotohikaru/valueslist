@@ -117,7 +117,7 @@ function Panel({ ja, en, icon, head, lead, specimenNo, specimenName, specimenBig
       {/* 標本 */}
       <div className="mx-4 mb-4 mt-auto border-2 border-dashed border-vl-line px-4 py-3 md:mx-5 md:mb-5">
         <p className="flex flex-wrap items-baseline gap-x-2 text-[12px]">
-          <span className="font-type whitespace-nowrap font-bold tracking-[0.1em] text-vl-red">SPECIMEN · NO.{specimenNo}</span>
+          <span className="whitespace-nowrap font-bold text-vl-red-deep">NO.{specimenNo}</span>
           <span className="font-bold">{specimenName}</span>
         </p>
         <p className="font-display-en mt-1 text-[30px] leading-none tracking-[0.02em] md:text-[34px]">{specimenBig}</p>
@@ -129,7 +129,7 @@ function Panel({ ja, en, icon, head, lead, specimenNo, specimenName, specimenBig
   );
 }
 
-export default function EvidenceTwo({ className = "", fig = "FIG.2" }: { className?: string; fig?: string }) {
+export default function EvidenceTwo({ className = "" }: { className?: string }) {
   return (
     <div className={className}>
       <div className="grid gap-8 md:grid-cols-2 md:gap-6">
@@ -170,7 +170,6 @@ export default function EvidenceTwo({ className = "", fig = "FIG.2" }: { classNa
           <br />
           項目ページの図を、二種に分けた。
         </p>
-        <p className="font-type shrink-0 text-[12px] font-bold tracking-[0.1em] text-vl-red-deep">{fig} TWO KINDS OF EVIDENCE</p>
       </div>
     </div>
   );

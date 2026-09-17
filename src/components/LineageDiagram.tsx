@@ -204,7 +204,6 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
       {/* 左: 見出し・リード・年数・要点の年 */}
       <div className="lg:sticky lg:top-24 lg:self-start">
         <p className="flex flex-wrap items-center gap-2">
-          <span className="font-type text-[12px] font-bold tracking-[0.1em] text-vl-ink-soft">LINEAGE {nn}</span>
           <span className="border-2 border-vl-ink bg-vl-mustard px-2 py-0.5 text-[12px] font-bold">{kind.ja}</span>
         </p>
         <h2 className="font-display-ja mt-3 text-[22px] leading-[1.45] md:text-[26px]">
@@ -245,12 +244,7 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
 
       {/* 右: 分解図 */}
       <div className="min-w-0">
-        <p className="mb-5 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-[12px] font-bold text-vl-ink-soft">
-          <span>
-            <TypeLabel text={`FIG.${nn} · 分解図`} tracking="0.06em" />
-          </span>
-          <span>上が古く、下が新しい</span>
-        </p>
+        <p className="mb-5 text-right text-[12px] font-bold text-vl-ink-soft">上が古く、下が新しい</p>
         <ol className="space-y-5">
           {nodes.map((node, i) => (
             <Layer key={`${lineage.id}-${i}`} node={node} badge={lineage.kind === "restock" && i === nodes.length - 1} />

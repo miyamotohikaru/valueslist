@@ -7,18 +7,11 @@ import TrendStamp from "@/components/TrendStamp";
 import MobileBreak from "@/components/MobileBreak";
 import TitleLockup from "@/components/TitleLockup";
 import type { Trend } from "@/data/types";
-import TypeLabel from "@/components/TypeLabel";
 
 const TRENDS: Trend[] = ["up", "steady", "down", "discontinued", "restocked"];
 
 export default function Home() {
   const earliest = Math.min(...values.map((v) => v.made?.year ?? 9999));
-  const tickets: [number, string][] = [
-    [stats.total, "点の在庫"],
-    [shelves.filter((s) => s.id !== "meta").length, "つの棚"],
-    [stats.law, "点を法令・初出で"],
-    [stats.curve, "点を統計の線で"],
-  ];
   const band = `★ ${stats.total} VALUES ★ ${shelves.filter((s) => s.id !== "meta").length} SHELVES ★ FACT-CHECKED ★ SINCE ${earliest} ★ 価値観一覧図鑑 `;
 
   return (
@@ -26,9 +19,7 @@ export default function Home() {
       <div className="mx-auto max-w-6xl overflow-x-clip px-4 md:px-8">
         <section className="relative grid gap-10 pt-8 pb-8 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:items-center md:gap-10 md:pt-14 md:pb-10">
           <div className="relative z-10">
-            <p className="text-[13px] font-bold">
-              <TypeLabel text="情報を並べるシリーズ 14 · SERIES No.14" />
-            </p>
+            <p className="text-[13px] font-bold">情報を並べるシリーズ 14</p>
             <h1 className="mt-4">
               <TitleLockup />
             </h1>
@@ -56,7 +47,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-[520px] pt-14 pb-10 md:mr-0 md:ml-auto md:pt-20 md:pb-0">
             {/* 放射は紋章から出す（理由のある光にする） */}
             <div
-              className="vl-sunburst pointer-events-none absolute -top-[120px] -right-[90px] aspect-square w-[520px] text-vl-red opacity-[0.07]"
+              className="vl-sunburst vl-sunburst-spin pointer-events-none absolute -top-[120px] -right-[90px] aspect-square w-[520px] text-vl-red opacity-[0.07]"
               aria-hidden
             />
             <div className="relative">
@@ -72,23 +63,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 在庫の数字（全幅の半券）と、傾向の印の凡例 */}
-        <div className="vl-offset grid grid-cols-2 border-2 border-vl-ink bg-vl-card sm:grid-cols-4">
-          {tickets.map(([n, label], i) => (
-            <div
-              key={label}
-              className={`px-4 py-4 md:px-6 md:py-5 ${i % 2 === 1 ? "border-l-2 border-dashed border-vl-ink/40" : ""} ${
-                i >= 2 ? "border-t-2 border-dashed border-vl-ink/40 sm:border-t-0" : ""
-              } ${i === 2 ? "sm:border-l-2" : ""}`}
-            >
-              <p className="font-display-en text-[48px] leading-none text-vl-red md:text-[60px]">{n}</p>
-              <p className="mt-1 text-[13px] font-bold whitespace-nowrap md:text-[14px]">{label}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-6 mb-12 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6 md:mb-16">
-          <p className="text-[13px] font-bold whitespace-nowrap">傾向の印は、五種</p>
+        {/* 傾向の印 */}
+        <div className="mt-8 mb-12 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6 md:mb-16">
+          <p className="text-[13px] font-bold whitespace-nowrap">傾向の印</p>
           <ul className="grid flex-1 grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3 lg:grid-cols-5">
             {TRENDS.map((t) => (
               <li key={t} className="flex items-center gap-2">
@@ -112,6 +89,14 @@ export default function Home() {
 
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         <IndexView values={values} />
+      </div>
+
+      {/* 終わりの帯（逆向きに流れる） */}
+      <div className="vl-marquee vl-marquee--rev mt-16" aria-hidden>
+        <div className="vl-marquee__track">
+          <span>{band.repeat(4)}</span>
+          <span>{band.repeat(4)}</span>
+        </div>
       </div>
     </>
   );

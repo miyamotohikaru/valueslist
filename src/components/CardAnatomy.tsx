@@ -71,7 +71,6 @@ function Label({ p, n, align }: { p: Part; n: number; align: "left" | "right" })
       <div className="min-w-0 pt-[3px]">
         <p className={`flex flex-wrap items-baseline gap-x-2 ${right ? "justify-end" : ""}`}>
           <span className="text-[15px] leading-tight font-bold">{p.ja}</span>
-          <span className="font-type text-[12px] leading-tight font-bold tracking-[0.08em] text-vl-red-deep">{p.en}</span>
         </p>
         <p className="mt-1 text-[13.5px] leading-[1.75] lg:text-[13px] xl:text-[13.5px]">
           <Ja text={p.text} />
@@ -81,7 +80,7 @@ function Label({ p, n, align }: { p: Part; n: number; align: "left" | "right" })
   );
 }
 
-export default function CardAnatomy({ v, fig = "FIG.1" }: { v: Value; fig?: string }) {
+export default function CardAnatomy({ v }: { v: Value }) {
   const bodyRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const leftRef = useRef<HTMLDivElement>(null);
@@ -190,9 +189,8 @@ export default function CardAnatomy({ v, fig = "FIG.1" }: { v: Value; fig?: stri
     <figure className="vl-anatomy border-2 border-vl-ink bg-vl-card">
       <figcaption className="flex items-center justify-between gap-3 bg-vl-ink px-4 py-2.5 text-vl-paper md:px-6">
         <span className="flex items-baseline gap-3">
-          <span className="font-type text-[12px] font-bold tracking-[0.12em] text-vl-mustard">{fig}</span>
           <span className="text-[13px] font-bold">
-            カードの見本 · NO.{v.no} {v.name}
+            カードの見本 NO.{v.no} {v.name}
           </span>
         </span>
         <span className="font-display-en hidden text-[13px] tracking-[0.14em] text-vl-mustard sm:inline">ANATOMY OF A CARD</span>

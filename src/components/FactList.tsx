@@ -1,6 +1,5 @@
 import type { Value } from "@/data/types";
 import { SourceText } from "@/lib/source";
-import TypeLabel from "./TypeLabel";
 
 /**
  * 裏取りメモ。PC は2段組（左に番号付きの事実、右に確度の印と出典の一覧）。
@@ -63,9 +62,7 @@ export default function FactList({ v }: { v: Value }) {
             </span>
           </div>
           <p className="mt-3 text-[13px] font-bold">確度 {v.confidence}：{stamp.ja}</p>
-          <p className="mt-6 text-[12px] font-bold text-vl-ink-soft">
-            <TypeLabel text="SOURCES · 出典" />
-          </p>
+          <p className="mt-6 text-[12px] font-bold text-vl-ink-soft">出典</p>
           {sources.length > 0 ? (
             <ol className="mt-2 list-decimal space-y-2 pl-5 text-[13px] leading-relaxed">
               {sources.map((s, i) => (

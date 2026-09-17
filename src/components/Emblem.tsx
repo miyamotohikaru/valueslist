@@ -30,6 +30,7 @@ export default function Emblem({
       <circle cx="100" cy="100" r="89" fill="none" stroke="var(--vl-paper)" strokeWidth="1.6" />
       <circle cx="100" cy="100" r="58" fill="none" stroke="var(--vl-paper)" strokeWidth="1.6" />
       <text
+        className="vl-emblem-ring"
         fill="var(--vl-paper)"
         fontSize="16.5"
         fontFamily="var(--font-anton), var(--font-zen-kaku), Impact, sans-serif"

@@ -70,13 +70,12 @@ export default function ValueCard({ v, index = 0 }: { v: Value; index?: number }
           </span>
         </header>
 
-        {illust && (
-          <div className="vl-card__illust" aria-hidden>
-            <Illust no={v.no} />
-          </div>
-        )}
-
         <div className="vl-card__body">
+          {illust && (
+            <div className="vl-card__illust" aria-hidden>
+              <Illust no={v.no} />
+            </div>
+          )}
           <div className="vl-card__head">
             <p className="vl-card__en">{v.en}</p>
             <h3 className="vl-card__name">

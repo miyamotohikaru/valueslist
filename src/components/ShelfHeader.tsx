@@ -25,7 +25,7 @@ export default function ShelfHeader({ shelf, count }: { shelf: ShelfMeta; count:
           <span>
             <BreakText text={shelf.evidenceNote} />
           </span>
-          <span className="font-type font-bold tracking-[0.1em] text-vl-ink">{count} ITEMS</span>
+          <span className="font-bold text-vl-ink">{count}点</span>
         </p>
       </div>
     </div>

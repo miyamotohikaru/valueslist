@@ -95,16 +95,6 @@ function Section({ id, children }: { id: (typeof SECTIONS)[number]["id"]; childr
   );
 }
 
-/** 小さな見出し（欧文は Courier、和文は Zen Kaku） */
-function Kicker({ en, ja, className = "" }: { en: string; ja: string; className?: string }) {
-  return (
-    <p className={`flex flex-wrap items-baseline gap-x-2 text-[12px] font-bold ${className}`}>
-      <span className="font-type tracking-[0.12em] text-vl-red">{en}</span>
-      <span>{ja}</span>
-    </p>
-  );
-}
-
 /** 年表の凡例に使う小さな図 */
 function Glyph({ kind }: { kind: "hatch" | "bar" | "x" | "dot" | "now" | "tail" }) {
   const c = "var(--vl-brown)";
@@ -173,7 +163,6 @@ export default function AboutPage() {
       {/* 見出し */}
       <section className="grid gap-8 py-10 md:grid-cols-[1.2fr_1fr] md:items-end md:gap-12 md:py-16">
         <div>
-          <Kicker en="HOW TO READ" ja="この店の読み方" />
           <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-1">
             <h1 className="font-display-ja text-[40px] leading-[1.05] md:text-[64px]">読み方</h1>
             <span
@@ -196,7 +185,7 @@ export default function AboutPage() {
 
         {/* 目次 */}
         <nav aria-label="目次" className="vl-offset border-2 border-vl-ink bg-vl-card px-5 py-4 md:px-6 md:py-5">
-          <Kicker en="CONTENTS" ja="目次" />
+          <p className="text-[12px] font-bold">目次</p>
           <ol className="mt-2">
             {SECTIONS.map((s) => (
               <li key={s.id}>
@@ -206,9 +195,6 @@ export default function AboutPage() {
                 >
                   <span className="font-type text-[12px] font-bold tracking-[0.08em] text-vl-red-deep">{s.no}</span>
                   <span className="text-[14px] font-bold">{s.ja}</span>
-                  <span className="font-type ml-auto hidden text-[12px] tracking-[0.06em] text-vl-ink-soft sm:inline">
-                    {s.en}
-                  </span>
                 </a>
               </li>
             ))}
@@ -225,7 +211,7 @@ export default function AboutPage() {
             {"この図鑑は、日本の価値観（規範・人生観・判断基準）を商品に見立て、製造年・廃番年・再入荷年を出典にあたって特定し、棚に並べたものだ。「昔からの伝統」に見えるものほど製造年が新しく、「新品」に見えるものが中世の在庫の再出荷だったりする。それを年代順に並べて、目で見えるようにするのが目的である。「情報を並べるシリーズ」の14番目にあたり、姉妹サイトに「消滅職業図鑑」と「診断名アーカイブ」がある。"}
           </p>
           <div>
-            <Kicker en="THREE DATES" ja="三つの年" />
+            <p className="text-[12px] font-bold">三つの年</p>
             <ul className="mt-3 grid gap-3">
               {DATES.map((d) => (
                 <li key={d.en} className="vl-offset-sm flex items-center gap-4 border-2 border-vl-ink bg-vl-card px-4 py-3">
@@ -245,15 +231,12 @@ export default function AboutPage() {
 
       {/* 02 カードの読み方 */}
       <Section id="card">
-        <CardAnatomy v={ANATOMY} fig="FIG.1" />
+        <CardAnatomy v={ANATOMY} />
 
         {/* カード面の年表 */}
         <figure className="mt-10 border-2 border-vl-ink bg-vl-card md:mt-12">
           <figcaption className="flex items-center justify-between gap-3 bg-vl-ink px-4 py-2.5 text-vl-paper md:px-6">
-            <span className="flex items-baseline gap-3">
-              <span className="font-type text-[12px] font-bold tracking-[0.12em] text-vl-mustard">FIG.2</span>
-              <span className="text-[13px] font-bold">カード面の年表</span>
-            </span>
+            <span className="text-[13px] font-bold">カード面の年表</span>
             <span className="font-display-en hidden text-[13px] tracking-[0.14em] text-vl-mustard sm:inline">SPAN STRIP</span>
           </figcaption>
           <div className="grid gap-8 p-5 md:grid-cols-[1.15fr_1fr] md:items-center md:gap-10 md:p-7">
@@ -293,7 +276,7 @@ export default function AboutPage() {
         <p className="mb-8 max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
           <Ja text="年を特定する方法は、二つある。どちらで特定したかは、◆各項目のページに書いてある。" />
         </p>
-        <EvidenceTwo fig="FIG.3" />
+        <EvidenceTwo />
       </Section>
 
       <div className="vl-rule" />
@@ -396,10 +379,7 @@ export default function AboutPage() {
           <dl className="border-2 border-vl-ink bg-vl-card">
             {SOURCE_RULES.map((r) => (
               <div key={r.en} className="grid grid-cols-[6.5em_1fr] items-center gap-x-4 border-b border-vl-line px-4 py-3 last:border-b-0">
-                <dt>
-                  <span className="text-[15px] leading-none font-bold">{r.ja}</span>
-                  <span className="font-type mt-1 block text-[12px] tracking-[0.1em] text-vl-red-deep">{r.en}</span>
-                </dt>
+                <dt className="text-[15px] leading-none font-bold">{r.ja}</dt>
                 <dd className="text-[14px] leading-[1.7]">{r.text}</dd>
               </div>
             ))}
@@ -428,7 +408,7 @@ export default function AboutPage() {
                   className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-4 py-3 hover:text-vl-red"
                 >
                   <span className="text-[15px] font-bold">{s.name}</span>
-                  <span className="font-type ml-auto text-[12px] tracking-[0.06em] text-vl-ink-soft">{s.en} ↗</span>
+                  <span className="ml-auto text-[13px] font-bold text-vl-ink-soft">↗</span>
                 </a>
               </li>
             ))}

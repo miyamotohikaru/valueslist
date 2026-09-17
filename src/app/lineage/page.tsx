@@ -5,7 +5,6 @@ import { lineages } from "@/data/lineages";
 import LineageIndex from "@/components/LineageIndex";
 import LineageDiagram from "@/components/LineageDiagram";
 import MobileBreak from "@/components/MobileBreak";
-import TypeLabel from "@/components/TypeLabel";
 
 export const metadata: Metadata = {
   title: "系譜 | 価値観一覧図鑑",
@@ -18,9 +17,6 @@ export default function LineagePage() {
       {/* 見出しと目次 */}
       <section className="grid gap-10 py-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-end lg:gap-12 md:py-16">
         <div>
-          <p className="text-[12px] font-bold">
-            <TypeLabel text="LINEAGE · 系譜" />
-          </p>
           <h1 className="font-display-ja mt-4 text-[40px] leading-[1.05] md:text-[64px]">系譜</h1>
           <p className="font-display-en vl-misreg mt-2 text-[56px] leading-[0.86] tracking-[0.01em] text-vl-red md:text-[92px]">
             BACK IN STOCK
@@ -60,9 +56,6 @@ export default function LineagePage() {
           className="vl-offset flex items-center justify-between gap-4 border-2 border-vl-ink bg-vl-red px-5 py-5 text-vl-paper transition-transform hover:-translate-y-0.5 md:px-7 md:py-6"
         >
           <span>
-            <span className="block text-[12px] font-bold opacity-90">
-              <TypeLabel text="TIMELINE · 製造年順" />
-            </span>
             <span className="font-display-ja mt-1 block text-[24px] leading-none md:text-[28px]">年表へ</span>
           </span>
           <span className="text-[36px] leading-none font-bold">→</span>
@@ -72,9 +65,6 @@ export default function LineagePage() {
           className="vl-offset flex items-center justify-between gap-4 border-2 border-vl-ink bg-vl-card px-5 py-5 transition-transform hover:-translate-y-0.5 md:px-7 md:py-6"
         >
           <span>
-            <span className="block text-[12px] font-bold text-vl-ink-soft">
-              <TypeLabel text="INDEX · 棚に戻る" />
-            </span>
             <span className="font-display-ja mt-1 block text-[24px] leading-none md:text-[28px]">索引へ</span>
           </span>
           <span className="text-[36px] leading-none font-bold">→</span>

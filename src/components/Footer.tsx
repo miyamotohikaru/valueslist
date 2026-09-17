@@ -76,8 +76,6 @@ export default function Footer() {
             <span className="font-type tracking-[0.1em]">© kosukuma</span>
             <span aria-hidden>·</span>
             <span className="font-bold">情報を並べるシリーズ 14</span>
-            <span aria-hidden>·</span>
-            <span className="font-type whitespace-nowrap tracking-[0.1em]">FACT-CHECKED EDITION</span>
           </p>
         </div>
       </div>

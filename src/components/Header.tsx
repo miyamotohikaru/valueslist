@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { stats } from "@/data/values";
 
 export const NAV = [
   { href: "/", ja: "索引", en: "INDEX" },
@@ -26,12 +25,7 @@ export default function Header() {
           <span className="font-display-en bg-vl-red px-2 py-1 text-[13px] leading-none tracking-[0.12em] text-vl-paper">
             No.14
           </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display-ja text-[17px] md:text-[19px]">価値観一覧図鑑</span>
-            <span className="font-type mt-1 text-[11px] tracking-[0.14em] text-vl-ink-soft">
-              VALUES CATALOG · {stats.total} ITEMS
-            </span>
-          </span>
+          <span className="font-display-ja text-[18px] leading-none md:text-[20px]">価値観一覧図鑑</span>
         </Link>
         <nav className="hidden items-center gap-7 md:flex">
           {NAV.map((n) => {

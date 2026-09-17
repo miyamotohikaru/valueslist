@@ -59,7 +59,6 @@ export default function DetailSpec({ v }: { v: Value }) {
         className="flex items-center justify-between px-4 py-2"
         style={{ background: acc.bg, color: acc.fg }}
       >
-        <span className="font-type text-[12px] font-bold tracking-[0.14em]">SPEC SHEET</span>
         <span className="text-[13px] font-bold">仕様</span>
       </div>
       <div className="grid grid-cols-2">

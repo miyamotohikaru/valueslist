@@ -9,10 +9,10 @@ import {
   type Lineage,
   type LineageNode,
 } from "@/data/lineages";
-import { scaleYear, ERAS, ERA_MIN, ERA_MAX } from "@/lib/timescale";
+import { scaleYear, ERAS, ERA_MAX } from "@/lib/timescale";
 import { SHELF_ACCENT } from "./ValueCard";
 import EraBars, { countByEra } from "./EraBars";
-import TypeLabel from "./TypeLabel";
+import Reveal from "./motion/Reveal";
 import MobileBreak from "@/components/MobileBreak";
 
 /** 年の目盛（ヘッダーに数字で出す年） */
@@ -169,7 +169,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
       <Link
         href={`/values/${v.no}`}
         title={tip}
-        className="group grid transition-colors duration-150 hover:bg-vl-card md:h-[46px] md:grid-cols-[var(--tl-left)_1fr] md:grid-rows-1"
+        className="vl-tl-row group grid transition-colors duration-150 hover:bg-vl-card md:h-[46px] md:grid-cols-[var(--tl-left)_1fr] md:grid-rows-1"
       >
         {/* 左: 型番・棚・商品名・製造年 */}
         <div
@@ -341,7 +341,7 @@ function Legend() {
       label: "現役",
     },
     { glyph: <RestockDot />, label: "再入荷" },
-    { glyph: <LoopTag />, label: "150年の円環（FIG.3）" },
+    { glyph: <LoopTag />, label: "150年の円環" },
   ];
   return (
     <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] font-bold">
@@ -599,10 +599,7 @@ function LoopPanel({ lineage }: { lineage: Lineage }) {
     <div className="relative">
       <div className="vl-offset border-2 border-vl-ink bg-vl-card">
         <div className="border-b-2 border-vl-ink px-4 py-3 md:px-8 md:py-4">
-          <h2 className="text-[12px] font-bold text-vl-red-deep">
-            <TypeLabel text="FIG.3 · 150年の円環" />
-          </h2>
-          <p className="font-display-en mt-1 text-[24px] leading-none tracking-[0.04em] uppercase md:text-[30px]">
+          <p className="font-display-en text-[24px] leading-none tracking-[0.04em] uppercase md:text-[30px]">
             {lineage.en}
           </p>
         </div>
@@ -852,9 +849,6 @@ export default function TimelineView() {
         {/* 見出し */}
         <section className="grid gap-10 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:items-stretch md:py-16">
           <div>
-            <p className="text-[12px] font-bold">
-              <TypeLabel text="TIMELINE · 製造年順" />
-            </p>
             <h1 className="font-display-ja mt-4 text-[40px] leading-[1.05] md:text-[64px]">
               年表
             </h1>
@@ -868,23 +862,12 @@ export default function TimelineView() {
               <br />
               古い在庫と新しい在庫を、同じ物差しに乗せる。
             </p>
-            <p className="font-type mt-5 text-[12px] font-bold tracking-[0.08em] text-vl-ink-soft">
-              <span className="whitespace-nowrap">
-                {rows.length} ITEMS · {ERA_MIN}–{ERA_MAX}
-              </span>{" "}
-              <span className="whitespace-nowrap">· SORTED BY MFD. YEAR</span>
-            </p>
           </div>
           <div className="flex flex-col justify-between gap-6">
             <EraRuler />
             {/* 台帳を読む前に、記号の意味を先に置く */}
             <div className="vl-offset-sm border-2 border-vl-ink bg-vl-card px-4 py-3 md:px-5 md:py-4">
-              <p className="text-[12px] font-bold text-vl-ink-soft">
-                <TypeLabel text="KEY · 台帳の記号" />
-              </p>
-              <div className="mt-2.5">
-                <Legend />
-              </div>
+              <Legend />
             </div>
           </div>
         </section>
@@ -900,9 +883,6 @@ export default function TimelineView() {
             <br />
             しばしば同じ商品だ。
           </p>
-          <p className="mt-4 text-[12px] font-bold text-vl-mustard">
-            <TypeLabel text="SAME PRODUCT · 名前を変えて、棚に戻る" />
-          </p>
         </div>
       </div>
 
@@ -910,10 +890,7 @@ export default function TimelineView() {
         {/* FIG.2 製造工場別 出荷数 */}
         <section className="grid gap-8 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start md:gap-12 md:py-14">
           <div>
-            <h2 className="text-[12px] font-bold text-vl-red-deep">
-              <TypeLabel text="FIG.1 · 製造工場別 出荷数" />
-            </h2>
-            <p className="font-display-ja mt-3 text-[24px] leading-[1.3] md:text-[30px]">
+            <p className="font-display-ja text-[24px] leading-[1.3] md:text-[30px]">
               工場は五つある。
             </p>
             <p className="mt-4 text-[14px] leading-[1.9] md:text-[15px]">
@@ -926,10 +903,9 @@ export default function TimelineView() {
               新しい工場の出荷だったりする。
             </p>
           </div>
-          <EraBars
-            items={rows}
-            className="w-full max-w-[560px] md:justify-self-end"
-          />
+          <Reveal className="md:justify-self-end">
+            <EraBars items={rows} className="w-full max-w-[560px]" />
+          </Reveal>
         </section>
 
         <div className="vl-rule" />
@@ -938,9 +914,6 @@ export default function TimelineView() {
         <section className="py-12 md:py-16">
           <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-[12px] font-bold text-vl-red-deep">
-                <TypeLabel text="FIG.2 · 在庫台帳" />
-              </p>
               <h2 className="font-display-ja text-[24px] leading-tight md:text-[30px]">
                 全在庫、製造年順
               </h2>

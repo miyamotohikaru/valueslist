@@ -6,6 +6,7 @@ import { shelves, trendMeta, evidenceMeta } from "@/data/shelves";
 import ValueCard, { SHELF_ACCENT } from "./ValueCard";
 import ShelfHeader from "./ShelfHeader";
 import RestockPairs, { longRestocks } from "./RestockPairs";
+import Tilt from "./motion/Tilt";
 import MetaSpecimen from "./MetaSpecimen";
 
 type SortKey = "no" | "made" | "disc";
@@ -219,7 +220,7 @@ export default function IndexView({ values }: { values: Value[] }) {
       </div>
 
       {sort === "no" ? (
-        <div className="mt-12 space-y-20">
+        <Tilt className="mt-12 space-y-20">
           {shelves.map((s) => {
             if (s.virtual) {
               const pairs = longRestocks(filtered, values);
@@ -249,11 +250,11 @@ export default function IndexView({ values }: { values: Value[] }) {
               </section>
             );
           })}
-        </div>
+        </Tilt>
       ) : (
-        <div className="mt-10">
+        <Tilt className="mt-10">
           <Grid items={filtered} />
-        </div>
+        </Tilt>
       )}
 
       {filtered.length === 0 && <p className="mt-16 text-center text-[14px] font-bold text-vl-ink-soft">該当する在庫がありません。</p>}

@@ -33,7 +33,7 @@ export default function ExplodedCard({ className = "" }: { className?: string })
   const VW = X0 + W + SK + 8;
 
   return (
-    <svg viewBox={`0 0 ${VW} ${H}`} className={className} role="img" aria-label="価値観カードの分解図">
+    <svg viewBox={`0 0 ${VW} ${H}`} className={`vl-ex ${className}`} role="img" aria-label="価値観カードの分解図">
       <defs>
         <pattern id="ex-dots" width="6" height="6" patternUnits="userSpaceOnUse">
           <circle cx="3" cy="3" r="1.4" fill={RED} opacity="0.7" />
@@ -54,7 +54,7 @@ export default function ExplodedCard({ className = "" }: { className?: string })
         const faceFill = r.face === "dots" ? "url(#ex-dots)" : r.face === "hatch" ? "url(#ex-hatch)" : RED;
         const isName = r.label === "商品名";
         return (
-          <g key={i}>
+          <g key={i} className="vl-ex-layer" style={{ ["--i" as string]: i }}>
             {/* 引き出し線と札 */}
             <line x1={120} y1={cy} x2={x + 10} y2={r.y + DP - 5} stroke={RED} strokeWidth="1.8" strokeDasharray="4 3" />
             <circle cx={x + 10} cy={r.y + DP - 5} r="3" fill={RED} />

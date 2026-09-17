@@ -2,7 +2,7 @@
 export default function TitleLockup({ className = "block h-auto w-full max-w-[520px]" }: { className?: string }) {
   return (
     <svg viewBox="0 0 460 332" className={className} role="img" aria-label="価値観一覧図鑑 VALUES CATALOG">
-      <text x="0" y="62" fontSize="64" textLength="456" lengthAdjust="spacing" fill="var(--vl-ink)" fontFamily="var(--font-dela), sans-serif">
+      <text x="0" y="62" fontSize="64" textLength="456" lengthAdjust="spacing" fill="var(--vl-ink)" fontFamily="var(--font-ja-display), sans-serif">
         価値観一覧図鑑
       </text>
       {[

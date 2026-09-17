@@ -75,15 +75,15 @@ export default function ExplodedCard({ className = "" }: { className?: string })
             <polygon points={front} fill={faceFill} opacity={r.face === "plain" ? 0.9 : 1} stroke={RED} strokeWidth="2.2" strokeLinejoin="round" />
             <polygon points={top} fill={PAPER} stroke={RED} strokeWidth="2.2" strokeLinejoin="round" />
             <polygon points={top} fill="url(#ex-dots-top)" />
-            {/* Dela は 400 しかない。fontWeight 700 だと合成ボールドで字が重なる */}
+            {/* 見出しの和文は 800 のみ。合成ボールドを起こさないよう weight を明示する */}
             <text
               x={x + SK / 2 + W / 2}
               y={r.y + DP / 2 + (isName ? 7 : 4.5)}
               textAnchor="middle"
               fontSize={isName ? 21 : 14}
-              fontWeight={isName ? 400 : 700}
+              fontWeight={isName ? 800 : 700}
               fill={INK}
-              fontFamily={isName ? "var(--font-dela), sans-serif" : "var(--font-zen-kaku), sans-serif"}
+              fontFamily={isName ? "var(--font-ja-display), sans-serif" : "var(--font-zen-kaku), sans-serif"}
             >
               {r.text}
             </text>

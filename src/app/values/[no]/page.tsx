@@ -14,6 +14,7 @@ import LawTimeline from "@/components/LawTimeline";
 import FactList from "@/components/FactList";
 import LineageStrip from "@/components/LineageStrip";
 import FitLines from "@/components/FitLines";
+import Illust, { hasIllust } from "@/components/illust";
 import TypeLabel from "@/components/TypeLabel";
 
 type Params = { params: Promise<{ no: string }> };
@@ -265,6 +266,14 @@ export default async function ValuePage({ params }: Params) {
       {/* 仕様表・流通期間 ＋ 主の証拠 */}
       <section className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-10" aria-label="仕様と証拠">
         <div className="space-y-7">
+          {hasIllust(v.no) && (
+            <figure className="vl-offset border-2 border-vl-ink bg-vl-paper px-4 py-5">
+              <Illust no={v.no} className="mx-auto block h-auto w-[min(260px,78%)]" />
+              <figcaption className="mt-3 border-t-2 border-vl-ink pt-2 text-[12px] font-bold text-vl-ink-soft">
+                <TypeLabel text={`PLATE · ${v.name}の図`} />
+              </figcaption>
+            </figure>
+          )}
           <DetailSpec v={v} />
           <SpanBox v={v} accent={acc.bar} outline={v.shelf === 3} />
         </div>

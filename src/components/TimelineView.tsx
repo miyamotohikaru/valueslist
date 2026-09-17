@@ -518,7 +518,7 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
                   textAnchor={anchor}
                   fontSize="24"
                   fill="var(--vl-ink)"
-                  fontFamily="var(--font-dela), sans-serif"
+                  fontFamily="var(--font-ja-display), sans-serif"
                 >
                   {node.n.label}
                 </text>

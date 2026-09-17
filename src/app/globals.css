@@ -49,7 +49,7 @@ body {
 
 /* 見出し（和文ディスプレイ） */
 .font-display-ja {
-  font-family: var(--font-dela), var(--font-zen-kaku), sans-serif;
+  font-family: var(--font-ja-display), var(--font-zen-kaku), sans-serif;
 }
 /* 見出し（欧文コンデンス） */
 .font-display-en {
@@ -339,7 +339,7 @@ body {
 }
 .vl-card__name {
   margin-top: 0.3em;
-  font-family: var(--font-dela), var(--font-zen-kaku), sans-serif;
+  font-family: var(--font-ja-display), var(--font-zen-kaku), sans-serif;
   font-size: max(18px, var(--name-v));
   line-height: 1.16;
   letter-spacing: 0.01em;
@@ -414,11 +414,44 @@ body {
   transform: none;
 }
 
+/* 図版（イラスト）。縦長カードでは帯、行カードでは右の欄 */
+.vl-card__illust {
+  border-bottom: 2px solid var(--vl-ink);
+  background: var(--vl-paper);
+  display: grid;
+  place-items: center;
+  padding: 6px 0 4px;
+}
+.vl-card__illust svg {
+  display: block;
+  width: max(84px, 34cqw);
+  height: auto;
+}
+
 /* ── 行カード（携帯の1列） */
 @container (min-width: 340px) {
   .vl-card {
     display: grid;
     grid-template-columns: 62px minmax(0, 1fr);
+  }
+  .vl-card--illust {
+    grid-template-columns: 62px minmax(0, 1fr) 92px;
+    grid-template-areas: "band body illust";
+  }
+  .vl-card--illust .vl-card__band {
+    grid-area: band;
+  }
+  .vl-card--illust .vl-card__body {
+    grid-area: body;
+  }
+  .vl-card--illust .vl-card__illust {
+    grid-area: illust;
+    border-bottom: 0;
+    border-left: 2px solid var(--vl-ink);
+    padding: 8px 6px;
+  }
+  .vl-card--illust .vl-card__illust svg {
+    width: 76px;
   }
   .vl-card__band {
     flex-direction: column;

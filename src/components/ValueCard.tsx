@@ -4,6 +4,7 @@ import type { Value } from "@/data/types";
 import { categoryMeta, evidenceMeta } from "@/data/shelves";
 import SpanStrip from "./SpanStrip";
 import TrendStamp from "./TrendStamp";
+import Illust, { hasIllust } from "./illust";
 
 export const SHELF_ACCENT: Record<string, { bg: string; fg: string; bar: string }> = {
   "1": { bg: "var(--vl-brown)", fg: "var(--vl-paper)", bar: "var(--vl-brown)" },
@@ -46,6 +47,8 @@ export default function ValueCard({ v, index = 0 }: { v: Value; index?: number }
       ? { k: "DISC.", t: v.discontinued.label }
       : { k: "NOW", t: "現役" };
 
+  const illust = hasIllust(v.no);
+
   return (
     <Link
       href={`/values/${v.no}`}
@@ -53,7 +56,7 @@ export default function ValueCard({ v, index = 0 }: { v: Value; index?: number }
       style={{ animationDelay: `${Math.min(index, 12) * 40}ms` }}
     >
       <article
-        className="vl-card vl-offset"
+        className={`vl-card vl-offset${illust ? " vl-card--illust" : ""}`}
         style={{ ["--band-bg" as string]: acc.bg, ["--band-fg" as string]: acc.fg, ["--name-v" as string]: nameV, ["--name-r" as string]: nameR }}
       >
         <header className="vl-card__band">
@@ -66,6 +69,12 @@ export default function ValueCard({ v, index = 0 }: { v: Value; index?: number }
             <span className="vl-card__cat-en"> · {categoryMeta[v.category].en}</span>
           </span>
         </header>
+
+        {illust && (
+          <div className="vl-card__illust" aria-hidden>
+            <Illust no={v.no} />
+          </div>
+        )}
 
         <div className="vl-card__body">
           <div className="vl-card__head">

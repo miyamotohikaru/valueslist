@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 
 /**
- * 画面に入ったときに、中身をふわっと出す。
- * 中に `.vl-draw` の線があれば、その線を引く動きも付ける。
- * 対応していない環境や「動きを減らす」設定のときは、そのまま出す。
+ * 画面に入ったときに､中身をふわっと出す｡
+ * 中に `.vl-draw` の線があれば､その線を引く動きも付ける｡
+ * 対応していない環境や｢動きを減らす｣設定のときは､そのまま出す｡
  */
 const reduced = () =>
   typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -22,7 +22,7 @@ export default function Reveal({
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
 
-  // 線を引く動きの準備。実際の線の長さを測って、いったん隠す
+  // 線を引く動きの準備｡実際の線の長さを測って､いったん隠す
   useEffect(() => {
     const el = ref.current;
     if (!el || reduced()) return;
@@ -60,7 +60,7 @@ export default function Reveal({
     };
   }, []);
 
-  // 見えたら線を引く。引き終わったら破線の指定を外して、実線に戻す
+  // 見えたら線を引く｡引き終わったら破線の指定を外して､実線に戻す
   useEffect(() => {
     const el = ref.current;
     if (!inView || !el || reduced()) return;

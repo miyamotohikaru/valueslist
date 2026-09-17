@@ -5,8 +5,8 @@ import Shudo from "./Shudo";
 import Inkyo from "./Inkyo";
 
 /**
- * 型番ごとの図版。まだ描いていない型番は null を返す（カードは図版なしで組む）。
- * 図は viewBox 160×160 の正方形。色は墨・クリーム・朱の3色だけ。
+ * 型番ごとの図版｡まだ描いていない型番は null を返す（カードは図版なしで組む）｡
+ * 図は viewBox 160×160 の正方形｡色は墨・クリーム・朱の3色だけ｡
  */
 const ILLUST: Record<string, ComponentType<{ className?: string }>> = {
   "001": Vendetta,

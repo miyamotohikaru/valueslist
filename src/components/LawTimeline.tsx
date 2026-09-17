@@ -2,8 +2,8 @@ import type { Value, DatePoint } from "@/data/types";
 import { SourceText } from "@/lib/source";
 
 /**
- * 日付の帳票。製造／廃番／再入荷を縦に並べ、左の縦線（スパイン）で結ぶ。
- * 箱の高さは中身に合わせる（隣の列に合わせて伸ばさない）。
+ * 日付の帳票｡製造／廃番／再入荷を縦に並べ､左の縦線（スパイン）で結ぶ｡
+ * 箱の高さは中身に合わせる（隣の列に合わせて伸ばさない）｡
  */
 type Kind = "made" | "discontinued" | "restocked";
 
@@ -70,9 +70,9 @@ export default function LawTimeline({ v }: { v: Value }) {
       <div className="border-b-2 border-vl-ink px-4 py-3 md:px-5">
         <div className="flex items-start justify-between gap-3">
           <p className="text-[15px] leading-snug font-bold md:text-[16px]">
-            {v.name}の日付は、
+            {v.name}の日付は､
             <br />
-            この文書で決まる。
+            この文書で決まる｡
           </p>
           <span className="vl-stamp font-display-en shrink-0 text-[12px] text-vl-red-deep md:text-[13px]">DATED BY DOCUMENT</span>
         </div>

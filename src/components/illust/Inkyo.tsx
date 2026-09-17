@@ -1,6 +1,6 @@
 import IllustFrame, { INK, PAPER, RED, SW, SW_THIN, Sparkle } from "./base";
 
-/** NO.004 隠居 — 家督を譲ったあとの、急須と湯呑み */
+/** NO.004 隠居 — 家督を譲ったあとの､急須と湯呑み */
 export default function Inkyo({ className = "" }: { className?: string }) {
   const id = "il-inkyo";
   return (

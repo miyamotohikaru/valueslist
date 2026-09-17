@@ -265,6 +265,19 @@ const scrub = (o) => {
 values.forEach(scrub);
 for (const v of values) if (v.hitokoto.length > 42) problems.push(`[${v.name}] ひとことが長い（${v.hitokoto.length}字）`);
 
+// 句読点とかぎ括弧は半角で組む（掲載用。research の原本は全角のまま）
+const HALF = { "。": "｡", "、": "､", "「": "｢", "」": "｣", "｛": "{", "｝": "}" };
+const toHalf = (o) => {
+  if (typeof o === "string") return o.replace(/[。、「」｛｝]/g, (c) => HALF[c]);
+  if (Array.isArray(o)) return o.map(toHalf);
+  if (o && typeof o === "object") {
+    for (const k of Object.keys(o)) if (k !== "points") o[k] = toHalf(o[k]);
+    return o;
+  }
+  return o;
+};
+for (const v of values) toHalf(v);
+
 fs.writeFileSync(OUT, JSON.stringify(values, null, 2) + "\n");
 console.log(`audit patches applied: ${auditApplied}`);
 console.log(`wrote ${values.length} items → ${path.relative(ROOT, OUT)}\n`);

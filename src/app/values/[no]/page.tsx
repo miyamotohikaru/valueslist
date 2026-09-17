@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-/** 見出しの大きさ。最長の行の文字数で決める */
+/** 見出しの大きさ｡最長の行の文字数で決める */
 function titleSize(lines: string[]): string {
   const n = Math.max(...lines.map((l) => [...l].reduce((a, ch) => a + (/[\x20-\x7e]/.test(ch) ? 0.55 : 1), 0)));
   if (n <= 3) return "clamp(64px, 19vw, 128px)";
@@ -56,7 +56,7 @@ function titleSize(lines: string[]): string {
   return "clamp(24px, 6.6vw, 48px)";
 }
 
-/** おなじ棚の他の商品。自分の後ろに続くものを優先して最大 4 枚 */
+/** おなじ棚の他の商品｡自分の後ろに続くものを優先して最大 4 枚 */
 function sameShelf(v: Value, max = 4) {
   const list = byShelf(v.shelf);
   const i = list.findIndex((x) => x.no === v.no);

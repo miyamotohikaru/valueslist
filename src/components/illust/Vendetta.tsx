@@ -1,6 +1,6 @@
 import IllustFrame, { INK, PAPER, RED, SW, SW_THIN, Sparkle } from "./base";
 
-/** NO.001 仇討ち — 刀と、奉行所に届け出る免状（巻紙）と、朱印 */
+/** NO.001 仇討ち — 刀と､奉行所に届け出る免状（巻紙）と､朱印 */
 export default function Vendetta({ className = "" }: { className?: string }) {
   const id = "il-vendetta";
   return (

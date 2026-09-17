@@ -2,10 +2,10 @@ import type { Value } from "@/data/types";
 import { ERAS, eraOf } from "@/lib/timescale";
 
 /**
- * FIG.1 製造工場別 出荷数。
- * 時代（＝工場）ごとに、そこで製造された価値観の数を横向きの棒で描く。
- * 棚の色は使わず、赤一色＋クリーム。
- * 主役は棒。数字は棒の長さの確認であって、画面でいちばん強い要素にはしない。
+ * FIG.1 製造工場別 出荷数｡
+ * 時代（＝工場）ごとに､そこで製造された価値観の数を横向きの棒で描く｡
+ * 棚の色は使わず､赤一色＋クリーム｡
+ * 主役は棒｡数字は棒の長さの確認であって､画面でいちばん強い要素にはしない｡
  */
 const RED = "var(--vl-red)";
 const INK = "var(--vl-ink)";
@@ -34,7 +34,7 @@ export default function EraBars({ items, className = "" }: { items: Value[]; cla
   const barMax = W - LABEL_W - NUM_W;
   const x = (n: number) => LABEL_W + (n / gridMax) * barMax;
   const baseY = TOP + ROW * ERAS.length;
-  const H = baseY + 34;
+  const H = baseY + 24;
   const ticks: number[] = [];
   for (let t = 0; t <= gridMax; t += step) ticks.push(t);
   const right = x(gridMax); // 軸はいちばん右の目盛りで止める（余った尻尾を出さない）
@@ -92,9 +92,6 @@ export default function EraBars({ items, className = "" }: { items: Value[]; cla
       {/* 軸 */}
       <line x1={LABEL_W} y1={TOP - 4} x2={LABEL_W} y2={baseY} stroke={INK} strokeWidth="2" />
       <line x1={LABEL_W - 1} y1={baseY} x2={right} y2={baseY} stroke={INK} strokeWidth="2" />
-      <text x={right} y={H - 3} textAnchor="end" fontSize="11" fontWeight="700" fill={RED} fontFamily={COURIER} letterSpacing="0.6">
-        SHIPMENTS BY FACTORY
-      </text>
     </svg>
   );
 }

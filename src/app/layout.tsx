@@ -21,7 +21,7 @@ const courier = Courier_Prime({
   subsets: ["latin"],
   variable: "--font-courier",
 });
-// 見出しの和文。太くて読みやすい丸ゴシック（レトロな看板の字に近い）
+// 見出しの和文｡太くて読みやすい丸ゴシック（レトロな看板の字に近い）
 const jaDisplay = M_PLUS_Rounded_1c({ weight: "800", subsets: ["latin"], variable: "--font-ja-display" });
 const zenKaku = Zen_Kaku_Gothic_New({
   weight: ["400", "500", "700"],
@@ -30,7 +30,7 @@ const zenKaku = Zen_Kaku_Gothic_New({
 });
 
 const DESCRIPTION =
-  "その価値観には、製造年がある。日本の価値観を、製造・廃番・再入荷の年で棚に並べ、一次資料で裏を取った図鑑。";
+  "その価値観には､製造年がある｡日本の価値観を､製造・廃番・再入荷の年で棚に並べ､一次資料で裏を取った図鑑｡";
 
 
 export const metadata: Metadata = {

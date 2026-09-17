@@ -8,7 +8,7 @@ import MobileBreak from "@/components/MobileBreak";
 
 export const metadata: Metadata = {
   title: "系譜 | 価値観一覧図鑑",
-  description: "廃番になった価値観が、別の名前で再入荷するまでの道筋。系譜ごとに層へ分解して並べる。",
+  description: "廃番になった価値観が､別の名前で再入荷するまでの道筋｡系譜ごとに層へ分解して並べる｡",
 };
 
 export default function LineagePage() {
@@ -22,18 +22,18 @@ export default function LineagePage() {
             BACK IN STOCK
           </p>
           <p className="font-display-ja mt-6 text-[20px] leading-snug md:text-[24px]">
-            価値観は、
+            価値観は､
             <MobileBreak />
-            名前を変えて棚に戻ってくる。
+            名前を変えて棚に戻ってくる｡
           </p>
           <p className="mt-4 text-[15px] leading-[1.9]">
-            近世の在庫が、輸入品のパッケージで帰ってくる。
+            近世の在庫が､輸入品のパッケージで帰ってくる｡
             <br />
-            同じものに、時代ごとに別の名札が付く。
+            同じものに､時代ごとに別の名札が付く｡
             <br />
-            その道筋を、古い順に層へ分解して並べる。
+            その道筋を､古い順に層へ分解して並べる｡
             <br />
-            直系でないものは、そう書いてある。
+            直系でないものは､そう書いてある｡
           </p>
         </div>
         <LineageIndex lineages={lineages} />

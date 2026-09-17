@@ -4,9 +4,9 @@ import { SHELF_ACCENT } from "./ValueCard";
 import TrendStamp from "./TrendStamp";
 
 /**
- * 製品仕様表。2列のマス目に、ラベル（小）と値（太字）を並べる。
- * 型番はヒーローと重複するので出さない。値のない項目（再入荷のないもの等）は出さない。
- * 製造／廃番／再入荷の根拠（fact と出典）は「日付の帳票」（LawTimeline）にまとめる。
+ * 製品仕様表｡2列のマス目に､ラベル（小）と値（太字）を並べる｡
+ * 型番はヒーローと重複するので出さない｡値のない項目（再入荷のないもの等）は出さない｡
+ * 製造／廃番／再入荷の根拠（fact と出典）は｢日付の帳票｣（LawTimeline）にまとめる｡
  */
 function Cell({
   label,
@@ -28,7 +28,7 @@ function Cell({
   );
 }
 
-/** 「1873 復讐厳禁の布告」を、年と説明の2行に分ける（狭いマスで語の途中で折れないように） */
+/** ｢1873 復讐厳禁の布告｣を､年と説明の2行に分ける（狭いマスで語の途中で折れないように） */
 function DateLabel({ label, approx = false }: { label: string; approx?: boolean }) {
   const m = label.match(/^(\S+)\s+(.+)$/);
   const c = approx ? <span className="font-type mr-1 text-[12px] text-vl-ink-soft">c.</span> : null;

@@ -23,23 +23,23 @@ export default function Home() {
             <h1 className="mt-4">
               <TitleLockup />
             </h1>
-            <p className="font-display-ja mt-6 text-[22px] leading-snug md:text-[26px]">その価値観には、製造年がある。</p>
+            <p className="font-display-ja mt-6 text-[22px] leading-snug md:text-[26px]">その価値観には､製造年がある｡</p>
             <p className="mt-4 max-w-[32em] text-[16px] leading-[1.95]">
-              「昔からの伝統」に見える価値観には、
+              ｢昔からの伝統｣に見える価値観には､
               <br />
-              明治の翻訳語や、
+              明治の翻訳語や､
               <MobileBreak />
-              高度成長期の新製品が少なくない。
+              高度成長期の新製品が少なくない｡
               <br />
-              逆に、いちばん新しく見える言葉が、
+              逆に､いちばん新しく見える言葉が､
               <br />
-              150年前の在庫の再出荷だったりする。
+              150年前の在庫の再出荷だったりする｡
               <br />
-              日本の価値観を、
+              日本の価値観を､
               <MobileBreak />
-              製造・廃番・再入荷の年で棚に並べ、
+              製造・廃番・再入荷の年で棚に並べ､
               <br />
-              一つずつ出典で裏を取った。
+              一つずつ出典で裏を取った｡
             </p>
           </div>
 
@@ -52,7 +52,7 @@ export default function Home() {
             />
             <div className="relative">
               <ExplodedCard className="relative block h-auto w-full" />
-              {/* 紋章は図の上に貼ったシールとして、いちばん手前に置く */}
+              {/* 紋章は図の上に貼ったシールとして､いちばん手前に置く */}
               <div className="absolute -top-14 right-0 z-10 rotate-[-12deg] md:-top-16 md:-right-4">
                 <Emblem size={132} className="block h-auto w-[92px] md:w-[112px]" />
               </div>

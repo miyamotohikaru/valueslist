@@ -4,9 +4,9 @@ import TrendStamp from "./TrendStamp";
 import FitLines from "./FitLines";
 
 /**
- * メタ標本（江戸しぐさ）。索引の最後の見せ場。
- * 「伝統に見えて製造年がある」という店のコンセプトを、この1枚で回収する。
- * 文言はすべて values.json のもの（事実を足さない）。
+ * メタ標本（江戸しぐさ）｡索引の最後の見せ場｡
+ * ｢伝統に見えて製造年がある｣という店のコンセプトを､この1枚で回収する｡
+ * 文言はすべて values.json のもの（事実を足さない）｡
  */
 export default function MetaSpecimen({ v }: { v: Value }) {
   const year = v.made?.year;
@@ -23,9 +23,9 @@ export default function MetaSpecimen({ v }: { v: Value }) {
       <div className="grid gap-8 px-5 py-10 md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] md:items-center md:px-10 md:py-14">
         <div className="min-w-0">
           <p className="font-display-ja mt-4 text-[26px] leading-[1.35] text-vl-mustard md:text-[36px]">
-            「伝統」にも、
+            ｢伝統｣にも､
             <br />
-            製造年がある。
+            製造年がある｡
           </p>
           <h2 className="font-display-ja mt-6 text-[48px] leading-none md:text-[72px]">{v.name}</h2>
           <p className="mt-2 text-[13px] tracking-[0.12em] text-vl-paper/80">{v.reading}</p>

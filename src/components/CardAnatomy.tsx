@@ -7,28 +7,28 @@ import type { Value } from "@/data/types";
 import { Ja } from "@/lib/ja";
 
 /**
- * 「カードの読み方」の説明図。索引と同じ実物のカードを中央に置き、
- * 各部位に引き出し線を付けて説明する（PC は左右に説明、携帯は番号札＋凡例）。
- * 部位の位置は描画後に実測する（書体の読み込みや幅が変わっても線がずれない）。
+ * ｢カードの読み方｣の説明図｡索引と同じ実物のカードを中央に置き､
+ * 各部位に引き出し線を付けて説明する（PC は左右に説明､携帯は番号札＋凡例）｡
+ * 部位の位置は描画後に実測する（書体の読み込みや幅が変わっても線がずれない）｡
  */
 type Side = "l" | "r";
 type Part = { side: Side; sel: string; ja: string; en: string; text: string };
 
 /** 左の列（上から）→ 右の列（上から）の順に番号を振る */
 const PARTS: Part[] = [
-  { side: "l", sel: ".vl-card__no", ja: "型番", en: "NO.", text: "棚の並び順の、三桁の番号。" },
-  { side: "r", sel: ".vl-card__cat", ja: "分類", en: "CATEGORY", text: "規範・人生観・判断基準。帯の色は、棚の色。" },
-  { side: "l", sel: ".vl-card__name", ja: "商品名", en: "NAME", text: "価値観の呼び名。上に英名、下に読み。" },
-  { side: "r", sel: ".vl-trend-stamp", ja: "傾向の印", en: "TREND", text: "いまの状態を示す印。五種を、色と文字で見分ける。" },
-  { side: "l", sel: ".vl-card__facts svg", ja: "年表", en: "SPAN", text: "製造から廃番までの帯。読み方は、下の見本で。" },
+  { side: "l", sel: ".vl-card__no", ja: "型番", en: "NO.", text: "棚の並び順の､三桁の番号｡" },
+  { side: "r", sel: ".vl-card__cat", ja: "分類", en: "CATEGORY", text: "規範・人生観・判断基準｡帯の色は､棚の色｡" },
+  { side: "l", sel: ".vl-card__name", ja: "商品名", en: "NAME", text: "価値観の呼び名｡上に英名､下に読み｡" },
+  { side: "r", sel: ".vl-trend-stamp", ja: "傾向の印", en: "TREND", text: "いまの状態を示す印｡五種を､色と文字で見分ける｡" },
+  { side: "l", sel: ".vl-card__facts svg", ja: "年表", en: "SPAN", text: "製造から廃番までの帯｡読み方は､下の見本で｡" },
   {
     side: "r",
     sel: ".vl-card__dates",
     ja: "製造と廃番",
     en: "MFD. / DISC.",
-    text: "製造の時期と、廃番の年。再入荷したら、その年を書く。現役の商品は「現役」。",
+    text: "製造の時期と､廃番の年｡再入荷したら､その年を書く｡現役の商品は｢現役｣｡",
   },
-  { side: "l", sel: ".vl-card__hitokoto", ja: "ひとこと", en: "IN SHORT", text: "来歴の要点を、一文で。" },
+  { side: "l", sel: ".vl-card__hitokoto", ja: "ひとこと", en: "IN SHORT", text: "来歴の要点を､一文で｡" },
 ];
 
 const DISC = 26; // 番号札の直径
@@ -43,7 +43,7 @@ type Geo = {
 
 const useIsoLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
-/** 番号は、左の列を上から、続けて右の列を上から（カードを何度も横断させない） */
+/** 番号は､左の列を上から､続けて右の列を上から（カードを何度も横断させない） */
 const ORDER = [
   ...PARTS.map((_, i) => i).filter((i) => PARTS[i].side === "l"),
   ...PARTS.map((_, i) => i).filter((i) => PARTS[i].side === "r"),
@@ -96,7 +96,7 @@ export default function CardAnatomy({ v }: { v: Value }) {
     const b = body.getBoundingClientRect();
     const c = card.getBoundingClientRect();
 
-    // 部位の中心。番号札はカードの縁に少しかけて置く
+    // 部位の中心｡番号札はカードの縁に少しかけて置く
     const pins = PARTS.map((p) => {
       const r = card.querySelector(p.sel)?.getBoundingClientRect();
       const y = r ? r.top + r.height / 2 - b.top : 0;
@@ -119,7 +119,7 @@ export default function CardAnatomy({ v }: { v: Value }) {
         .filter((i) => PARTS[i].side === side)
         .sort((a, z) => pins[a].y - pins[z].y);
       const hs = idx.map((i) => labelRefs.current[i]?.getBoundingClientRect().height ?? 0);
-      // 番号札の中心を部位の高さにそろえ、重なるときだけ下へずらす
+      // 番号札の中心を部位の高さにそろえ､重なるときだけ下へずらす
       const t = idx.map((i) => pins[i].y - colTop - DISC / 2);
       for (let j = 1; j < t.length; j++) t[j] = Math.max(t[j], t[j - 1] + hs[j - 1] + GAP);
       let limit = cr.height;
@@ -133,8 +133,8 @@ export default function CardAnatomy({ v }: { v: Value }) {
         const ay = colTop + top + DISC / 2;
         const ax = side === "l" ? cr.right - b.left + 6 : cr.left - b.left - 6;
         const ex = side === "l" ? pins[i].x - ELBOW : pins[i].x + ELBOW;
-        // 高さがそろっているときは水平1本。ずれたときだけ、カードの手前で1回折る
-        // 札が押し出されて高さがずれたときは、札の手前で1回だけ折る（斜めの区間は最小にする）
+        // 高さがそろっているときは水平1本｡ずれたときだけ､カードの手前で1回折る
+        // 札が押し出されて高さがずれたときは､札の手前で1回だけ折る（斜めの区間は最小にする）
         const dy = Math.abs(ay - pins[i].y);
         lines[i] =
           dy < 10
@@ -246,7 +246,7 @@ export default function CardAnatomy({ v }: { v: Value }) {
 
       <div className="flex flex-col gap-2 border-t-2 border-vl-ink px-4 py-3 sm:flex-row sm:items-center sm:justify-between md:px-6">
         <p className="text-[13px] leading-[1.8]">
-          <Ja text="証拠の型は、◆カードを開いた先のページに書いてある。" />
+          <Ja text="証拠の型は､◆カードを開いた先のページに書いてある｡" />
         </p>
         <Link href={`/values/${v.no}`} className="vl-link font-type shrink-0 text-[12px] font-bold tracking-[0.1em]">
           OPEN NO.{v.no} →

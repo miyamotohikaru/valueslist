@@ -2,8 +2,8 @@ import type { Trend } from "@/data/types";
 import { trendMeta } from "@/data/shelves";
 
 /**
- * 傾向の印。5種とも同じ造形のゴム印（角丸の二重枠＋かすれ）で、色だけで区別する。
- * 大きさは親の font-size（em）基準。傾きは seed（型番など）から -7〜+5deg で決める。
+ * 傾向の印｡5種とも同じ造形のゴム印（角丸の二重枠＋かすれ）で､色だけで区別する｡
+ * 大きさは親の font-size（em）基準｡傾きは seed（型番など）から -7〜+5deg で決める｡
  */
 const COLOR: Record<Trend, string> = {
   up: "var(--vl-teal)",

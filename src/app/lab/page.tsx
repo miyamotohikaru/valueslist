@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-/** 図版（イラスト）の下見用。索引からは辿れない。方向が決まったら消す */
+/** 図版（イラスト）の下見用｡索引からは辿れない｡方向が決まったら消す */
 export default function LabPage() {
   const items = values.filter((v) => ["001", "002", "003", "004"].includes(v.no));
   return (
@@ -16,9 +16,9 @@ export default function LabPage() {
       <p className="font-type text-[12px] font-bold tracking-[0.12em] text-vl-red-deep">PREVIEW · 図版の下見</p>
       <h1 className="font-display-ja mt-2 text-[30px] md:text-[40px]">イラストの下見（NO.001〜004）</h1>
       <p className="mt-3 max-w-[40em] text-[15px] leading-[1.9]">
-        アメリカンレトロの2色刷りを想定した図版です。
+        アメリカンレトロの2色刷りを想定した図版です｡
         <br />
-        色は墨・クリーム・朱の3色だけで、面の陰影は網点で作っています。
+        色は墨・クリーム・朱の3色だけで､面の陰影は網点で作っています｡
       </p>
 
       {/* 大きく */}

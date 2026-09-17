@@ -3,8 +3,8 @@
 import { useCallback, useRef, type ReactNode } from "react";
 
 /**
- * 中のカードが、カーソルの位置へ少しだけ傾くようにする。
- * カード1枚ずつに listener を付けず、この囲いで1つだけ使う。
+ * 中のカードが､カーソルの位置へ少しだけ傾くようにする｡
+ * カード1枚ずつに listener を付けず､この囲いで1つだけ使う｡
  */
 export default function Tilt({
   children,

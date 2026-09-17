@@ -1,6 +1,6 @@
 import IllustFrame, { INK, PAPER, RED, SW, SW_THIN, Sparkle } from "./base";
 
-/** NO.002 忠孝 — 学校へ配られた勅語の謄本（巻物）と、授業の鐘 */
+/** NO.002 忠孝 — 学校へ配られた勅語の謄本（巻物）と､授業の鐘 */
 export default function LoyaltyFilial({ className = "" }: { className?: string }) {
   const id = "il-loyalty";
   return (

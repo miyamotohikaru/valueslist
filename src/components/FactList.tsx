@@ -2,8 +2,8 @@ import type { Value } from "@/data/types";
 import { SourceText } from "@/lib/source";
 
 /**
- * 裏取りメモ。PC は2段組（左に番号付きの事実、右に確度の印と出典の一覧）。
- * 事実の行長は 40em 以内。出典は同じものを1つにまとめる。
+ * 裏取りメモ｡PC は2段組（左に番号付きの事実､右に確度の印と出典の一覧）｡
+ * 事実の行長は 40em 以内｡出典は同じものを1つにまとめる｡
  */
 const STAMP: Record<Value["confidence"], { text: string; ja: string; color: string }> = {
   A: { text: "VERIFIED · A", ja: "公文書・統計で年月日まで特定", color: "var(--vl-red)" },
@@ -52,7 +52,7 @@ export default function FactList({ v }: { v: Value }) {
               </div>
             </li>
           ))}
-          {v.keyfacts.length === 0 && <li className="py-4 text-[14px] text-vl-ink-soft">裏取りメモは準備中。</li>}
+          {v.keyfacts.length === 0 && <li className="py-4 text-[14px] text-vl-ink-soft">裏取りメモは準備中｡</li>}
         </ol>
 
         <aside className="relative border-t-2 border-vl-ink px-4 pt-8 pb-5 md:px-6 lg:border-t-0 lg:border-l-2">
@@ -72,7 +72,7 @@ export default function FactList({ v }: { v: Value }) {
               ))}
             </ol>
           ) : (
-            <p className="mt-2 text-[13px] text-vl-ink-soft">出典は準備中。</p>
+            <p className="mt-2 text-[13px] text-vl-ink-soft">出典は準備中｡</p>
           )}
         </aside>
       </div>

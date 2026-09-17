@@ -257,7 +257,7 @@ export default function IndexView({ values }: { values: Value[] }) {
         </Tilt>
       )}
 
-      {filtered.length === 0 && <p className="mt-16 text-center text-[14px] font-bold text-vl-ink-soft">該当する在庫がありません。</p>}
+      {filtered.length === 0 && <p className="mt-16 text-center text-[14px] font-bold text-vl-ink-soft">該当する在庫がありません｡</p>}
     </div>
   );
 }

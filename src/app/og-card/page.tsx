@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * 共有時に出る絵（1200×630）の版下。索引のヒーローと同じ部品で組む。
+ * 共有時に出る絵（1200×630）の版下｡索引のヒーローと同じ部品で組む｡
  * 焼き方: node tools/shoot-og.mjs（public/og.png と src/app/og-version.ts を書き換える）
  */
 export default function OgCard() {
@@ -31,14 +31,11 @@ export default function OgCard() {
 
       {/* 左: 題字 */}
       <div className="absolute top-[44px] left-[64px] w-[560px]">
-        <p className="flex items-baseline gap-3 text-[19px] font-bold">
-          <span>情報を並べるシリーズ 14</span>
-          <span className="font-type text-[17px] tracking-[0.12em] text-vl-red">SERIES No.14</span>
-        </p>
+        <p className="text-[19px] font-bold">情報を並べるシリーズ 14</p>
         <div className="mt-4">
           <TitleLockup className="block h-auto w-[540px]" />
         </div>
-        <p className="font-display-ja mt-5 text-[36px] leading-none">その価値観には、製造年がある。</p>
+        <p className="font-display-ja mt-5 text-[36px] leading-none">その価値観には､製造年がある｡</p>
       </div>
 
       {/* 右: 分解図と紋章 */}

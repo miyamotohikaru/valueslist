@@ -1,13 +1,13 @@
 import IllustFrame, { INK, PAPER, RED, SW, SW_THIN, Sparkle } from "./base";
 
-/** NO.003 衆道 — 井原西鶴『男色大鑑』の和綴じ本と、半開きの扇 */
+/** NO.003 衆道 — 井原西鶴『男色大鑑』の和綴じ本と､半開きの扇 */
 export default function Shudo({ className = "" }: { className?: string }) {
   const id = "il-shudo";
   return (
     <IllustFrame id={id} label="和綴じ本と扇の図" className={className}>
       {/* 扇（本の右後ろで半開き） */}
       <g transform="rotate(8 112 124) translate(26 -6)">
-        {/* 要（かなめ）から開いた扇。骨は面の内側だけに引く */}
+        {/* 要（かなめ）から開いた扇｡骨は面の内側だけに引く */}
         <path d="M112,124 L74,56 A78,78 0 0 1 150,56 Z" fill={PAPER} stroke={INK} strokeWidth={SW} />
         <path d="M112,124 L74,56 A78,78 0 0 1 150,56 Z" fill={`url(#${id}-dots)`} opacity="0.5" />
         <g stroke={INK} strokeWidth="2.2" opacity="0.8">

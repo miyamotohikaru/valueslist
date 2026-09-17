@@ -420,6 +420,17 @@ body {
   }
 }
 
+/* 束の中のカードは、束の変形にまかせる */
+.vl-deck .vl-card-wrap:hover .vl-card {
+  transform: none;
+  box-shadow:
+    3px 4px 0 -1.5px var(--vl-card),
+    3px 4px 0 0 var(--vl-ink);
+}
+.vl-deck .vl-rise {
+  animation: none;
+}
+
 /* 説明図のカードは動かさない（引き出し線の位置がずれないように） */
 .vl-anatomy .vl-rise {
   animation: none;

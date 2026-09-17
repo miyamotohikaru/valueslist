@@ -62,7 +62,7 @@ const out = await p.evaluate(() => {
   return res;
 });
 
-const CLOSERS = "。、）」』】〉》・ー…！？：；";
+const CLOSERS = "。、｡､）)」｣』】〉》・ー…！？：；";
 console.log(`===== ${path} @ ${width}px =====`);
 for (const b of out) {
   const bad = b.lines.slice(0, -1).filter((l) => l && !CLOSERS.includes(l[l.length - 1]));

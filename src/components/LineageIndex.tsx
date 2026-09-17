@@ -2,13 +2,13 @@ import type { Lineage } from "@/data/lineages";
 import { lineageKindMeta } from "@/data/lineages";
 import { ChainTitle, parseSpan } from "./LineageDiagram";
 
-/** 目次では、長い系譜名を最初と最後の2点に縮める（半券の幅で語の途中から折れないように） */
+/** 目次では､長い系譜名を最初と最後の2点に縮める（半券の幅で語の途中から折れないように） */
 function shortTitle(title: string) {
   const parts = title.split(/\s*→\s*/);
   return parts.length > 2 ? `${parts[0]} → ${parts[parts.length - 1]}` : title;
 }
 
-/** 系譜の目次。同じ幅の半券を2列にそろえ、年数の枠を縦に並べる */
+/** 系譜の目次｡同じ幅の半券を2列にそろえ､年数の枠を縦に並べる */
 export default function LineageIndex({ lineages }: { lineages: Lineage[] }) {
   return (
     <nav aria-label="系譜の目次">

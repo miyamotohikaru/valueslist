@@ -9,20 +9,20 @@ import {
   type Lineage,
   type LineageNode,
 } from "@/data/lineages";
-import { scaleYear, ERAS, ERA_MIN, ERA_MAX } from "@/lib/timescale";
+import { scaleYear, ERAS, ERA_MAX } from "@/lib/timescale";
 import { SHELF_ACCENT } from "./ValueCard";
 import EraBars, { countByEra } from "./EraBars";
-import TypeLabel from "./TypeLabel";
+import Reveal from "./motion/Reveal";
 import MobileBreak from "@/components/MobileBreak";
 
 /** 年の目盛（ヘッダーに数字で出す年） */
 const TICKS = [1200, 1600, 1868, 1945, 2000];
-/** 左カラム（型番・商品名）の幅。PC のみ */
+/** 左カラム（型番・商品名）の幅｡PC のみ */
 const LEFT = "372px";
 
 const pct = (year: number) => scaleYear(year) * 100;
 
-/** 帯の座標（%）。SpanStrip と同じ意味: 製造→廃番（または現在）、再入荷は点 */
+/** 帯の座標（%）｡SpanStrip と同じ意味: 製造→廃番（または現在）､再入荷は点 */
 function spanOf(v: Value) {
   const made = v.made!;
   const start = pct(made.year);
@@ -169,7 +169,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
       <Link
         href={`/values/${v.no}`}
         title={tip}
-        className="group grid transition-colors duration-150 hover:bg-vl-card md:h-[46px] md:grid-cols-[var(--tl-left)_1fr] md:grid-rows-1"
+        className="vl-tl-row group grid transition-colors duration-150 hover:bg-vl-card md:h-[46px] md:grid-cols-[var(--tl-left)_1fr] md:grid-rows-1"
       >
         {/* 左: 型番・棚・商品名・製造年 */}
         <div
@@ -237,7 +237,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 </span>
               </>
             )}
-            {/* 制度は廃止されたが、価値観としては残っている（傾向が「廃番」ではない） */}
+            {/* 制度は廃止されたが､価値観としては残っている（傾向が｢廃番｣ではない） */}
             {v.discontinued && v.trend !== "discontinued" && !v.restocked && (
               <>
                 <span
@@ -256,7 +256,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 </span>
               </>
             )}
-            {/* 右端: 廃番は赤い×、現役は矢印 */}
+            {/* 右端: 廃番は赤い×､現役は矢印 */}
             {active ? (
               // 先端を帯の少し先（+2px）へ出す
               <span
@@ -276,7 +276,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 <CrossMark className="block h-full w-full" />
               </span>
             )}
-            {/* 廃番・再入荷の年。右端に近いものは左側に置き、表の外へはみ出さない */}
+            {/* 廃番・再入荷の年｡右端に近いものは左側に置き､表の外へはみ出さない */}
             {endYear !== null &&
               (labelAt > 62 ? (
                 <span
@@ -341,7 +341,7 @@ function Legend() {
       label: "現役",
     },
     { glyph: <RestockDot />, label: "再入荷" },
-    { glyph: <LoopTag />, label: "150年の円環（FIG.3）" },
+    { glyph: <LoopTag />, label: "150年の円環" },
   ];
   return (
     <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] font-bold">
@@ -376,7 +376,7 @@ function NodeName({ node }: { node: RingNode }) {
   );
 }
 
-/** PC: 円周に4点を置き、時計回りの弧と矢印で結ぶ。中央に年数 */
+/** PC: 円周に4点を置き､時計回りの弧と矢印で結ぶ｡中央に年数 */
 function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
   const W = 760;
   const H = 520;
@@ -472,7 +472,7 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
           fill="var(--vl-ink)"
           fontFamily="var(--font-zen-kaku), sans-serif"
         >
-          最後の弧で、元の場所へ
+          最後の弧で､元の場所へ
         </text>
         {nodes.map((node, i) => {
           const a = ang(i);
@@ -518,7 +518,7 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
                   textAnchor={anchor}
                   fontSize="24"
                   fill="var(--vl-ink)"
-                  fontFamily="var(--font-dela), sans-serif"
+                  fontFamily="var(--font-ja-display), sans-serif"
                 >
                   {node.n.label}
                 </text>
@@ -543,12 +543,12 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
   );
 }
 
-/** 携帯: 縦に並べ、左に細い環（下る線と、戻る線） */
+/** 携帯: 縦に並べ､左に細い環（下る線と､戻る線） */
 const SP_LI = 78;
 function RingV({ nodes }: { nodes: RingNode[] }) {
   return (
     <div className="relative mt-8 md:hidden">
-      {/* 環（右辺が進む線、左辺が戻る線） */}
+      {/* 環（右辺が進む線､左辺が戻る線） */}
       <div
         className="absolute left-0 w-[18px] rounded-[9px] border-2 border-vl-red"
         style={{ top: SP_LI / 2, bottom: SP_LI / 2 }}
@@ -599,10 +599,7 @@ function LoopPanel({ lineage }: { lineage: Lineage }) {
     <div className="relative">
       <div className="vl-offset border-2 border-vl-ink bg-vl-card">
         <div className="border-b-2 border-vl-ink px-4 py-3 md:px-8 md:py-4">
-          <h2 className="text-[12px] font-bold text-vl-red-deep">
-            <TypeLabel text="FIG.3 · 150年の円環" />
-          </h2>
-          <p className="font-display-en mt-1 text-[24px] leading-none tracking-[0.04em] uppercase md:text-[30px]">
+          <p className="font-display-en text-[24px] leading-none tracking-[0.04em] uppercase md:text-[30px]">
             {lineage.en}
           </p>
         </div>
@@ -624,7 +621,7 @@ function LoopPanel({ lineage }: { lineage: Lineage }) {
           <RingV nodes={nodes} />
           <p className="mt-6 text-[13px] font-bold">
             <Link href="/lineage" className="vl-link">
-              系譜ページで、環の全部を読む →
+              系譜ページで､環の全部を読む →
             </Link>
           </p>
         </div>
@@ -645,7 +642,7 @@ function EraRuler() {
   const X0 = 20;
   const X1 = W - 20;
   const X = (y: number) => X0 + scaleYear(y) * (X1 - X0);
-  // 縮めた区間（〜1868）は50年ごと、明治以降は10年ごとに目盛りを刻む
+  // 縮めた区間（〜1868）は50年ごと､明治以降は10年ごとに目盛りを刻む
   const minor: number[] = [];
   for (let y = 1200; y < 1868; y += 50) minor.push(y);
   for (let y = 1870; y <= 2030; y += 10) minor.push(y);
@@ -761,7 +758,7 @@ function EraRuler() {
           fill="var(--vl-red)"
           fontFamily="var(--font-zen-kaku), sans-serif"
         >
-          668年を、ここに縮めている
+          668年を､ここに縮めている
         </text>
         <path
           d={`M${X(1868)},44 L${X(1868)},36 L${X(2030)},36 L${X(2030)},44`}
@@ -788,7 +785,7 @@ function EraRuler() {
           fill="var(--vl-ink)"
           fontFamily="var(--font-zen-kaku), sans-serif"
         >
-          目盛りの間隔は均等ではない。この物差しで全在庫を並べる。
+          目盛りの間隔は均等ではない｡この物差しで全在庫を並べる｡
         </text>
       </svg>
     </figure>
@@ -852,9 +849,6 @@ export default function TimelineView() {
         {/* 見出し */}
         <section className="grid gap-10 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:items-stretch md:py-16">
           <div>
-            <p className="text-[12px] font-bold">
-              <TypeLabel text="TIMELINE · 製造年順" />
-            </p>
             <h1 className="font-display-ja mt-4 text-[40px] leading-[1.05] md:text-[64px]">
               年表
             </h1>
@@ -864,27 +858,16 @@ export default function TimelineView() {
               BY YEAR
             </p>
             <p className="mt-6 text-[15px] font-bold leading-[1.9] md:text-[19px]">
-              価値観を、製造年の順に並べる。
+              価値観を､製造年の順に並べる｡
               <br />
-              古い在庫と新しい在庫を、同じ物差しに乗せる。
-            </p>
-            <p className="font-type mt-5 text-[12px] font-bold tracking-[0.08em] text-vl-ink-soft">
-              <span className="whitespace-nowrap">
-                {rows.length} ITEMS · {ERA_MIN}–{ERA_MAX}
-              </span>{" "}
-              <span className="whitespace-nowrap">· SORTED BY MFD. YEAR</span>
+              古い在庫と新しい在庫を､同じ物差しに乗せる｡
             </p>
           </div>
           <div className="flex flex-col justify-between gap-6">
             <EraRuler />
-            {/* 台帳を読む前に、記号の意味を先に置く */}
+            {/* 台帳を読む前に､記号の意味を先に置く */}
             <div className="vl-offset-sm border-2 border-vl-ink bg-vl-card px-4 py-3 md:px-5 md:py-4">
-              <p className="text-[12px] font-bold text-vl-ink-soft">
-                <TypeLabel text="KEY · 台帳の記号" />
-              </p>
-              <div className="mt-2.5">
-                <Legend />
-              </div>
+              <Legend />
             </div>
           </div>
         </section>
@@ -894,14 +877,11 @@ export default function TimelineView() {
       <div className="vl-band">
         <div className="mx-auto max-w-6xl px-4 py-10 text-center md:px-8 md:py-14">
           <p className="font-display-ja text-[22px] leading-[1.5] md:text-[34px]">
-            いちばん古い在庫と、
+            いちばん古い在庫と､
             <MobileBreak />
-            いちばん新しい在庫は、
+            いちばん新しい在庫は､
             <br />
-            しばしば同じ商品だ。
-          </p>
-          <p className="mt-4 text-[12px] font-bold text-vl-mustard">
-            <TypeLabel text="SAME PRODUCT · 名前を変えて、棚に戻る" />
+            しばしば同じ商品だ｡
           </p>
         </div>
       </div>
@@ -910,26 +890,22 @@ export default function TimelineView() {
         {/* FIG.2 製造工場別 出荷数 */}
         <section className="grid gap-8 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start md:gap-12 md:py-14">
           <div>
-            <h2 className="text-[12px] font-bold text-vl-red-deep">
-              <TypeLabel text="FIG.1 · 製造工場別 出荷数" />
-            </h2>
-            <p className="font-display-ja mt-3 text-[24px] leading-[1.3] md:text-[30px]">
-              工場は五つある。
+            <p className="font-display-ja text-[24px] leading-[1.3] md:text-[30px]">
+              工場は五つある｡
             </p>
             <p className="mt-4 text-[14px] leading-[1.9] md:text-[15px]">
-              製造年を、時代ごとの工場に振り分けて数えた。
+              製造年を､時代ごとの工場に振り分けて数えた｡
               <br />
-              出荷がいちばん多いのは、{topEra.ja}の工場。
+              出荷がいちばん多いのは､{topEra.ja}の工場｡
               <br />
-              「昔からある」に見える在庫ほど、
+              ｢昔からある｣に見える在庫ほど､
               <br />
-              新しい工場の出荷だったりする。
+              新しい工場の出荷だったりする｡
             </p>
           </div>
-          <EraBars
-            items={rows}
-            className="w-full max-w-[560px] md:justify-self-end"
-          />
+          <Reveal className="md:justify-self-end">
+            <EraBars items={rows} className="w-full max-w-[560px]" />
+          </Reveal>
         </section>
 
         <div className="vl-rule" />
@@ -938,20 +914,17 @@ export default function TimelineView() {
         <section className="py-12 md:py-16">
           <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-[12px] font-bold text-vl-red-deep">
-                <TypeLabel text="FIG.2 · 在庫台帳" />
-              </p>
               <h2 className="font-display-ja text-[24px] leading-tight md:text-[30px]">
-                全在庫、製造年順
+                全在庫､製造年順
               </h2>
               <p className="mt-2 text-[14px] leading-relaxed">
-                帯が在庫の期間。
+                帯が在庫の期間｡
                 <br />
-                左端が製造、右端が廃番。
+                左端が製造､右端が廃番｡
                 <br />
-                中世〜近世は縮めて描いている。
+                中世〜近世は縮めて描いている｡
                 <br />
-                行を押すとカードに飛ぶ。
+                行を押すとカードに飛ぶ｡
               </p>
             </div>
           </div>
@@ -992,7 +965,7 @@ export default function TimelineView() {
 
           {undated > 0 && (
             <p className="mt-3 text-[12px] text-vl-ink-soft">
-              製造年が特定できず、年表に載せていない在庫: {undated} ITEMS
+              製造年が特定できず､年表に載せていない在庫: {undated} ITEMS
             </p>
           )}
         </section>

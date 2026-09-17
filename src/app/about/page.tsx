@@ -13,7 +13,7 @@ import { Ja } from "@/lib/ja";
 export const metadata: Metadata = {
   title: "読み方 | 価値観一覧図鑑",
   description:
-    "価値観一覧図鑑の読み方。カードの構造、証拠の二種、傾向の印、棚の分け方、扱わなかったもの、出典の方針。",
+    "価値観一覧図鑑の読み方｡カードの構造､証拠の二種､傾向の印､棚の分け方､扱わなかったもの､出典の方針｡",
 };
 
 const SECTIONS = [
@@ -44,24 +44,24 @@ const SPAN_SAMPLE: Value = byName("隠居");
 
 const TRENDS: Trend[] = ["up", "steady", "down", "discontinued", "restocked"];
 const TREND_NOTES: Record<Trend, string> = {
-  up: "使用頻度や賛成率が上がっている。製造年の新しい在庫に多い。",
-  steady: "大きな増減がなく、現役のまま棚にある。",
-  down: "現役だが、賛成率や使用頻度が下がっている。",
-  discontinued: "制度や語として終わった。廃番の日付がある。",
-  restocked: "別の名前で復活した。印は、元の商品のカードに押す。",
+  up: "使用頻度や賛成率が上がっている｡製造年の新しい在庫に多い｡",
+  steady: "大きな増減がなく､現役のまま棚にある｡",
+  down: "現役だが､賛成率や使用頻度が下がっている｡",
+  discontinued: "制度や語として終わった｡廃番の日付がある｡",
+  restocked: "別の名前で復活した｡印は､元の商品のカードに押す｡",
 };
 
 const EXCLUDED = [
-  "穢れ・身分差別に関わる価値観は、◆初版から除外した。部落差別に直結するためである。",
-  "性風俗慣行は、◆純潔規範の背景として触れるにとどめ、◆単独項目にしていない。",
-  `証拠が通説の域を出ない項目と、◆ほかの項目と重なる項目は落とした。候補の約70項目から、${stats.total}項目に絞っている。`,
+  "穢れ・身分差別に関わる価値観は､◆初版から除外した｡部落差別に直結するためである｡",
+  "性風俗慣行は､◆純潔規範の背景として触れるにとどめ､◆単独項目にしていない｡",
+  `証拠が通説の域を出ない項目と､◆ほかの項目と重なる項目は落とした｡候補の約70項目から､${stats.total}項目に絞っている｡`,
 ];
 
 const SOURCE_RULES = [
-  { en: "LAW", ja: "法令", text: "公布日と、布告・法律番号" },
-  { en: "STATISTICS", ja: "統計", text: "調査名と、調査の年" },
+  { en: "LAW", ja: "法令", text: "公布日と､布告・法律番号" },
+  { en: "STATISTICS", ja: "統計", text: "調査名と､調査の年" },
   { en: "BOOKS", ja: "書籍", text: "著者・書名・刊行年" },
-  { en: "WEB", ja: "ウェブ", text: "サイト名と、URL" },
+  { en: "WEB", ja: "ウェブ", text: "サイト名と､URL" },
 ];
 
 const SERIES = [
@@ -92,16 +92,6 @@ function Section({ id, children }: { id: (typeof SECTIONS)[number]["id"]; childr
       <SectionHead id={id} />
       <div className="mt-8 md:mt-10">{children}</div>
     </section>
-  );
-}
-
-/** 小さな見出し（欧文は Courier、和文は Zen Kaku） */
-function Kicker({ en, ja, className = "" }: { en: string; ja: string; className?: string }) {
-  return (
-    <p className={`flex flex-wrap items-baseline gap-x-2 text-[12px] font-bold ${className}`}>
-      <span className="font-type tracking-[0.12em] text-vl-red">{en}</span>
-      <span>{ja}</span>
-    </p>
   );
 }
 
@@ -156,12 +146,12 @@ function Glyph({ kind }: { kind: "hatch" | "bar" | "x" | "dot" | "now" | "tail" 
 }
 
 const GLYPH_NOTES = [
-  ["hatch", "斜線は、製造年が概算のとき。"],
-  ["bar", "太い帯は、製造から廃番までの期間。"],
-  ["now", "矢印で終わる帯は、いまも現役。"],
-  ["x", "赤い×は、廃番の年。"],
-  ["tail", "×の先の点線は、制度の廃止後も残るもの。"],
-  ["dot", "赤い点は、再入荷の年。"],
+  ["hatch", "斜線は､製造年が概算のとき｡"],
+  ["bar", "太い帯は､製造から廃番までの期間｡"],
+  ["now", "矢印で終わる帯は､いまも現役｡"],
+  ["x", "赤い×は､廃番の年｡"],
+  ["tail", "×の先の点線は､制度の廃止後も残るもの｡"],
+  ["dot", "赤い点は､再入荷の年｡"],
 ] as const;
 
 /* ---------------------------------------------------------------- */
@@ -173,7 +163,6 @@ export default function AboutPage() {
       {/* 見出し */}
       <section className="grid gap-8 py-10 md:grid-cols-[1.2fr_1fr] md:items-end md:gap-12 md:py-16">
         <div>
-          <Kicker en="HOW TO READ" ja="この店の読み方" />
           <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-1">
             <h1 className="font-display-ja text-[40px] leading-[1.05] md:text-[64px]">読み方</h1>
             <span
@@ -188,15 +177,15 @@ export default function AboutPage() {
             <br />
             THIS CATALOG
           </p>
-          <p className="mt-6 text-[17px] font-bold leading-relaxed md:text-[19px]">棚に並んだ札を、どう読むか。</p>
+          <p className="mt-6 text-[17px] font-bold leading-relaxed md:text-[19px]">棚に並んだ札を､どう読むか｡</p>
           <p className="mt-3 max-w-[30em] text-[14px] leading-[1.9] md:text-[15px]">
-            <Ja text="カードの部位、証拠の二種、傾向の印、棚の分け方。この店で使っている記法を、◆ここにまとめた。" />
+            <Ja text="カードの部位､証拠の二種､傾向の印､棚の分け方｡この店で使っている記法を､◆ここにまとめた｡" />
           </p>
         </div>
 
         {/* 目次 */}
         <nav aria-label="目次" className="vl-offset border-2 border-vl-ink bg-vl-card px-5 py-4 md:px-6 md:py-5">
-          <Kicker en="CONTENTS" ja="目次" />
+          <p className="text-[12px] font-bold">目次</p>
           <ol className="mt-2">
             {SECTIONS.map((s) => (
               <li key={s.id}>
@@ -206,9 +195,6 @@ export default function AboutPage() {
                 >
                   <span className="font-type text-[12px] font-bold tracking-[0.08em] text-vl-red-deep">{s.no}</span>
                   <span className="text-[14px] font-bold">{s.ja}</span>
-                  <span className="font-type ml-auto hidden text-[12px] tracking-[0.06em] text-vl-ink-soft sm:inline">
-                    {s.en}
-                  </span>
                 </a>
               </li>
             ))}
@@ -222,10 +208,10 @@ export default function AboutPage() {
       <Section id="what">
         <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-12">
           <p className="vl-justify max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
-            {"この図鑑は、日本の価値観（規範・人生観・判断基準）を商品に見立て、製造年・廃番年・再入荷年を出典にあたって特定し、棚に並べたものだ。「昔からの伝統」に見えるものほど製造年が新しく、「新品」に見えるものが中世の在庫の再出荷だったりする。それを年代順に並べて、目で見えるようにするのが目的である。「情報を並べるシリーズ」の14番目にあたり、姉妹サイトに「消滅職業図鑑」と「診断名アーカイブ」がある。"}
+            {"この図鑑は､日本の価値観（規範・人生観・判断基準）を商品に見立て､製造年・廃番年・再入荷年を出典にあたって特定し､棚に並べたものだ｡｢昔からの伝統｣に見えるものほど製造年が新しく､｢新品｣に見えるものが中世の在庫の再出荷だったりする｡それを年代順に並べて､目で見えるようにするのが目的である｡｢情報を並べるシリーズ｣の14番目にあたり､姉妹サイトに｢消滅職業図鑑｣と｢診断名アーカイブ｣がある｡"}
           </p>
           <div>
-            <Kicker en="THREE DATES" ja="三つの年" />
+            <p className="text-[12px] font-bold">三つの年</p>
             <ul className="mt-3 grid gap-3">
               {DATES.map((d) => (
                 <li key={d.en} className="vl-offset-sm flex items-center gap-4 border-2 border-vl-ink bg-vl-card px-4 py-3">
@@ -245,31 +231,28 @@ export default function AboutPage() {
 
       {/* 02 カードの読み方 */}
       <Section id="card">
-        <CardAnatomy v={ANATOMY} fig="FIG.1" />
+        <CardAnatomy v={ANATOMY} />
 
         {/* カード面の年表 */}
         <figure className="mt-10 border-2 border-vl-ink bg-vl-card md:mt-12">
           <figcaption className="flex items-center justify-between gap-3 bg-vl-ink px-4 py-2.5 text-vl-paper md:px-6">
-            <span className="flex items-baseline gap-3">
-              <span className="font-type text-[12px] font-bold tracking-[0.12em] text-vl-mustard">FIG.2</span>
-              <span className="text-[13px] font-bold">カード面の年表</span>
-            </span>
+            <span className="text-[13px] font-bold">カード面の年表</span>
             <span className="font-display-en hidden text-[13px] tracking-[0.14em] text-vl-mustard sm:inline">SPAN STRIP</span>
           </figcaption>
           <div className="grid gap-8 p-5 md:grid-cols-[1.15fr_1fr] md:items-center md:gap-10 md:p-7">
             <div>
               <p className="text-[14px] leading-[1.9]">
-                <Ja text="カードの下段にある、小さな年表。中世〜近世を圧縮し、◆明治以降を広く取ってある。帯の色は、棚の色。" />
+                <Ja text="カードの下段にある､小さな年表｡中世〜近世を圧縮し､◆明治以降を広く取ってある｡帯の色は､棚の色｡" />
               </p>
               <div className="mt-5 text-[16px]">
                 <SpanStrip v={SPAN_SAMPLE} accent="var(--vl-brown)" />
               </div>
               <p className="mt-3 text-[12px] leading-[1.7] font-bold">
-                例: NO.{SPAN_SAMPLE.no} {SPAN_SAMPLE.name}。
+                例: NO.{SPAN_SAMPLE.no} {SPAN_SAMPLE.name}｡
                 <br className="sm:hidden" />
-                {sampleMade}に製造、{SPAN_SAMPLE.discontinued?.year}年に廃番、
+                {sampleMade}に製造､{SPAN_SAMPLE.discontinued?.year}年に廃番､
                 <br className="sm:hidden" />
-                {SPAN_SAMPLE.restocked?.year}年に「{SPAN_SAMPLE.restocked?.as}」として再入荷。
+                {SPAN_SAMPLE.restocked?.year}年に｢{SPAN_SAMPLE.restocked?.as}｣として再入荷｡
               </p>
             </div>
             <ul className="grid gap-3 text-[13px] sm:grid-cols-2 md:grid-cols-1">
@@ -291,9 +274,9 @@ export default function AboutPage() {
       {/* 03 証拠の二種 */}
       <Section id="evidence">
         <p className="mb-8 max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
-          <Ja text="年を特定する方法は、二つある。どちらで特定したかは、◆各項目のページに書いてある。" />
+          <Ja text="年を特定する方法は､二つある｡どちらで特定したかは､◆各項目のページに書いてある｡" />
         </p>
-        <EvidenceTwo fig="FIG.3" />
+        <EvidenceTwo />
       </Section>
 
       <div className="vl-rule" />
@@ -317,7 +300,7 @@ export default function AboutPage() {
           ))}
         </ul>
         <p className="mt-3 text-[13px] leading-[1.8]">
-          <Ja text="印は、カードの右側に押してある。五種とも同じゴム印で、◆色と文字で見分ける。" />
+          <Ja text="印は､カードの右側に押してある｡五種とも同じゴム印で､◆色と文字で見分ける｡" />
         </p>
       </Section>
 
@@ -326,7 +309,7 @@ export default function AboutPage() {
       {/* 05 棚 */}
       <Section id="shelves">
         <p className="mb-8 max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
-          <Ja text="製造年と、いまの状態で棚を分けている。棚の名前を押すと、索引のその棚へ飛ぶ。" />
+          <Ja text="製造年と､いまの状態で棚を分けている｡棚の名前を押すと､索引のその棚へ飛ぶ｡" />
         </p>
         <div className="vl-offset border-2 border-vl-ink bg-vl-card">
           <div className="font-type hidden grid-cols-[8em_0.85fr_1.65fr_1.35fr] gap-x-6 border-b-2 border-vl-ink px-5 py-2 text-[12px] font-bold tracking-[0.12em] text-vl-ink-soft lg:grid">
@@ -396,16 +379,13 @@ export default function AboutPage() {
           <dl className="border-2 border-vl-ink bg-vl-card">
             {SOURCE_RULES.map((r) => (
               <div key={r.en} className="grid grid-cols-[6.5em_1fr] items-center gap-x-4 border-b border-vl-line px-4 py-3 last:border-b-0">
-                <dt>
-                  <span className="text-[15px] leading-none font-bold">{r.ja}</span>
-                  <span className="font-type mt-1 block text-[12px] tracking-[0.1em] text-vl-red-deep">{r.en}</span>
-                </dt>
+                <dt className="text-[15px] leading-none font-bold">{r.ja}</dt>
                 <dd className="text-[14px] leading-[1.7]">{r.text}</dd>
               </div>
             ))}
           </dl>
           <p className="max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
-            <Ja text="数値は、各調査の公表値を載せる。選択肢を合算したときは、◆そう注記する。解釈は、「誰がそう論じているか」を書く。出典は、各項目の「裏取りメモ」に付す。" />
+            <Ja text="数値は､各調査の公表値を載せる｡選択肢を合算したときは､◆そう注記する｡解釈は､｢誰がそう論じているか｣を書く｡出典は､各項目の｢裏取りメモ｣に付す｡" />
           </p>
         </div>
       </Section>
@@ -416,7 +396,7 @@ export default function AboutPage() {
       <Section id="series">
         <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-12">
           <p className="max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
-            <Ja text="「情報を並べるシリーズ」は、◆ひとつの切り口で集めた事実を、◇ただ並べて見せるサイトの連作である。価値観一覧図鑑は、その14番目にあたる。" />
+            <Ja text="｢情報を並べるシリーズ｣は､◆ひとつの切り口で集めた事実を､◇ただ並べて見せるサイトの連作である｡価値観一覧図鑑は､その14番目にあたる｡" />
           </p>
           <ul className="vl-offset border-2 border-vl-ink bg-vl-card">
             {SERIES.map((s) => (
@@ -428,7 +408,7 @@ export default function AboutPage() {
                   className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-4 py-3 hover:text-vl-red"
                 >
                   <span className="text-[15px] font-bold">{s.name}</span>
-                  <span className="font-type ml-auto text-[12px] tracking-[0.06em] text-vl-ink-soft">{s.en} ↗</span>
+                  <span className="ml-auto text-[13px] font-bold text-vl-ink-soft">↗</span>
                 </a>
               </li>
             ))}
@@ -443,7 +423,7 @@ export default function AboutPage() {
       {/* 索引へ */}
       <div className="vl-rule" />
       <div className="flex flex-col items-start gap-4 py-12 md:flex-row md:items-center md:justify-between md:py-16">
-        <p className="font-display-ja text-[20px] md:text-[24px]">読み方は以上。棚へどうぞ。</p>
+        <p className="font-display-ja text-[20px] md:text-[24px]">読み方は以上｡棚へどうぞ｡</p>
         <Link
           href="/"
           className="vl-offset-sm inline-flex items-baseline gap-3 border-2 border-vl-ink bg-vl-ink px-5 py-3 text-vl-paper hover:bg-vl-red"

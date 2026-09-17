@@ -1,10 +1,9 @@
 import type { Value, DatePoint } from "@/data/types";
 import { SourceText } from "@/lib/source";
-import TypeLabel from "./TypeLabel";
 
 /**
- * 日付の帳票。製造／廃番／再入荷を縦に並べ、左の縦線（スパイン）で結ぶ。
- * 箱の高さは中身に合わせる（隣の列に合わせて伸ばさない）。
+ * 日付の帳票｡製造／廃番／再入荷を縦に並べ､左の縦線（スパイン）で結ぶ｡
+ * 箱の高さは中身に合わせる（隣の列に合わせて伸ばさない）｡
  */
 type Kind = "made" | "discontinued" | "restocked";
 
@@ -59,7 +58,7 @@ function Row({ kind, d, last }: { kind: Kind; d: DatePoint; last: boolean }) {
   );
 }
 
-export default function LawTimeline({ v, fig = "FIG.2" }: { v: Value; fig?: string }) {
+export default function LawTimeline({ v }: { v: Value }) {
   const rows: { kind: Kind; d: DatePoint }[] = [];
   if (v.made) rows.push({ kind: "made", d: v.made });
   if (v.discontinued) rows.push({ kind: "discontinued", d: v.discontinued });
@@ -69,17 +68,14 @@ export default function LawTimeline({ v, fig = "FIG.2" }: { v: Value; fig?: stri
   return (
     <figure className="vl-offset relative border-2 border-vl-ink bg-vl-card">
       <div className="border-b-2 border-vl-ink px-4 py-3 md:px-5">
-        <div className="flex items-center justify-between gap-3">
-          <p className="text-[12px] font-bold text-vl-ink-soft">
-            <TypeLabel text={`${fig} · 日付の帳票`} />
+        <div className="flex items-start justify-between gap-3">
+          <p className="text-[15px] leading-snug font-bold md:text-[16px]">
+            {v.name}の日付は､
+            <br />
+            この文書で決まる｡
           </p>
           <span className="vl-stamp font-display-en shrink-0 text-[12px] text-vl-red-deep md:text-[13px]">DATED BY DOCUMENT</span>
         </div>
-        <p className="mt-2 text-[15px] leading-snug font-bold md:text-[16px]">
-          {v.name}の日付は、
-          <br />
-          この文書で決まる。
-        </p>
       </div>
 
       <div className="px-4 py-6 md:px-6 md:py-7">
@@ -97,9 +93,7 @@ export default function LawTimeline({ v, fig = "FIG.2" }: { v: Value; fig?: stri
             </li>
           )}
         </ol>
-        <p className="mt-6 text-right text-[12px] text-vl-ink-soft">
-          <TypeLabel text="以下余白 · END OF RECORD" />
-        </p>
+        <p className="mt-6 text-right text-[12px] text-vl-ink-soft">以下余白</p>
       </div>
     </figure>
   );

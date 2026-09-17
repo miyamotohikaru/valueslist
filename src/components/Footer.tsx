@@ -22,13 +22,13 @@ export default function Footer() {
               </p>
               <p className="font-display-ja mt-3 text-[18px]">価値観一覧図鑑</p>
               <p className="mt-4 text-[13px] leading-[1.8] text-vl-paper/90">
-                日本の価値観を、
+                日本の価値観を､
                 <br />
-                製造・廃番・再入荷の年で並べる図鑑。
+                製造・廃番・再入荷の年で並べる図鑑｡
                 <br />
-                年号と出典は各項目に記載。
+                年号と出典は各項目に記載｡
                 <br />
-                数値は各調査の公表値。
+                数値は各調査の公表値｡
               </p>
             </div>
           </div>
@@ -76,8 +76,6 @@ export default function Footer() {
             <span className="font-type tracking-[0.1em]">© kosukuma</span>
             <span aria-hidden>·</span>
             <span className="font-bold">情報を並べるシリーズ 14</span>
-            <span aria-hidden>·</span>
-            <span className="font-type whitespace-nowrap tracking-[0.1em]">FACT-CHECKED EDITION</span>
           </p>
         </div>
       </div>

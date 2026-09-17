@@ -1,13 +1,12 @@
 import type { Curve } from "@/data/types";
 import { SourceText } from "@/lib/source";
 import BreakText from "./BreakText";
-import TypeLabel from "./TypeLabel";
 
 /**
- * カーブ型の証拠。世論調査の賛成率（折れ線）や年次の件数（棒）を、印刷物の図版として描く。
- * - 同じデータから PC 用（640 幅）と携帯用（360 幅）の二枚を描き、コンテナ幅で切り替える
+ * カーブ型の証拠｡世論調査の賛成率（折れ線）や年次の件数（棒）を､印刷物の図版として描く｡
+ * - 同じデータから PC 用（640 幅）と携帯用（360 幅）の二枚を描き､コンテナ幅で切り替える
  * - 系列1の線の下に網点の面を敷く
- * - marks の break: true の年は、その前で線を切って点線でつなぐ（調査方法の変更など）
+ * - marks の break: true の年は､その前で線を切って点線でつなぐ（調査方法の変更など）
  */
 
 type Layout = {
@@ -64,7 +63,7 @@ function hash(s: string) {
   return h.toString(36);
 }
 
-/** 点列を、break の年の前で切った区間に分ける */
+/** 点列を､break の年の前で切った区間に分ける */
 function segments(points: [number, number][], breaks: number[]) {
   const out: [number, number][][] = [];
   let cur: [number, number][] = [];
@@ -97,7 +96,7 @@ function Plot({ curve, L, accent, className }: { curve: Curve; L: Layout; accent
   const yr1 = Math.max(...years);
   const vMax = Math.max(0, ...vals);
 
-  // Y 軸: 最大値の 1 割以上の余白を取る。% で 100 に収まるなら 0-100
+  // Y 軸: 最大値の 1 割以上の余白を取る｡% で 100 に収まるなら 0-100
   const isPct = curve.unit.trim() === "%";
   let top: number;
   let step: number;
@@ -245,7 +244,17 @@ function Plot({ curve, L, accent, className }: { curve: Curve; L: Layout; accent
                   />
                 ))}
             {segs.map((g, gi) => (
-              <path key={`l${gi}`} d={path(g)} fill="none" stroke={color} strokeWidth={lw} strokeLinejoin="round" strokeLinecap="round" />
+              <path
+                key={`l${gi}`}
+                className="vl-draw"
+                style={{ ["--draw-delay" as string]: `${0.12 + si * 0.25 + gi * 0.08}s` }}
+                d={path(g)}
+                fill="none"
+                stroke={color}
+                strokeWidth={lw}
+                strokeLinejoin="round"
+                strokeLinecap="round"
+              />
             ))}
             {segs.slice(1).map((g, gi) => {
               const a = segs[gi][segs[gi].length - 1];
@@ -330,28 +339,23 @@ export default function CurveChart({
   curve,
   accent = RED,
   className = "",
-  fig = "FIG.2",
 }: {
   curve: Curve;
   accent?: string;
   className?: string;
-  fig?: string;
 }) {
   const isBar = curve.kind === "bar";
   const multi = curve.series.length > 1;
   return (
     <figure className={`vl-offset relative border-2 border-vl-ink bg-vl-card ${className}`}>
       <div className="border-b-2 border-vl-ink px-4 py-3 md:px-5">
-        {/* 印は図番号の行に置き、見出しは幅いっぱいに使う（見出しは句読点か ◆ でだけ折れる） */}
-        <div className="flex items-center justify-between gap-3">
-          <p className="text-[12px] font-bold text-vl-ink-soft">
-            <TypeLabel text={`${fig} · ${isBar ? "年ごとの件数" : "統計の推移"}`} />
+        {/* 印は図番号の行に置き､見出しは幅いっぱいに使う（見出しは句読点か ◆ でだけ折れる） */}
+        <div className="flex items-start justify-between gap-3">
+          <p className="text-[15px] leading-snug font-bold md:text-[16px]">
+            <BreakText text={curve.title} />
           </p>
           <span className="vl-stamp font-display-en shrink-0 text-[12px] text-vl-red-deep md:text-[13px]">DATED BY CURVE</span>
         </div>
-        <p className="mt-2 text-[15px] leading-snug font-bold md:text-[16px]">
-          <BreakText text={curve.title} />
-        </p>
         {curve.subtitle && (
           <p className="mt-1 text-[13px] leading-snug">
             <BreakText text={curve.subtitle} />

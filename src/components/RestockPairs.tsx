@@ -11,7 +11,7 @@ type Pair = {
   fromDisc: boolean;
 };
 
-/** 「再入荷」と判定したもので、元の在庫から50年以上へだてて戻ったもの */
+/** ｢再入荷｣と判定したもので､元の在庫から50年以上へだてて戻ったもの */
 export function longRestocks(values: Value[], all: Value[]): Pair[] {
   return values
     .filter((v) => v.restocked && v.trend === "restocked")
@@ -32,7 +32,7 @@ export function longRestocks(values: Value[], all: Value[]): Pair[] {
     .sort((a, b) => b.gap - a.gap);
 }
 
-/** 半券の商品名を、欄の幅に1行で収まる大きさにする（欄は @container） */
+/** 半券の商品名を､欄の幅に1行で収まる大きさにする（欄は @container） */
 function fitName(name: string) {
   let n = 0;
   for (const ch of name) n += /[\x20-\x7e]/.test(ch) ? 0.55 : 1;
@@ -109,14 +109,14 @@ function Ticket({ p }: { p: Pair }) {
 }
 
 /**
- * 第5棚: 長距離再入荷の陳列。起点（廃番から／製造から）ごとに分けて、同じ物差しで比べられるようにする。
+ * 第5棚: 長距離再入荷の陳列｡起点（廃番から／製造から）ごとに分けて､同じ物差しで比べられるようにする｡
  */
 export default function RestockPairs({ values, all }: { values: Value[]; all: Value[] }) {
   const pairs = longRestocks(values, all);
   if (pairs.length === 0) return null;
   const groups = [
-    { key: "disc", title: "廃番から、再入荷まで", note: "制度や法令で一度終わった日から数える。", items: pairs.filter((p) => p.fromDisc) },
-    { key: "made", title: "製造から、再入荷まで", note: "廃番の日付がないので、製造の年から数える。", items: pairs.filter((p) => !p.fromDisc) },
+    { key: "disc", title: "廃番から､再入荷まで", note: "制度や法令で一度終わった日から数える｡", items: pairs.filter((p) => p.fromDisc) },
+    { key: "made", title: "製造から､再入荷まで", note: "廃番の日付がないので､製造の年から数える｡", items: pairs.filter((p) => !p.fromDisc) },
   ].filter((g) => g.items.length > 0);
 
   return (

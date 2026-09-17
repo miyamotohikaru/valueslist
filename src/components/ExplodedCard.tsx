@@ -1,6 +1,6 @@
 /**
- * 「価値観の解剖図」— 一枚のカードを層に分解して、何が書いてあるかを示す分解図。
- * サンドイッチの分解図のように、左に札、右に浮いた層。赤一色の線画と網点の面。
+ * ｢価値観の解剖図｣— 一枚のカードを層に分解して､何が書いてあるかを示す分解図｡
+ * サンドイッチの分解図のように､左に札､右に浮いた層｡赤一色の線画と網点の面｡
  */
 const RED = "var(--vl-red)";
 const INK = "var(--vl-ink)";
@@ -29,11 +29,11 @@ export default function ExplodedCard({ className = "" }: { className?: string })
     y += DP + l.h + GAP;
     return r;
   });
-  const H = y + 28;
+  const H = y + 16;
   const VW = X0 + W + SK + 8;
 
   return (
-    <svg viewBox={`0 0 ${VW} ${H}`} className={className} role="img" aria-label="価値観カードの分解図">
+    <svg viewBox={`0 0 ${VW} ${H}`} className={`vl-ex ${className}`} role="img" aria-label="価値観カードの分解図">
       <defs>
         <pattern id="ex-dots" width="6" height="6" patternUnits="userSpaceOnUse">
           <circle cx="3" cy="3" r="1.4" fill={RED} opacity="0.7" />
@@ -54,11 +54,11 @@ export default function ExplodedCard({ className = "" }: { className?: string })
         const faceFill = r.face === "dots" ? "url(#ex-dots)" : r.face === "hatch" ? "url(#ex-hatch)" : RED;
         const isName = r.label === "商品名";
         return (
-          <g key={i}>
+          <g key={i} className="vl-ex-layer" style={{ ["--i" as string]: i }}>
             {/* 引き出し線と札 */}
             <line x1={120} y1={cy} x2={x + 10} y2={r.y + DP - 5} stroke={RED} strokeWidth="1.8" strokeDasharray="4 3" />
             <circle cx={x + 10} cy={r.y + DP - 5} r="3" fill={RED} />
-            {/* 値札（左に紐の穴、右が矢印の形） */}
+            {/* 値札（左に紐の穴､右が矢印の形） */}
             <polygon
               points={`4,${cy - 14} 104,${cy - 14} 118,${cy} 104,${cy + 14} 4,${cy + 14}`}
               fill={RED}
@@ -75,15 +75,15 @@ export default function ExplodedCard({ className = "" }: { className?: string })
             <polygon points={front} fill={faceFill} opacity={r.face === "plain" ? 0.9 : 1} stroke={RED} strokeWidth="2.2" strokeLinejoin="round" />
             <polygon points={top} fill={PAPER} stroke={RED} strokeWidth="2.2" strokeLinejoin="round" />
             <polygon points={top} fill="url(#ex-dots-top)" />
-            {/* Dela は 400 しかない。fontWeight 700 だと合成ボールドで字が重なる */}
+            {/* 見出しの和文は 800 のみ｡合成ボールドを起こさないよう weight を明示する */}
             <text
               x={x + SK / 2 + W / 2}
               y={r.y + DP / 2 + (isName ? 7 : 4.5)}
               textAnchor="middle"
               fontSize={isName ? 21 : 14}
-              fontWeight={isName ? 400 : 700}
+              fontWeight={isName ? 800 : 700}
               fill={INK}
-              fontFamily={isName ? "var(--font-dela), sans-serif" : "var(--font-zen-kaku), sans-serif"}
+              fontFamily={isName ? "var(--font-ja-display), sans-serif" : "var(--font-zen-kaku), sans-serif"}
             >
               {r.text}
             </text>
@@ -92,9 +92,6 @@ export default function ExplodedCard({ className = "" }: { className?: string })
       })}
       {/* 台座と図番号 */}
       <line x1={X0 - 6} y1={H - 16} x2={X0 + W + SK + 4} y2={H - 16} stroke={RED} strokeWidth="2.2" />
-      <text x={X0 + W + SK + 4} y={H - 1} textAnchor="end" fontSize="13" fontWeight="700" fill={RED} fontFamily="var(--font-courier), monospace" letterSpacing="0.8">
-        FIG.1 ANATOMY OF A VALUE
-      </text>
     </svg>
   );
 }

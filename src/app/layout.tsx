@@ -4,7 +4,7 @@ import {
   Alfa_Slab_One,
   Yellowtail,
   Courier_Prime,
-  Dela_Gothic_One,
+  M_PLUS_Rounded_1c,
   Zen_Kaku_Gothic_New,
 } from "next/font/google";
 import Header from "@/components/Header";
@@ -21,7 +21,8 @@ const courier = Courier_Prime({
   subsets: ["latin"],
   variable: "--font-courier",
 });
-const dela = Dela_Gothic_One({ weight: "400", subsets: ["latin"], variable: "--font-dela" });
+// 見出しの和文｡太くて読みやすい丸ゴシック（レトロな看板の字に近い）
+const jaDisplay = M_PLUS_Rounded_1c({ weight: "800", subsets: ["latin"], variable: "--font-ja-display" });
 const zenKaku = Zen_Kaku_Gothic_New({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
@@ -29,7 +30,7 @@ const zenKaku = Zen_Kaku_Gothic_New({
 });
 
 const DESCRIPTION =
-  "その価値観には、製造年がある。日本の価値観を、製造・廃番・再入荷の年で棚に並べ、一次資料で裏を取った図鑑。";
+  "その価値観には､製造年がある｡日本の価値観を､製造・廃番・再入荷の年で棚に並べ､一次資料で裏を取った図鑑｡";
 
 
 export const metadata: Metadata = {
@@ -58,7 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ja">
       <body
-        className={`${anton.variable} ${alfa.variable} ${yellowtail.variable} ${courier.variable} ${dela.variable} ${zenKaku.variable} vl-grain`}
+        className={`${anton.variable} ${alfa.variable} ${yellowtail.variable} ${courier.variable} ${jaDisplay.variable} ${zenKaku.variable} vl-grain`}
       >
         <Header />
         <main className="pb-[calc(64px+env(safe-area-inset-bottom))] md:pb-0">{children}</main>

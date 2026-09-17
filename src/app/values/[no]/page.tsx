@@ -14,7 +14,8 @@ import LawTimeline from "@/components/LawTimeline";
 import FactList from "@/components/FactList";
 import LineageStrip from "@/components/LineageStrip";
 import FitLines from "@/components/FitLines";
-import TypeLabel from "@/components/TypeLabel";
+import Reveal from "@/components/motion/Reveal";
+import Illust, { hasIllust } from "@/components/illust";
 
 type Params = { params: Promise<{ no: string }> };
 
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-/** 見出しの大きさ。最長の行の文字数で決める */
+/** 見出しの大きさ｡最長の行の文字数で決める */
 function titleSize(lines: string[]): string {
   const n = Math.max(...lines.map((l) => [...l].reduce((a, ch) => a + (/[\x20-\x7e]/.test(ch) ? 0.55 : 1), 0)));
   if (n <= 3) return "clamp(64px, 19vw, 128px)";
@@ -55,7 +56,7 @@ function titleSize(lines: string[]): string {
   return "clamp(24px, 6.6vw, 48px)";
 }
 
-/** おなじ棚の他の商品。自分の後ろに続くものを優先して最大 4 枚 */
+/** おなじ棚の他の商品｡自分の後ろに続くものを優先して最大 4 枚 */
 function sameShelf(v: Value, max = 4) {
   const list = byShelf(v.shelf);
   const i = list.findIndex((x) => x.no === v.no);
@@ -80,7 +81,7 @@ function HangingTag({ v }: { v: Value }) {
   const shelf = shelfById(v.shelf);
   const acc = SHELF_ACCENT[String(v.shelf)];
   return (
-    <div className="relative h-[270px] w-[230px]" aria-label={`型番 ${v.no}・棚 ${shelf.no} ${shelf.name}`}>
+    <div className="vl-swing relative h-[270px] w-[230px]" aria-label={`型番 ${v.no}・棚 ${shelf.no} ${shelf.name}`}>
       <svg viewBox="0 0 230 80" className="absolute top-0 left-0 h-[80px] w-[230px]" aria-hidden>
         <path d="M18 0 C 60 30, 120 20, 122 64" fill="none" stroke="var(--vl-ink)" strokeWidth="2" strokeDasharray="1 0" />
       </svg>
@@ -107,9 +108,7 @@ function SpanBox({ v, accent, outline }: { v: Value; accent: string; outline: bo
   return (
     <figure className="vl-offset border-2 border-vl-ink bg-vl-card px-4 pt-3 pb-4 md:px-5">
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
-        <p className="text-[12px] font-bold text-vl-ink-soft">
-          <TypeLabel text="FIG.1 · 流通期間" />
-        </p>
+        <p className="text-[12px] font-bold text-vl-ink-soft">流通期間</p>
         <p className="font-type text-[13px] font-bold">
           {start} → {end}
         </p>
@@ -176,9 +175,7 @@ function NavButton({ dir, v }: { dir: "prev" | "next"; v: Value }) {
         {isPrev ? "←" : "→"}
       </span>
       <span className="min-w-0 flex-1 px-4 py-3">
-        <span className="block text-[12px] font-bold text-vl-ink-soft">
-          <TypeLabel text={`${isPrev ? "前の標本" : "次の標本"} · NO.${v.no}`} />
-        </span>
+        <span className="block text-[12px] font-bold text-vl-ink-soft">{isPrev ? "前の標本" : "次の標本"}</span>
         <span className="font-display-ja mt-1 block truncate text-[20px] leading-tight group-hover:text-vl-red">{v.name}</span>
         <span className="mt-1 block truncate text-[13px]">{v.hitokoto}</span>
       </span>
@@ -198,12 +195,7 @@ export default async function ValuePage({ params }: Params) {
   const lines = nameLines(v.name);
   const hasCurve = v.evidence === "curve" && !!v.curve;
 
-  // 図番号: FIG.1 流通期間 → FIG.2 主の証拠 → FIG.3〜 日付の帳票（カーブ型）・補助の図
-  let figNo = 2;
-  const nextFig = () => `FIG.${++figNo}`;
   const extras: Curve[] = [...(!hasCurve && v.curve ? [v.curve] : []), ...(v.extraCurves ?? [])];
-  const ledgerFig = hasCurve ? nextFig() : null;
-  const extraFigs = extras.map(() => nextFig());
 
   return (
     <article className="mx-auto max-w-6xl px-4 md:px-8">
@@ -265,22 +257,31 @@ export default async function ValuePage({ params }: Params) {
       {/* 仕様表・流通期間 ＋ 主の証拠 */}
       <section className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-10" aria-label="仕様と証拠">
         <div className="space-y-7">
+          {hasIllust(v.no) && (
+            <figure className="vl-offset border-2 border-vl-ink bg-vl-paper px-4 py-5">
+              <Illust no={v.no} className="mx-auto block h-auto w-[min(260px,78%)]" />
+            </figure>
+          )}
           <DetailSpec v={v} />
           <SpanBox v={v} accent={acc.bar} outline={v.shelf === 3} />
         </div>
-        <div>{hasCurve ? <CurveChart curve={v.curve!} fig="FIG.2" /> : <LawTimeline v={v} fig="FIG.2" />}</div>
+        <Reveal>{hasCurve ? <CurveChart curve={v.curve!} /> : <LawTimeline v={v} />}</Reveal>
       </section>
 
-      {hasCurve && ledgerFig && (v.made?.fact || v.discontinued?.fact || v.restocked?.fact) && (
+      {hasCurve && (v.made?.fact || v.discontinued?.fact || v.restocked?.fact) && (
         <section className="mt-8" aria-label="日付の根拠">
-          <LawTimeline v={v} fig={ledgerFig} />
+          <Reveal>
+            <LawTimeline v={v} />
+          </Reveal>
         </section>
       )}
 
       {extras.length > 0 && (
         <section className={`mt-8 grid gap-8 ${extras.length > 1 ? "lg:grid-cols-2 lg:gap-10" : "lg:max-w-[760px]"}`} aria-label="補助の統計">
           {extras.map((c, i) => (
-            <CurveChart key={c.title} curve={c} fig={extraFigs[i]} />
+            <Reveal key={c.title}>
+              <CurveChart curve={c} />
+            </Reveal>
           ))}
         </section>
       )}
@@ -301,9 +302,6 @@ export default async function ValuePage({ params }: Params) {
           </div>
           <aside className="mt-10 hidden lg:mt-0 lg:block" aria-label="この標本のカード">
             <div className="sticky top-28">
-              <p className="mb-3 text-[12px] font-bold text-vl-ink-soft">
-                <TypeLabel text="THE CARD · この標本" />
-              </p>
               <ValueCard v={v} />
             </div>
           </aside>

@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 };
 
 /**
- * 404 — 品切れ札。
- * 吊り紐＋穴あきの札に、ゴム印「OUT OF STOCK」。索引へ戻す。
+ * 404 — 品切れ札｡
+ * 吊り紐＋穴あきの札に､ゴム印｢OUT OF STOCK｣｡索引へ戻す｡
  */
 export default function NotFound() {
   return (
@@ -26,8 +26,8 @@ export default function NotFound() {
             aria-hidden
             className="absolute left-1/2 top-3 h-4 w-4 -translate-x-1/2 rounded-full border-2 border-vl-ink bg-vl-paper"
           />
-          <div className="font-type flex items-center justify-between px-5 pt-3 text-[9px] tracking-[0.3em] text-vl-ink-soft">
-            <span>NO.404</span>
+          <div className="flex items-center justify-between px-5 pt-3 text-[12px] font-bold text-vl-ink-soft">
+            <span className="font-type tracking-[0.1em]">NO.404</span>
             <span>品切れ札</span>
           </div>
 
@@ -44,7 +44,7 @@ export default function NotFound() {
             </p>
 
             <p className="mt-6 text-[13px] leading-[1.95] text-vl-ink-soft md:text-[14px]">
-              <Ja text="お探しの型番は、棚にない。廃番ではなく、製造の記録がこの店にない。型番を確かめるか、索引から探してほしい。" />
+              <Ja text="お探しの型番は､棚にない｡廃番ではなく､製造の記録がこの店にない｡型番を確かめるか､索引から探してほしい｡" />
             </p>
 
             <Link

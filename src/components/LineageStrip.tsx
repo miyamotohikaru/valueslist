@@ -4,7 +4,7 @@ import { lineagesOf, resolveNode } from "@/data/lineages";
 import { ChainTitle } from "./LineageDiagram";
 import TypeLabel from "./TypeLabel";
 
-/** 段の名前を、箱の幅に1行で収まる大きさにする（13px を下回るときだけ折り返す） */
+/** 段の名前を､箱の幅に1行で収まる大きさにする（13px を下回るときだけ折り返す） */
 function fitLabel(label: string) {
   let n = 0;
   for (const ch of label) n += /[\x20-\x7e]/.test(ch) ? 0.55 : 1;
@@ -12,8 +12,8 @@ function fitLabel(label: string) {
 }
 
 /**
- * その商品が属する系譜を横並びで。現在の商品をハイライトし、
- * カードがある段は /values/{no} へ、系譜そのものは /lineage#{id} へ。
+ * その商品が属する系譜を横並びで｡現在の商品をハイライトし､
+ * カードがある段は /values/{no} へ､系譜そのものは /lineage#{id} へ｡
  */
 export default function LineageStrip({ v }: { v: Value }) {
   const ls = lineagesOf(v);

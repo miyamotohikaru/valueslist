@@ -5,9 +5,9 @@ import { values } from "@/data/values";
 const noOf = (name: string) => values.find((v) => v.name === name)?.no ?? "—";
 
 /**
- * 「証拠の二種」— 年を特定する方法を、2枚のパネルで並べて説明する図。
- * 左: 法令・初出型（日付という「点」）／右: カーブ型（統計という「線」）。
- * アイコンは赤の線画（分解図と同じ調子）。
+ * ｢証拠の二種｣— 年を特定する方法を､2枚のパネルで並べて説明する図｡
+ * 左: 法令・初出型（日付という｢点｣）／右: カーブ型（統計という｢線｣）｡
+ * アイコンは赤の線画（分解図と同じ調子）｡
  */
 const RED = "var(--vl-red)";
 const INK = "var(--vl-ink)";
@@ -15,7 +15,7 @@ const PAPER = "var(--vl-card)";
 const MONO = "var(--font-courier), monospace";
 const ANTON = "var(--font-anton), Impact, sans-serif";
 
-/** 日付のゴム印（持ち手と、押した跡） */
+/** 日付のゴム印（持ち手と､押した跡） */
 function StampIcon({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 120 100" className={className} aria-hidden>
@@ -117,7 +117,7 @@ function Panel({ ja, en, icon, head, lead, specimenNo, specimenName, specimenBig
       {/* 標本 */}
       <div className="mx-4 mb-4 mt-auto border-2 border-dashed border-vl-line px-4 py-3 md:mx-5 md:mb-5">
         <p className="flex flex-wrap items-baseline gap-x-2 text-[12px]">
-          <span className="font-type whitespace-nowrap font-bold tracking-[0.1em] text-vl-red">SPECIMEN · NO.{specimenNo}</span>
+          <span className="whitespace-nowrap font-bold text-vl-red-deep">NO.{specimenNo}</span>
           <span className="font-bold">{specimenName}</span>
         </p>
         <p className="font-display-en mt-1 text-[30px] leading-none tracking-[0.02em] md:text-[34px]">{specimenBig}</p>
@@ -129,7 +129,7 @@ function Panel({ ja, en, icon, head, lead, specimenNo, specimenName, specimenBig
   );
 }
 
-export default function EvidenceTwo({ className = "", fig = "FIG.2" }: { className?: string; fig?: string }) {
+export default function EvidenceTwo({ className = "" }: { className?: string }) {
   return (
     <div className={className}>
       <div className="grid gap-8 md:grid-cols-2 md:gap-6">
@@ -137,8 +137,8 @@ export default function EvidenceTwo({ className = "", fig = "FIG.2" }: { classNa
           ja={evidenceMeta.law.ja}
           en={evidenceMeta.law.en}
           icon={<StampIcon className="w-full" />}
-          head="「点」で語る"
-          lead="禁止令の日付、翻訳語の初出、◆制度の廃止年。年月日まで特定できる一点で、◆製造か廃番の年を決める。"
+          head="｢点｣で語る"
+          lead="禁止令の日付､翻訳語の初出､◆制度の廃止年｡年月日まで特定できる一点で､◆製造か廃番の年を決める｡"
           specimenNo={noOf("仇討ち")}
           specimenName="仇討ち"
           specimenBig="1873.02.07"
@@ -148,10 +148,10 @@ export default function EvidenceTwo({ className = "", fig = "FIG.2" }: { classNa
           ja={evidenceMeta.curve.ja}
           en={evidenceMeta.curve.en}
           icon={<CurveIcon className="w-full" />}
-          head="「線」で語る"
-          lead="世論調査の賛成率、統計の推移。実際の数値を結んだ線で、◆上昇か下落かを決める。"
-          specimenNo={noOf("夫は外で働き、妻は家庭を守る")}
-          specimenName="夫は外で働き、妻は家庭を守る"
+          head="｢線｣で語る"
+          lead="世論調査の賛成率､統計の推移｡実際の数値を結んだ線で､◆上昇か下落かを決める｡"
+          specimenNo={noOf("夫は外で働き､妻は家庭を守る")}
+          specimenName="夫は外で働き､妻は家庭を守る"
           specimenBig={
             <>
               72.6<span className="text-[0.55em]">%</span>
@@ -159,18 +159,17 @@ export default function EvidenceTwo({ className = "", fig = "FIG.2" }: { classNa
               33.1<span className="text-[0.55em]">%</span>
             </>
           }
-          specimenNote="賛成の計 1979 → 2024◆〔総理府・内閣府の世論調査〕。◇2022年から郵送調査に変わったため、◆前後は単純に比べられない。"
+          specimenNote="賛成の計 1979 → 2024◆〔総理府・内閣府の世論調査〕｡◇2022年から郵送調査に変わったため､◆前後は単純に比べられない｡"
         />
       </div>
 
       {/* 注記 */}
       <div className="mt-6 flex flex-col gap-2 border-t-2 border-vl-ink pt-3 md:flex-row md:items-baseline md:justify-between">
         <p className="text-[14px] leading-[1.9]">
-          前近代の項目に賛成率の欄を置くと嘘になるので、
+          前近代の項目に賛成率の欄を置くと嘘になるので､
           <br />
-          項目ページの図を、二種に分けた。
+          項目ページの図を､二種に分けた｡
         </p>
-        <p className="font-type shrink-0 text-[12px] font-bold tracking-[0.1em] text-vl-red-deep">{fig} TWO KINDS OF EVIDENCE</p>
       </div>
     </div>
   );

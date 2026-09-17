@@ -2,7 +2,7 @@ import type { ShelfMeta } from "@/data/types";
 import BreakText from "./BreakText";
 import { SHELF_ACCENT } from "./ValueCard";
 
-/** 棚札。丸いメダルに棚番号、右に名前と説明。証拠の種類と件数は説明の下にまとめる */
+/** 棚札｡丸いメダルに棚番号､右に名前と説明｡証拠の種類と件数は説明の下にまとめる */
 export default function ShelfHeader({ shelf, count }: { shelf: ShelfMeta; count: number }) {
   const acc = SHELF_ACCENT[String(shelf.id)];
   return (
@@ -25,7 +25,7 @@ export default function ShelfHeader({ shelf, count }: { shelf: ShelfMeta; count:
           <span>
             <BreakText text={shelf.evidenceNote} />
           </span>
-          <span className="font-type font-bold tracking-[0.1em] text-vl-ink">{count} ITEMS</span>
+          <span className="font-bold text-vl-ink">{count}点</span>
         </p>
       </div>
     </div>

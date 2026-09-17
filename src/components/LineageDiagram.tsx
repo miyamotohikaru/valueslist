@@ -7,10 +7,10 @@ import BreakText from "./BreakText";
 import TypeLabel from "./TypeLabel";
 
 /**
- * 系譜の分解図。ノードを上（古い）から下（新しい）へ等角の層として浮かせる。
- * - カードのある層は、天面をその商品の棚の色で塗る（層を下るごとに色が変わる＝棚を移る）
- * - 出来事の層は、破線の縁のクリーム
- * - 名前は斜めの天面には貼らず、前面に置く
+ * 系譜の分解図｡ノードを上（古い）から下（新しい）へ等角の層として浮かせる｡
+ * - カードのある層は､天面をその商品の棚の色で塗る（層を下るごとに色が変わる＝棚を移る）
+ * - 出来事の層は､破線の縁のクリーム
+ * - 名前は斜めの天面には貼らず､前面に置く
  */
 
 const DP = 24; // 天面の奥行き（縦）
@@ -20,13 +20,13 @@ const SKEW_Y = (Math.atan(DP / SK) * 180) / Math.PI;
 const BX = 2 / Math.cos((SKEW_X * Math.PI) / 180);
 const BY = 2 / Math.cos((SKEW_Y * Math.PI) / 180);
 
-/** 「約150年」→ { pre:"約", num:"150", post:"年" } */
+/** ｢約150年｣→ { pre:"約", num:"150", post:"年" } */
 export function parseSpan(s: string) {
   const m = s.match(/^(\D*)(\d+)(.*)$/);
   return m ? { pre: m[1], num: m[2], post: m[3] } : { pre: "", num: "", post: s };
 }
 
-/** タイトル「A → B → C」を、矢印を赤くして描く。改行は矢印の前でしか起きない */
+/** タイトル｢A → B → C｣を､矢印を赤くして描く｡改行は矢印の前でしか起きない */
 export function ChainTitle({ title, arrowClass = "" }: { title: string; arrowClass?: string }) {
   const parts = title
     .split(/\s*→\s*/)
@@ -39,7 +39,7 @@ export function ChainTitle({ title, arrowClass = "" }: { title: string; arrowCla
           {i > 0 && " "}
           <span className="inline-block max-w-full break-keep wrap-anywhere">
             {i > 0 && <span className={`mr-[0.3em] text-vl-red ${arrowClass}`}>→</span>}
-            {/* 長い語は「・」のあとでだけ折る */}
+            {/* 長い語は｢・｣のあとでだけ折る */}
             {p.split(/(?<=・)/).map((q, j) => (
               <Fragment key={j}>
                 {j > 0 && <wbr />}
@@ -57,16 +57,16 @@ const isLatin = (s: string) => /^[\x20-\x7e]+$/.test(s);
 
 const vlen = (s: string) => [...s].reduce((n, ch) => n + (/[\x20-\x7e]/.test(ch) ? 0.55 : 1), 0);
 
-/** 句点で改行し、長い文は読点でも改行する（PC の左欄 14px で約26字） */
+/** 句点で改行し､長い文は読点でも改行する（PC の左欄 14px で約26字） */
 function clauseText(text: string, max = 26) {
   const lines: string[] = [];
-  for (const s of text.split(/(?<=。)/).filter(Boolean)) {
+  for (const s of text.split(/(?<=[｡。])/).filter(Boolean)) {
     if (vlen(s) <= max) {
       lines.push(s);
       continue;
     }
     let cur = "";
-    for (const c of s.split(/(?<=、)/).filter(Boolean)) {
+    for (const c of s.split(/(?<=[､、])/).filter(Boolean)) {
       if (cur && vlen(cur + c) > max) {
         lines.push(cur);
         cur = c;
@@ -204,7 +204,6 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
       {/* 左: 見出し・リード・年数・要点の年 */}
       <div className="lg:sticky lg:top-24 lg:self-start">
         <p className="flex flex-wrap items-center gap-2">
-          <span className="font-type text-[12px] font-bold tracking-[0.1em] text-vl-ink-soft">LINEAGE {nn}</span>
           <span className="border-2 border-vl-ink bg-vl-mustard px-2 py-0.5 text-[12px] font-bold">{kind.ja}</span>
         </p>
         <h2 className="font-display-ja mt-3 text-[22px] leading-[1.45] md:text-[26px]">
@@ -245,12 +244,7 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
 
       {/* 右: 分解図 */}
       <div className="min-w-0">
-        <p className="mb-5 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-[12px] font-bold text-vl-ink-soft">
-          <span>
-            <TypeLabel text={`FIG.${nn} · 分解図`} tracking="0.06em" />
-          </span>
-          <span>上が古く、下が新しい</span>
-        </p>
+        <p className="mb-5 text-right text-[12px] font-bold text-vl-ink-soft">上が古く､下が新しい</p>
         <ol className="space-y-5">
           {nodes.map((node, i) => (
             <Layer key={`${lineage.id}-${i}`} node={node} badge={lineage.kind === "restock" && i === nodes.length - 1} />

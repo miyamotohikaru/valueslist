@@ -1,6 +1,7 @@
 import { values, stats } from "@/data/values";
 import { shelves, trendMeta } from "@/data/shelves";
 import IndexView from "@/components/IndexView";
+import CardDeck from "@/components/CardDeck";
 import ExplodedCard from "@/components/ExplodedCard";
 import Emblem from "@/components/Emblem";
 import TrendStamp from "@/components/TrendStamp";
@@ -78,6 +79,9 @@ export default function Home() {
           </ul>
         </div>
       </div>
+
+      {/* カードの束（ドラッグ・スクロールでめくる） */}
+      <CardDeck values={values} />
 
       {/* 全幅の帯 */}
       <div className="vl-marquee" aria-label={band.replace(/★/g, "")}>

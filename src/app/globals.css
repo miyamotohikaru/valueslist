@@ -857,3 +857,80 @@ button:focus-visible,
 .vl-seg button[aria-pressed="false"]:hover {
   background: var(--vl-paper-2);
 }
+
+/* ============================================================
+   縦に送るカードの並び（CardFeed）
+   後ろに大きな英名を敷き、その上にカードを重ねる。
+   真ん中に来た行がいちばん大きい（--f が 1 に近いほど手前）
+   ============================================================ */
+.vl-feed {
+  --row-h: 420px;
+}
+.vl-feed__row {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: var(--row-h);
+  padding: 28px 0 36px;
+  border-top: 2px solid var(--vl-ink);
+}
+.vl-feed__meta {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vl-ink-soft);
+}
+.vl-feed__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  max-width: 130vw;
+  transform: translate(-50%, -50%) translateY(calc(var(--t, 0) * -26px));
+  font-size: clamp(52px, 12vw, 142px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--vl-ink);
+  opacity: calc(0.3 + var(--f, 0) * 0.55);
+  pointer-events: none;
+  z-index: 0;
+}
+.vl-feed__card {
+  position: relative;
+  z-index: 1;
+  width: min(72vw, 264px);
+  transform: scale(calc(0.88 + var(--f, 0) * 0.12));
+  opacity: calc(0.72 + var(--f, 0) * 0.28);
+  transition:
+    transform 120ms linear,
+    opacity 120ms linear;
+}
+@media (min-width: 768px) {
+  .vl-feed {
+    --row-h: 500px;
+  }
+  .vl-feed__card {
+    width: 300px;
+  }
+  .vl-feed__meta {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vl-feed__card {
+    transform: none;
+    opacity: 1;
+  }
+  .vl-feed__title {
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+  }
+}

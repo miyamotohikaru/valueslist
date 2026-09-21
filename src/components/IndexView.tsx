@@ -7,7 +7,7 @@ import ValueCard, { SHELF_ACCENT } from "./ValueCard";
 import ShelfHeader from "./ShelfHeader";
 import RestockPairs, { longRestocks } from "./RestockPairs";
 import Tilt from "./motion/Tilt";
-import CardPager from "./CardPager";
+import CardFeed from "./CardFeed";
 import MetaSpecimen from "./MetaSpecimen";
 
 type SortKey = "no" | "made" | "disc";
@@ -252,8 +252,8 @@ export default function IndexView({ values }: { values: Value[] }) {
       </div>
 
       {view === "card" ? (
-        <div className="mt-8">
-          <CardPager values={filtered} />
+        <div className="mt-6">
+          <CardFeed values={filtered} />
         </div>
       ) : sort === "no" ? (
         <Tilt className="mt-12 space-y-20">

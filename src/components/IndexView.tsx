@@ -252,7 +252,7 @@ export default function IndexView({ values }: { values: Value[] }) {
       </div>
 
       {view === "card" ? (
-        <div className="mt-6">
+        <div className="mt-1">
           <CardFeed values={filtered} />
         </div>
       ) : sort === "no" ? (

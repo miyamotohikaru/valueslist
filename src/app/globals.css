@@ -864,7 +864,8 @@ button:focus-visible,
    真ん中に来た行がいちばん大きい（--f が 1 に近いほど手前）
    ============================================================ */
 .vl-feed {
-  --row-h: 420px;
+  /* 開いた画面にちょうど1枚が収まる高さ（頭の帯と操作の行のぶんを引く） */
+  --row-h: min(500px, calc(100svh - 210px));
 }
 .vl-feed__row {
   position: relative;
@@ -893,7 +894,7 @@ button:focus-visible,
   width: max-content;
   max-width: 130vw;
   transform: translate(-50%, -50%) translateY(calc(var(--t, 0) * -26px));
-  font-size: clamp(52px, 12vw, 142px);
+  font-size: clamp(58px, 17vw, 150px);
   line-height: 0.9;
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -906,7 +907,7 @@ button:focus-visible,
 .vl-feed__card {
   position: relative;
   z-index: 1;
-  width: min(72vw, 264px);
+  width: min(74vw, 286px);
   transform: scale(calc(0.88 + var(--f, 0) * 0.12));
   opacity: calc(0.72 + var(--f, 0) * 0.28);
   transition:
@@ -915,10 +916,11 @@ button:focus-visible,
 }
 @media (min-width: 768px) {
   .vl-feed {
-    --row-h: 500px;
+    --row-h: min(570px, calc(100svh - 230px));
   }
+  /* 縦長のカードのまま見せる（336px を超えると行カードに切り替わるため） */
   .vl-feed__card {
-    width: 300px;
+    width: min(324px, 30vw);
   }
   .vl-feed__meta {
     font-size: 13px;

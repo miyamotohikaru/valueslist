@@ -16,6 +16,19 @@ export default function Home() {
 
   return (
     <>
+      {/* 開いてすぐカードが見えるように、索引を先頭に置く */}
+      <div className="mx-auto max-w-6xl px-4 md:px-8">
+        <IndexView values={values} />
+      </div>
+
+      {/* 全幅の帯 */}
+      <div className="vl-marquee" aria-label={band.replace(/★/g, "")}>
+        <div className="vl-marquee__track" aria-hidden>
+          <span>{band.repeat(4)}</span>
+          <span>{band.repeat(4)}</span>
+        </div>
+      </div>
+
       <div className="mx-auto max-w-6xl overflow-x-clip px-4 md:px-8">
         <section className="relative grid gap-10 pt-8 pb-8 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:items-center md:gap-10 md:pt-14 md:pb-10">
           <div className="relative z-10">
@@ -79,17 +92,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 全幅の帯 */}
-      <div className="vl-marquee" aria-label={band.replace(/★/g, "")}>
-        <div className="vl-marquee__track" aria-hidden>
-          <span>{band.repeat(4)}</span>
-          <span>{band.repeat(4)}</span>
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-6xl px-4 md:px-8">
-        <IndexView values={values} />
-      </div>
 
       {/* 終わりの帯（逆向きに流れる） */}
       <div className="vl-marquee vl-marquee--rev mt-16" aria-hidden>

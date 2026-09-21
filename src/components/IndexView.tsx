@@ -1,15 +1,17 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Value, Category, Trend, Evidence, ShelfId, ShelfMeta } from "@/data/types";
 import { shelves, trendMeta, evidenceMeta } from "@/data/shelves";
 import ValueCard, { SHELF_ACCENT } from "./ValueCard";
 import ShelfHeader from "./ShelfHeader";
 import RestockPairs, { longRestocks } from "./RestockPairs";
 import Tilt from "./motion/Tilt";
+import CardPager from "./CardPager";
 import MetaSpecimen from "./MetaSpecimen";
 
 type SortKey = "no" | "made" | "disc";
+type ViewKey = "card" | "list";
 
 const CATS: Category[] = ["規範", "人生観", "判断基準"];
 const TRENDS: Trend[] = ["up", "steady", "down", "discontinued", "restocked"];
@@ -118,6 +120,28 @@ export default function IndexView({ values }: { values: Value[] }) {
   const [evF, setEvF] = useState<Set<Evidence>>(new Set());
   const [sort, setSort] = useState<SortKey>("no");
   const [open, setOpen] = useState(false);
+  const [view, setView] = useState<ViewKey>("card");
+
+  // 開いたときの見せ方を、URL（?view=）と前回の選択から決める
+  useEffect(() => {
+    const fromUrl = new URLSearchParams(location.search).get("view");
+    const saved = localStorage.getItem("vl-view");
+    const v = fromUrl === "list" || fromUrl === "card" ? fromUrl : saved === "list" || saved === "card" ? saved : null;
+    if (v) setView(v as ViewKey);
+  }, []);
+
+  const changeView = (v: ViewKey) => {
+    setView(v);
+    try {
+      localStorage.setItem("vl-view", v);
+      const url = new URL(location.href);
+      if (v === "card") url.searchParams.delete("view");
+      else url.searchParams.set("view", v);
+      history.replaceState(null, "", url);
+    } catch {
+      // 保存できなくても表示は変える
+    }
+  };
 
   const filtered = useMemo(() => {
     let list = values.filter(
@@ -177,6 +201,14 @@ export default function IndexView({ values }: { values: Value[] }) {
           <span className="font-type ml-auto shrink-0 pl-2 text-[12px] font-bold">
             {filtered.length} / {values.length}
           </span>
+          <div className="vl-seg shrink-0" role="group" aria-label="見せ方">
+            <button type="button" aria-pressed={view === "card"} onClick={() => changeView("card")}>
+              カード
+            </button>
+            <button type="button" aria-pressed={view === "list"} onClick={() => changeView("list")}>
+              一覧
+            </button>
+          </div>
         </div>
         {open && (
           <div className="mt-3 space-y-2 border-2 border-vl-ink bg-vl-card p-3">
@@ -219,7 +251,11 @@ export default function IndexView({ values }: { values: Value[] }) {
         )}
       </div>
 
-      {sort === "no" ? (
+      {view === "card" ? (
+        <div className="mt-8">
+          <CardPager values={filtered} />
+        </div>
+      ) : sort === "no" ? (
         <Tilt className="mt-12 space-y-20">
           {shelves.map((s) => {
             if (s.virtual) {

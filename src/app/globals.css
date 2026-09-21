@@ -756,3 +756,104 @@ body {
     transform: none;
   }
 }
+
+/* ============================================================
+   操作感（Material 3 の動きの考え方にならう）
+   - 押した/触れた手応えを返す
+   - 動きは「出るときは速く､収まるときはゆっくり」
+   ============================================================ */
+:root {
+  --vl-ease-emph: cubic-bezier(0.2, 0, 0, 1);
+  --vl-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --vl-dur-1: 180ms;
+  --vl-dur-2: 320ms;
+  --vl-dur-3: 480ms;
+}
+.vl-ease-emph {
+  transition-timing-function: var(--vl-ease-emph);
+}
+
+/* キーボードで辿ったときだけ、はっきり囲う */
+.vl-focus:focus-visible,
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--vl-red);
+  outline-offset: 3px;
+}
+
+/* 丸い送りボタン */
+.vl-btn-round {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--vl-ink);
+  border-radius: 9999px;
+  background: var(--vl-card);
+  font-size: 16px;
+  font-weight: 700;
+  transition:
+    transform var(--vl-dur-1) var(--vl-ease-emph),
+    background-color var(--vl-dur-1) var(--vl-ease-emph),
+    opacity var(--vl-dur-1) var(--vl-ease-emph);
+}
+.vl-btn-round:hover:not(:disabled) {
+  background: var(--vl-mustard);
+}
+.vl-btn-round:active:not(:disabled) {
+  transform: scale(0.92);
+}
+.vl-btn-round:disabled {
+  opacity: 0.3;
+}
+
+/* 中身のはっきりしたボタン */
+.vl-btn-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid var(--vl-ink);
+  background: var(--vl-ink);
+  color: var(--vl-paper);
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow:
+    2px 3px 0 -1.5px var(--vl-card),
+    2px 3px 0 0 var(--vl-ink);
+  transition:
+    transform var(--vl-dur-1) var(--vl-ease-emph),
+    background-color var(--vl-dur-1) var(--vl-ease-emph);
+}
+.vl-btn-solid:hover {
+  background: var(--vl-red);
+}
+.vl-btn-solid:active {
+  transform: translate(1px, 2px);
+  box-shadow: none;
+}
+
+/* カード／一覧の切り替え（2つでひと組） */
+.vl-seg {
+  display: inline-flex;
+  border: 2px solid var(--vl-ink);
+  background: var(--vl-card);
+  padding: 2px;
+  gap: 2px;
+}
+.vl-seg button {
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background-color var(--vl-dur-1) var(--vl-ease-emph),
+    color var(--vl-dur-1) var(--vl-ease-emph);
+}
+.vl-seg button[aria-pressed="true"] {
+  background: var(--vl-ink);
+  color: var(--vl-paper);
+}
+.vl-seg button[aria-pressed="false"]:hover {
+  background: var(--vl-paper-2);
+}

@@ -37,8 +37,8 @@ const DATES = [
 ];
 
 const byName = (name: string) => values.find((v) => v.name === name)!;
-/** カードの見本（法令で廃番になった一枚） */
-const ANATOMY: Value = byName("仇討ち");
+/** カードの見本（法令で廃番になった一枚）｡NO.001 は新しい面に差し替え中なので､ここは 002 を使う */
+const ANATOMY: Value = byName("忠孝");
 /** 年表の見本（概算の製造 → 廃番 → 再入荷の三つがそろう一枚） */
 const SPAN_SAMPLE: Value = byName("隠居");
 

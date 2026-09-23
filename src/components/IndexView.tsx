@@ -7,7 +7,7 @@ import ValueCard, { SHELF_ACCENT } from "./ValueCard";
 import ShelfHeader from "./ShelfHeader";
 import RestockPairs, { longRestocks } from "./RestockPairs";
 import Tilt from "./motion/Tilt";
-import CardTable from "./CardTable";
+import CardWheel from "./CardWheel";
 import MetaSpecimen from "./MetaSpecimen";
 
 type SortKey = "no" | "made" | "disc";
@@ -252,7 +252,7 @@ export default function IndexView({ values }: { values: Value[] }) {
       </div>
 
       {view === "card" ? (
-        <CardTable values={filtered} />
+        <CardWheel values={filtered} />
       ) : sort === "no" ? (
         <Tilt className="mt-12 space-y-20">
           {shelves.map((s) => {

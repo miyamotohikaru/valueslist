@@ -5,6 +5,8 @@ import { categoryMeta, evidenceMeta } from "@/data/shelves";
 import SpanStrip from "./SpanStrip";
 import TrendStamp from "./TrendStamp";
 import Illust, { hasIllust } from "./illust";
+import ValuePlate from "./plate/ValuePlate";
+import { hasPlate } from "./plate";
 
 export const SHELF_ACCENT: Record<string, { bg: string; fg: string; bar: string }> = {
   "1": { bg: "var(--vl-brown)", fg: "var(--vl-paper)", bar: "var(--vl-brown)" },
@@ -57,6 +59,9 @@ export default function ValueCard({
       : { k: "NOW", t: "現役" };
 
   const illust = hasIllust(v.no);
+
+  // 図版の描けた札は､新しい面で出す
+  if (hasPlate(v.no)) return <ValuePlate v={v} index={index} interactive={interactive} />;
 
   const body = (
     <>

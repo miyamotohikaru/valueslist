@@ -858,81 +858,266 @@ button:focus-visible,
   background: var(--vl-paper-2);
 }
 
+
 /* ============================================================
-   縦に送るカードの並び（CardFeed）
-   後ろに大きな英名を敷き、その上にカードを重ねる。
-   真ん中に来た行がいちばん大きい（--f が 1 に近いほど手前）
+   カードの卓（CardTable）
+   左に山札､下に手札の扇､真ん中に表を向けた1枚｡
+   位置は変数（--a 角度）だけを書き換え､遷移で動かす
    ============================================================ */
-.vl-feed {
-  /* 開いた画面にちょうど1枚が収まる高さ（頭の帯と操作の行のぶんを引く） */
-  --row-h: min(500px, calc(100svh - 210px));
-}
-.vl-feed__row {
+.vl-table {
+  --fan-scale: 0.5;
+  --fan-w: 135px;
+  --fan-h: 104px;
+  --fan-r: 560px;
+  --fan-step: 5.6deg;
+  --focus-w: min(72vw, 262px);
+  /* 札ごとに高さが変わると操作の並びが動くので､高さは固定する */
+  --focus-h: clamp(330px, 46svh, 396px);
+
   position: relative;
   display: grid;
-  place-items: center;
-  min-height: var(--row-h);
-  padding: 28px 0 36px;
-  border-top: 2px solid var(--vl-ink);
+  grid-template-rows: 1fr auto;
+  min-height: min(720px, calc(100svh - 128px));
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 3px solid var(--vl-ink);
+  background: var(--vl-paper);
+  touch-action: pan-y;
 }
-.vl-feed__meta {
+.vl-table:focus {
+  outline: none;
+}
+.vl-table__felt {
   position: absolute;
-  top: 8px;
-  left: 0;
-  right: 0;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(64% 54% at 50% 34%, var(--felt, transparent) 0%, transparent 72%);
+  opacity: 0.22;
+  transition: background 520ms var(--vl-ease-emph);
+}
+.vl-table__sun {
+  position: absolute;
+  top: -26%;
+  left: 50%;
+  width: min(880px, 130vw);
+  aspect-ratio: 1;
+  translate: -50% 0;
+  color: var(--vl-red);
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* 山札 */
+.vl-table__deck,
+.vl-table__used {
+  display: none;
+}
+.vl-table__used[data-empty] {
+  opacity: 0.28;
+}
+.vl-deckstack--used {
+  width: 76px;
+  height: 106px;
+}
+.vl-deckstack {
+  position: relative;
+  width: 96px;
+  height: 134px;
+}
+.vl-deckstack__back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(2px 3px 0 var(--vl-ink));
+}
+.vl-deckstack__back--3 {
+  transform: rotate(-7deg) translate(-5px, 3px);
+  opacity: 0.55;
+}
+.vl-deckstack__back--2 {
+  transform: rotate(-3deg) translate(-2px, 1px);
+  opacity: 0.8;
+}
+.vl-table__deck-n {
+  margin-top: 12px;
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
+  align-items: baseline;
+  gap: 6px;
   font-size: 12px;
   font-weight: 700;
   color: var(--vl-ink-soft);
 }
-.vl-feed__title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: max-content;
-  max-width: 130vw;
-  transform: translate(-50%, -50%) translateY(calc(var(--t, 0) * -26px));
-  font-size: clamp(58px, 17vw, 150px);
-  line-height: 0.9;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  white-space: nowrap;
+.vl-table__deck-n .font-display-en {
+  font-size: 26px;
   color: var(--vl-ink);
-  opacity: calc(0.3 + var(--f, 0) * 0.55);
-  pointer-events: none;
-  z-index: 0;
 }
-.vl-feed__card {
+
+/* 真ん中の1枚 */
+.vl-table__focus {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 14px;
+  padding: 20px 16px 4px;
+}
+.vl-focus {
   position: relative;
-  z-index: 1;
-  width: min(74vw, 286px);
-  transform: scale(calc(0.88 + var(--f, 0) * 0.12));
-  opacity: calc(0.72 + var(--f, 0) * 0.28);
+  display: grid;
+  align-content: start;
+  width: var(--focus-w);
+  /* 高さは固定して操作の並びを動かさない｡札そのものは元の高さのまま上に置く */
+  height: var(--focus-h);
+  transform-style: preserve-3d;
+}
+.vl-focus .vl-card-wrap {
+  height: auto;
+}
+.vl-focus::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border: 2px solid var(--vl-red);
+  pointer-events: none;
+  opacity: 0;
+  animation: vl-land 560ms 140ms var(--vl-ease-emph) both;
+}
+@keyframes vl-land {
+  0% {
+    opacity: 0.85;
+    transform: scale(0.93);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+.vl-table__caption {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+}
+.vl-table__shelf {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--vl-ink-soft);
+}
+.vl-table__nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.vl-table__count {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* 手札の扇 */
+.vl-fan {
+  position: relative;
+  /* 持ち上がった札が上の操作に重ならないよう､上に余りを取る */
+  height: calc(var(--fan-h) + 46px);
+}
+.vl-fan__slot {
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  width: var(--fan-w);
+  height: var(--fan-h);
+  margin-left: calc(var(--fan-w) / -2);
+  z-index: var(--z, 1);
+  transform-origin: 50% var(--fan-r);
+  transform: rotate(calc(var(--a) * var(--fan-step))) translateY(calc(var(--lift, 0) * -1px));
   transition:
-    transform 120ms linear,
-    opacity 120ms linear;
+    transform 420ms var(--vl-ease-emph),
+    filter 200ms var(--vl-ease-emph);
+  filter: brightness(0.93) saturate(0.85);
+  cursor: pointer;
+}
+.vl-fan__slot:hover {
+  --lift: 16;
+  filter: none;
+}
+.vl-fan__slot.is-on {
+  --lift: 34;
+  z-index: 60;
+  filter: none;
+}
+.vl-fan__card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 270px;
+  transform: translateX(-50%) scale(var(--fan-scale));
+  transform-origin: 50% 0;
+  pointer-events: none;
+}
+.vl-table__hint {
+  margin-top: -4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vl-ink-soft);
 }
 @media (min-width: 768px) {
-  .vl-feed {
-    --row-h: min(570px, calc(100svh - 230px));
-  }
-  /* 縦長のカードのまま見せる（336px を超えると行カードに切り替わるため） */
-  .vl-feed__card {
-    width: min(324px, 30vw);
-  }
-  .vl-feed__meta {
-    font-size: 13px;
+  /* 扇の持ち上がった札と重ならないよう､左下へ逃がす */
+  .vl-table__hint {
+    position: absolute;
+    left: 5vw;
+    bottom: 14px;
+    margin: 0;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .vl-feed__card {
-    transform: none;
-    opacity: 1;
+
+@media (max-width: 640px) {
+  .vl-fan__slot[data-d="6"],
+  .vl-fan__slot[data-d="7"] {
+    opacity: 0;
+    pointer-events: none;
   }
-  .vl-feed__title {
-    transform: translate(-50%, -50%);
-    opacity: 0.4;
+}
+
+@media (min-width: 768px) {
+  .vl-table {
+    --fan-scale: 0.6;
+    --fan-w: 162px;
+    --fan-h: 126px;
+    --fan-r: 780px;
+    --fan-step: 4.4deg;
+    --focus-w: 300px;
+    --focus-h: clamp(384px, 50svh, 448px);
+    min-height: min(760px, calc(100svh - 96px));
+  }
+  .vl-table__deck,
+  .vl-table__used {
+    display: block;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transition: opacity 320ms var(--vl-ease-emph);
+  }
+  .vl-table__deck {
+    left: 5vw;
+    translate: 0 -62%;
+  }
+  .vl-table__used {
+    right: 5vw;
+    translate: 0 -54%;
+    text-align: right;
+  }
+  .vl-table__used .vl-table__deck-n {
+    justify-content: flex-end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vl-fan__slot,
+  .vl-table__felt {
+    transition: none;
+  }
+  .vl-focus::after {
+    animation: none;
   }
 }

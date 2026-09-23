@@ -864,9 +864,9 @@ button:focus-visible,
    いちばん上の1枚が表｡--a（角度）だけを書き換えて回す
    ============================================================ */
 .vl-wheel {
-  --card-w: 156px;
+  --card-w: 132px;
   --radius: clamp(250px, 78vw, 340px);
-  --hub: 60%;
+  --hub: 62%;
   --sc-on: 1.5;
   --spread: 0;
 
@@ -988,10 +988,10 @@ button:focus-visible,
 
 @media (min-width: 768px) {
   .vl-wheel {
-    --card-w: 212px;
+    --card-w: 168px;
     --radius: clamp(380px, 41vw, 545px);
-    --sc-on: 1.5;
-    --hub: 79%;
+    --sc-on: 1.58;
+    --hub: 76%;
   }
   .vl-wheel__head {
     top: 18px;
@@ -1023,12 +1023,14 @@ button:focus-visible,
 .vl-plate {
   position: relative;
   display: grid;
-  grid-template-columns: 37% minmax(0, 1fr);
-  grid-template-rows: 17% minmax(0, 1fr);
+  grid-template-rows: auto 33% minmax(0, 1fr) auto;
   grid-template-areas:
-    "top top"
-    "art main";
-  aspect-ratio: 85.6 / 53.98;
+    "top"
+    "art"
+    "main"
+    "meaning";
+  /* トレーディングカードの寸法（63×88mm）の縦型 */
+  aspect-ratio: 63 / 88;
   gap: 0;
   border: 2px solid var(--vl-ink);
   background: var(--plate-bg);
@@ -1041,13 +1043,13 @@ button:focus-visible,
   align-items: center;
   justify-content: space-between;
   gap: 2cqw;
-  padding: 0 3.2cqw;
+  padding: 2.6cqw 4cqw;
   border-bottom: 2px solid var(--vl-ink);
   line-height: 1;
 }
 .vl-plate__no {
   font-family: var(--font-anton), Impact, sans-serif;
-  font-size: 6.4cqw;
+  font-size: 9cqw;
   letter-spacing: 0.03em;
 }
 .vl-plate__no-k {
@@ -1056,7 +1058,7 @@ button:focus-visible,
   letter-spacing: 0.1em;
 }
 .vl-plate__cat {
-  font-size: 3.5cqw;
+  font-size: 4.2cqw;
   font-weight: 700;
   letter-spacing: 0.06em;
   white-space: nowrap;
@@ -1072,7 +1074,7 @@ button:focus-visible,
   position: relative;
   display: grid;
   place-items: center;
-  margin: 3cqw;
+  margin: 4cqw 4cqw 0;
   border: 2px solid var(--vl-ink);
   background: var(--vl-card);
   overflow: hidden;
@@ -1086,14 +1088,16 @@ button:focus-visible,
 .vl-plate__art-svg {
   position: relative;
   display: block;
-  width: 98%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  padding: 3%;
+  box-sizing: border-box;
 }
 .vl-plate__art-paw {
   position: relative;
   display: block;
-  width: 46%;
-  height: auto;
+  width: auto;
+  height: 52%;
   color: var(--plate-bg);
   opacity: 0.22;
 }
@@ -1103,13 +1107,14 @@ button:focus-visible,
   grid-area: main;
   display: grid;
   align-content: center;
-  gap: 0.6cqw;
-  padding: 3cqw 3.6cqw 3cqw 1cqw;
+  gap: 0.8cqw;
+  padding: 3cqw 4cqw 1cqw;
   min-width: 0;
+  overflow: hidden;
 }
 .vl-plate__en {
   font-family: var(--font-anton), Impact, sans-serif;
-  font-size: 3.6cqw;
+  font-size: 4.4cqw;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   line-height: 1.1;
@@ -1120,13 +1125,13 @@ button:focus-visible,
 }
 .vl-plate__name {
   font-family: var(--font-ja-display), var(--font-zen-kaku), sans-serif;
-  font-size: min(8.6cqw, 54cqw / var(--name-len, 4));
+  font-size: min(12cqw, 76cqw / var(--name-len, 4));
   line-height: 1.1;
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
 .vl-plate__reading {
-  font-size: 2.9cqw;
+  font-size: 3.4cqw;
   letter-spacing: 0.1em;
   opacity: 0.8;
   white-space: nowrap;
@@ -1134,8 +1139,8 @@ button:focus-visible,
   text-overflow: ellipsis;
 }
 .vl-plate__span {
-  margin-top: 1.2cqw;
-  font-size: 3cqw;
+  margin-top: 2cqw;
+  font-size: 3.6cqw;
   opacity: 0.92;
 }
 .vl-plate__years {
@@ -1143,14 +1148,14 @@ button:focus-visible,
   align-items: center;
   gap: 0.5em;
   font-family: var(--font-courier), monospace;
-  font-size: 3.2cqw;
+  font-size: 3.8cqw;
   font-weight: 700;
   letter-spacing: 0.04em;
   opacity: 0.9;
 }
 .vl-plate__stamp {
   margin-left: auto;
-  font-size: 2.7cqw;
+  font-size: 3.2cqw;
   color: var(--plate-fg);
 }
 .vl-plate__stamp .vl-trend-stamp {
@@ -1160,4 +1165,22 @@ button:focus-visible,
   -webkit-mask-image: none;
   mask-image: none;
   border-width: 2.5px;
+}
+
+/* 意味（札のいちばん下） */
+.vl-plate__meaning {
+  grid-area: meaning;
+  margin: 0 4cqw 4cqw;
+  padding: 2.6cqw 3cqw;
+  border: 2px solid var(--vl-ink);
+  background: var(--vl-card);
+  color: var(--vl-ink);
+  font-size: 3.8cqw;
+  line-height: 1.5;
+  text-align: justify;
+  line-break: strict;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }

@@ -96,6 +96,8 @@ export default function ValuePlate({
         </p>
       </div>
 
+      <p className="vl-plate__meaning">{v.meaning ?? v.hitokoto}</p>
+
       <span className="sr-only">{evidenceMeta[v.evidence].ja}</span>
     </article>
   );

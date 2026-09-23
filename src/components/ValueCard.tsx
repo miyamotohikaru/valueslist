@@ -60,8 +60,8 @@ export default function ValueCard({
 
   const illust = hasIllust(v.no);
 
-  // 図版の描けた札は､新しい面で出す
-  if (hasPlate(v.no)) return <ValuePlate v={v} index={index} interactive={interactive} />;
+  // 札の面は ID-1 の横型にそろえる（図版の有無にかかわらず同じ組み）
+  return <ValuePlate v={v} index={index} interactive={interactive} />;
 
   const body = (
     <>

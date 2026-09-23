@@ -5,6 +5,8 @@ import { categoryMeta, evidenceMeta } from "@/data/shelves";
 import SpanStrip from "./SpanStrip";
 import TrendStamp from "./TrendStamp";
 import Illust, { hasIllust } from "./illust";
+import ValuePlate from "./plate/ValuePlate";
+import { hasPlate } from "./plate";
 
 export const SHELF_ACCENT: Record<string, { bg: string; fg: string; bar: string }> = {
   "1": { bg: "var(--vl-brown)", fg: "var(--vl-paper)", bar: "var(--vl-brown)" },
@@ -34,7 +36,16 @@ export function nameSize(name: string) {
   return Math.min(12, 84 / Math.max(n, 1));
 }
 
-export default function ValueCard({ v, index = 0 }: { v: Value; index?: number }) {
+export default function ValueCard({
+  v,
+  index = 0,
+  interactive = true,
+}: {
+  v: Value;
+  index?: number;
+  /** false のとき､リンクにせず絵柄だけを描く（外側を押せるようにするとき） */
+  interactive?: boolean;
+}) {
   const acc = SHELF_ACCENT[String(v.shelf)];
   const lines = nameLines(v.name);
   const longest = Math.max(...lines.map(visualLen));
@@ -49,12 +60,11 @@ export default function ValueCard({ v, index = 0 }: { v: Value; index?: number }
 
   const illust = hasIllust(v.no);
 
-  return (
-    <Link
-      href={`/values/${v.no}`}
-      className="vl-card-wrap vl-rise group"
-      style={{ animationDelay: `${Math.min(index, 12) * 40}ms` }}
-    >
+  // 札の面は ID-1 の横型にそろえる（図版の有無にかかわらず同じ組み）
+  return <ValuePlate v={v} index={index} interactive={interactive} />;
+
+  const body = (
+    <>
       <article
         className={`vl-card vl-offset${illust ? " vl-card--illust" : ""}`}
         style={{ ["--band-bg" as string]: acc.bg, ["--band-fg" as string]: acc.fg, ["--name-v" as string]: nameV, ["--name-r" as string]: nameR }}
@@ -106,6 +116,24 @@ export default function ValueCard({ v, index = 0 }: { v: Value; index?: number }
         </div>
         <span className="sr-only">{evidenceMeta[v.evidence].ja}</span>
       </article>
+    </>
+  );
+
+  if (!interactive) {
+    return (
+      <div className="vl-card-wrap" aria-hidden>
+        {body}
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={`/values/${v.no}`}
+      className="vl-card-wrap vl-rise group"
+      style={{ animationDelay: `${Math.min(index, 12) * 40}ms` }}
+    >
+      {body}
     </Link>
   );
 }

@@ -420,6 +420,17 @@ body {
   }
 }
 
+/* 束の中のカードは、束の変形にまかせる */
+.vl-deck .vl-card-wrap:hover .vl-card {
+  transform: none;
+  box-shadow:
+    3px 4px 0 -1.5px var(--vl-card),
+    3px 4px 0 0 var(--vl-ink);
+}
+.vl-deck .vl-rise {
+  animation: none;
+}
+
 /* 説明図のカードは動かさない（引き出し線の位置がずれないように） */
 .vl-anatomy .vl-rise {
   animation: none;
@@ -744,4 +755,432 @@ body {
     opacity: 1;
     transform: none;
   }
+}
+
+/* ============================================================
+   操作感（Material 3 の動きの考え方にならう）
+   - 押した/触れた手応えを返す
+   - 動きは「出るときは速く､収まるときはゆっくり」
+   ============================================================ */
+:root {
+  --vl-ease-emph: cubic-bezier(0.2, 0, 0, 1);
+  --vl-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --vl-dur-1: 180ms;
+  --vl-dur-2: 320ms;
+  --vl-dur-3: 480ms;
+}
+.vl-ease-emph {
+  transition-timing-function: var(--vl-ease-emph);
+}
+
+/* キーボードで辿ったときだけ、はっきり囲う */
+.vl-focus:focus-visible,
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--vl-red);
+  outline-offset: 3px;
+}
+
+/* 丸い送りボタン */
+.vl-btn-round {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--vl-ink);
+  border-radius: 9999px;
+  background: var(--vl-card);
+  font-size: 16px;
+  font-weight: 700;
+  transition:
+    transform var(--vl-dur-1) var(--vl-ease-emph),
+    background-color var(--vl-dur-1) var(--vl-ease-emph),
+    opacity var(--vl-dur-1) var(--vl-ease-emph);
+}
+.vl-btn-round:hover:not(:disabled) {
+  background: var(--vl-mustard);
+}
+.vl-btn-round:active:not(:disabled) {
+  transform: scale(0.92);
+}
+.vl-btn-round:disabled {
+  opacity: 0.3;
+}
+
+/* 中身のはっきりしたボタン */
+.vl-btn-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid var(--vl-ink);
+  background: var(--vl-ink);
+  color: var(--vl-paper);
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow:
+    2px 3px 0 -1.5px var(--vl-card),
+    2px 3px 0 0 var(--vl-ink);
+  transition:
+    transform var(--vl-dur-1) var(--vl-ease-emph),
+    background-color var(--vl-dur-1) var(--vl-ease-emph);
+}
+.vl-btn-solid:hover {
+  background: var(--vl-red);
+}
+.vl-btn-solid:active {
+  transform: translate(1px, 2px);
+  box-shadow: none;
+}
+
+/* カード／一覧の切り替え（2つでひと組） */
+.vl-seg {
+  display: inline-flex;
+  border: 2px solid var(--vl-ink);
+  background: var(--vl-card);
+  padding: 2px;
+  gap: 2px;
+}
+.vl-seg button {
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background-color var(--vl-dur-1) var(--vl-ease-emph),
+    color var(--vl-dur-1) var(--vl-ease-emph);
+}
+.vl-seg button[aria-pressed="true"] {
+  background: var(--vl-ink);
+  color: var(--vl-paper);
+}
+.vl-seg button[aria-pressed="false"]:hover {
+  background: var(--vl-paper-2);
+}
+
+
+/* ============================================================
+   半円に広げた札（CardWheel）
+   いちばん上の1枚が表｡--a（角度）だけを書き換えて回す
+   ============================================================ */
+.vl-wheel {
+  --card-w: 132px;
+  --radius: clamp(250px, 78vw, 340px);
+  --hub: 62%;
+  --sc-on: 1.5;
+  --spread: 0;
+
+  position: relative;
+  height: clamp(500px, calc(100svh - 150px), 780px);
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 3px solid var(--vl-ink);
+  background: var(--vl-paper);
+  touch-action: pan-y;
+  cursor: grab;
+}
+.vl-wheel:active {
+  cursor: grabbing;
+}
+.vl-wheel:focus {
+  outline: none;
+}
+.vl-wheel.is-dealt {
+  --spread: 1;
+}
+.vl-wheel__felt {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(58% 46% at 50% 26%, var(--felt, transparent) 0%, transparent 70%);
+  opacity: 0.2;
+  transition: background 520ms var(--vl-ease-emph);
+}
+
+/* 上の見出し */
+.vl-wheel__head {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  right: 0;
+  z-index: 300;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 16px;
+  pointer-events: none;
+}
+.vl-wheel__shelf,
+.vl-wheel__count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vl-ink-soft);
+}
+.vl-wheel__count {
+  letter-spacing: 0.08em;
+}
+
+/* 弧 */
+.vl-wheel__arc {
+  position: absolute;
+  inset: 0;
+}
+.vl-wheel__slot {
+  position: absolute;
+  left: 50%;
+  top: calc(var(--hub) - var(--radius));
+  width: var(--card-w);
+  margin-left: calc(var(--card-w) / -2);
+  z-index: var(--z, 1);
+  transform-origin: 50% var(--radius);
+  rotate: calc(var(--a) * var(--spread) * 1deg);
+  opacity: calc(var(--o, 1) * var(--spread));
+  transition:
+    rotate 560ms var(--vl-ease-emph) var(--delay, 0ms),
+    opacity 420ms linear var(--delay, 0ms);
+  cursor: pointer;
+}
+.vl-wheel.is-settled .vl-wheel__slot {
+  transition-delay: 0ms;
+}
+.vl-wheel__card {
+  display: block;
+  transform-origin: 50% 0;
+  scale: var(--sc, 1);
+  translate: 0 calc(var(--lift, 0) * -1px);
+  transition:
+    scale 420ms var(--vl-ease-emph),
+    translate 420ms var(--vl-ease-emph),
+    filter 260ms linear;
+  filter: brightness(0.96) saturate(0.9);
+  pointer-events: none;
+}
+.vl-wheel__slot:hover .vl-wheel__card {
+  --lift: 14;
+  filter: none;
+}
+.vl-wheel__slot.is-on {
+  z-index: 300;
+  opacity: var(--spread);
+}
+.vl-wheel__slot.is-on .vl-wheel__card {
+  --sc: var(--sc-on);
+  --lift: 10;
+  filter: none;
+}
+
+/* 下の操作 */
+.vl-wheel__foot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  z-index: 300;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+.vl-wheel__hint {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vl-ink-soft);
+}
+
+@media (min-width: 768px) {
+  .vl-wheel {
+    --card-w: 168px;
+    --radius: clamp(380px, 41vw, 545px);
+    --sc-on: 1.58;
+    --hub: 76%;
+  }
+  .vl-wheel__head {
+    top: 18px;
+    padding: 0 5vw;
+  }
+  .vl-wheel__shelf,
+  .vl-wheel__count {
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vl-wheel__slot,
+  .vl-wheel__card,
+  .vl-wheel__felt {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   札の面（ValuePlate）
+   大きさは ID-1（85.60×53.98mm）の横型にそろえる
+   ============================================================ */
+.vl-card-wrap {
+  container-type: inline-size;
+  display: block;
+  color: inherit;
+}
+.vl-plate {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 33% minmax(0, 1fr) auto;
+  grid-template-areas:
+    "top"
+    "art"
+    "main"
+    "meaning";
+  /* トレーディングカードの寸法（63×88mm）の縦型 */
+  aspect-ratio: 63 / 88;
+  gap: 0;
+  border: 2px solid var(--vl-ink);
+  background: var(--plate-bg);
+  color: var(--plate-fg);
+  overflow: hidden;
+}
+.vl-plate__top {
+  grid-area: top;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2cqw;
+  padding: 2.6cqw 4cqw;
+  border-bottom: 2px solid var(--vl-ink);
+  line-height: 1;
+}
+.vl-plate__no {
+  font-family: var(--font-anton), Impact, sans-serif;
+  font-size: 9cqw;
+  letter-spacing: 0.03em;
+}
+.vl-plate__no-k {
+  font-size: 0.62em;
+  margin-right: 0.15em;
+  letter-spacing: 0.1em;
+}
+.vl-plate__cat {
+  font-size: 4.2cqw;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.vl-plate__cat-en {
+  font-family: var(--font-courier), monospace;
+  font-size: 0.92em;
+}
+
+/* 左: 図版 */
+.vl-plate__art {
+  grid-area: art;
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 4cqw 4cqw 0;
+  border: 2px solid var(--vl-ink);
+  background: var(--vl-card);
+  overflow: hidden;
+}
+.vl-plate__art-dots {
+  position: absolute;
+  inset: 0;
+  color: var(--vl-ink);
+  opacity: 0.12;
+}
+.vl-plate__art-svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 3%;
+  box-sizing: border-box;
+}
+.vl-plate__art-paw {
+  position: relative;
+  display: block;
+  width: auto;
+  height: 52%;
+  color: var(--plate-bg);
+  opacity: 0.22;
+}
+
+/* 右: 名前と年 */
+.vl-plate__main {
+  grid-area: main;
+  display: grid;
+  align-content: center;
+  gap: 0.8cqw;
+  padding: 3cqw 4cqw 1cqw;
+  min-width: 0;
+  overflow: hidden;
+}
+.vl-plate__en {
+  font-family: var(--font-anton), Impact, sans-serif;
+  font-size: 4.4cqw;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  opacity: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vl-plate__name {
+  font-family: var(--font-ja-display), var(--font-zen-kaku), sans-serif;
+  font-size: min(12cqw, 76cqw / var(--name-len, 4));
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.vl-plate__reading {
+  font-size: 3.4cqw;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vl-plate__span {
+  margin-top: 2cqw;
+  font-size: 3.6cqw;
+  opacity: 0.92;
+}
+.vl-plate__years {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-courier), monospace;
+  font-size: 3.8cqw;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+.vl-plate__stamp {
+  margin-left: auto;
+  font-size: 3.2cqw;
+  color: var(--plate-fg);
+}
+.vl-plate__stamp .vl-trend-stamp {
+  /* 濃い地に押すので､かすれと乗算をやめて紙の色で出す */
+  color: var(--plate-fg) !important;
+  mix-blend-mode: normal;
+  -webkit-mask-image: none;
+  mask-image: none;
+  border-width: 2.5px;
+}
+
+/* 意味（札のいちばん下） */
+.vl-plate__meaning {
+  grid-area: meaning;
+  margin: 0 4cqw 4cqw;
+  padding: 2.6cqw 3cqw;
+  border: 2px solid var(--vl-ink);
+  background: var(--vl-card);
+  color: var(--vl-ink);
+  font-size: 3.8cqw;
+  line-height: 1.5;
+  text-align: justify;
+  line-break: strict;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }

@@ -34,7 +34,7 @@ function Row({ kind, d, last }: { kind: Kind; d: DatePoint; last: boolean }) {
       <Marker kind={kind} />
       <div className="grid gap-x-5 gap-y-1 md:grid-cols-[128px_minmax(0,1fr)]">
         <div>
-          <p className="font-display-en text-[26px] leading-none md:text-[46px]">
+          <p className="font-display-en text-[26px] leading-none break-all md:text-[46px]">
             {d.approx && <span className="font-type mr-1 text-[0.4em] text-vl-ink-soft">c.</span>}
             {d.year}
           </p>

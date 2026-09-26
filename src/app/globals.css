@@ -1571,10 +1571,18 @@ a.vl-print-wrap:hover {
   overflow: hidden;
   background: var(--card);
   color: var(--vl-ink);
-  padding: 5.1cqw 5.1cqw 4.4cqw;
+  position: relative;
+  padding: 5.1cqw 5.1cqw calc(4.4cqw + max(3px, 1.4cqw));
   border-radius: 2.4cqw;
-  /* 下の線＝棚の色 */
-  border-bottom: max(3px, 1.4cqw) solid var(--bar);
+}
+/* 下の線＝棚の色 */
+.vl-print__line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: max(3px, 1.4cqw);
+  background: var(--bar);
 }
 
 /* 型番と扱い */

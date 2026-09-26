@@ -4,7 +4,6 @@ import Link from "next/link";
 import { lineages } from "@/data/lineages";
 import LineageIndex from "@/components/LineageIndex";
 import LineageDiagram from "@/components/LineageDiagram";
-import MobileBreak from "@/components/MobileBreak";
 
 export const metadata: Metadata = {
   title: "系譜 | 価値観一覧図鑑",
@@ -20,20 +19,6 @@ export default function LineagePage() {
           <h1 className="font-display-ja text-[26px] leading-[1.1] md:mt-4 md:text-[64px]">系譜</h1>
           <p className="font-display-en mt-1 text-[22px] leading-[1] tracking-[0.01em] text-vl-red md:vl-misreg md:mt-2 md:text-[92px] md:leading-[0.86]">
             BACK IN STOCK
-          </p>
-          <p className="font-display-ja mt-3 text-[15px] leading-snug md:mt-6 md:text-[24px]">
-            価値観は､
-            <MobileBreak />
-            名前を変えて棚に戻ってくる｡
-          </p>
-          <p className="mt-2 text-[12px] leading-[1.7] md:mt-4 md:text-[15px] md:leading-[1.9]">
-            近世の在庫が､輸入品のパッケージで帰ってくる｡
-            <br />
-            同じものに､時代ごとに別の名札が付く｡
-            <br />
-            その道筋を､古い順に層へ分解して並べる｡
-            <br />
-            直系でないものは､そう書いてある｡
           </p>
         </div>
         <LineageIndex lineages={lineages} />

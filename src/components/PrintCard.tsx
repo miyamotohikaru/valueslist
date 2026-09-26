@@ -155,6 +155,9 @@ export default function PrintCard({ v, interactive = true }: { v: Value; interac
             <b className="vl-print__v">{right.t}</b>
           </div>
         </div>
+
+        {/* 下の線｡色で棚を見分ける */}
+        <span className="vl-print__line" aria-label={`棚 ${v.shelf === "meta" ? "M" : v.shelf}`} />
       </article>
     </Wrap>
   );

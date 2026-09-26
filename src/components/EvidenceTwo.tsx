@@ -162,15 +162,6 @@ export default function EvidenceTwo({ className = "" }: { className?: string }) 
           specimenNote="賛成の計 1979 → 2024◆〔総理府・内閣府の世論調査〕｡◇2022年から郵送調査に変わったため､◆前後は単純に比べられない｡"
         />
       </div>
-
-      {/* 注記 */}
-      <div className="mt-6 flex flex-col gap-2 border-t-2 border-vl-ink pt-3 md:flex-row md:items-baseline md:justify-between">
-        <p className="text-[14px] leading-[1.9]">
-          前近代の項目に賛成率の欄を置くと嘘になるので､
-          <br />
-          項目ページの図を､二種に分けた｡
-        </p>
-      </div>
     </div>
   );
 }

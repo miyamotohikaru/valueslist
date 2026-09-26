@@ -66,7 +66,7 @@ export default function FactList({ v }: { v: Value }) {
           {sources.length > 0 ? (
             <ol className="mt-2 list-decimal space-y-2 pl-5 text-[13px] leading-relaxed">
               {sources.map((s, i) => (
-                <li key={i} className="pl-1 break-words">
+                <li key={i} className="pl-1 [overflow-wrap:anywhere]">
                   <SourceText s={s} />
                 </li>
               ))}

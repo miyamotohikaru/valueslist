@@ -85,7 +85,7 @@ function YearPill({ text }: { text: string }) {
   const rest = m ? m[2] : text;
   return (
     <span
-      className="inline-flex items-center gap-1.5 bg-vl-red py-[5px] pr-4 pl-2.5 leading-none whitespace-nowrap text-vl-paper md:py-[6px] md:pr-5 md:pl-3"
+      className="inline-flex max-w-full items-center gap-1.5 overflow-hidden bg-vl-red py-[5px] pr-3.5 pl-2 leading-none whitespace-nowrap text-vl-paper md:py-[6px] md:pr-5 md:pl-3"
       style={{ clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%)" }}
     >
       {num && <span className="font-type text-[11px] font-bold md:text-[12px]">{num}</span>}
@@ -190,7 +190,7 @@ function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
   );
 
   return (
-    <li className="grid grid-cols-[62px_minmax(0,1fr)] items-center gap-x-2 sm:grid-cols-[138px_minmax(0,1fr)]">
+    <li className="grid grid-cols-[74px_minmax(0,1fr)] items-center gap-x-1.5 sm:grid-cols-[138px_minmax(0,1fr)] sm:gap-x-2">
       <div className="relative flex items-center">
         <YearPill text={year} />
         <span aria-hidden className="ml-2 hidden h-0 flex-1 border-t-2 border-dashed border-vl-red sm:block" />

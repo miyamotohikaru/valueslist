@@ -144,7 +144,7 @@ export default function IndexView({ values }: { values: Value[] }) {
 
       {/* 札｡全部をひと続きのグリッドで並べる */}
       <div className="vl-shelf">
-        <ColumnGrid items={filtered} />
+        <ColumnGrid items={filtered} variant="print" />
       </div>
 
       {filtered.length === 0 && <p className="vl-empty">該当する在庫がありません｡</p>}

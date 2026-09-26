@@ -6,7 +6,11 @@
  * 座標は 300 四方で書いて､s で伸ばす｡枠いっぱいに大きく取る｡
  */
 
-type Draw = (g: CanvasRenderingContext2D, s: number) => void;
+import type { Draw } from "./draw";
+import { PLATES_A } from "./plates-a";
+import { PLATES_B } from "./plates-b";
+import { PLATES_C } from "./plates-c";
+import { PLATES_D } from "./plates-d";
 
 /** 仇討ち｡鞘を払った打刀 */
 const katana: Draw = (g, s) => {
@@ -337,4 +341,8 @@ export const PLATES: Record<string, Draw> = {
   "003": fan,
   "004": teapot,
   "005": crest,
+  ...PLATES_A,
+  ...PLATES_B,
+  ...PLATES_C,
+  ...PLATES_D,
 };

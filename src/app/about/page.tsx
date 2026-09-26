@@ -233,16 +233,16 @@ export default function AboutPage() {
       <Section id="card">
         <CardAnatomy v={ANATOMY} />
 
-        {/* カード面の年表 */}
+        {/* 項目ページの年表 */}
         <figure className="mt-10 border-2 border-vl-ink bg-vl-card md:mt-12">
           <figcaption className="flex items-center justify-between gap-3 bg-vl-ink px-4 py-2.5 text-vl-paper md:px-6">
-            <span className="text-[13px] font-bold">カード面の年表</span>
+            <span className="text-[13px] font-bold">項目ページの年表</span>
             <span className="font-display-en hidden text-[13px] tracking-[0.14em] text-vl-mustard sm:inline">SPAN STRIP</span>
           </figcaption>
           <div className="grid gap-8 p-5 md:grid-cols-[1.15fr_1fr] md:items-center md:gap-10 md:p-7">
             <div>
               <p className="text-[14px] leading-[1.9]">
-                <Ja text="カードの下段にある､小さな年表｡中世〜近世を圧縮し､◆明治以降を広く取ってある｡帯の色は､棚の色｡" />
+                <Ja text="項目のページの頭にある､小さな年表｡中世〜近世を圧縮し､◆明治以降を広く取ってある｡帯の色は､棚の色｡" />
               </p>
               <div className="mt-5 text-[16px]">
                 <SpanStrip v={SPAN_SAMPLE} accent="var(--vl-brown)" />

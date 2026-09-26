@@ -5,7 +5,8 @@ import { OG_IMAGE, SITE_NAME } from "@/lib/site";
 import type { Curve, Value } from "@/data/types";
 import { values, byNo, byShelf, prevNext } from "@/data/values";
 import { shelfById } from "@/data/shelves";
-import ValueCard, { SHELF_ACCENT, nameLines } from "@/components/ValueCard";
+import { SHELF_ACCENT, nameLines } from "@/components/ValueCard";
+import PrintCard, { recipeOf } from "@/components/PrintCard";
 import SpanStrip from "@/components/SpanStrip";
 import TrendStamp from "@/components/TrendStamp";
 import DetailSpec from "@/components/DetailSpec";
@@ -15,7 +16,7 @@ import FactList from "@/components/FactList";
 import LineageStrip from "@/components/LineageStrip";
 import FitLines from "@/components/FitLines";
 import Reveal from "@/components/motion/Reveal";
-import Art from "@/components/art";
+import HalftoneArt from "@/components/print/HalftoneArt";
 
 type Params = { params: Promise<{ no: string }> };
 
@@ -258,8 +259,11 @@ export default async function ValuePage({ params }: Params) {
       <section className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-10" aria-label="仕様と証拠">
         <div className="space-y-7">
           {true && (
-            <figure className="vl-offset border-2 border-vl-ink bg-vl-paper px-4 py-5">
-              <Art no={v.no} className="mx-auto block h-auto w-[min(300px,86%)]" />
+            <figure
+              className="vl-offset vl-detail-art border-2 border-vl-ink"
+              style={{ ["--panel" as string]: recipeOf(v.no).panel }}
+            >
+              <HalftoneArt no={v.no} tech={recipeOf(v.no).tech} ink={recipeOf(v.no).ink} />
             </figure>
           )}
           <DetailSpec v={v} />
@@ -302,7 +306,7 @@ export default async function ValuePage({ params }: Params) {
           </div>
           <aside className="mt-10 hidden lg:mt-0 lg:block" aria-label="この標本のカード">
             <div className="sticky top-28">
-              <ValueCard v={v} />
+              <PrintCard v={v} interactive={false} />
             </div>
           </aside>
         </div>
@@ -323,7 +327,7 @@ export default async function ValuePage({ params }: Params) {
           <ul className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {siblings.map((s, i) => (
               <li key={s.no}>
-                <ValueCard v={s} index={i} />
+                <PrintCard v={s} />
               </li>
             ))}
           </ul>

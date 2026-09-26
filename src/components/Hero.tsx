@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { values, stats } from "@/data/values";
-import ValueCard from "./ValueCard";
+import PrintCard from "./PrintCard";
 
 /** 表紙｡墨の地に大きな見出しと､3枚の札を重ねて置く */
 export default function Hero() {
@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="vl-hero__cards" aria-hidden>
           {picks.map((v, i) => (
             <div key={v.no} className="vl-hero__card" style={{ ["--i" as string]: i }}>
-              <ValueCard v={v} interactive={false} />
+              <PrintCard v={v} interactive={false} />
             </div>
           ))}
         </div>

@@ -892,9 +892,9 @@ export default function TimelineView() {
     <>
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         {/* 見出し */}
-        <section className="py-10 md:py-14">
-          <h1 className="font-display-ja text-[40px] leading-[1.05] md:text-[56px]">年表</h1>
-          <p className="font-display-en mt-1 text-[32px] leading-[0.95] tracking-[0.01em] text-vl-red md:text-[46px]">
+        <section className="py-6 md:py-14">
+          <h1 className="font-display-ja text-[26px] leading-[1.1] md:text-[56px]">年表</h1>
+          <p className="font-display-en mt-1 text-[22px] leading-[1] tracking-[0.01em] text-vl-red md:text-[46px]">
             INVENTORY BY YEAR
           </p>
           {/* 台帳を読む前に､物差しと記号の意味を置く */}
@@ -951,10 +951,10 @@ export default function TimelineView() {
         <section className="py-12 md:py-16">
           <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="font-display-ja text-[24px] leading-tight md:text-[30px]">
+              <h2 className="font-display-ja text-[18px] leading-tight md:text-[30px]">
                 全在庫､製造年順
               </h2>
-              <p className="mt-2 text-[14px] leading-relaxed">
+              <p className="mt-2 text-[12px] leading-[1.7] md:text-[14px]">
                 帯が在庫の期間｡
                 <br />
                 左端が製造､右端が廃番｡

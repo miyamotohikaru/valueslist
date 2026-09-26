@@ -164,7 +164,7 @@ export default function AboutPage() {
       <section className="grid gap-8 py-10 md:grid-cols-[1.2fr_1fr] md:items-end md:gap-12 md:py-16">
         <div>
           <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-1">
-            <h1 className="font-display-ja text-[40px] leading-[1.05] md:text-[64px]">読み方</h1>
+            <h1 className="font-display-ja text-[26px] leading-[1.1] md:text-[64px]">読み方</h1>
             <span
               aria-hidden
               className="font-script inline-block rotate-[-6deg] text-[24px] leading-none text-vl-red md:text-[30px]"

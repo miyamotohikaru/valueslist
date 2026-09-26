@@ -212,7 +212,7 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
   const kind = lineageKindMeta[lineage.kind];
 
   return (
-    <section id={lineage.id} className="grid scroll-mt-28 gap-2 py-2 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-x-12 lg:gap-y-8 lg:py-12">
+    <section id={lineage.id} className="grid scroll-mt-28 gap-2 py-7 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-x-12 lg:gap-y-8 lg:py-12">
       {/* 左: 見出し・リード・年数・要点の年 */}
       <div className="lg:sticky lg:top-24 lg:self-start">
         <p className="flex flex-wrap items-center gap-2">

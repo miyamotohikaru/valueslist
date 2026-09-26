@@ -306,10 +306,9 @@ export default async function ValuePage({ params }: Params) {
               </p>
             ))}
           </div>
+          {/* この標本のカード｡貼り付かせず､その場に置く */}
           <aside className="mt-10 hidden lg:mt-0 lg:block" aria-label="この標本のカード">
-            <div className="sticky top-28">
-              <PrintCard v={v} interactive={false} />
-            </div>
+            <PrintCard v={v} interactive={false} />
           </aside>
         </div>
       </section>

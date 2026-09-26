@@ -15,18 +15,18 @@ export default function LineagePage() {
   return (
     <div className="mx-auto max-w-6xl px-4 md:px-8">
       {/* 見出しと目次 */}
-      <section className="grid gap-10 py-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-end lg:gap-12 md:py-16">
+      <section className="grid gap-5 py-6 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-end lg:gap-12">
         <div>
-          <h1 className="font-display-ja mt-4 text-[40px] leading-[1.05] md:text-[64px]">系譜</h1>
-          <p className="font-display-en vl-misreg mt-2 text-[56px] leading-[0.86] tracking-[0.01em] text-vl-red md:text-[92px]">
+          <h1 className="font-display-ja text-[26px] leading-[1.1] md:mt-4 md:text-[64px]">系譜</h1>
+          <p className="font-display-en mt-1 text-[22px] leading-[1] tracking-[0.01em] text-vl-red md:vl-misreg md:mt-2 md:text-[92px] md:leading-[0.86]">
             BACK IN STOCK
           </p>
-          <p className="font-display-ja mt-6 text-[20px] leading-snug md:text-[24px]">
+          <p className="font-display-ja mt-3 text-[15px] leading-snug md:mt-6 md:text-[24px]">
             価値観は､
             <MobileBreak />
             名前を変えて棚に戻ってくる｡
           </p>
-          <p className="mt-4 text-[15px] leading-[1.9]">
+          <p className="mt-2 text-[12px] leading-[1.7] md:mt-4 md:text-[15px] md:leading-[1.9]">
             近世の在庫が､輸入品のパッケージで帰ってくる｡
             <br />
             同じものに､時代ごとに別の名札が付く｡
@@ -50,24 +50,24 @@ export default function LineagePage() {
       ))}
 
       {/* 次へ */}
-      <div className="grid gap-5 py-14 md:grid-cols-2 md:gap-6 md:py-20">
+      <div className="grid gap-3 py-8 md:grid-cols-2 md:gap-6 md:py-20">
         <Link
           href="/timeline"
           className="vl-offset flex items-center justify-between gap-4 border-2 border-vl-ink bg-vl-red px-5 py-5 text-vl-paper transition-transform hover:-translate-y-0.5 md:px-7 md:py-6"
         >
           <span>
-            <span className="font-display-ja mt-1 block text-[24px] leading-none md:text-[28px]">年表へ</span>
+            <span className="font-display-ja mt-1 block text-[18px] leading-none md:text-[28px]">年表へ</span>
           </span>
-          <span className="text-[36px] leading-none font-bold">→</span>
+          <span className="text-[26px] leading-none font-bold md:text-[36px]">→</span>
         </Link>
         <Link
           href="/"
           className="vl-offset flex items-center justify-between gap-4 border-2 border-vl-ink bg-vl-card px-5 py-5 transition-transform hover:-translate-y-0.5 md:px-7 md:py-6"
         >
           <span>
-            <span className="font-display-ja mt-1 block text-[24px] leading-none md:text-[28px]">索引へ</span>
+            <span className="font-display-ja mt-1 block text-[18px] leading-none md:text-[28px]">索引へ</span>
           </span>
-          <span className="text-[36px] leading-none font-bold">→</span>
+          <span className="text-[26px] leading-none font-bold md:text-[36px]">→</span>
         </Link>
       </div>
     </div>

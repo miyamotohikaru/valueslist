@@ -1241,13 +1241,13 @@ button:focus-visible,
 }
 .vl-sec__kicker {
   font-family: var(--font-mono), monospace;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.16em;
   color: var(--vl-ink-soft);
 }
 .vl-sec__title {
-  margin-top: 10px;
-  font-size: clamp(30px, 4vw, 46px);
+  margin-top: 8px;
+  font-size: clamp(26px, 4vw, 46px);
   font-weight: 900;
   letter-spacing: -0.03em;
 }
@@ -1486,7 +1486,6 @@ button:focus-visible,
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 14px;
-  will-change: transform;
 }
 @media (min-width: 700px) {
   .vl-cols,

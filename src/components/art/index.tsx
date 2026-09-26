@@ -5,9 +5,10 @@ import type { ComponentType } from "react";
  * 使う色は3つ: 墨（輪郭と面）・朱（丸）・生成り（丸と抜き）｡
  * どの図版も viewBox 200×150 で､下端に物が立つ｡
  */
-const INK = "var(--plate-fg, #1c1b19)";
-const RED = "var(--vl-red)";
-const CREAM = "#ede9df";
+/** 図版の3色｡濃い地の札では札の側で入れ替える */
+const INK = "var(--art-1)";
+const RED = "var(--art-2)";
+const CREAM = "var(--art-3)";
 
 type P = { className?: string };
 

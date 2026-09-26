@@ -872,6 +872,12 @@ button:focus-visible,
   color: inherit;
 }
 .vl-plate {
+  /* 図版の3色｡薄い地では 墨・朱・生成り */
+  --plate-fg: var(--vl-ink);
+  --art-1: var(--vl-ink);
+  --art-2: var(--vl-red);
+  --art-3: #ede9df;
+
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto auto auto auto;
   aspect-ratio: 63 / 88;
@@ -1029,13 +1035,53 @@ button:focus-visible,
   height: 4.6cqw;
 }
 
-/* 墨の札だけ､差し色を朱にする */
-.vl-plate[style*="--vl-sumi"] .vl-plate__top,
-.vl-plate[style*="--vl-sumi"] .vl-plate__en,
-.vl-plate[style*="--vl-sumi"] .vl-plate__k,
-.vl-plate[style*="--vl-sumi"] .vl-plate__v,
-.vl-plate[style*="--vl-sumi"] .vl-plate__state {
-  color: var(--vl-red);
+/* 濃い地の札｡文字は生成り､図版は朱と生成りで描く */
+.vl-plate.is-dark {
+  --plate-fg: var(--vl-paper);
+  --art-1: var(--vl-red);
+  --art-2: #ede9df;
+  --art-3: #ede9df;
+}
+/* 濃い地の上では朱を明るくする（小さな字でも読めるように） */
+.vl-plate.is-dark {
+  --plate-accent: #e8714a;
+}
+.vl-plate.is-dark .vl-plate__state {
+  color: var(--plate-accent);
+}
+.vl-plate.is-dark .vl-plate__top,
+.vl-plate.is-dark .vl-plate__k,
+.vl-plate.is-dark .vl-plate__src {
+  color: rgba(237, 233, 223, 0.8);
+}
+.vl-plate.is-dark .vl-plate__art-svg {
+  --art-1: var(--plate-accent);
+}
+
+/* 棚の番号（地の色とは別に､5つの棚を見分ける印） */
+.vl-plate__lead {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6cqw;
+}
+.vl-plate__shelf {
+  display: grid;
+  place-items: center;
+  width: 5cqw;
+  height: 5cqw;
+  background: var(--plate-fg);
+  color: var(--plate-bg);
+  font-size: 3cqw;
+  font-weight: 900;
+  line-height: 1;
+}
+.vl-plate__shelf::after {
+  content: attr(aria-label);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
 }
 
 /* ============================================================

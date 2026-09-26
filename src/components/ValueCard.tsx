@@ -3,7 +3,32 @@ import type { Value, Trend } from "@/data/types";
 import { categoryMeta } from "@/data/shelves";
 import Art from "./art";
 
-/** 棚ごとの札の地｡色は8色のうちから選ぶ */
+/**
+ * 札の地｡棚ではなく型番で決める（並べたときに一枚ずつ色が変わる）｡
+ * 12枚でひと回りする順にして､隣とも上下とも同じ色が来ないようにしてある｡
+ */
+const GROUNDS = [
+  { bg: "var(--vl-kraft)", dark: false },
+  { bg: "var(--vl-sky)", dark: false },
+  { bg: "var(--vl-peach)", dark: false },
+  { bg: "var(--vl-sage)", dark: false },
+  { bg: "var(--vl-concrete)", dark: false },
+  { bg: "var(--vl-lavender)", dark: false },
+  { bg: "var(--vl-indigo)", dark: true },
+  { bg: "var(--vl-kraft)", dark: false },
+  { bg: "var(--vl-sage)", dark: false },
+  { bg: "var(--vl-sky)", dark: false },
+  { bg: "var(--vl-peach)", dark: false },
+  { bg: "var(--vl-sumi)", dark: true },
+];
+
+export function groundOf(v: Value) {
+  // メタ標本（偽ヴィンテージ）だけは墨で固定する
+  if (v.shelf === "meta") return { bg: "var(--vl-sumi)", dark: true };
+  return GROUNDS[(Number(v.no) - 1 + 12) % 12];
+}
+
+/** 棚の色（索引の見出しなど､札の外で使う） */
 export const SHELF_ACCENT: Record<string, { bg: string; fg: string; bar: string }> = {
   "1": { bg: "var(--vl-kraft)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
   "2": { bg: "var(--vl-concrete)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
@@ -71,7 +96,8 @@ export default function ValueCard({
   /** false のとき､リンクにせず絵柄だけを描く */
   interactive?: boolean;
 }) {
-  const acc = SHELF_ACCENT[String(v.shelf)];
+  const ground = groundOf(v);
+  const shelfNo = v.shelf === "meta" ? "M" : String(v.shelf);
   const lines = nameLines(v.name);
   const nameLen = Math.max(...lines.map(visualLen), 1);
   const cat = categoryMeta[v.category];
@@ -87,15 +113,19 @@ export default function ValueCard({
 
   const body = (
     <article
-      className="vl-plate"
+      className={`vl-plate${ground.dark ? " is-dark" : ""}`}
       style={{
-        ["--plate-bg" as string]: acc.bg,
-        ["--plate-fg" as string]: acc.fg,
+        ["--plate-bg" as string]: ground.bg,
         ["--name-len" as string]: nameLen.toFixed(1),
       }}
     >
       <div className="vl-plate__top">
-        <span>NO.{v.no}</span>
+        <span className="vl-plate__lead">
+          <span className="vl-plate__shelf" aria-label={`棚 ${shelfNo}`}>
+            {shelfNo}
+          </span>
+          NO.{v.no}
+        </span>
         <span>
           {cat.en} / {v.category}
         </span>

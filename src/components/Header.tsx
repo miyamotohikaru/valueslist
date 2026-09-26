@@ -23,7 +23,7 @@ export default function Header() {
           <span className="vl-head__mark" aria-hidden>
             V
           </span>
-          <span className="vl-head__name">VALUES LIST</span>
+          <span className="vl-head__name">価値観一覧表</span>
         </Link>
         <nav className="vl-head__nav">
           {NAV.map((n) => {

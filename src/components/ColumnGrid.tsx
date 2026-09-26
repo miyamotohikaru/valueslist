@@ -20,9 +20,9 @@ const MIN_EASE = 0.05;
 const MAX_LAG = 72; // 一気に飛ばしても､この幅までしかずらさない（弓なりの形は保つ）
 
 function colsFor(w: number, variant: "plate" | "print") {
-  // 刷り札はどの画面でも4列｡字も余白も札の幅に比例するので､
-  // 小さくなっても見え方は同じ（そのまま縮んだ札になる）
-  if (variant === "print") return 4;
+  // 刷り札は字も余白も札の幅に比例するので､縮めても見え方は変わらない｡
+  // ただし携帯で4列は細かすぎるので2列にする
+  if (variant === "print") return w >= 700 ? 4 : 2;
   if (w >= 1200) return 5;
   if (w >= 1000) return 4;
   if (w >= 700) return 3;

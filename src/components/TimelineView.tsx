@@ -11,9 +11,9 @@ import {
 } from "@/data/lineages";
 import { scaleYear, ERAS, ERA_MAX } from "@/lib/timescale";
 import { SHELF_ACCENT } from "./ValueCard";
-import EraBars, { countByEra } from "./EraBars";
-import Reveal from "./motion/Reveal";
-import MobileBreak from "@/components/MobileBreak";
+import { recipeOf } from "./PrintCard";
+import HalftoneArt from "./print/HalftoneArt";
+import { countByEra } from "./EraBars";
 
 /** 年の目盛（ヘッダーに数字で出す年） */
 const TICKS = [1200, 1600, 1868, 1945, 2000];
@@ -96,8 +96,7 @@ function AxisHeader() {
     <div className="sticky top-[62px] z-20 border-b-2 border-vl-ink bg-vl-paper md:top-[66px]">
       <div className="grid md:grid-cols-[var(--tl-left)_1fr]">
         <div className="hidden items-end justify-between px-3 pb-[7px] text-[12px] font-bold text-vl-ink-soft md:flex">
-          <span>型番・棚・商品名</span>
-          <span>製造年</span>
+          <span>製造年・型番・棚・商品名</span>
         </div>
         <div className="relative h-[46px]">
           <div className="absolute inset-y-0 left-0 right-[var(--tl-gutter)]">
@@ -147,6 +146,7 @@ function AxisHeader() {
 
 function Row({ v, loop }: { v: Value; loop: boolean }) {
   const acc = SHELF_ACCENT[String(v.shelf)];
+  const r = recipeOf(v.no);
   const shelf = shelfById(v.shelf);
   const { start, end, restock, approx, active } = spanOf(v);
   const endYear = v.restocked
@@ -176,7 +176,16 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
           className="relative z-[2] flex min-w-0 items-center gap-2 bg-vl-paper px-2 group-hover:bg-vl-card md:bg-transparent md:px-3"
           style={{ height: "var(--tl-name-h)" }}
         >
-          <span className="font-type w-[56px] shrink-0 text-[12px] font-bold">
+          {/* 製造年｡行の頭に置く（並び順がそのまま読める） */}
+          <span className="font-type w-[52px] shrink-0 text-right text-[12px] font-bold text-vl-ink-soft md:w-[56px]">
+            {approx ? "c." : ""}
+            {v.made!.year}
+          </span>
+          {/* 図版｡札と同じ版を小さく刷る */}
+          <span className="vl-tl-thumb" style={{ ["--panel" as string]: r.panel }} aria-hidden>
+            <HalftoneArt no={v.no} tech={r.tech} ink={r.ink} />
+          </span>
+          <span className="font-type hidden w-[56px] shrink-0 text-[12px] font-bold md:block">
             NO.{v.no}
           </span>
           <span
@@ -190,10 +199,6 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
             {v.name}
           </span>
           {loop && <LoopTag />}
-          <span className="font-type ml-auto shrink-0 text-[12px] font-bold text-vl-ink-soft">
-            {approx ? "c." : ""}
-            {v.made!.year}
-          </span>
         </div>
 
         {/* 右: 時間軸上の帯 */}
@@ -841,7 +846,6 @@ export default function TimelineView() {
     loop?.nodes.map((n) => n.ref).filter(Boolean) ?? [],
   );
   const eraCounts = countByEra(rows);
-  const topEra = ERAS[eraCounts.indexOf(Math.max(...eraCounts))] ?? ERAS[0];
 
   return (
     <>
@@ -857,11 +861,6 @@ export default function TimelineView() {
               <br />
               BY YEAR
             </p>
-            <p className="mt-6 text-[15px] font-bold leading-[1.9] md:text-[19px]">
-              価値観を､製造年の順に並べる｡
-              <br />
-              古い在庫と新しい在庫を､同じ物差しに乗せる｡
-            </p>
           </div>
           <div className="flex flex-col justify-between gap-6">
             <EraRuler />
@@ -873,39 +872,39 @@ export default function TimelineView() {
         </section>
       </div>
 
-      {/* 全幅の帯（この年表の結論） */}
-      <div className="vl-band">
-        <div className="mx-auto max-w-6xl px-4 py-10 text-center md:px-8 md:py-14">
-          <p className="font-display-ja text-[22px] leading-[1.5] md:text-[34px]">
-            いちばん古い在庫と､
-            <MobileBreak />
-            いちばん新しい在庫は､
-            <br />
-            しばしば同じ商品だ｡
-          </p>
-        </div>
-      </div>
-
       <div className="mx-auto max-w-6xl px-4 md:px-8">
-        {/* FIG.2 製造工場別 出荷数 */}
-        <section className="grid gap-8 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start md:gap-12 md:py-14">
-          <div>
-            <p className="font-display-ja text-[24px] leading-[1.3] md:text-[30px]">
-              工場は五つある｡
-            </p>
-            <p className="mt-4 text-[14px] leading-[1.9] md:text-[15px]">
-              製造年を､時代ごとの工場に振り分けて数えた｡
-              <br />
-              出荷がいちばん多いのは､{topEra.ja}の工場｡
-              <br />
-              ｢昔からある｣に見える在庫ほど､
-              <br />
-              新しい工場の出荷だったりする｡
-            </p>
-          </div>
-          <Reveal className="md:justify-self-end">
-            <EraBars items={rows} className="w-full max-w-[560px]" />
-          </Reveal>
+        {/* 時代ごとの点数｡表で出す */}
+        <section className="py-8 md:py-12">
+          <table className="vl-tl-table">
+            <caption>時代ごとの点数</caption>
+            <thead>
+              <tr>
+                <th scope="col">時代</th>
+                <th scope="col">年</th>
+                <th scope="col" className="vl-tl-table__num">
+                  点数
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {ERAS.map((e, i) => (
+                <tr key={e.from}>
+                  <th scope="row">{e.ja}</th>
+                  <td className="font-type">
+                    {e.from}–{e.to}
+                  </td>
+                  <td className="vl-tl-table__num font-type">{eraCounts[i]}</td>
+                </tr>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">合計</th>
+                <td className="font-type">1200–{ERA_MAX}</td>
+                <td className="vl-tl-table__num font-type">{rows.length}</td>
+              </tr>
+            </tfoot>
+          </table>
         </section>
 
         <div className="vl-rule" />

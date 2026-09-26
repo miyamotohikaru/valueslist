@@ -1647,3 +1647,61 @@ a.vl-print-wrap:hover {
   aspect-ratio: 1 / 1;
   height: auto;
 }
+
+/* 年表の行に置く小さな図版 */
+.vl-tl-thumb {
+  display: block;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  background: var(--panel);
+}
+@media (min-width: 768px) {
+  .vl-tl-thumb {
+    width: 32px;
+    height: 32px;
+  }
+}
+.vl-tl-thumb .vl-print__art {
+  height: 100%;
+}
+
+/* 年表の表（時代ごとの点数） */
+.vl-tl-table {
+  width: 100%;
+  max-width: 560px;
+  border-collapse: collapse;
+  border: 2px solid var(--vl-ink);
+  background: var(--vl-card);
+  font-size: 14px;
+}
+.vl-tl-table caption {
+  padding-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+}
+.vl-tl-table th,
+.vl-tl-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--vl-line);
+}
+.vl-tl-table thead th {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vl-ink-soft);
+  background: var(--vl-paper-2);
+}
+.vl-tl-table tbody th {
+  font-weight: 700;
+}
+.vl-tl-table__num {
+  text-align: right;
+}
+.vl-tl-table tfoot th,
+.vl-tl-table tfoot td {
+  border-bottom: 0;
+  border-top: 2px solid var(--vl-ink);
+  font-weight: 700;
+}

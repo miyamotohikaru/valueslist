@@ -1429,6 +1429,7 @@ button:focus-visible,
 }
 .vl-cols__col {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 14px;
   will-change: transform;
 }
@@ -1456,7 +1457,8 @@ button:focus-visible,
   gap: 0;
   background: var(--card);
   color: var(--vl-ink);
-  padding: 4cqw 4cqw 3.4cqw;
+  /* 札が細くなっても字が潰れないよう､下限と上限を決めておく */
+  padding: clamp(13px, 4.4cqw, 22px) clamp(13px, 4.4cqw, 22px) clamp(11px, 3.8cqw, 19px);
   box-shadow: 0 1px 0 rgba(28, 27, 25, 0.1);
 }
 
@@ -1479,38 +1481,44 @@ button:focus-visible,
 }
 
 .vl-print__name {
-  margin-top: 4.4cqw;
+  margin-top: clamp(13px, 4.6cqw, 22px);
   font-family: var(--font-sans), "Hiragino Sans", sans-serif;
   font-weight: 700;
-  font-size: 6.4cqw;
+  font-size: clamp(18px, 6.4cqw, 28px);
   line-height: 1.2;
   letter-spacing: 0.02em;
 }
 .vl-print__latin {
-  margin-top: 1.4cqw;
+  margin-top: clamp(4px, 1.5cqw, 8px);
   font-family: var(--font-mono), monospace;
-  font-size: 2.9cqw;
-  letter-spacing: 0.07em;
+  font-size: clamp(9.5px, 2.9cqw, 12px);
+  letter-spacing: 0.06em;
   color: rgba(28, 27, 25, 0.55);
 }
 .vl-print__body {
-  margin-top: 3cqw;
+  margin-top: clamp(9px, 3.2cqw, 16px);
   font-family: var(--font-mono), monospace;
-  font-size: 3.2cqw;
-  line-height: 1.75;
+  font-size: clamp(11.5px, 3.3cqw, 14px);
+  line-height: 1.8;
   color: rgba(28, 27, 25, 0.86);
 }
 .vl-print__foot {
   display: flex;
   justify-content: space-between;
   gap: 2cqw;
-  margin-top: 4.4cqw;
-  padding-top: 2.6cqw;
+  margin-top: clamp(13px, 4.4cqw, 22px);
+  padding-top: clamp(8px, 2.6cqw, 13px);
   border-top: 1px solid rgba(28, 27, 25, 0.22);
   font-family: var(--font-mono), monospace;
-  font-size: 2.6cqw;
-  letter-spacing: 0.1em;
+  font-size: clamp(9px, 2.6cqw, 11px);
+  letter-spacing: 0.08em;
   color: rgba(28, 27, 25, 0.5);
+}
+/* 狭いときは網の名と年を2行に折る */
+.vl-print__foot {
+  flex-wrap: wrap;
+}
+.vl-print__foot > span {
   white-space: nowrap;
 }
 

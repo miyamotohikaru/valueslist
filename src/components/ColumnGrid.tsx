@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Value } from "@/data/types";
 import ValueCard from "./ValueCard";
+import PrintCard from "./PrintCard";
 
 /**
  * 列ごとに遅れて追いつくグリッド（中央距離ラグの弾性グリッド）｡
@@ -25,7 +26,14 @@ function colsFor(w: number) {
   return 2;
 }
 
-export default function ColumnGrid({ items }: { items: Value[] }) {
+export default function ColumnGrid({
+  items,
+  variant = "plate",
+}: {
+  items: Value[];
+  /** 札の種類｡print は網をかけた刷り札（下見） */
+  variant?: "plate" | "print";
+}) {
   const [cols, setCols] = useState(4);
   const wrapRef = useRef<HTMLDivElement>(null);
   const colRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -116,9 +124,9 @@ export default function ColumnGrid({ items }: { items: Value[] }) {
             colRefs.current[i] = el;
           }}
         >
-          {col.map((v, k) => (
-            <ValueCard key={v.no} v={v} index={k} />
-          ))}
+          {col.map((v, k) =>
+            variant === "print" ? <PrintCard key={v.no} v={v} /> : <ValueCard key={v.no} v={v} index={k} />,
+          )}
         </div>
       ))}
     </div>

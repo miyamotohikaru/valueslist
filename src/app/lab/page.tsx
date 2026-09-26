@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PrintCard from "@/components/PrintCard";
+import ColumnGrid from "@/components/ColumnGrid";
 import { values } from "@/data/values";
 
 export const metadata: Metadata = {
@@ -12,10 +12,8 @@ export default function LabPage() {
 
   return (
     <div className="vl-lab">
-      <div className="mx-auto max-w-[1180px] px-5 py-16 md:px-10 md:py-24">
-        <p className="font-type text-[11px] tracking-[0.18em] text-[rgba(242,237,224,0.5)]">
-          札の下見 · 5 枚
-        </p>
+      <div className="mx-auto max-w-[1280px] px-5 py-16 md:px-10 md:py-24">
+        <p className="font-type text-[11px] tracking-[0.18em] text-[rgba(242,237,224,0.5)]">札の下見 · 5 枚</p>
         <h1 className="mt-4 max-w-[22ch] text-[clamp(30px,5vw,52px)] font-black leading-[1.15] text-[#f2ede0]">
           版に起こして､網をかける｡
         </h1>
@@ -24,16 +22,14 @@ export default function LabPage() {
           <br />
           スクロールすると網が送られて､色が上から回る｡
         </p>
-
-        <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {picks.map((v) => (
-            <PrintCard key={v.no} v={v} />
-          ))}
-        </div>
-
-        {/* 送りを見るための余白 */}
-        <div className="h-[70vh]" />
       </div>
+
+      <div className="mx-auto max-w-[1280px] px-5 md:px-10">
+        <ColumnGrid items={picks} variant="print" />
+      </div>
+
+      {/* 送りを見るための余白 */}
+      <div className="h-[80vh]" />
     </div>
   );
 }

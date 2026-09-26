@@ -14,83 +14,81 @@ const headband: Draw = (g, s) => {
   g.save();
   g.scale(u, u);
 
-  // 布｡頭を巻いた帯｡上を白く残して下へ落とす
+  // 垂れた端｡結び目の下から二本｡先は切り込みを入れる
+  const tail = (x0: number, y0: number, cx: number, cy: number, x1: number, y1: number, w0: number, w1: number) => {
+    const t = g.createLinearGradient(x0 - w0, y0, x1 + w1, y1);
+    t.addColorStop(0, "#d2d2d2");
+    t.addColorStop(0.3, "#6a6a6a");
+    t.addColorStop(0.72, "#1a1a1a");
+    t.addColorStop(1, "#4e4e4e");
+    g.fillStyle = t;
+    g.beginPath();
+    g.moveTo(x0 - w0 / 2, y0);
+    g.quadraticCurveTo(cx - w0 * 0.42, cy, x1 - w1 / 2, y1);
+    g.lineTo(x1, y1 - w1 * 0.42);
+    g.lineTo(x1 + w1 / 2, y1);
+    g.quadraticCurveTo(cx + w0 * 0.42, cy, x0 + w0 / 2, y0);
+    g.closePath();
+    g.fill();
+  };
+  tail(228, 168, 266, 216, 252, 278, 38, 30);
+  tail(206, 182, 180, 232, 194, 264, 30, 24);
+
+  // 布｡頭を巻いた帯｡ゆるい弧にして平らな面として通す
   const band = new Path2D();
-  band.moveTo(10, 146);
-  band.quadraticCurveTo(116, 96, 226, 134);
-  band.lineTo(226, 200);
-  band.quadraticCurveTo(116, 162, 10, 212);
+  band.moveTo(6, 138);
+  band.quadraticCurveTo(102, 114, 208, 140);
+  band.lineTo(208, 202);
+  band.quadraticCurveTo(102, 176, 6, 200);
   band.closePath();
-  const cloth = g.createLinearGradient(0, 96, 0, 214);
-  cloth.addColorStop(0, "#f4f4f4");
-  cloth.addColorStop(0.28, "#a4a4a4");
-  cloth.addColorStop(0.62, "#2b2b2b");
-  cloth.addColorStop(1, "#0f0f0f");
+  const cloth = g.createLinearGradient(0, 114, 0, 204);
+  cloth.addColorStop(0, "#e4e4e4");
+  cloth.addColorStop(0.22, "#fafafa");
+  cloth.addColorStop(0.58, "#a6a6a6");
+  cloth.addColorStop(0.85, "#3c3c3c");
+  cloth.addColorStop(1, "#171717");
   g.fillStyle = cloth;
   g.fill(band);
 
-  // 織りの畳み｡帯のなかだけに斜めの筋を入れる
+  // 皺｡明るい折りと暗い折りを混ぜて布に見せる
   g.save();
   g.clip(band);
-  g.strokeStyle = "rgba(255,255,255,0.42)";
-  g.lineWidth = 3.4;
-  for (let i = 0; i < 5; i++) {
-    const x = 34 + i * 44;
+  for (let i = 0; i < 7; i++) {
+    const x = 22 + i * 28;
+    g.strokeStyle = i % 2 ? "rgba(255,255,255,0.5)" : "rgba(12,12,12,0.34)";
+    g.lineWidth = i % 2 ? 4 : 6;
     g.beginPath();
-    g.moveTo(x, 92);
-    g.lineTo(x - 20, 218);
+    g.moveTo(x, 110);
+    g.lineTo(x - 10, 208);
     g.stroke();
   }
   g.restore();
 
-  // 垂れた端｡結び目の脇から二本､ゆらぎながら落ちる
-  const tails = [
-    [238, 170, 288, 214, 256, 268, 34],
-    [214, 184, 176, 214, 190, 240, 24],
-  ] as const;
-  for (const [x0, y0, cx, cy, x1, y1, w] of tails) {
-    const t = g.createLinearGradient(x0, y0, x1, y1);
-    t.addColorStop(0, "#666666");
-    t.addColorStop(0.42, "#161616");
-    t.addColorStop(1, "#7a7a7a");
-    g.strokeStyle = t;
-    g.lineWidth = w;
-    g.lineCap = "butt";
-    g.beginPath();
-    g.moveTo(x0, y0);
-    g.quadraticCurveTo(cx, cy, x1, y1);
-    g.stroke();
-    // 端の切り込み｡紙の地で抜く
-    g.fillStyle = "#ffffff";
-    g.beginPath();
-    g.moveTo(x1 - w * 0.62, y1 + w * 0.7);
-    g.lineTo(x1 + w * 0.62, y1 + w * 0.7);
-    g.lineTo(x1, y1 - w * 0.34);
-    g.closePath();
-    g.fill();
-  }
-
-  // 結び目｡帯の端を締める巻き｡縦に筋を通す
-  const wrap = new Path2D();
-  wrap.moveTo(196, 122);
-  wrap.quadraticCurveTo(234, 110, 256, 140);
-  wrap.quadraticCurveTo(266, 172, 242, 194);
-  wrap.quadraticCurveTo(206, 204, 194, 172);
-  wrap.closePath();
-  const wg = g.createLinearGradient(192, 114, 260, 194);
-  wg.addColorStop(0, "#e6e6e6");
-  wg.addColorStop(0.4, "#7c7c7c");
-  wg.addColorStop(1, "#0d0d0d");
-  g.fillStyle = wg;
-  g.fill(wrap);
-  g.save();
-  g.clip(wrap);
-  g.strokeStyle = "rgba(255,255,255,0.35)";
+  // 結び目｡帯の端をひとつに締める｡帯より深く沈めて立たせる
+  const knot = new Path2D();
+  knot.moveTo(192, 138);
+  knot.quadraticCurveTo(234, 126, 252, 158);
+  knot.quadraticCurveTo(262, 190, 236, 212);
+  knot.quadraticCurveTo(198, 220, 190, 186);
+  knot.closePath();
+  const kg = g.createRadialGradient(204, 150, 8, 226, 180, 78);
+  kg.addColorStop(0, "#dcdcdc");
+  kg.addColorStop(0.3, "#8a8a8a");
+  kg.addColorStop(0.66, "#2a2a2a");
+  kg.addColorStop(1, "#070707");
+  g.fillStyle = kg;
+  g.fill(knot);
+  g.strokeStyle = "rgba(255,255,255,0.5)";
   g.lineWidth = 3;
-  for (let i = 0; i < 4; i++) {
+  g.stroke(knot);
+  g.save();
+  g.clip(knot);
+  g.strokeStyle = "rgba(255,255,255,0.32)";
+  g.lineWidth = 4;
+  for (let i = 0; i < 3; i++) {
     g.beginPath();
-    g.moveTo(204 + i * 16, 104);
-    g.lineTo(194 + i * 16, 208);
+    g.moveTo(206 + i * 18, 122);
+    g.lineTo(196 + i * 18, 224);
     g.stroke();
   }
   g.restore();

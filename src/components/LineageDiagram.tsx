@@ -3,6 +3,8 @@ import Link from "next/link";
 import type { Lineage, LineageNode } from "@/data/lineages";
 import { resolveNode, lineageKindMeta } from "@/data/lineages";
 import { SHELF_ACCENT } from "./ValueCard";
+import { recipeOf } from "./PrintCard";
+import HalftoneArt from "./print/HalftoneArt";
 import BreakText from "./BreakText";
 import TypeLabel from "./TypeLabel";
 
@@ -147,15 +149,21 @@ function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
           background: `repeating-linear-gradient(-45deg, ${acc ? "rgba(31,27,23,0.35)" : "rgba(200,67,59,0.3)"} 0 1.5px, transparent 1.5px 6px), ${acc ? topFill : "var(--vl-paper)"}`,
         }}
       />
-      {/* 前面: 名前・注記・札 */}
+      {/* 前面: 図版・名前・注記・札 */}
       <div className={`relative border-2 border-t-0 px-4 pt-2.5 pb-3 ${border} ${edge} ${isEvent ? "bg-vl-paper" : "bg-vl-card"}`}>
         <div className="flex items-start justify-between gap-3">
+          {v && (
+            /* 札と同じ版を小さく刷る｡どの商品の話か､絵で分かるように */
+            <span className="vl-ln-thumb" style={{ ["--panel" as string]: recipeOf(v.no).panel }} aria-hidden>
+              <HalftoneArt no={v.no} tech={recipeOf(v.no).tech} ink={recipeOf(v.no).ink} />
+            </span>
+          )}
           <p
-            className={
+            className={`min-w-0 flex-1 ${
               isLatin(label)
                 ? "font-display-en text-[22px] leading-tight tracking-[0.03em] uppercase"
                 : "font-display-ja text-[20px] leading-tight break-keep wrap-anywhere"
-            }
+            }`}
           >
             {label.split(/(?<=・)/).map((part, i) => (
               <Fragment key={i}>
@@ -215,8 +223,10 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
           <BreakText text={clauseText(lineage.lead)} />
         </p>
 
-        <div className="mt-6 flex items-end gap-5 border-t-2 border-vl-ink pt-3">
-          <p className="flex items-baseline leading-none">
+        {/* 何の年数かを先に言って､数字はそのあとに出す */}
+        <div className="mt-6 border-t-2 border-vl-ink pt-3">
+          <p className="text-[13px] font-bold">{lineage.spanLabel}</p>
+          <p className="mt-1 flex items-baseline leading-none">
             {span.pre && <span className="font-display-ja mr-1 text-[18px]">{span.pre}</span>}
             {span.num ? (
               <>
@@ -227,7 +237,6 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
               <span className="font-display-ja text-[24px]">{span.post}</span>
             )}
           </p>
-          <p className="pb-2 text-[13px] font-bold">{lineage.spanLabel}</p>
         </div>
 
         <ol className="mt-5 hidden space-y-1.5 border-l-4 border-vl-red pl-4 lg:block">

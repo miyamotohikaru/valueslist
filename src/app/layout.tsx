@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Roboto_Mono } from "next/font/google";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import TabBar from "@/components/TabBar";
 import { SITE_URL, OG_IMAGE } from "@/lib/site";
 import "./globals.css";
@@ -58,7 +57,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       >
         <Header />
         <main className="pb-[calc(64px+env(safe-area-inset-bottom))] md:pb-0">{children}</main>
-        <Footer />
         <TabBar />
       </body>
     </html>

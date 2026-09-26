@@ -1256,8 +1256,47 @@ button:focus-visible,
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 8px 18px;
   margin-top: 28px;
+}
+/* 絞り込みと並べ替えは別のこと｡かたまりで分けて､あいだに仕切りを入れる */
+.vl-bar__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.vl-bar__group + .vl-bar__group {
+  position: relative;
+  padding-left: 18px;
+}
+.vl-bar__group + .vl-bar__group::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 20px;
+  border-left: 1px solid var(--vl-line);
+  transform: translateY(-50%);
+}
+.vl-bar__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--vl-ink-soft);
+}
+/* 絞り込みは絞る操作｡並べ替えの札とは別物だと分かる形にする */
+.vl-chip--filter {
+  border-width: 2px;
+  background: var(--vl-card);
+}
+.vl-chip--filter::before {
+  content: "▾";
+  margin-right: 6px;
+  font-size: 10px;
+}
+.vl-chip--filter.is-on::before {
+  content: "▴";
 }
 .vl-bar__count {
   margin-left: auto;
@@ -1704,4 +1743,18 @@ a.vl-print-wrap:hover {
   border-bottom: 0;
   border-top: 2px solid var(--vl-ink);
   font-weight: 700;
+}
+
+/* 系譜の分解図に置く小さな図版 */
+.vl-ln-thumb {
+  display: block;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  margin-top: 2px;
+  border: 1px solid var(--vl-line);
+  background: var(--panel);
+}
+.vl-ln-thumb .vl-print__art {
+  height: 100%;
 }

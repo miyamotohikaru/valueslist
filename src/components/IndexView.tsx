@@ -69,22 +69,32 @@ export default function IndexView({ values }: { values: Value[] }) {
         <h2 className="vl-sec__title">図鑑</h2>
       </div>
 
-      {/* 絞り込みと並べ替え */}
+      {/* 絞り込みと並べ替え｡別のことなので分けて置く */}
       <div className="vl-bar">
-        <button type="button" onClick={() => setOpen((o) => !o)} className={`vl-chip${open || active ? " is-on" : ""}`} aria-expanded={open}>
-          絞り込み{active > 0 ? ` (${active})` : ""}
-        </button>
-        {(
-          [
-            ["no", "型番順"],
-            ["made", "製造年順"],
-            ["disc", "廃番・再入荷順"],
-          ] as [SortKey, string][]
-        ).map(([k, label]) => (
-          <Chip key={k} on={sort === k} onClick={() => setSort(k)}>
-            {label}
-          </Chip>
-        ))}
+        <div className="vl-bar__group">
+          <button
+            type="button"
+            onClick={() => setOpen((o) => !o)}
+            className={`vl-chip vl-chip--filter${open || active ? " is-on" : ""}`}
+            aria-expanded={open}
+          >
+            絞り込み{active > 0 ? ` (${active})` : ""}
+          </button>
+        </div>
+        <div className="vl-bar__group">
+          <span className="vl-bar__label">並べ替え</span>
+          {(
+            [
+              ["no", "型番順"],
+              ["made", "製造年順"],
+              ["disc", "廃番・再入荷順"],
+            ] as [SortKey, string][]
+          ).map(([k, label]) => (
+            <Chip key={k} on={sort === k} onClick={() => setSort(k)}>
+              {label}
+            </Chip>
+          ))}
+        </div>
         <span className="vl-bar__count">
           {filtered.length} / {values.length}
         </span>

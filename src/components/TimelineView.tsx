@@ -216,6 +216,14 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 }}
               />
             )}
+            {/* はじまった年｡帯の左端の上に出す */}
+            <span
+              className="font-type absolute top-0 text-[10px] leading-[1.2] font-bold whitespace-nowrap text-vl-ink-soft md:text-[11px]"
+              style={{ left: `${start}%` }}
+            >
+              {approx ? "c." : ""}
+              {v.made!.year}
+            </span>
             {/* 在庫の帯 */}
             <span
               className="absolute top-1/2 h-[10px] min-w-[6px] -translate-y-1/2"
@@ -851,21 +859,15 @@ export default function TimelineView() {
     <>
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         {/* 見出し */}
-        <section className="grid gap-10 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:items-stretch md:py-16">
-          <div>
-            <h1 className="font-display-ja mt-4 text-[40px] leading-[1.05] md:text-[64px]">
-              年表
-            </h1>
-            <p className="font-display-en vl-misreg mt-2 text-[60px] leading-[0.86] tracking-[0.01em] text-vl-red md:text-[96px]">
-              INVENTORY
-              <br />
-              BY YEAR
-            </p>
-          </div>
-          <div className="flex flex-col justify-between gap-6">
+        <section className="py-10 md:py-14">
+          <h1 className="font-display-ja text-[40px] leading-[1.05] md:text-[56px]">年表</h1>
+          <p className="font-display-en mt-1 text-[32px] leading-[0.95] tracking-[0.01em] text-vl-red md:text-[46px]">
+            INVENTORY BY YEAR
+          </p>
+          {/* 台帳を読む前に､物差しと記号の意味を置く */}
+          <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-start">
             <EraRuler />
-            {/* 台帳を読む前に､記号の意味を先に置く */}
-            <div className="vl-offset-sm border-2 border-vl-ink bg-vl-card px-4 py-3 md:px-5 md:py-4">
+            <div className="border-2 border-vl-ink bg-vl-card px-4 py-3 md:px-5 md:py-4">
               <Legend />
             </div>
           </div>

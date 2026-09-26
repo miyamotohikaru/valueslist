@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import type { Value, Category, Trend, Evidence, ShelfId } from "@/data/types";
 import { shelves, trendMeta, evidenceMeta } from "@/data/shelves";
-import ValueCard from "./ValueCard";
+import ColumnGrid from "./ColumnGrid";
 
 type SortKey = "no" | "made" | "disc";
 
@@ -60,14 +60,6 @@ export default function IndexView({ values }: { values: Value[] }) {
     setTrendF(new Set());
     setEvF(new Set());
   };
-
-  const sections =
-    sort === "no"
-      ? shelves
-          .filter((s) => !s.virtual)
-          .map((s) => ({ shelf: s, items: filtered.filter((v) => v.shelf === s.id) }))
-          .filter((g) => g.items.length > 0)
-      : [{ shelf: null, items: filtered }];
 
   return (
     <div id="index" className="vl-index">
@@ -150,23 +142,10 @@ export default function IndexView({ values }: { values: Value[] }) {
         </div>
       )}
 
-      {/* 札 */}
-      {sections.map((g, i) => (
-        <section key={g.shelf ? String(g.shelf.id) : i} id={g.shelf ? `shelf-${g.shelf.no}` : undefined} className="vl-shelf">
-          {g.shelf && (
-            <div className="vl-shelf__head">
-              <p className="vl-shelf__no">SHELF {g.shelf.no}</p>
-              <h3 className="vl-shelf__name">{g.shelf.name}</h3>
-              <p className="vl-shelf__n">{g.items.length}点</p>
-            </div>
-          )}
-          <div className="vl-grid">
-            {g.items.map((v, k) => (
-              <ValueCard key={v.no} v={v} index={k} />
-            ))}
-          </div>
-        </section>
-      ))}
+      {/* 札｡全部をひと続きのグリッドで並べる */}
+      <div className="vl-shelf">
+        <ColumnGrid items={filtered} />
+      </div>
 
       {filtered.length === 0 && <p className="vl-empty">該当する在庫がありません｡</p>}
     </div>

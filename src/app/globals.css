@@ -1415,3 +1415,32 @@ button:focus-visible,
   font-size: 11px;
   color: rgba(237, 233, 223, 0.5);
 }
+
+/* ============================================================
+   列ごとに遅れて追いつくグリッド
+   ============================================================ */
+.vl-cols {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+  /* 列がずれても下の内容に被らないよう､少し余白を残す */
+  padding-bottom: 40px;
+}
+.vl-cols__col {
+  display: grid;
+  gap: 14px;
+  will-change: transform;
+}
+@media (min-width: 700px) {
+  .vl-cols,
+  .vl-cols__col {
+    gap: 18px;
+  }
+}
+@media (min-width: 1200px) {
+  .vl-cols,
+  .vl-cols__col {
+    gap: 20px;
+  }
+}

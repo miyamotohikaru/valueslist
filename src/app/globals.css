@@ -1444,3 +1444,85 @@ button:focus-visible,
     gap: 20px;
   }
 }
+
+/* ============================================================
+   刷り札（下見）｡図版を版に起こして網にかけたもの
+   墨の版と色の版を重ね､スクロールで色が上から回る
+   ============================================================ */
+.vl-print {
+  container-type: inline-size;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
+  gap: 0;
+  background: var(--card);
+  color: var(--vl-ink);
+  padding: 4cqw 4cqw 3.4cqw;
+  box-shadow: 0 1px 0 rgba(28, 27, 25, 0.1);
+}
+
+/* 図版の枠 */
+.vl-print__art {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--panel);
+  overflow: hidden;
+}
+.vl-print__layer {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+/* 上に乗る墨の版｡p が進むと下から消えて､色の版が出る */
+.vl-print__layer--ink {
+  clip-path: inset(calc(var(--p, 0) * 100%) 0 0 0);
+}
+
+.vl-print__name {
+  margin-top: 4.4cqw;
+  font-family: var(--font-sans), "Hiragino Sans", sans-serif;
+  font-weight: 700;
+  font-size: 6.4cqw;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+.vl-print__latin {
+  margin-top: 1.4cqw;
+  font-family: var(--font-mono), monospace;
+  font-size: 2.9cqw;
+  letter-spacing: 0.07em;
+  color: rgba(28, 27, 25, 0.55);
+}
+.vl-print__body {
+  margin-top: 3cqw;
+  font-family: var(--font-mono), monospace;
+  font-size: 3.2cqw;
+  line-height: 1.75;
+  color: rgba(28, 27, 25, 0.86);
+}
+.vl-print__foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 2cqw;
+  margin-top: 4.4cqw;
+  padding-top: 2.6cqw;
+  border-top: 1px solid rgba(28, 27, 25, 0.22);
+  font-family: var(--font-mono), monospace;
+  font-size: 2.6cqw;
+  letter-spacing: 0.1em;
+  color: rgba(28, 27, 25, 0.5);
+  white-space: nowrap;
+}
+
+/* 図版だけは動かさない指定でも止めない（色は回らない） */
+@media (prefers-reduced-motion: reduce) {
+  .vl-print__layer--ink {
+    clip-path: none;
+  }
+}
+
+/* 下見のページだけ地を沈める（札の刷り色を見るため） */
+.vl-lab {
+  background: #19204f;
+  min-height: 100vh;
+}

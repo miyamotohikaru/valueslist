@@ -75,7 +75,9 @@ export default function HalftoneArt({
     frame.current = -1;
 
     const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const lead = (Number(no) * 173) % CYCLE;
+    // 枠全体が色に染まる札（網の｢反転｣とは別）は変化が強いので､回るのを3回に1回にする
+    const cycle = ink.colorBg === "transparent" ? CYCLE : CYCLE * 3;
+    const lead = (Number(no) * 173) % cycle;
 
     /** 版を2枚（墨と色）刷る */
     const print = (f: number) => {
@@ -120,7 +122,7 @@ export default function HalftoneArt({
       }
       // 札が動いた距離をそのまま送りにする｡止めるまで何度でも回る
       // 型番でずらしてあるので､並べたとき一斉には変わらない
-      const travel = (vh - r.top + lead) / CYCLE;
+      const travel = (vh - r.top + lead) / cycle;
       const turn = travel - Math.floor(travel);
       // 三角の波｡色が上から差してきて､また抜けていく
       const p = 1 - Math.abs(1 - turn * 2);

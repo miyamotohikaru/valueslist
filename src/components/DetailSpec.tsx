@@ -21,9 +21,9 @@ function Cell({
   right?: boolean;
 }) {
   return (
-    <div className={`border-t-2 border-vl-ink/15 px-4 py-3 ${wide ? "col-span-2" : ""} ${right ? "border-l-2 border-l-vl-ink/15" : ""}`}>
-      <p className="text-[12px] font-bold text-vl-ink-soft">{label}</p>
-      <div className="mt-1 text-[12px] leading-snug font-bold md:text-[15px]">{children}</div>
+    <div className={`border-t-2 border-vl-ink/15 px-3 py-2 md:px-4 md:py-3 ${wide ? "col-span-2" : ""} ${right ? "border-l-2 border-l-vl-ink/15" : ""}`}>
+      <p className="text-[10.5px] font-bold text-vl-ink-soft md:text-[12px]">{label}</p>
+      <div className="mt-0.5 text-[12px] leading-snug font-bold md:mt-1 md:text-[15px]">{children}</div>
     </div>
   );
 }
@@ -90,7 +90,7 @@ export default function DetailSpec({ v }: { v: Value }) {
           <Cell label="再入荷" wide>
             {v.restocked.label}
             {v.restocked.as && !v.restocked.label.includes(v.restocked.as) && (
-              <span className="ml-2 text-[13px] font-normal">（{v.restocked.as} として）</span>
+              <span className="ml-2 text-[11px] font-normal md:text-[13px]">（{v.restocked.as} として）</span>
             )}
           </Cell>
         )}
@@ -100,7 +100,7 @@ export default function DetailSpec({ v }: { v: Value }) {
             <span className="text-[11px]">
               <TrendStamp trend={v.trend} seed={v.no} />
             </span>
-            <span className="text-[13px]">{trendMeta[v.trend].ja}</span>
+            <span className="text-[11px] md:text-[13px]">{trendMeta[v.trend].ja}</span>
           </span>
         </Cell>
         <Cell label="確度" wide>
@@ -108,14 +108,14 @@ export default function DetailSpec({ v }: { v: Value }) {
             {(["A", "B", "C"] as const).map((c) => (
               <span
                 key={c}
-                className={`font-type grid h-7 w-7 place-items-center border-2 text-[13px] ${
+                className={`font-type grid h-6 w-6 place-items-center border-2 text-[11px] md:h-7 md:w-7 md:text-[13px] ${
                   c === v.confidence ? "border-vl-ink bg-vl-ink font-bold text-vl-paper" : "border-vl-ink/25 font-normal text-vl-ink-soft"
                 }`}
               >
                 {c}
               </span>
             ))}
-            <span className="ml-2 text-[13px] font-normal">
+            <span className="ml-2 text-[11px] font-normal md:text-[13px]">
               {v.confidence === "A" ? "公文書・統計で年月日まで特定" : v.confidence === "B" ? "学術書などで裏づけ" : "通説の域"}
             </span>
           </span>

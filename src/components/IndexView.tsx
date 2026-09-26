@@ -86,6 +86,10 @@ export default function IndexView({ values }: { values: Value[] }) {
           >
             絞り込み{active > 0 ? ` (${active})` : ""}
           </button>
+          {/* 件数は1行目の右端｡狭い画面で1行余分に増えないように */}
+          <span className="vl-bar__count">
+            {filtered.length} / {values.length}
+          </span>
         </div>
         <div className="vl-bar__group">
           <span className="vl-bar__label">並べ替え</span>
@@ -101,9 +105,6 @@ export default function IndexView({ values }: { values: Value[] }) {
             </Chip>
           ))}
         </div>
-        <span className="vl-bar__count">
-          {filtered.length} / {values.length}
-        </span>
       </div>
 
       {open && (

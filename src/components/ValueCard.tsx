@@ -28,14 +28,18 @@ export function groundOf(v: Value) {
   return GROUNDS[(Number(v.no) - 1 + 12) % 12];
 }
 
-/** 棚の色（索引の見出しなど､札の外で使う） */
-export const SHELF_ACCENT: Record<string, { bg: string; fg: string; bar: string }> = {
-  "1": { bg: "var(--vl-kraft)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
-  "2": { bg: "var(--vl-concrete)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
-  "3": { bg: "var(--vl-sage)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
-  "4": { bg: "var(--vl-sky)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
-  "5": { bg: "var(--vl-lavender)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
-  meta: { bg: "var(--vl-sumi)", fg: "var(--vl-paper)", bar: "var(--vl-paper)" },
+/**
+ * 棚の色（索引の見出しなど､札の外で使う）｡
+ * line は札の下の細い線用｡地の色のままだと5つの棚を見分けられないので､
+ * 同じ色味のまま濃くしてある｡
+ */
+export const SHELF_ACCENT: Record<string, { bg: string; fg: string; bar: string; line: string }> = {
+  "1": { bg: "var(--vl-kraft)", fg: "var(--vl-ink)", bar: "var(--vl-ink)", line: "#b8912f" },
+  "2": { bg: "var(--vl-concrete)", fg: "var(--vl-ink)", bar: "var(--vl-ink)", line: "#6f8089" },
+  "3": { bg: "var(--vl-sage)", fg: "var(--vl-ink)", bar: "var(--vl-ink)", line: "#7f8f4e" },
+  "4": { bg: "var(--vl-sky)", fg: "var(--vl-ink)", bar: "var(--vl-ink)", line: "#3f7f96" },
+  "5": { bg: "var(--vl-lavender)", fg: "var(--vl-ink)", bar: "var(--vl-ink)", line: "#6f62a8" },
+  meta: { bg: "var(--vl-sumi)", fg: "var(--vl-paper)", bar: "var(--vl-paper)", line: "#1c1b19" },
 };
 
 /** 名前を読点のあとで行に分ける */

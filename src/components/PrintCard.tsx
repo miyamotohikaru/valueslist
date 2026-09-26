@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Trend, Value } from "@/data/types";
 import HalftoneArt, { type ArtInk } from "./print/HalftoneArt";
+import { SHELF_ACCENT } from "./ValueCard";
 import type { Technique } from "./print/screen";
 
 /**
@@ -109,7 +110,8 @@ function dates(v: Value) {
 export default function PrintCard({ v, interactive = true }: { v: Value; interactive?: boolean }) {
   const r = recipeOf(v.no);
   const [left, right] = dates(v);
-  const shelfNo = v.shelf === "meta" ? "M" : String(v.shelf);
+  // 棚は下の線の色で見分ける
+  const bar = SHELF_ACCENT[String(v.shelf)].line;
 
   // 外の枠で幅を測る｡札そのものに container-type を置くと
   // 札自身の padding には効かないので､いつも同じ大きさにならない
@@ -123,17 +125,12 @@ export default function PrintCard({ v, interactive = true }: { v: Value; interac
         style={{
           ["--card" as string]: r.card,
           ["--panel" as string]: r.panel,
+          ["--bar" as string]: bar,
         }}
       >
         <div className="vl-print__top">
-          <span>
-            {/* 刷り色は一枚ずつ違うので､棚（分類）はこの番号で見分ける */}
-            <span className="vl-print__shelf" aria-label={`棚 ${shelfNo}`}>
-              {shelfNo}
-            </span>
-            NO.{v.no}
-          </span>
-          <span className={v.trend === "discontinued" ? "is-eol" : undefined}>{STATE[v.trend]}</span>
+          <span className="vl-print__no">NO.{v.no}</span>
+          <span className={`vl-print__state${v.trend === "discontinued" ? " is-eol" : ""}`}>{STATE[v.trend]}</span>
         </div>
 
         <HalftoneArt no={v.no} tech={r.tech} ink={r.ink} />
@@ -150,14 +147,13 @@ export default function PrintCard({ v, interactive = true }: { v: Value; interac
             <span className="vl-print__k">{left.k}</span>
             <b className="vl-print__v">{left.t}</b>
           </div>
+          <span className="vl-print__tilde" aria-hidden>
+            〜
+          </span>
           <div>
             <span className="vl-print__k">{right.k}</span>
             <b className="vl-print__v">{right.t}</b>
           </div>
-        </div>
-
-        <div className="vl-print__foot">
-          <span>{r.label}</span>
         </div>
       </article>
     </Wrap>

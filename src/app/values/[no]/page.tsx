@@ -59,7 +59,7 @@ function titleSize(lines: string[]): string {
   return "clamp(21px, 5.8vw, 48px)";
 }
 
-/** おなじ棚の他の在庫｡自分の後ろに続くものを優先して最大 4 枚 */
+/** おなじ棚の他のカード｡自分の後ろに続くものを優先して最大 4 枚 */
 function sameShelf(v: Value, max = 4) {
   const list = byShelf(v.shelf);
   const i = list.findIndex((x) => x.no === v.no);
@@ -321,12 +321,13 @@ export default async function ValuePage({ params }: Params) {
       {/* 系譜 */}
       <LineageStrip v={v} />
 
-      {/* おなじ棚の在庫 */}
+      {/* おなじ棚のカード */}
       {siblings.length > 0 && (
-        <section className="mt-14 md:mt-20" aria-labelledby="same-shelf">
-          <SectionHead id="same-shelf" en="SAME SHELF" ja="おなじ棚の在庫" right={`${shelf.no}. ${shelf.name}`} />
-          <ul className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
-            {siblings.map((s, i) => (
+        <section className="mt-10 md:mt-20" aria-labelledby="same-shelf">
+          <SectionHead id="same-shelf" en="SAME SHELF" ja="おなじ棚のカード" right={`${shelf.no}. ${shelf.name}`} />
+          {/* 図鑑と同じ2列｡札は 63×88mm なので､どれも同じ大きさになる */}
+          <ul className="mt-4 grid grid-cols-2 gap-3 md:mt-6 md:gap-5 xl:grid-cols-4">
+            {siblings.map((s) => (
               <li key={s.no}>
                 <PrintCard v={s} />
               </li>

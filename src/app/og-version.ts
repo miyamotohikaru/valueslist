@@ -1,2 +1,2 @@
 // tools/shoot-og.mjs が og.png を焼くたびに書き換える。手で触らない。
-export const OG_VERSION = "7bf6ad4a";
+export const OG_VERSION = "11e1fafa";

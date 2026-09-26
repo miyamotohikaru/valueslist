@@ -58,24 +58,30 @@ type Ink = { fg: string; bg: string };
 
 /**
  * 版を網にかけて刷る｡
- * ctx は CSS ピクセルに合わせてあるものとし､out は一辺の長さ｡
+ *
+ * ctx は CSS ピクセルに合わせてあるものとする｡枠は正方形とはかぎらないので､
+ * 版は短いほうの辺に合わせて中に納める（まわりは地のまま）｡
  */
 export function screenPlate(
   g: CanvasRenderingContext2D,
   plate: Plate,
-  out: number,
+  w: number,
+  h: number,
   tech: Technique,
   phase: number,
   ink: Ink,
 ) {
+  const out = Math.min(w, h); // 版を納める一辺
+  const ox = (w - out) / 2;
+  const oy = (h - out) / 2;
   const k = plate.size / out; // 出力1pxあたりの版の座標
-  g.clearRect(0, 0, out, out);
+  g.clearRect(0, 0, w, h);
   if (ink.bg !== "transparent") {
     g.fillStyle = ink.bg;
-    g.fillRect(0, 0, out, out);
+    g.fillRect(0, 0, w, h);
   }
   g.fillStyle = ink.fg;
-  const D = (x: number, y: number) => at(plate, x * k, y * k);
+  const D = (x: number, y: number) => at(plate, (x - ox) * k, (y - oy) * k);
 
   if (tech === "halftone") {
     // 網点｡正方の目を斜めに倒して､濃さを点の大きさにする
@@ -83,16 +89,16 @@ export function screenPlate(
     const a = (15 + phase * 9) * (Math.PI / 180);
     const co = Math.cos(a);
     const si = Math.sin(a);
-    const cx = out / 2;
-    const cy = out / 2;
-    const n = Math.ceil((out * 0.78) / cell) + 2;
+    const cx = w / 2;
+    const cy = h / 2;
+    const n = Math.ceil((Math.max(w, h) * 0.78) / cell) + 2;
     for (let j = -n; j <= n; j++) {
       for (let i = -n; i <= n; i++) {
         const gx = i * cell;
         const gy = j * cell;
         const x = cx + gx * co - gy * si;
         const y = cy + gx * si + gy * co;
-        if (x < -cell || y < -cell || x > out + cell || y > out + cell) continue;
+        if (x < -cell || y < -cell || x > w + cell || y > h + cell) continue;
         const r = cell * 0.66 * Math.sqrt(D(x, y));
         if (r < 0.3) continue;
         g.beginPath();
@@ -108,8 +114,8 @@ export function screenPlate(
     const pitch = Math.max(1.8, out / 54);
     const step = pitch * 0.42;
     const off = (phase % 4) * (pitch / 4);
-    for (let y = off; y < out; y += pitch) {
-      for (let x = 0; x < out; x += step) {
+    for (let y = off; y < h; y += pitch) {
+      for (let x = 0; x < w; x += step) {
         const t = pitch * 0.92 * D(x + step / 2, y);
         if (t < 0.18) continue;
         g.fillRect(x, y - t / 2, step * 1.1, t);
@@ -121,11 +127,11 @@ export function screenPlate(
   if (tech === "stipple") {
     // 点刻｡同じ大きさの点を､濃いところほど多く落とす
     const rand = rng(phase + 11);
-    const shots = Math.round(out * out * 0.45);
+    const shots = Math.round(w * h * 0.45);
     const rad = Math.max(0.55, out / 200);
     for (let i = 0; i < shots; i++) {
-      const x = rand() * out;
-      const y = rand() * out;
+      const x = rand() * w;
+      const y = rand() * h;
       const d = D(x, y);
       if (d < 0.04 || rand() > Math.pow(d, 1.15)) continue;
       g.beginPath();
@@ -141,8 +147,8 @@ export function screenPlate(
     const shift = (phase % 5) / 5;
     const st = Math.max(0.9, out / 140);
     const band = (x: number, y: number) => Math.floor(D(x, y) * bands + shift);
-    for (let y = 0; y < out; y += st) {
-      for (let x = 0; x < out; x += st) {
+    for (let y = 0; y < h; y += st) {
+      for (let x = 0; x < w; x += st) {
         const b = band(x, y);
         if (b === band(x + st, y) && b === band(x, y + st)) continue;
         g.beginPath();
@@ -156,14 +162,14 @@ export function screenPlate(
   // 反転｡濃さを2段に割って､境目のところだけ粗い網を残す
   const t = 0.46 + ((phase % 4) - 1.5) * 0.045;
   const st = Math.max(0.9, out / 165);
-  for (let y = 0; y < out; y += st) {
-    for (let x = 0; x < out; x += st) {
+  for (let y = 0; y < h; y += st) {
+    for (let x = 0; x < w; x += st) {
       if (D(x, y) > t + 0.16) g.fillRect(x, y, st * 1.2, st * 1.2);
     }
   }
   const cell = Math.max(2.2, out / 40);
-  for (let y = cell / 2; y < out; y += cell) {
-    for (let x = cell / 2; x < out; x += cell) {
+  for (let y = cell / 2; y < h; y += cell) {
+    for (let x = cell / 2; x < w; x += cell) {
       const d = D(x, y);
       if (d <= t - 0.1 || d > t + 0.16) continue;
       const r = cell * 0.42;

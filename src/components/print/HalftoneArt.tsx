@@ -62,7 +62,7 @@ export default function HalftoneArt({
   const cInk = useRef<HTMLCanvasElement>(null);
   const plate = useRef<Plate | null>(null);
   const frame = useRef(-1);
-  const side = useRef(0);
+  const box = useRef("");
 
   useEffect(() => {
     const el = wrap.current;
@@ -82,15 +82,17 @@ export default function HalftoneArt({
       const p = plate.current;
       if (!p) return;
       const w = el.clientWidth;
-      if (w < 8) return;
+      const h = el.clientHeight;
+      if (w < 8 || h < 8) return;
       const dpr = Math.min(2, window.devicePixelRatio || 1);
-      if (side.current !== w) {
-        side.current = w;
+      const key = `${w}x${h}`;
+      if (box.current !== key) {
+        box.current = key;
         for (const c of [a, b]) {
           c.width = Math.round(w * dpr);
-          c.height = Math.round(w * dpr);
+          c.height = Math.round(h * dpr);
           c.style.width = `${w}px`;
-          c.style.height = `${w}px`;
+          c.style.height = `${h}px`;
         }
       }
       for (const [c, fg, bg] of [
@@ -99,7 +101,7 @@ export default function HalftoneArt({
       ] as const) {
         const g = c.getContext("2d")!;
         g.setTransform(dpr, 0, 0, dpr, 0, 0);
-        screenPlate(g, p, w, tech, f, { fg, bg });
+        screenPlate(g, p, w, h, tech, f, { fg, bg });
       }
     };
 
@@ -110,7 +112,7 @@ export default function HalftoneArt({
       const vh = window.innerHeight || 1;
       if (still) {
         el.style.setProperty("--p", "1");
-        if (frame.current !== 0 || side.current !== el.clientWidth) {
+        if (frame.current !== 0 || box.current !== `${el.clientWidth}x${el.clientHeight}`) {
           frame.current = 0;
           print(0);
         }
@@ -125,7 +127,7 @@ export default function HalftoneArt({
       el.style.setProperty("--p", p.toFixed(3));
       const f = Math.floor(travel * FRAMES) % FRAMES;
       const fi = f < 0 ? f + FRAMES : f;
-      if (fi !== frame.current || side.current !== el.clientWidth) {
+      if (fi !== frame.current || box.current !== `${el.clientWidth}x${el.clientHeight}`) {
         frame.current = fi;
         print(fi);
       }

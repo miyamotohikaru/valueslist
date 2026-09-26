@@ -981,6 +981,8 @@ button:focus-visible,
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+  /* 1行で収まる札も2行ぶん空けておく｡図版の枠が札ごとに揺れない */
+  min-height: 3.44em;
 }
 
 /* 年 */
@@ -1450,11 +1452,17 @@ button:focus-visible,
    刷り札（下見）｡図版を版に起こして網にかけたもの
    墨の版と色の版を重ね､スクロールで色が上から回る
    ============================================================ */
-.vl-print {
+.vl-print-wrap {
   container-type: inline-size;
+}
+.vl-print {
   display: grid;
-  grid-template-rows: auto auto auto 1fr auto;
+  /* 型番 / 図版 / 名 / 欧文 / 意味 / 年 / 網 */
+  grid-template-rows: auto minmax(0, 1fr) auto auto auto auto auto;
   gap: 0;
+  /* 現物と同じ 縦88mm × 横63mm｡どの札も同じ大きさになる */
+  aspect-ratio: 63 / 88;
+  overflow: hidden;
   background: var(--card);
   color: var(--vl-ink);
   /* 札が細くなっても字が潰れないよう､下限と上限を決めておく */
@@ -1462,11 +1470,28 @@ button:focus-visible,
   box-shadow: 0 1px 0 rgba(28, 27, 25, 0.1);
 }
 
-/* 図版の枠 */
+/* 型番と扱い */
+.vl-print__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 2cqw;
+  margin-bottom: clamp(9px, 3.2cqw, 16px);
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(9px, 2.7cqw, 11px);
+  letter-spacing: 0.1em;
+  color: rgba(28, 27, 25, 0.5);
+  white-space: nowrap;
+}
+.vl-print__top .is-eol {
+  color: var(--vl-red);
+}
+
+/* 図版の枠｡札の高さの余りぶんを受け持つ */
 .vl-print__art {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
+  min-height: 0;
   background: var(--panel);
   overflow: hidden;
 }
@@ -1481,7 +1506,7 @@ button:focus-visible,
 }
 
 .vl-print__name {
-  margin-top: clamp(13px, 4.6cqw, 22px);
+  margin-top: clamp(11px, 4cqw, 19px);
   font-family: var(--font-sans), "Hiragino Sans", sans-serif;
   font-weight: 700;
   font-size: clamp(18px, 6.4cqw, 28px);
@@ -1489,25 +1514,64 @@ button:focus-visible,
   letter-spacing: 0.02em;
 }
 .vl-print__latin {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
   margin-top: clamp(4px, 1.5cqw, 8px);
   font-family: var(--font-mono), monospace;
   font-size: clamp(9.5px, 2.9cqw, 12px);
   letter-spacing: 0.06em;
   color: rgba(28, 27, 25, 0.55);
+  white-space: nowrap;
+}
+/* 欧文が長い札は端を落とす｡読みは必ず出す */
+.vl-print__latin > span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .vl-print__body {
-  margin-top: clamp(9px, 3.2cqw, 16px);
+  margin-top: clamp(8px, 2.8cqw, 14px);
   font-family: var(--font-mono), monospace;
   font-size: clamp(11.5px, 3.3cqw, 14px);
-  line-height: 1.8;
+  line-height: 1.72;
   color: rgba(28, 27, 25, 0.86);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  /* 1行で収まる札も2行ぶん空けておく｡図版の枠が札ごとに揺れない */
+  min-height: 3.44em;
+}
+
+/* 製造年と廃番年 */
+.vl-print__data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2cqw;
+  margin-top: clamp(9px, 3.2cqw, 16px);
+  font-family: var(--font-mono), monospace;
+  white-space: nowrap;
+}
+.vl-print__k {
+  display: block;
+  font-size: clamp(8px, 2.3cqw, 10px);
+  letter-spacing: 0.08em;
+  color: rgba(28, 27, 25, 0.45);
+}
+.vl-print__v {
+  display: block;
+  margin-top: 1px;
+  font-size: clamp(13px, 4cqw, 18px);
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 .vl-print__foot {
   display: flex;
   justify-content: space-between;
   gap: 2cqw;
-  margin-top: clamp(13px, 4.4cqw, 22px);
-  padding-top: clamp(8px, 2.6cqw, 13px);
+  margin-top: clamp(8px, 2.8cqw, 14px);
+  padding-top: clamp(7px, 2.2cqw, 11px);
   border-top: 1px solid rgba(28, 27, 25, 0.22);
   font-family: var(--font-mono), monospace;
   font-size: clamp(9px, 2.6cqw, 11px);

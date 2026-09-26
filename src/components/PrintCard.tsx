@@ -1,4 +1,4 @@
-import type { Value } from "@/data/types";
+import type { Trend, Value } from "@/data/types";
 import HalftoneArt, { type ArtInk } from "./print/HalftoneArt";
 import type { Technique } from "./print/screen";
 
@@ -60,37 +60,77 @@ const RECIPES: Record<string, Recipe> = {
   },
 };
 
-function years(v: Value) {
+/** いまの扱い｡札の右上に出す */
+const STATE: Record<Trend, string> = {
+  up: "現行・拡大中",
+  steady: "現行",
+  down: "現行・減少中",
+  discontinued: "廃番",
+  restocked: "再入荷",
+};
+
+/** 左に製造年､右に廃番年か再入荷年｡無ければ現行 */
+function dates(v: Value) {
   const made = v.made ? `${v.made.approx ? "c." : ""}${v.made.year}` : "—";
-  if (v.restocked) return `${made} → ${v.restocked.year} 再入荷`;
-  if (v.discontinued) return `${made} → ${v.discontinued.year} 廃番`;
-  return `${made} → 現行`;
+  if (v.restocked) return [
+    { k: "製造 MFD", t: made },
+    { k: "再入荷 RESTOCK", t: String(v.restocked.year) },
+  ];
+  if (v.discontinued) return [
+    { k: "製造 MFD", t: made },
+    { k: "廃番 EOL", t: String(v.discontinued.year) },
+  ];
+  return [
+    { k: "製造 MFD", t: made },
+    { k: "現行 NOW", t: "NOW" },
+  ];
 }
 
 export default function PrintCard({ v }: { v: Value }) {
   const r = RECIPES[v.no];
   if (!r) return null;
+  const [left, right] = dates(v);
 
   return (
-    <article
-      className="vl-print"
-      style={{
-        ["--card" as string]: r.card,
-        ["--panel" as string]: r.panel,
-      }}
-    >
-      <HalftoneArt no={v.no} tech={r.tech} ink={r.ink} />
+    // 外の枠で幅を測る｡札そのものに container-type を置くと
+    // 札自身の padding には効かないので､いつも同じ大きさにならない
+    <div className="vl-print-wrap">
+      <article
+        className="vl-print"
+        style={{
+          ["--card" as string]: r.card,
+          ["--panel" as string]: r.panel,
+        }}
+      >
+        <div className="vl-print__top">
+          <span>NO.{v.no}</span>
+          <span className={v.trend === "discontinued" ? "is-eol" : undefined}>{STATE[v.trend]}</span>
+        </div>
 
-      <h3 className="vl-print__name">{v.name}</h3>
-      <p className="vl-print__latin">
-        {v.en.toUpperCase()} · {v.reading}
-      </p>
-      <p className="vl-print__body">{v.meaning ?? v.hitokoto}</p>
+        <HalftoneArt no={v.no} tech={r.tech} ink={r.ink} />
 
-      <div className="vl-print__foot">
-        <span>{r.label}</span>
-        <span>{years(v)}</span>
-      </div>
-    </article>
+        <h3 className="vl-print__name">{v.name}</h3>
+        <p className="vl-print__latin">
+          <span>{v.en.toUpperCase()}</span>
+          <span>{v.reading}</span>
+        </p>
+        <p className="vl-print__body">{v.meaning ?? v.hitokoto}</p>
+
+        <div className="vl-print__data">
+          <div>
+            <span className="vl-print__k">{left.k}</span>
+            <b className="vl-print__v">{left.t}</b>
+          </div>
+          <div>
+            <span className="vl-print__k">{right.k}</span>
+            <b className="vl-print__v">{right.t}</b>
+          </div>
+        </div>
+
+        <div className="vl-print__foot">
+          <span>{r.label}</span>
+        </div>
+      </article>
+    </div>
   );
 }

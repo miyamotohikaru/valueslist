@@ -19,7 +19,14 @@ const EASE_STEP = 0.03; // 中央から1列離れるごとに鈍くする量
 const MIN_EASE = 0.05;
 const MAX_LAG = 72; // 一気に飛ばしても､この幅までしかずらさない（弓なりの形は保つ）
 
-function colsFor(w: number) {
+function colsFor(w: number, variant: "plate" | "print") {
+  // 刷り札は 63×88mm で高さが決まっているので､図版が潰れない幅を保つ
+  if (variant === "print") {
+    if (w >= 1280) return 4;
+    if (w >= 980) return 3;
+    if (w >= 640) return 2;
+    return 1;
+  }
   if (w >= 1200) return 5;
   if (w >= 1000) return 4;
   if (w >= 700) return 3;
@@ -41,11 +48,11 @@ export default function ColumnGrid({
   const rafRef = useRef(0);
 
   useEffect(() => {
-    const set = () => setCols(colsFor(window.innerWidth));
+    const set = () => setCols(colsFor(window.innerWidth, variant));
     set();
     window.addEventListener("resize", set);
     return () => window.removeEventListener("resize", set);
-  }, []);
+  }, [variant]);
 
   // 列に振り分ける（読む順が左から右になるよう､順ぐりに入れる）
   const columns = useMemo(() => {

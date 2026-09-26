@@ -1348,12 +1348,23 @@ button:focus-visible,
 .vl-shelf {
   margin-top: 56px;
 }
+/* 棚の見出し｡その棚を見ているあいだ上に貼り付いて動かない */
 .vl-shelf__head {
+  position: sticky;
+  top: 62px;
+  z-index: 5;
   display: flex;
   align-items: baseline;
   gap: 16px;
+  padding-top: 10px;
   padding-bottom: 12px;
+  background: var(--vl-paper);
   border-bottom: 1px solid var(--vl-ink);
+}
+@media (min-width: 768px) {
+  .vl-shelf__head {
+    top: 66px;
+  }
 }
 .vl-shelf__no {
   font-family: var(--font-mono), monospace;
@@ -1745,17 +1756,17 @@ a.vl-print-wrap:hover {
 }
 
 /* 系譜の分解図に置く小さな図版 */
+/* 前面の高さいっぱいに伸ばす｡幅は前面の最小の高さに合わせて正方形に見せる */
 .vl-ln-thumb {
   display: block;
   flex: none;
+  align-self: stretch;
   width: 72px;
-  height: 72px;
   background: var(--panel);
 }
 @media (min-width: 768px) {
   .vl-ln-thumb {
-    width: 104px;
-    height: 104px;
+    width: 168px;
   }
 }
 .vl-ln-thumb .vl-print__art {

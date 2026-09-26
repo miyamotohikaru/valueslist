@@ -38,8 +38,8 @@ export const shelves: ShelfMeta[] = [
     no: "5",
     name: "長距離再入荷ゾーン",
     en: "BACK IN STOCK",
-    lead: "古い在庫が､◇別の名前で棚に戻ってきたもの｡◇元の商品と再入荷品を､◆1枚の半券で結ぶ｡",
-    evidenceNote: "証拠＝元の商品の日付と､再入荷品の初出｡",
+    lead: "古い在庫が､◇別の名前で棚に戻ってきたもの｡◇元の在庫と再入荷品を､◆1枚の半券で結ぶ｡",
+    evidenceNote: "証拠＝元の在庫の日付と､再入荷品の初出｡",
     virtual: true,
   },
   {

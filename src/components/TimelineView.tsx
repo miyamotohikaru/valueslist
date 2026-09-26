@@ -11,13 +11,13 @@ import {
 } from "@/data/lineages";
 import { scaleYear, ERAS, ERA_MAX } from "@/lib/timescale";
 import { SHELF_ACCENT } from "./ValueCard";
-import EraBars, { countByEra } from "./EraBars";
-import Reveal from "./motion/Reveal";
-import MobileBreak from "@/components/MobileBreak";
+import { recipeOf } from "./PrintCard";
+import HalftoneArt from "./print/HalftoneArt";
+import { countByEra } from "./EraBars";
 
 /** 年の目盛（ヘッダーに数字で出す年） */
 const TICKS = [1200, 1600, 1868, 1945, 2000];
-/** 左カラム（型番・商品名）の幅｡PC のみ */
+/** 左カラム（棚・型番・図版・名前）の幅｡PC のみ */
 const LEFT = "372px";
 
 const pct = (year: number) => scaleYear(year) * 100;
@@ -96,8 +96,7 @@ function AxisHeader() {
     <div className="sticky top-[62px] z-20 border-b-2 border-vl-ink bg-vl-paper md:top-[66px]">
       <div className="grid md:grid-cols-[var(--tl-left)_1fr]">
         <div className="hidden items-end justify-between px-3 pb-[7px] text-[12px] font-bold text-vl-ink-soft md:flex">
-          <span>型番・棚・商品名</span>
-          <span>製造年</span>
+          <span>棚・型番・図版・名前</span>
         </div>
         <div className="relative h-[46px]">
           <div className="absolute inset-y-0 left-0 right-[var(--tl-gutter)]">
@@ -142,11 +141,12 @@ function AxisHeader() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 一行（＝一商品）                                                       */
+/* 一行（＝一点）                                                       */
 /* ------------------------------------------------------------------ */
 
 function Row({ v, loop }: { v: Value; loop: boolean }) {
   const acc = SHELF_ACCENT[String(v.shelf)];
+  const r = recipeOf(v.no);
   const shelf = shelfById(v.shelf);
   const { start, end, restock, approx, active } = spanOf(v);
   const endYear = v.restocked
@@ -171,14 +171,12 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
         title={tip}
         className="vl-tl-row group grid transition-colors duration-150 hover:bg-vl-card md:h-[46px] md:grid-cols-[var(--tl-left)_1fr] md:grid-rows-1"
       >
-        {/* 左: 型番・棚・商品名・製造年 */}
+        {/* 左: 棚・型番・図版・名前 */}
         <div
           className="relative z-[2] flex min-w-0 items-center gap-2 bg-vl-paper px-2 group-hover:bg-vl-card md:bg-transparent md:px-3"
           style={{ height: "var(--tl-name-h)" }}
         >
-          <span className="font-type w-[56px] shrink-0 text-[12px] font-bold">
-            NO.{v.no}
-          </span>
+          {/* 棚番号 → 型番 → 図版 → 名前 の順 */}
           <span
             className="font-display-en grid h-[18px] w-[18px] shrink-0 place-items-center border border-vl-ink text-[11px] leading-none"
             style={{ background: acc.bg, color: acc.fg }}
@@ -186,14 +184,17 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
           >
             {shelf.no}
           </span>
+          <span className="font-type w-[56px] shrink-0 text-[12px] font-bold">
+            NO.{v.no}
+          </span>
+          {/* 図版｡札と同じ版を小さく刷る */}
+          <span className="vl-tl-thumb" style={{ ["--panel" as string]: r.panel }} aria-hidden>
+            <HalftoneArt no={v.no} tech={r.tech} ink={r.ink} />
+          </span>
           <span className="min-w-0 truncate text-[14px] leading-none font-bold md:text-[15px]">
             {v.name}
           </span>
           {loop && <LoopTag />}
-          <span className="font-type ml-auto shrink-0 text-[12px] font-bold text-vl-ink-soft">
-            {approx ? "c." : ""}
-            {v.made!.year}
-          </span>
         </div>
 
         {/* 右: 時間軸上の帯 */}
@@ -211,12 +212,22 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 }}
               />
             )}
-            {/* 在庫の帯 */}
+            {/* はじまった年｡帯の左端の下に出す（上は廃番･再入荷の年が使う） */}
+            <span
+              className="font-type absolute bottom-0 text-[10px] leading-[1.2] font-bold whitespace-nowrap text-vl-ink-soft md:text-[11px]"
+              style={{ left: `${start}%` }}
+            >
+              {approx ? "c." : ""}
+              {v.made!.year}
+            </span>
+            {/* 在庫の帯｡現役の札は先に矢印が付くので､そのぶん短くする */}
             <span
               className="absolute top-1/2 h-[10px] min-w-[6px] -translate-y-1/2"
               style={{
                 left: `${start}%`,
-                width: `${Math.max(0, end - start)}%`,
+                width: active
+                  ? `max(6px, calc(${Math.max(0, end - start)}% - 13px))`
+                  : `${Math.max(0, end - start)}%`,
                 background: acc.bar,
                 boxShadow:
                   v.shelf === 3 ? "inset 0 0 0 1.5px var(--vl-ink)" : undefined,
@@ -258,10 +269,10 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
             )}
             {/* 右端: 廃番は赤い×､現役は矢印 */}
             {active ? (
-              // 先端を帯の少し先（+2px）へ出す
+              // 帯の先に矢印を置く｡帯とは 3px 空けて重ねない
               <span
                 className="absolute top-1/2 h-4 w-[10px] -translate-y-1/2"
-                style={{ left: `calc(${end}% - 8px)` }}
+                style={{ left: `calc(${end}% - 10px)` }}
               >
                 <ArrowMark
                   color={v.shelf === 3 ? "var(--vl-ink)" : acc.bar}
@@ -292,8 +303,8 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 </span>
               ) : (
                 <span
-                  className="absolute top-1/2 -translate-y-1/2 text-[11px] leading-none font-bold whitespace-nowrap text-vl-red-deep"
-                  style={{ left: `calc(${labelAt}% + 12px)` }}
+                  className="absolute top-[1px] text-[11px] leading-none font-bold whitespace-nowrap text-vl-red-deep"
+                  style={{ left: `calc(${labelAt}% + 4px)` }}
                 >
                   <span className="font-type">{endYear}</span>
                   {v.restocked?.as && (
@@ -363,30 +374,21 @@ function Legend() {
 
 type RingNode = { n: LineageNode; v: Value | undefined };
 
-function NodeName({ node }: { node: RingNode }) {
-  return node.v ? (
-    <Link
-      href={`/values/${node.v.no}`}
-      className="transition-colors hover:text-vl-red"
-    >
-      {node.n.label}
-    </Link>
-  ) : (
-    <>{node.n.label}</>
-  );
-}
-
-/** PC: 円周に4点を置き､時計回りの弧と矢印で結ぶ｡中央に年数 */
-function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
-  const W = 760;
-  const H = 520;
+/**
+ * 円周に点を置き､時計回りの弧と矢印で結ぶ｡中央に年数｡
+ * compact は携帯用｡枠を縦長にして､左右の点の説明も点の下へ回す｡
+ */
+function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: string; compact?: boolean }) {
+  const W = compact ? 520 : 880;
+  const H = compact ? 660 : 560;
   const cx = W / 2;
-  const cy = H / 2;
-  const R = 158;
+  const cy = compact ? 300 : H / 2;
+  const R = compact ? 130 : 170;
+  const TH = compact ? 52 : 58;
+  const FZ = compact ? { year: 16, name: 25, note: 14, num: 62, unit: 15, tail: 0 } : { year: 14, name: 24, note: 14, num: 88, unit: 20, tail: 14 };
   const n = nodes.length;
   const ang = (i: number) => -Math.PI / 2 + (i * 2 * Math.PI) / n;
-  const pt = (a: number, r = R) =>
-    [cx + Math.cos(a) * r, cy + Math.sin(a) * r] as const;
+  const pt = (a: number, r = R) => [cx + Math.cos(a) * r, cy + Math.sin(a) * r] as const;
   const gap = 0.2; // 点のまわりで弧を切るすきま（ラジアン）
   const arcs = nodes.map((_, i) => {
     const a0 = ang(i) + gap;
@@ -411,24 +413,33 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
     };
   });
   const num = span.match(/\d+/)?.[0] ?? "";
+
+  /** 説明の置き場｡図版に重ならないよう､点から離す */
+  const place = (i: number) => {
+    const a = ang(i);
+    const [x, y] = pt(a);
+    const vertical = Math.abs(Math.cos(a)) < 0.3;
+    const top = vertical && Math.sin(a) < 0;
+    const bottom = vertical && Math.sin(a) >= 0;
+    // 携帯は左右の点も下に回す（横に出すと枠から出る）
+    const beside = !compact && !vertical;
+    const anchor: "start" | "end" | "middle" = beside ? (Math.cos(a) > 0 ? "start" : "end") : "middle";
+    const half = TH / 2;
+    const lx = beside ? (Math.cos(a) > 0 ? x + half + 18 : x - half - 18) : x;
+    const ly = top
+      ? y - half - (compact ? 56 : 66)
+      : bottom
+        ? y + half + (compact ? 34 : 26)
+        : beside
+          ? y - 26
+          : y + half + (compact ? 36 : 28);
+    return { x, y, lx, ly, anchor };
+  };
+
   return (
-    <div className="mt-6 hidden md:block">
-      <svg
-        viewBox={`0 0 ${W} ${H}`}
-        className="mx-auto block h-auto w-full max-w-[820px]"
-        role="img"
-        aria-label="150年の円環"
-      >
-        <circle
-          cx={cx}
-          cy={cy}
-          r={R + 34}
-          fill="none"
-          stroke="var(--vl-red)"
-          strokeWidth="1.2"
-          strokeDasharray="2 5"
-          opacity="0.5"
-        />
+    <div className={`relative mx-auto mt-6 w-full ${compact ? "max-w-[460px] md:hidden" : "hidden max-w-[880px] md:block"}`}>
+      <svg viewBox={`0 0 ${W} ${H}`} className="mx-auto block h-auto w-full" role="img" aria-label={`${num}年の円環`}>
+        <circle cx={cx} cy={cy} r={R + 34} fill="none" stroke="var(--vl-red)" strokeWidth="1.2" strokeDasharray="2 5" opacity="0.5" />
         {arcs.map((a, i) => (
           <g key={i}>
             <path
@@ -442,95 +453,46 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
             <polygon points={a.head} fill="var(--vl-red)" />
           </g>
         ))}
-        <text
-          x={cx}
-          y={cy + 6}
-          textAnchor="middle"
-          fontSize="88"
-          fill="var(--vl-red)"
-          fontFamily="var(--font-anton), Impact, sans-serif"
-        >
+        <text x={cx} y={cy + 6} textAnchor="middle" fontSize={FZ.num} fill="var(--vl-red)" fontFamily="var(--font-sans), sans-serif">
           {num}
         </text>
         <text
           x={cx}
-          y={cy + 40}
+          y={cy + (compact ? 30 : 40)}
           textAnchor="middle"
-          fontSize="20"
+          fontSize={FZ.unit}
           letterSpacing="3"
           fill="var(--vl-ink)"
-          fontFamily="var(--font-anton), Impact, sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           YEARS
         </text>
-        <text
-          x={cx}
-          y={cy + 64}
-          textAnchor="middle"
-          fontSize="14"
-          fontWeight="700"
-          fill="var(--vl-ink)"
-          fontFamily="var(--font-zen-kaku), sans-serif"
-        >
-          最後の弧で､元の場所へ
-        </text>
+        {!compact && (
+          <text x={cx} y={cy + 64} textAnchor="middle" fontSize={FZ.tail} fontWeight="700" fill="var(--vl-ink)" fontFamily="var(--font-sans), sans-serif">
+            最後の弧で､元の場所へ
+          </text>
+        )}
         {nodes.map((node, i) => {
-          const a = ang(i);
-          const [x, y] = pt(a);
-          const side =
-            Math.abs(Math.cos(a)) < 0.3
-              ? Math.sin(a) < 0
-                ? "top"
-                : "bottom"
-              : Math.cos(a) > 0
-                ? "right"
-                : "left";
-          const anchor =
-            side === "left" ? "end" : side === "right" ? "start" : "middle";
-          const lx = side === "left" ? x - 26 : side === "right" ? x + 26 : x;
-          const ly =
-            side === "top" ? y - 88 : side === "bottom" ? y + 36 : y - 26;
+          const { x, y, lx, ly, anchor } = place(i);
           return (
             <g key={i}>
-              <circle
-                cx={x}
-                cy={y}
-                r="13"
-                fill="var(--vl-card)"
-                stroke="var(--vl-red)"
-                strokeWidth="6"
-              />
-              <text
-                x={lx}
-                y={ly}
-                textAnchor={anchor}
-                fontSize="14"
-                fontWeight="700"
-                fill="var(--vl-ink-soft)"
-                fontFamily="var(--font-courier), monospace"
-              >
+              {!node.v && <circle cx={x} cy={y} r="13" fill="var(--vl-card)" stroke="var(--vl-red)" strokeWidth="6" />}
+              <text x={lx} y={ly} textAnchor={anchor} fontSize={FZ.year} fontWeight="700" fill="var(--vl-ink-soft)" fontFamily="var(--font-mono), monospace">
                 {node.n.yearLabel ?? node.n.year}
               </text>
               <a href={node.v ? `/values/${node.v.no}` : undefined}>
-                <text
-                  x={lx}
-                  y={ly + 28}
-                  textAnchor={anchor}
-                  fontSize="24"
-                  fill="var(--vl-ink)"
-                  fontFamily="var(--font-ja-display), sans-serif"
-                >
+                <text x={lx} y={ly + FZ.name + 4} textAnchor={anchor} fontSize={FZ.name} fill="var(--vl-ink)" fontFamily="var(--font-sans), sans-serif">
                   {node.n.label}
                 </text>
               </a>
-              {node.n.note && (
+              {node.n.note && !compact && (
                 <text
                   x={lx}
-                  y={ly + 52}
+                  y={ly + FZ.name + FZ.note + 12}
                   textAnchor={anchor}
-                  fontSize="14"
+                  fontSize={FZ.note}
                   fill="var(--vl-ink)"
-                  fontFamily="var(--font-zen-kaku), sans-serif"
+                  fontFamily="var(--font-sans), sans-serif"
                 >
                   {node.n.note}
                 </text>
@@ -539,52 +501,28 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
           );
         })}
       </svg>
-    </div>
-  );
-}
-
-/** 携帯: 縦に並べ､左に細い環（下る線と､戻る線） */
-const SP_LI = 78;
-function RingV({ nodes }: { nodes: RingNode[] }) {
-  return (
-    <div className="relative mt-8 md:hidden">
-      {/* 環（右辺が進む線､左辺が戻る線） */}
-      <div
-        className="absolute left-0 w-[18px] rounded-[9px] border-2 border-vl-red"
-        style={{ top: SP_LI / 2, bottom: SP_LI / 2 }}
-      />
-      {/* 戻る向き（上） */}
-      <span className="absolute left-0 top-1/2 block h-0 w-0 -translate-x-1/2 -translate-y-1/2 border-x-[5px] border-b-[9px] border-x-transparent border-b-vl-red" />
-      <ol className="relative">
-        {nodes.map((node, i) => (
-          <li
-            key={i}
-            className="relative flex flex-col justify-center pl-[34px]"
-            style={{ height: SP_LI }}
+      {/* 環の上に置く図版 */}
+      {nodes.map((node, i) => {
+        if (!node.v) return null;
+        const [x, y] = pt(ang(i));
+        const r = recipeOf(node.v.no);
+        return (
+          <Link
+            key={`th-${i}`}
+            href={`/values/${node.v.no}`}
+            className="vl-ring-thumb"
+            style={{
+              left: `${(x / W) * 100}%`,
+              top: `${(y / H) * 100}%`,
+              width: `${(TH / W) * 100}%`,
+              ["--panel" as string]: r.panel,
+            }}
+            aria-label={`${node.n.label} のカードへ`}
           >
-            <span className="absolute left-[17px] top-1/2 block h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-vl-red bg-vl-card" />
-            {i > 0 && (
-              <span className="absolute left-[17px] top-0 block h-0 w-0 -translate-x-1/2 -translate-y-1/2 border-x-[5px] border-t-[9px] border-x-transparent border-t-vl-red" />
-            )}
-            <span className="font-type text-[12px] font-bold text-vl-ink-soft">
-              {node.n.yearLabel ?? node.n.year}
-            </span>
-            <span className="font-display-ja mt-0.5 text-[18px] leading-[1.3]">
-              <NodeName node={node} />
-              {node.v && (
-                <span className="font-type ml-2 text-[11px] font-bold text-vl-red-deep">
-                  NO.{node.v.no}
-                </span>
-              )}
-            </span>
-            {node.n.note && (
-              <span className="mt-0.5 text-[12px] leading-[1.5]">
-                {node.n.note}
-              </span>
-            )}
-          </li>
-        ))}
-      </ol>
+            <HalftoneArt no={node.v.no} tech={r.tech} ink={r.ink} />
+          </Link>
+        );
+      })}
     </div>
   );
 }
@@ -617,8 +555,8 @@ function LoopPanel({ lineage }: { lineage: Lineage }) {
           <p className="vl-justify mt-3 max-w-[44em] text-[14px] leading-[1.9] md:text-[15px]">
             {lineage.lead}
           </p>
-          <RingH nodes={nodes} span={lineage.span} />
-          <RingV nodes={nodes} />
+          <Ring nodes={nodes} span={lineage.span} />
+          <Ring nodes={nodes} span={lineage.span} compact />
           <p className="mt-6 text-[13px] font-bold">
             <Link href="/lineage" className="vl-link">
               系譜ページで､環の全部を読む →
@@ -683,7 +621,7 @@ function EraRuler() {
               fontSize="15"
               fontWeight="700"
               fill="var(--vl-ink)"
-              fontFamily="var(--font-zen-kaku), sans-serif"
+              fontFamily="var(--font-sans), sans-serif"
             >
               {e.ja}
             </text>
@@ -725,7 +663,7 @@ function EraRuler() {
               fontSize="13"
               fontWeight="700"
               fill="var(--vl-ink)"
-              fontFamily="var(--font-courier), monospace"
+              fontFamily="var(--font-mono), monospace"
             >
               {y}
             </text>
@@ -738,7 +676,7 @@ function EraRuler() {
           fontSize="11"
           letterSpacing="3"
           fill="var(--vl-ink-soft)"
-          fontFamily="var(--font-anton), Impact, sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           VALUES CATALOG · TIME SCALE
         </text>
@@ -756,7 +694,7 @@ function EraRuler() {
           fontSize="14"
           fontWeight="700"
           fill="var(--vl-red)"
-          fontFamily="var(--font-zen-kaku), sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           668年を､ここに縮めている
         </text>
@@ -773,7 +711,7 @@ function EraRuler() {
           fontSize="14"
           fontWeight="700"
           fill="var(--vl-ink)"
-          fontFamily="var(--font-zen-kaku), sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           明治からの162年を広く
         </text>
@@ -783,7 +721,7 @@ function EraRuler() {
           textAnchor="middle"
           fontSize="13"
           fill="var(--vl-ink)"
-          fontFamily="var(--font-zen-kaku), sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           目盛りの間隔は均等ではない｡この物差しで全在庫を並べる｡
         </text>
@@ -841,71 +779,62 @@ export default function TimelineView() {
     loop?.nodes.map((n) => n.ref).filter(Boolean) ?? [],
   );
   const eraCounts = countByEra(rows);
-  const topEra = ERAS[eraCounts.indexOf(Math.max(...eraCounts))] ?? ERAS[0];
 
   return (
     <>
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         {/* 見出し */}
-        <section className="grid gap-10 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:items-stretch md:py-16">
-          <div>
-            <h1 className="font-display-ja mt-4 text-[40px] leading-[1.05] md:text-[64px]">
-              年表
-            </h1>
-            <p className="font-display-en vl-misreg mt-2 text-[60px] leading-[0.86] tracking-[0.01em] text-vl-red md:text-[96px]">
-              INVENTORY
-              <br />
-              BY YEAR
-            </p>
-            <p className="mt-6 text-[15px] font-bold leading-[1.9] md:text-[19px]">
-              価値観を､製造年の順に並べる｡
-              <br />
-              古い在庫と新しい在庫を､同じ物差しに乗せる｡
-            </p>
-          </div>
-          <div className="flex flex-col justify-between gap-6">
-            <EraRuler />
-            {/* 台帳を読む前に､記号の意味を先に置く */}
-            <div className="vl-offset-sm border-2 border-vl-ink bg-vl-card px-4 py-3 md:px-5 md:py-4">
+        <section className="py-6 md:py-14">
+          <h1 className="font-display-ja text-[26px] leading-[1.1] md:text-[56px]">年表</h1>
+          <p className="font-display-en mt-1 text-[22px] leading-[1] tracking-[0.01em] text-vl-red md:text-[46px]">
+            INVENTORY BY YEAR
+          </p>
+          {/* 台帳を読む前に､物差しと記号の意味を置く */}
+          {/* 物差しと凡例｡左右の幅と高さを揃える */}
+          <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-2 md:items-stretch">
+            <div className="border-2 border-vl-ink bg-vl-card px-3 py-3 md:px-4">
+              <EraRuler />
+            </div>
+            <div className="flex items-center border-2 border-vl-ink bg-vl-card px-4 py-3 md:px-5 md:py-4">
               <Legend />
             </div>
           </div>
         </section>
       </div>
 
-      {/* 全幅の帯（この年表の結論） */}
-      <div className="vl-band">
-        <div className="mx-auto max-w-6xl px-4 py-10 text-center md:px-8 md:py-14">
-          <p className="font-display-ja text-[22px] leading-[1.5] md:text-[34px]">
-            いちばん古い在庫と､
-            <MobileBreak />
-            いちばん新しい在庫は､
-            <br />
-            しばしば同じ商品だ｡
-          </p>
-        </div>
-      </div>
-
       <div className="mx-auto max-w-6xl px-4 md:px-8">
-        {/* FIG.2 製造工場別 出荷数 */}
-        <section className="grid gap-8 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start md:gap-12 md:py-14">
-          <div>
-            <p className="font-display-ja text-[24px] leading-[1.3] md:text-[30px]">
-              工場は五つある｡
-            </p>
-            <p className="mt-4 text-[14px] leading-[1.9] md:text-[15px]">
-              製造年を､時代ごとの工場に振り分けて数えた｡
-              <br />
-              出荷がいちばん多いのは､{topEra.ja}の工場｡
-              <br />
-              ｢昔からある｣に見える在庫ほど､
-              <br />
-              新しい工場の出荷だったりする｡
-            </p>
-          </div>
-          <Reveal className="md:justify-self-end">
-            <EraBars items={rows} className="w-full max-w-[560px]" />
-          </Reveal>
+        {/* 時代ごとの点数｡表で出す */}
+        <section className="grid gap-6 py-8 md:grid-cols-2 md:py-12">
+          <table className="vl-tl-table">
+            <caption>時代ごとの点数</caption>
+            <thead>
+              <tr>
+                <th scope="col">時代</th>
+                <th scope="col">年</th>
+                <th scope="col" className="vl-tl-table__num">
+                  点数
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {ERAS.map((e, i) => (
+                <tr key={e.from}>
+                  <th scope="row">{e.ja}</th>
+                  <td className="font-type">
+                    {e.from}–{e.to}
+                  </td>
+                  <td className="vl-tl-table__num font-type">{eraCounts[i]}</td>
+                </tr>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">合計</th>
+                <td className="font-type">1200–{ERA_MAX}</td>
+                <td className="vl-tl-table__num font-type">{rows.length}</td>
+              </tr>
+            </tfoot>
+          </table>
         </section>
 
         <div className="vl-rule" />
@@ -914,10 +843,10 @@ export default function TimelineView() {
         <section className="py-12 md:py-16">
           <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="font-display-ja text-[24px] leading-tight md:text-[30px]">
+              <h2 className="font-display-ja text-[18px] leading-tight md:text-[30px]">
                 全在庫､製造年順
               </h2>
-              <p className="mt-2 text-[14px] leading-relaxed">
+              <p className="mt-2 text-[12px] leading-[1.7] md:text-[14px]">
                 帯が在庫の期間｡
                 <br />
                 左端が製造､右端が廃番｡

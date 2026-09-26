@@ -3,12 +3,14 @@ import Link from "next/link";
 import type { Lineage, LineageNode } from "@/data/lineages";
 import { resolveNode, lineageKindMeta } from "@/data/lineages";
 import { SHELF_ACCENT } from "./ValueCard";
+import { recipeOf } from "./PrintCard";
+import HalftoneArt from "./print/HalftoneArt";
 import BreakText from "./BreakText";
 import TypeLabel from "./TypeLabel";
 
 /**
  * 系譜の分解図｡ノードを上（古い）から下（新しい）へ等角の層として浮かせる｡
- * - カードのある層は､天面をその商品の棚の色で塗る（層を下るごとに色が変わる＝棚を移る）
+ * - カードのある層は､天面をその在庫の棚の色で塗る（層を下るごとに色が変わる＝棚を移る）
  * - 出来事の層は､破線の縁のクリーム
  * - 名前は斜めの天面には貼らず､前面に置く
  */
@@ -83,11 +85,12 @@ function YearPill({ text }: { text: string }) {
   const rest = m ? m[2] : text;
   return (
     <span
-      className="inline-flex items-center gap-1.5 bg-vl-red py-[6px] pr-5 pl-3 leading-none whitespace-nowrap text-vl-paper"
+      className="inline-flex max-w-full items-center gap-1.5 overflow-hidden bg-vl-red py-[5px] pr-3.5 pl-2 leading-none whitespace-nowrap text-vl-paper md:py-[6px] md:pr-5 md:pl-3"
       style={{ clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%)" }}
     >
-      {num && <span className="font-type text-[12px] font-bold">{num}</span>}
-      {rest && <span className="text-[12px] font-bold">{rest}</span>}
+      {num && <span className="font-type text-[11px] font-bold md:text-[12px]">{num}</span>}
+      {/* 添えの語は札からはみ出すので､狭い画面では出さない */}
+      {rest && <span className="hidden text-[12px] font-bold sm:inline">{rest}</span>}
     </span>
   );
 }
@@ -105,7 +108,7 @@ function RestockBadge() {
       <text y="-1" textAnchor="middle" fontSize="18" fontWeight="700" fill="var(--vl-paper)" fontFamily="sans-serif">
         ↻
       </text>
-      <text y="14" textAnchor="middle" fontSize="9" letterSpacing="0.6" fill="var(--vl-paper)" fontFamily="var(--font-anton), Impact, sans-serif">
+      <text y="14" textAnchor="middle" fontSize="9" letterSpacing="0.6" fill="var(--vl-paper)" fontFamily="var(--font-sans), sans-serif">
         RESTOCKED
       </text>
     </svg>
@@ -147,37 +150,47 @@ function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
           background: `repeating-linear-gradient(-45deg, ${acc ? "rgba(31,27,23,0.35)" : "rgba(200,67,59,0.3)"} 0 1.5px, transparent 1.5px 6px), ${acc ? topFill : "var(--vl-paper)"}`,
         }}
       />
-      {/* 前面: 名前・注記・札 */}
-      <div className={`relative border-2 border-t-0 px-4 pt-2.5 pb-3 ${border} ${edge} ${isEvent ? "bg-vl-paper" : "bg-vl-card"}`}>
-        <div className="flex items-start justify-between gap-3">
-          <p
-            className={
-              isLatin(label)
-                ? "font-display-en text-[22px] leading-tight tracking-[0.03em] uppercase"
-                : "font-display-ja text-[20px] leading-tight break-keep wrap-anywhere"
-            }
-          >
-            {label.split(/(?<=・)/).map((part, i) => (
-              <Fragment key={i}>
-                {i > 0 && <wbr />}
-                {part}
-              </Fragment>
-            ))}
-          </p>
-          {v ? (
-            <span className="font-type mt-1 shrink-0 border-b-2 border-vl-red pb-[1px] text-[12px] font-bold text-vl-red-deep">NO.{v.no} →</span>
-          ) : (
-            <span className="mt-1 shrink-0 text-[12px] font-bold text-vl-ink-soft">出来事</span>
-          )}
+      {/* 前面: 左に図版（枠いっぱい）､右に名前・札・注記 */}
+      <div
+        className={`relative flex min-h-[72px] border-2 border-t-0 md:min-h-[168px] ${border} ${edge} ${isEvent ? "bg-vl-paper" : "bg-vl-card"}`}
+      >
+        {v && (
+          /* 札と同じ版を刷る｡前面の高さいっぱいの正方形にして､縁に付ける */
+          <span className="vl-ln-thumb" style={{ ["--panel" as string]: recipeOf(v.no).panel }} aria-hidden>
+            <HalftoneArt no={v.no} tech={recipeOf(v.no).tech} ink={recipeOf(v.no).ink} />
+          </span>
+        )}
+        <div className="flex min-w-0 flex-1 flex-col justify-between gap-1.5 px-2.5 pt-1.5 pb-2 md:gap-3 md:px-5 md:pt-2.5 md:pb-3">
+          <div className="flex items-start justify-between gap-3">
+            <p
+              className={`min-w-0 flex-1 ${
+                isLatin(label)
+                  ? "font-display-en text-[13px] leading-tight tracking-[0.03em] uppercase md:text-[26px]"
+                  : "font-display-ja text-[13px] leading-tight break-keep wrap-anywhere md:text-[24px]"
+              }`}
+            >
+              {label.split(/(?<=・)/).map((part, i) => (
+                <Fragment key={i}>
+                  {i > 0 && <wbr />}
+                  {part}
+                </Fragment>
+              ))}
+            </p>
+            {v ? (
+              <span className="font-type mt-0.5 shrink-0 border-b-2 border-vl-red pb-[1px] text-[10px] font-bold text-vl-red-deep md:text-[12px]">NO.{v.no} →</span>
+            ) : (
+              <span className="mt-0.5 shrink-0 text-[10px] font-bold text-vl-ink-soft md:text-[12px]">出来事</span>
+            )}
+          </div>
+          {node.note && <p className="text-[10.5px] leading-[1.45] md:text-[14px] md:leading-[1.6]">{node.note}</p>}
         </div>
-        {node.note && <p className="mt-1 text-[13px] leading-[1.6]">{node.note}</p>}
       </div>
       {badge && <RestockBadge />}
     </div>
   );
 
   return (
-    <li className="grid gap-y-2 sm:grid-cols-[138px_minmax(0,1fr)] sm:items-center">
+    <li className="grid grid-cols-[74px_minmax(0,1fr)] items-center gap-x-1.5 sm:grid-cols-[138px_minmax(0,1fr)] sm:gap-x-2">
       <div className="relative flex items-center">
         <YearPill text={year} />
         <span aria-hidden className="ml-2 hidden h-0 flex-1 border-t-2 border-dashed border-vl-red sm:block" />
@@ -200,34 +213,35 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
   const kind = lineageKindMeta[lineage.kind];
 
   return (
-    <section id={lineage.id} className="grid scroll-mt-28 gap-8 py-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-x-14 lg:py-12">
+    <section id={lineage.id} className="grid scroll-mt-28 gap-2 py-7 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-x-12 lg:gap-y-8 lg:py-12">
       {/* 左: 見出し・リード・年数・要点の年 */}
       <div className="lg:sticky lg:top-24 lg:self-start">
         <p className="flex flex-wrap items-center gap-2">
-          <span className="border-2 border-vl-ink bg-vl-mustard px-2 py-0.5 text-[12px] font-bold">{kind.ja}</span>
+          <span className="border-2 border-vl-ink bg-vl-mustard px-2 py-0.5 text-[10px] font-bold md:text-[12px]">{kind.ja}</span>
         </p>
-        <h2 className="font-display-ja mt-3 text-[22px] leading-[1.45] md:text-[26px]">
+        <h2 className="font-display-ja mt-1.5 text-[16px] leading-[1.3] md:text-[26px]">
           <ChainTitle title={lineage.title} />
         </h2>
-        <p className="font-display-en mt-2 text-[16px] tracking-[0.12em] text-vl-red uppercase md:text-[18px]">{lineage.en}</p>
-        <p className="vl-justify mt-4 text-[14px] leading-[1.9] lg:hidden">{lineage.lead}</p>
+        <p className="font-display-en mt-1 text-[12px] tracking-[0.12em] text-vl-red uppercase md:text-[18px]">{lineage.en}</p>
+        <p className="vl-justify mt-1.5 text-[10px] leading-[1.45] lg:hidden">{lineage.lead}</p>
         <p className="mt-4 hidden text-[14px] leading-[1.9] lg:block">
           <BreakText text={clauseText(lineage.lead)} />
         </p>
 
-        <div className="mt-6 flex items-end gap-5 border-t-2 border-vl-ink pt-3">
-          <p className="flex items-baseline leading-none">
-            {span.pre && <span className="font-display-ja mr-1 text-[18px]">{span.pre}</span>}
+        {/* 何の年数かを先に言って､数字はそのあとに出す｡携帯では1行に収める */}
+        <div className="mt-2 flex flex-wrap items-baseline gap-x-3 border-t-2 border-vl-ink pt-1.5 md:mt-6 md:block md:pt-3">
+          <p className="text-[11px] font-bold md:text-[13px]">{lineage.spanLabel}</p>
+          <p className="flex items-baseline leading-none md:mt-1">
+            {span.pre && <span className="font-display-ja mr-1 text-[13px] md:text-[18px]">{span.pre}</span>}
             {span.num ? (
               <>
-                <span className="font-display-en text-[64px] leading-none text-vl-red md:text-[76px]">{span.num}</span>
-                <span className="font-display-ja ml-1 text-[20px]">{span.post}</span>
+                <span className="font-display-en text-[26px] leading-none text-vl-red md:text-[76px]">{span.num}</span>
+                <span className="font-display-ja ml-1 text-[13px] md:text-[20px]">{span.post}</span>
               </>
             ) : (
               <span className="font-display-ja text-[24px]">{span.post}</span>
             )}
           </p>
-          <p className="pb-2 text-[13px] font-bold">{lineage.spanLabel}</p>
         </div>
 
         <ol className="mt-5 hidden space-y-1.5 border-l-4 border-vl-red pl-4 lg:block">
@@ -244,8 +258,8 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
 
       {/* 右: 分解図 */}
       <div className="min-w-0">
-        <p className="mb-5 text-right text-[12px] font-bold text-vl-ink-soft">上が古く､下が新しい</p>
-        <ol className="space-y-5">
+        <p className="mb-1 text-right text-[11px] font-bold text-vl-ink-soft md:mb-5 md:text-[12px]">上が古く､下が新しい</p>
+        <ol className="space-y-1.5 md:space-y-5">
           {nodes.map((node, i) => (
             <Layer key={`${lineage.id}-${i}`} node={node} badge={lineage.kind === "restock" && i === nodes.length - 1} />
           ))}

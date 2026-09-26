@@ -31,8 +31,8 @@ const INK = "var(--vl-ink)";
 const LINE = "var(--vl-line)";
 const CARD = "var(--vl-card)";
 const PAPER = "var(--vl-paper)";
-const MONO = "var(--font-courier), monospace";
-const SANS = "var(--font-zen-kaku), sans-serif";
+const MONO = "var(--font-mono), monospace";
+const SANS = "var(--font-sans), sans-serif";
 
 function estWidth(text: string, fs: number) {
   let w = 0;

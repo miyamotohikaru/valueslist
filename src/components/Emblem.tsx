@@ -33,7 +33,7 @@ export default function Emblem({
         className="vl-emblem-ring"
         fill="var(--vl-paper)"
         fontSize="16.5"
-        fontFamily="var(--font-anton), var(--font-zen-kaku), Impact, sans-serif"
+        fontFamily="var(--font-sans), sans-serif"
         letterSpacing="1.2"
       >
         <textPath href={`#${pid}`} startOffset="0" textLength="452" lengthAdjust="spacingAndGlyphs">
@@ -41,10 +41,10 @@ export default function Emblem({
         </textPath>
       </text>
       <circle cx="100" cy="100" r="51" fill="var(--vl-paper)" stroke="var(--vl-ink)" strokeWidth="2.5" />
-      <text x="100" y="86" textAnchor="middle" fontSize="13" letterSpacing="2" fill="var(--vl-ink)" fontFamily="var(--font-anton), Impact, sans-serif">
+      <text x="100" y="86" textAnchor="middle" fontSize="13" letterSpacing="2" fill="var(--vl-ink)" fontFamily="var(--font-sans), sans-serif">
         SERIES No.
       </text>
-      <text x="100" y="131" textAnchor="middle" fontSize="48" fill="var(--vl-red)" fontFamily="var(--font-anton), Impact, sans-serif">
+      <text x="100" y="131" textAnchor="middle" fontSize="48" fill="var(--vl-red)" fontFamily="var(--font-sans), sans-serif">
         14
       </text>
       <polygon points={star(66, 112, 8)} fill="var(--vl-ink)" />

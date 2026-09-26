@@ -34,7 +34,7 @@ function Row({ kind, d, last }: { kind: Kind; d: DatePoint; last: boolean }) {
       <Marker kind={kind} />
       <div className="grid gap-x-5 gap-y-1 md:grid-cols-[128px_minmax(0,1fr)]">
         <div>
-          <p className="font-display-en text-[40px] leading-none md:text-[46px]">
+          <p className="font-display-en text-[26px] leading-none break-all md:text-[46px]">
             {d.approx && <span className="font-type mr-1 text-[0.4em] text-vl-ink-soft">c.</span>}
             {d.year}
           </p>
@@ -44,10 +44,10 @@ function Row({ kind, d, last }: { kind: Kind; d: DatePoint; last: boolean }) {
           </p>
         </div>
         <div className="min-w-0 md:pt-1">
-          <p className="text-[16px] leading-snug font-bold">{d.label}</p>
-          {d.fact && <p className="vl-justify mt-1.5 text-[14px] leading-[1.8]">{d.fact}</p>}
+          <p className="text-[12px] leading-snug font-bold md:text-[16px]">{d.label}</p>
+          {d.fact && <p className="vl-justify mt-1.5 text-[12px] leading-[1.8] md:text-[14px]">{d.fact}</p>}
           {d.source && (
-            <p className="mt-1.5 text-[12px] leading-relaxed text-vl-ink-soft">
+            <p className="mt-1.5 text-[10.5px] leading-relaxed text-vl-ink-soft md:text-[12px]">
               <span className="font-type mr-1 font-bold tracking-[0.08em]">SOURCE ·</span>
               <SourceText s={d.source} />
             </p>
@@ -69,7 +69,7 @@ export default function LawTimeline({ v }: { v: Value }) {
     <figure className="vl-offset relative border-2 border-vl-ink bg-vl-card">
       <div className="border-b-2 border-vl-ink px-4 py-3 md:px-5">
         <div className="flex items-start justify-between gap-3">
-          <p className="text-[15px] leading-snug font-bold md:text-[16px]">
+          <p className="text-[12px] leading-snug font-bold md:text-[16px]">
             {v.name}の日付は､
             <br />
             この文書で決まる｡

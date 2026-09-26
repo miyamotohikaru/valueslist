@@ -170,116 +170,133 @@ const phoneHeart: Draw = (g, s) => {
   g.restore();
 };
 
-/** 終活｡綴じた帳面と万年筆 */
+/** 終活｡斜め上から見た帳面と万年筆 */
 const notebook: Draw = (g, s) => {
   const u = s / 300;
   g.save();
   g.scale(u, u);
 
-  // 紙の束｡表紙より少しはみ出す
-  const block = g.createLinearGradient(0, 50, 0, 246);
-  block.addColorStop(0, "#fafafa");
-  block.addColorStop(0.6, "#e0e0e0");
-  block.addColorStop(1, "#a6a6a6");
-  g.fillStyle = block;
-  rrect(g, 62, 50, 188, 196, 5);
-  g.fill();
-
-  // 小口の頁筋
-  g.strokeStyle = "rgba(24,24,24,0.3)";
-  g.lineWidth = 1.6;
-  for (let i = 0; i < 9; i++) {
-    const y = 62 + i * 21;
-    g.beginPath();
-    g.moveTo(238, y);
-    g.lineTo(250, y + 2);
-    g.stroke();
-  }
-
-  // 栞の紐｡束の底から垂れる
-  const cord = g.createLinearGradient(196, 0, 224, 0);
-  cord.addColorStop(0, "#5c5c5c");
-  cord.addColorStop(0.5, "#0e0e0e");
-  cord.addColorStop(1, "#3e3e3e");
+  // 栞の紐｡帳面の下から出るので先に置く
+  const cord = g.createLinearGradient(134, 0, 180, 0);
+  cord.addColorStop(0, "#3c3c3c");
+  cord.addColorStop(0.5, "#161616");
+  cord.addColorStop(1, "#303030");
   g.fillStyle = cord;
   g.beginPath();
-  g.moveTo(198, 228);
-  g.quadraticCurveTo(194, 258, 204, 278);
-  g.lineTo(226, 270);
-  g.quadraticCurveTo(216, 252, 222, 228);
+  g.moveTo(136, 214);
+  g.quadraticCurveTo(132, 250, 146, 278);
+  g.lineTo(178, 268);
+  g.quadraticCurveTo(164, 244, 170, 214);
   g.closePath();
   g.fill();
-  // 紐の切り口
   g.fillStyle = "#fbfbfb";
   g.beginPath();
-  g.moveTo(204, 278);
-  g.lineTo(216, 266);
-  g.lineTo(226, 270);
-  g.lineTo(214, 284);
+  g.moveTo(146, 278);
+  g.lineTo(162, 264);
+  g.lineTo(178, 268);
+  g.lineTo(158, 286);
   g.closePath();
   g.fill();
 
-  // 表紙
-  const cover = g.createRadialGradient(92, 74, 16, 150, 150, 240);
-  cover.addColorStop(0, "#8a8a8a");
-  cover.addColorStop(0.38, "#2e2e2e");
-  cover.addColorStop(1, "#0b0b0b");
+  // 帳面｡斜めに寝かせて上から見る
+  g.save();
+  g.translate(150, 136);
+  g.rotate(-0.13);
+  const W = 98;
+  const V = 96;
+  const dx = 9;
+  const dy = 14;
+
+  // 紙束｡厚みは白く残して線だけで見せる
+  g.fillStyle = "#fcfcfc";
+  g.fillRect(-W + dx, -V + dy, W * 2, V * 2);
+  g.strokeStyle = "rgba(14,14,14,0.85)";
+  g.lineWidth = 3;
+  g.strokeRect(-W + dx, -V + dy, W * 2, V * 2);
+  g.strokeStyle = "rgba(26,26,26,0.32)";
+  g.lineWidth = 1.6;
+  for (let i = 1; i < 4; i++) {
+    const t = i / 4;
+    g.strokeRect(-W + dx * t, -V + dy * t, W * 2, V * 2);
+  }
+
+  // 表紙｡明るい灰の一枚板にして､潰れる面を作らない
+  const cover = g.createLinearGradient(-W, -V, W, V);
+  cover.addColorStop(0, "#f2f2f2");
+  cover.addColorStop(0.5, "#dcdcdc");
+  cover.addColorStop(1, "#bebebe");
   g.fillStyle = cover;
-  rrect(g, 50, 38, 190, 196, 9);
-  g.fill();
+  g.fillRect(-W, -V, W * 2, V * 2);
+  g.strokeStyle = "rgba(12,12,12,0.9)";
+  g.lineWidth = 3.8;
+  g.strokeRect(-W, -V, W * 2, V * 2);
 
-  // 背｡綴じ側を一段起こす
-  const spine = g.createLinearGradient(50, 0, 80, 0);
-  spine.addColorStop(0, "#1a1a1a");
-  spine.addColorStop(0.45, "#767676");
-  spine.addColorStop(1, "#141414");
-  g.fillStyle = spine;
-  g.fillRect(50, 38, 30, 196);
+  // 背の綴じ帯｡黒いのはここと栞だけ
+  const band = g.createLinearGradient(-W, 0, -W + 40, 0);
+  band.addColorStop(0, "#3a3a3a");
+  band.addColorStop(0.5, "#191919");
+  band.addColorStop(1, "#2c2c2c");
+  g.fillStyle = band;
+  g.fillRect(-W, -V, 40, V * 2);
 
-  // 押し罫
-  g.strokeStyle = "rgba(248,248,248,0.3)";
-  g.lineWidth = 2.2;
-  rrect(g, 92, 54, 132, 164, 5);
+  // 帯のとなりは白く空ける
+  g.strokeStyle = "#fbfbfb";
+  g.lineWidth = 6;
+  g.beginPath();
+  g.moveTo(-W + 45, -V + 4);
+  g.lineTo(-W + 45, V - 4);
   g.stroke();
 
-  // 万年筆｡表紙の上に一本置く
+  // 題箋｡白い札をひとつだけ置く
+  g.fillStyle = "#fcfcfc";
+  g.fillRect(-26, 20, 104, 52);
+  g.strokeStyle = "rgba(14,14,14,0.85)";
+  g.lineWidth = 3;
+  g.strokeRect(-26, 20, 104, 52);
+  g.fillStyle = "rgba(22,22,22,0.8)";
+  g.fillRect(-12, 41, 76, 8);
+  g.restore();
+
+  // 万年筆｡画面を斜めに横切る一本の塊｡まわりを白く空けて表紙から離す
   g.save();
-  g.translate(146, 146);
-  g.rotate(-0.38);
+  g.translate(150, 108);
+  g.rotate(-0.42);
+  g.fillStyle = "#ffffff";
+  rrect(g, -126, -17, 258, 34, 17);
+  g.fill();
 
   const barrel = g.createLinearGradient(0, -11, 0, 11);
-  barrel.addColorStop(0, "#7c7c7c");
-  barrel.addColorStop(0.42, "#101010");
-  barrel.addColorStop(0.82, "#4e4e4e");
-  barrel.addColorStop(1, "#0d0d0d");
+  barrel.addColorStop(0, "#5e5e5e");
+  barrel.addColorStop(0.34, "#141414");
+  barrel.addColorStop(0.8, "#3e3e3e");
+  barrel.addColorStop(1, "#111111");
   g.fillStyle = barrel;
-  rrect(g, -104, -11, 162, 22, 11);
+  rrect(g, -118, -11, 196, 22, 11);
   g.fill();
-
-  // 帽子の帯と留め
-  g.fillStyle = "#dcdcdc";
-  g.fillRect(16, -12, 15, 24);
-  g.fillStyle = "rgba(238,238,238,0.85)";
-  rrect(g, -94, -14, 36, 6, 3);
-  g.fill();
+  // 軸の照り
+  g.fillStyle = "rgba(242,242,242,0.85)";
+  g.fillRect(-108, -8, 176, 4);
+  // 帽子の帯
+  g.fillStyle = "#ededed";
+  g.fillRect(6, -12, 16, 24);
 
   // ペン先
-  const nib = g.createLinearGradient(58, 0, 106, 0);
-  nib.addColorStop(0, "#f4f4f4");
-  nib.addColorStop(0.55, "#a0a0a0");
-  nib.addColorStop(1, "#1d1d1d");
+  const nib = g.createLinearGradient(78, 0, 126, 0);
+  nib.addColorStop(0, "#f6f6f6");
+  nib.addColorStop(0.5, "#b0b0b0");
+  nib.addColorStop(1, "#242424");
   g.fillStyle = nib;
   g.beginPath();
-  g.moveTo(58, -10);
-  g.quadraticCurveTo(92, -7, 106, 0);
-  g.quadraticCurveTo(92, 7, 58, 10);
+  g.moveTo(78, -11);
+  g.quadraticCurveTo(110, -8, 126, 0);
+  g.quadraticCurveTo(110, 8, 78, 11);
   g.closePath();
   g.fill();
-  g.strokeStyle = "rgba(250,250,250,0.7)";
-  g.lineWidth = 2;
+  g.strokeStyle = "rgba(18,18,18,0.8)";
+  g.lineWidth = 2.4;
   g.beginPath();
-  g.moveTo(66, 0);
-  g.lineTo(102, 0);
+  g.moveTo(86, 0);
+  g.lineTo(120, 0);
   g.stroke();
   g.restore();
   g.restore();
@@ -354,89 +371,86 @@ const microphone: Draw = (g, s) => {
   g.save();
   g.scale(u, u);
 
-  // 支柱
-  const post = g.createLinearGradient(140, 0, 160, 0);
-  post.addColorStop(0, "#6e6e6e");
-  post.addColorStop(0.45, "#0f0f0f");
-  post.addColorStop(1, "#484848");
+  // 支柱｡台に差さるので先に置く｡長く太く取る
+  const post = g.createLinearGradient(138, 0, 162, 0);
+  post.addColorStop(0, "#a2a2a2");
+  post.addColorStop(0.4, "#1c1c1c");
+  post.addColorStop(1, "#4e4e4e");
   g.fillStyle = post;
-  g.fillRect(138, 206, 24, 50);
+  g.fillRect(140, 182, 20, 74);
 
-  // 台｡低い円錐として見せる
-  const base = g.createLinearGradient(66, 0, 234, 0);
+  // 台｡横に長い楕円ひとつ
+  const base = g.createLinearGradient(0, 248, 0, 280);
   base.addColorStop(0, "#e6e6e6");
-  base.addColorStop(0.3, "#9a9a9a");
-  base.addColorStop(0.68, "#2c2c2c");
-  base.addColorStop(1, "#0b0b0b");
+  base.addColorStop(0.42, "#909090");
+  base.addColorStop(1, "#242424");
   g.fillStyle = base;
   g.beginPath();
-  g.moveTo(120, 244);
-  g.lineTo(180, 244);
-  g.lineTo(228, 266);
-  g.lineTo(72, 266);
-  g.closePath();
+  g.ellipse(150, 264, 100, 16, 0, 0, Math.PI * 2);
   g.fill();
-  g.beginPath();
-  g.ellipse(150, 266, 78, 14, 0, 0, Math.PI * 2);
-  g.fill();
+  g.strokeStyle = "rgba(12,12,12,0.85)";
+  g.lineWidth = 3.4;
+  g.stroke();
 
-  // 胴｡上へ向けて絞る
-  const body = g.createLinearGradient(112, 0, 188, 0);
-  body.addColorStop(0, "#efefef");
-  body.addColorStop(0.26, "#9e9e9e");
-  body.addColorStop(0.58, "#242424");
-  body.addColorStop(1, "#0a0a0a");
+  // 胴｡絞りをはっきり出して球と台をつなぐ
+  const body = g.createLinearGradient(118, 0, 182, 0);
+  body.addColorStop(0, "#f2f2f2");
+  body.addColorStop(0.3, "#aaaaaa");
+  body.addColorStop(0.68, "#363636");
+  body.addColorStop(1, "#1c1c1c");
   g.fillStyle = body;
   g.beginPath();
-  g.moveTo(116, 152);
-  g.lineTo(184, 152);
-  g.quadraticCurveTo(178, 188, 174, 214);
-  g.lineTo(126, 214);
-  g.quadraticCurveTo(122, 188, 116, 152);
+  g.moveTo(122, 150);
+  g.lineTo(178, 150);
+  g.lineTo(164, 188);
+  g.lineTo(136, 188);
   g.closePath();
   g.fill();
+  g.strokeStyle = "rgba(12,12,12,0.85)";
+  g.lineWidth = 3.4;
+  g.stroke();
 
-  // 胴の締め輪
-  g.fillStyle = "rgba(246,246,246,0.62)";
-  g.fillRect(120, 166, 60, 7);
+  // 締め輪｡白く一本入れて胴を切る
+  g.fillStyle = "#fbfbfb";
+  g.fillRect(125, 160, 50, 8);
 
-  // 頭の球
-  const head = g.createRadialGradient(112, 66, 12, 158, 124, 140);
-  head.addColorStop(0, "#e8e8e8");
-  head.addColorStop(0.32, "#8e8e8e");
-  head.addColorStop(0.72, "#242424");
-  head.addColorStop(1, "#080808");
+  // 球｡明るい灰から濃い灰へ落とす塊｡点では埋めない
+  const head = g.createRadialGradient(120, 50, 8, 158, 90, 116);
+  head.addColorStop(0, "#fafafa");
+  head.addColorStop(0.34, "#d2d2d2");
+  head.addColorStop(0.7, "#8c8c8c");
+  head.addColorStop(1, "#4a4a4a");
   g.fillStyle = head;
   g.beginPath();
-  g.arc(150, 98, 76, 0, Math.PI * 2);
+  g.ellipse(150, 80, 58, 62, 0, 0, Math.PI * 2);
   g.fill();
+  g.strokeStyle = "rgba(10,10,10,0.9)";
+  g.lineWidth = 4.2;
+  g.stroke();
 
-  // 網目｡球の中だけに斜めの格子を通す
+  // 網目｡太い斜めを三本ずつだけ｡白を敷いて黒を重ねる
   g.save();
   g.beginPath();
-  g.arc(150, 98, 74, 0, Math.PI * 2);
+  g.ellipse(150, 80, 54, 58, 0, 0, Math.PI * 2);
   g.clip();
-  g.strokeStyle = "rgba(250,250,250,0.42)";
-  g.lineWidth = 3.4;
-  for (let i = -8; i <= 8; i++) {
-    const o = i * 19;
-    g.beginPath();
-    g.moveTo(150 + o - 116, 98 - 116);
-    g.lineTo(150 + o + 116, 98 + 116);
-    g.stroke();
-    g.beginPath();
-    g.moveTo(150 + o - 116, 98 + 116);
-    g.lineTo(150 + o + 116, 98 - 116);
-    g.stroke();
+  for (const [c, lw] of [
+    ["rgba(252,252,252,0.8)", 14],
+    ["rgba(16,16,16,0.5)", 6],
+  ] as const) {
+    g.strokeStyle = c;
+    g.lineWidth = lw;
+    for (const o of [-38, 0, 38]) {
+      g.beginPath();
+      g.moveTo(150 + o - 86, 80 - 86);
+      g.lineTo(150 + o + 86, 80 + 86);
+      g.stroke();
+      g.beginPath();
+      g.moveTo(150 + o - 86, 80 + 86);
+      g.lineTo(150 + o + 86, 80 - 86);
+      g.stroke();
+    }
   }
   g.restore();
-
-  // 球の縁を締める
-  g.strokeStyle = "rgba(12,12,12,0.7)";
-  g.lineWidth = 5;
-  g.beginPath();
-  g.arc(150, 98, 74, 0, Math.PI * 2);
-  g.stroke();
   g.restore();
 };
 

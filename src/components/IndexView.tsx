@@ -53,6 +53,12 @@ export default function IndexView({ values }: { values: Value[] }) {
     return list;
   }, [values, shelfF, catF, trendF, evF, sort]);
 
+  // 棚ごとに分けて並べる（並べ替えは棚の中でかかる）
+  const sections = shelves
+    .filter((s) => !s.virtual)
+    .map((s) => ({ shelf: s, items: filtered.filter((v) => v.shelf === s.id) }))
+    .filter((g) => g.items.length > 0);
+
   const active = shelfF.size + catF.size + trendF.size + evF.size;
   const reset = () => {
     setShelfF(new Set());
@@ -152,10 +158,17 @@ export default function IndexView({ values }: { values: Value[] }) {
         </div>
       )}
 
-      {/* 札｡全部をひと続きのグリッドで並べる */}
-      <div className="vl-shelf">
-        <ColumnGrid items={filtered} variant="print" />
-      </div>
+      {/* 札｡棚ごとに分けて並べる */}
+      {sections.map((g) => (
+        <section key={String(g.shelf.id)} id={`shelf-${g.shelf.no}`} className="vl-shelf">
+          <div className="vl-shelf__head">
+            <p className="vl-shelf__no">SHELF {g.shelf.no}</p>
+            <h3 className="vl-shelf__name">{g.shelf.name}</h3>
+            <p className="vl-shelf__n">{g.items.length}点</p>
+          </div>
+          <ColumnGrid items={g.items} variant="print" />
+        </section>
+      ))}
 
       {filtered.length === 0 && <p className="vl-empty">該当する在庫がありません｡</p>}
     </div>

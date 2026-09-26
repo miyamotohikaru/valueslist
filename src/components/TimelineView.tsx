@@ -17,7 +17,7 @@ import { countByEra } from "./EraBars";
 
 /** 年の目盛（ヘッダーに数字で出す年） */
 const TICKS = [1200, 1600, 1868, 1945, 2000];
-/** 左カラム（型番・名前）の幅｡PC のみ */
+/** 左カラム（棚・型番・図版・名前）の幅｡PC のみ */
 const LEFT = "372px";
 
 const pct = (year: number) => scaleYear(year) * 100;
@@ -96,7 +96,7 @@ function AxisHeader() {
     <div className="sticky top-[62px] z-20 border-b-2 border-vl-ink bg-vl-paper md:top-[66px]">
       <div className="grid md:grid-cols-[var(--tl-left)_1fr]">
         <div className="hidden items-end justify-between px-3 pb-[7px] text-[12px] font-bold text-vl-ink-soft md:flex">
-          <span>製造年・型番・棚・名前</span>
+          <span>棚・型番・図版・名前</span>
         </div>
         <div className="relative h-[46px]">
           <div className="absolute inset-y-0 left-0 right-[var(--tl-gutter)]">
@@ -171,29 +171,25 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
         title={tip}
         className="vl-tl-row group grid transition-colors duration-150 hover:bg-vl-card md:h-[46px] md:grid-cols-[var(--tl-left)_1fr] md:grid-rows-1"
       >
-        {/* 左: 製造年・型番・棚・名前 */}
+        {/* 左: 棚・型番・図版・名前 */}
         <div
           className="relative z-[2] flex min-w-0 items-center gap-2 bg-vl-paper px-2 group-hover:bg-vl-card md:bg-transparent md:px-3"
           style={{ height: "var(--tl-name-h)" }}
         >
-          {/* 製造年｡行の頭に置く（並び順がそのまま読める） */}
-          <span className="font-type w-[52px] shrink-0 text-right text-[12px] font-bold text-vl-ink-soft md:w-[56px]">
-            {approx ? "c." : ""}
-            {v.made!.year}
-          </span>
-          {/* 図版｡札と同じ版を小さく刷る */}
-          <span className="vl-tl-thumb" style={{ ["--panel" as string]: r.panel }} aria-hidden>
-            <HalftoneArt no={v.no} tech={r.tech} ink={r.ink} />
-          </span>
-          <span className="font-type hidden w-[56px] shrink-0 text-[12px] font-bold md:block">
-            NO.{v.no}
-          </span>
+          {/* 棚番号 → 型番 → 図版 → 名前 の順 */}
           <span
             className="font-display-en grid h-[18px] w-[18px] shrink-0 place-items-center border border-vl-ink text-[11px] leading-none"
             style={{ background: acc.bg, color: acc.fg }}
             aria-label={`棚 ${shelf.no}`}
           >
             {shelf.no}
+          </span>
+          <span className="font-type w-[56px] shrink-0 text-[12px] font-bold">
+            NO.{v.no}
+          </span>
+          {/* 図版｡札と同じ版を小さく刷る */}
+          <span className="vl-tl-thumb" style={{ ["--panel" as string]: r.panel }} aria-hidden>
+            <HalftoneArt no={v.no} tech={r.tech} ink={r.ink} />
           </span>
           <span className="min-w-0 truncate text-[14px] leading-none font-bold md:text-[15px]">
             {v.name}

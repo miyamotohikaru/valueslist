@@ -337,7 +337,7 @@ export default async function ValuePage({ params }: Params) {
       )}
 
       {/* 前後の標本 */}
-      <nav className="mt-14 grid gap-4 md:mt-20 md:grid-cols-2" aria-label="前後の標本">
+      <nav className="mt-14 grid gap-4 pb-16 md:mt-20 md:grid-cols-2 md:pb-24" aria-label="前後の標本">
         {prev ? <NavButton dir="prev" v={prev} /> : <span aria-hidden />}
         {next ? <NavButton dir="next" v={next} /> : <span aria-hidden />}
       </nav>

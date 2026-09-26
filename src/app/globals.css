@@ -1654,8 +1654,17 @@ a.vl-print-wrap:hover {
   color: rgba(28, 27, 25, 0.5);
   white-space: nowrap;
 }
-/* 欧文が長い札は端を落とす｡読みは必ず出す */
-.vl-print__latin > span:first-child {
+/* 長いときは端を落とす｡欧文から先に詰める */
+.vl-print__latin > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vl-print__latin > span:last-child {
+  flex: none;
+  max-width: 55%;
+}
+.vl-print__top > span {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1720,6 +1729,7 @@ a.vl-print-wrap:hover {
 .vl-detail-art .vl-print__art {
   aspect-ratio: 1 / 1;
   height: auto;
+  border-radius: 0;
 }
 
 /* 年表の行に置く小さな図版 */
@@ -1738,6 +1748,7 @@ a.vl-print-wrap:hover {
 }
 .vl-tl-thumb .vl-print__art {
   height: 100%;
+  border-radius: 0;
 }
 
 /* 年表の表（時代ごとの点数） */
@@ -1795,6 +1806,7 @@ a.vl-print-wrap:hover {
 }
 .vl-ln-thumb .vl-print__art {
   height: 100%;
+  border-radius: 0;
 }
 
 /* 環の図に重ねる図版 */
@@ -1809,6 +1821,7 @@ a.vl-print-wrap:hover {
 }
 .vl-ring-thumb .vl-print__art {
   height: 100%;
+  border-radius: 0;
 }
 /* 携帯の環 */
 .vl-ring-thumb--sp {
@@ -1824,4 +1837,5 @@ a.vl-print-wrap:hover {
 }
 .vl-ring-thumb--sp .vl-print__art {
   height: 100%;
+  border-radius: 0;
 }

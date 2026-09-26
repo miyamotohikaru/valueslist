@@ -220,12 +220,14 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
               {approx ? "c." : ""}
               {v.made!.year}
             </span>
-            {/* 在庫の帯 */}
+            {/* 在庫の帯｡現役の札は先に矢印が付くので､そのぶん短くする */}
             <span
               className="absolute top-1/2 h-[10px] min-w-[6px] -translate-y-1/2"
               style={{
                 left: `${start}%`,
-                width: `${Math.max(0, end - start)}%`,
+                width: active
+                  ? `max(6px, calc(${Math.max(0, end - start)}% - 13px))`
+                  : `${Math.max(0, end - start)}%`,
                 background: acc.bar,
                 boxShadow:
                   v.shelf === 3 ? "inset 0 0 0 1.5px var(--vl-ink)" : undefined,
@@ -267,10 +269,10 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
             )}
             {/* 右端: 廃番は赤い×､現役は矢印 */}
             {active ? (
-              // 先端を帯の少し先（+2px）へ出す
+              // 帯の先に矢印を置く｡帯とは 3px 空けて重ねない
               <span
                 className="absolute top-1/2 h-4 w-[10px] -translate-y-1/2"
-                style={{ left: `calc(${end}% - 8px)` }}
+                style={{ left: `calc(${end}% - 10px)` }}
               >
                 <ArrowMark
                   color={v.shelf === 3 ? "var(--vl-ink)" : acc.bar}
@@ -372,30 +374,21 @@ function Legend() {
 
 type RingNode = { n: LineageNode; v: Value | undefined };
 
-function NodeName({ node }: { node: RingNode }) {
-  return node.v ? (
-    <Link
-      href={`/values/${node.v.no}`}
-      className="transition-colors hover:text-vl-red"
-    >
-      {node.n.label}
-    </Link>
-  ) : (
-    <>{node.n.label}</>
-  );
-}
-
-/** PC: 円周に4点を置き､時計回りの弧と矢印で結ぶ｡中央に年数 */
-function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
-  const W = 760;
-  const H = 520;
+/**
+ * 円周に点を置き､時計回りの弧と矢印で結ぶ｡中央に年数｡
+ * compact は携帯用｡枠を縦長にして､左右の点の説明も点の下へ回す｡
+ */
+function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: string; compact?: boolean }) {
+  const W = compact ? 520 : 880;
+  const H = compact ? 660 : 560;
   const cx = W / 2;
-  const cy = H / 2;
-  const R = 158;
+  const cy = compact ? 300 : H / 2;
+  const R = compact ? 130 : 170;
+  const TH = compact ? 52 : 58;
+  const FZ = compact ? { year: 16, name: 25, note: 14, num: 62, unit: 15, tail: 0 } : { year: 14, name: 24, note: 14, num: 88, unit: 20, tail: 14 };
   const n = nodes.length;
   const ang = (i: number) => -Math.PI / 2 + (i * 2 * Math.PI) / n;
-  const pt = (a: number, r = R) =>
-    [cx + Math.cos(a) * r, cy + Math.sin(a) * r] as const;
+  const pt = (a: number, r = R) => [cx + Math.cos(a) * r, cy + Math.sin(a) * r] as const;
   const gap = 0.2; // 点のまわりで弧を切るすきま（ラジアン）
   const arcs = nodes.map((_, i) => {
     const a0 = ang(i) + gap;
@@ -420,27 +413,33 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
     };
   });
   const num = span.match(/\d+/)?.[0] ?? "";
-  // 図版は SVG の上に重ねる（canvas は SVG の中に置けない）｡
-  // 位置も大きさも viewBox に対する割合で出すので､幅が変わってもずれない
-  const TH = 58;
+
+  /** 説明の置き場｡図版に重ならないよう､点から離す */
+  const place = (i: number) => {
+    const a = ang(i);
+    const [x, y] = pt(a);
+    const vertical = Math.abs(Math.cos(a)) < 0.3;
+    const top = vertical && Math.sin(a) < 0;
+    const bottom = vertical && Math.sin(a) >= 0;
+    // 携帯は左右の点も下に回す（横に出すと枠から出る）
+    const beside = !compact && !vertical;
+    const anchor: "start" | "end" | "middle" = beside ? (Math.cos(a) > 0 ? "start" : "end") : "middle";
+    const half = TH / 2;
+    const lx = beside ? (Math.cos(a) > 0 ? x + half + 18 : x - half - 18) : x;
+    const ly = top
+      ? y - half - (compact ? 56 : 66)
+      : bottom
+        ? y + half + (compact ? 34 : 26)
+        : beside
+          ? y - 26
+          : y + half + (compact ? 36 : 28);
+    return { x, y, lx, ly, anchor };
+  };
+
   return (
-    <div className="relative mx-auto mt-6 hidden w-full max-w-[820px] md:block">
-      <svg
-        viewBox={`0 0 ${W} ${H}`}
-        className="mx-auto block h-auto w-full"
-        role="img"
-        aria-label="150年の円環"
-      >
-        <circle
-          cx={cx}
-          cy={cy}
-          r={R + 34}
-          fill="none"
-          stroke="var(--vl-red)"
-          strokeWidth="1.2"
-          strokeDasharray="2 5"
-          opacity="0.5"
-        />
+    <div className={`relative mx-auto mt-6 w-full ${compact ? "max-w-[460px] md:hidden" : "hidden max-w-[880px] md:block"}`}>
+      <svg viewBox={`0 0 ${W} ${H}`} className="mx-auto block h-auto w-full" role="img" aria-label={`${num}年の円環`}>
+        <circle cx={cx} cy={cy} r={R + 34} fill="none" stroke="var(--vl-red)" strokeWidth="1.2" strokeDasharray="2 5" opacity="0.5" />
         {arcs.map((a, i) => (
           <g key={i}>
             <path
@@ -454,95 +453,44 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
             <polygon points={a.head} fill="var(--vl-red)" />
           </g>
         ))}
-        <text
-          x={cx}
-          y={cy + 6}
-          textAnchor="middle"
-          fontSize="88"
-          fill="var(--vl-red)"
-          fontFamily="var(--font-sans), sans-serif"
-        >
+        <text x={cx} y={cy + 6} textAnchor="middle" fontSize={FZ.num} fill="var(--vl-red)" fontFamily="var(--font-sans), sans-serif">
           {num}
         </text>
         <text
           x={cx}
-          y={cy + 40}
+          y={cy + (compact ? 30 : 40)}
           textAnchor="middle"
-          fontSize="20"
+          fontSize={FZ.unit}
           letterSpacing="3"
           fill="var(--vl-ink)"
           fontFamily="var(--font-sans), sans-serif"
         >
           YEARS
         </text>
-        <text
-          x={cx}
-          y={cy + 64}
-          textAnchor="middle"
-          fontSize="14"
-          fontWeight="700"
-          fill="var(--vl-ink)"
-          fontFamily="var(--font-sans), sans-serif"
-        >
-          最後の弧で､元の場所へ
-        </text>
+        {!compact && (
+          <text x={cx} y={cy + 64} textAnchor="middle" fontSize={FZ.tail} fontWeight="700" fill="var(--vl-ink)" fontFamily="var(--font-sans), sans-serif">
+            最後の弧で､元の場所へ
+          </text>
+        )}
         {nodes.map((node, i) => {
-          const a = ang(i);
-          const [x, y] = pt(a);
-          const side =
-            Math.abs(Math.cos(a)) < 0.3
-              ? Math.sin(a) < 0
-                ? "top"
-                : "bottom"
-              : Math.cos(a) > 0
-                ? "right"
-                : "left";
-          const anchor =
-            side === "left" ? "end" : side === "right" ? "start" : "middle";
-          const lx = side === "left" ? x - 42 : side === "right" ? x + 42 : x;
-          const ly =
-            side === "top" ? y - 88 : side === "bottom" ? y + 36 : y - 26;
+          const { x, y, lx, ly, anchor } = place(i);
           return (
             <g key={i}>
-              {!node.v && (
-                <circle
-                  cx={x}
-                  cy={y}
-                  r="13"
-                  fill="var(--vl-card)"
-                  stroke="var(--vl-red)"
-                  strokeWidth="6"
-                />
-              )}
-              <text
-                x={lx}
-                y={ly}
-                textAnchor={anchor}
-                fontSize="14"
-                fontWeight="700"
-                fill="var(--vl-ink-soft)"
-                fontFamily="var(--font-mono), monospace"
-              >
+              {!node.v && <circle cx={x} cy={y} r="13" fill="var(--vl-card)" stroke="var(--vl-red)" strokeWidth="6" />}
+              <text x={lx} y={ly} textAnchor={anchor} fontSize={FZ.year} fontWeight="700" fill="var(--vl-ink-soft)" fontFamily="var(--font-mono), monospace">
                 {node.n.yearLabel ?? node.n.year}
               </text>
               <a href={node.v ? `/values/${node.v.no}` : undefined}>
-                <text
-                  x={lx}
-                  y={ly + 28}
-                  textAnchor={anchor}
-                  fontSize="24"
-                  fill="var(--vl-ink)"
-                  fontFamily="var(--font-sans), sans-serif"
-                >
+                <text x={lx} y={ly + FZ.name + 4} textAnchor={anchor} fontSize={FZ.name} fill="var(--vl-ink)" fontFamily="var(--font-sans), sans-serif">
                   {node.n.label}
                 </text>
               </a>
-              {node.n.note && (
+              {node.n.note && !compact && (
                 <text
                   x={lx}
-                  y={ly + 52}
+                  y={ly + FZ.name + FZ.note + 12}
                   textAnchor={anchor}
-                  fontSize="14"
+                  fontSize={FZ.note}
                   fill="var(--vl-ink)"
                   fontFamily="var(--font-sans), sans-serif"
                 >
@@ -579,62 +527,6 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
   );
 }
 
-/** 携帯: 縦に並べ､左に細い環（下る線と､戻る線） */
-const SP_LI = 78;
-function RingV({ nodes }: { nodes: RingNode[] }) {
-  return (
-    <div className="relative mt-8 md:hidden">
-      {/* 環（右辺が進む線､左辺が戻る線） */}
-      <div
-        className="absolute left-0 w-[18px] rounded-[9px] border-2 border-vl-red"
-        style={{ top: SP_LI / 2, bottom: SP_LI / 2 }}
-      />
-      {/* 戻る向き（上） */}
-      <span className="absolute left-0 top-1/2 block h-0 w-0 -translate-x-1/2 -translate-y-1/2 border-x-[5px] border-b-[9px] border-x-transparent border-b-vl-red" />
-      <ol className="relative">
-        {nodes.map((node, i) => (
-          <li
-            key={i}
-            className="relative flex flex-col justify-center pl-[68px]"
-            style={{ height: SP_LI }}
-          >
-            {node.v ? (
-              <span
-                className="vl-ring-thumb--sp"
-                style={{ ["--panel" as string]: recipeOf(node.v.no).panel }}
-                aria-hidden
-              >
-                <HalftoneArt no={node.v.no} tech={recipeOf(node.v.no).tech} ink={recipeOf(node.v.no).ink} />
-              </span>
-            ) : (
-              <span className="absolute left-[17px] top-1/2 block h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-vl-red bg-vl-card" />
-            )}
-            {i > 0 && (
-              <span className="absolute left-[17px] top-0 block h-0 w-0 -translate-x-1/2 -translate-y-1/2 border-x-[5px] border-t-[9px] border-x-transparent border-t-vl-red" />
-            )}
-            <span className="font-type text-[12px] font-bold text-vl-ink-soft">
-              {node.n.yearLabel ?? node.n.year}
-            </span>
-            <span className="font-display-ja mt-0.5 text-[18px] leading-[1.3]">
-              <NodeName node={node} />
-              {node.v && (
-                <span className="font-type ml-2 text-[11px] font-bold text-vl-red-deep">
-                  NO.{node.v.no}
-                </span>
-              )}
-            </span>
-            {node.n.note && (
-              <span className="mt-0.5 text-[12px] leading-[1.5]">
-                {node.n.note}
-              </span>
-            )}
-          </li>
-        ))}
-      </ol>
-    </div>
-  );
-}
-
 function LoopPanel({ lineage }: { lineage: Lineage }) {
   const nodes: RingNode[] = lineage.nodes.map((n) => ({
     n,
@@ -663,8 +555,8 @@ function LoopPanel({ lineage }: { lineage: Lineage }) {
           <p className="vl-justify mt-3 max-w-[44em] text-[14px] leading-[1.9] md:text-[15px]">
             {lineage.lead}
           </p>
-          <RingH nodes={nodes} span={lineage.span} />
-          <RingV nodes={nodes} />
+          <Ring nodes={nodes} span={lineage.span} />
+          <Ring nodes={nodes} span={lineage.span} compact />
           <p className="mt-6 text-[13px] font-bold">
             <Link href="/lineage" className="vl-link">
               系譜ページで､環の全部を読む →

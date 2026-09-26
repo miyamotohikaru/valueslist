@@ -20,13 +20,9 @@ const MIN_EASE = 0.05;
 const MAX_LAG = 72; // 一気に飛ばしても､この幅までしかずらさない（弓なりの形は保つ）
 
 function colsFor(w: number, variant: "plate" | "print") {
-  // 刷り札は 63×88mm で高さが決まっているので､図版が潰れない幅を保つ
-  if (variant === "print") {
-    if (w >= 1280) return 4;
-    if (w >= 980) return 3;
-    if (w >= 640) return 2;
-    return 1;
-  }
+  // 刷り札はどの画面でも4列｡字も余白も札の幅に比例するので､
+  // 小さくなっても見え方は同じ（そのまま縮んだ札になる）
+  if (variant === "print") return 4;
   if (w >= 1200) return 5;
   if (w >= 1000) return 4;
   if (w >= 700) return 3;
@@ -122,20 +118,23 @@ export default function ColumnGrid({
   }, [cols, items]);
 
   return (
-    <div ref={wrapRef} className="vl-cols" style={{ ["--cols" as string]: cols }}>
-      {columns.map((col, i) => (
-        <div
-          key={i}
-          className="vl-cols__col"
-          ref={(el) => {
-            colRefs.current[i] = el;
-          }}
-        >
-          {col.map((v, k) =>
-            variant === "print" ? <PrintCard key={v.no} v={v} /> : <ValueCard key={v.no} v={v} index={k} />,
-          )}
-        </div>
-      ))}
+    // 外側で幅を測る｡札と札の間も幅に比例させるため（小さくなっても同じ間合い）
+    <div className="vl-cols-box">
+      <div ref={wrapRef} className={`vl-cols vl-cols--${variant}`} style={{ ["--cols" as string]: cols }}>
+        {columns.map((col, i) => (
+          <div
+            key={i}
+            className="vl-cols__col"
+            ref={(el) => {
+              colRefs.current[i] = el;
+            }}
+          >
+            {col.map((v, k) =>
+              variant === "print" ? <PrintCard key={v.no} v={v} /> : <ValueCard key={v.no} v={v} index={k} />,
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -8,181 +8,145 @@
 
 import type { Draw } from "./draw";
 
-/** 生まれで決まる｡立烏帽子 */
-const eboshi: Draw = (g, s) => {
+/** 生まれで決まる｡家紋の入った箱提灯 */
+const chochin: Draw = (g, s) => {
   const u = s / 300;
   g.save();
   g.scale(u, u);
 
-  // 本体｡前は低く､背は高く立つ
-  const felt = g.createLinearGradient(84, 48, 230, 252);
-  felt.addColorStop(0, "#f1f1f1");
-  felt.addColorStop(0.2, "#a2a2a2");
-  felt.addColorStop(0.5, "#333333");
-  felt.addColorStop(1, "#0d0d0d");
-  const cap = new Path2D();
-  cap.moveTo(84, 244);
-  cap.bezierCurveTo(80, 170, 90, 108, 114, 74);
-  cap.quadraticCurveTo(142, 38, 186, 28);
-  cap.quadraticCurveTo(222, 20, 228, 52);
-  cap.bezierCurveTo(236, 104, 228, 172, 226, 242);
-  cap.quadraticCurveTo(154, 266, 84, 244);
-  cap.closePath();
-  g.fillStyle = felt;
-  g.fill(cap);
+  // 胴｡樽形の大きな黒｡縁まで濃く落として紙から切り離す
+  const shell = new Path2D();
+  shell.moveTo(110, 52);
+  shell.bezierCurveTo(54, 100, 54, 208, 110, 254);
+  shell.lineTo(190, 254);
+  shell.bezierCurveTo(246, 208, 246, 100, 190, 52);
+  shell.closePath();
+  const paper = g.createLinearGradient(54, 0, 246, 0);
+  paper.addColorStop(0, "#090909");
+  paper.addColorStop(0.24, "#3e3e3e");
+  paper.addColorStop(0.44, "#767676");
+  paper.addColorStop(0.62, "#3a3a3a");
+  paper.addColorStop(0.85, "#141414");
+  paper.addColorStop(1, "#080808");
+  g.fillStyle = paper;
+  g.fill(shell);
 
+  // 骨の段｡白く太く抜いて､黒の塊に輪をきざむ
   g.save();
-  g.clip(cap);
-
-  // 峰の折り目｡烏帽子の背を縦に割る一本
-  g.strokeStyle = "rgba(255,255,255,0.52)";
-  g.lineWidth = 7;
-  g.beginPath();
-  g.moveTo(196, 38);
-  g.bezierCurveTo(158, 106, 152, 180, 158, 252);
-  g.stroke();
-
-  // 皺｡紗を張った面が横に寄る
-  g.strokeStyle = "rgba(255,255,255,0.2)";
-  g.lineWidth = 3.6;
-  for (let i = 0; i < 5; i++) {
-    const y = 86 + i * 34;
+  g.clip(shell);
+  g.strokeStyle = "#fcfcfc";
+  g.lineWidth = 10;
+  for (let i = 0; i < 7; i++) {
+    const y = 68 + i * 30;
     g.beginPath();
-    g.moveTo(80, y + 8);
-    g.quadraticCurveTo(152, y - 12, 228, y + 4);
+    g.moveTo(44, y);
+    g.quadraticCurveTo(150, y + 11, 256, y);
     g.stroke();
   }
-
-  // 前の稜を白く残す
-  g.strokeStyle = "rgba(255,255,255,0.4)";
-  g.lineWidth = 9;
-  g.beginPath();
-  g.moveTo(102, 240);
-  g.bezierCurveTo(94, 166, 104, 108, 128, 76);
-  g.stroke();
   g.restore();
 
-  // 裾の縁｡ここで頭に載る
-  const brim = g.createLinearGradient(0, 232, 0, 268);
-  brim.addColorStop(0, "#5c5c5c");
-  brim.addColorStop(0.5, "#111111");
-  brim.addColorStop(1, "#3a3a3a");
-  g.fillStyle = brim;
+  // 紋｡白く抜いた丸に一つ引き｡ここが的になる
+  g.fillStyle = "#fcfcfc";
   g.beginPath();
-  g.ellipse(153, 248, 72, 19, 0.02, 0, Math.PI * 2);
+  g.arc(150, 152, 48, 0, Math.PI * 2);
   g.fill();
+  const mark = g.createLinearGradient(0, 138, 0, 168);
+  mark.addColorStop(0, "#4a4a4a");
+  mark.addColorStop(0.5, "#0b0b0b");
+  mark.addColorStop(1, "#2e2e2e");
+  g.fillStyle = mark;
+  g.fillRect(108, 139, 84, 26);
 
-  // 掛け緒｡両の端から垂れる
-  g.strokeStyle = "rgba(20,20,20,0.75)";
-  g.lineWidth = 4;
-  g.lineCap = "round";
-  for (const [x, d] of [
-    [88, -14],
-    [220, 14],
+  // 上下の輪｡提灯を締める黒い帯
+  for (const [y, h, half] of [
+    [28, 26, 46],
+    [252, 28, 52],
   ] as const) {
-    g.beginPath();
-    g.moveTo(x, 252);
-    g.quadraticCurveTo(x + d, 272, x + d * 0.4, 290);
-    g.stroke();
+    const hoop = g.createLinearGradient(150 - half, 0, 150 + half, 0);
+    hoop.addColorStop(0, "#080808");
+    hoop.addColorStop(0.4, "#5a5a5a");
+    hoop.addColorStop(0.7, "#1e1e1e");
+    hoop.addColorStop(1, "#070707");
+    g.fillStyle = hoop;
+    g.fillRect(150 - half, y, half * 2, h);
   }
+
+  // 吊り手
+  g.strokeStyle = "#101010";
+  g.lineWidth = 11;
+  g.beginPath();
+  g.arc(150, 28, 22, Math.PI, Math.PI * 2);
+  g.stroke();
   g.restore();
 };
 
-/** 無常観｡散る桜の枝 */
-const sakura: Draw = (g, s) => {
+/** 無常観｡蝋燭の炎 */
+const candle: Draw = (g, s) => {
   const u = s / 300;
   g.save();
   g.scale(u, u);
 
-  // 枝｡左下から右上へ太く走らせる
-  const bark = g.createLinearGradient(0, 300, 300, 40);
-  bark.addColorStop(0, "#101010");
-  bark.addColorStop(0.4, "#616161");
-  bark.addColorStop(0.7, "#232323");
-  bark.addColorStop(1, "#0f0f0f");
-  g.fillStyle = bark;
+  // 炎｡外を黒く包んで芯を白く抜く
+  const fire = new Path2D();
+  fire.moveTo(150, 12);
+  fire.bezierCurveTo(192, 58, 204, 96, 194, 122);
+  fire.bezierCurveTo(184, 146, 168, 156, 150, 156);
+  fire.bezierCurveTo(132, 156, 116, 146, 106, 122);
+  fire.bezierCurveTo(96, 96, 108, 58, 150, 12);
+  fire.closePath();
+  const glow = g.createRadialGradient(150, 130, 5, 150, 106, 110);
+  glow.addColorStop(0, "#ffffff");
+  glow.addColorStop(0.2, "#f2f2f2");
+  glow.addColorStop(0.42, "#8e8e8e");
+  glow.addColorStop(0.66, "#242424");
+  glow.addColorStop(1, "#070707");
+  g.fillStyle = glow;
+  g.fill(fire);
+
+  // 芯
+  g.fillStyle = "#0a0a0a";
+  g.fillRect(144, 146, 12, 28);
+
+  // 蝋｡細長い一本｡両の縁を濃く落として中を明るく残す
+  const wax = new Path2D();
+  wax.moveTo(104, 294);
+  wax.lineTo(110, 180);
+  wax.quadraticCurveTo(150, 168, 190, 180);
+  wax.lineTo(196, 294);
+  wax.closePath();
+  const body = g.createLinearGradient(104, 0, 196, 0);
+  body.addColorStop(0, "#0b0b0b");
+  body.addColorStop(0.24, "#4e4e4e");
+  body.addColorStop(0.44, "#8a8a8a");
+  body.addColorStop(0.66, "#333333");
+  body.addColorStop(1, "#090909");
+  g.fillStyle = body;
+  g.fill(wax);
+
+  // 溶けた口｡白く抜いて炎と胴を切る
+  g.fillStyle = "#f8f8f8";
   g.beginPath();
-  g.moveTo(10, 258);
-  g.bezierCurveTo(92, 234, 168, 186, 286, 66);
-  g.lineTo(294, 86);
-  g.bezierCurveTo(176, 208, 100, 256, 20, 282);
-  g.closePath();
+  g.ellipse(150, 178, 41, 11, 0, 0, Math.PI * 2);
+  g.fill();
+  g.fillStyle = "#1f1f1f";
+  g.beginPath();
+  g.ellipse(150, 180, 24, 6, 0, 0, Math.PI * 2);
   g.fill();
 
-  // 小枝｡二本だけ跳ねさせる
-  g.strokeStyle = bark;
-  g.lineCap = "round";
-  g.lineWidth = 11;
+  // 垂れた蝋｡左右にひとつずつ
+  g.fillStyle = "#0e0e0e";
   g.beginPath();
-  g.moveTo(96, 242);
-  g.quadraticCurveTo(102, 196, 66, 168);
-  g.stroke();
-  g.lineWidth = 8;
+  g.moveTo(110, 190);
+  g.quadraticCurveTo(92, 226, 102, 250);
+  g.quadraticCurveTo(116, 230, 112, 190);
+  g.closePath();
+  g.fill();
   g.beginPath();
-  g.moveTo(206, 128);
-  g.quadraticCurveTo(216, 88, 194, 58);
-  g.stroke();
-
-  /** 花｡五弁｡中を白く残して縁を沈める */
-  const bloom = (cx: number, cy: number, r: number, rot: number) => {
-    g.save();
-    g.translate(cx, cy);
-    g.rotate(rot);
-    for (let i = 0; i < 5; i++) {
-      const a = (Math.PI * 2 * i) / 5;
-      const px = Math.cos(a) * r * 0.62;
-      const py = Math.sin(a) * r * 0.62;
-      const pet = g.createRadialGradient(px * 0.5, py * 0.5, r * 0.1, px, py, r * 0.72);
-      pet.addColorStop(0, "#fcfcfc");
-      pet.addColorStop(0.55, "#e2e2e2");
-      pet.addColorStop(1, "#6e6e6e");
-      g.fillStyle = pet;
-      g.beginPath();
-      g.ellipse(px, py, r * 0.56, r * 0.44, a, 0, Math.PI * 2);
-      g.fill();
-    }
-    // 花芯
-    const eye = g.createRadialGradient(0, 0, 1, 0, 0, r * 0.3);
-    eye.addColorStop(0, "#5a5a5a");
-    eye.addColorStop(1, "#111111");
-    g.fillStyle = eye;
-    g.beginPath();
-    g.arc(0, 0, r * 0.19, 0, Math.PI * 2);
-    g.fill();
-    g.strokeStyle = "rgba(14,14,14,0.8)";
-    g.lineWidth = r * 0.06;
-    for (let i = 0; i < 6; i++) {
-      const a = (Math.PI * 2 * i) / 6 + 0.3;
-      g.beginPath();
-      g.moveTo(0, 0);
-      g.lineTo(Math.cos(a) * r * 0.42, Math.sin(a) * r * 0.42);
-      g.stroke();
-    }
-    g.restore();
-  };
-
-  bloom(70, 158, 46, 0.3);
-  bloom(148, 176, 52, -0.5);
-  bloom(226, 104, 44, 0.8);
-  bloom(192, 50, 36, 0.1);
-  bloom(36, 226, 30, -0.9);
-
-  /** 落ちる弁｡ひとひらずつ */
-  const petal = (cx: number, cy: number, r: number, rot: number) => {
-    const pt = g.createLinearGradient(cx - r, cy - r, cx + r, cy + r);
-    pt.addColorStop(0, "#fbfbfb");
-    pt.addColorStop(0.6, "#cfcfcf");
-    pt.addColorStop(1, "#4e4e4e");
-    g.fillStyle = pt;
-    g.beginPath();
-    g.ellipse(cx, cy, r, r * 0.66, rot, 0, Math.PI * 2);
-    g.fill();
-  };
-
-  petal(252, 196, 19, 0.7);
-  petal(206, 250, 16, -0.4);
-  petal(124, 276, 14, 1.1);
-  petal(278, 258, 12, 0.2);
+  g.moveTo(190, 200);
+  g.quadraticCurveTo(210, 232, 200, 258);
+  g.quadraticCurveTo(188, 236, 188, 200);
+  g.closePath();
+  g.fill();
   g.restore();
 };
 
@@ -451,131 +415,65 @@ const kintsugi: Draw = (g, s) => {
   g.restore();
 };
 
-/** 恋愛｡結び文 */
+/** 恋愛｡結び文｡細く折った紙を中ほどで固く結ぶ */
 const letter: Draw = (g, s) => {
   const u = s / 300;
   g.save();
   g.scale(u, u);
 
-  // 身｡縦に細く折った紙
-  const paper = g.createLinearGradient(108, 0, 194, 0);
-  paper.addColorStop(0, "#5c5c5c");
-  paper.addColorStop(0.14, "#fbfbfb");
-  paper.addColorStop(0.44, "#e4e4e4");
-  paper.addColorStop(0.72, "#9a9a9a");
-  paper.addColorStop(0.88, "#4a4a4a");
-  paper.addColorStop(1, "#171717");
+  // 身｡結び目に向かって細り､上下で開く
+  const strip = new Path2D();
+  strip.moveTo(116, 12);
+  strip.bezierCurveTo(116, 62, 124, 96, 128, 120);
+  strip.lineTo(128, 180);
+  strip.bezierCurveTo(124, 216, 112, 250, 108, 290);
+  strip.lineTo(192, 290);
+  strip.bezierCurveTo(188, 250, 176, 216, 172, 180);
+  strip.lineTo(172, 120);
+  strip.bezierCurveTo(176, 96, 184, 62, 184, 12);
+  strip.closePath();
+  const paper = g.createLinearGradient(108, 0, 192, 0);
+  paper.addColorStop(0, "#0b0b0b");
+  paper.addColorStop(0.26, "#4c4c4c");
+  paper.addColorStop(0.46, "#8c8c8c");
+  paper.addColorStop(0.68, "#333333");
+  paper.addColorStop(1, "#090909");
   g.fillStyle = paper;
-  g.beginPath();
-  g.moveTo(116, 22);
-  g.bezierCurveTo(108, 100, 114, 200, 122, 276);
-  g.lineTo(182, 272);
-  g.bezierCurveTo(188, 198, 184, 98, 178, 26);
-  g.closePath();
-  g.fill();
+  g.fill(strip);
 
-  // 折り目｡明るい稜と沈んだ谷
-  g.strokeStyle = "rgba(255,255,255,0.7)";
-  g.lineWidth = 4;
+  // 結び目｡左右に耳を張った大きな塊｡まわりを白く空けて切り離す
+  const knot = new Path2D();
+  knot.moveTo(118, 104);
+  knot.quadraticCurveTo(150, 94, 182, 104);
+  knot.quadraticCurveTo(214, 88, 244, 116);
+  knot.quadraticCurveTo(254, 150, 236, 178);
+  knot.quadraticCurveTo(208, 198, 182, 188);
+  knot.quadraticCurveTo(150, 204, 118, 188);
+  knot.quadraticCurveTo(92, 200, 64, 180);
+  knot.quadraticCurveTo(46, 150, 56, 118);
+  knot.quadraticCurveTo(86, 90, 118, 104);
+  knot.closePath();
+  g.strokeStyle = "#fcfcfc";
+  g.lineWidth = 12;
+  g.stroke(knot);
+  const tie = g.createRadialGradient(124, 128, 8, 150, 150, 122);
+  tie.addColorStop(0, "#9a9a9a");
+  tie.addColorStop(0.3, "#4a4a4a");
+  tie.addColorStop(0.68, "#1a1a1a");
+  tie.addColorStop(1, "#070707");
+  g.fillStyle = tie;
+  g.fill(knot);
+
+  // 締めの割れ目｡白く抜いて二つの耳に分ける
+  g.save();
+  g.clip(knot);
+  g.strokeStyle = "#fbfbfb";
+  g.lineWidth = 11;
   g.beginPath();
-  g.moveTo(134, 26);
-  g.bezierCurveTo(128, 100, 132, 198, 138, 274);
+  g.moveTo(112, 96);
+  g.quadraticCurveTo(150, 146, 190, 196);
   g.stroke();
-  g.strokeStyle = "rgba(16,16,16,0.32)";
-  g.lineWidth = 5;
-  g.beginPath();
-  g.moveTo(166, 24);
-  g.bezierCurveTo(170, 100, 170, 198, 168, 274);
-  g.stroke();
-
-  // 端｡上と下で少し開く
-  g.fillStyle = paper;
-  g.beginPath();
-  g.moveTo(178, 26);
-  g.quadraticCurveTo(206, 34, 214, 52);
-  g.quadraticCurveTo(190, 54, 180, 46);
-  g.closePath();
-  g.fill();
-  g.beginPath();
-  g.moveTo(122, 268);
-  g.quadraticCurveTo(96, 276, 88, 292);
-  g.quadraticCurveTo(114, 292, 126, 284);
-  g.closePath();
-  g.fill();
-
-  // 結び目の陰｡締まって紙が寄る
-  g.fillStyle = "rgba(14,14,14,0.3)";
-  g.beginPath();
-  g.moveTo(112, 112);
-  g.lineTo(186, 110);
-  g.lineTo(174, 148);
-  g.lineTo(124, 148);
-  g.closePath();
-  g.fill();
-  g.beginPath();
-  g.moveTo(124, 152);
-  g.lineTo(176, 152);
-  g.lineTo(188, 192);
-  g.lineTo(112, 190);
-  g.closePath();
-  g.fill();
-
-  // 結び目から出た端｡左右へ跳ねて先が細る
-  const tail = g.createLinearGradient(0, 124, 0, 186);
-  tail.addColorStop(0, "#e8e8e8");
-  tail.addColorStop(0.45, "#8a8a8a");
-  tail.addColorStop(1, "#101010");
-  g.fillStyle = tail;
-  g.beginPath();
-  g.moveTo(118, 134);
-  g.quadraticCurveTo(76, 118, 48, 132);
-  g.quadraticCurveTo(80, 148, 120, 166);
-  g.closePath();
-  g.fill();
-  g.beginPath();
-  g.moveTo(182, 132);
-  g.quadraticCurveTo(226, 116, 254, 134);
-  g.quadraticCurveTo(220, 150, 180, 166);
-  g.closePath();
-  g.fill();
-
-  // 結び目｡帯が胴を一周し､上に結び目の山が乗る
-  const band = g.createLinearGradient(0, 120, 0, 186);
-  band.addColorStop(0, "#0d0d0d");
-  band.addColorStop(0.24, "#8e8e8e");
-  band.addColorStop(0.46, "#fafafa");
-  band.addColorStop(0.74, "#5e5e5e");
-  band.addColorStop(1, "#0f0f0f");
-  g.fillStyle = band;
-  g.beginPath();
-  g.moveTo(102, 128);
-  g.quadraticCurveTo(150, 112, 198, 126);
-  g.quadraticCurveTo(202, 158, 196, 178);
-  g.quadraticCurveTo(150, 194, 104, 178);
-  g.closePath();
-  g.fill();
-
-  const bump = g.createRadialGradient(140, 128, 4, 150, 146, 52);
-  bump.addColorStop(0, "#fdfdfd");
-  bump.addColorStop(0.45, "#b6b6b6");
-  bump.addColorStop(0.8, "#3a3a3a");
-  bump.addColorStop(1, "#0c0c0c");
-  g.fillStyle = bump;
-  g.beginPath();
-  g.moveTo(122, 172);
-  g.quadraticCurveTo(112, 128, 150, 118);
-  g.quadraticCurveTo(190, 128, 180, 172);
-  g.quadraticCurveTo(150, 184, 122, 172);
-  g.closePath();
-  g.fill();
-
-  // 締めの筋｡結び目を斜めに横切る
-  g.strokeStyle = "rgba(10,10,10,0.6)";
-  g.lineWidth = 4;
-  g.beginPath();
-  g.moveTo(124, 126);
-  g.quadraticCurveTo(150, 152, 178, 176);
-  g.stroke();
+  g.restore();
   g.restore();
 };
 
@@ -707,149 +605,81 @@ const watch: Draw = (g, s) => {
   g.restore();
 };
 
-/** 母性愛｡巣の中の親鳥と雛 */
+/** 母性愛｡翼で雛を覆う親鳥 */
 const nest: Draw = (g, s) => {
   const u = s / 300;
   g.save();
   g.scale(u, u);
 
-  // 親鳥の尾｡右上へ払う
-  const tail = g.createLinearGradient(210, 150, 292, 66);
-  tail.addColorStop(0, "#3a3a3a");
-  tail.addColorStop(0.55, "#8c8c8c");
-  tail.addColorStop(1, "#111111");
-  g.fillStyle = tail;
-  g.beginPath();
-  g.moveTo(206, 172);
-  g.quadraticCurveTo(262, 130, 292, 62);
-  g.quadraticCurveTo(280, 116, 240, 190);
-  g.closePath();
-  g.fill();
+  // 親鳥｡頭と胴と尾をひと続きの黒い塊にする
+  const hen = new Path2D();
+  hen.ellipse(174, 168, 112, 100, -0.08, 0, Math.PI * 2);
+  hen.moveTo(150, 92);
+  hen.arc(104, 84, 52, 0, Math.PI * 2);
+  hen.moveTo(56, 70);
+  hen.lineTo(10, 96);
+  hen.lineTo(58, 116);
+  hen.closePath();
+  hen.moveTo(244, 118);
+  hen.lineTo(296, 44);
+  hen.lineTo(282, 186);
+  hen.closePath();
+  const down = g.createRadialGradient(126, 104, 12, 168, 176, 178);
+  down.addColorStop(0, "#9e9e9e");
+  down.addColorStop(0.3, "#4e4e4e");
+  down.addColorStop(0.66, "#1c1c1c");
+  down.addColorStop(1, "#070707");
+  g.fillStyle = down;
+  g.fill(hen);
 
-  // 胴｡左上から光が当たる
-  const body = g.createRadialGradient(132, 116, 12, 172, 172, 122);
-  body.addColorStop(0, "#f6f6f6");
-  body.addColorStop(0.3, "#b4b4b4");
-  body.addColorStop(0.68, "#3c3c3c");
-  body.addColorStop(1, "#0d0d0d");
-  g.fillStyle = body;
-  g.beginPath();
-  g.ellipse(170, 156, 70, 52, -0.22, 0, Math.PI * 2);
-  g.fill();
-
-  // 翼｡胴の上に一枚重ねて沈める
-  const wing = g.createLinearGradient(140, 120, 208, 194);
-  wing.addColorStop(0, "#9a9a9a");
-  wing.addColorStop(0.5, "#2c2c2c");
-  wing.addColorStop(1, "#0b0b0b");
-  g.fillStyle = wing;
-  g.beginPath();
-  g.moveTo(140, 128);
-  g.quadraticCurveTo(216, 118, 232, 178);
-  g.quadraticCurveTo(178, 196, 144, 160);
-  g.closePath();
-  g.fill();
-  g.strokeStyle = "rgba(255,255,255,0.3)";
-  g.lineWidth = 3;
-  for (let i = 0; i < 3; i++) {
-    g.beginPath();
-    g.moveTo(148 + i * 6, 146 + i * 10);
-    g.quadraticCurveTo(190, 140 + i * 12, 224, 168 + i * 4);
-    g.stroke();
-  }
-
-  // 頭
-  const head = g.createRadialGradient(96, 88, 6, 110, 106, 44);
-  head.addColorStop(0, "#fafafa");
-  head.addColorStop(0.4, "#b8b8b8");
-  head.addColorStop(1, "#151515");
-  g.fillStyle = head;
-  g.beginPath();
-  g.arc(110, 104, 31, 0, Math.PI * 2);
-  g.fill();
-
-  // 嘴
-  g.fillStyle = "#101010";
-  g.beginPath();
-  g.moveTo(84, 96);
-  g.lineTo(44, 110);
-  g.lineTo(84, 120);
-  g.closePath();
-  g.fill();
-
-  // 目
+  // 目｡白く抜いた丸に瞳
   g.fillStyle = "#fbfbfb";
   g.beginPath();
-  g.arc(102, 96, 8, 0, Math.PI * 2);
+  g.arc(92, 72, 15, 0, Math.PI * 2);
   g.fill();
-  g.fillStyle = "#0b0b0b";
+  g.fillStyle = "#0a0a0a";
   g.beginPath();
-  g.arc(102, 96, 4.4, 0, Math.PI * 2);
+  g.arc(90, 73, 7.5, 0, Math.PI * 2);
   g.fill();
 
-  /** 雛｡口を開けて上を向く */
-  const chick = (cx: number, cy: number, r: number, dir: number) => {
-    const sk = g.createRadialGradient(cx - r * 0.4, cy - r * 0.5, 2, cx, cy, r * 1.5);
-    sk.addColorStop(0, "#f2f2f2");
-    sk.addColorStop(0.45, "#9e9e9e");
-    sk.addColorStop(1, "#131313");
-    g.fillStyle = sk;
-    g.beginPath();
-    g.arc(cx, cy, r, 0, Math.PI * 2);
-    g.fill();
-    g.beginPath();
-    g.ellipse(cx, cy + r * 1.4, r * 0.7, r * 0.9, 0, 0, Math.PI * 2);
-    g.fill();
-    // 開いた嘴
-    g.fillStyle = "#0e0e0e";
-    g.beginPath();
-    g.moveTo(cx + dir * r * 0.5, cy - r * 0.3);
-    g.lineTo(cx + dir * r * 2.1, cy - r * 1.1);
-    g.lineTo(cx + dir * r * 0.8, cy + r * 0.2);
-    g.closePath();
-    g.fill();
-    g.beginPath();
-    g.arc(cx - dir * r * 0.2, cy - r * 0.3, r * 0.2, 0, Math.PI * 2);
-    g.fill();
-  };
+  // 翼｡胴の上に大きく一枚｡白く縁を空けて塊を分ける
+  const wing = new Path2D();
+  wing.moveTo(112, 118);
+  wing.quadraticCurveTo(236, 114, 268, 196);
+  wing.quadraticCurveTo(196, 268, 116, 240);
+  wing.quadraticCurveTo(84, 180, 112, 118);
+  wing.closePath();
+  g.strokeStyle = "#fbfbfb";
+  g.lineWidth = 12;
+  g.stroke(wing);
+  const feather = g.createLinearGradient(120, 120, 240, 250);
+  feather.addColorStop(0, "#8a8a8a");
+  feather.addColorStop(0.35, "#3c3c3c");
+  feather.addColorStop(0.75, "#141414");
+  feather.addColorStop(1, "#060606");
+  g.fillStyle = feather;
+  g.fill(wing);
 
-  chick(74, 196, 17, -1);
-  chick(230, 190, 15, 1);
-
-  // 巣｡枝を編んだ器｡手前の縁が皆を抱える
-  const straw = g.createRadialGradient(112, 222, 16, 150, 256, 176);
-  straw.addColorStop(0, "#d2d2d2");
-  straw.addColorStop(0.26, "#6e6e6e");
-  straw.addColorStop(0.64, "#1e1e1e");
-  straw.addColorStop(1, "#070707");
-  const cup = new Path2D();
-  cup.moveTo(14, 202);
-  cup.quadraticCurveTo(150, 246, 286, 202);
-  cup.bezierCurveTo(280, 262, 220, 292, 150, 292);
-  cup.bezierCurveTo(80, 292, 20, 262, 14, 202);
-  cup.closePath();
-  g.fillStyle = straw;
-  g.fill(cup);
-
-  // 枝｡編み目を斜めに掛け合わせる
-  g.save();
-  g.clip(cup);
-  g.lineCap = "round";
-  let seed = 17;
-  const next = () => ((seed = (seed * 1103515245 + 12345) >>> 0) % 1000) / 1000;
-  for (let i = 0; i < 44; i++) {
-    const x = 6 + next() * 290;
-    const y = 198 + next() * 94;
-    const len = 34 + next() * 56;
-    const a = -0.5 + next() * 1.0;
-    g.strokeStyle = next() > 0.4 ? "rgba(255,255,255,0.34)" : "rgba(4,4,4,0.5)";
-    g.lineWidth = 4 + next() * 4;
-    g.beginPath();
-    g.moveTo(x, y);
-    g.lineTo(x + Math.cos(a) * len, y + Math.sin(a) * len);
-    g.stroke();
-  }
-  g.restore();
+  // 雛｡翼の下から一羽だけ顔を出す｡まわりを白く空ける
+  const chick = new Path2D();
+  chick.arc(96, 236, 42, 0, Math.PI * 2);
+  chick.moveTo(62, 224);
+  chick.lineTo(16, 244);
+  chick.lineTo(62, 258);
+  chick.closePath();
+  g.strokeStyle = "#fcfcfc";
+  g.lineWidth = 13;
+  g.stroke(chick);
+  const fluff = g.createRadialGradient(84, 222, 5, 96, 240, 62);
+  fluff.addColorStop(0, "#a6a6a6");
+  fluff.addColorStop(0.4, "#4a4a4a");
+  fluff.addColorStop(1, "#0a0a0a");
+  g.fillStyle = fluff;
+  g.fill(chick);
+  g.fillStyle = "#fbfbfb";
+  g.beginPath();
+  g.arc(88, 224, 9, 0, Math.PI * 2);
+  g.fill();
   g.restore();
 };
 
@@ -946,106 +776,90 @@ const noren: Draw = (g, s) => {
   g.restore();
 };
 
-/** 純潔・処女性｡椿の花 */
+/** 純潔・処女性｡真上から見た椿一輪 */
 const camellia: Draw = (g, s) => {
   const u = s / 300;
   g.save();
   g.scale(u, u);
 
   const cx = 150;
-  const cy = 142;
+  const cy = 150;
 
-  /** 葉｡厚く沈めて後ろに置く */
+  // 葉｡花の後ろから二枚だけ大きく出す
   const leaf = (x: number, y: number, len: number, rot: number) => {
     g.save();
     g.translate(x, y);
     g.rotate(rot);
-    const lv = g.createLinearGradient(0, -len * 0.25, len, len * 0.25);
-    lv.addColorStop(0, "#8a8a8a");
-    lv.addColorStop(0.45, "#2e2e2e");
-    lv.addColorStop(1, "#0c0c0c");
+    const blade = new Path2D();
+    blade.moveTo(0, 0);
+    blade.quadraticCurveTo(len * 0.5, -len * 0.36, len, 0);
+    blade.quadraticCurveTo(len * 0.5, len * 0.36, 0, 0);
+    blade.closePath();
+    g.strokeStyle = "#fcfcfc";
+    g.lineWidth = 12;
+    g.stroke(blade);
+    const lv = g.createLinearGradient(0, -len * 0.3, len, len * 0.3);
+    lv.addColorStop(0, "#787878");
+    lv.addColorStop(0.45, "#2a2a2a");
+    lv.addColorStop(1, "#080808");
     g.fillStyle = lv;
-    g.beginPath();
-    g.moveTo(0, 0);
-    g.quadraticCurveTo(len * 0.45, -len * 0.34, len, -len * 0.04);
-    g.quadraticCurveTo(len * 0.45, len * 0.3, 0, 0);
-    g.closePath();
-    g.fill();
-    // 主脈
-    g.strokeStyle = "rgba(255,255,255,0.5)";
-    g.lineWidth = len * 0.035;
-    g.beginPath();
-    g.moveTo(len * 0.04, 0);
-    g.quadraticCurveTo(len * 0.5, -len * 0.06, len * 0.96, -len * 0.04);
-    g.stroke();
+    g.fill(blade);
     g.restore();
   };
 
-  leaf(138, 210, 136, 0.62);
-  leaf(160, 206, 128, -3.7);
-  leaf(176, 96, 120, -0.9);
+  leaf(150, 168, 156, 2.6);
+  leaf(150, 132, 156, -0.62);
 
-  /** 弁｡もとを白く残して縁を沈める */
-  const petal = (a: number, rad: number) => {
-    g.save();
-    g.translate(cx, cy);
-    g.rotate(a);
-    const pt = g.createRadialGradient(0, -rad * 0.2, rad * 0.12, 0, -rad * 0.7, rad * 1.05);
-    pt.addColorStop(0, "#fdfdfd");
-    pt.addColorStop(0.42, "#e8e8e8");
-    pt.addColorStop(0.78, "#a2a2a2");
-    pt.addColorStop(1, "#3c3c3c");
-    g.fillStyle = pt;
-    g.beginPath();
-    g.moveTo(0, 0);
-    g.bezierCurveTo(-rad * 0.92, -rad * 0.2, -rad * 0.78, -rad * 1.06, 0, -rad * 0.98);
-    g.bezierCurveTo(rad * 0.78, -rad * 1.06, rad * 0.92, -rad * 0.2, 0, 0);
-    g.closePath();
-    g.fill();
-    g.strokeStyle = "rgba(18,18,18,0.45)";
-    g.lineWidth = rad * 0.035;
-    g.stroke();
-    g.restore();
-  };
-
-  // 外の五弁
-  for (let i = 0; i < 5; i++) petal((Math.PI * 2 * i) / 5, 98);
-  // 内の五弁｡半分ずらして重ねる
-  for (let i = 0; i < 5; i++) petal((Math.PI * 2 * i) / 5 + Math.PI / 5, 62);
-
-  // 花芯｡蕊が束になって立つ
-  g.strokeStyle = "rgba(14,14,14,0.85)";
-  g.lineCap = "round";
-  for (let i = 0; i < 18; i++) {
-    const a = (Math.PI * 2 * i) / 18 + 0.12;
-    const len = 20 + (i % 3) * 8;
-    g.lineWidth = 3.6;
-    g.beginPath();
-    g.moveTo(cx, cy);
-    g.lineTo(cx + Math.cos(a) * len, cy + Math.sin(a) * len);
-    g.stroke();
-    const dot = g.createRadialGradient(
-      cx + Math.cos(a) * len - 2,
-      cy + Math.sin(a) * len - 2,
-      1,
-      cx + Math.cos(a) * len,
-      cy + Math.sin(a) * len,
-      7,
-    );
-    dot.addColorStop(0, "#f4f4f4");
-    dot.addColorStop(1, "#111111");
-    g.fillStyle = dot;
-    g.beginPath();
-    g.arc(cx + Math.cos(a) * len, cy + Math.sin(a) * len, 5.2, 0, Math.PI * 2);
-    g.fill();
+  // 弁｡五枚を大きく開いて､あいだを白く空ける
+  const petals: Path2D[] = [];
+  for (let i = 0; i < 5; i++) {
+    const a = (Math.PI * 2 * i) / 5 - Math.PI / 2;
+    const p = new Path2D();
+    const R = 120;
+    const m = new DOMMatrix().translateSelf(cx, cy).rotateSelf((a * 180) / Math.PI + 90);
+    const local = new Path2D();
+    local.moveTo(0, 0);
+    local.bezierCurveTo(-R * 0.96, -R * 0.24, -R * 0.82, -R * 1.02, 0, -R);
+    local.bezierCurveTo(R * 0.82, -R * 1.02, R * 0.96, -R * 0.24, 0, 0);
+    local.closePath();
+    p.addPath(local, m);
+    petals.push(p);
   }
-  const core = g.createRadialGradient(cx - 4, cy - 5, 2, cx, cy, 18);
-  core.addColorStop(0, "#fafafa");
-  core.addColorStop(0.5, "#8e8e8e");
-  core.addColorStop(1, "#0d0d0d");
+  for (const p of petals) {
+    g.strokeStyle = "#fcfcfc";
+    g.lineWidth = 11;
+    g.stroke(p);
+    const pt = g.createRadialGradient(cx, cy, 18, cx, cy, 142);
+    pt.addColorStop(0, "#8e8e8e");
+    pt.addColorStop(0.42, "#454545");
+    pt.addColorStop(0.78, "#181818");
+    pt.addColorStop(1, "#070707");
+    g.fillStyle = pt;
+    g.fill(p);
+  }
+
+  // 花芯｡白く空けたうえに濃い丸と太い蕊
+  g.fillStyle = "#fcfcfc";
+  g.beginPath();
+  g.arc(cx, cy, 56, 0, Math.PI * 2);
+  g.fill();
+  g.strokeStyle = "#0d0d0d";
+  g.lineWidth = 7;
+  g.lineCap = "round";
+  for (let i = 0; i < 10; i++) {
+    const a = (Math.PI * 2 * i) / 10 + 0.15;
+    g.beginPath();
+    g.moveTo(cx + Math.cos(a) * 18, cy + Math.sin(a) * 18);
+    g.lineTo(cx + Math.cos(a) * 50, cy + Math.sin(a) * 50);
+    g.stroke();
+  }
+  const core = g.createRadialGradient(cx - 8, cy - 10, 4, cx, cy, 34);
+  core.addColorStop(0, "#9c9c9c");
+  core.addColorStop(0.45, "#3a3a3a");
+  core.addColorStop(1, "#070707");
   g.fillStyle = core;
   g.beginPath();
-  g.arc(cx, cy, 15, 0, Math.PI * 2);
+  g.arc(cx, cy, 30, 0, Math.PI * 2);
   g.fill();
   g.restore();
 };
@@ -1161,8 +975,8 @@ const koinobori: Draw = (g, s) => {
 };
 
 export const PLATES_A: Record<string, Draw> = {
-  "006": eboshi,
-  "007": sakura,
+  "006": chochin,
+  "007": candle,
   "008": rope,
   "009": hoe,
   "010": kintsugi,

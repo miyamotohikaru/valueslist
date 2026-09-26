@@ -1421,6 +1421,9 @@ button:focus-visible,
 /* ============================================================
    列ごとに遅れて追いつくグリッド
    ============================================================ */
+.vl-cols-box {
+  container-type: inline-size;
+}
 .vl-cols {
   display: grid;
   grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
@@ -1446,6 +1449,11 @@ button:focus-visible,
   .vl-cols__col {
     gap: 20px;
   }
+}
+/* 刷り札は間合いも幅に比例させる｡画面が小さくなっても札の見え方が変わらない */
+.vl-cols--print,
+.vl-cols--print .vl-cols__col {
+  gap: 1.5cqw;
 }
 
 /* ============================================================
@@ -1484,7 +1492,7 @@ a.vl-print-wrap:hover {
   background: var(--card);
   color: var(--vl-ink);
   /* 札が細くなっても字が潰れないよう､下限と上限を決めておく */
-  padding: clamp(13px, 4.4cqw, 22px) clamp(13px, 4.4cqw, 22px) clamp(11px, 3.8cqw, 19px);
+  padding: 4.5cqw 4.5cqw 3.9cqw;
   box-shadow: 0 1px 0 rgba(28, 27, 25, 0.1);
 }
 
@@ -1493,9 +1501,9 @@ a.vl-print-wrap:hover {
   display: flex;
   justify-content: space-between;
   gap: 2cqw;
-  margin-bottom: clamp(9px, 3.2cqw, 16px);
+  margin-bottom: 3.2cqw;
   font-family: var(--font-mono), monospace;
-  font-size: clamp(9px, 2.7cqw, 11px);
+  font-size: 3.16cqw;
   letter-spacing: 0.1em;
   color: rgba(28, 27, 25, 0.5);
   white-space: nowrap;
@@ -1537,10 +1545,10 @@ a.vl-print-wrap:hover {
 }
 
 .vl-print__name {
-  margin-top: clamp(11px, 4cqw, 19px);
+  margin-top: 3.9cqw;
   font-family: var(--font-sans), "Hiragino Sans", sans-serif;
   font-weight: 700;
-  font-size: clamp(18px, 6.4cqw, 28px);
+  font-size: 6.35cqw;
   line-height: 1.2;
   letter-spacing: 0.02em;
 }
@@ -1548,9 +1556,9 @@ a.vl-print-wrap:hover {
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  margin-top: clamp(4px, 1.5cqw, 8px);
+  margin-top: 1.4cqw;
   font-family: var(--font-mono), monospace;
-  font-size: clamp(9.5px, 2.9cqw, 12px);
+  font-size: 3.33cqw;
   letter-spacing: 0.06em;
   color: rgba(28, 27, 25, 0.55);
   white-space: nowrap;
@@ -1562,9 +1570,9 @@ a.vl-print-wrap:hover {
   text-overflow: ellipsis;
 }
 .vl-print__body {
-  margin-top: clamp(8px, 2.8cqw, 14px);
+  margin-top: 2.8cqw;
   font-family: var(--font-mono), monospace;
-  font-size: clamp(11.5px, 3.3cqw, 14px);
+  font-size: 4.03cqw;
   line-height: 1.72;
   color: rgba(28, 27, 25, 0.86);
   display: -webkit-box;
@@ -1580,20 +1588,20 @@ a.vl-print-wrap:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2cqw;
-  margin-top: clamp(9px, 3.2cqw, 16px);
+  margin-top: 3.2cqw;
   font-family: var(--font-mono), monospace;
   white-space: nowrap;
 }
 .vl-print__k {
   display: block;
-  font-size: clamp(8px, 2.3cqw, 10px);
+  font-size: 2.8cqw;
   letter-spacing: 0.08em;
   color: rgba(28, 27, 25, 0.45);
 }
 .vl-print__v {
   display: block;
-  margin-top: 1px;
-  font-size: clamp(13px, 4cqw, 18px);
+  margin-top: 0.3cqw;
+  font-size: 4.56cqw;
   font-weight: 500;
   letter-spacing: 0.01em;
 }
@@ -1601,11 +1609,11 @@ a.vl-print-wrap:hover {
   display: flex;
   justify-content: space-between;
   gap: 2cqw;
-  margin-top: clamp(8px, 2.8cqw, 14px);
-  padding-top: clamp(7px, 2.2cqw, 11px);
-  border-top: 1px solid rgba(28, 27, 25, 0.22);
+  margin-top: 2.8cqw;
+  padding-top: 2.45cqw;
+  border-top: max(1px, 0.35cqw) solid rgba(28, 27, 25, 0.22);
   font-family: var(--font-mono), monospace;
-  font-size: clamp(9px, 2.6cqw, 11px);
+  font-size: 3.16cqw;
   letter-spacing: 0.08em;
   color: rgba(28, 27, 25, 0.5);
 }

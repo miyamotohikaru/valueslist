@@ -12,8 +12,8 @@ const noOf = (name: string) => values.find((v) => v.name === name)?.no ?? "—";
 const RED = "var(--vl-red)";
 const INK = "var(--vl-ink)";
 const PAPER = "var(--vl-card)";
-const MONO = "var(--font-courier), monospace";
-const ANTON = "var(--font-anton), Impact, sans-serif";
+const MONO = "var(--font-mono), monospace";
+const ANTON = "var(--font-sans), sans-serif";
 
 /** 日付のゴム印（持ち手と､押した跡） */
 function StampIcon({ className = "" }: { className?: string }) {

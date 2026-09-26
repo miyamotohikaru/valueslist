@@ -448,7 +448,7 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
           textAnchor="middle"
           fontSize="88"
           fill="var(--vl-red)"
-          fontFamily="var(--font-anton), Impact, sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           {num}
         </text>
@@ -459,7 +459,7 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
           fontSize="20"
           letterSpacing="3"
           fill="var(--vl-ink)"
-          fontFamily="var(--font-anton), Impact, sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           YEARS
         </text>
@@ -470,7 +470,7 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
           fontSize="14"
           fontWeight="700"
           fill="var(--vl-ink)"
-          fontFamily="var(--font-zen-kaku), sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           最後の弧で､元の場所へ
         </text>
@@ -507,7 +507,7 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
                 fontSize="14"
                 fontWeight="700"
                 fill="var(--vl-ink-soft)"
-                fontFamily="var(--font-courier), monospace"
+                fontFamily="var(--font-mono), monospace"
               >
                 {node.n.yearLabel ?? node.n.year}
               </text>
@@ -518,7 +518,7 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
                   textAnchor={anchor}
                   fontSize="24"
                   fill="var(--vl-ink)"
-                  fontFamily="var(--font-ja-display), sans-serif"
+                  fontFamily="var(--font-sans), sans-serif"
                 >
                   {node.n.label}
                 </text>
@@ -530,7 +530,7 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
                   textAnchor={anchor}
                   fontSize="14"
                   fill="var(--vl-ink)"
-                  fontFamily="var(--font-zen-kaku), sans-serif"
+                  fontFamily="var(--font-sans), sans-serif"
                 >
                   {node.n.note}
                 </text>
@@ -683,7 +683,7 @@ function EraRuler() {
               fontSize="15"
               fontWeight="700"
               fill="var(--vl-ink)"
-              fontFamily="var(--font-zen-kaku), sans-serif"
+              fontFamily="var(--font-sans), sans-serif"
             >
               {e.ja}
             </text>
@@ -725,7 +725,7 @@ function EraRuler() {
               fontSize="13"
               fontWeight="700"
               fill="var(--vl-ink)"
-              fontFamily="var(--font-courier), monospace"
+              fontFamily="var(--font-mono), monospace"
             >
               {y}
             </text>
@@ -738,7 +738,7 @@ function EraRuler() {
           fontSize="11"
           letterSpacing="3"
           fill="var(--vl-ink-soft)"
-          fontFamily="var(--font-anton), Impact, sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           VALUES CATALOG · TIME SCALE
         </text>
@@ -756,7 +756,7 @@ function EraRuler() {
           fontSize="14"
           fontWeight="700"
           fill="var(--vl-red)"
-          fontFamily="var(--font-zen-kaku), sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           668年を､ここに縮めている
         </text>
@@ -773,7 +773,7 @@ function EraRuler() {
           fontSize="14"
           fontWeight="700"
           fill="var(--vl-ink)"
-          fontFamily="var(--font-zen-kaku), sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           明治からの162年を広く
         </text>
@@ -783,7 +783,7 @@ function EraRuler() {
           textAnchor="middle"
           fontSize="13"
           fill="var(--vl-ink)"
-          fontFamily="var(--font-zen-kaku), sans-serif"
+          fontFamily="var(--font-sans), sans-serif"
         >
           目盛りの間隔は均等ではない｡この物差しで全在庫を並べる｡
         </text>

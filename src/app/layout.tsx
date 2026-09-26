@@ -1,32 +1,27 @@
 import type { Metadata } from "next";
-import {
-  Anton,
-  Alfa_Slab_One,
-  Yellowtail,
-  Courier_Prime,
-  M_PLUS_Rounded_1c,
-  Zen_Kaku_Gothic_New,
-} from "next/font/google";
+import { Noto_Sans_JP, Roboto_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TabBar from "@/components/TabBar";
 import { SITE_URL, OG_IMAGE } from "@/lib/site";
 import "./globals.css";
 
-const anton = Anton({ weight: "400", subsets: ["latin"], variable: "--font-anton" });
-const alfa = Alfa_Slab_One({ weight: "400", subsets: ["latin"], variable: "--font-alfa" });
-const yellowtail = Yellowtail({ weight: "400", subsets: ["latin"], variable: "--font-yellowtail" });
-const courier = Courier_Prime({
-  weight: ["400", "700"],
+/**
+ * 書体は2つだけ｡
+ * - 和文と欧文の本体: Noto Sans JP（400/500/700/900）
+ * - 小さなラベルと番号: Roboto Mono（400/500）
+ */
+const sans = Noto_Sans_JP({
+  weight: ["400", "500", "700", "900"],
   subsets: ["latin"],
-  variable: "--font-courier",
+  variable: "--font-sans",
+  display: "swap",
 });
-// 見出しの和文｡太くて読みやすい丸ゴシック（レトロな看板の字に近い）
-const jaDisplay = M_PLUS_Rounded_1c({ weight: "800", subsets: ["latin"], variable: "--font-ja-display" });
-const zenKaku = Zen_Kaku_Gothic_New({
-  weight: ["400", "500", "700"],
+const mono = Roboto_Mono({
+  weight: ["400", "500"],
   subsets: ["latin"],
-  variable: "--font-zen-kaku",
+  variable: "--font-mono",
+  display: "swap",
 });
 
 const DESCRIPTION =
@@ -59,7 +54,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ja">
       <body
-        className={`${anton.variable} ${alfa.variable} ${yellowtail.variable} ${courier.variable} ${jaDisplay.variable} ${zenKaku.variable} vl-grain`}
+        className={`${sans.variable} ${mono.variable}`}
       >
         <Header />
         <main className="pb-[calc(64px+env(safe-area-inset-bottom))] md:pb-0">{children}</main>

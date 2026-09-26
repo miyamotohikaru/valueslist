@@ -4,22 +4,37 @@
    価値観一覧図鑑 — デザイントークン（アメリカンレトロ）
    紙=クリーム / インク=焦げ茶黒 / 赤 / 紺 / マスタード
    ============================================================ */
+/* ============================================================
+   価値観一覧図鑑 — 色と書体
+   紙＝温かい生成り / 墨 / 朱｡札の地は8色のうちから棚ごとに1色
+   ============================================================ */
 :root {
-  --vl-paper: #f1eacf;
-  --vl-paper-2: #e6dbb9;
-  --vl-card: #faf4e3;
-  --vl-ink: #1f1b17;
-  --vl-ink-soft: rgba(31, 27, 23, 0.72); /* クリーム地でコントラスト比 5.7 以上 */
-  --vl-line: rgba(31, 27, 23, 0.22);
-  --vl-red: #c8433b;
-  --vl-red-deep: #9e2f2a;
-  --vl-navy: #2c2e55;
-  --vl-mustard: #e9b949;
-  --vl-teal: #3e8e7e;
-  --vl-brown: #7a4b2a;
-  /* ゴム印のかすれ（不透明の地に透明の粒）。mask に使う */
-  --vl-noise: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAYAAAA5ZDbSAAAEwUlEQVR42u1dS5LbIBRELp8o6+gi4xN4pYXP4YU3mRPMSZR1rkQWwRWsERJGD2ge3VVTUpVr/KHp9+MhBmOMNQQKPt31+ub/Te76WL4wkGDdOHEIdOPMIciGwbu3VHA/ZJNgggSXUt0R5VkEE91iFD0IDNpeOjJskLWH0V1nKpjoQsGpyX0LloJpEjAsFdwHUC0MfTBBBTMPJkjwEYxe3qjRd3/2TPAYuCfA0iQV+WIGXA9M+llawTVMpf8jPgqbM82uQdxE20T1QtVsQTALjMeL709Jk4L9P4n+tzTJuQsXtQsjL5/fW5r0GbiHjIAP+P5rapAlFVDNESa61eANqqT5rokuNehH1mPRTSg0wSW/Vy6CUZEl6ET1wbYzcptVcFfmsNU8uJuiQKOYvNT1G3J3dFC5jZrou7v+cdcvDqVuH3x3ZP9wVxKuPMi6uGsLhEuUXmGRywd/rRBOVStMk4gG0iSCBBMm/wpU0vuT4Dxujz5YObmWBDNVatIH1+iE2KzFJkz4QRPB0gouvXq0JPZxcCx8WHTzGwPpQgcXF8BM/qmQlchl9h5C6l0q0wZet2CTaCqt4BqQVIkF/E7qomhuhWnMRKcGOgPpOe7+WMlKR+1Wpigx0ESnk+sjptVVuikiqrX4XJGcUM5sFSh7jfRbgPAn3iXcxoz3OaPJ0BwkxWy92cMa4cZT+S3iPX6WjKJ73I2QE/cIsncnmbTSniT/MqxqqcyDlwsNJJl5MOEguSqWjeBrB+rdIiILSUgmugeV+XgEXoepRfNps7KA6wg5KVfblJHAJtp7qGAFKqUPZpoEi5YfZwRPcO0Ow9hnWhEJBGtfeN8KwFRZjVgTXYPkXEWTaeV+UDqRg1G0BfnBJaphqMucIkWTLQXbxZ/GNEfTVpWL93f3Z+yHu+95B77GTs770iT5C8zGxHUUiJkSIp8PHs2/joAbh0MdxiOlyjWzxqZ1sEDsZNKaxtig3gbm1LTAJ/XZ2cezFyqmQylpktlJoXxyjeEDS+H8rzFmHBxJ84E3eTEJHFSIcRiPKniNUJpo0ATfVvpcRtsFVIxMcIq5Q37McZVJvUdwrSqVlG8/usGreYJz9mRdzP+tkrUG9xb4TjFVO+nJbWvNqlIf7KspZpBrR6QxBOe0cCK//1xRTVv+EiHdeAiIp3ogidpV2frJpDBbadk2q5xg7i7MA5iT26hg5aitYLjtliRYPg0xJJk+mADywe8k/346xAWIBhScanZ7aAGq8ujD2iZ6Nn2sI4+B++YITt010OOJ376is+2NYh5cXsXziop/u+uR9ikSDGqyQ66LaVLDAVaxXjYSjBFgZiO8NRPNjW5UMMEgiwomSPB336h1Raj26SpUcKQrGhLJjc1dISe8VFdlr1EtfHMgg6x0EpvYWcmnze6j6dWuUyeBUm7iYSdBjwqW7BzZIvbu3UscZQfng1HLirVagy7u+u5zyCAJ3ju8gnjdjJdN3T2Z6KdyxRfVE1FEwSmFjpjKzoPqxQmypkwkoBHbW74/pZpoPk2nMb/EStY+QodZw6PkYkPpQorU50keDlL86IAe14PVns9AE52+8z5kouFXk7jYEIdrA5OQCl4MoAX/fiSY0fprzrtWe/gLja0g3RbW/rcAAAAASUVORK5CYII=");
+  --vl-paper: #ede9df;
+  --vl-paper-2: #e3ded2;
+  --vl-card: #f3f0e7;
+  --vl-ink: #1c1b19;
+  --vl-ink-soft: rgba(28, 27, 25, 0.62);
+  --vl-line: rgba(28, 27, 25, 0.2);
+  --vl-red: #d3522e;
+  --vl-red-deep: #b8421f;
+
+  /* 札の地（棚ごと） */
+  --vl-kraft: #c0a47e;
+  --vl-concrete: #a8a9a6;
+  --vl-sky: #b9c9cf;
+  --vl-lavender: #bec0dd;
+  --vl-peach: #e2cbb1;
+  --vl-sage: #c4c5ab;
+  --vl-indigo: #263047;
+  --vl-sumi: #1c1b19;
+
+  /* 旧い名前（他のページがまだ使っている） */
+  --vl-navy: #263047;
+  --vl-mustard: #c0a47e;
+  --vl-teal: #c4c5ab;
+  --vl-brown: #c0a47e;
 }
+
 
 @theme inline {
   --color-vl-paper: var(--vl-paper);
@@ -43,29 +58,28 @@ html {
 body {
   background: var(--vl-paper);
   color: var(--vl-ink);
-  font-family: var(--font-zen-kaku), "Hiragino Sans", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans), "Hiragino Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* 見出し（和文ディスプレイ） */
-.font-display-ja {
-  font-family: var(--font-ja-display), var(--font-zen-kaku), sans-serif;
-}
-/* 見出し（欧文コンデンス） */
-.font-display-en {
-  font-family: var(--font-anton), "Impact", sans-serif;
-}
-/* スラブセリフ（棚札・見出し補助） */
+/* 見出し（和文・欧文とも同じ書体の900） */
+.font-display-ja,
+.font-display-en,
 .font-slab {
-  font-family: var(--font-alfa), "Rockwell", serif;
+  font-family: var(--font-sans), "Hiragino Sans", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.01em;
 }
-/* 筆記体（飾り文句） */
-.font-script {
-  font-family: var(--font-yellowtail), cursive;
+.font-display-en {
+  letter-spacing: -0.005em;
 }
-/* タイプライター（型番・仕様） */
+/* 小さなラベルと番号 */
 .font-type {
-  font-family: var(--font-courier), "Courier New", monospace;
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+.font-script {
+  font-family: var(--font-sans), sans-serif;
+  font-style: italic;
 }
 
 /* ============================================================
@@ -73,8 +87,7 @@ body {
    ============================================================ */
 /* 紙の粒子（薄い点） */
 .vl-grain {
-  background-image: radial-gradient(rgba(31, 27, 23, 0.07) 0.7px, transparent 0.8px);
-  background-size: 4px 4px;
+  background-image: none;
 }
 /* ハーフトーン（大きめの網点）: 親要素に position:relative が要る */
 .vl-halftone::before {
@@ -106,23 +119,17 @@ body {
 /* 紙の重なり。黒ベタのずらし影ではなく、後ろにもう1枚、墨の縁取りの紙がずれて重なる。
    ずれは右に 3px・下に 4px までにとどめ、携帯で右の余白を食わない */
 .vl-offset {
-  box-shadow:
-    3px 4px 0 -1.5px var(--vl-card),
-    3px 4px 0 0 var(--vl-ink);
+  box-shadow: none;
 }
 .vl-offset-sm {
-  box-shadow:
-    2px 3px 0 -1.5px var(--vl-card),
-    2px 3px 0 0 var(--vl-ink);
+  box-shadow: none;
 }
 .vl-offset-red {
-  box-shadow:
-    3px 4px 0 -1.5px var(--vl-card),
-    3px 4px 0 0 var(--vl-red);
+  box-shadow: none;
 }
 /* 2色刷りの版ずれ（大見出し用）。題字と同じく、墨の版が先に刷られて赤が少しずれて乗る */
 .vl-misreg {
-  text-shadow: 0.04em 0.04em 0 var(--vl-ink);
+  text-shadow: none;
 }
 /* 放射状の光（サンバースト）。色は currentColor */
 .vl-sunburst {
@@ -204,7 +211,7 @@ body {
   }
 }
 .vl-rise {
-  animation: vl-rise 0.4s ease both;
+  animation: none;
 }
 
 /* スクロールバーを持つ横並びの帯 */
@@ -301,7 +308,7 @@ body {
   line-height: 1;
 }
 .vl-card__no {
-  font-family: var(--font-anton), Impact, sans-serif;
+  font-family: var(--font-sans), sans-serif;
   font-size: 1.35em;
   letter-spacing: 0.04em;
 }
@@ -315,7 +322,7 @@ body {
   letter-spacing: 0.08em;
 }
 .vl-card__cat-en {
-  font-family: var(--font-courier), monospace;
+  font-family: var(--font-mono), monospace;
   font-size: 1em;
   letter-spacing: 0.1em;
 }
@@ -340,7 +347,7 @@ body {
   min-height: calc(var(--name-v) * 1.35 + max(12px, 4.2cqw) * 2.6);
 }
 .vl-card__en {
-  font-family: var(--font-anton), Impact, sans-serif;
+  font-family: var(--font-sans), sans-serif;
   font-size: max(12px, 4.3cqw);
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -349,7 +356,7 @@ body {
 }
 .vl-card__name {
   margin-top: 0.3em;
-  font-family: var(--font-ja-display), var(--font-zen-kaku), sans-serif;
+  font-family: var(--font-sans), sans-serif;
   font-size: max(18px, var(--name-v));
   line-height: 1.16;
   letter-spacing: 0.01em;
@@ -386,7 +393,7 @@ body {
   line-height: 1.3;
 }
 .vl-card__dates dt {
-  font-family: var(--font-courier), monospace;
+  font-family: var(--font-mono), monospace;
   font-size: max(12px, 0.86em);
   letter-spacing: 0.06em;
   color: var(--vl-ink-soft);
@@ -594,167 +601,11 @@ body {
   }
 }
 
-/* 全幅の帯（流れる文字）。動きを減らす設定では止める */
-.vl-marquee {
-  overflow: hidden;
-  background: var(--vl-red-deep);
-  color: var(--vl-paper);
-  border-top: 3px solid var(--vl-ink);
-  border-bottom: 3px solid var(--vl-ink);
-}
-.vl-marquee__track {
-  display: flex;
-  width: max-content;
-  animation: vl-marquee 60s linear infinite;
-}
-.vl-marquee__track span {
-  padding: 0.5rem 0;
-  white-space: nowrap;
-  font-family: var(--font-anton), var(--font-zen-kaku), Impact, sans-serif;
-  font-size: 22px;
-  letter-spacing: 0.12em;
-}
-@keyframes vl-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-/* 逆向きに流れる帯（色を変えて、ページの終わりに置く） */
-.vl-marquee--rev {
-  background: var(--vl-ink);
-  color: var(--vl-mustard);
-}
-.vl-marquee--rev .vl-marquee__track {
-  animation-direction: reverse;
-  animation-duration: 75s;
-}
-@media (prefers-reduced-motion: reduce) {
-  .vl-marquee__track {
-    animation: none;
-  }
-}
-
-/* ============================================================
-   動き。すべて「動きを減らす」設定のときは止める
-   ============================================================ */
-@keyframes vl-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes vl-swing {
-  0%,
-  100% {
-    transform: rotate(-1.4deg);
-  }
-  50% {
-    transform: rotate(1.4deg);
-  }
-}
-@keyframes vl-stamp-pop {
-  0% {
-    transform: rotate(var(--stamp-rot, -4deg)) scale(1);
-  }
-  40% {
-    transform: rotate(calc(var(--stamp-rot, -4deg) + 4deg)) scale(1.12);
-  }
-  100% {
-    transform: rotate(var(--stamp-rot, -4deg)) scale(1);
-  }
-}
-
-/* 画面に入ったときに、ふわっと出す */
-.vl-reveal {
-  opacity: 0;
-  transform: translateY(14px);
-}
+/* 画面に入ったら中身を出す（Reveal が付ける印｡動きは持たせない） */
+.vl-reveal,
 .vl-reveal.is-in {
   opacity: 1;
   transform: none;
-  transition:
-    opacity 0.55s ease var(--reveal-delay, 0ms),
-    transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1) var(--reveal-delay, 0ms);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  /* カード: カーソルの位置へ少し傾き、図版と印が動く */
-  .vl-card-wrap {
-    perspective: 900px;
-  }
-  .vl-card {
-    transition:
-      transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1),
-      box-shadow 0.25s ease;
-  }
-  .vl-card-wrap:hover .vl-card {
-    transform: translate3d(0, -4px, 0) rotateX(calc(var(--ty, 0) * -3.5deg)) rotateY(calc(var(--tx, 0) * 4.5deg));
-    box-shadow:
-      6px 8px 0 -2px var(--vl-card),
-      6px 8px 0 0 var(--vl-ink);
-  }
-  .vl-card__illust {
-    transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1);
-  }
-  .vl-card-wrap:hover .vl-card__illust {
-    transform: scale(1.07) rotate(-3deg);
-  }
-  .vl-card-wrap:hover .vl-trend-stamp {
-    animation: vl-stamp-pop 0.45s ease;
-  }
-
-  /* 分解図: 触ると層が開く */
-  .vl-ex .vl-ex-layer {
-    transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.3, 1);
-  }
-  .vl-ex:hover .vl-ex-layer {
-    transform: translateY(calc((var(--i) - 2) * 5px));
-  }
-
-  /* 紋章の円周の文字が、ゆっくり回る */
-  .vl-emblem-ring {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: vl-spin 60s linear infinite;
-  }
-
-  /* 放射がゆっくり回る */
-  .vl-sunburst-spin {
-    animation: vl-spin 120s linear infinite;
-  }
-
-  /* 吊り札が、かすかに揺れる */
-  .vl-swing {
-    transform-origin: 52% 0;
-    animation: vl-swing 6s ease-in-out infinite;
-  }
-  .vl-swing:hover {
-    animation-duration: 2.2s;
-  }
-
-  /* 帯はカーソルを乗せると止まる */
-  .vl-marquee:hover .vl-marquee__track {
-    animation-play-state: paused;
-  }
-
-  /* 棒が左から伸びる */
-  .vl-reveal .vl-grow {
-    transform: scaleX(0);
-    transform-origin: left center;
-  }
-  .vl-reveal.is-in .vl-grow {
-    transform: scaleX(1);
-    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) var(--grow-delay, 0.1s);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .vl-reveal {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 /* ============================================================
@@ -1012,8 +863,8 @@ button:focus-visible,
 }
 
 /* ============================================================
-   札の面（ValuePlate）
-   大きさは ID-1（85.60×53.98mm）の横型にそろえる
+   札（63×88mm の縦型）
+   地は棚の色｡文字はカードの幅に比例（cqw）
    ============================================================ */
 .vl-card-wrap {
   container-type: inline-size;
@@ -1021,166 +872,500 @@ button:focus-visible,
   color: inherit;
 }
 .vl-plate {
-  position: relative;
   display: grid;
-  grid-template-rows: auto 33% minmax(0, 1fr) auto;
-  grid-template-areas:
-    "top"
-    "art"
-    "main"
-    "meaning";
-  /* トレーディングカードの寸法（63×88mm）の縦型 */
+  grid-template-rows: auto minmax(0, 1fr) auto auto auto auto;
   aspect-ratio: 63 / 88;
-  gap: 0;
-  border: 2px solid var(--vl-ink);
+  padding: 4.5cqw 4.5cqw 4cqw;
   background: var(--plate-bg);
   color: var(--plate-fg);
   overflow: hidden;
 }
+
+/* 上の行 */
 .vl-plate__top {
-  grid-area: top;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 2cqw;
-  padding: 2.6cqw 4cqw;
-  border-bottom: 2px solid var(--vl-ink);
-  line-height: 1;
-}
-.vl-plate__no {
-  font-family: var(--font-anton), Impact, sans-serif;
-  font-size: 9cqw;
-  letter-spacing: 0.03em;
-}
-.vl-plate__no-k {
-  font-size: 0.62em;
-  margin-right: 0.15em;
-  letter-spacing: 0.1em;
-}
-.vl-plate__cat {
-  font-size: 4.2cqw;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  padding-bottom: 2.4cqw;
+  border-bottom: 0.9cqw solid currentColor;
+  font-family: var(--font-mono), monospace;
+  font-size: 2.9cqw;
+  letter-spacing: 0.04em;
   white-space: nowrap;
+  min-width: 0;
 }
-.vl-plate__cat-en {
-  font-family: var(--font-courier), monospace;
-  font-size: 0.92em;
+.vl-plate__top > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* 左: 図版 */
+/* 図版 */
 .vl-plate__art {
-  grid-area: art;
-  position: relative;
   display: grid;
   place-items: center;
-  margin: 4cqw 4cqw 0;
-  border: 2px solid var(--vl-ink);
-  background: var(--vl-card);
-  overflow: hidden;
-}
-.vl-plate__art-dots {
-  position: absolute;
-  inset: 0;
-  color: var(--vl-ink);
-  opacity: 0.12;
+  padding: 4cqw 0 2cqw;
+  min-height: 0;
 }
 .vl-plate__art-svg {
-  position: relative;
   display: block;
   width: 100%;
   height: 100%;
-  padding: 3%;
-  box-sizing: border-box;
-}
-.vl-plate__art-paw {
-  position: relative;
-  display: block;
-  width: auto;
-  height: 52%;
-  color: var(--plate-bg);
-  opacity: 0.22;
+  max-height: 38cqw;
 }
 
-/* 右: 名前と年 */
-.vl-plate__main {
-  grid-area: main;
-  display: grid;
-  align-content: center;
-  gap: 0.8cqw;
-  padding: 3cqw 4cqw 1cqw;
-  min-width: 0;
-  overflow: hidden;
-}
-.vl-plate__en {
-  font-family: var(--font-anton), Impact, sans-serif;
-  font-size: 4.4cqw;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  line-height: 1.1;
-  opacity: 0.85;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+/* 名前と印 */
+.vl-plate__id {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2cqw;
 }
 .vl-plate__name {
-  font-family: var(--font-ja-display), var(--font-zen-kaku), sans-serif;
-  font-size: min(12cqw, 76cqw / var(--name-len, 4));
-  line-height: 1.1;
-  letter-spacing: 0.01em;
+  font-weight: 900;
+  font-size: min(13cqw, 74cqw / var(--name-len, 4));
+  line-height: 1.06;
+  letter-spacing: -0.02em;
   white-space: nowrap;
 }
-.vl-plate__reading {
-  font-size: 3.4cqw;
-  letter-spacing: 0.1em;
-  opacity: 0.8;
+.vl-plate__glyph {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 11cqw;
+  height: 11cqw;
+  background: var(--vl-paper);
+  color: var(--vl-ink);
+  font-size: 5.4cqw;
+  line-height: 1;
+}
+.vl-plate__glyph.is-eol {
+  background: var(--vl-red);
+  color: var(--vl-paper);
+}
+.vl-plate__latin {
+  display: flex;
+  align-items: baseline;
+  gap: 2.4cqw;
+  margin-top: 1.4cqw;
+  padding-bottom: 3.4cqw;
+  border-bottom: 1px solid currentColor;
+  min-width: 0;
+}
+.vl-plate__en {
+  font-weight: 700;
+  font-size: 3.5cqw;
+  letter-spacing: 0.02em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.vl-plate__span {
-  margin-top: 2cqw;
-  font-size: 3.6cqw;
-  opacity: 0.92;
-}
-.vl-plate__years {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  font-family: var(--font-courier), monospace;
-  font-size: 3.8cqw;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  opacity: 0.9;
-}
-.vl-plate__stamp {
-  margin-left: auto;
-  font-size: 3.2cqw;
-  color: var(--plate-fg);
-}
-.vl-plate__stamp .vl-trend-stamp {
-  /* 濃い地に押すので､かすれと乗算をやめて紙の色で出す */
-  color: var(--plate-fg) !important;
-  mix-blend-mode: normal;
-  -webkit-mask-image: none;
-  mask-image: none;
-  border-width: 2.5px;
+.vl-plate__reading {
+  font-size: 3cqw;
+  opacity: 0.7;
+  white-space: nowrap;
 }
 
-/* 意味（札のいちばん下） */
+/* 意味 */
 .vl-plate__meaning {
-  grid-area: meaning;
-  margin: 0 4cqw 4cqw;
-  padding: 2.6cqw 3cqw;
-  border: 2px solid var(--vl-ink);
-  background: var(--vl-card);
-  color: var(--vl-ink);
-  font-size: 3.8cqw;
-  line-height: 1.5;
-  text-align: justify;
-  line-break: strict;
+  padding: 3.4cqw 0;
+  font-size: 3.4cqw;
+  line-height: 1.55;
+  border-bottom: 1px solid currentColor;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   overflow: hidden;
+}
+
+/* 年 */
+.vl-plate__data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3.4cqw 0;
+  border-bottom: 0.9cqw solid currentColor;
+}
+.vl-plate__data > div + div {
+  padding-left: 4cqw;
+  border-left: 1px solid currentColor;
+}
+.vl-plate__k {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 2.7cqw;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+.vl-plate__v {
+  display: block;
+  margin-top: 0.8cqw;
+  font-weight: 900;
+  font-size: 8cqw;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* 下の行 */
+.vl-plate__foot {
+  padding-top: 3cqw;
+}
+.vl-plate__state {
+  font-size: 3.2cqw;
+  font-weight: 700;
+}
+.vl-plate__src {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3cqw;
+  margin-top: 1.6cqw;
+  font-family: var(--font-mono), monospace;
+  font-size: 2.6cqw;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+.vl-plate__bars {
+  flex-shrink: 0;
+  width: 26cqw;
+  height: 4.6cqw;
+}
+
+/* 墨の札だけ､差し色を朱にする */
+.vl-plate[style*="--vl-sumi"] .vl-plate__top,
+.vl-plate[style*="--vl-sumi"] .vl-plate__en,
+.vl-plate[style*="--vl-sumi"] .vl-plate__k,
+.vl-plate[style*="--vl-sumi"] .vl-plate__v,
+.vl-plate[style*="--vl-sumi"] .vl-plate__state {
+  color: var(--vl-red);
+}
+
+/* ============================================================
+   表紙（Hero）
+   ============================================================ */
+.vl-hero {
+  background: var(--vl-ink);
+  color: var(--vl-paper);
+  padding: 11vh 0 56px;
+  overflow: hidden;
+}
+.vl-hero__kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: var(--vl-red);
+}
+.vl-hero__title {
+  margin-top: 3.2vh;
+  font-weight: 900;
+  font-size: clamp(40px, 7.4vw, 108px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+.vl-hero__lead {
+  margin-top: 4vh;
+  font-size: 14px;
+  line-height: 2;
+  color: rgba(237, 233, 223, 0.7);
+}
+.vl-hero__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4.5vh;
+}
+.vl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 22px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.vl-btn--fill {
+  background: var(--vl-red);
+  color: var(--vl-paper);
+}
+.vl-btn--line {
+  border: 1px solid rgba(237, 233, 223, 0.45);
+  color: var(--vl-paper);
+}
+.vl-hero__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3%;
+  max-width: 760px;
+  margin-top: 6vh;
+}
+.vl-hero__card {
+  transform: translateY(calc(var(--i) * 26px));
+}
+
+@media (max-width: 767px) {
+  .vl-hero {
+    padding-top: 7vh;
+  }
+  .vl-hero__cards {
+    max-width: none;
+    margin-top: 4vh;
+  }
+  .vl-hero__card {
+    transform: translateY(calc(var(--i) * 12px));
+  }
+}
+
+/* ============================================================
+   頭の帯
+   ============================================================ */
+.vl-head {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--vl-ink);
+  color: var(--vl-paper);
+  height: 58px;
+  display: flex;
+  align-items: center;
+}
+.vl-head > div {
+  width: 100%;
+}
+.vl-head__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vl-head__mark {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  background: var(--vl-red);
+  color: var(--vl-paper);
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+}
+.vl-head__name {
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+.vl-head__nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.vl-head__link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(237, 233, 223, 0.72);
+}
+.vl-head__link:hover,
+.vl-head__link.is-on {
+  color: var(--vl-paper);
+}
+.vl-head__no {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--vl-red);
+}
+@media (max-width: 767px) {
+  .vl-head {
+    height: 50px;
+  }
+  .vl-head__nav {
+    display: none;
+  }
+}
+
+/* ============================================================
+   索引
+   ============================================================ */
+.vl-index {
+  padding: 72px 0 96px;
+}
+.vl-sec {
+  border-top: 2px solid var(--vl-ink);
+  padding-top: 18px;
+}
+.vl-sec__kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--vl-ink-soft);
+}
+.vl-sec__title {
+  margin-top: 10px;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.vl-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.vl-bar__count {
+  margin-left: auto;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--vl-ink-soft);
+}
+.vl-chip {
+  padding: 7px 14px;
+  border: 1px solid var(--vl-ink);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background-color 140ms linear, color 140ms linear;
+}
+.vl-chip:hover {
+  background: rgba(28, 27, 25, 0.07);
+}
+.vl-chip.is-on {
+  background: var(--vl-ink);
+  color: var(--vl-paper);
+}
+.vl-filters {
+  margin-top: 12px;
+  border: 1px solid var(--vl-ink);
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+.vl-filters__row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.vl-filters__row > span {
+  width: 3.5em;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  padding-top: 8px;
+  color: var(--vl-ink-soft);
+}
+.vl-filters__row > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.vl-shelf {
+  margin-top: 56px;
+}
+.vl-shelf__head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--vl-ink);
+}
+.vl-shelf__no {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--vl-red);
+}
+.vl-shelf__name {
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+.vl-shelf__n {
+  margin-left: auto;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--vl-ink-soft);
+}
+.vl-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+@media (min-width: 700px) {
+  .vl-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+@media (min-width: 1000px) {
+  .vl-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+.vl-empty {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--vl-ink-soft);
+}
+
+/* ============================================================
+   足もと
+   ============================================================ */
+.vl-foot {
+  background: var(--vl-ink);
+  color: var(--vl-paper);
+  padding: 56px 0 28px;
+}
+.vl-foot__grid {
+  display: grid;
+  gap: 36px;
+}
+@media (min-width: 768px) {
+  .vl-foot__grid {
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 48px;
+  }
+}
+.vl-foot__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+.vl-foot__lead {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 2;
+  color: rgba(237, 233, 223, 0.66);
+}
+.vl-foot__k {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--vl-red);
+}
+.vl-foot nav ul {
+  margin-top: 14px;
+  display: grid;
+  gap: 9px;
+  font-size: 13px;
+}
+.vl-foot nav a:hover {
+  color: var(--vl-red);
+}
+.vl-foot nav li.is-self {
+  color: rgba(237, 233, 223, 0.4);
+}
+.vl-foot__copy {
+  margin-top: 44px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(237, 233, 223, 0.2);
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: rgba(237, 233, 223, 0.5);
 }

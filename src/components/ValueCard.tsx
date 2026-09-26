@@ -1,39 +1,64 @@
-import { Fragment } from "react";
 import Link from "next/link";
-import type { Value } from "@/data/types";
-import { categoryMeta, evidenceMeta } from "@/data/shelves";
-import SpanStrip from "./SpanStrip";
-import TrendStamp from "./TrendStamp";
-import Illust, { hasIllust } from "./illust";
-import ValuePlate from "./plate/ValuePlate";
-import { hasPlate } from "./plate";
+import type { Value, Trend } from "@/data/types";
+import { categoryMeta } from "@/data/shelves";
+import Art from "./art";
 
+/** 棚ごとの札の地｡色は8色のうちから選ぶ */
 export const SHELF_ACCENT: Record<string, { bg: string; fg: string; bar: string }> = {
-  "1": { bg: "var(--vl-brown)", fg: "var(--vl-paper)", bar: "var(--vl-brown)" },
-  "2": { bg: "var(--vl-navy)", fg: "var(--vl-paper)", bar: "var(--vl-navy)" },
-  // からしは淡いので､棒には墨の縁を付けて帯と同じ色で描く（SpanStrip の outline）
-  "3": { bg: "var(--vl-mustard)", fg: "var(--vl-ink)", bar: "var(--vl-mustard)" },
-  "4": { bg: "var(--vl-red)", fg: "var(--vl-paper)", bar: "var(--vl-red)" },
-  "5": { bg: "var(--vl-teal)", fg: "var(--vl-paper)", bar: "var(--vl-teal)" },
-  meta: { bg: "var(--vl-ink)", fg: "var(--vl-mustard)", bar: "var(--vl-ink)" },
+  "1": { bg: "var(--vl-kraft)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
+  "2": { bg: "var(--vl-concrete)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
+  "3": { bg: "var(--vl-sage)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
+  "4": { bg: "var(--vl-sky)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
+  "5": { bg: "var(--vl-lavender)", fg: "var(--vl-ink)", bar: "var(--vl-ink)" },
+  meta: { bg: "var(--vl-sumi)", fg: "var(--vl-paper)", bar: "var(--vl-paper)" },
 };
 
-/** 商品名を読点のあとで行に分ける（｢夫は外で働き､／妻は家庭を守る｣） */
+/** 商品名を読点のあとで行に分ける */
 export function nameLines(name: string): string[] {
   return name.split(/(?<=[､、])/).filter(Boolean);
 }
 
-/** 行の見た目の幅（全角=1､半角の英数字=0.55） */
-function visualLen(s: string) {
-  let n = 0;
-  for (const ch of s) n += /[\x20-\x7e]/.test(ch) ? 0.55 : 1;
-  return n;
+const visualLen = (s: string) => [...s].reduce((a, ch) => a + (/[\x20-\x7e]/.test(ch) ? 0.55 : 1), 0);
+
+/** 旧 API（他のページがまだ呼ぶ） */
+export function nameSize(name: string) {
+  return Math.min(12, 84 / Math.max(...nameLines(name).map(visualLen), 1));
 }
 
-/** 互換のため残す（旧 API）｡最長行の文字数から cqw を返す */
-export function nameSize(name: string) {
-  const n = Math.max(...nameLines(name).map(visualLen));
-  return Math.min(12, 84 / Math.max(n, 1));
+const GLYPH: Record<Trend, string> = {
+  up: "↑",
+  steady: "→",
+  down: "↘",
+  discontinued: "×",
+  restocked: "↻",
+};
+const STATE: Record<Trend, string> = {
+  up: "現行・拡大中",
+  steady: "現行",
+  down: "現行・減少中",
+  discontinued: "廃番",
+  restocked: "再入荷",
+};
+
+/** 型番から作る縞（商品らしさのための飾り） */
+function Barcode({ no, className = "" }: { no: string; className?: string }) {
+  let h = 7;
+  for (const c of no) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  const bars: { x: number; w: number }[] = [];
+  let x = 0;
+  for (let i = 0; i < 26; i++) {
+    h = (h * 1103515245 + 12345) >>> 0;
+    const w = 1 + (h % 3);
+    bars.push({ x, w });
+    x += w + 1 + ((h >> 8) % 2);
+  }
+  return (
+    <svg viewBox={`0 0 ${x} 14`} className={className} preserveAspectRatio="none" aria-hidden>
+      {bars.map((b, i) => (
+        <rect key={i} x={b.x} y="0" width={b.w} height="14" fill="currentColor" />
+      ))}
+    </svg>
+  );
 }
 
 export default function ValueCard({
@@ -43,80 +68,83 @@ export default function ValueCard({
 }: {
   v: Value;
   index?: number;
-  /** false のとき､リンクにせず絵柄だけを描く（外側を押せるようにするとき） */
+  /** false のとき､リンクにせず絵柄だけを描く */
   interactive?: boolean;
 }) {
   const acc = SHELF_ACCENT[String(v.shelf)];
   const lines = nameLines(v.name);
-  const longest = Math.max(...lines.map(visualLen));
-  // 縦長カード: カード幅に比例（1行に収まる大きさ）｡行カード: px で上限を持つ
-  const nameV = `${Math.min(11.5, 84 / Math.max(longest, 1)).toFixed(2)}cqw`;
-  const nameR = `${Math.min(26, Math.floor(262 / Math.max(longest, 1)))}px`;
-  const second = v.restocked
-    ? { k: "RESTOCK", t: v.restocked.label }
+  const nameLen = Math.max(...lines.map(visualLen), 1);
+  const cat = categoryMeta[v.category];
+
+  const left = v.made
+    ? { k: "製造 MFD", t: `${v.made.approx ? "c." : ""}${v.made.year}` }
+    : { k: "製造 MFD", t: "—" };
+  const right = v.restocked
+    ? { k: "再入荷 RESTOCK", t: String(v.restocked.year) }
     : v.discontinued
-      ? { k: "DISC.", t: v.discontinued.label }
-      : { k: "NOW", t: "現役" };
-
-  const illust = hasIllust(v.no);
-
-  // 札の面は ID-1 の横型にそろえる（図版の有無にかかわらず同じ組み）
-  return <ValuePlate v={v} index={index} interactive={interactive} />;
+      ? { k: "廃番 EOL", t: String(v.discontinued.year) }
+      : { k: "現行 NOW", t: "NOW" };
 
   const body = (
-    <>
-      <article
-        className={`vl-card vl-offset${illust ? " vl-card--illust" : ""}`}
-        style={{ ["--band-bg" as string]: acc.bg, ["--band-fg" as string]: acc.fg, ["--name-v" as string]: nameV, ["--name-r" as string]: nameR }}
-      >
-        <header className="vl-card__band">
-          <span className="vl-card__no">
-            <span className="vl-card__no-k">NO.</span>
-            {v.no}
-          </span>
-          <span className="vl-card__cat">
-            {v.category}
-            <span className="vl-card__cat-en"> · {categoryMeta[v.category].en}</span>
-          </span>
-        </header>
+    <article
+      className="vl-plate"
+      style={{
+        ["--plate-bg" as string]: acc.bg,
+        ["--plate-fg" as string]: acc.fg,
+        ["--name-len" as string]: nameLen.toFixed(1),
+      }}
+    >
+      <div className="vl-plate__top">
+        <span>NO.{v.no}</span>
+        <span>
+          {cat.en} / {v.category}
+        </span>
+      </div>
 
-        <div className="vl-card__body">
-          {illust && (
-            <div className="vl-card__illust" aria-hidden>
-              <Illust no={v.no} />
-            </div>
-          )}
-          <div className="vl-card__head">
-            <p className="vl-card__en">{v.en}</p>
-            <h3 className="vl-card__name">
-              {lines.map((l, i) => (
-                <Fragment key={i}>
-                  <span className="block">{l}</span>
-                </Fragment>
-              ))}
-            </h3>
-            <p className="vl-card__reading">{v.reading}</p>
-          </div>
+      <div className="vl-plate__art">
+        <Art no={v.no} className="vl-plate__art-svg" />
+      </div>
 
-          <div className="vl-card__stamp">
-            <TrendStamp trend={v.trend} seed={v.no} />
-          </div>
+      <div className="vl-plate__id">
+        <h3 className="vl-plate__name">
+          {lines.map((l, k) => (
+            <span key={k} className="block">
+              {l}
+            </span>
+          ))}
+        </h3>
+        <span className={`vl-plate__glyph${v.trend === "discontinued" ? " is-eol" : ""}`} aria-hidden>
+          {GLYPH[v.trend]}
+        </span>
+      </div>
+      <p className="vl-plate__latin">
+        <span className="vl-plate__en">{v.en.toUpperCase()}</span>
+        <span className="vl-plate__reading">{v.reading}</span>
+      </p>
 
-          <div className="vl-card__facts">
-            <SpanStrip v={v} accent={acc.bar} outline={v.shelf === 3} showLabels={false} />
-            <dl className="vl-card__dates">
-              <dt>MFD.</dt>
-              <dd>{v.made?.label ?? "—"}</dd>
-              <dt>{second.k}</dt>
-              <dd>{second.t}</dd>
-            </dl>
-          </div>
+      <p className="vl-plate__meaning">{v.meaning ?? v.hitokoto}</p>
 
-          <p className="vl-card__hitokoto">{v.hitokoto}</p>
+      <div className="vl-plate__data">
+        <div>
+          <span className="vl-plate__k">{left.k}</span>
+          <b className="vl-plate__v">{left.t}</b>
         </div>
-        <span className="sr-only">{evidenceMeta[v.evidence].ja}</span>
-      </article>
-    </>
+        <div>
+          <span className="vl-plate__k">{right.k}</span>
+          <b className="vl-plate__v">{right.t}</b>
+        </div>
+      </div>
+
+      <div className="vl-plate__foot">
+        <p className="vl-plate__state">{STATE[v.trend]}</p>
+        <p className="vl-plate__src">
+          <span>
+            VL-{v.no} / {v.evidence === "law" ? "SRC: 法令・初出" : "SRC: 統計"}
+          </span>
+          <Barcode no={v.no} className="vl-plate__bars" />
+        </p>
+      </div>
+    </article>
   );
 
   if (!interactive) {
@@ -128,11 +156,7 @@ export default function ValueCard({
   }
 
   return (
-    <Link
-      href={`/values/${v.no}`}
-      className="vl-card-wrap vl-rise group"
-      style={{ animationDelay: `${Math.min(index, 12) * 40}ms` }}
-    >
+    <Link href={`/values/${v.no}`} className="vl-card-wrap" style={{ animationDelay: `${Math.min(index, 12) * 40}ms` }}>
       {body}
     </Link>
   );

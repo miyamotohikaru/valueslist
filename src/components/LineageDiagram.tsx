@@ -105,7 +105,7 @@ function RestockBadge() {
       <text y="-1" textAnchor="middle" fontSize="18" fontWeight="700" fill="var(--vl-paper)" fontFamily="sans-serif">
         ↻
       </text>
-      <text y="14" textAnchor="middle" fontSize="9" letterSpacing="0.6" fill="var(--vl-paper)" fontFamily="var(--font-anton), Impact, sans-serif">
+      <text y="14" textAnchor="middle" fontSize="9" letterSpacing="0.6" fill="var(--vl-paper)" fontFamily="var(--font-sans), sans-serif">
         RESTOCKED
       </text>
     </svg>

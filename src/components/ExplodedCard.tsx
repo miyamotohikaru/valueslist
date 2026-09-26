@@ -67,7 +67,7 @@ export default function ExplodedCard({ className = "" }: { className?: string })
               strokeLinejoin="round"
             />
             <circle cx={15} cy={cy} r="3" fill={PAPER} stroke={INK} strokeWidth="1.2" />
-            <text x={62} y={cy + 5.5} textAnchor="middle" fontSize="15" fontWeight="700" fill={PAPER} fontFamily="var(--font-zen-kaku), sans-serif">
+            <text x={62} y={cy + 5.5} textAnchor="middle" fontSize="15" fontWeight="700" fill={PAPER} fontFamily="var(--font-sans), sans-serif">
               {r.label}
             </text>
             {/* 層（側面・前面・天面） */}
@@ -83,7 +83,7 @@ export default function ExplodedCard({ className = "" }: { className?: string })
               fontSize={isName ? 21 : 14}
               fontWeight={isName ? 800 : 700}
               fill={INK}
-              fontFamily={isName ? "var(--font-ja-display), sans-serif" : "var(--font-zen-kaku), sans-serif"}
+              fontFamily={isName ? "var(--font-sans), sans-serif" : "var(--font-sans), sans-serif"}
             >
               {r.text}
             </text>

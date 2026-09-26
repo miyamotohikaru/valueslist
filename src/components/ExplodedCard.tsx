@@ -10,7 +10,7 @@ type Layer = { label: string; en: string; text: string; h: number; face: "plain"
 
 const LAYERS: Layer[] = [
   { label: "傾向", en: "TREND", text: "× 廃番", h: 12, face: "plain" },
-  { label: "商品名", en: "NAME", text: "仇討ち", h: 28, face: "dots" },
+  { label: "名前", en: "NAME", text: "仇討ち", h: 28, face: "dots" },
   { label: "製造", en: "MFD.", text: "近世 届出制で公認", h: 14, face: "plain" },
   { label: "廃番", en: "DISC.", text: "1873.02.07 太政官布告第37号", h: 14, face: "hatch" },
   { label: "証拠", en: "EVIDENCE", text: "法令・初出型", h: 18, face: "dots" },
@@ -52,7 +52,7 @@ export default function ExplodedCard({ className = "" }: { className?: string })
         const side = `${x + W},${r.y + DP} ${x + SK + W},${r.y} ${x + SK + W},${r.y + r.h} ${x + W},${r.y + DP + r.h}`;
         const cy = r.y + DP / 2 + 3;
         const faceFill = r.face === "dots" ? "url(#ex-dots)" : r.face === "hatch" ? "url(#ex-hatch)" : RED;
-        const isName = r.label === "商品名";
+        const isName = r.label === "名前";
         return (
           <g key={i} className="vl-ex-layer" style={{ ["--i" as string]: i }}>
             {/* 引き出し線と札 */}

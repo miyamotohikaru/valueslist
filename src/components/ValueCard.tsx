@@ -38,7 +38,7 @@ export const SHELF_ACCENT: Record<string, { bg: string; fg: string; bar: string 
   meta: { bg: "var(--vl-sumi)", fg: "var(--vl-paper)", bar: "var(--vl-paper)" },
 };
 
-/** 商品名を読点のあとで行に分ける */
+/** 名前を読点のあとで行に分ける */
 export function nameLines(name: string): string[] {
   return name.split(/(?<=[､、])/).filter(Boolean);
 }
@@ -65,7 +65,7 @@ const STATE: Record<Trend, string> = {
   restocked: "再入荷",
 };
 
-/** 型番から作る縞（商品らしさのための飾り） */
+/** 型番から作る縞（札らしさのための飾り） */
 function Barcode({ no, className = "" }: { no: string; className?: string }) {
   let h = 7;
   for (const c of no) h = (h * 31 + c.charCodeAt(0)) >>> 0;

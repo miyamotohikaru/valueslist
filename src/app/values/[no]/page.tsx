@@ -49,15 +49,17 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 /** 見出しの大きさ｡最長の行の文字数で決める */
 function titleSize(lines: string[]): string {
   const n = Math.max(...lines.map((l) => [...l].reduce((a, ch) => a + (/[\x20-\x7e]/.test(ch) ? 0.55 : 1), 0)));
-  if (n <= 3) return "clamp(64px, 19vw, 128px)";
-  if (n <= 4) return "clamp(56px, 16vw, 108px)";
-  if (n <= 6) return "clamp(44px, 12.5vw, 86px)";
-  if (n <= 8) return "clamp(34px, 9.6vw, 68px)";
-  if (n <= 10) return "clamp(28px, 7.8vw, 56px)";
-  return "clamp(24px, 6.6vw, 48px)";
+  // 携帯では画面に対して大きくなりすぎていたので､PC と同じくらいの
+  // 占有率（本文幅の 1 割強）になるよう vw を下げてある
+  if (n <= 3) return "clamp(40px, 12vw, 128px)";
+  if (n <= 4) return "clamp(36px, 10.8vw, 108px)";
+  if (n <= 6) return "clamp(30px, 9vw, 86px)";
+  if (n <= 8) return "clamp(26px, 7.6vw, 68px)";
+  if (n <= 10) return "clamp(23px, 6.6vw, 56px)";
+  return "clamp(21px, 5.8vw, 48px)";
 }
 
-/** おなじ棚の他の商品｡自分の後ろに続くものを優先して最大 4 枚 */
+/** おなじ棚の他の在庫｡自分の後ろに続くものを優先して最大 4 枚 */
 function sameShelf(v: Value, max = 4) {
   const list = byShelf(v.shelf);
   const i = list.findIndex((x) => x.no === v.no);
@@ -213,7 +215,7 @@ export default async function ValuePage({ params }: Params) {
       {/* 見出し */}
       <header className="relative mt-6 grid gap-6 md:mt-8 md:grid-cols-[minmax(0,1fr)_240px] md:items-center">
         <div className="min-w-0">
-          <p className="font-display-en text-[20px] leading-none tracking-[0.08em] text-vl-red uppercase md:text-[28px]">{v.en}</p>
+          <p className="font-display-en text-[15px] leading-none tracking-[0.08em] text-vl-red uppercase md:text-[28px]">{v.en}</p>
           <h1 className="font-display-ja mt-3 leading-[1.1]" style={{ fontSize: titleSize(lines) }}>
             {lines.map((l, i) => (
               <span key={i} className="block">
@@ -223,7 +225,7 @@ export default async function ValuePage({ params }: Params) {
           </h1>
           <p className="mt-3 text-[14px] tracking-[0.1em] text-vl-ink-soft">{v.reading}</p>
           <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 md:mt-7">
-            <span className="text-[22px] md:text-[30px]">
+            <span className="text-[16px] md:text-[30px]">
               <TrendStamp trend={v.trend} seed={v.no} ja />
             </span>
             <span className="text-[13px] font-bold whitespace-nowrap md:hidden">
@@ -243,7 +245,7 @@ export default async function ValuePage({ params }: Params) {
         aria-label="ひとこと"
       >
         <span
-          className="pointer-events-none absolute -top-3 left-3 text-[110px] leading-none font-bold opacity-30 md:-top-6 md:left-5 md:text-[170px]"
+          className="pointer-events-none absolute -top-2 left-3 text-[64px] leading-none font-bold opacity-30 md:-top-6 md:left-5 md:text-[170px]"
           style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
           aria-hidden
         >
@@ -292,7 +294,7 @@ export default async function ValuePage({ params }: Params) {
 
       {/* 本文 ＋ この標本のカード */}
       <section className="mt-14 md:mt-20" aria-labelledby="description">
-        <SectionHead id="description" en="DESCRIPTION" ja="商品説明" />
+        <SectionHead id="description" en="DESCRIPTION" ja="説明" />
         <div className="mt-6 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-14">
           <div className="vl-prose vl-justify max-w-[40em] text-[16px] leading-[2]">
             {v.body.map((p, i) => (
@@ -320,10 +322,10 @@ export default async function ValuePage({ params }: Params) {
       {/* 系譜 */}
       <LineageStrip v={v} />
 
-      {/* おなじ棚の商品 */}
+      {/* おなじ棚の在庫 */}
       {siblings.length > 0 && (
         <section className="mt-14 md:mt-20" aria-labelledby="same-shelf">
-          <SectionHead id="same-shelf" en="SAME SHELF" ja="おなじ棚の商品" right={`${shelf.no}. ${shelf.name}`} />
+          <SectionHead id="same-shelf" en="SAME SHELF" ja="おなじ棚の在庫" right={`${shelf.no}. ${shelf.name}`} />
           <ul className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {siblings.map((s, i) => (
               <li key={s.no}>

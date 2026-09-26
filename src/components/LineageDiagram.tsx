@@ -10,7 +10,7 @@ import TypeLabel from "./TypeLabel";
 
 /**
  * 系譜の分解図｡ノードを上（古い）から下（新しい）へ等角の層として浮かせる｡
- * - カードのある層は､天面をその商品の棚の色で塗る（層を下るごとに色が変わる＝棚を移る）
+ * - カードのある層は､天面をその在庫の棚の色で塗る（層を下るごとに色が変わる＝棚を移る）
  * - 出来事の層は､破線の縁のクリーム
  * - 名前は斜めの天面には貼らず､前面に置く
  */
@@ -153,7 +153,7 @@ function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
       <div className={`relative border-2 border-t-0 px-4 pt-2.5 pb-3 ${border} ${edge} ${isEvent ? "bg-vl-paper" : "bg-vl-card"}`}>
         <div className="flex items-start justify-between gap-3">
           {v && (
-            /* 札と同じ版を小さく刷る｡どの商品の話か､絵で分かるように */
+            /* 札と同じ版を小さく刷る｡どの在庫の話か､絵で分かるように */
             <span className="vl-ln-thumb" style={{ ["--panel" as string]: recipeOf(v.no).panel }} aria-hidden>
               <HalftoneArt no={v.no} tech={recipeOf(v.no).tech} ink={recipeOf(v.no).ink} />
             </span>

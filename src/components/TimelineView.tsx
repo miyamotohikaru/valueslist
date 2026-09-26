@@ -17,7 +17,7 @@ import { countByEra } from "./EraBars";
 
 /** 年の目盛（ヘッダーに数字で出す年） */
 const TICKS = [1200, 1600, 1868, 1945, 2000];
-/** 左カラム（型番・商品名）の幅｡PC のみ */
+/** 左カラム（型番・名前）の幅｡PC のみ */
 const LEFT = "372px";
 
 const pct = (year: number) => scaleYear(year) * 100;
@@ -96,7 +96,7 @@ function AxisHeader() {
     <div className="sticky top-[62px] z-20 border-b-2 border-vl-ink bg-vl-paper md:top-[66px]">
       <div className="grid md:grid-cols-[var(--tl-left)_1fr]">
         <div className="hidden items-end justify-between px-3 pb-[7px] text-[12px] font-bold text-vl-ink-soft md:flex">
-          <span>製造年・型番・棚・商品名</span>
+          <span>製造年・型番・棚・名前</span>
         </div>
         <div className="relative h-[46px]">
           <div className="absolute inset-y-0 left-0 right-[var(--tl-gutter)]">
@@ -141,7 +141,7 @@ function AxisHeader() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 一行（＝一商品）                                                       */
+/* 一行（＝一点）                                                       */
 /* ------------------------------------------------------------------ */
 
 function Row({ v, loop }: { v: Value; loop: boolean }) {
@@ -171,7 +171,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
         title={tip}
         className="vl-tl-row group grid transition-colors duration-150 hover:bg-vl-card md:h-[46px] md:grid-cols-[var(--tl-left)_1fr] md:grid-rows-1"
       >
-        {/* 左: 型番・棚・商品名・製造年 */}
+        {/* 左: 製造年・型番・棚・名前 */}
         <div
           className="relative z-[2] flex min-w-0 items-center gap-2 bg-vl-paper px-2 group-hover:bg-vl-card md:bg-transparent md:px-3"
           style={{ height: "var(--tl-name-h)" }}
@@ -216,9 +216,9 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 }}
               />
             )}
-            {/* はじまった年｡帯の左端の上に出す */}
+            {/* はじまった年｡帯の左端の下に出す（上は廃番･再入荷の年が使う） */}
             <span
-              className="font-type absolute top-0 text-[10px] leading-[1.2] font-bold whitespace-nowrap text-vl-ink-soft md:text-[11px]"
+              className="font-type absolute bottom-0 text-[10px] leading-[1.2] font-bold whitespace-nowrap text-vl-ink-soft md:text-[11px]"
               style={{ left: `${start}%` }}
             >
               {approx ? "c." : ""}
@@ -305,8 +305,8 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 </span>
               ) : (
                 <span
-                  className="absolute top-1/2 -translate-y-1/2 text-[11px] leading-none font-bold whitespace-nowrap text-vl-red-deep"
-                  style={{ left: `calc(${labelAt}% + 12px)` }}
+                  className="absolute top-[1px] text-[11px] leading-none font-bold whitespace-nowrap text-vl-red-deep"
+                  style={{ left: `calc(${labelAt}% + 4px)` }}
                 >
                   <span className="font-type">{endYear}</span>
                   {v.restocked?.as && (
@@ -424,11 +424,14 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
     };
   });
   const num = span.match(/\d+/)?.[0] ?? "";
+  // 図版は SVG の上に重ねる（canvas は SVG の中に置けない）｡
+  // 位置も大きさも viewBox に対する割合で出すので､幅が変わってもずれない
+  const TH = 58;
   return (
-    <div className="mt-6 hidden md:block">
+    <div className="relative mx-auto mt-6 hidden w-full max-w-[820px] md:block">
       <svg
         viewBox={`0 0 ${W} ${H}`}
-        className="mx-auto block h-auto w-full max-w-[820px]"
+        className="mx-auto block h-auto w-full"
         role="img"
         aria-label="150年の円環"
       >
@@ -500,19 +503,21 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
                 : "left";
           const anchor =
             side === "left" ? "end" : side === "right" ? "start" : "middle";
-          const lx = side === "left" ? x - 26 : side === "right" ? x + 26 : x;
+          const lx = side === "left" ? x - 42 : side === "right" ? x + 42 : x;
           const ly =
             side === "top" ? y - 88 : side === "bottom" ? y + 36 : y - 26;
           return (
             <g key={i}>
-              <circle
-                cx={x}
-                cy={y}
-                r="13"
-                fill="var(--vl-card)"
-                stroke="var(--vl-red)"
-                strokeWidth="6"
-              />
+              {!node.v && (
+                <circle
+                  cx={x}
+                  cy={y}
+                  r="13"
+                  fill="var(--vl-card)"
+                  stroke="var(--vl-red)"
+                  strokeWidth="6"
+                />
+              )}
               <text
                 x={lx}
                 y={ly}
@@ -552,6 +557,28 @@ function RingH({ nodes, span }: { nodes: RingNode[]; span: string }) {
           );
         })}
       </svg>
+      {/* 環の上に置く図版 */}
+      {nodes.map((node, i) => {
+        if (!node.v) return null;
+        const [x, y] = pt(ang(i));
+        const r = recipeOf(node.v.no);
+        return (
+          <Link
+            key={`th-${i}`}
+            href={`/values/${node.v.no}`}
+            className="vl-ring-thumb"
+            style={{
+              left: `${(x / W) * 100}%`,
+              top: `${(y / H) * 100}%`,
+              width: `${(TH / W) * 100}%`,
+              ["--panel" as string]: r.panel,
+            }}
+            aria-label={`${node.n.label} のカードへ`}
+          >
+            <HalftoneArt no={node.v.no} tech={r.tech} ink={r.ink} />
+          </Link>
+        );
+      })}
     </div>
   );
 }
@@ -572,10 +599,20 @@ function RingV({ nodes }: { nodes: RingNode[] }) {
         {nodes.map((node, i) => (
           <li
             key={i}
-            className="relative flex flex-col justify-center pl-[34px]"
+            className="relative flex flex-col justify-center pl-[68px]"
             style={{ height: SP_LI }}
           >
-            <span className="absolute left-[17px] top-1/2 block h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-vl-red bg-vl-card" />
+            {node.v ? (
+              <span
+                className="vl-ring-thumb--sp"
+                style={{ ["--panel" as string]: recipeOf(node.v.no).panel }}
+                aria-hidden
+              >
+                <HalftoneArt no={node.v.no} tech={recipeOf(node.v.no).tech} ink={recipeOf(node.v.no).ink} />
+              </span>
+            ) : (
+              <span className="absolute left-[17px] top-1/2 block h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-vl-red bg-vl-card" />
+            )}
             {i > 0 && (
               <span className="absolute left-[17px] top-0 block h-0 w-0 -translate-x-1/2 -translate-y-1/2 border-x-[5px] border-t-[9px] border-x-transparent border-t-vl-red" />
             )}
@@ -865,9 +902,12 @@ export default function TimelineView() {
             INVENTORY BY YEAR
           </p>
           {/* 台帳を読む前に､物差しと記号の意味を置く */}
-          <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-start">
-            <EraRuler />
-            <div className="border-2 border-vl-ink bg-vl-card px-4 py-3 md:px-5 md:py-4">
+          {/* 物差しと凡例｡左右の幅と高さを揃える */}
+          <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-2 md:items-stretch">
+            <div className="border-2 border-vl-ink bg-vl-card px-3 py-3 md:px-4">
+              <EraRuler />
+            </div>
+            <div className="flex items-center border-2 border-vl-ink bg-vl-card px-4 py-3 md:px-5 md:py-4">
               <Legend />
             </div>
           </div>
@@ -876,7 +916,7 @@ export default function TimelineView() {
 
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         {/* 時代ごとの点数｡表で出す */}
-        <section className="py-8 md:py-12">
+        <section className="grid gap-6 py-8 md:grid-cols-2 md:py-12">
           <table className="vl-tl-table">
             <caption>時代ごとの点数</caption>
             <thead>

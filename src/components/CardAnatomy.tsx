@@ -20,7 +20,7 @@ const PARTS: Part[] = [
   { side: "l", sel: ".vl-print__art", ja: "図版", en: "ART", text: "灰色の版に描いてから網にかけたもの｡札ごとに網が違う｡" },
   { side: "l", sel: ".vl-print__body", ja: "意味", en: "MEANING", text: "その言葉が指していたもの｡二行で収めている｡" },
   { side: "r", sel: ".vl-print__top > span:last-child", ja: "扱い", en: "STATE", text: "いまの状態｡廃番・再入荷・現行の三つ｡廃番だけ朱｡" },
-  { side: "r", sel: ".vl-print__name", ja: "商品名", en: "NAME", text: "価値観の呼び名｡下に英名と読み｡" },
+  { side: "r", sel: ".vl-print__name", ja: "名前", en: "NAME", text: "価値観の呼び名｡下に英名と読み｡" },
   { side: "r", sel: ".vl-print__data", ja: "製造と廃番", en: "MFD. / EOL.", text: "製造の年と､廃番の年｡c. は推定､NOW は現役｡" },
   { side: "r", sel: ".vl-print__foot", ja: "網", en: "SCREEN", text: "図版にかけた網の名｡網点・線網・点刻・等高・反転の五つ｡" },
 ];

@@ -12,7 +12,7 @@ function fitLabel(label: string) {
 }
 
 /**
- * その商品が属する系譜を横並びで｡現在の商品をハイライトし､
+ * その在庫が属する系譜を横並びで｡いま見ている在庫をハイライトし､
  * カードがある段は /values/{no} へ､系譜そのものは /lineage#{id} へ｡
  */
 export default function LineageStrip({ v }: { v: Value }) {

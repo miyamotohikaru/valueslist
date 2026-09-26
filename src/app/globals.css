@@ -343,7 +343,7 @@ body {
   grid-area: head;
 }
 .vl-card__head {
-  /* 英名・商品名・読みのぶんの高さを取る */
+  /* 英名・名前・読みのぶんの高さを取る */
   min-height: calc(var(--name-v) * 1.35 + max(12px, 4.2cqw) * 2.6);
 }
 .vl-card__en {
@@ -533,7 +533,7 @@ body {
     column-gap: 10px;
     padding: 12px 14px 14px;
   }
-  /* 見出しのかたまりをほどいて、英名・商品名・読みを本体のグリッドに直接並べる */
+  /* 見出しのかたまりをほどいて、英名・名前・読みを本体のグリッドに直接並べる */
   .vl-card__head {
     display: contents;
   }
@@ -1708,7 +1708,6 @@ a.vl-print-wrap:hover {
 /* 年表の表（時代ごとの点数） */
 .vl-tl-table {
   width: 100%;
-  max-width: 560px;
   border-collapse: collapse;
   border: 2px solid var(--vl-ink);
   background: var(--vl-card);
@@ -1749,12 +1748,45 @@ a.vl-print-wrap:hover {
 .vl-ln-thumb {
   display: block;
   flex: none;
-  width: 44px;
-  height: 44px;
-  margin-top: 2px;
-  border: 1px solid var(--vl-line);
+  width: 72px;
+  height: 72px;
   background: var(--panel);
 }
+@media (min-width: 768px) {
+  .vl-ln-thumb {
+    width: 104px;
+    height: 104px;
+  }
+}
 .vl-ln-thumb .vl-print__art {
+  height: 100%;
+}
+
+/* 環の図に重ねる図版 */
+.vl-ring-thumb {
+  position: absolute;
+  display: block;
+  aspect-ratio: 1 / 1;
+  translate: -50% -50%;
+  background: var(--panel);
+  outline: 4px solid var(--vl-red);
+  outline-offset: 0;
+}
+.vl-ring-thumb .vl-print__art {
+  height: 100%;
+}
+/* 携帯の環 */
+.vl-ring-thumb--sp {
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  display: block;
+  width: 46px;
+  height: 46px;
+  translate: -50% -50%;
+  background: var(--panel);
+  outline: 3px solid var(--vl-red);
+}
+.vl-ring-thumb--sp .vl-print__art {
   height: 100%;
 }

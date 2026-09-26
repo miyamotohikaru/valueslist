@@ -85,11 +85,12 @@ function YearPill({ text }: { text: string }) {
   const rest = m ? m[2] : text;
   return (
     <span
-      className="inline-flex items-center gap-1.5 bg-vl-red py-[6px] pr-5 pl-3 leading-none whitespace-nowrap text-vl-paper"
+      className="inline-flex items-center gap-1.5 bg-vl-red py-[5px] pr-4 pl-2.5 leading-none whitespace-nowrap text-vl-paper md:py-[6px] md:pr-5 md:pl-3"
       style={{ clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%)" }}
     >
-      {num && <span className="font-type text-[12px] font-bold">{num}</span>}
-      {rest && <span className="text-[12px] font-bold">{rest}</span>}
+      {num && <span className="font-type text-[11px] font-bold md:text-[12px]">{num}</span>}
+      {/* 添えの語は札からはみ出すので､狭い画面では出さない */}
+      {rest && <span className="hidden text-[12px] font-bold sm:inline">{rest}</span>}
     </span>
   );
 }
@@ -164,8 +165,8 @@ function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
             <p
               className={`min-w-0 flex-1 ${
                 isLatin(label)
-                  ? "font-display-en text-[15px] leading-tight tracking-[0.03em] uppercase md:text-[26px]"
-                  : "font-display-ja text-[14px] leading-tight break-keep wrap-anywhere md:text-[24px]"
+                  ? "font-display-en text-[13px] leading-tight tracking-[0.03em] uppercase md:text-[26px]"
+                  : "font-display-ja text-[13px] leading-tight break-keep wrap-anywhere md:text-[24px]"
               }`}
             >
               {label.split(/(?<=・)/).map((part, i) => (
@@ -189,7 +190,7 @@ function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
   );
 
   return (
-    <li className="grid grid-cols-[76px_minmax(0,1fr)] items-center gap-x-2 sm:grid-cols-[138px_minmax(0,1fr)]">
+    <li className="grid grid-cols-[62px_minmax(0,1fr)] items-center gap-x-2 sm:grid-cols-[138px_minmax(0,1fr)]">
       <div className="relative flex items-center">
         <YearPill text={year} />
         <span aria-hidden className="ml-2 hidden h-0 flex-1 border-t-2 border-dashed border-vl-red sm:block" />

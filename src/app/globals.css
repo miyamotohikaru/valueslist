@@ -1760,7 +1760,7 @@ a.vl-print-wrap:hover {
   display: block;
   flex: none;
   align-self: stretch;
-  width: 72px;
+  width: 60px;
   background: var(--panel);
 }
 @media (min-width: 768px) {

@@ -23,7 +23,7 @@ function Cell({
   return (
     <div className={`border-t-2 border-vl-ink/15 px-4 py-3 ${wide ? "col-span-2" : ""} ${right ? "border-l-2 border-l-vl-ink/15" : ""}`}>
       <p className="text-[12px] font-bold text-vl-ink-soft">{label}</p>
-      <div className="mt-1 text-[15px] leading-snug font-bold">{children}</div>
+      <div className="mt-1 text-[12px] leading-snug font-bold md:text-[15px]">{children}</div>
     </div>
   );
 }

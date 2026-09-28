@@ -109,7 +109,7 @@ function Ticket({ p }: { p: Pair }) {
 }
 
 /**
- * 第5棚: 長距離再入荷の陳列｡起点（廃番から／製造から）ごとに分けて､同じ物差しで比べられるようにする｡
+ * 第5グループ: 長距離再入荷の陳列｡起点（廃番から／製造から）ごとに分けて､同じ物差しで比べられるようにする｡
  */
 export default function RestockPairs({ values, all }: { values: Value[]; all: Value[] }) {
   const pairs = longRestocks(values, all);

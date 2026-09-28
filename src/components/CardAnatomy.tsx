@@ -16,10 +16,10 @@ type Part = { side: Side; sel: string; ja: string; en: string; text: string };
 
 /** 左の列（上から）→ 右の列（上から）の順に番号を振る */
 const PARTS: Part[] = [
-  { side: "l", sel: ".vl-print__no", ja: "型番", en: "NO.", text: "棚の並び順の三桁｡" },
+  { side: "l", sel: ".vl-print__no", ja: "型番", en: "NO.", text: "グループの並び順の三桁｡" },
   { side: "l", sel: ".vl-print__art", ja: "図版", en: "ART", text: "灰色の版に描いてから網にかけたもの｡札ごとに網が違う｡" },
   { side: "l", sel: ".vl-print__body", ja: "意味", en: "MEANING", text: "その言葉が指していたもの｡二行で収めている｡" },
-  { side: "l", sel: ".vl-print__line", ja: "棚", en: "SHELF", text: "下の線の色が棚｡五つの棚を色で見分ける｡" },
+  { side: "l", sel: ".vl-print__line", ja: "グループ", en: "SHELF", text: "下の線の色がグループ｡五つのグループを色で見分ける｡" },
   { side: "r", sel: ".vl-print__state", ja: "扱い", en: "STATE", text: "いまの状態｡廃番・再入荷・現行の三つ｡廃番だけ朱｡" },
   { side: "r", sel: ".vl-print__name", ja: "名前", en: "NAME", text: "価値観の呼び名｡下に英名と読み｡" },
   { side: "r", sel: ".vl-print__data", ja: "製造と廃番", en: "MFD. / EOL.", text: "製造の年と､廃番の年｡c. は推定､NOW は現役｡" },

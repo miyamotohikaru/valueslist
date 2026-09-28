@@ -2,7 +2,7 @@ import type { ShelfMeta } from "@/data/types";
 import BreakText from "./BreakText";
 import { SHELF_ACCENT } from "./ValueCard";
 
-/** 棚札｡丸いメダルに棚番号､右に名前と説明｡証拠の種類と件数は説明の下にまとめる */
+/** グループ札｡丸いメダルにグループ番号､右に名前と説明｡証拠の種類と件数は説明の下にまとめる */
 export default function ShelfHeader({ shelf, count }: { shelf: ShelfMeta; count: number }) {
   const acc = SHELF_ACCENT[String(shelf.id)];
   return (
@@ -12,7 +12,7 @@ export default function ShelfHeader({ shelf, count }: { shelf: ShelfMeta; count:
         style={{ ["--medal-bg" as string]: acc.bg, ["--medal-fg" as string]: acc.fg }}
         aria-hidden
       >
-        <span className="font-type text-[11px] font-bold tracking-[0.14em]">SHELF</span>
+        <span className="font-type text-[11px] font-bold tracking-[0.14em]">GROUP</span>
         <span className="font-display-en text-[40px] leading-[0.9] md:text-[48px]">{shelf.no}</span>
       </div>
       <div className="min-w-0 pt-1">

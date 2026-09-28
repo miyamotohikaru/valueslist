@@ -62,7 +62,7 @@ export default function DetailSpec({ v }: { v: Value }) {
         <span className="text-[13px] font-bold">仕様</span>
       </div>
       <div className="grid grid-cols-2">
-        <Cell label="棚" wide>
+        <Cell label="グループ" wide>
           <span className="flex items-start gap-2">
             <span className="mt-[4px] inline-block h-[12px] w-[12px] shrink-0 border-2 border-vl-ink" style={{ background: acc.bg }} aria-hidden />
             <span>

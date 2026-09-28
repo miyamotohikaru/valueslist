@@ -24,7 +24,7 @@ const TECHS: { tech: Technique; label: string }[] = [
   { tech: "solarise", label: "反転 SOLARISATION" },
 ];
 
-/** 刷り色｡8色を回す｡棚の色ではないので､同じ棚でも一枚ずつ違う */
+/** 刷り色｡8色を回す｡グループの色ではないので､同じグループでも一枚ずつ違う */
 const INKS = [
   "#c8431d", // 朱
   "#26348c", // 藍
@@ -110,7 +110,7 @@ function dates(v: Value) {
 export default function PrintCard({ v, interactive = true }: { v: Value; interactive?: boolean }) {
   const r = recipeOf(v.no);
   const [left, right] = dates(v);
-  // 棚は下の線の色で見分ける
+  // グループは下の線の色で見分ける
   const bar = SHELF_ACCENT[String(v.shelf)].line;
 
   // 外の枠で幅を測る｡札そのものに container-type を置くと
@@ -156,8 +156,8 @@ export default function PrintCard({ v, interactive = true }: { v: Value; interac
           </div>
         </div>
 
-        {/* 下の線｡色で棚を見分ける */}
-        <span className="vl-print__line" aria-label={`棚 ${v.shelf === "meta" ? "M" : v.shelf}`} />
+        {/* 下の線｡色でグループを見分ける */}
+        <span className="vl-print__line" aria-label={`グループ ${v.shelf === "meta" ? "M" : v.shelf}`} />
       </article>
     </Wrap>
   );

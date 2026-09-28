@@ -44,7 +44,7 @@ export default function NotFound() {
             </p>
 
             <p className="mt-6 text-[13px] leading-[1.95] text-vl-ink-soft md:text-[14px]">
-              <Ja text="お探しの型番は､棚にない｡廃番ではなく､製造の記録がこの店にない｡型番を確かめるか､索引から探してほしい｡" />
+              <Ja text="お探しの型番は､この一覧にない｡廃番ではなく､製造の記録がない｡型番を確かめるか､索引から探してほしい｡" />
             </p>
 
             <Link

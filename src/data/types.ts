@@ -65,6 +65,6 @@ export type ShelfMeta = {
   en: string;
   lead: string;
   evidenceNote: string;
-  /** カードを持たない棚（第5棚＝再入荷ペアの陳列）｡絞り込みには出さない */
+  /** カードを持たないグループ（第5グループ＝再入荷ペアの陳列）｡絞り込みには出さない */
   virtual?: boolean;
 };

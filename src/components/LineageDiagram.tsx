@@ -10,7 +10,7 @@ import TypeLabel from "./TypeLabel";
 
 /**
  * 系譜の分解図｡ノードを上（古い）から下（新しい）へ等角の層として浮かせる｡
- * - カードのある層は､天面をそのカードの棚の色で塗る（層を下るごとに色が変わる＝棚を移る）
+ * - カードのある層は､天面をそのカードのグループの色で塗る（層を下るごとに色が変わる＝グループを移る）
  * - 出来事の層は､破線の縁のクリーム
  * - 名前は斜めの天面には貼らず､前面に置く
  */
@@ -133,7 +133,7 @@ function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
       className={`relative ${v ? "transition-transform duration-200 group-hover:-translate-y-1" : ""}`}
       style={{ paddingTop: DP, marginRight: SK }}
     >
-      {/* 天面（棚の色＋網点） */}
+      {/* 天面（グループの色＋網点） */}
       <div
         aria-hidden
         className={`absolute inset-x-0 top-0 origin-bottom-left ${border} ${edge}`}

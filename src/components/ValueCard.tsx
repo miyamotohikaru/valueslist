@@ -4,7 +4,7 @@ import { categoryMeta } from "@/data/shelves";
 import Art from "./art";
 
 /**
- * 札の地｡棚ではなく型番で決める（並べたときに一枚ずつ色が変わる）｡
+ * 札の地｡グループではなく型番で決める（並べたときに一枚ずつ色が変わる）｡
  * 12枚でひと回りする順にして､隣とも上下とも同じ色が来ないようにしてある｡
  */
 const GROUNDS = [
@@ -29,8 +29,8 @@ export function groundOf(v: Value) {
 }
 
 /**
- * 棚の色（索引の見出しなど､札の外で使う）｡
- * line は札の下の細い線用｡地の色のままだと5つの棚を見分けられないので､
+ * グループの色（索引の見出しなど､札の外で使う）｡
+ * line は札の下の細い線用｡地の色のままだと5つのグループを見分けられないので､
  * 同じ色味のまま濃くしてある｡
  */
 export const SHELF_ACCENT: Record<string, { bg: string; fg: string; bar: string; line: string }> = {
@@ -125,7 +125,7 @@ export default function ValueCard({
     >
       <div className="vl-plate__top">
         <span className="vl-plate__lead">
-          <span className="vl-plate__shelf" aria-label={`棚 ${shelfNo}`}>
+          <span className="vl-plate__shelf" aria-label={`グループ ${shelfNo}`}>
             {shelfNo}
           </span>
           NO.{v.no}

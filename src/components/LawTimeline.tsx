@@ -87,7 +87,7 @@ export default function LawTimeline({ v }: { v: Value }) {
             <li className="relative pl-7 md:pl-9">
               <Marker kind="stock" />
               <p className="pt-[9px] text-[13px] font-bold">
-                いまも棚にある
+                いまも現役
                 {v.restocked?.as && <span className="ml-1 font-normal">（{v.restocked.as} として）</span>}
               </p>
             </li>

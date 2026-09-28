@@ -379,10 +379,10 @@ type RingNode = { n: LineageNode; v: Value | undefined };
  * compact は携帯用｡枠を縦長にして､左右の点の説明も点の下へ回す｡
  */
 function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: string; compact?: boolean }) {
-  const W = compact ? 520 : 880;
-  const H = compact ? 660 : 560;
+  const W = compact ? 440 : 880;
+  const H = compact ? 550 : 560;
   const cx = W / 2;
-  const cy = compact ? 300 : H / 2;
+  const cy = compact ? 275 : H / 2;
   const R = compact ? 130 : 170;
   const TH = compact ? 52 : 58;
   const FZ = compact ? { year: 16, name: 25, note: 14, num: 62, unit: 15, tail: 0 } : { year: 14, name: 24, note: 14, num: 88, unit: 20, tail: 14 };

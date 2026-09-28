@@ -59,7 +59,7 @@ function titleSize(lines: string[]): string {
   return "clamp(21px, 5.8vw, 48px)";
 }
 
-/** おなじ棚の他のカード｡自分の後ろに続くものを優先して最大 4 枚 */
+/** おなじグループの他のカード｡自分の後ろに続くものを優先して最大 4 枚 */
 function sameShelf(v: Value, max = 4) {
   const list = byShelf(v.shelf);
   const i = list.findIndex((x) => x.no === v.no);
@@ -79,12 +79,12 @@ function SectionHead({ en, ja, right, id }: { en: string; ja: string; right?: st
   );
 }
 
-/** 紐で吊るした値札（型番と棚） */
+/** 紐で吊るした値札（型番とグループ） */
 function HangingTag({ v }: { v: Value }) {
   const shelf = shelfById(v.shelf);
   const acc = SHELF_ACCENT[String(v.shelf)];
   return (
-    <div className="vl-swing relative h-[270px] w-[230px]" aria-label={`型番 ${v.no}・棚 ${shelf.no} ${shelf.name}`}>
+    <div className="vl-swing relative h-[270px] w-[230px]" aria-label={`型番 ${v.no}・グループ ${shelf.no} ${shelf.name}`}>
       <svg viewBox="0 0 230 80" className="absolute top-0 left-0 h-[80px] w-[230px]" aria-hidden>
         <path d="M18 0 C 60 30, 120 20, 122 64" fill="none" stroke="var(--vl-ink)" strokeWidth="2" strokeDasharray="1 0" />
       </svg>
@@ -96,7 +96,7 @@ function HangingTag({ v }: { v: Value }) {
         <p className="font-type text-[11px] font-bold tracking-[0.14em]">CAT. NO.</p>
         <p className="font-display-en text-[76px] leading-none">{v.no}</p>
         <div className="mt-2 border-t-2 pt-2" style={{ borderColor: acc.fg }}>
-          <p className="font-type text-[11px] font-bold tracking-[0.12em]">SHELF {shelf.no}</p>
+          <p className="font-type text-[11px] font-bold tracking-[0.12em]">GROUP {shelf.no}</p>
           <p className="mt-0.5 text-[12px] leading-snug font-bold">{shelf.name}</p>
         </div>
       </div>
@@ -208,7 +208,7 @@ export default async function ValuePage({ params }: Params) {
           ← 索引にもどる
         </Link>
         <p className="font-type text-[10px] font-bold tracking-[0.08em] text-vl-ink-soft md:text-[12px]">
-          NO.{v.no} · SHELF {shelf.no}
+          NO.{v.no} · GROUP {shelf.no}
         </p>
       </div>
 
@@ -321,10 +321,10 @@ export default async function ValuePage({ params }: Params) {
       {/* 系譜 */}
       <LineageStrip v={v} />
 
-      {/* おなじ棚のカード */}
+      {/* おなじグループのカード */}
       {siblings.length > 0 && (
         <section className="mt-10 md:mt-20" aria-labelledby="same-shelf">
-          <SectionHead id="same-shelf" en="SAME SHELF" ja="おなじ棚のカード" right={`${shelf.no}. ${shelf.name}`} />
+          <SectionHead id="same-shelf" en="SAME GROUP" ja="おなじグループのカード" right={`${shelf.no}. ${shelf.name}`} />
           {/* 図鑑と同じ2列｡札は 63×88mm なので､どれも同じ大きさになる */}
           <ul className="mt-4 grid grid-cols-2 gap-3 md:mt-6 md:gap-5 xl:grid-cols-4">
             {siblings.map((s) => (

@@ -53,7 +53,7 @@ export default function IndexView({ values }: { values: Value[] }) {
     return list;
   }, [values, shelfF, catF, trendF, evF, sort]);
 
-  // 棚ごとに分けて並べる（並べ替えは棚の中でかかる）
+  // グループごとに分けて並べる（並べ替えはグループの中でかかる）
   const sections = shelves
     .filter((s) => !s.virtual)
     .map((s) => ({ shelf: s, items: filtered.filter((v) => v.shelf === s.id) }))
@@ -110,7 +110,7 @@ export default function IndexView({ values }: { values: Value[] }) {
       {open && (
         <div className="vl-filters">
           <div className="vl-filters__row">
-            <span>棚</span>
+            <span>グループ</span>
             <div>
               {shelves
                 .filter((s) => !s.virtual)
@@ -159,11 +159,11 @@ export default function IndexView({ values }: { values: Value[] }) {
         </div>
       )}
 
-      {/* 札｡棚ごとに分けて並べる */}
+      {/* 札｡グループごとに分けて並べる */}
       {sections.map((g) => (
         <section key={String(g.shelf.id)} id={`shelf-${g.shelf.no}`} className="vl-shelf">
           <div className="vl-shelf__head">
-            <p className="vl-shelf__no">SHELF {g.shelf.no}</p>
+            <p className="vl-shelf__no">GROUP {g.shelf.no}</p>
             <h3 className="vl-shelf__name">{g.shelf.name}</h3>
             <p className="vl-shelf__n">{g.items.length}点</p>
           </div>

@@ -16,7 +16,7 @@ export default function Hero() {
           製造年がある｡
         </h1>
         <p className="vl-hero__lead">
-          日本の価値観を､製造・廃番・再入荷の年で棚に並べ､
+          日本の価値観を､製造・廃番・再入荷の年で並べ､
           <br />
           一次資料で裏を取った図鑑｡全{stats.total}点｡
         </p>

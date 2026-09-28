@@ -13,7 +13,7 @@ import { Ja } from "@/lib/ja";
 export const metadata: Metadata = {
   title: "読み方 | 価値観一覧図鑑",
   description:
-    "価値観一覧図鑑の読み方｡カードの構造､証拠の二種､傾向の印､棚の分け方､扱わなかったもの､出典の方針｡",
+    "価値観一覧図鑑の読み方｡カードの構造､証拠の二種､傾向の印､グループの分け方､扱わなかったもの､出典の方針｡",
 };
 
 const SECTIONS = [
@@ -21,9 +21,8 @@ const SECTIONS = [
   { id: "card", no: "02", ja: "カードの読み方", en: "ANATOMY OF A CARD" },
   { id: "evidence", no: "03", ja: "証拠の二種", en: "TWO KINDS OF EVIDENCE" },
   { id: "trend", no: "04", ja: "傾向の印", en: "TREND STAMPS" },
-  { id: "shelves", no: "05", ja: "棚", en: "THE SHELVES" },
-  { id: "excluded", no: "06", ja: "扱わなかったもの", en: "NOT STOCKED" },
-  { id: "sources", no: "07", ja: "出典の方針", en: "SOURCING POLICY" },
+  { id: "shelves", no: "05", ja: "グループ", en: "THE GROUPS" },
+  { id: "sources", no: "06", ja: "出典の方針", en: "SOURCING POLICY" },
 ] as const;
 
 const sec = (id: (typeof SECTIONS)[number]["id"]) => SECTIONS.find((s) => s.id === id)!;
@@ -44,17 +43,11 @@ const SPAN_SAMPLE: Value = byName("隠居");
 const TRENDS: Trend[] = ["up", "steady", "down", "discontinued", "restocked"];
 const TREND_NOTES: Record<Trend, string> = {
   up: "使用頻度や賛成率が上がっている｡製造年の新しいものに多い｡",
-  steady: "大きな増減がなく､現役のまま棚にある｡",
+  steady: "大きな増減がなく､現役のまま残っている｡",
   down: "現役だが､賛成率や使用頻度が下がっている｡",
   discontinued: "制度や語として終わった｡廃番の日付がある｡",
   restocked: "別の名前で復活した｡印は､元のカードに押す｡",
 };
-
-const EXCLUDED = [
-  "穢れ・身分差別に関わる価値観は､◆初版から除外した｡部落差別に直結するためである｡",
-  "性風俗慣行は､◆純潔規範の背景として触れるにとどめ､◆単独項目にしていない｡",
-  `証拠が通説の域を出ない項目と､◆ほかの項目と重なる項目は落とした｡候補の約70項目から､${stats.total}項目に絞っている｡`,
-];
 
 const SOURCE_RULES = [
   { en: "LAW", ja: "法令", text: "公布日と､布告・法律番号" },
@@ -171,9 +164,9 @@ export default function AboutPage() {
             <br />
             THIS CATALOG
           </p>
-          <p className="mt-6 text-[17px] font-bold leading-relaxed md:text-[19px]">棚に並んだ札を､どう読むか｡</p>
+          <p className="mt-6 text-[17px] font-bold leading-relaxed md:text-[19px]">並んだカードを､どう読むか｡</p>
           <p className="mt-3 max-w-[30em] text-[14px] leading-[1.9] md:text-[15px]">
-            <Ja text="カードの部位､証拠の二種､傾向の印､棚の分け方｡この店で使っている記法を､◆ここにまとめた｡" />
+            <Ja text="カードの部位､証拠の二種､傾向の印､グループの分け方｡この店で使っている記法を､◆ここにまとめた｡" />
           </p>
         </div>
 
@@ -202,7 +195,7 @@ export default function AboutPage() {
       <Section id="what">
         <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-12">
           <p className="vl-justify max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
-            {"この図鑑は､日本の価値観（規範・人生観・判断基準）を品物に見立て､製造年・廃番年・再入荷年を出典にあたって特定し､棚に並べたものだ｡｢昔からの伝統｣に見えるものほど製造年が新しく､｢新品｣に見えるものが中世のものの再出荷だったりする｡それを年代順に並べて､目で見えるようにするのが目的である｡｢情報を並べるシリーズ｣の14番目にあたり､姉妹サイトに｢消滅職業図鑑｣と｢診断名アーカイブ｣がある｡"}
+            {"この図鑑は､日本の価値観（規範・人生観・判断基準）を､製造年・廃番年・再入荷年を出典にあたって特定し､カードにしたものだ｡｢昔からの伝統｣に見えるものほど製造年が新しく､｢新品｣に見えるものが中世のものの再出荷だったりする｡それを年代順に並べて､目で見えるようにするのが目的である｡"}
           </p>
           <div>
             <p className="text-[12px] font-bold">三つの年</p>
@@ -294,14 +287,14 @@ export default function AboutPage() {
 
       <div className="vl-rule" />
 
-      {/* 05 棚 */}
+      {/* 05 グループ */}
       <Section id="shelves">
         <p className="mb-8 max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
-          <Ja text="製造年と､いまの状態で棚を分けている｡棚の名前を押すと､索引のその棚へ飛ぶ｡" />
+          <Ja text="製造年と､いまの状態でグループを分けている｡グループの名前を押すと､索引のそのグループへ飛ぶ｡" />
         </p>
         <div className="vl-offset border-2 border-vl-ink bg-vl-card">
           <div className="font-type hidden grid-cols-[8em_0.85fr_1.65fr_1.35fr] gap-x-6 border-b-2 border-vl-ink px-5 py-2 text-[12px] font-bold tracking-[0.12em] text-vl-ink-soft lg:grid">
-            <span>SHELF</span>
+            <span>GROUP</span>
             <span>NAME</span>
             <span>LEAD</span>
             <span>EVIDENCE</span>
@@ -318,11 +311,11 @@ export default function AboutPage() {
                     className="vl-offset-sm inline-flex items-baseline gap-1.5 border-2 border-vl-ink px-2 py-1 leading-none"
                     style={{ background: acc.bg, color: acc.fg }}
                   >
-                    <span className="font-type text-[11px] font-bold tracking-[0.1em]">SHELF</span>
+                    <span className="font-type text-[11px] font-bold tracking-[0.1em]">GROUP</span>
                     <span className="font-display-en text-[18px] leading-none">{s.no}</span>
                   </span>
                   {s.virtual && (
-                    <span className="whitespace-nowrap text-[12px] font-bold text-vl-ink-soft lg:mt-2 lg:block">半券だけの棚</span>
+                    <span className="whitespace-nowrap text-[12px] font-bold text-vl-ink-soft lg:mt-2 lg:block">半券だけのグループ</span>
                   )}
                 </div>
                 <div>
@@ -345,25 +338,9 @@ export default function AboutPage() {
 
       <div className="vl-rule" />
 
-      {/* 06 扱わなかったもの */}
-      <Section id="excluded">
-        <ul className="max-w-[40em] space-y-5">
-          {EXCLUDED.map((text, i) => (
-            <li key={i} className="flex gap-3">
-              <span className="font-display-en mt-[3px] w-5 shrink-0 text-[20px] leading-none text-vl-red">×</span>
-              <p className="text-[14px] leading-[2] md:text-[15px]">
-                <Ja text={text} />
-              </p>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <div className="vl-rule" />
-
-      {/* 07 出典の方針 */}
+      {/* 06 出典の方針 */}
       <Section id="sources">
-        <div className="grid gap-10 md:grid-cols-[1fr_1.2fr] md:gap-12">
+        <div className="max-w-[32em]">
           <dl className="border-2 border-vl-ink bg-vl-card">
             {SOURCE_RULES.map((r) => (
               <div key={r.en} className="grid grid-cols-[6.5em_1fr] items-center gap-x-4 border-b border-vl-line px-4 py-3 last:border-b-0">
@@ -372,16 +349,12 @@ export default function AboutPage() {
               </div>
             ))}
           </dl>
-          <p className="max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
-            <Ja text="数値は､各調査の公表値を載せる｡選択肢を合算したときは､◆そう注記する｡解釈は､｢誰がそう論じているか｣を書く｡出典は､各項目の｢裏取りメモ｣に付す｡" />
-          </p>
         </div>
       </Section>
 
       {/* 索引へ */}
       <div className="vl-rule" />
       <div className="flex flex-col items-start gap-4 py-12 md:flex-row md:items-center md:justify-between md:py-16">
-        <p className="font-display-ja text-[20px] md:text-[24px]">読み方は以上｡棚へどうぞ｡</p>
         <Link
           href="/"
           className="vl-offset-sm inline-flex items-baseline gap-3 border-2 border-vl-ink bg-vl-ink px-5 py-3 text-vl-paper hover:bg-vl-red"

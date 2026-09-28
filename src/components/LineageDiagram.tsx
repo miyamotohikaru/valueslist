@@ -89,8 +89,11 @@ function YearPill({ text }: { text: string }) {
       style={{ clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%)" }}
     >
       {num && <span className="font-type text-[11px] font-bold md:text-[12px]">{num}</span>}
-      {/* 添えの語は札からはみ出すので､狭い画面では出さない */}
-      {rest && <span className="hidden text-[12px] font-bold sm:inline">{rest}</span>}
+      {/* 添えの語は札からはみ出すので狭い画面では出さない｡ただし数字がないときは
+          これが唯一の中身なので必ず出す（｢近世｣など） */}
+      {rest && (
+        <span className={`text-[11px] font-bold md:text-[12px] ${num ? "hidden sm:inline" : ""}`}>{rest}</span>
+      )}
     </span>
   );
 }
@@ -103,7 +106,7 @@ function RestockBadge() {
     pts.push(`${(Math.cos(a) * r).toFixed(2)},${(Math.sin(a) * r).toFixed(2)}`);
   }
   return (
-    <svg viewBox="-40 -40 80 80" className="absolute -top-7 -right-3 z-20 h-[70px] w-[70px] -rotate-12" role="img" aria-label="再入荷">
+    <svg viewBox="-40 -40 80 80" className="absolute -top-4 -right-1 z-20 h-[44px] w-[44px] -rotate-12 md:-top-7 md:-right-3 md:h-[70px] md:w-[70px]" role="img" aria-label="再入荷">
       <polygon points={pts.join(" ")} fill="var(--vl-red)" stroke="var(--vl-ink)" strokeWidth="1.5" />
       <text y="-1" textAnchor="middle" fontSize="18" fontWeight="700" fill="var(--vl-paper)" fontFamily="sans-serif">
         ↻

@@ -1816,7 +1816,7 @@ a.vl-print-wrap:hover {
   aspect-ratio: 1 / 1;
   translate: -50% -50%;
   background: var(--panel);
-  outline: 4px solid var(--vl-red);
+  outline: 2px solid var(--vl-red);
   outline-offset: 0;
 }
 .vl-ring-thumb .vl-print__art {

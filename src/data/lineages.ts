@@ -119,7 +119,7 @@ export const lineages: Lineage[] = [
     kind: "restock",
     title: "無常観 → マインドフルネス",
     en: "Meditation, Reimported",
-    lead: "無常を観じる瞑想は仏教の核にある｡1979年に米国の医学部で医療プログラムになり､2007年にGoogleの社内研修になり､2016年には､NHKスペシャルがストレス対処法として取り上げた｡中世文学の無常観の直系ではなく､同じ仏教の在庫が米国を回って戻ったものである｡",
+    lead: "無常を観じる瞑想は仏教の核にある｡1979年に米国の医学部で医療プログラムになり､2007年にGoogleの社内研修になり､2016年には､NHKスペシャルがストレス対処法として取り上げた｡中世文学の無常観の直系ではなく､同じ仏教のものが米国を回って戻ったものである｡",
     span: "804年",
     spanLabel: "方丈記から放送まで",
     nodes: [
@@ -182,5 +182,5 @@ export const lineageById = (id: string) => lineages.find((l) => l.id === id);
 export const resolveNode = (n: LineageNode): Value | undefined =>
   n.ref ? values.find((v) => v.name === n.ref) : undefined;
 
-/** ある在庫が属する系譜（複数可） */
+/** あるカードが属する系譜（複数可） */
 export const lineagesOf = (v: Value): Lineage[] => lineages.filter((l) => l.nodes.some((n) => n.ref === v.name));

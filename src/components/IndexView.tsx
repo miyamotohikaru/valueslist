@@ -171,7 +171,7 @@ export default function IndexView({ values }: { values: Value[] }) {
         </section>
       ))}
 
-      {filtered.length === 0 && <p className="vl-empty">該当する在庫がありません｡</p>}
+      {filtered.length === 0 && <p className="vl-empty">該当するカードがありません｡</p>}
     </div>
   );
 }

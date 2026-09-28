@@ -11,7 +11,7 @@ type Pair = {
   fromDisc: boolean;
 };
 
-/** ｢再入荷｣と判定したもので､元の在庫から50年以上へだてて戻ったもの */
+/** ｢再入荷｣と判定したもので､元のものから50年以上へだてて戻ったもの */
 export function longRestocks(values: Value[], all: Value[]): Pair[] {
   return values
     .filter((v) => v.restocked && v.trend === "restocked")
@@ -45,7 +45,7 @@ function Ticket({ p }: { p: Pair }) {
   return (
     <li className="vl-offset flex h-full flex-col border-2 border-vl-ink bg-vl-card">
       <div className="grid flex-1 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
-        {/* 元の在庫 */}
+        {/* 元のカード */}
         <Link href={`/values/${p.from.no}`} className="group flex min-w-0 flex-col gap-1 p-4 @container">
           <span
             className="font-type self-start px-1.5 py-0.5 text-[11px] font-bold tracking-[0.1em]"

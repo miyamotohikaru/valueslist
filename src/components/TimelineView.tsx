@@ -399,10 +399,12 @@ function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: strin
     const t = a1 + Math.PI / 2;
     const hx = x1 + Math.cos(t) * 2;
     const hy = y1 + Math.sin(t) * 2;
+    // 線を 2px に細くしたので､頭もそれに見合う大きさにする
+    const HEAD = 8;
     const head = [
-      [hx + Math.cos(t) * 12, hy + Math.sin(t) * 12],
-      [hx + Math.cos(t + 2.5) * 12, hy + Math.sin(t + 2.5) * 12],
-      [hx + Math.cos(t - 2.5) * 12, hy + Math.sin(t - 2.5) * 12],
+      [hx + Math.cos(t) * HEAD, hy + Math.sin(t) * HEAD],
+      [hx + Math.cos(t + 2.5) * HEAD, hy + Math.sin(t + 2.5) * HEAD],
+      [hx + Math.cos(t - 2.5) * HEAD, hy + Math.sin(t - 2.5) * HEAD],
     ]
       .map((p) => p.map((v) => v.toFixed(1)).join(","))
       .join(" ");
@@ -446,7 +448,7 @@ function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: strin
               d={a.d}
               fill="none"
               stroke="var(--vl-red)"
-              strokeWidth={a.last ? 4 : 6}
+              strokeWidth="2"
               strokeDasharray={a.last ? "10 7" : undefined}
               strokeLinecap="round"
             />

@@ -24,7 +24,6 @@ const SECTIONS = [
   { id: "shelves", no: "05", ja: "棚", en: "THE SHELVES" },
   { id: "excluded", no: "06", ja: "扱わなかったもの", en: "NOT STOCKED" },
   { id: "sources", no: "07", ja: "出典の方針", en: "SOURCING POLICY" },
-  { id: "series", no: "08", ja: "シリーズ", en: "THE SERIES" },
 ] as const;
 
 const sec = (id: (typeof SECTIONS)[number]["id"]) => SECTIONS.find((s) => s.id === id)!;
@@ -37,8 +36,8 @@ const DATES = [
 ];
 
 const byName = (name: string) => values.find((v) => v.name === name)!;
-/** カードの見本（法令で廃番になった一枚） */
-const ANATOMY: Value = byName("仇討ち");
+/** カードの見本（法令で廃番になった一枚）｡NO.001 は新しい面に差し替え中なので､ここは 002 を使う */
+const ANATOMY: Value = byName("忠孝");
 /** 年表の見本（概算の製造 → 廃番 → 再入荷の三つがそろう一枚） */
 const SPAN_SAMPLE: Value = byName("隠居");
 
@@ -48,7 +47,7 @@ const TREND_NOTES: Record<Trend, string> = {
   steady: "大きな増減がなく､現役のまま棚にある｡",
   down: "現役だが､賛成率や使用頻度が下がっている｡",
   discontinued: "制度や語として終わった｡廃番の日付がある｡",
-  restocked: "別の名前で復活した｡印は､元の商品のカードに押す｡",
+  restocked: "別の名前で復活した｡印は､元の在庫のカードに押す｡",
 };
 
 const EXCLUDED = [
@@ -62,11 +61,6 @@ const SOURCE_RULES = [
   { en: "STATISTICS", ja: "統計", text: "調査名と､調査の年" },
   { en: "BOOKS", ja: "書籍", text: "著者・書名・刊行年" },
   { en: "WEB", ja: "ウェブ", text: "サイト名と､URL" },
-];
-
-const SERIES = [
-  { name: "消滅職業図鑑", en: "VANISHED JOBS ARCHIVE", href: "https://vanished-jobs-archive.kosukuma.com/" },
-  { name: "診断名アーカイブ", en: "DIAGNOSIS ARCHIVE", href: "https://diagnosis-archive.vercel.app/" },
 ];
 
 /* ---------------------------------------------------------------- */
@@ -164,7 +158,7 @@ export default function AboutPage() {
       <section className="grid gap-8 py-10 md:grid-cols-[1.2fr_1fr] md:items-end md:gap-12 md:py-16">
         <div>
           <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-1">
-            <h1 className="font-display-ja text-[40px] leading-[1.05] md:text-[64px]">読み方</h1>
+            <h1 className="font-display-ja text-[26px] leading-[1.1] md:text-[64px]">読み方</h1>
             <span
               aria-hidden
               className="font-script inline-block rotate-[-6deg] text-[24px] leading-none text-vl-red md:text-[30px]"
@@ -208,7 +202,7 @@ export default function AboutPage() {
       <Section id="what">
         <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-12">
           <p className="vl-justify max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
-            {"この図鑑は､日本の価値観（規範・人生観・判断基準）を商品に見立て､製造年・廃番年・再入荷年を出典にあたって特定し､棚に並べたものだ｡｢昔からの伝統｣に見えるものほど製造年が新しく､｢新品｣に見えるものが中世の在庫の再出荷だったりする｡それを年代順に並べて､目で見えるようにするのが目的である｡｢情報を並べるシリーズ｣の14番目にあたり､姉妹サイトに｢消滅職業図鑑｣と｢診断名アーカイブ｣がある｡"}
+            {"この図鑑は､日本の価値観（規範・人生観・判断基準）を品物に見立て､製造年・廃番年・再入荷年を出典にあたって特定し､棚に並べたものだ｡｢昔からの伝統｣に見えるものほど製造年が新しく､｢新品｣に見えるものが中世の在庫の再出荷だったりする｡それを年代順に並べて､目で見えるようにするのが目的である｡｢情報を並べるシリーズ｣の14番目にあたり､姉妹サイトに｢消滅職業図鑑｣と｢診断名アーカイブ｣がある｡"}
           </p>
           <div>
             <p className="text-[12px] font-bold">三つの年</p>
@@ -233,18 +227,15 @@ export default function AboutPage() {
       <Section id="card">
         <CardAnatomy v={ANATOMY} />
 
-        {/* カード面の年表 */}
+        {/* 項目ページの年表 */}
         <figure className="mt-10 border-2 border-vl-ink bg-vl-card md:mt-12">
           <figcaption className="flex items-center justify-between gap-3 bg-vl-ink px-4 py-2.5 text-vl-paper md:px-6">
-            <span className="text-[13px] font-bold">カード面の年表</span>
+            <span className="text-[13px] font-bold">項目ページの年表</span>
             <span className="font-display-en hidden text-[13px] tracking-[0.14em] text-vl-mustard sm:inline">SPAN STRIP</span>
           </figcaption>
           <div className="grid gap-8 p-5 md:grid-cols-[1.15fr_1fr] md:items-center md:gap-10 md:p-7">
             <div>
-              <p className="text-[14px] leading-[1.9]">
-                <Ja text="カードの下段にある､小さな年表｡中世〜近世を圧縮し､◆明治以降を広く取ってある｡帯の色は､棚の色｡" />
-              </p>
-              <div className="mt-5 text-[16px]">
+              <div className="text-[16px]">
                 <SpanStrip v={SPAN_SAMPLE} accent="var(--vl-brown)" />
               </div>
               <p className="mt-3 text-[12px] leading-[1.7] font-bold">
@@ -299,9 +290,6 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-        <p className="mt-3 text-[13px] leading-[1.8]">
-          <Ja text="印は､カードの右側に押してある｡五種とも同じゴム印で､◆色と文字で見分ける｡" />
-        </p>
       </Section>
 
       <div className="vl-rule" />
@@ -362,7 +350,7 @@ export default function AboutPage() {
         <ul className="max-w-[40em] space-y-5">
           {EXCLUDED.map((text, i) => (
             <li key={i} className="flex gap-3">
-              <span className="font-display-en mt-[3px] w-4 shrink-0 text-[20px] leading-none text-vl-red">×</span>
+              <span className="font-display-en mt-[3px] w-5 shrink-0 text-[20px] leading-none text-vl-red">×</span>
               <p className="text-[14px] leading-[2] md:text-[15px]">
                 <Ja text={text} />
               </p>
@@ -387,36 +375,6 @@ export default function AboutPage() {
           <p className="max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
             <Ja text="数値は､各調査の公表値を載せる｡選択肢を合算したときは､◆そう注記する｡解釈は､｢誰がそう論じているか｣を書く｡出典は､各項目の｢裏取りメモ｣に付す｡" />
           </p>
-        </div>
-      </Section>
-
-      <div className="vl-rule" />
-
-      {/* 08 シリーズ */}
-      <Section id="series">
-        <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-12">
-          <p className="max-w-[36em] text-[15px] leading-[2.05] md:text-[16px]">
-            <Ja text="｢情報を並べるシリーズ｣は､◆ひとつの切り口で集めた事実を､◇ただ並べて見せるサイトの連作である｡価値観一覧図鑑は､その14番目にあたる｡" />
-          </p>
-          <ul className="vl-offset border-2 border-vl-ink bg-vl-card">
-            {SERIES.map((s) => (
-              <li key={s.href} className="border-b border-vl-line last:border-b-0">
-                <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-4 py-3 hover:text-vl-red"
-                >
-                  <span className="text-[15px] font-bold">{s.name}</span>
-                  <span className="ml-auto text-[13px] font-bold text-vl-ink-soft">↗</span>
-                </a>
-              </li>
-            ))}
-            <li className="flex flex-wrap items-baseline gap-x-3 px-4 py-3">
-              <span className="text-[15px] font-bold">価値観一覧図鑑</span>
-              <span className="ml-auto text-[12px] font-bold text-vl-ink-soft">このサイト · No.14</span>
-            </li>
-          </ul>
         </div>
       </Section>
 

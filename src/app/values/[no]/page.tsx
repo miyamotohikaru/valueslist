@@ -5,7 +5,8 @@ import { OG_IMAGE, SITE_NAME } from "@/lib/site";
 import type { Curve, Value } from "@/data/types";
 import { values, byNo, byShelf, prevNext } from "@/data/values";
 import { shelfById } from "@/data/shelves";
-import ValueCard, { SHELF_ACCENT, nameLines } from "@/components/ValueCard";
+import { SHELF_ACCENT, nameLines } from "@/components/ValueCard";
+import PrintCard, { recipeOf } from "@/components/PrintCard";
 import SpanStrip from "@/components/SpanStrip";
 import TrendStamp from "@/components/TrendStamp";
 import DetailSpec from "@/components/DetailSpec";
@@ -15,7 +16,7 @@ import FactList from "@/components/FactList";
 import LineageStrip from "@/components/LineageStrip";
 import FitLines from "@/components/FitLines";
 import Reveal from "@/components/motion/Reveal";
-import Illust, { hasIllust } from "@/components/illust";
+import HalftoneArt from "@/components/print/HalftoneArt";
 
 type Params = { params: Promise<{ no: string }> };
 
@@ -48,15 +49,17 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 /** 見出しの大きさ｡最長の行の文字数で決める */
 function titleSize(lines: string[]): string {
   const n = Math.max(...lines.map((l) => [...l].reduce((a, ch) => a + (/[\x20-\x7e]/.test(ch) ? 0.55 : 1), 0)));
-  if (n <= 3) return "clamp(64px, 19vw, 128px)";
-  if (n <= 4) return "clamp(56px, 16vw, 108px)";
-  if (n <= 6) return "clamp(44px, 12.5vw, 86px)";
-  if (n <= 8) return "clamp(34px, 9.6vw, 68px)";
-  if (n <= 10) return "clamp(28px, 7.8vw, 56px)";
-  return "clamp(24px, 6.6vw, 48px)";
+  // 携帯では画面に対して大きくなりすぎていたので､PC と同じくらいの
+  // 占有率（本文幅の 1 割強）になるよう vw を下げてある
+  if (n <= 3) return "clamp(40px, 12vw, 128px)";
+  if (n <= 4) return "clamp(36px, 10.8vw, 108px)";
+  if (n <= 6) return "clamp(30px, 9vw, 86px)";
+  if (n <= 8) return "clamp(26px, 7.6vw, 68px)";
+  if (n <= 10) return "clamp(23px, 6.6vw, 56px)";
+  return "clamp(21px, 5.8vw, 48px)";
 }
 
-/** おなじ棚の他の商品｡自分の後ろに続くものを優先して最大 4 枚 */
+/** おなじ棚の他のカード｡自分の後ろに続くものを優先して最大 4 枚 */
 function sameShelf(v: Value, max = 4) {
   const list = byShelf(v.shelf);
   const i = list.findIndex((x) => x.no === v.no);
@@ -68,8 +71,8 @@ function SectionHead({ en, ja, right, id }: { en: string; ja: string; right?: st
   return (
     <header className="flex flex-wrap items-end gap-x-3 gap-y-1 border-b-[3px] border-vl-ink pb-2">
       <h2 id={id} className="flex items-baseline gap-3">
-        <span className="font-display-en text-[28px] leading-none tracking-[0.03em] text-vl-red md:text-[34px]">{en}</span>
-        <span className="font-display-ja text-[18px] leading-none md:text-[20px]">{ja}</span>
+        <span className="font-display-en text-[19px] leading-none tracking-[0.03em] text-vl-red md:text-[34px]">{en}</span>
+        <span className="font-display-ja text-[13px] leading-none md:text-[20px]">{ja}</span>
       </h2>
       {right && <span className="ml-auto text-[12px] font-bold text-vl-ink-soft">{right}</span>}
     </header>
@@ -113,7 +116,7 @@ function SpanBox({ v, accent, outline }: { v: Value; accent: string; outline: bo
           {start} → {end}
         </p>
       </div>
-      <div className="mt-3 text-[18px]">
+      <div className="mt-3 text-[13px] md:text-[18px]">
         <SpanStrip v={v} accent={accent} outline={outline} showLabels />
       </div>
       <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[12px]">
@@ -168,7 +171,7 @@ function NavButton({ dir, v }: { dir: "prev" | "next"; v: Value }) {
       }`}
     >
       <span
-        className="font-display-en flex w-[56px] shrink-0 items-center justify-center text-[22px]"
+        className="font-display-en flex w-[44px] shrink-0 items-center justify-center text-[17px] md:w-[56px] md:text-[22px]"
         style={{ background: acc.bg, color: acc.fg }}
         aria-hidden
       >
@@ -176,7 +179,7 @@ function NavButton({ dir, v }: { dir: "prev" | "next"; v: Value }) {
       </span>
       <span className="min-w-0 flex-1 px-4 py-3">
         <span className="block text-[12px] font-bold text-vl-ink-soft">{isPrev ? "前の標本" : "次の標本"}</span>
-        <span className="font-display-ja mt-1 block truncate text-[20px] leading-tight group-hover:text-vl-red">{v.name}</span>
+        <span className="font-display-ja mt-1 block truncate text-[15px] leading-tight group-hover:text-vl-red md:text-[20px]">{v.name}</span>
         <span className="mt-1 block truncate text-[13px]">{v.hitokoto}</span>
       </span>
     </Link>
@@ -201,10 +204,10 @@ export default async function ValuePage({ params }: Params) {
     <article className="mx-auto max-w-6xl px-4 md:px-8">
       {/* パンくず */}
       <div className="flex items-center justify-between gap-3 pt-5 md:pt-8">
-        <Link href={`/#shelf-${shelf.no}`} className="vl-link text-[13px] font-bold">
+        <Link href={`/#shelf-${shelf.no}`} className="vl-link text-[11px] font-bold md:text-[13px]">
           ← 索引にもどる
         </Link>
-        <p className="font-type text-[12px] font-bold tracking-[0.08em] text-vl-ink-soft">
+        <p className="font-type text-[10px] font-bold tracking-[0.08em] text-vl-ink-soft md:text-[12px]">
           NO.{v.no} · SHELF {shelf.no}
         </p>
       </div>
@@ -212,7 +215,7 @@ export default async function ValuePage({ params }: Params) {
       {/* 見出し */}
       <header className="relative mt-6 grid gap-6 md:mt-8 md:grid-cols-[minmax(0,1fr)_240px] md:items-center">
         <div className="min-w-0">
-          <p className="font-display-en text-[20px] leading-none tracking-[0.08em] text-vl-red uppercase md:text-[28px]">{v.en}</p>
+          <p className="font-display-en text-[15px] leading-none tracking-[0.08em] text-vl-red uppercase md:text-[28px]">{v.en}</p>
           <h1 className="font-display-ja mt-3 leading-[1.1]" style={{ fontSize: titleSize(lines) }}>
             {lines.map((l, i) => (
               <span key={i} className="block">
@@ -220,12 +223,12 @@ export default async function ValuePage({ params }: Params) {
               </span>
             ))}
           </h1>
-          <p className="mt-3 text-[14px] tracking-[0.1em] text-vl-ink-soft">{v.reading}</p>
+          <p className="mt-2 text-[11px] tracking-[0.1em] text-vl-ink-soft md:mt-3 md:text-[14px]">{v.reading}</p>
           <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 md:mt-7">
-            <span className="text-[22px] md:text-[30px]">
+            <span className="text-[16px] md:text-[30px]">
               <TrendStamp trend={v.trend} seed={v.no} ja />
             </span>
-            <span className="text-[13px] font-bold whitespace-nowrap md:hidden">
+            <span className="text-[11px] font-bold whitespace-nowrap md:hidden">
               {shelf.no}. {shelf.name}
             </span>
           </div>
@@ -237,12 +240,12 @@ export default async function ValuePage({ params }: Params) {
 
       {/* ひとこと（全幅の色の帯） */}
       <section
-        className="relative mt-8 overflow-hidden border-2 border-vl-ink px-6 py-8 md:mt-10 md:px-14 md:py-11"
+        className="relative mt-5 overflow-hidden border-2 border-vl-ink px-4 py-5 md:mt-10 md:px-14 md:py-11"
         style={{ background: acc.bg, color: acc.fg }}
         aria-label="ひとこと"
       >
         <span
-          className="pointer-events-none absolute -top-3 left-3 text-[110px] leading-none font-bold opacity-30 md:-top-6 md:left-5 md:text-[170px]"
+          className="pointer-events-none absolute -top-2 left-3 text-[64px] leading-none font-bold opacity-30 md:-top-6 md:left-5 md:text-[170px]"
           style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
           aria-hidden
         >
@@ -251,15 +254,18 @@ export default async function ValuePage({ params }: Params) {
         <div className="relative @container">
           <FitLines text={v.hitokoto} className="leading-[1.65] font-bold" />
         </div>
-        <p className="font-type relative mt-4 text-[12px] font-bold tracking-[0.12em] opacity-90">— {v.en.toUpperCase()} · NO.{v.no}</p>
+        <p className="font-type relative mt-3 text-[10px] font-bold tracking-[0.12em] opacity-90 md:mt-4 md:text-[12px]">— {v.en.toUpperCase()} · NO.{v.no}</p>
       </section>
 
       {/* 仕様表・流通期間 ＋ 主の証拠 */}
       <section className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-10" aria-label="仕様と証拠">
         <div className="space-y-7">
-          {hasIllust(v.no) && (
-            <figure className="vl-offset border-2 border-vl-ink bg-vl-paper px-4 py-5">
-              <Illust no={v.no} className="mx-auto block h-auto w-[min(260px,78%)]" />
+          {true && (
+            <figure
+              className="vl-offset vl-detail-art border-2 border-vl-ink"
+              style={{ ["--panel" as string]: recipeOf(v.no).panel }}
+            >
+              <HalftoneArt no={v.no} tech={recipeOf(v.no).tech} ink={recipeOf(v.no).ink} />
             </figure>
           )}
           <DetailSpec v={v} />
@@ -288,9 +294,9 @@ export default async function ValuePage({ params }: Params) {
 
       {/* 本文 ＋ この標本のカード */}
       <section className="mt-14 md:mt-20" aria-labelledby="description">
-        <SectionHead id="description" en="DESCRIPTION" ja="商品説明" />
+        <SectionHead id="description" en="DESCRIPTION" ja="説明" />
         <div className="mt-6 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-14">
-          <div className="vl-prose vl-justify max-w-[40em] text-[16px] leading-[2]">
+          <div className="vl-prose vl-justify max-w-[40em] text-[12.5px] leading-[1.85] md:text-[16px] md:leading-[2]">
             {v.body.map((p, i) => (
               <p key={i}>
                 <span className="font-display-en mr-2 text-[1.05em] text-vl-red" aria-hidden>
@@ -300,10 +306,9 @@ export default async function ValuePage({ params }: Params) {
               </p>
             ))}
           </div>
+          {/* この標本のカード｡貼り付かせず､その場に置く */}
           <aside className="mt-10 hidden lg:mt-0 lg:block" aria-label="この標本のカード">
-            <div className="sticky top-28">
-              <ValueCard v={v} />
-            </div>
+            <PrintCard v={v} interactive={false} />
           </aside>
         </div>
       </section>
@@ -316,14 +321,15 @@ export default async function ValuePage({ params }: Params) {
       {/* 系譜 */}
       <LineageStrip v={v} />
 
-      {/* おなじ棚の商品 */}
+      {/* おなじ棚のカード */}
       {siblings.length > 0 && (
-        <section className="mt-14 md:mt-20" aria-labelledby="same-shelf">
-          <SectionHead id="same-shelf" en="SAME SHELF" ja="おなじ棚の商品" right={`${shelf.no}. ${shelf.name}`} />
-          <ul className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
-            {siblings.map((s, i) => (
+        <section className="mt-10 md:mt-20" aria-labelledby="same-shelf">
+          <SectionHead id="same-shelf" en="SAME SHELF" ja="おなじ棚のカード" right={`${shelf.no}. ${shelf.name}`} />
+          {/* 図鑑と同じ2列｡札は 63×88mm なので､どれも同じ大きさになる */}
+          <ul className="mt-4 grid grid-cols-2 gap-3 md:mt-6 md:gap-5 xl:grid-cols-4">
+            {siblings.map((s) => (
               <li key={s.no}>
-                <ValueCard v={s} index={i} />
+                <PrintCard v={s} />
               </li>
             ))}
           </ul>
@@ -331,7 +337,7 @@ export default async function ValuePage({ params }: Params) {
       )}
 
       {/* 前後の標本 */}
-      <nav className="mt-14 grid gap-4 md:mt-20 md:grid-cols-2" aria-label="前後の標本">
+      <nav className="mt-14 grid gap-4 pb-16 md:mt-20 md:grid-cols-2 md:pb-24" aria-label="前後の標本">
         {prev ? <NavButton dir="prev" v={prev} /> : <span aria-hidden />}
         {next ? <NavButton dir="next" v={next} /> : <span aria-hidden />}
       </nav>

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
-import ValueCard from "./ValueCard";
+import PrintCard from "./PrintCard";
 import type { Value } from "@/data/types";
 import { Ja } from "@/lib/ja";
 
@@ -16,23 +16,17 @@ type Part = { side: Side; sel: string; ja: string; en: string; text: string };
 
 /** 左の列（上から）→ 右の列（上から）の順に番号を振る */
 const PARTS: Part[] = [
-  { side: "l", sel: ".vl-card__no", ja: "型番", en: "NO.", text: "棚の並び順の､三桁の番号｡" },
-  { side: "r", sel: ".vl-card__cat", ja: "分類", en: "CATEGORY", text: "規範・人生観・判断基準｡帯の色は､棚の色｡" },
-  { side: "l", sel: ".vl-card__name", ja: "商品名", en: "NAME", text: "価値観の呼び名｡上に英名､下に読み｡" },
-  { side: "r", sel: ".vl-trend-stamp", ja: "傾向の印", en: "TREND", text: "いまの状態を示す印｡五種を､色と文字で見分ける｡" },
-  { side: "l", sel: ".vl-card__facts svg", ja: "年表", en: "SPAN", text: "製造から廃番までの帯｡読み方は､下の見本で｡" },
-  {
-    side: "r",
-    sel: ".vl-card__dates",
-    ja: "製造と廃番",
-    en: "MFD. / DISC.",
-    text: "製造の時期と､廃番の年｡再入荷したら､その年を書く｡現役の商品は｢現役｣｡",
-  },
-  { side: "l", sel: ".vl-card__hitokoto", ja: "ひとこと", en: "IN SHORT", text: "来歴の要点を､一文で｡" },
+  { side: "l", sel: ".vl-print__no", ja: "型番", en: "NO.", text: "棚の並び順の三桁｡" },
+  { side: "l", sel: ".vl-print__art", ja: "図版", en: "ART", text: "灰色の版に描いてから網にかけたもの｡札ごとに網が違う｡" },
+  { side: "l", sel: ".vl-print__body", ja: "意味", en: "MEANING", text: "その言葉が指していたもの｡二行で収めている｡" },
+  { side: "l", sel: ".vl-print__line", ja: "棚", en: "SHELF", text: "下の線の色が棚｡五つの棚を色で見分ける｡" },
+  { side: "r", sel: ".vl-print__state", ja: "扱い", en: "STATE", text: "いまの状態｡廃番・再入荷・現行の三つ｡廃番だけ朱｡" },
+  { side: "r", sel: ".vl-print__name", ja: "名前", en: "NAME", text: "価値観の呼び名｡下に英名と読み｡" },
+  { side: "r", sel: ".vl-print__data", ja: "製造と廃番", en: "MFD. / EOL.", text: "製造の年と､廃番の年｡c. は推定､NOW は現役｡" },
 ];
 
 const DISC = 26; // 番号札の直径
-const GAP = 16; // 説明どうしの最小の間隔
+const GAP = 26; // 説明どうしの最小の間隔
 const ELBOW = 30; // 線がカードの手前で折れる位置
 
 type Geo = {
@@ -91,7 +85,7 @@ export default function CardAnatomy({ v }: { v: Value }) {
 
   const measure = useCallback(() => {
     const body = bodyRef.current;
-    const card = cardRef.current?.querySelector(".vl-card");
+    const card = cardRef.current?.querySelector(".vl-plate, .vl-card");
     if (!body || !card) return;
     const b = body.getBoundingClientRect();
     const c = card.getBoundingClientRect();
@@ -209,7 +203,7 @@ export default function CardAnatomy({ v }: { v: Value }) {
         <div className="relative grid grid-cols-[minmax(0,280px)] justify-center lg:grid-cols-[minmax(0,1fr)_300px_minmax(0,1fr)] lg:gap-x-12 xl:grid-cols-[minmax(0,1fr)_320px_minmax(0,1fr)] xl:gap-x-16">
           {column("l")}
           <div ref={cardRef} className="w-full lg:py-10">
-            <ValueCard v={v} />
+            <PrintCard v={v} interactive={false} />
           </div>
           {column("r")}
         </div>

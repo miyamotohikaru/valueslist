@@ -32,7 +32,7 @@ export function longRestocks(values: Value[], all: Value[]): Pair[] {
     .sort((a, b) => b.gap - a.gap);
 }
 
-/** 半券の商品名を､欄の幅に1行で収まる大きさにする（欄は @container） */
+/** 半券の名前を､欄の幅に1行で収まる大きさにする（欄は @container） */
 function fitName(name: string) {
   let n = 0;
   for (const ch of name) n += /[\x20-\x7e]/.test(ch) ? 0.55 : 1;

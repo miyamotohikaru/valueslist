@@ -11,8 +11,8 @@ const RED = "var(--vl-red)";
 const INK = "var(--vl-ink)";
 const SOFT = "var(--vl-ink-soft)";
 const LINE = "var(--vl-line)";
-const COURIER = "var(--font-courier), monospace";
-const ZEN = "var(--font-zen-kaku), sans-serif";
+const COURIER = "var(--font-mono), monospace";
+const ZEN = "var(--font-sans), sans-serif";
 
 const W = 360; // viewBox の幅（携帯でほぼ等倍になる）
 const LABEL_W = 118; // 左のラベル欄

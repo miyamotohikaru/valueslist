@@ -32,7 +32,8 @@ function Part({ part, compact }: { part: string; compact: boolean }) {
       {urls.map((u, i) => (
         <Fragment key={i}>
           {text || i > 0 ? " " : ""}
-          <a href={u} className="vl-link whitespace-nowrap" target="_blank" rel="noreferrer">
+          {/* 長いドメインは枠から出るので､どこでも折れるようにする */}
+          <a href={u} className="vl-link [overflow-wrap:anywhere]" target="_blank" rel="noreferrer">
             {host(u)}↗
           </a>
         </Fragment>

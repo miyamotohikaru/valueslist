@@ -164,7 +164,7 @@ export const lineages: Lineage[] = [
     kind: "theme",
     title: "結・講 → クラウドファンディング",
     en: "Pass the Hat",
-    lead: "頼母子講は1275年の文書に現れる｡無尽は1915年に法律で免許制になり､1951年に無尽会社が相互銀行となり､1989年には相互銀行52行が普通銀行に転換した｡クラウドファンディングは､2011年に購入型サービスが始まった｡講の直系ではなく､形の似た商品が別の工場から入荷したものである｡",
+    lead: "頼母子講は1275年の文書に現れる｡無尽は1915年に法律で免許制になり､1951年に無尽会社が相互銀行となり､1989年には相互銀行52行が普通銀行に転換した｡クラウドファンディングは､2011年に購入型サービスが始まった｡講の直系ではなく､形の似た品が別の工場から入荷したものである｡",
     span: "22年",
     spanLabel: "銀行への転換から",
     nodes: [
@@ -172,7 +172,7 @@ export const lineages: Lineage[] = [
       { label: "無尽業法", year: 1915, yearLabel: "1915", note: "営業無尽を免許制にした｡" },
       { label: "相互銀行法", year: 1951, yearLabel: "1951", note: "無尽会社が相互銀行になる｡" },
       { label: "普通銀行へ転換", year: 1989, yearLabel: "1989", note: "相互銀行52行が一斉に転換した｡" },
-      { label: "クラウドファンディング", year: 2011, yearLabel: "2011 READYFOR", note: "直系ではなく､形の似た別の商品｡" },
+      { label: "クラウドファンディング", year: 2011, yearLabel: "2011 READYFOR", note: "直系ではなく､形の似た別の品｡" },
     ],
   },
 ];
@@ -182,5 +182,5 @@ export const lineageById = (id: string) => lineages.find((l) => l.id === id);
 export const resolveNode = (n: LineageNode): Value | undefined =>
   n.ref ? values.find((v) => v.name === n.ref) : undefined;
 
-/** ある商品が属する系譜（複数可） */
+/** ある在庫が属する系譜（複数可） */
 export const lineagesOf = (v: Value): Lineage[] => lineages.filter((l) => l.nodes.some((n) => n.ref === v.name));

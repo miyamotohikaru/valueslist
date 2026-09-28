@@ -12,7 +12,7 @@ function fitLabel(label: string) {
 }
 
 /**
- * その商品が属する系譜を横並びで｡現在の商品をハイライトし､
+ * その在庫が属する系譜を横並びで｡いま見ている在庫をハイライトし､
  * カードがある段は /values/{no} へ､系譜そのものは /lineage#{id} へ｡
  */
 export default function LineageStrip({ v }: { v: Value }) {
@@ -22,10 +22,10 @@ export default function LineageStrip({ v }: { v: Value }) {
     <section aria-labelledby="lineage" className="mt-14 md:mt-20">
       <header className="flex flex-wrap items-end gap-x-3 gap-y-1 border-b-[3px] border-vl-ink pb-2">
         <h2 id="lineage" className="flex items-baseline gap-3">
-          <span className="font-display-en text-[28px] leading-none tracking-[0.03em] text-vl-red md:text-[34px]">
+          <span className="font-display-en text-[19px] leading-none tracking-[0.03em] text-vl-red md:text-[34px]">
             LINEAGE
           </span>
-          <span className="font-display-ja text-[18px] leading-none md:text-[20px]">系譜</span>
+          <span className="font-display-ja text-[13px] leading-none md:text-[20px]">系譜</span>
         </h2>
         <span className="ml-auto text-[12px] font-bold text-vl-ink-soft">
           {ls.length}本の系譜
@@ -37,7 +37,7 @@ export default function LineageStrip({ v }: { v: Value }) {
           <div key={l.id} className="vl-offset border-2 border-vl-ink bg-vl-card">
             <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b-2 border-vl-ink px-4 py-3 md:px-6">
               <p className="font-display-en text-[14px] tracking-[0.12em] text-vl-red-deep uppercase">{l.en}</p>
-              <h3 className="text-[16px] leading-snug font-bold md:text-[18px]">
+              <h3 className="text-[12.5px] leading-snug font-bold md:text-[18px]">
                 <ChainTitle title={l.title} />
               </h3>
               <span className="text-[12px] font-bold text-vl-ink-soft">{l.spanLabel} {l.span}</span>
@@ -89,7 +89,7 @@ export default function LineageStrip({ v }: { v: Value }) {
                     )}
                     {i < l.nodes.length - 1 && (
                       <span
-                        className="font-display-en flex w-7 shrink-0 items-center justify-center text-[20px] text-vl-red md:w-9"
+                        className="font-display-en flex w-6 shrink-0 items-center justify-center text-[15px] text-vl-red md:w-9 md:text-[20px]"
                         aria-hidden
                       >
                         →

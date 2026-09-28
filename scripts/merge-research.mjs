@@ -15,7 +15,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { EXCLUDE, EDITS } from "./editorial.mjs";
 import { CURVE_MAP, KOKKAI_NOTE } from "./curve-map.mjs";
-import { FINAL, GLOBAL_REPLACE, CURVE_TITLES } from "./final-overrides.mjs";
+import { FINAL, GLOBAL_REPLACE, CURVE_TITLES, MEANING } from "./final-overrides.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const RESEARCH = path.join(ROOT, "research");
@@ -264,6 +264,13 @@ const scrub = (o) => {
 };
 values.forEach(scrub);
 for (const v of values) if (v.hitokoto.length > 42) problems.push(`[${v.name}] ひとことが長い（${v.hitokoto.length}字）`);
+
+// 意味（書けた札だけ）
+for (const [name, text] of Object.entries(MEANING)) {
+  const v = byName.get(name);
+  if (!v) problems.push(`[意味] 「${name}」が掲載データにない`);
+  else v.meaning = text;
+}
 
 // 句読点とかぎ括弧は半角で組む（掲載用。research の原本は全角のまま）
 const HALF = { "。": "｡", "、": "､", "「": "｢", "」": "｣", "｛": "{", "｝": "}" };

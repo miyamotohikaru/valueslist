@@ -46,6 +46,8 @@ export type Value = {
   discontinued: DatePoint | null;
   restocked: DatePoint | null;
   hitokoto: string;
+  /** 札に出す短い意味（書けた札だけ） */
+  meaning?: string;
   body: string[];
   keyfacts: KeyFact[];
   curve?: Curve | null;

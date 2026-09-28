@@ -733,8 +733,6 @@ function EraRuler() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 末尾のボタン                                                          */
-/* ------------------------------------------------------------------ */
 
 function BigButton({
   href,
@@ -904,16 +902,7 @@ export default function TimelineView() {
           </section>
         )}
 
-        {/* 末尾のボタン */}
-        <section className="grid gap-5 py-14 md:grid-cols-2 md:gap-6 md:py-20">
-          <BigButton
-            href="/lineage"
-            ja="系譜ページへ →"
-            en="LINEAGE · 再入荷の系譜"
-            primary
-          />
-          <BigButton href="/" ja="索引へ →" en="INDEX · グループに戻る" />
-        </section>
+        <div className="h-12 md:h-20" />
       </div>
     </>
   );

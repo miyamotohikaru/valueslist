@@ -24,12 +24,12 @@ const mono = Roboto_Mono({
 });
 
 const DESCRIPTION =
-  "その価値観には､製造年がある｡日本の価値観を､製造・廃番・再入荷の年で棚に並べ､一次資料で裏を取った図鑑｡";
+  "その価値観には､製造年がある｡日本の価値観を､製造・廃番・再入荷の年で棚に並べ､一次資料で裏を取った一覧｡";
 
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "価値観一覧図鑑 | Values Catalog",
+  title: "価値観一覧表 | Values Catalog",
   description: DESCRIPTION,
   openGraph: {
     title: "価値観一覧表",

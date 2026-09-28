@@ -31,7 +31,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "価値観一覧図鑑 | Values Catalog",
   description: DESCRIPTION,
-  robots: { index: false, follow: false },
   openGraph: {
     title: "価値観一覧表",
     description: DESCRIPTION,

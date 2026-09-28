@@ -14,7 +14,7 @@ export const shelves: ShelfMeta[] = [
     no: "2",
     name: "明治製造ゾーン",
     en: "MADE IN MEIJI",
-    lead: "人間の本性に見えて､◇じつは明治・大正に製造された価値観｡◇この店の奥の間｡",
+    lead: "人間の本性に見えて､◇じつは明治・大正に製造された価値観｡",
     evidenceNote: "証拠＝翻訳語の初出・法令の施行日｡",
   },
   {

@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { lineages } from "@/data/lineages";
 import LineageIndex from "@/components/LineageIndex";
 import LineageDiagram from "@/components/LineageDiagram";
@@ -34,27 +33,7 @@ export default function LineagePage() {
         </Fragment>
       ))}
 
-      {/* 次へ */}
-      <div className="grid gap-3 py-8 md:grid-cols-2 md:gap-6 md:py-20">
-        <Link
-          href="/timeline"
-          className="vl-offset flex items-center justify-between gap-4 border-2 border-vl-ink bg-vl-red px-5 py-5 text-vl-paper transition-transform hover:-translate-y-0.5 md:px-7 md:py-6"
-        >
-          <span>
-            <span className="font-display-ja mt-1 block text-[18px] leading-none md:text-[28px]">年表へ</span>
-          </span>
-          <span className="text-[26px] leading-none font-bold md:text-[36px]">→</span>
-        </Link>
-        <Link
-          href="/"
-          className="vl-offset flex items-center justify-between gap-4 border-2 border-vl-ink bg-vl-card px-5 py-5 transition-transform hover:-translate-y-0.5 md:px-7 md:py-6"
-        >
-          <span>
-            <span className="font-display-ja mt-1 block text-[18px] leading-none md:text-[28px]">索引へ</span>
-          </span>
-          <span className="text-[26px] leading-none font-bold md:text-[36px]">→</span>
-        </Link>
-      </div>
+      <div className="h-12 md:h-20" />
     </div>
   );
 }

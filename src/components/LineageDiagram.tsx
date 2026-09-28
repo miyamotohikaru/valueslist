@@ -232,7 +232,7 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
         </p>
 
         {/* 何の年数かを先に言って､数字はそのあとに出す｡携帯では1行に収める */}
-        <div className="mt-2 flex flex-wrap items-baseline gap-x-3 border-t-2 border-vl-ink pt-1.5 md:mt-6 md:block md:pt-3">
+        <div className="mt-2 flex flex-wrap items-baseline gap-x-3 border-t-2 border-dotted border-vl-line pt-1.5 md:mt-6 md:block md:pt-3">
           <p className="text-[11px] font-bold md:text-[13px]">{lineage.spanLabel}</p>
           <p className="flex items-baseline leading-none md:mt-1">
             {span.pre && <span className="font-display-ja mr-1 text-[13px] md:text-[18px]">{span.pre}</span>}

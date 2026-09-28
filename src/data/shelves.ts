@@ -30,7 +30,7 @@ export const shelves: ShelfMeta[] = [
     no: "4",
     name: "現役・上昇ゾーン",
     en: "CURRENT / RISING",
-    lead: "製造年が流行語・書籍・政策文書で､◇日付まで特定できる｡◇いちばん新しい在庫｡",
+    lead: "製造年が流行語・書籍・政策文書で､◇日付まで特定できる｡◇いちばん新しいもの｡",
     evidenceNote: "証拠＝初出の記録◆（流行語大賞・答申・書籍）｡",
   },
   {
@@ -38,8 +38,8 @@ export const shelves: ShelfMeta[] = [
     no: "5",
     name: "長距離再入荷ゾーン",
     en: "BACK IN STOCK",
-    lead: "古い在庫が､◇別の名前で棚に戻ってきたもの｡◇元の在庫と再入荷品を､◆1枚の半券で結ぶ｡",
-    evidenceNote: "証拠＝元の在庫の日付と､再入荷品の初出｡",
+    lead: "古いものが､◇別の名前で棚に戻ってきたもの｡◇元のものと再入荷品を､◆1枚の半券で結ぶ｡",
+    evidenceNote: "証拠＝元のものの日付と､再入荷品の初出｡",
     virtual: true,
   },
   {

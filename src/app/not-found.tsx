@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Ja } from "@/lib/ja";
 
 export const metadata: Metadata = {
-  title: "在庫なし | 価値観一覧図鑑",
+  title: "見つかりません | 価値観一覧表",
 };
 
 /**
@@ -35,7 +35,7 @@ export default function NotFound() {
             <span className="vl-stamp font-display-en text-[22px] text-vl-red md:text-[26px]">× OUT OF STOCK</span>
 
             <h1 className="font-display-ja mt-6 text-[24px] leading-[1.3] md:text-[30px]">
-              この型番の在庫は
+              この型番のカードは
               <br />
               ありません
             </h1>

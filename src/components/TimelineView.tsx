@@ -212,21 +212,21 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 }}
               />
             )}
-            {/* はじまった年｡帯の左端の下に出す（上は廃番･再入荷の年が使う） */}
+            {/* はじまった年｡帯の左端の上に出す（終わりの年は下に出る） */}
             <span
-              className="font-type absolute bottom-0 text-[10px] leading-[1.2] font-bold whitespace-nowrap text-vl-ink-soft md:text-[11px]"
+              className="font-type absolute top-0 text-[10px] leading-[1.2] font-bold whitespace-nowrap text-vl-ink-soft md:text-[11px]"
               style={{ left: `${start}%` }}
             >
               {approx ? "c." : ""}
               {v.made!.year}
             </span>
-            {/* 在庫の帯｡現役の札は先に矢印が付くので､そのぶん短くする */}
+            {/* 期間の帯｡現役の札は先に矢印が付くので､そのぶん短くする */}
             <span
               className="absolute top-1/2 h-[10px] min-w-[6px] -translate-y-1/2"
               style={{
                 left: `${start}%`,
                 width: active
-                  ? `max(6px, calc(${Math.max(0, end - start)}% - 13px))`
+                  ? `max(6px, calc(${Math.max(0, end - start)}% - 10px))`
                   : `${Math.max(0, end - start)}%`,
                 background: acc.bar,
                 boxShadow:
@@ -269,7 +269,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
             )}
             {/* 右端: 廃番は赤い×､現役は矢印 */}
             {active ? (
-              // 帯の先に矢印を置く｡帯とは 3px 空けて重ねない
+              // 帯の先に矢印を置く｡帯の終わりとぴったり接ぐ（重ねも離しもしない）
               <span
                 className="absolute top-1/2 h-4 w-[10px] -translate-y-1/2"
                 style={{ left: `calc(${end}% - 10px)` }}
@@ -287,11 +287,11 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 <CrossMark className="block h-full w-full" />
               </span>
             )}
-            {/* 廃番・再入荷の年｡右端に近いものは左側に置き､表の外へはみ出さない */}
+            {/* 廃番・再入荷の年｡帯の下に出す｡右端に近いものは左側へ寄せて表の外へはみ出さない */}
             {endYear !== null &&
               (labelAt > 62 ? (
                 <span
-                  className="absolute top-[1px] text-right text-[11px] leading-none font-bold whitespace-nowrap text-vl-red-deep"
+                  className="absolute bottom-[1px] text-right text-[11px] leading-none font-bold whitespace-nowrap text-vl-red-deep"
                   style={{ right: `calc(${100 - labelAt}% + 4px)` }}
                 >
                   <span className="font-type">{endYear}</span>
@@ -303,7 +303,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
                 </span>
               ) : (
                 <span
-                  className="absolute top-[1px] text-[11px] leading-none font-bold whitespace-nowrap text-vl-red-deep"
+                  className="absolute bottom-[1px] text-[11px] leading-none font-bold whitespace-nowrap text-vl-red-deep"
                   style={{ left: `calc(${labelAt}% + 4px)` }}
                 >
                   <span className="font-type">{endYear}</span>
@@ -329,7 +329,7 @@ function Legend() {
   const items: { glyph: React.ReactNode; label: string }[] = [
     {
       glyph: <span className="block h-[8px] w-[22px] bg-vl-ink" />,
-      label: "在庫期間（製造→廃番）",
+      label: "期間（製造→廃番）",
     },
     {
       glyph: (
@@ -723,7 +723,7 @@ function EraRuler() {
           fill="var(--vl-ink)"
           fontFamily="var(--font-sans), sans-serif"
         >
-          目盛りの間隔は均等ではない｡この物差しで全在庫を並べる｡
+          目盛りの間隔は均等ではない｡この物差しで全部を並べる｡
         </text>
       </svg>
     </figure>
@@ -839,21 +839,17 @@ export default function TimelineView() {
 
         <div className="vl-rule" />
 
-        {/* 在庫台帳（ガントチャート） */}
+        {/* 一覧（ガントチャート） */}
         <section className="py-12 md:py-16">
           <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <h2 className="font-display-ja text-[18px] leading-tight md:text-[30px]">
-                全在庫､製造年順
+                製造年順
               </h2>
               <p className="mt-2 text-[12px] leading-[1.7] md:text-[14px]">
-                帯が在庫の期間｡
+                帯が期間｡
                 <br />
                 左端が製造､右端が廃番｡
-                <br />
-                中世〜近世は縮めて描いている｡
-                <br />
-                行を押すとカードに飛ぶ｡
               </p>
             </div>
           </div>
@@ -894,7 +890,7 @@ export default function TimelineView() {
 
           {undated > 0 && (
             <p className="mt-3 text-[12px] text-vl-ink-soft">
-              製造年が特定できず､年表に載せていない在庫: {undated} ITEMS
+              製造年が特定できず､年表に載せていないもの: {undated} ITEMS
             </p>
           )}
         </section>

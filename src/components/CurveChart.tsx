@@ -147,7 +147,7 @@ function Plot({ curve, L, accent, className }: { curve: Curve; L: Layout; accent
     });
 
   // 値ラベル（線: 最初と最後 / 棒: ピークと最後）
-  type Lab = { x: number; y: number; text: string; color: string };
+  type Lab = { x: number; y: number; w: number; text: string; color: string };
   const labels: Lab[] = [];
   const lfs = fs + 1;
   const clampX = (x: number, w: number) => Math.min(W - mr - w / 2, Math.max(ml + w / 2, x));
@@ -168,14 +168,37 @@ function Plot({ curve, L, accent, className }: { curve: Curve; L: Layout; accent
       const text = `${fmt(p[1])}${short}`;
       const w = estWidth(text, lfs) + 6;
       const x = clampX(X(p[0]), w);
-      const above = Y(p[1]) - r - 7;
-      // 他の値ラベルだけでなく､注記の札とも当たっていないか見る
-      const hitsMark = marks.some(
-        (m) => !(x + w / 2 < m.left || x - w / 2 > m.left + m.w) && Math.abs(above - (m.y + tagH / 2)) < tagH,
-      );
-      const clash =
-        hitsMark || labels.find((l) => Math.abs(l.x - x) < w && Math.abs(l.y - above) < lfs + 4);
-      labels.push({ x, y: clash || above < mt + lfs ? Y(p[1]) + r + lfs + 4 : above, text, color });
+      const step = lfs + 5;
+      // 置ける場所を上・下・さらに上・さらに下…と順に試す｡
+      // 他の値ラベルとも注記の札とも当たらない最初の場所に置く
+      const free = (y: number) => {
+        // 下は図の底まで｡ここを緩めると年の目盛りの上に載ってしまう
+        if (y < mt + lfs || y > mt + ph - 2) return false;
+        const onMark = marks.some(
+          (m) => !(x + w / 2 < m.left || x - w / 2 > m.left + m.w) && Math.abs(y - (m.y + tagH / 2)) < tagH,
+        );
+        if (onMark) return false;
+        return !labels.some((l) => Math.abs(l.x - x) < (w + l.w) / 2 && Math.abs(l.y - y) < lfs + 4);
+      };
+      const up = Y(p[1]) - r - 7;
+      const down = Y(p[1]) + r + lfs + 4;
+      // 上 → 下 → さらに上 → さらに下 … の順に空きを探す
+      let y = up;
+      let found = false;
+      for (let i = 0; i < 12 && !found; i++) {
+        const cand =
+          i === 0 ? up : i === 1 ? down : i % 2 === 0 ? up - step * (i / 2) : down + step * ((i - 1) / 2);
+        if (free(cand)) {
+          y = cand;
+          found = true;
+        }
+      }
+      if (!found) {
+        // どこも空いていなければ､同じあたりにある札の上へ積む
+        const near = labels.filter((l) => Math.abs(l.x - x) < (w + l.w) / 2);
+        y = near.length ? Math.min(...near.map((l) => l.y)) - step : up;
+      }
+      labels.push({ x, y, w, text, color });
     }
   });
 

@@ -27,14 +27,16 @@ function StampIcon({ className = "" }: { className?: string }) {
       <g transform="rotate(-5 60 70)">
         <rect x="18" y="52" width="84" height="36" rx="5" fill="none" stroke={RED} strokeWidth="2.4" />
         <rect x="22.5" y="56.5" width="75" height="27" rx="3" fill="none" stroke={RED} strokeWidth="1" />
+        {/* 内枠（幅75）からはみ出さないよう､長さを決めて描く */}
         <text
           x="60"
-          y="76.5"
+          y="76"
           textAnchor="middle"
-          fontSize="16"
+          fontSize="14"
           fontFamily={ANTON}
           fill={RED}
-          letterSpacing="1"
+          textLength="66"
+          lengthAdjust="spacingAndGlyphs"
         >
           1873.02.07
         </text>

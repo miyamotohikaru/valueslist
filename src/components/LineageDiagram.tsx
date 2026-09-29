@@ -261,7 +261,6 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
 
       {/* 右: 分解図 */}
       <div className="min-w-0">
-        <p className="mb-1 text-right text-[11px] font-bold text-vl-ink-soft md:mb-5 md:text-[12px]">上が古く､下が新しい</p>
         <ol className="space-y-1.5 md:space-y-5">
           {nodes.map((node, i) => (
             <Layer key={`${lineage.id}-${i}`} node={node} badge={lineage.kind === "restock" && i === nodes.length - 1} />

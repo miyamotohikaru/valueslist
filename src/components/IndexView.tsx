@@ -71,7 +71,6 @@ export default function IndexView({ values }: { values: Value[] }) {
     <div id="index" className="vl-index">
       {/* 見出し */}
       <div className="vl-sec">
-        <p className="vl-sec__kicker">01 — INDEX / {values.length} ITEMS</p>
         <h2 className="vl-sec__title">図鑑</h2>
       </div>
 

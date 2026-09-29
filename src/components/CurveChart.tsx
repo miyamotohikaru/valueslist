@@ -378,12 +378,15 @@ export default function CurveChart({
   return (
     <figure className={`vl-offset relative border-2 border-vl-ink bg-vl-card ${className}`}>
       <div className="border-b-2 border-vl-ink px-4 py-3 md:px-5">
-        {/* 印は図番号の行に置き､見出しは幅いっぱいに使う（見出しは句読点か ◆ でだけ折れる） */}
-        <div className="flex items-start justify-between gap-3">
-          <p className="text-[15px] leading-snug font-bold md:text-[16px]">
+        {/* 印は右に浮かせる｡横に並べると見出しの幅が半分になり､
+            語の途中で折れてしまうため（2行目からは幅いっぱい使える） */}
+        <div>
+          <span className="vl-stamp font-display-en float-right ml-3 text-[12px] text-vl-red-deep md:text-[13px]">
+            DATED BY CURVE
+          </span>
+          <p className="text-[15px] leading-snug font-bold break-keep md:text-[16px]">
             <BreakText text={curve.title} />
           </p>
-          <span className="vl-stamp font-display-en shrink-0 text-[12px] text-vl-red-deep md:text-[13px]">DATED BY CURVE</span>
         </div>
         {curve.subtitle && (
           <p className="mt-1 text-[13px] leading-snug">

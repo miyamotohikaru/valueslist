@@ -81,13 +81,16 @@ export default function LawTimeline({ v, lang }: { v: Value; lang: Lang }) {
   return (
     <figure className="vl-offset relative border-2 border-vl-ink bg-vl-card">
       <div className="border-b-2 border-vl-ink px-4 py-3 md:px-5">
-        <div className="flex items-start justify-between gap-3">
-          <p className="text-[12px] leading-snug font-bold md:text-[16px]">
+        {/* 印は右に浮かせる｡横に並べると見出しの幅が足りず語の途中で折れる */}
+        <div>
+          <span className="vl-stamp font-display-en float-right ml-3 text-[12px] text-vl-red-deep md:text-[13px]">
+            DATED BY DOCUMENT
+          </span>
+          <p className="text-[12px] leading-snug font-bold break-keep md:text-[16px]">
             {headA}
             <br />
             {headB}
           </p>
-          <span className="vl-stamp font-display-en shrink-0 text-[12px] text-vl-red-deep md:text-[13px]">DATED BY DOCUMENT</span>
         </div>
       </div>
 

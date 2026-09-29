@@ -183,4 +183,10 @@ export const resolveNode = (n: LineageNode): Value | undefined =>
   n.ref ? values.find((v) => v.name === n.ref) : undefined;
 
 /** あるカードが属する系譜（複数可） */
-export const lineagesOf = (v: Value): Lineage[] => lineages.filter((l) => l.nodes.some((n) => n.ref === v.name));
+/**
+ * あるカードが属する系譜（複数可）｡
+ * 名前ではなく型番で突き合わせる｡英語で見ているときは v.name が英名に
+ * なっていて､節の ref（和名）と一致しないため｡
+ */
+export const lineagesOf = (v: Value): Lineage[] =>
+  lineages.filter((l) => l.nodes.some((n) => resolveNode(n)?.no === v.no));

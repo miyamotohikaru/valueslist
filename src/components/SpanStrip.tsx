@@ -28,6 +28,10 @@ export default function SpanStrip({
   const approx = v.made?.approx;
   // 制度は廃止されたが､価値観としては残っている（傾向が｢廃番｣ではない）
   const persists = !!v.discontinued && v.trend !== "discontinued" && !v.restocked;
+  // 現役の帯の先に付く矢印のぶん｡帯はここまでで止める
+  const arrowGap = v.discontinued ? 0 : 2.6;
+  // 復活の印が矢印にめり込まないよう､少し手前で止める
+  const restockX = restock === null ? 0 : Math.min(restock, end - arrowGap - 1.8);
   const hatchId = `vl-hatch-${accent.replace(/[^a-z0-9]/gi, "")}`;
   const mid = 5;
   const barH = 4.4;
@@ -58,10 +62,11 @@ export default function SpanStrip({
         {v.made && (
           <>
             {approx && <rect x={Math.max(0, start - 6)} y={barY} width={6} height={barH} fill={`url(#${hatchId})`} />}
+            {/* 現役の帯は先に矢印が付くので､そのぶん短くする（矢印と重ねない） */}
             <rect
               x={start}
               y={barY}
-              width={Math.max(0.8, end - start)}
+              width={Math.max(0.8, end - arrowGap - start)}
               height={barH}
               fill={accent}
               {...stroke}
@@ -73,7 +78,10 @@ export default function SpanStrip({
                 <line x1={end + 1.3} y1={0.8} x2={end - 1.3} y2={9.2} vectorEffect="non-scaling-stroke" />
               </g>
             ) : (
-              <polygon points={`${end - 2},${barY - 1} ${end + 0.4},${mid} ${end - 2},${barY + barH + 1}`} fill={outline ? "var(--vl-ink)" : accent} />
+              <polygon
+                points={`${end - arrowGap},${barY - 1} ${end},${mid} ${end - arrowGap},${barY + barH + 1}`}
+                fill={outline ? "var(--vl-ink)" : accent}
+              />
             )}
           </>
         )}
@@ -94,18 +102,21 @@ export default function SpanStrip({
         )}
         {restock !== null && (
           <g>
-            <line
-              x1={end}
-              y1={mid}
-              x2={restock}
-              y2={mid}
-              stroke="var(--vl-red)"
-              strokeWidth="2"
-              strokeDasharray="3 3"
-              vectorEffect="non-scaling-stroke"
-            />
-            <ellipse cx={restock} cy={mid} rx="1.5" ry="3.4" fill="var(--vl-red)" />
-            <ellipse cx={restock} cy={mid} rx="0.55" ry="1.25" fill="var(--vl-paper)" />
+            {/* 点線は､復活が帯の先にあるときだけ｡帯の中にあるときは印だけ置く */}
+            {restock > end && (
+              <line
+                x1={end}
+                y1={mid}
+                x2={restock}
+                y2={mid}
+                stroke="var(--vl-red)"
+                strokeWidth="2"
+                strokeDasharray="3 3"
+                vectorEffect="non-scaling-stroke"
+              />
+            )}
+            <ellipse cx={restockX} cy={mid} rx="1.5" ry="3.4" fill="var(--vl-red)" />
+            <ellipse cx={restockX} cy={mid} rx="0.55" ry="1.25" fill="var(--vl-paper)" />
           </g>
         )}
       </svg>

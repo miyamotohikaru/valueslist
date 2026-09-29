@@ -166,7 +166,7 @@ export default function AboutPage() {
           </p>
           <p className="mt-6 text-[17px] font-bold leading-relaxed md:text-[19px]">並んだカードを､どう読むか｡</p>
           <p className="mt-3 max-w-[30em] text-[14px] leading-[1.9] md:text-[15px]">
-            <Ja text="カードの部位､証拠の二種､傾向の印､グループの分け方｡この店で使っている記法を､◆ここにまとめた｡" />
+            <Ja text="カードの部位､証拠の二種､傾向の印､グループの分け方｡" />
           </p>
         </div>
 

@@ -6,10 +6,26 @@
   "span": "150 yrs",
   "spanLabel": "From the status edicts to the buzzword",
   "nodes": [
-   { "label": "Born to One's Station", "note": "Stipends and posts entered in a bungen-cho register.", "yearLabel": "Edo" },
-   { "label": "Rising in the World", "note": "Learning, the capital for rising.", "yearLabel": "1872 Education" },
-   { "label": "Self-Responsibility", "note": "Into general use with the Iraq hostage case.", "yearLabel": "2004" },
-   { "label": "Parent Gacha", "note": "Birth in the words of chance.", "yearLabel": "2021 Buzzword" }
+   {
+    "label": "Born to One's Station",
+    "note": "Stipends and posts entered in a bungen-cho register.",
+    "yearLabel": "Edo"
+   },
+   {
+    "label": "Rising in the World",
+    "note": "Learning, the capital for rising.",
+    "yearLabel": "1872 Education"
+   },
+   {
+    "label": "Self-Responsibility",
+    "note": "Into general use with the Iraq hostage case.",
+    "yearLabel": "2004"
+   },
+   {
+    "label": "Parent Gacha",
+    "note": "Birth in the words of chance.",
+    "yearLabel": "2021 Buzzword"
+   }
   ]
  },
  "inkyo": {
@@ -19,10 +35,26 @@
   "span": "72 yrs",
   "spanLabel": "Since the inkyo articles went",
   "nodes": [
-   { "label": "Inkyo Retirement", "note": "Pass on the headship, live on the house property.", "yearLabel": "Edo" },
-   { "label": "The inkyo articles go", "note": "Abolished along with the house system.", "yearLabel": "1948 Civil Code" },
-   { "label": "Retirement age becomes standard", "note": "Share of firms with a mandatory retirement age. 94.4% in 2022.", "yearLabel": "1968 69.0%" },
-   { "label": "FIRE", "note": "Financial Independence, Retire Early", "yearLabel": "2020 Japanese" }
+   {
+    "label": "Inkyo Retirement",
+    "note": "Pass on the headship, live on the house property.",
+    "yearLabel": "Edo"
+   },
+   {
+    "label": "The inkyo articles go",
+    "note": "Abolished along with the house system.",
+    "yearLabel": "1948 Civil Code"
+   },
+   {
+    "label": "Retirement age becomes standard",
+    "note": "Share of firms with a mandatory retirement age. 94.4% in 2022.",
+    "yearLabel": "1968 69.0%"
+   },
+   {
+    "label": "FIRE",
+    "note": "Financial Independence, Retire Early",
+    "yearLabel": "2020 Japanese"
+   }
   ]
  },
  "shudo": {
@@ -32,11 +64,31 @@
   "span": "142 yrs",
   "spanLabel": "From the penal article to the certificate",
   "nodes": [
-   { "label": "Shudo", "note": "Spoken of as the bond of an older man and a youth.", "yearLabel": "1687 Male Love" },
-   { "label": "Sodomy punished", "note": "90 days' penal labour. Gone when the new code came into force in 1882.", "yearLabel": "1873 Penal regs" },
-   { "label": "Pathologised", "note": "Popular sexology retells it as \"perversion\".", "yearLabel": "1915 Sexology" },
-   { "label": "No longer a diagnosis", "note": "The WHO followed in 1990.", "yearLabel": "1973 APA" },
-   { "label": "Diversity", "note": "Partnership certificates. The Understanding Promotion Act in 2023.", "yearLabel": "2015 Shibuya" }
+   {
+    "label": "Shudo",
+    "note": "Spoken of as the bond of an older man and a youth.",
+    "yearLabel": "1687 Male Love"
+   },
+   {
+    "label": "Sodomy punished",
+    "note": "90 days' penal labour. Gone when the new code came into force in 1882.",
+    "yearLabel": "1873 Penal regs"
+   },
+   {
+    "label": "Pathologised",
+    "note": "Popular sexology retells it as \"perversion\".",
+    "yearLabel": "1915 Sexology"
+   },
+   {
+    "label": "No longer a diagnosis",
+    "note": "The WHO followed in 1990.",
+    "yearLabel": "1973 APA"
+   },
+   {
+    "label": "Diversity",
+    "note": "Partnership certificates. The Understanding Promotion Act in 2023.",
+    "yearLabel": "2015 Shibuya"
+   }
   ]
  },
  "kekkon": {
@@ -46,11 +98,31 @@
   "span": "c.150 yrs",
   "spanLabel": "From a translated word to meeting online",
   "nodes": [
-   { "label": "Romantic Love", "note": "Appears as a rendering of the English love.", "yearLabel": "1870 Self-Help" },
-   { "label": "Arranged Marriage", "note": "Seven in ten couples married by miai.", "yearLabel": "1930-39 69.0%" },
-   { "label": "Love-Marriage Ideal", "note": "88.0% among those who married in 2005-09.", "yearLabel": "1965-69 Ahead" },
-   { "label": "Konkatsu", "note": "Marriage becomes an \"activity\".", "yearLabel": "2007 AERA" },
-   { "label": "Meeting online", "note": "Above arranged marriage at 9.9%.", "yearLabel": "2019-21 15.2%" }
+   {
+    "label": "Romantic Love",
+    "note": "Appears as a rendering of the English love.",
+    "yearLabel": "1870 Self-Help"
+   },
+   {
+    "label": "Arranged Marriage",
+    "note": "Seven in ten couples married by miai.",
+    "yearLabel": "1930-39 69.0%"
+   },
+   {
+    "label": "Love-Marriage Ideal",
+    "note": "88.0% among those who married in 2005-09.",
+    "yearLabel": "1965-69 Ahead"
+   },
+   {
+    "label": "Konkatsu",
+    "note": "Marriage becomes an \"activity\".",
+    "yearLabel": "2007 AERA"
+   },
+   {
+    "label": "Meeting online",
+    "note": "Above arranged marriage at 9.9%.",
+    "yearLabel": "2019-21 15.2%"
+   }
   ]
  },
  "mottainai": {
@@ -60,9 +132,21 @@
   "span": "c.780 yrs",
   "spanLabel": "From Tales from Uji to the UN speech",
   "nodes": [
-   { "label": "Mottainai", "note": "\"Mottainaki aruji kana\" = an improper master.", "yearLabel": "1221 Uji tales" },
-   { "label": "MOTTAINAI", "note": "Proposed by Wangari Maathai.", "yearLabel": "2005 UN speech" },
-   { "label": "Food Loss Reduction Act", "note": "Calls for fostering an awareness of not wasting food.", "yearLabel": "2019 In force" }
+   {
+    "label": "Mottainai",
+    "note": "\"Mottainaki aruji kana\" = an improper master.",
+    "yearLabel": "c.1221 Uji tales"
+   },
+   {
+    "label": "MOTTAINAI",
+    "note": "Proposed by Wangari Maathai.",
+    "yearLabel": "2005 UN speech"
+   },
+   {
+    "label": "Food Loss Reduction Act",
+    "note": "Calls for fostering an awareness of not wasting food.",
+    "yearLabel": "2019 In force"
+   }
   ]
  },
  "mujo": {
@@ -72,10 +156,26 @@
   "span": "804 yrs",
   "spanLabel": "From Hojoki to the broadcast",
   "nodes": [
-   { "label": "Impermanence", "note": "The flow of the river never ceases.", "yearLabel": "1212 Hojoki" },
-   { "label": "MBSR", "note": "A medical programme at the University of Massachusetts.", "yearLabel": "1979 USA" },
-   { "label": "Search Inside Yourself", "note": "Developed as an in-house course.", "yearLabel": "2007 Google" },
-   { "label": "Killer Stress", "note": "Taken up as a way of coping with stress.", "yearLabel": "2016 NHK" }
+   {
+    "label": "Impermanence",
+    "note": "The flow of the river never ceases.",
+    "yearLabel": "1212 Hojoki"
+   },
+   {
+    "label": "MBSR",
+    "note": "A medical programme at the University of Massachusetts.",
+    "yearLabel": "1979 USA"
+   },
+   {
+    "label": "Search Inside Yourself",
+    "note": "Developed as an in-house course.",
+    "yearLabel": "2007 Google"
+   },
+   {
+    "label": "Killer Stress",
+    "note": "Taken up as a way of coping with stress.",
+    "yearLabel": "2016 NHK"
+   }
   ]
  },
  "hataraku": {
@@ -85,10 +185,26 @@
   "span": "c.200 yrs",
   "spanLabel": "From conventional morality to the Charter",
   "nodes": [
-   { "label": "Diligence as Virtue", "note": "Diligence, thrift, filial piety, honesty.", "yearLabel": "Late-Edo" },
-   { "label": "Guts", "note": "The doctrine of guts in sport spreads.", "yearLabel": "1964 Olympics" },
-   { "label": "Fight 24 Hours?", "note": "Bronze prize at the New Words and Buzzwords Award.", "yearLabel": "1989 Ad" },
-   { "label": "Work-Life Balance", "note": "Harmony between work and life.", "yearLabel": "2007 Charter" }
+   {
+    "label": "Diligence as Virtue",
+    "note": "Diligence, thrift, filial piety, honesty.",
+    "yearLabel": "Late-Edo"
+   },
+   {
+    "label": "Guts",
+    "note": "The doctrine of guts in sport spreads.",
+    "yearLabel": "1964 Olympics"
+   },
+   {
+    "label": "Fight 24 Hours?",
+    "note": "Bronze prize at the New Words and Buzzwords Award.",
+    "yearLabel": "1989 Ad"
+   },
+   {
+    "label": "Work-Life Balance",
+    "note": "Harmony between work and life.",
+    "yearLabel": "2007 Charter"
+   }
   ]
  },
  "koyo": {
@@ -98,10 +214,26 @@
   "span": "59 yrs",
   "spanLabel": "Since employees passed half",
   "nodes": [
-   { "label": "Many Jobs at Once", "note": "Off-season trades and piecework at home.", "yearLabel": "Pre-Meiji" },
-   { "label": "Lifetime Employment", "note": "Called a lifetime commitment.", "yearLabel": "1958 Abegglen" },
-   { "label": "Employees pass half", "note": "Share of employees among all persons in employment.", "yearLabel": "1959 51.9%" },
-   { "label": "Side-job guidelines", "note": "The ban struck from the Model Rules of Employment.", "yearLabel": "2018 MHLW" }
+   {
+    "label": "Many Jobs at Once",
+    "note": "Off-season trades and piecework at home.",
+    "yearLabel": "Pre-Meiji"
+   },
+   {
+    "label": "Lifetime Employment",
+    "note": "Called a lifetime commitment.",
+    "yearLabel": "1958 Abegglen"
+   },
+   {
+    "label": "Employees pass half",
+    "note": "Share of employees among all persons in employment.",
+    "yearLabel": "1959 51.9%"
+   },
+   {
+    "label": "Side-job guidelines",
+    "note": "The ban struck from the Model Rules of Employment.",
+    "yearLabel": "2018 MHLW"
+   }
   ]
  },
  "ko": {
@@ -111,11 +243,31 @@
   "span": "22 yrs",
   "spanLabel": "Since the conversion to banks",
   "nodes": [
-   { "label": "Mutual Aid Circles", "note": "Appears in a document from Mount Koya.", "yearLabel": "1275 tanomoshi" },
-   { "label": "Mujin Business Act", "note": "Put mujin run as a business under licence.", "yearLabel": "1915" },
-   { "label": "Sogo Bank Act", "note": "The Mutual Loan and Savings Bank Act. Mujin companies become sogo banks.", "yearLabel": "1951" },
-   { "label": "Converted to banks", "note": "52 sogo banks converted to ordinary banks at once.", "yearLabel": "1989" },
-   { "label": "Crowdfunding", "note": "Not a descendant but a similar product.", "yearLabel": "2011 READYFOR" }
+   {
+    "label": "Mutual Aid Circles",
+    "note": "Appears in a document from Mount Koya.",
+    "yearLabel": "1275 tanomoshi"
+   },
+   {
+    "label": "Mujin Business Act",
+    "note": "Put mujin run as a business under licence.",
+    "yearLabel": "1915"
+   },
+   {
+    "label": "Sogo Bank Act",
+    "note": "The Mutual Loan and Savings Bank Act. Mujin companies become sogo banks.",
+    "yearLabel": "1951"
+   },
+   {
+    "label": "Converted to banks",
+    "note": "52 sogo banks converted to ordinary banks at once.",
+    "yearLabel": "1989"
+   },
+   {
+    "label": "Crowdfunding",
+    "note": "Not a descendant but a similar product.",
+    "yearLabel": "2011 READYFOR"
+   }
   ]
  }
 }

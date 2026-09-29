@@ -32,9 +32,10 @@ function Row({ kind, d, last }: { kind: Kind; d: DatePoint; last: boolean }) {
     <li className="relative pb-7 pl-7 last:pb-0 md:pl-9">
       {!last && <span className="absolute top-[26px] bottom-0 left-[7px] w-[2px] bg-vl-ink" aria-hidden />}
       <Marker kind={kind} />
-      <div className="grid gap-x-5 gap-y-1 md:grid-cols-[128px_minmax(0,1fr)]">
+      <div className="grid gap-x-5 gap-y-1 md:grid-cols-[152px_minmax(0,1fr)]">
         <div>
-          <p className="font-display-en text-[26px] leading-none break-all md:text-[46px]">
+          {/* 年は必ず1行｡欄の幅に収まる大きさにしてある */}
+          <p className="font-display-en text-[26px] leading-none whitespace-nowrap md:text-[42px]">
             {d.approx && <span className="font-type mr-1 text-[0.4em] text-vl-ink-soft">c.</span>}
             {d.year}
           </p>

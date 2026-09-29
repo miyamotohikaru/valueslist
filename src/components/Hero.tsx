@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="vl-hero__cards" aria-hidden>
           {picks.map((v, i) => (
             <div key={v.no} className="vl-hero__card" style={{ ["--i" as string]: i }}>
-              <PrintCard v={v} interactive={false} />
+              <PrintCard v={v} lang="ja" interactive={false} />
             </div>
           ))}
         </div>

@@ -1,8 +1,13 @@
 import { evidenceMeta } from "@/data/shelves";
 import { Ja } from "@/lib/ja";
 import { values } from "@/data/values";
+import type { Lang } from "@/i18n/lang";
+import { evidenceName, tAbout } from "@/i18n/ui.about";
 
-const noOf = (name: string) => values.find((v) => v.name === name)?.no ?? "—";
+const byName = (name: string) => values.find((v) => v.name === name);
+const noOf = (name: string) => byName(name)?.no ?? "—";
+/** 標本の呼び名｡英語はデータの en を出す */
+const nameOf = (name: string, lang: Lang) => (lang === "ja" ? name : (byName(name)?.en ?? name));
 
 /**
  * ｢証拠の二種｣— 年を特定する方法を､2枚のパネルで並べて説明する図｡
@@ -131,29 +136,29 @@ function Panel({ ja, en, icon, head, lead, specimenNo, specimenName, specimenBig
   );
 }
 
-export default function EvidenceTwo({ className = "" }: { className?: string }) {
+export default function EvidenceTwo({ className = "", lang }: { className?: string; lang: Lang }) {
   return (
     <div className={className}>
       <div className="grid gap-8 md:grid-cols-2 md:gap-6">
         <Panel
-          ja={evidenceMeta.law.ja}
+          ja={evidenceName(lang, "law")}
           en={evidenceMeta.law.en}
           icon={<StampIcon className="w-full" />}
-          head="｢点｣で語る"
-          lead="禁止令の日付､翻訳語の初出､◆制度の廃止年｡年月日まで特定できる一点で､◆製造か廃番の年を決める｡"
+          head={tAbout(lang, "evLawHead")}
+          lead={tAbout(lang, "evLawLead")}
           specimenNo={noOf("仇討ち")}
-          specimenName="仇討ち"
+          specimenName={nameOf("仇討ち", lang)}
           specimenBig="1873.02.07"
-          specimenNote="太政官布告第37号（復讐禁止令）"
+          specimenNote={tAbout(lang, "evLawNote")}
         />
         <Panel
-          ja={evidenceMeta.curve.ja}
+          ja={evidenceName(lang, "curve")}
           en={evidenceMeta.curve.en}
           icon={<CurveIcon className="w-full" />}
-          head="｢線｣で語る"
-          lead="世論調査の賛成率､統計の推移｡実際の数値を結んだ線で､◆上昇か下落かを決める｡"
+          head={tAbout(lang, "evCurveHead")}
+          lead={tAbout(lang, "evCurveLead")}
           specimenNo={noOf("夫は外で働き､妻は家庭を守る")}
-          specimenName="夫は外で働き､妻は家庭を守る"
+          specimenName={nameOf("夫は外で働き､妻は家庭を守る", lang)}
           specimenBig={
             <>
               72.6<span className="text-[0.55em]">%</span>
@@ -161,7 +166,7 @@ export default function EvidenceTwo({ className = "" }: { className?: string }) 
               33.1<span className="text-[0.55em]">%</span>
             </>
           }
-          specimenNote="賛成の計 1979 → 2024◆〔総理府・内閣府の世論調査〕｡◇2022年から郵送調査に変わったため､◆前後は単純に比べられない｡"
+          specimenNote={tAbout(lang, "evCurveNote")}
         />
       </div>
     </div>

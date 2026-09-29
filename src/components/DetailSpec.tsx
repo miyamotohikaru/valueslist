@@ -1,5 +1,9 @@
 import type { Value } from "@/data/types";
-import { shelfById, categoryMeta, evidenceMeta, trendMeta } from "@/data/shelves";
+import { shelfById, categoryMeta } from "@/data/shelves";
+import { t } from "@/i18n/ui";
+import type { Lang } from "@/i18n/lang";
+import { tValue, asName, categoryName, shelfName } from "@/i18n/ui.value";
+import { evidenceName, trendName } from "@/i18n/ui.about";
 import { SHELF_ACCENT } from "./ValueCard";
 import TrendStamp from "./TrendStamp";
 
@@ -7,6 +11,8 @@ import TrendStamp from "./TrendStamp";
  * 製品仕様表｡2列のマス目に､ラベル（小）と値（太字）を並べる｡
  * 型番はヒーローと重複するので出さない｡値のない項目（再入荷のないもの等）は出さない｡
  * 製造／廃番／再入荷の根拠（fact と出典）は｢日付の帳票｣（LawTimeline）にまとめる｡
+ *
+ * 英語では､判子に出ている大文字（NORM・RISING）を横に添えない｡同じ語が二度出るため｡
  */
 function Cell({
   label,
@@ -50,7 +56,7 @@ function DateLabel({ label, approx = false }: { label: string; approx?: boolean 
   );
 }
 
-export default function DetailSpec({ v }: { v: Value }) {
+export default function DetailSpec({ v, lang }: { v: Value; lang: Lang }) {
   const shelf = shelfById(v.shelf);
   const acc = SHELF_ACCENT[String(v.shelf)];
   return (
@@ -59,52 +65,54 @@ export default function DetailSpec({ v }: { v: Value }) {
         className="flex items-center justify-between px-4 py-2"
         style={{ background: acc.bg, color: acc.fg }}
       >
-        <span className="text-[13px] font-bold">仕様</span>
+        <span className="text-[13px] font-bold">{tValue(lang, "specTitle")}</span>
       </div>
       <div className="grid grid-cols-2">
-        <Cell label="グループ" wide>
+        <Cell label={t(lang, "group")} wide>
           <span className="flex items-start gap-2">
             <span className="mt-[4px] inline-block h-[12px] w-[12px] shrink-0 border-2 border-vl-ink" style={{ background: acc.bg }} aria-hidden />
             <span>
-              {shelf.no}. {shelf.name}
+              {shelf.no}. {shelfName(lang, shelf)}
             </span>
           </span>
         </Cell>
-        <Cell label="分類" wide>
-          {v.category}
-          <span className="font-type ml-1.5 text-[12px] font-normal tracking-[0.08em] text-vl-ink-soft">{categoryMeta[v.category].en}</span>
+        <Cell label={t(lang, "category")} wide>
+          {categoryName(lang, v.category)}
+          {lang === "ja" && (
+            <span className="font-type ml-1.5 text-[12px] font-normal tracking-[0.08em] text-vl-ink-soft">{categoryMeta[v.category].en}</span>
+          )}
         </Cell>
-        <Cell label="製造">
+        <Cell label={tValue(lang, "specMade")}>
           {v.made ? <DateLabel label={v.made.label} approx={v.made.approx} /> : "—"}
         </Cell>
-        <Cell label={v.discontinued ? "廃番" : "いまの状態"} right>
+        <Cell label={v.discontinued ? tValue(lang, "specEnded") : tValue(lang, "specState")} right>
           {v.discontinued ? (
             <span className="block text-vl-red">
               <DateLabel label={v.discontinued.label} />
             </span>
           ) : (
-            "現役"
+            tValue(lang, "specCurrent")
           )}
         </Cell>
         {v.restocked && (
-          <Cell label="再入荷" wide>
+          <Cell label={tValue(lang, "specRestock")} wide>
             {v.restocked.label}
             {v.restocked.as && !v.restocked.label.includes(v.restocked.as) && (
-              <span className="ml-2 text-[11px] font-normal md:text-[13px]">（{v.restocked.as} として）</span>
+              <span className="ml-2 text-[11px] font-normal md:text-[13px]">{asName(lang, v.restocked.as)}</span>
             )}
           </Cell>
         )}
-        <Cell label="証拠の型">{evidenceMeta[v.evidence].ja}</Cell>
-        <Cell label="傾向" right>
+        <Cell label={tValue(lang, "specEvidence")}>{evidenceName(lang, v.evidence)}</Cell>
+        <Cell label={t(lang, "trend")} right>
           <span className="flex flex-wrap items-center gap-2">
             <span className="text-[11px]">
-              <TrendStamp trend={v.trend} seed={v.no} />
+              <TrendStamp trend={v.trend} seed={v.no} lang={lang} />
             </span>
-            <span className="text-[11px] md:text-[13px]">{trendMeta[v.trend].ja}</span>
+            {lang === "ja" && <span className="text-[11px] md:text-[13px]">{trendName(lang, v.trend)}</span>}
           </span>
         </Cell>
-        <Cell label="確度" wide>
-          <span className="inline-flex items-center gap-1.5" aria-label={`確度 ${v.confidence}`}>
+        <Cell label={t(lang, "confidence")} wide>
+          <span className="inline-flex items-center gap-1.5" aria-label={`${t(lang, "confidence")} ${v.confidence}`}>
             {(["A", "B", "C"] as const).map((c) => (
               <span
                 key={c}
@@ -116,7 +124,7 @@ export default function DetailSpec({ v }: { v: Value }) {
               </span>
             ))}
             <span className="ml-2 text-[11px] font-normal md:text-[13px]">
-              {v.confidence === "A" ? "公文書・統計で年月日まで特定" : v.confidence === "B" ? "学術書などで裏づけ" : "通説の域"}
+              {t(lang, v.confidence === "A" ? "confidenceA" : v.confidence === "B" ? "confidenceB" : "confidenceC")}
             </span>
           </span>
         </Cell>

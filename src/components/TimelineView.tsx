@@ -10,6 +10,8 @@ import {
   type LineageNode,
 } from "@/data/lineages";
 import { scaleYear, ERAS, ERA_MAX } from "@/lib/timescale";
+import { type Lang, path, t } from "@/i18n";
+import { tTimeline, eraName, fill } from "@/i18n/ui.timeline";
 import { SHELF_ACCENT } from "./ValueCard";
 import { recipeOf } from "./PrintCard";
 import HalftoneArt from "./print/HalftoneArt";
@@ -91,12 +93,12 @@ function LoopTag({ className = "" }: { className?: string }) {
 /* 時間軸のヘッダー（sticky）                                            */
 /* ------------------------------------------------------------------ */
 
-function AxisHeader() {
+function AxisHeader({ lang }: { lang: Lang }) {
   return (
     <div className="sticky top-[62px] z-20 border-b-2 border-vl-ink bg-vl-paper md:top-[66px]">
       <div className="grid md:grid-cols-[var(--tl-left)_1fr]">
         <div className="hidden items-end justify-between px-3 pb-[7px] text-[12px] font-bold text-vl-ink-soft md:flex">
-          <span>グループ・型番・図版・名前</span>
+          <span>{t(lang, "axisCols")}</span>
         </div>
         <div className="relative h-[46px]">
           <div className="absolute inset-y-0 left-0 right-[var(--tl-gutter)]">
@@ -111,7 +113,7 @@ function AxisHeader() {
                 }}
               >
                 <span className="absolute left-[5px] top-[4px] whitespace-nowrap text-[11px] font-bold">
-                  {e.ja}
+                  {eraName(lang, e, "axis")}
                 </span>
               </div>
             ))}
@@ -144,7 +146,7 @@ function AxisHeader() {
 /* 一行（＝一点）                                                       */
 /* ------------------------------------------------------------------ */
 
-function Row({ v, loop }: { v: Value; loop: boolean }) {
+function Row({ v, loop, lang }: { v: Value; loop: boolean; lang: Lang }) {
   const acc = SHELF_ACCENT[String(v.shelf)];
   const r = recipeOf(v.no);
   const shelf = shelfById(v.shelf);
@@ -157,9 +159,11 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
   const labelAt = restock !== null && restock > end ? restock : end;
   const tip = [
     `NO.${v.no} ${v.name}`,
-    `製造 ${v.made!.label}`,
-    v.discontinued ? `廃番 ${v.discontinued.label}` : "現役",
-    v.restocked ? `再入荷 ${v.restocked.label}` : null,
+    `${tTimeline(lang, "tipMade")} ${v.made!.label}`,
+    v.discontinued
+      ? `${t(lang, "legendEol")} ${v.discontinued.label}`
+      : t(lang, "legendActive"),
+    v.restocked ? `${t(lang, "legendRestock")} ${v.restocked.label}` : null,
   ]
     .filter(Boolean)
     .join(" / ");
@@ -167,7 +171,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
   return (
     <li className="border-b border-vl-line">
       <Link
-        href={`/values/${v.no}`}
+        href={path(lang, `/values/${v.no}`)}
         title={tip}
         className="vl-tl-row group grid transition-colors duration-150 hover:bg-vl-card md:h-[46px] md:grid-cols-[var(--tl-left)_1fr] md:grid-rows-1"
       >
@@ -180,7 +184,7 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
           <span
             className="font-display-en grid h-[18px] w-[18px] shrink-0 place-items-center border border-vl-ink text-[11px] leading-none"
             style={{ background: acc.bg, color: acc.fg }}
-            aria-label={`グループ ${shelf.no}`}
+            aria-label={`${t(lang, "group")} ${shelf.no}`}
           >
             {shelf.no}
           </span>
@@ -325,11 +329,11 @@ function Row({ v, loop }: { v: Value; loop: boolean }) {
 /* 凡例                                                                  */
 /* ------------------------------------------------------------------ */
 
-function Legend() {
+function Legend({ lang }: { lang: Lang }) {
   const items: { glyph: React.ReactNode; label: string }[] = [
     {
       glyph: <span className="block h-[8px] w-[22px] bg-vl-ink" />,
-      label: "期間（製造→廃番）",
+      label: t(lang, "legendSpan"),
     },
     {
       glyph: (
@@ -338,21 +342,21 @@ function Legend() {
           style={{ background: hatch("var(--vl-ink)") }}
         />
       ),
-      label: "製造年は概算",
+      label: t(lang, "legendApprox"),
     },
-    { glyph: <CrossMark className="h-[14px] w-[14px]" />, label: "廃番" },
+    { glyph: <CrossMark className="h-[14px] w-[14px]" />, label: t(lang, "legendEol") },
     {
       glyph: (
         <span className="block w-[22px] border-t-2 border-dashed border-vl-ink" />
       ),
-      label: "制度の廃止後も残る",
+      label: t(lang, "legendAfter"),
     },
     {
       glyph: <ArrowMark color="var(--vl-ink)" className="h-[14px] w-[9px]" />,
-      label: "現役",
+      label: t(lang, "legendActive"),
     },
-    { glyph: <RestockDot />, label: "再入荷" },
-    { glyph: <LoopTag />, label: "150年の円環" },
+    { glyph: <RestockDot />, label: t(lang, "legendRestock") },
+    { glyph: <LoopTag />, label: t(lang, "legendLoop") },
   ];
   return (
     <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] font-bold">
@@ -378,7 +382,17 @@ type RingNode = { n: LineageNode; v: Value | undefined };
  * 円周に点を置き､時計回りの弧と矢印で結ぶ｡中央に年数｡
  * compact は携帯用｡枠を縦長にして､左右の点の説明も点の下へ回す｡
  */
-function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: string; compact?: boolean }) {
+function Ring({
+  nodes,
+  span,
+  lang,
+  compact = false,
+}: {
+  nodes: RingNode[];
+  span: string;
+  lang: Lang;
+  compact?: boolean;
+}) {
   const W = compact ? 440 : 880;
   const H = compact ? 550 : 560;
   const cx = W / 2;
@@ -440,7 +454,12 @@ function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: strin
 
   return (
     <div className={`relative mx-auto mt-6 w-full ${compact ? "max-w-[460px] md:hidden" : "hidden max-w-[880px] md:block"}`}>
-      <svg viewBox={`0 0 ${W} ${H}`} className="mx-auto block h-auto w-full" role="img" aria-label={`${num}年の円環`}>
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        className="mx-auto block h-auto w-full"
+        role="img"
+        aria-label={fill(tTimeline(lang, "ringAria"), num)}
+      >
         <circle cx={cx} cy={cy} r={R + 34} fill="none" stroke="var(--vl-red)" strokeWidth="1.2" strokeDasharray="2 5" opacity="0.5" />
         {arcs.map((a, i) => (
           <g key={i}>
@@ -471,7 +490,7 @@ function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: strin
         </text>
         {!compact && (
           <text x={cx} y={cy + 64} textAnchor="middle" fontSize={FZ.tail} fontWeight="700" fill="var(--vl-ink)" fontFamily="var(--font-sans), sans-serif">
-            最後の弧で､元の場所へ
+            {t(lang, "loopTail")}
           </text>
         )}
         {nodes.map((node, i) => {
@@ -482,7 +501,7 @@ function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: strin
               <text x={lx} y={ly} textAnchor={anchor} fontSize={FZ.year} fontWeight="700" fill="var(--vl-ink-soft)" fontFamily="var(--font-mono), monospace">
                 {node.n.yearLabel ?? node.n.year}
               </text>
-              <a href={node.v ? `/values/${node.v.no}` : undefined}>
+              <a href={node.v ? path(lang, `/values/${node.v.no}`) : undefined}>
                 <text x={lx} y={ly + FZ.name + 4} textAnchor={anchor} fontSize={FZ.name} fill="var(--vl-ink)" fontFamily="var(--font-sans), sans-serif">
                   {node.n.label}
                 </text>
@@ -511,7 +530,7 @@ function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: strin
         return (
           <Link
             key={`th-${i}`}
-            href={`/values/${node.v.no}`}
+            href={path(lang, `/values/${node.v.no}`)}
             className="vl-ring-thumb"
             style={{
               left: `${(x / W) * 100}%`,
@@ -519,7 +538,7 @@ function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: strin
               width: `${(TH / W) * 100}%`,
               ["--panel" as string]: r.panel,
             }}
-            aria-label={`${node.n.label} のカードへ`}
+            aria-label={fill(tTimeline(lang, "thumbAria"), node.n.label)}
           >
             <HalftoneArt no={node.v.no} tech={r.tech} ink={r.ink} />
           </Link>
@@ -529,7 +548,7 @@ function Ring({ nodes, span, compact = false }: { nodes: RingNode[]; span: strin
   );
 }
 
-function LoopPanel({ lineage }: { lineage: Lineage }) {
+function LoopPanel({ lineage, lang }: { lineage: Lineage; lang: Lang }) {
   const nodes: RingNode[] = lineage.nodes.map((n) => ({
     n,
     v: resolveNode(n),
@@ -557,11 +576,11 @@ function LoopPanel({ lineage }: { lineage: Lineage }) {
           <p className="vl-justify mt-3 max-w-[44em] text-[14px] leading-[1.9] md:text-[15px]">
             {lineage.lead}
           </p>
-          <Ring nodes={nodes} span={lineage.span} />
-          <Ring nodes={nodes} span={lineage.span} compact />
+          <Ring nodes={nodes} span={lineage.span} lang={lang} />
+          <Ring nodes={nodes} span={lineage.span} lang={lang} compact />
           <p className="mt-6 text-[13px] font-bold">
-            <Link href="/lineage" className="vl-link">
-              系譜ページで､環の全部を読む →
+            <Link href={path(lang, "/lineage")} className="vl-link">
+              {t(lang, "readAllLoops")}
             </Link>
           </p>
         </div>
@@ -577,7 +596,7 @@ function LoopPanel({ lineage }: { lineage: Lineage }) {
 /* ヒーローの物差し（この年表の縮尺そのもの）                            */
 /* ------------------------------------------------------------------ */
 
-function EraRuler() {
+function EraRuler({ lang }: { lang: Lang }) {
   const W = 600;
   const X0 = 20;
   const X1 = W - 20;
@@ -594,7 +613,7 @@ function EraRuler() {
         viewBox="0 0 600 210"
         className="block h-auto w-full"
         role="img"
-        aria-label="この年表の物差し"
+        aria-label={tTimeline(lang, "rulerAria")}
       >
         {/* 定規の本体 */}
         <rect
@@ -625,7 +644,7 @@ function EraRuler() {
               fill="var(--vl-ink)"
               fontFamily="var(--font-sans), sans-serif"
             >
-              {e.ja}
+              {eraName(lang, e)}
             </text>
           </g>
         ))}
@@ -698,7 +717,7 @@ function EraRuler() {
           fill="var(--vl-red)"
           fontFamily="var(--font-sans), sans-serif"
         >
-          668年を､ここに縮めている
+          {tTimeline(lang, "rulerSqueeze")}
         </text>
         <path
           d={`M${X(1868)},44 L${X(1868)},36 L${X(2030)},36 L${X(2030)},44`}
@@ -715,7 +734,7 @@ function EraRuler() {
           fill="var(--vl-ink)"
           fontFamily="var(--font-sans), sans-serif"
         >
-          明治からの162年を広く
+          {tTimeline(lang, "rulerWide")}
         </text>
         <text
           x="300"
@@ -725,7 +744,7 @@ function EraRuler() {
           fill="var(--vl-ink)"
           fontFamily="var(--font-sans), sans-serif"
         >
-          目盛りの間隔は均等ではない｡この物差しで全部を並べる｡
+          {tTimeline(lang, "rulerNote")}
         </text>
       </svg>
     </figure>
@@ -771,7 +790,7 @@ function BigButton({
 /* ページ本体                                                            */
 /* ------------------------------------------------------------------ */
 
-export default function TimelineView() {
+export default function TimelineView({ lang }: { lang: Lang }) {
   const rows = byMadeYear();
   const undated = values.length - rows.length;
   const loop = lineageById("umare");
@@ -785,18 +804,20 @@ export default function TimelineView() {
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         {/* 見出し */}
         <section className="py-6 md:py-14">
-          <h1 className="font-display-ja text-[26px] leading-[1.1] md:text-[56px]">年表</h1>
+          <h1 className="font-display-ja text-[26px] leading-[1.1] md:text-[56px]">
+            {t(lang, "timelineTitle")}
+          </h1>
           <p className="font-display-en mt-1 text-[22px] leading-[1] tracking-[0.01em] text-vl-red md:text-[46px]">
-            INVENTORY BY YEAR
+            {t(lang, "timelineEn")}
           </p>
           {/* 台帳を読む前に､物差しと記号の意味を置く */}
           {/* 物差しと凡例｡左右の幅と高さを揃える */}
           <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-2 md:items-stretch">
             <div className="border-2 border-vl-ink bg-vl-card px-3 py-3 md:px-4">
-              <EraRuler />
+              <EraRuler lang={lang} />
             </div>
             <div className="flex items-center border-2 border-vl-ink bg-vl-card px-4 py-3 md:px-5 md:py-4">
-              <Legend />
+              <Legend lang={lang} />
             </div>
           </div>
         </section>
@@ -806,20 +827,20 @@ export default function TimelineView() {
         {/* 時代ごとの点数｡表で出す */}
         <section className="grid gap-6 py-8 md:grid-cols-2 md:py-12">
           <table className="vl-tl-table">
-            <caption>時代ごとの点数</caption>
+            <caption>{t(lang, "eraTableCaption")}</caption>
             <thead>
               <tr>
-                <th scope="col">時代</th>
-                <th scope="col">年</th>
+                <th scope="col">{t(lang, "era")}</th>
+                <th scope="col">{t(lang, "years")}</th>
                 <th scope="col" className="vl-tl-table__num">
-                  点数
+                  {t(lang, "count")}
                 </th>
               </tr>
             </thead>
             <tbody>
               {ERAS.map((e, i) => (
                 <tr key={e.from}>
-                  <th scope="row">{e.ja}</th>
+                  <th scope="row">{eraName(lang, e)}</th>
                   <td className="font-type">
                     {e.from}–{e.to}
                   </td>
@@ -829,7 +850,7 @@ export default function TimelineView() {
             </tbody>
             <tfoot>
               <tr>
-                <th scope="row">合計</th>
+                <th scope="row">{t(lang, "total")}</th>
                 <td className="font-type">1200–{ERA_MAX}</td>
                 <td className="vl-tl-table__num font-type">{rows.length}</td>
               </tr>
@@ -844,12 +865,12 @@ export default function TimelineView() {
           <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <h2 className="font-display-ja text-[18px] leading-tight md:text-[30px]">
-                製造年順
+                {t(lang, "byMade")}
               </h2>
               <p className="mt-2 text-[12px] leading-[1.7] md:text-[14px]">
-                帯が期間｡
+                {t(lang, "barIsSpan")}
                 <br />
-                左端が製造､右端が廃番｡
+                {t(lang, "barEnds")}
               </p>
             </div>
           </div>
@@ -858,7 +879,7 @@ export default function TimelineView() {
             className="border-t-2 border-vl-ink [--tl-gutter:18px] [--tl-name-h:34px] [--tl-bar-h:40px] md:[--tl-gutter:22px] md:[--tl-name-h:46px] md:[--tl-bar-h:46px]"
             style={{ "--tl-left": LEFT } as React.CSSProperties}
           >
-            <AxisHeader />
+            <AxisHeader lang={lang} />
             <div className="relative">
               {/* 背景: 時代の縞 */}
               <div
@@ -882,7 +903,7 @@ export default function TimelineView() {
 
               <ol className="relative">
                 {rows.map((v) => (
-                  <Row key={v.no} v={v} loop={loopNames.has(v.name)} />
+                  <Row key={v.no} v={v} loop={loopNames.has(v.name)} lang={lang} />
                 ))}
               </ol>
             </div>
@@ -890,7 +911,7 @@ export default function TimelineView() {
 
           {undated > 0 && (
             <p className="mt-3 text-[12px] text-vl-ink-soft">
-              製造年が特定できず､年表に載せていないもの: {undated} ITEMS
+              {t(lang, "undated")}: {undated} ITEMS
             </p>
           )}
         </section>
@@ -898,7 +919,7 @@ export default function TimelineView() {
         {/* FIG.3 150年の円環 */}
         {loop && (
           <section className="py-4 md:py-8">
-            <LoopPanel lineage={loop} />
+            <LoopPanel lineage={loop} lang={lang} />
           </section>
         )}
 

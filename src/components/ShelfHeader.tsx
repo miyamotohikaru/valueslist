@@ -1,9 +1,11 @@
 import type { ShelfMeta } from "@/data/types";
+import type { Lang } from "@/i18n/lang";
+import { t } from "@/i18n/ui";
 import BreakText from "./BreakText";
 import { SHELF_ACCENT } from "./ValueCard";
 
 /** グループ札｡丸いメダルにグループ番号､右に名前と説明｡証拠の種類と件数は説明の下にまとめる */
-export default function ShelfHeader({ shelf, count }: { shelf: ShelfMeta; count: number }) {
+export default function ShelfHeader({ shelf, count, lang }: { shelf: ShelfMeta; count: number; lang: Lang }) {
   const acc = SHELF_ACCENT[String(shelf.id)];
   return (
     <div className="mb-8 flex items-start gap-4 md:gap-6">
@@ -25,7 +27,7 @@ export default function ShelfHeader({ shelf, count }: { shelf: ShelfMeta; count:
           <span>
             <BreakText text={shelf.evidenceNote} />
           </span>
-          <span className="font-bold text-vl-ink">{count}点</span>
+          <span className="font-bold text-vl-ink">{`${count}${t(lang, "countUnit")}`}</span>
         </p>
       </div>
     </div>

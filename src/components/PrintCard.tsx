@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Trend, Value } from "@/data/types";
+import { path, type Lang } from "@/i18n/lang";
+import { t, type UIKey } from "@/i18n/ui";
 import HalftoneArt, { type ArtInk } from "./print/HalftoneArt";
 import { SHELF_ACCENT } from "./ValueCard";
 import type { Technique } from "./print/screen";
@@ -82,41 +84,41 @@ export function recipeOf(no: string): Recipe {
 }
 
 /** いまの扱い｡札の右上に出す */
-const STATE: Record<Trend, string> = {
-  up: "現行・拡大中",
-  steady: "現行",
-  down: "現行・減少中",
-  discontinued: "廃番",
-  restocked: "再入荷",
+const STATE: Record<Trend, UIKey> = {
+  up: "stateUp",
+  steady: "stateSteady",
+  down: "stateDown",
+  discontinued: "stateDiscontinued",
+  restocked: "stateRestocked",
 };
 
 /** 左に製造年､右に廃番年か再入荷年｡無ければ現行 */
-function dates(v: Value) {
+function dates(v: Value, lang: Lang) {
   const made = v.made ? `${v.made.approx ? "c." : ""}${v.made.year}` : "—";
-  if (v.restocked) return [
-    { k: "製造 MFD", t: made },
-    { k: "再入荷 RESTOCK", t: String(v.restocked.year) },
-  ];
-  if (v.discontinued) return [
-    { k: "製造 MFD", t: made },
-    { k: "廃番 EOL", t: String(v.discontinued.year) },
-  ];
-  return [
-    { k: "製造 MFD", t: made },
-    { k: "現行 NOW", t: "NOW" },
-  ];
+  const mfd = { k: t(lang, "mfd"), t: made };
+  if (v.restocked) return [mfd, { k: t(lang, "restock"), t: String(v.restocked.year) }];
+  if (v.discontinued) return [mfd, { k: t(lang, "eol"), t: String(v.discontinued.year) }];
+  return [mfd, { k: t(lang, "now"), t: t(lang, "nowValue") }];
 }
 
-export default function PrintCard({ v, interactive = true }: { v: Value; interactive?: boolean }) {
+export default function PrintCard({
+  v,
+  lang,
+  interactive = true,
+}: {
+  v: Value;
+  lang: Lang;
+  interactive?: boolean;
+}) {
   const r = recipeOf(v.no);
-  const [left, right] = dates(v);
+  const [left, right] = dates(v, lang);
   // グループは下の線の色で見分ける
   const bar = SHELF_ACCENT[String(v.shelf)].line;
 
   // 外の枠で幅を測る｡札そのものに container-type を置くと
   // 札自身の padding には効かないので､いつも同じ大きさにならない
   const Wrap = interactive ? Link : "div";
-  const wrapProps = interactive ? { href: `/values/${v.no}` } : {};
+  const wrapProps = interactive ? { href: path(lang, `/values/${v.no}`) } : {};
 
   return (
     <Wrap className="vl-print-wrap" {...(wrapProps as { href: string })}>
@@ -130,14 +132,15 @@ export default function PrintCard({ v, interactive = true }: { v: Value; interac
       >
         <div className="vl-print__top">
           <span className="vl-print__no">NO.{v.no}</span>
-          <span className={`vl-print__state${v.trend === "discontinued" ? " is-eol" : ""}`}>{STATE[v.trend]}</span>
+          <span className={`vl-print__state${v.trend === "discontinued" ? " is-eol" : ""}`}>{t(lang, STATE[v.trend])}</span>
         </div>
 
         <HalftoneArt no={v.no} tech={r.tech} ink={r.ink} />
 
         <h3 className="vl-print__name">{v.name}</h3>
         <p className="vl-print__latin">
-          <span>{v.en.toUpperCase()}</span>
+          {/* 英語では題がすでに英名なので､同じ語を二度出さない */}
+          <span>{lang === "en" ? "" : v.en.toUpperCase()}</span>
           <span>{v.reading}</span>
         </p>
         <p className="vl-print__body">{v.meaning ?? v.hitokoto}</p>
@@ -157,7 +160,7 @@ export default function PrintCard({ v, interactive = true }: { v: Value; interac
         </div>
 
         {/* 下の線｡色でグループを見分ける */}
-        <span className="vl-print__line" aria-label={`グループ ${v.shelf === "meta" ? "M" : v.shelf}`} />
+        <span className="vl-print__line" aria-label={`${t(lang, "group")} ${v.shelf === "meta" ? "M" : v.shelf}`} />
       </article>
     </Wrap>
   );

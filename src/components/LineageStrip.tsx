@@ -1,6 +1,9 @@
 import Link from "next/link";
 import type { Value } from "@/data/types";
 import { lineagesOf, resolveNode } from "@/data/lineages";
+import { type Lang, path } from "@/i18n/lang";
+import { t } from "@/i18n/ui";
+import { tLineage } from "@/i18n/ui.lineage";
 import { ChainTitle } from "./LineageDiagram";
 import TypeLabel from "./TypeLabel";
 
@@ -15,7 +18,7 @@ function fitLabel(label: string) {
  * そのカードが属する系譜を横並びで｡いま見ているものをハイライトし､
  * カードがある段は /values/{no} へ､系譜そのものは /lineage#{id} へ｡
  */
-export default function LineageStrip({ v }: { v: Value }) {
+export default function LineageStrip({ v, lang }: { v: Value; lang: Lang }) {
   const ls = lineagesOf(v);
   if (ls.length === 0) return null;
   return (
@@ -25,11 +28,10 @@ export default function LineageStrip({ v }: { v: Value }) {
           <span className="font-display-en text-[19px] leading-none tracking-[0.03em] text-vl-red md:text-[34px]">
             LINEAGE
           </span>
-          <span className="font-display-ja text-[13px] leading-none md:text-[20px]">系譜</span>
+          {/* 英語では大文字の LINEAGE だけにする（和名の枠に Lineage を入れると二重になる） */}
+          {lang === "ja" && <span className="font-display-ja text-[13px] leading-none md:text-[20px]">{t(lang, "lineageTitle")}</span>}
         </h2>
-        <span className="ml-auto text-[12px] font-bold text-vl-ink-soft">
-          {ls.length}本の系譜
-        </span>
+        <span className="ml-auto text-[12px] font-bold text-vl-ink-soft">{`${ls.length}${t(lang, "tocCount")}`}</span>
       </header>
 
       <div className="mt-6 space-y-8">
@@ -41,8 +43,8 @@ export default function LineageStrip({ v }: { v: Value }) {
                 <ChainTitle title={l.title} />
               </h3>
               <span className="text-[12px] font-bold text-vl-ink-soft">{l.spanLabel} {l.span}</span>
-              <Link href={`/lineage#${l.id}`} className="vl-link ml-auto text-[13px] font-bold">
-                系譜のページへ →
+              <Link href={`${path(lang, "/lineage")}#${l.id}`} className="vl-link ml-auto text-[13px] font-bold">
+                {tLineage(lang, "toLineagePage")}
               </Link>
             </div>
 
@@ -77,7 +79,7 @@ export default function LineageStrip({ v }: { v: Value }) {
                   <li key={i} className="flex shrink-0 items-stretch md:flex-1 md:shrink">
                     {hit && !current ? (
                       <Link
-                        href={`/values/${hit.no}`}
+                        href={path(lang, `/values/${hit.no}`)}
                         className={`block w-[176px] border-2 px-3 py-3 transition-colors @container hover:bg-vl-card md:w-auto md:flex-1 ${box}`}
                       >
                         {body}

@@ -127,6 +127,25 @@ function Plot({ curve, L, accent, className }: { curve: Curve; L: Layout; accent
   const bw = Math.max(1.4, (unitW * 0.72) / nS);
   const short = curve.unit.length <= 2 ? curve.unit : "";
 
+  // 注記の札（重なるときは段をずらす）
+  const tfs = fs - 0.5;
+  const tagH = tfs + 9;
+  const placed: { x0: number; x1: number; row: number }[] = [];
+  const marks = (curve.marks ?? [])
+    .filter((m) => m.year >= x0 && m.year <= x1)
+    .slice()
+    .sort((a, b) => a.year - b.year)
+    .map((m) => {
+      const w = estWidth(m.text, tfs) + 14;
+      const x = X(m.year);
+      let left = x + 5;
+      if (left + w > W - mr) left = x - 5 - w;
+      let row = 0;
+      while (placed.some((p) => p.row === row && !(left + w < p.x0 || left > p.x1))) row++;
+      placed.push({ x0: left, x1: left + w, row });
+      return { ...m, x, left, w, y: mt + 6 + row * (tagH + 4) };
+    });
+
   // 値ラベル（線: 最初と最後 / 棒: ピークと最後）
   type Lab = { x: number; y: number; text: string; color: string };
   const labels: Lab[] = [];
@@ -150,29 +169,16 @@ function Plot({ curve, L, accent, className }: { curve: Curve; L: Layout; accent
       const w = estWidth(text, lfs) + 6;
       const x = clampX(X(p[0]), w);
       const above = Y(p[1]) - r - 7;
-      const clash = labels.find((l) => Math.abs(l.x - x) < w && Math.abs(l.y - above) < lfs + 4);
+      // 他の値ラベルだけでなく､注記の札とも当たっていないか見る
+      const hitsMark = marks.some(
+        (m) => !(x + w / 2 < m.left || x - w / 2 > m.left + m.w) && Math.abs(above - (m.y + tagH / 2)) < tagH,
+      );
+      const clash =
+        hitsMark || labels.find((l) => Math.abs(l.x - x) < w && Math.abs(l.y - above) < lfs + 4);
       labels.push({ x, y: clash || above < mt + lfs ? Y(p[1]) + r + lfs + 4 : above, text, color });
     }
   });
 
-  // 注記の札（重なるときは段をずらす）
-  const tfs = fs - 0.5;
-  const tagH = tfs + 9;
-  const placed: { x0: number; x1: number; row: number }[] = [];
-  const marks = (curve.marks ?? [])
-    .filter((m) => m.year >= x0 && m.year <= x1)
-    .slice()
-    .sort((a, b) => a.year - b.year)
-    .map((m) => {
-      const w = estWidth(m.text, tfs) + 14;
-      const x = X(m.year);
-      let left = x + 5;
-      if (left + w > W - mr) left = x - 5 - w;
-      let row = 0;
-      while (placed.some((p) => p.row === row && !(left + w < p.x0 || left > p.x1))) row++;
-      placed.push({ x0: left, x1: left + w, row });
-      return { ...m, x, left, w, y: mt + 6 + row * (tagH + 4) };
-    });
 
   // 凡例（右から並べる）
   const legend: { x: number; name: string; color: string }[] = [];

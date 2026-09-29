@@ -84,7 +84,9 @@ function clauseText(text: string, max = 26) {
 }
 
 function YearPill({ text }: { text: string }) {
-  const m = text.match(/^(\d[\d\-–〜]*)\s*(.*)$/);
+  // おおよその印（頃 / c.）は数字と一続きに読む｡
+  // 切り離すと狭い画面で落ちて､推定が確定の年に見えてしまう
+  const m = text.match(/^((?:c\.)?\d[\d\-–〜]*頃?)\s*(.*)$/);
   const num = m ? m[1] : "";
   const rest = m ? m[2] : text;
   return (

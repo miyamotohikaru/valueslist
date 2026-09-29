@@ -1,5 +1,7 @@
 import type { Lineage } from "@/data/lineages";
-import { lineageKindMeta } from "@/data/lineages";
+import { type Lang } from "@/i18n/lang";
+import { t } from "@/i18n/ui";
+import { tLineage, kindLabel } from "@/i18n/ui.lineage";
 import { ChainTitle, parseSpan } from "./LineageDiagram";
 
 /** 目次では､長い系譜名を最初と最後の2点に縮める（半券の幅で語の途中から折れないように） */
@@ -9,10 +11,10 @@ function shortTitle(title: string) {
 }
 
 /** 系譜の目次｡同じ幅の半券を2列にそろえ､年数の枠を縦に並べる */
-export default function LineageIndex({ lineages }: { lineages: Lineage[] }) {
+export default function LineageIndex({ lineages, lang }: { lineages: Lineage[]; lang: Lang }) {
   return (
-    <nav aria-label="系譜の目次">
-      <p className="text-[11px] font-bold text-vl-ink-soft">目次 · {lineages.length}本の系譜</p>
+    <nav aria-label={tLineage(lang, "tocAria")}>
+      <p className="text-[11px] font-bold text-vl-ink-soft">{`${t(lang, "toc")} · ${lineages.length}${t(lang, "tocCount")}`}</p>
       <ul className="mt-2 grid gap-1.5 md:mt-3 md:gap-3 sm:grid-cols-2">
         {lineages.map((l, i) => {
           const span = parseSpan(l.span);
@@ -22,7 +24,7 @@ export default function LineageIndex({ lineages }: { lineages: Lineage[] }) {
                 <span className="vl-ticket grid h-full grid-cols-[minmax(0,1fr)_54px] bg-vl-card transition-colors group-hover:bg-vl-mustard md:grid-cols-[minmax(0,1fr)_76px]">
                   <span className="min-w-0 py-1.5 pr-2 pl-3 md:py-2.5 md:pl-5">
                     <span className="font-type block text-[9.5px] font-bold text-vl-red-deep md:text-[11px]">
-                      {String(i + 1).padStart(2, "0")} · {lineageKindMeta[l.kind].ja}
+                      {String(i + 1).padStart(2, "0")} · {kindLabel(lang, l.kind)}
                     </span>
                     <span className="mt-0.5 block text-[11.5px] leading-[1.35] font-bold md:text-[13px] md:leading-[1.45]">
                       <ChainTitle title={shortTitle(l.title)} />

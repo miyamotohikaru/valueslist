@@ -25,7 +25,7 @@ export default function LabPage() {
       </div>
 
       <div className="mx-auto max-w-[1280px] px-5 md:px-10">
-        <ColumnGrid items={picks} variant="print" />
+        <ColumnGrid items={picks} variant="print" lang="ja" />
       </div>
 
       {/* 送りを見るための余白 */}

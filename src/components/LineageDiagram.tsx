@@ -1,7 +1,10 @@
 import { Fragment } from "react";
 import Link from "next/link";
 import type { Lineage, LineageNode } from "@/data/lineages";
-import { resolveNode, lineageKindMeta } from "@/data/lineages";
+import { resolveNode } from "@/data/lineages";
+import { type Lang, path } from "@/i18n/lang";
+import { t } from "@/i18n/ui";
+import { tLineage, kindLabel } from "@/i18n/ui.lineage";
 import { SHELF_ACCENT } from "./ValueCard";
 import { recipeOf } from "./PrintCard";
 import HalftoneArt from "./print/HalftoneArt";
@@ -98,7 +101,7 @@ function YearPill({ text }: { text: string }) {
   );
 }
 
-function RestockBadge() {
+function RestockBadge({ lang }: { lang: Lang }) {
   const pts: string[] = [];
   for (let i = 0; i < 36; i++) {
     const r = i % 2 === 0 ? 38 : 31;
@@ -106,7 +109,7 @@ function RestockBadge() {
     pts.push(`${(Math.cos(a) * r).toFixed(2)},${(Math.sin(a) * r).toFixed(2)}`);
   }
   return (
-    <svg viewBox="-40 -40 80 80" className="absolute -top-4 -right-1 z-20 h-[44px] w-[44px] -rotate-12 md:-top-7 md:-right-3 md:h-[70px] md:w-[70px]" role="img" aria-label="再入荷">
+    <svg viewBox="-40 -40 80 80" className="absolute -top-4 -right-1 z-20 h-[44px] w-[44px] -rotate-12 md:-top-7 md:-right-3 md:h-[70px] md:w-[70px]" role="img" aria-label={t(lang, "stateRestocked")}>
       <polygon points={pts.join(" ")} fill="var(--vl-red)" stroke="var(--vl-ink)" strokeWidth="1.5" />
       <text y="-1" textAnchor="middle" fontSize="18" fontWeight="700" fill="var(--vl-paper)" fontFamily="sans-serif">
         ↻
@@ -118,7 +121,7 @@ function RestockBadge() {
   );
 }
 
-function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
+function Layer({ node, badge, lang }: { node: LineageNode; badge: boolean; lang: Lang }) {
   const v = resolveNode(node);
   const isEvent = !node.ref;
   const label = node.label || node.ref || "";
@@ -182,13 +185,13 @@ function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
             {v ? (
               <span className="font-type mt-0.5 shrink-0 border-b-2 border-vl-red pb-[1px] text-[10px] font-bold text-vl-red-deep md:text-[12px]">NO.{v.no} →</span>
             ) : (
-              <span className="mt-0.5 shrink-0 text-[10px] font-bold text-vl-ink-soft md:text-[12px]">出来事</span>
+              <span className="mt-0.5 shrink-0 text-[10px] font-bold text-vl-ink-soft md:text-[12px]">{t(lang, "event")}</span>
             )}
           </div>
           {node.note && <p className="text-[10.5px] leading-[1.45] md:text-[14px] md:leading-[1.6]">{node.note}</p>}
         </div>
       </div>
-      {badge && <RestockBadge />}
+      {badge && <RestockBadge lang={lang} />}
     </div>
   );
 
@@ -199,7 +202,7 @@ function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
         <span aria-hidden className="ml-2 hidden h-0 flex-1 border-t-2 border-dashed border-vl-red sm:block" />
       </div>
       {v ? (
-        <Link href={`/values/${v.no}`} className="group block" aria-label={`${label} のカードへ`}>
+        <Link href={path(lang, `/values/${v.no}`)} className="group block" aria-label={`${label}${tLineage(lang, "cardLinkTail")}`}>
           {slab}
         </Link>
       ) : (
@@ -209,18 +212,17 @@ function Layer({ node, badge }: { node: LineageNode; badge: boolean }) {
   );
 }
 
-export default function LineageDiagram({ lineage, index }: { lineage: Lineage; index: number }) {
+export default function LineageDiagram({ lineage, index, lang }: { lineage: Lineage; index: number; lang: Lang }) {
   const nn = index + 1;
   const span = parseSpan(lineage.span);
   const nodes = lineage.nodes;
-  const kind = lineageKindMeta[lineage.kind];
 
   return (
     <section id={lineage.id} className="grid scroll-mt-28 gap-2 py-7 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-x-12 lg:gap-y-8 lg:py-12">
       {/* 左: 見出し・リード・年数・要点の年 */}
       <div className="lg:sticky lg:top-24 lg:self-start">
         <p className="flex flex-wrap items-center gap-2">
-          <span className="border-2 border-vl-ink bg-vl-mustard px-2 py-0.5 text-[10px] font-bold md:text-[12px]">{kind.ja}</span>
+          <span className="border-2 border-vl-ink bg-vl-mustard px-2 py-0.5 text-[10px] font-bold md:text-[12px]">{kindLabel(lang, lineage.kind)}</span>
         </p>
         <h2 className="font-display-ja mt-1.5 text-[16px] leading-[1.3] md:text-[26px]">
           <ChainTitle title={lineage.title} />
@@ -263,7 +265,12 @@ export default function LineageDiagram({ lineage, index }: { lineage: Lineage; i
       <div className="min-w-0">
         <ol className="space-y-1.5 md:space-y-5">
           {nodes.map((node, i) => (
-            <Layer key={`${lineage.id}-${i}`} node={node} badge={lineage.kind === "restock" && i === nodes.length - 1} />
+            <Layer
+              key={`${lineage.id}-${i}`}
+              node={node}
+              badge={lineage.kind === "restock" && i === nodes.length - 1}
+              lang={lang}
+            />
           ))}
         </ol>
       </div>

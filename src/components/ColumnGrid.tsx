@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { Value } from "@/data/types";
+import type { Lang } from "@/i18n/lang";
 import ValueCard from "./ValueCard";
 import PrintCard from "./PrintCard";
 
@@ -22,10 +23,12 @@ function colsFor(w: number, variant: "plate" | "print") {
 export default function ColumnGrid({
   items,
   variant = "plate",
+  lang,
 }: {
   items: Value[];
   /** 札の種類｡print は網をかけた刷り札 */
   variant?: "plate" | "print";
+  lang: Lang;
 }) {
   const [cols, setCols] = useState(4);
 
@@ -48,7 +51,11 @@ export default function ColumnGrid({
         {columns.map((col, i) => (
           <div key={i} className="vl-cols__col">
             {col.map((v, k) =>
-              variant === "print" ? <PrintCard key={v.no} v={v} /> : <ValueCard key={v.no} v={v} index={k} />,
+              variant === "print" ? (
+                <PrintCard key={v.no} v={v} lang={lang} />
+              ) : (
+                <ValueCard key={v.no} v={v} index={k} />
+              ),
             )}
           </div>
         ))}

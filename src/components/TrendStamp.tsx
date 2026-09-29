@@ -1,5 +1,7 @@
 import type { Trend } from "@/data/types";
 import { trendMeta } from "@/data/shelves";
+import type { Lang } from "@/i18n/lang";
+import { trendName } from "@/i18n/ui.about";
 
 /**
  * 傾向の印｡5種とも同じ造形のゴム印（角丸の二重枠＋かすれ）で､色だけで区別する｡
@@ -25,6 +27,7 @@ export default function TrendStamp({
   className = "",
   seed,
   ja = false,
+  lang = "ja",
 }: {
   trend: Trend;
   className?: string;
@@ -32,19 +35,22 @@ export default function TrendStamp({
   seed?: string;
   /** 和文のラベルも添える */
   ja?: boolean;
+  /** 添える言葉の言語｡指定が無いときは日本語 */
+  lang?: Lang;
 }) {
   const m = trendMeta[trend];
+  const label = trendName(lang, trend);
   return (
     <span
       className={`vl-trend-stamp ${className}`}
       style={{ color: COLOR[trend], transform: `rotate(${stampTilt(seed)}deg)` }}
-      aria-label={`${m.ja}（${m.en}）`}
+      aria-label={lang === "ja" ? `${label}（${m.en}）` : label}
     >
       <span className="vl-trend-stamp__mark" aria-hidden>
         {m.mark}
       </span>
       <span className="font-display-en">{m.en}</span>
-      {ja && <span className="vl-trend-stamp__ja">{m.ja}</span>}
+      {ja && <span className="vl-trend-stamp__ja">{label}</span>}
     </span>
   );
 }

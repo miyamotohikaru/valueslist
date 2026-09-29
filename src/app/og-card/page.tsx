@@ -44,7 +44,7 @@ export default function OgCard() {
       <div className="absolute top-1/2 left-[396px] flex -translate-y-1/2 gap-[22px]">
         {cards.map((v) => (
           <div key={v.no} className="w-[240px]">
-            <PrintCard v={v} interactive={false} />
+            <PrintCard v={v} lang="ja" interactive={false} />
           </div>
         ))}
       </div>

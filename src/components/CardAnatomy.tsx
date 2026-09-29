@@ -4,6 +4,9 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import Link from "next/link";
 import PrintCard from "./PrintCard";
 import type { Value } from "@/data/types";
+import { path, type Lang } from "@/i18n/lang";
+import { t, type UIKey } from "@/i18n/ui";
+import { tAbout } from "@/i18n/ui.about";
 import { Ja } from "@/lib/ja";
 
 /**
@@ -12,17 +15,17 @@ import { Ja } from "@/lib/ja";
  * 部位の位置は描画後に実測する（書体の読み込みや幅が変わっても線がずれない）｡
  */
 type Side = "l" | "r";
-type Part = { side: Side; sel: string; ja: string; en: string; text: string };
+type Part = { side: Side; sel: string; en: string; name: UIKey; text: UIKey };
 
-/** 左の列（上から）→ 右の列（上から）の順に番号を振る */
+/** 左の列（上から）→ 右の列（上から）の順に番号を振る｡言葉は共通辞書から引く */
 const PARTS: Part[] = [
-  { side: "l", sel: ".vl-print__no", ja: "型番", en: "NO.", text: "グループの並び順の三桁｡" },
-  { side: "l", sel: ".vl-print__art", ja: "図版", en: "ART", text: "灰色の版に描いてから網にかけたもの｡札ごとに網が違う｡" },
-  { side: "l", sel: ".vl-print__body", ja: "意味", en: "MEANING", text: "その言葉が指していたもの｡二行で収めている｡" },
-  { side: "l", sel: ".vl-print__line", ja: "グループ", en: "SHELF", text: "下の線の色がグループ｡五つのグループを色で見分ける｡" },
-  { side: "r", sel: ".vl-print__state", ja: "扱い", en: "STATE", text: "いまの状態｡廃番・再入荷・現行の三つ｡廃番だけ朱｡" },
-  { side: "r", sel: ".vl-print__name", ja: "名前", en: "NAME", text: "価値観の呼び名｡下に英名と読み｡" },
-  { side: "r", sel: ".vl-print__data", ja: "製造と廃番", en: "MFD. / EOL.", text: "製造の年と､廃番の年｡c. は推定､NOW は現役｡" },
+  { side: "l", sel: ".vl-print__no", en: "NO.", name: "partNo", text: "partNoText" },
+  { side: "l", sel: ".vl-print__art", en: "ART", name: "partArt", text: "partArtText" },
+  { side: "l", sel: ".vl-print__body", en: "MEANING", name: "partMeaning", text: "partMeaningText" },
+  { side: "l", sel: ".vl-print__line", en: "SHELF", name: "partGroup", text: "partGroupText" },
+  { side: "r", sel: ".vl-print__state", en: "STATE", name: "partState", text: "partStateText" },
+  { side: "r", sel: ".vl-print__name", en: "NAME", name: "partName", text: "partNameText" },
+  { side: "r", sel: ".vl-print__data", en: "MFD. / EOL.", name: "partDates", text: "partDatesText" },
 ];
 
 const DISC = 26; // 番号札の直径
@@ -57,24 +60,24 @@ function Disc({ n }: { n: number }) {
   );
 }
 
-function Label({ p, n, align }: { p: Part; n: number; align: "left" | "right" }) {
+function Label({ p, n, align, lang }: { p: Part; n: number; align: "left" | "right"; lang: Lang }) {
   const right = align === "right";
   return (
     <div className={`flex items-start gap-3 ${right ? "flex-row-reverse text-right" : ""}`}>
       <Disc n={n} />
       <div className="min-w-0 pt-[3px]">
         <p className={`flex flex-wrap items-baseline gap-x-2 ${right ? "justify-end" : ""}`}>
-          <span className="text-[15px] leading-tight font-bold">{p.ja}</span>
+          <span className="text-[15px] leading-tight font-bold">{t(lang, p.name)}</span>
         </p>
         <p className="mt-1 text-[13.5px] leading-[1.75] lg:text-[13px] xl:text-[13.5px]">
-          <Ja text={p.text} />
+          <Ja text={t(lang, p.text)} />
         </p>
       </div>
     </div>
   );
 }
 
-export default function CardAnatomy({ v }: { v: Value }) {
+export default function CardAnatomy({ v, lang }: { v: Value; lang: Lang }) {
   const bodyRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const leftRef = useRef<HTMLDivElement>(null);
@@ -164,7 +167,7 @@ export default function CardAnatomy({ v }: { v: Value }) {
       <div ref={side === "l" ? leftRef : rightRef} className="relative hidden lg:block">
         {items.map(({ p, i }, j) => (
           <div
-            key={p.ja}
+            key={p.sel}
             ref={(el) => {
               labelRefs.current[i] = el;
             }}
@@ -172,7 +175,7 @@ export default function CardAnatomy({ v }: { v: Value }) {
             // 実測の前は等間隔に置いておく
             style={{ top: geo?.tops[i] ?? `${(j / items.length) * 100}%` }}
           >
-            <Label p={p} n={numberOf(i)} align={side === "l" ? "right" : "left"} />
+            <Label p={p} n={numberOf(i)} align={side === "l" ? "right" : "left"} lang={lang} />
           </div>
         ))}
       </div>
@@ -184,7 +187,7 @@ export default function CardAnatomy({ v }: { v: Value }) {
       <figcaption className="flex items-center justify-between gap-3 bg-vl-ink px-4 py-2.5 text-vl-paper md:px-6">
         <span className="flex items-baseline gap-3">
           <span className="text-[13px] font-bold">
-            カードの見本 NO.{v.no} {v.name}
+            {t(lang, "sample")} NO.{v.no} {lang === "ja" ? v.name : v.en}
           </span>
         </span>
         <span className="font-display-en hidden text-[13px] tracking-[0.14em] text-vl-mustard sm:inline">ANATOMY OF A CARD</span>
@@ -203,7 +206,7 @@ export default function CardAnatomy({ v }: { v: Value }) {
         <div className="relative grid grid-cols-[minmax(0,280px)] justify-center lg:grid-cols-[minmax(0,1fr)_300px_minmax(0,1fr)] lg:gap-x-12 xl:grid-cols-[minmax(0,1fr)_320px_minmax(0,1fr)] xl:gap-x-16">
           {column("l")}
           <div ref={cardRef} className="w-full lg:py-10">
-            <PrintCard v={v} interactive={false} />
+            <PrintCard v={v} lang={lang} interactive={false} />
           </div>
           {column("r")}
         </div>
@@ -232,18 +235,21 @@ export default function CardAnatomy({ v }: { v: Value }) {
       {/* 携帯・タブレットの凡例 */}
       <ol className="grid gap-x-8 gap-y-4 border-t-2 border-dashed border-vl-ink/40 px-4 py-6 sm:grid-cols-2 md:px-8 lg:hidden">
         {ORDER.map((i, n) => (
-          <li key={PARTS[i].ja}>
-            <Label p={PARTS[i]} n={n + 1} align="left" />
+          <li key={PARTS[i].sel}>
+            <Label p={PARTS[i]} n={n + 1} align="left" lang={lang} />
           </li>
         ))}
       </ol>
 
       <div className="flex flex-col gap-2 border-t-2 border-vl-ink px-4 py-3 sm:flex-row sm:items-center sm:justify-between md:px-6">
         <p className="text-[13px] leading-[1.8]">
-          <Ja text="証拠の型は､◆カードを開いた先のページに書いてある｡" />
+          <Ja text={tAbout(lang, "anatomyTail")} />
         </p>
-        <Link href={`/values/${v.no}`} className="vl-link font-type shrink-0 text-[12px] font-bold tracking-[0.1em]">
-          OPEN NO.{v.no} →
+        <Link
+          href={path(lang, `/values/${v.no}`)}
+          className="vl-link font-type shrink-0 text-[12px] font-bold tracking-[0.1em]"
+        >
+          {t(lang, "openCard")} NO.{v.no} →
         </Link>
       </div>
     </figure>

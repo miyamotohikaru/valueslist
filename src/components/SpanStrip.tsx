@@ -1,4 +1,6 @@
 import type { Value } from "@/data/types";
+import type { Lang } from "@/i18n/lang";
+import { eraName } from "@/i18n/ui.timeline";
 import { scaleYear, ERAS, ERA_MAX } from "@/lib/timescale";
 
 /**
@@ -7,11 +9,13 @@ import { scaleYear, ERAS, ERA_MAX } from "@/lib/timescale";
  */
 export default function SpanStrip({
   v,
+  lang,
   accent = "var(--vl-ink)",
   showLabels = true,
   outline = false,
 }: {
   v: Value;
+  lang: Lang;
   accent?: string;
   showLabels?: boolean;
   /** 淡い色（からし）の棒に墨の縁を付ける */
@@ -113,7 +117,7 @@ export default function SpanStrip({
               className="absolute top-0 whitespace-nowrap"
               style={{ left: `${scaleYear(e.from) * 100}%`, transform: i === 0 ? "none" : "translateX(3px)" }}
             >
-              {e.ja}
+              {eraName(lang, e, "axis")}
             </span>
           ))}
         </div>

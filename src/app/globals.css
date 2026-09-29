@@ -1567,6 +1567,9 @@ a.vl-print-wrap:hover {
   display: grid;
   /* 型番 / 図版 / 名前 / 欧文 / 意味 / 年 */
   grid-template-rows: auto minmax(0, 1fr) auto auto auto auto;
+  /* 列に上限を付けないと､読みの長い札だけ中身が札の外まで広がって字が切れる
+     （欧文と読みは折り返さない指定なので､max-content が札より広くなる） */
+  grid-template-columns: minmax(0, 1fr);
   aspect-ratio: 63 / 88;
   overflow: hidden;
   background: var(--card);
@@ -1654,14 +1657,17 @@ a.vl-print-wrap:hover {
   color: rgba(28, 27, 25, 0.5);
   white-space: nowrap;
 }
-/* 長いときは端を落とす｡欧文から先に詰める */
+/* 長いときは端を落とす｡
+   読みに flex:none を付けていたせいで､読みの長い札だけ行が縮まず
+   札そのものを押し広げていた（欄からはみ出して字が切れる）｡
+   両方とも縮むようにして､欧文から先に詰める｡ */
 .vl-print__latin > span {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .vl-print__latin > span:last-child {
-  flex: none;
+  flex: 0 1 auto;
   max-width: 55%;
 }
 .vl-print__top > span {
@@ -1838,4 +1844,30 @@ a.vl-print-wrap:hover {
 .vl-ring-thumb--sp .vl-print__art {
   height: 100%;
   border-radius: 0;
+}
+
+/* 日本語と英語の切り替え */
+.vl-lang {
+  display: inline-flex;
+  flex: none;
+  border: 1px solid currentColor;
+}
+.vl-lang__btn {
+  padding: 3px 7px;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  color: inherit;
+  opacity: 0.55;
+}
+.vl-lang__btn.is-on {
+  background: currentColor;
+  opacity: 1;
+}
+/* 選んでいるほうは地と文字を反転させる */
+.vl-head .vl-lang__btn.is-on {
+  color: var(--vl-ink);
+  background: var(--vl-paper);
 }

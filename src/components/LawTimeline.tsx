@@ -4,7 +4,7 @@ import type { Lang } from "@/i18n/lang";
 import { tValue, asName, datedByLines } from "@/i18n/ui.value";
 
 /**
- * 日付の帳票｡製造／廃番／再入荷を縦に並べ､左の縦線（スパイン）で結ぶ｡
+ * 日付の帳票｡成立／失効／復活を縦に並べ､左の縦線（スパイン）で結ぶ｡
  * 箱の高さは中身に合わせる（隣の列に合わせて伸ばさない）｡
  *
  * 英語では略号（MFD. / DISC.）を添えない｡Made・Ended と同じ語が二度出るため｡

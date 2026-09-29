@@ -13,17 +13,17 @@ import type { Category, ShelfMeta } from "@/data/types";
 const D = {
   // 仕様表
   specTitle: { ja: "仕様", en: "Specification" },
-  specMade: { ja: "製造", en: "Made" },
-  specEnded: { ja: "廃番", en: "Ended" },
+  specMade: { ja: "成立", en: "Established" },
+  specEnded: { ja: "失効", en: "Lapsed" },
   specState: { ja: "いまの状態", en: "State now" },
   specCurrent: { ja: "現役", en: "Still current" },
-  specRestock: { ja: "再入荷", en: "Back in stock" },
+  specRestock: { ja: "復活", en: "Revived" },
   specEvidence: { ja: "証拠の型", en: "Kind of evidence" },
 
-  // 流通期間の箱
-  spanLegend: { ja: "流通していた期間", en: "In circulation" },
-  spanEnded: { ja: "廃番", en: "ended" },
-  spanRestocked: { ja: "再入荷", en: "back in stock" },
+  // 存続期間の箱
+  spanLegend: { ja: "続いていた期間", en: "In circulation" },
+  spanEnded: { ja: "失効", en: "ended" },
+  spanRestocked: { ja: "復活", en: "revived" },
   spanNow: { ja: "いま", en: "now" },
 
   // 日付の帳票
@@ -35,11 +35,11 @@ const D = {
   sourcesToCome: { ja: "出典は準備中｡", en: "Sources to come." },
 
   // グループの名前（shelves.ts の英語は判子用の大文字なので､画面にはこちらを出す）
-  shelf1: { ja: "前近代製・廃番ゾーン", en: "Pre-modern, discontinued" },
-  shelf2: { ja: "明治製造ゾーン", en: "Made in Meiji" },
-  shelf3: { ja: "戦後製造・下落ゾーン", en: "Postwar, falling" },
+  shelf1: { ja: "前近代成立・失効ゾーン", en: "Pre-modern, lapsed" },
+  shelf2: { ja: "明治成立ゾーン", en: "Established in Meiji" },
+  shelf3: { ja: "戦後成立・下落ゾーン", en: "Postwar, falling" },
   shelf4: { ja: "現役・上昇ゾーン", en: "Current, rising" },
-  shelf5: { ja: "長距離再入荷ゾーン", en: "Back in stock" },
+  shelf5: { ja: "長距離復活ゾーン", en: "Revived" },
   shelfMeta: { ja: "メタ標本", en: "The counterfeit" },
 
   // 分類（categoryMeta の英語は判子用の大文字）
@@ -54,13 +54,13 @@ const D = {
   ariaExtra: { ja: "補助の統計", en: "Further statistics" },
   ariaCard: { ja: "この標本のカード", en: "The card for this specimen" },
   ariaNav: { ja: "前後の標本", en: "Previous and next" },
-  ariaMadeYear: { ja: "製造年", en: "Year made" },
+  ariaMadeYear: { ja: "成立年", en: "Year made" },
 
   // メタ標本
   ariaMeta: { ja: "メタ標本", en: "Meta specimen" },
   fakeVintage: { ja: "偽ヴィンテージ", en: "FAKE VINTAGE" },
   metaLeadA: { ja: "｢伝統｣にも､", en: "Even a “tradition”" },
-  metaLeadB: { ja: "製造年がある｡", en: "has a year it was made." },
+  metaLeadB: { ja: "成立年がある｡", en: "has a year it was made." },
   seeSpecimen: { ja: "標本を見る", en: "See the specimen" },
 } satisfies Dict;
 
@@ -89,7 +89,7 @@ export function categoryName(lang: Lang, c: Category): string {
   return tValue(lang, CAT_KEY[c]);
 }
 
-/** 再入荷のときの新しい名前｡｢（〜 として）｣ */
+/** 復活のときの新しい名前｡｢（〜 として）｣ */
 export function asName(lang: Lang, as: string): string {
   return lang === "ja" ? `（${as} として）` : `(as ${as})`;
 }

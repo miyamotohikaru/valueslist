@@ -14,7 +14,7 @@ type Pair = {
   fromDisc: boolean;
 };
 
-/** ｢再入荷｣と判定したもので､元のものから50年以上へだてて戻ったもの */
+/** ｢復活｣と判定したもので､元のものから50年以上へだてて戻ったもの */
 export function longRestocks(values: Value[], all: Value[]): Pair[] {
   return values
     .filter((v) => v.restocked && v.trend === "restocked")
@@ -76,7 +76,7 @@ function Ticket({ p, lang }: { p: Pair; lang: Lang }) {
           </svg>
         </div>
 
-        {/* 再入荷品 */}
+        {/* 復活したもの */}
         <div className="flex min-w-0 flex-col items-end gap-1 p-4 text-right @container">
           <span className="font-type border-2 border-vl-red px-1.5 py-0.5 text-[11px] font-bold tracking-[0.1em] text-vl-red-deep">
             RESTOCK
@@ -113,7 +113,7 @@ function Ticket({ p, lang }: { p: Pair; lang: Lang }) {
 }
 
 /**
- * 第5グループ: 長距離再入荷の陳列｡起点（廃番から／製造から）ごとに分けて､同じ物差しで比べられるようにする｡
+ * 第5グループ: 長距離復活の陳列｡起点（失効から／成立から）ごとに分けて､同じ物差しで比べられるようにする｡
  */
 export default function RestockPairs({ values, all, lang }: { values: Value[]; all: Value[]; lang: Lang }) {
   const pairs = longRestocks(values, all);

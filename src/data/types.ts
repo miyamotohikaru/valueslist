@@ -9,7 +9,7 @@ export type DatePoint = {
   approx?: boolean;
   fact?: string; // 何をもってその年とするか
   source?: string;
-  as?: string; // 再入荷のときの新しい名前
+  as?: string; // 復活のときの新しい名前
 };
 
 export type KeyFact = { text: string; source?: string };
@@ -65,6 +65,6 @@ export type ShelfMeta = {
   en: string;
   lead: string;
   evidenceNote: string;
-  /** カードを持たないグループ（第5グループ＝再入荷ペアの陳列）｡絞り込みには出さない */
+  /** カードを持たないグループ（第5グループ＝復活ペアの陳列）｡絞り込みには出さない */
   virtual?: boolean;
 };

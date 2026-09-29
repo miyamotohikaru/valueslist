@@ -30,7 +30,7 @@ const D = {
   },
 
   // 帯の吹き出し（{n} は年や名前が入る）
-  tipMade: { ja: "製造", en: "Made" },
+  tipMade: { ja: "成立", en: "Established" },
   ringAria: { ja: "{n}年の円環", en: "A {n}-year loop" },
   thumbAria: { ja: "{n} のカードへ", en: "Open the card for {n}" },
 } satisfies Dict;

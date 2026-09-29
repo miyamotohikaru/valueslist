@@ -92,7 +92,7 @@ const STATE: Record<Trend, UIKey> = {
   restocked: "stateRestocked",
 };
 
-/** 左に製造年､右に廃番年か再入荷年｡無ければ現行 */
+/** 左に成立年､右に失効年か復活年｡無ければ現行 */
 function dates(v: Value, lang: Lang) {
   const made = v.made ? `${v.made.approx ? "c." : ""}${v.made.year}` : "—";
   const mfd = { k: t(lang, "mfd"), t: made };

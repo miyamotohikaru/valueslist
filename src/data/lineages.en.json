@@ -1,1 +1,121 @@
-{}
+{
+ "umare": {
+  "title": "Born to One's Station → Rising in the World → Self-Responsibility → Parent Gacha",
+  "en": "The 150-Year Loop",
+  "lead": "Status in early-modern Japan was decided by birth. Meiji proclamations took the privileges off the samurai, and the Education System Order preached making one's way through learning. In 2004 \"self-responsibility\" was turned on the hostages; in 2021 \"parent gacha\" made the top ten of the buzzword award. Set in order of date, 150 years of denying birth come back to a word for lamenting it.",
+  "span": "150 yrs",
+  "spanLabel": "From the status edicts to the buzzword",
+  "nodes": [
+   { "label": "Born to One's Station", "note": "Stipends and posts entered in a bungen-cho register.", "yearLabel": "Edo" },
+   { "label": "Rising in the World", "note": "Learning, the capital for rising.", "yearLabel": "1872 Education" },
+   { "label": "Self-Responsibility", "note": "Into general use with the Iraq hostage case.", "yearLabel": "2004" },
+   { "label": "Parent Gacha", "note": "Birth in the words of chance.", "yearLabel": "2021 Buzzword" }
+  ]
+ },
+ "inkyo": {
+  "title": "Inkyo Retirement → FIRE",
+  "en": "Retire Early, Twice",
+  "lead": "Inkyo was the standard life plan of early-modern Japan. The Meiji Civil Code made it a legal act, requiring as a rule that the house head be 60 or over. In 1948 the articles went, and the time to step back came to be decided by the mandatory retirement age. In 2020 it came back as an acronym born in the United States.",
+  "span": "72 yrs",
+  "spanLabel": "Since the inkyo articles went",
+  "nodes": [
+   { "label": "Inkyo Retirement", "note": "Pass on the headship, live on the house property.", "yearLabel": "Edo" },
+   { "label": "The inkyo articles go", "note": "Abolished along with the house system.", "yearLabel": "1948 Civil Code" },
+   { "label": "Retirement age becomes standard", "note": "Share of firms with a mandatory retirement age. 94.4% in 2022.", "yearLabel": "1968 69.0%" },
+   { "label": "FIRE", "note": "Financial Independence, Retire Early", "yearLabel": "2020 Japanese" }
+  ]
+ },
+ "shudo": {
+  "title": "Shudo → Diversity",
+  "en": "Relabeled, Again and Again",
+  "lead": "Society has rewritten the treatment of relations between men again and again, each time under a different label. Early-modern shudo was spoken of openly as the bond of an older man and a youth; in the first years of Meiji sodomy became punishable; in the Taisho years it was called \"perversion\". The American Psychiatric Association dropped homosexuality as a diagnosis in 1973 and the WHO in 1990, and in 2015 a ward office issued certificates to same-sex couples.",
+  "span": "142 yrs",
+  "spanLabel": "From the penal article to the certificate",
+  "nodes": [
+   { "label": "Shudo", "note": "Spoken of as the bond of an older man and a youth.", "yearLabel": "1687 Male Love" },
+   { "label": "Sodomy punished", "note": "90 days' penal labour. Gone when the new code came into force in 1882.", "yearLabel": "1873 Penal regs" },
+   { "label": "Pathologised", "note": "Popular sexology retells it as \"perversion\".", "yearLabel": "1915 Sexology" },
+   { "label": "No longer a diagnosis", "note": "The WHO followed in 1990.", "yearLabel": "1973 APA" },
+   { "label": "Diversity", "note": "Partnership certificates. The Understanding Promotion Act in 2023.", "yearLabel": "2015 Shibuya" }
+  ]
+ },
+ "kekkon": {
+  "title": "Romantic Love → Arranged Marriage → Love-Marriage Ideal → Konkatsu",
+  "en": "Love, Imported",
+  "lead": "The first use of renai in Japanese is in a translated book of 1870. Seven in ten of the couples who married in the 1930s married by miai, and the love match took the lead only with the marriages of 1965-69. Love marriage, which rose to nearly nine in ten in the 2000s, is being closed on, among the marriages of 2019-21, by couples who met \"online\".",
+  "span": "c.150 yrs",
+  "spanLabel": "From a translated word to meeting online",
+  "nodes": [
+   { "label": "Romantic Love", "note": "Appears as a rendering of the English love.", "yearLabel": "1870 Self-Help" },
+   { "label": "Arranged Marriage", "note": "Seven in ten couples married by miai.", "yearLabel": "1930-39 69.0%" },
+   { "label": "Love-Marriage Ideal", "note": "88.0% among those who married in 2005-09.", "yearLabel": "1965-69 Ahead" },
+   { "label": "Konkatsu", "note": "Marriage becomes an \"activity\".", "yearLabel": "2007 AERA" },
+   { "label": "Meeting online", "note": "Above arranged marriage at 9.9%.", "yearLabel": "2019-21 15.2%" }
+  ]
+ },
+ "mottainai": {
+  "title": "Mottainai → MOTTAINAI",
+  "en": "Restocked Twice",
+  "lead": "In A Collection of Tales from Uji, of the Kamakura period, the word is used in the sense of \"improper\"; in the Taiheiki of the 14th century it is also used of regret at waste. In 2005 a Kenyan environmental activist proposed at the United Nations that it be spread to the world, and in 2019 the Act on Promotion of Food Loss and Waste Reduction, which calls for fostering an awareness of not wasting food, came into force.",
+  "span": "c.780 yrs",
+  "spanLabel": "From Tales from Uji to the UN speech",
+  "nodes": [
+   { "label": "Mottainai", "note": "\"Mottainaki aruji kana\" = an improper master.", "yearLabel": "1221 Uji tales" },
+   { "label": "MOTTAINAI", "note": "Proposed by Wangari Maathai.", "yearLabel": "2005 UN speech" },
+   { "label": "Food Loss Reduction Act", "note": "Calls for fostering an awareness of not wasting food.", "yearLabel": "2019 In force" }
+  ]
+ },
+ "mujo": {
+  "title": "Impermanence → Mindfulness",
+  "en": "Meditation, Reimported",
+  "lead": "Meditation on impermanence lies at the core of Buddhism. In 1979 it became a medical programme at an American medical school, in 2007 an in-house course at Google, and in 2016 an NHK Special took it up as a way of coping with stress. It is not the direct descendant of the impermanence of medieval literature but the same Buddhist practice, come back by way of the United States.",
+  "span": "804 yrs",
+  "spanLabel": "From Hojoki to the broadcast",
+  "nodes": [
+   { "label": "Impermanence", "note": "The flow of the river never ceases.", "yearLabel": "1212 Hojoki" },
+   { "label": "MBSR", "note": "A medical programme at the University of Massachusetts.", "yearLabel": "1979 USA" },
+   { "label": "Search Inside Yourself", "note": "Developed as an in-house course.", "yearLabel": "2007 Google" },
+   { "label": "Killer Stress", "note": "Taken up as a way of coping with stress.", "yearLabel": "2016 NHK" }
+  ]
+ },
+ "hataraku": {
+  "title": "Diligence as Virtue → Guts → Fight 24 Hours? → Work-Life Balance",
+  "en": "How Hard to Work",
+  "lead": "Not a line of descent but norms of work that have replaced one another on the same shelf, set in order of date: the conventional morality of the late Edo period, the guts of the Tokyo Olympics, a commercial jingle of 1989, a charter of 2007.",
+  "span": "c.200 yrs",
+  "spanLabel": "From conventional morality to the Charter",
+  "nodes": [
+   { "label": "Diligence as Virtue", "note": "Diligence, thrift, filial piety, honesty.", "yearLabel": "Late-Edo" },
+   { "label": "Guts", "note": "The doctrine of guts in sport spreads.", "yearLabel": "1964 Olympics" },
+   { "label": "Fight 24 Hours?", "note": "Bronze prize at the New Words and Buzzwords Award.", "yearLabel": "1989 Ad" },
+   { "label": "Work-Life Balance", "note": "Harmony between work and life.", "yearLabel": "2007 Charter" }
+  ]
+ },
+ "koyo": {
+  "title": "Many Jobs at Once → Lifetime Employment → Side Jobs Allowed",
+  "en": "One Company, for a While",
+  "lead": "In the pre-modern village a good many households kept trade or a craft alongside farming. Abegglen called Japanese employment a lifetime commitment. The next year, 1959, employees passed half of all persons in employment. In 2018 the Ministry of Health, Labour and Welfare struck the ban on side jobs from its Model Rules of Employment.",
+  "span": "59 yrs",
+  "spanLabel": "Since employees passed half",
+  "nodes": [
+   { "label": "Many Jobs at Once", "note": "Off-season trades and piecework at home.", "yearLabel": "Pre-Meiji" },
+   { "label": "Lifetime Employment", "note": "Called a lifetime commitment.", "yearLabel": "1958 Abegglen" },
+   { "label": "Employees pass half", "note": "Share of employees among all persons in employment.", "yearLabel": "1959 51.9%" },
+   { "label": "Side-job guidelines", "note": "The ban struck from the Model Rules of Employment.", "yearLabel": "2018 MHLW" }
+  ]
+ },
+ "ko": {
+  "title": "Mutual Aid Circles → Crowdfunding",
+  "en": "Pass the Hat",
+  "lead": "Tanomoshi-ko appears in a document of 1275. Mujin was put under licence by statute in 1915, mujin companies became sogo banks in 1951, and in 1989 52 sogo banks converted to ordinary banks. Crowdfunding began in Japan with a purchase-type service in 2011. It is not a direct descendant of the ko but a similar product from a different factory.",
+  "span": "22 yrs",
+  "spanLabel": "Since the conversion to banks",
+  "nodes": [
+   { "label": "Mutual Aid Circles", "note": "Appears in a document from Mount Koya.", "yearLabel": "1275 tanomoshi" },
+   { "label": "Mujin Business Act", "note": "Put mujin run as a business under licence.", "yearLabel": "1915" },
+   { "label": "Sogo Bank Act", "note": "The Mutual Loan and Savings Bank Act. Mujin companies become sogo banks.", "yearLabel": "1951" },
+   { "label": "Converted to banks", "note": "52 sogo banks converted to ordinary banks at once.", "yearLabel": "1989" },
+   { "label": "Crowdfunding", "note": "Not a descendant but a similar product.", "yearLabel": "2011 READYFOR" }
+  ]
+ }
+}

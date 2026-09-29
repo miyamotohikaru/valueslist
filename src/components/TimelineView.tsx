@@ -401,7 +401,7 @@ function Ring({
   const cy = compact ? 275 : H / 2;
   const R = compact ? 130 : 170;
   const TH = compact ? 52 : 58;
-  const FZ = compact ? { year: 16, name: 25, note: 14, num: 62, unit: 15, tail: 0 } : { year: 14, name: 24, note: 14, num: 88, unit: 20, tail: 14 };
+  const FZ = compact ? { year: 16, name: 21, note: 14, num: 62, unit: 15, tail: 0 } : { year: 14, name: 24, note: 14, num: 88, unit: 20, tail: 14 };
   const n = nodes.length;
   const ang = (i: number) => -Math.PI / 2 + (i * 2 * Math.PI) / n;
   const pt = (a: number, r = R) => [cx + Math.cos(a) * r, cy + Math.sin(a) * r] as const;
@@ -443,7 +443,9 @@ function Ring({
     const beside = !compact && !vertical;
     const anchor: "start" | "end" | "middle" = beside ? (Math.cos(a) > 0 ? "start" : "end") : "middle";
     const half = TH / 2;
-    const lx = beside ? (Math.cos(a) > 0 ? x + half + 18 : x - half - 18) : x;
+    // 携帯は左右の点の説明を下に回すので､長い名前が枠から出ないよう
+    // 中心寄りにずらす（点の真下からは少し外れるが､切れるよりよい）
+    const lx = beside ? (Math.cos(a) > 0 ? x + half + 18 : x - half - 18) : compact && !vertical ? cx + (x - cx) * 0.78 : x;
     const ly = top
       ? y - half - (compact ? 56 : 66)
       : bottom
@@ -570,7 +572,10 @@ function LoopPanel({ lineage, lang }: { lineage: Lineage; lang: Lang }) {
               <Fragment key={i}>
                 <span className="whitespace-nowrap">{p}</span>
                 {i < parts.length - 1 && (
-                  <span className="mx-1.5 text-vl-red md:mx-2">→</span>
+                  <>
+                    {/* 英語は語の中で折れないので､矢印の前後で折れるようにする */}
+                    <span className="mx-1.5 text-vl-red md:mx-2">→</span>{" "}
+                  </>
                 )}
               </Fragment>
             ))}

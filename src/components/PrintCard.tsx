@@ -138,9 +138,9 @@ export default function PrintCard({
         <HalftoneArt no={v.no} tech={r.tech} ink={r.ink} />
 
         <h3 className="vl-print__name">{v.name}</h3>
-        <p className="vl-print__latin">
-          {/* 英語では題がすでに英名なので､同じ語を二度出さない */}
-          <span>{lang === "en" ? "" : v.en.toUpperCase()}</span>
+        {/* 英語では題がすでに英名なので同じ語を二度出さない｡そのぶん読みに幅を渡す */}
+        <p className={`vl-print__latin${lang === "en" ? " is-solo" : ""}`}>
+          {lang === "en" ? null : <span>{v.en.toUpperCase()}</span>}
           <span>{v.reading}</span>
         </p>
         <p className="vl-print__body">{v.meaning ?? v.hitokoto}</p>

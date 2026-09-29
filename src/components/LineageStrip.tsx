@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { Value } from "@/data/types";
 import { lineagesOf, resolveNode } from "@/data/lineages";
+import { localize } from "@/data/i18n";
+import { localizeLineage } from "@/data/lineages.i18n";
 import { type Lang, path } from "@/i18n/lang";
 import { t } from "@/i18n/ui";
 import { tLineage } from "@/i18n/ui.lineage";
@@ -19,7 +21,7 @@ function fitLabel(label: string) {
  * カードがある段は /values/{no} へ､系譜そのものは /lineage#{id} へ｡
  */
 export default function LineageStrip({ v, lang }: { v: Value; lang: Lang }) {
-  const ls = lineagesOf(v);
+  const ls = lineagesOf(v).map((l) => localizeLineage(l, lang));
   if (ls.length === 0) return null;
   return (
     <section aria-labelledby="lineage" className="mt-14 md:mt-20">
@@ -50,7 +52,8 @@ export default function LineageStrip({ v, lang }: { v: Value; lang: Lang }) {
 
             <ol className="vl-scroll-x flex items-stretch overflow-x-auto px-4 py-5 md:px-6">
               {l.nodes.map((n, i) => {
-                const hit = resolveNode(n);
+                const raw = resolveNode(n);
+                const hit = raw ? localize(raw, lang) : raw;
                 const current = hit?.no === v.no;
                 const body = (
                   <>

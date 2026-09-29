@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Link from "next/link";
 import type { Lineage, LineageNode } from "@/data/lineages";
 import { resolveNode } from "@/data/lineages";
+import { localize } from "@/data/i18n";
 import { type Lang, path } from "@/i18n/lang";
 import { t } from "@/i18n/ui";
 import { tLineage, kindLabel } from "@/i18n/ui.lineage";
@@ -122,7 +123,8 @@ function RestockBadge({ lang }: { lang: Lang }) {
 }
 
 function Layer({ node, badge, lang }: { node: LineageNode; badge: boolean; lang: Lang }) {
-  const v = resolveNode(node);
+  const r = resolveNode(node);
+  const v = r ? localize(r, lang) : r;
   const isEvent = !node.ref;
   const label = node.label || node.ref || "";
   const year = node.yearLabel ?? (node.year != null ? String(node.year) : "—");

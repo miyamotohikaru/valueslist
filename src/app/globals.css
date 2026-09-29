@@ -1670,6 +1670,13 @@ a.vl-print-wrap:hover {
   flex: 0 1 auto;
   max-width: 55%;
 }
+/* 読みだけの行（英語）は幅を分け合う相手がいないので全部使える */
+.vl-print__latin.is-solo {
+  justify-content: flex-end;
+}
+.vl-print__latin.is-solo > span:last-child {
+  max-width: 100%;
+}
 .vl-print__top > span {
   min-width: 0;
   overflow: hidden;

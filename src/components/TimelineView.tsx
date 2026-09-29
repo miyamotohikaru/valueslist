@@ -13,6 +13,8 @@ import { scaleYear, ERAS, ERA_MAX } from "@/lib/timescale";
 import { type Lang, path, t } from "@/i18n";
 import { tTimeline, eraName, fill } from "@/i18n/ui.timeline";
 import { SHELF_ACCENT } from "./ValueCard";
+import { localize } from "@/data/i18n";
+import { localizeLineage } from "@/data/lineages.i18n";
 import { recipeOf } from "./PrintCard";
 import HalftoneArt from "./print/HalftoneArt";
 import { countByEra } from "./EraBars";
@@ -551,7 +553,7 @@ function Ring({
 function LoopPanel({ lineage, lang }: { lineage: Lineage; lang: Lang }) {
   const nodes: RingNode[] = lineage.nodes.map((n) => ({
     n,
-    v: resolveNode(n),
+    v: (() => { const r = resolveNode(n); return r ? localize(r, lang) : r; })(),
   }));
   const parts = lineage.title.split(/\s*→\s*/);
   return (
@@ -791,9 +793,10 @@ function BigButton({
 /* ------------------------------------------------------------------ */
 
 export default function TimelineView({ lang }: { lang: Lang }) {
-  const rows = byMadeYear();
+  const rows = byMadeYear().map((v) => localize(v, lang));
   const undated = values.length - rows.length;
-  const loop = lineageById("umare");
+  const loopRaw = lineageById("umare");
+  const loop = loopRaw ? localizeLineage(loopRaw, lang) : loopRaw;
   const loopNames = new Set(
     loop?.nodes.map((n) => n.ref).filter(Boolean) ?? [],
   );

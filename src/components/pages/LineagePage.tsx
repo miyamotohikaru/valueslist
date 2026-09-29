@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { lineages } from "@/data/lineages";
+import { localizeLineage } from "@/data/lineages.i18n";
 import { type Lang } from "@/i18n/lang";
 import { t } from "@/i18n/ui";
 import LineageIndex from "@/components/LineageIndex";
@@ -7,6 +8,7 @@ import LineageDiagram from "@/components/LineageDiagram";
 
 /** 系譜のページの中身｡日本語（/lineage）と英語（/en/lineage）で同じものを使う */
 export default function LineagePage({ lang }: { lang: Lang }) {
+  const list = lineages.map((l) => localizeLineage(l, lang));
   return (
     <div className="mx-auto max-w-6xl px-4 md:px-8">
       {/* 見出しと目次 */}
@@ -17,13 +19,13 @@ export default function LineagePage({ lang }: { lang: Lang }) {
             {t(lang, "lineageEn")}
           </p>
         </div>
-        <LineageIndex lineages={lineages} lang={lang} />
+        <LineageIndex lineages={list} lang={lang} />
       </section>
 
       <div className="vl-rule" />
 
       {/* 系譜ごとの分解図 */}
-      {lineages.map((l, i) => (
+      {list.map((l, i) => (
         <Fragment key={l.id}>
           <LineageDiagram lineage={l} index={i} lang={lang} />
           <div className="vl-rule" />

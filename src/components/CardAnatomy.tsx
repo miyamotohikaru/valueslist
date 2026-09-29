@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
 import PrintCard from "./PrintCard";
+import { localize } from "@/data/i18n";
 import type { Value } from "@/data/types";
 import { path, type Lang } from "@/i18n/lang";
 import { t, type UIKey } from "@/i18n/ui";
@@ -206,7 +207,7 @@ export default function CardAnatomy({ v, lang }: { v: Value; lang: Lang }) {
         <div className="relative grid grid-cols-[minmax(0,280px)] justify-center lg:grid-cols-[minmax(0,1fr)_300px_minmax(0,1fr)] lg:gap-x-12 xl:grid-cols-[minmax(0,1fr)_320px_minmax(0,1fr)] xl:gap-x-16">
           {column("l")}
           <div ref={cardRef} className="w-full lg:py-10">
-            <PrintCard v={v} lang={lang} interactive={false} />
+            <PrintCard v={localize(v, lang)} lang={lang} interactive={false} />
           </div>
           {column("r")}
         </div>

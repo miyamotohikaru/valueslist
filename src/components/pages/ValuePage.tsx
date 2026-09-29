@@ -249,7 +249,7 @@ export default function ValuePage({ v: raw, lang }: { v: Value; lang: Lang }) {
         <p className="font-type relative mt-3 text-[10px] font-bold tracking-[0.12em] opacity-90 md:mt-4 md:text-[12px]">— {v.en.toUpperCase()} · NO.{v.no}</p>
       </section>
 
-      {/* 仕様表・流通期間 ＋ 主の証拠 */}
+      {/* 仕様表・存続期間 ＋ 主の証拠 */}
       <section className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-10" aria-label={tValue(lang, "ariaSpec")}>
         <div className="space-y-7">
           {true && (

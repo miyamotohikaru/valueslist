@@ -65,8 +65,8 @@ const STATE: Record<Trend, string> = {
   up: "現行・拡大中",
   steady: "現行",
   down: "現行・減少中",
-  discontinued: "廃番",
-  restocked: "再入荷",
+  discontinued: "失効",
+  restocked: "復活",
 };
 
 /** 型番から作る縞（札らしさのための飾り） */
@@ -107,12 +107,12 @@ export default function ValueCard({
   const cat = categoryMeta[v.category];
 
   const left = v.made
-    ? { k: "製造 MFD", t: `${v.made.approx ? "c." : ""}${v.made.year}` }
-    : { k: "製造 MFD", t: "—" };
+    ? { k: "成立 MFD", t: `${v.made.approx ? "c." : ""}${v.made.year}` }
+    : { k: "成立 MFD", t: "—" };
   const right = v.restocked
-    ? { k: "再入荷 RESTOCK", t: String(v.restocked.year) }
+    ? { k: "復活 RESTOCK", t: String(v.restocked.year) }
     : v.discontinued
-      ? { k: "廃番 EOL", t: String(v.discontinued.year) }
+      ? { k: "失効 EOL", t: String(v.discontinued.year) }
       : { k: "現行 NOW", t: "NOW" };
 
   const body = (

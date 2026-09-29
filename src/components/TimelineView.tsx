@@ -26,7 +26,7 @@ const LEFT = "372px";
 
 const pct = (year: number) => scaleYear(year) * 100;
 
-/** 帯の座標（%）｡SpanStrip と同じ意味: 製造→廃番（または現在）､再入荷は点 */
+/** 帯の座標（%）｡SpanStrip と同じ意味: 成立→失効（または現在）､復活は点 */
 function spanOf(v: Value) {
   const made = v.made!;
   const start = pct(made.year);
@@ -206,7 +206,7 @@ function Row({ v, loop, lang }: { v: Value; loop: boolean; lang: Lang }) {
         {/* 右: 時間軸上の帯 */}
         <div className="relative" style={{ height: "var(--tl-bar-h)" }}>
           <div className="absolute inset-y-0 left-0 right-[var(--tl-gutter)]">
-            {/* 概算の製造年: 左端をハッチ */}
+            {/* 概算の成立年: 左端をハッチ */}
             {approx && (
               <span
                 className="absolute top-1/2 h-[10px] -translate-y-1/2"
@@ -239,7 +239,7 @@ function Row({ v, loop, lang }: { v: Value; loop: boolean; lang: Lang }) {
                   v.shelf === 3 ? "inset 0 0 0 1.5px var(--vl-ink)" : undefined,
               }}
             />
-            {/* 再入荷: 点線と赤い点 */}
+            {/* 復活: 点線と赤い点 */}
             {restock !== null && restock > end && (
               <>
                 <span
@@ -254,7 +254,7 @@ function Row({ v, loop, lang }: { v: Value; loop: boolean; lang: Lang }) {
                 </span>
               </>
             )}
-            {/* 制度は廃止されたが､価値観としては残っている（傾向が｢廃番｣ではない） */}
+            {/* 制度は廃止されたが､価値観としては残っている（傾向が｢失効｣ではない） */}
             {v.discontinued && v.trend !== "discontinued" && !v.restocked && (
               <>
                 <span
@@ -273,7 +273,7 @@ function Row({ v, loop, lang }: { v: Value; loop: boolean; lang: Lang }) {
                 </span>
               </>
             )}
-            {/* 右端: 廃番は赤い×､現役は矢印 */}
+            {/* 右端: 失効は赤い×､現役は矢印 */}
             {active ? (
               // 帯の先に矢印を置く｡帯の終わりとぴったり接ぐ（重ねも離しもしない）
               <span
@@ -293,7 +293,7 @@ function Row({ v, loop, lang }: { v: Value; loop: boolean; lang: Lang }) {
                 <CrossMark className="block h-full w-full" />
               </span>
             )}
-            {/* 廃番・再入荷の年｡帯の下に出す｡右端に近いものは左側へ寄せて表の外へはみ出さない */}
+            {/* 失効・復活の年｡帯の下に出す｡右端に近いものは左側へ寄せて表の外へはみ出さない */}
             {endYear !== null &&
               (labelAt > 62 ? (
                 <span

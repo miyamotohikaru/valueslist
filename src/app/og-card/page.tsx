@@ -36,7 +36,7 @@ export default function OgCard() {
         <p className="mt-[26px] text-[27px] leading-[1.45] font-bold">
           その価値観には､
           <br />
-          製造年がある｡
+          成立年がある｡
         </p>
       </div>
 

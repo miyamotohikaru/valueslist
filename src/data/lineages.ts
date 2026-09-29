@@ -14,7 +14,7 @@ export type LineageNode = {
 };
 
 /**
- * - restock: 廃番・下落のあと､別の名前で戻ってきたもの（最後の層に RESTOCKED の札）
+ * - restock: 失効・下落のあと､別の名前で戻ってきたもの（最後の層に RESTOCKED の札）
  * - relabel: 同じ対象に､社会が別の名札を付け替えてきたもの
  * - theme:   親子関係ではなく､同じグループで入れ替わってきたものを年代順に並べたもの
  */
@@ -32,7 +32,7 @@ export type Lineage = {
 };
 
 export const lineageKindMeta: Record<LineageKind, { ja: string; en: string }> = {
-  restock: { ja: "再入荷", en: "RESTOCKED" },
+  restock: { ja: "復活", en: "RESTOCKED" },
   relabel: { ja: "名札の付け替え", en: "RELABELED" },
   theme: { ja: "主題の並び", en: "SAME SHELF" },
 };

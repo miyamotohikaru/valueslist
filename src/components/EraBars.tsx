@@ -2,8 +2,8 @@ import type { Value } from "@/data/types";
 import { ERAS, eraOf } from "@/lib/timescale";
 
 /**
- * FIG.1 製造工場別 出荷数｡
- * 時代（＝工場）ごとに､そこで製造された価値観の数を横向きの棒で描く｡
+ * FIG.1 成立工場別 出荷数｡
+ * 時代（＝工場）ごとに､そこで成立された価値観の数を横向きの棒で描く｡
  * グループの色は使わず､赤一色＋クリーム｡
  * 主役は棒｡数字は棒の長さの確認であって､画面でいちばん強い要素にはしない｡
  */
@@ -21,7 +21,7 @@ const ROW = 46; // 行ピッチ
 const BAR_H = 30; // 棒の高さ（棒間 16px）
 const TOP = 12;
 
-/** 時代ごとの製造数（made の無いものは数えない） */
+/** 時代ごとの成立数（made の無いものは数えない） */
 export function countByEra(items: Value[]) {
   return ERAS.map((e) => items.filter((v) => v.made && eraOf(v.made.year) === e).length);
 }
@@ -40,7 +40,7 @@ export default function EraBars({ items, className = "" }: { items: Value[]; cla
   const right = x(gridMax); // 軸はいちばん右の目盛りで止める（余った尻尾を出さない）
 
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className={className} role="img" aria-label="製造時代別の出荷数">
+    <svg viewBox={`0 0 ${W} ${H}`} className={className} role="img" aria-label="成立時代別の出荷数">
       <defs>
         <pattern id="era-dots" width="4" height="4" patternUnits="userSpaceOnUse">
           <circle cx="2" cy="2" r="0.85" fill="var(--vl-red-deep)" />

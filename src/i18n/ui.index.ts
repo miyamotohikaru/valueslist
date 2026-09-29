@@ -12,8 +12,8 @@ const D = {
   trendUp: { ja: "上昇", en: "Rising" },
   trendSteady: { ja: "安定", en: "Steady" },
   trendDown: { ja: "下落", en: "Falling" },
-  trendDiscontinued: { ja: "廃番", en: "Discontinued" },
-  trendRestocked: { ja: "再入荷", en: "Restocked" },
+  trendDiscontinued: { ja: "失効", en: "Lapsed" },
+  trendRestocked: { ja: "復活", en: "Revived" },
 
   // 証拠の chip
   evLaw: { ja: "法令・初出型", en: "By document" },

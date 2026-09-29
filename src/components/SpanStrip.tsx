@@ -4,7 +4,7 @@ import { eraName } from "@/i18n/ui.timeline";
 import { scaleYear, ERAS, ERA_MAX } from "@/lib/timescale";
 
 /**
- * 小さな年表｡製造→廃番（または現在）を帯で､廃番を赤い×､再入荷を赤い点で描く｡
+ * 小さな年表｡成立→失効（または現在）を帯で､失効を赤い×､復活を赤い点で描く｡
  * 棒の形は SVG（viewBox 100×10､横に伸ばす）､時代のラベルは読める大きさで HTML に重ねる｡
  */
 export default function SpanStrip({
@@ -26,12 +26,14 @@ export default function SpanStrip({
   const end = scaleYear(endYear) * 100;
   const restock = v.restocked ? scaleYear(v.restocked.year) * 100 : null;
   const approx = v.made?.approx;
-  // 制度は廃止されたが､価値観としては残っている（傾向が｢廃番｣ではない）
+  // 制度は廃止されたが､価値観としては残っている（傾向が｢失効｣ではない）
   const persists = !!v.discontinued && v.trend !== "discontinued" && !v.restocked;
   // 現役の帯の先に付く矢印のぶん｡帯はここまでで止める
   const arrowGap = v.discontinued ? 0 : 2.6;
-  // 復活の印が矢印にめり込まないよう､少し手前で止める
-  const restockX = restock === null ? 0 : Math.min(restock, end - arrowGap - 1.8);
+  // 復活が帯の先にあるならその位置のまま｡帯の中にあるときだけ､
+  // 矢印にめり込まないよう少し手前で止める
+  const restockX =
+    restock === null ? 0 : restock > end ? restock : Math.min(restock, end - arrowGap - 1.8);
   const hatchId = `vl-hatch-${accent.replace(/[^a-z0-9]/gi, "")}`;
   const mid = 5;
   const barH = 4.4;

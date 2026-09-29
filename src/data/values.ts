@@ -16,7 +16,7 @@ export const stats = {
   restocked: values.filter((v) => v.trend === "restocked").length,
 };
 
-/** 製造年（概算含む）で昇順 */
+/** 成立年（概算含む）で昇順 */
 export const byMadeYear = () =>
   values
     .filter((v) => v.made)

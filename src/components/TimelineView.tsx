@@ -9,7 +9,7 @@ import {
   type Lineage,
   type LineageNode,
 } from "@/data/lineages";
-import { scaleYear, ERAS, ERA_MAX } from "@/lib/timescale";
+import { scaleYear, ERAS, ERA_MAX, ERA_MIN } from "@/lib/timescale";
 import { type Lang, path, t } from "@/i18n";
 import { tTimeline, eraName, fill } from "@/i18n/ui.timeline";
 import { SHELF_ACCENT } from "./ValueCard";
@@ -20,7 +20,7 @@ import HalftoneArt from "./print/HalftoneArt";
 import { countByEra } from "./EraBars";
 
 /** 年の目盛（ヘッダーに数字で出す年） */
-const TICKS = [1200, 1600, 1868, 1945, 2000];
+const TICKS = [500, 1200, 1600, 1868, 1945, 2000];
 /** 左カラム（グループ・型番・図版・名前）の幅｡PC のみ */
 const LEFT = "372px";
 
@@ -608,11 +608,14 @@ function EraRuler({ lang }: { lang: Lang }) {
   const X0 = 20;
   const X1 = W - 20;
   const X = (y: number) => X0 + scaleYear(y) * (X1 - X0);
-  // 縮めた区間（〜1868）は50年ごと､明治以降は10年ごとに目盛りを刻む
+  // 縮めた区間（〜1868）は50年ごと､明治以降は10年ごとに目盛りを刻む｡
+  // 500〜1200 はさらに詰まっているので100年ごと
   const minor: number[] = [];
+  for (let y = 500; y < 1200; y += 100) minor.push(y);
   for (let y = 1200; y < 1868; y += 50) minor.push(y);
   for (let y = 1870; y <= 2030; y += 10) minor.push(y);
-  const major = [1200, 1600, 1868, 1945, 1989, 2026];
+  // 1200 は 500 と近すぎて字が重なるので､目盛りだけ刻んで数字は出さない
+  const major = [500, 1600, 1868, 1945, 1989, 2026];
   const fills = ["var(--vl-mustard)", "#f0cf73"];
   return (
     <figure className="w-full">
@@ -687,7 +690,7 @@ function EraRuler({ lang }: { lang: Lang }) {
             <text
               x={X(y)}
               y="134"
-              textAnchor={y === 1200 ? "start" : y === 2026 ? "end" : "middle"}
+              textAnchor={y === 500 ? "start" : y === 2026 ? "end" : "middle"}
               fontSize="13"
               fontWeight="700"
               fill="var(--vl-ink)"
@@ -710,13 +713,13 @@ function EraRuler({ lang }: { lang: Lang }) {
         </text>
         {/* 縮めた区間の注記 */}
         <path
-          d={`M${X(1200)},44 L${X(1200)},36 L${X(1868)},36 L${X(1868)},44`}
+          d={`M${X(500)},44 L${X(500)},36 L${X(1868)},36 L${X(1868)},44`}
           fill="none"
           stroke="var(--vl-red)"
           strokeWidth="2"
         />
         <text
-          x={(X(1200) + X(1868)) / 2}
+          x={(X(500) + X(1868)) / 2}
           y="26"
           textAnchor="middle"
           fontSize="14"
@@ -859,7 +862,7 @@ export default function TimelineView({ lang }: { lang: Lang }) {
             <tfoot>
               <tr>
                 <th scope="row">{t(lang, "total")}</th>
-                <td className="font-type">1200–{ERA_MAX}</td>
+                <td className="font-type">{ERA_MIN}–{ERA_MAX}</td>
                 <td className="vl-tl-table__num font-type">{rows.length}</td>
               </tr>
             </tfoot>

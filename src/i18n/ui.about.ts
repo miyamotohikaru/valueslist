@@ -40,8 +40,8 @@ const D = {
 
   // 01 この図鑑は何か
   whatBody: {
-    ja: "この図鑑は､日本の価値観（規範・人生観・判断基準）を､成立年・失効年・復活年を出典にあたって特定し､カードにしたものだ｡｢昔からの伝統｣に見えるものほど成立年が新しく､｢新品｣に見えるものが中世のものの再出荷だったりする｡それを年代順に並べて､目で見えるようにするのが目的である｡",
-    en: "This catalogue takes Japanese values — norms, life views, criteria for judgement — and puts each on a card, with the year it was made, the year it was ended and the year it came back, every date checked against a source. The ones that look like ancient tradition turn out to be the newest; the ones that look brand new are often medieval stock, reissued. Setting them out by year is what makes that visible.",
+    ja: "この図鑑は､日本と世界の価値観（規範・人生観・判断基準）を､成立年・失効年・復活年を出典にあたって特定し､カードにしたものだ｡｢昔からの伝統｣に見えるものほど成立年が新しく､｢新品｣に見えるものが中世のものの再出荷だったりする｡それを年代順に並べて､目で見えるようにするのが目的である｡",
+    en: "This catalogue takes values from Japan and from around the world — norms, life views, criteria for judgement — and puts each on a card, with the year it was made, the year it was ended and the year it came back, every date checked against a source. The ones that look like ancient tradition turn out to be the newest; the ones that look brand new are often medieval stock, reissued. Setting them out by year is what makes that visible.",
   },
   threeYears: { ja: "三つの年", en: "Three years" },
   dateMade: { ja: "成立年", en: "Established" },

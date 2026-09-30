@@ -3,6 +3,18 @@ export type Category = "規範" | "人生観" | "判断基準";
 export type Evidence = "law" | "curve";
 export type ShelfId = 1 | 2 | 3 | 4 | 5 | "meta";
 
+/** 国・地域｡絞り込みの欄に出る｡日本のものは "日本" / "日本" */
+export type Region =
+  | "日本"
+  | "東アジア"
+  | "南アジア"
+  | "中東"
+  | "ヨーロッパ"
+  | "北米"
+  | "中南米"
+  | "アフリカ"
+  | "オセアニア";
+
 export type DatePoint = {
   label: string; // 表示用（例: "1873 復讐禁止令"）
   year: number; // 数値年（概算可）
@@ -40,6 +52,10 @@ export type Value = {
   en: string;
   category: Category;
   shelf: ShelfId;
+  /** どこの価値観か｡例 "日本" "中国" "ブラジル" */
+  country: string;
+  countryEn: string;
+  region: Region;
   evidence: Evidence;
   trend: Trend;
   made: DatePoint | null;

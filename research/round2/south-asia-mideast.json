@@ -1,0 +1,1030 @@
+[
+ {
+  "draft_no": 201,
+  "name_ja": "サティー（寡婦殉死）",
+  "reading": "さてぃー",
+  "name_en": "Sati (widow immolation)",
+  "country": "インド",
+  "country_en": "India",
+  "region": "南アジア",
+  "category": "規範",
+  "shelf": 1,
+  "evidence_type": "law",
+  "made": {
+   "label": "前近代（19世紀前半の記録に残る慣行）",
+   "year": 1800,
+   "approx": true,
+   "fact": "1829年4月の報告は、ベンガル管区で10年間に5,997件の焼身・生き埋め（年平均約600件）、同じ10年間のマドラス管区とボンベイ管区の合計で635件を挙げている。数の多寡には議論があるが、当局が件数を集計していたこと自体が制度としての存在を示す",
+   "source": "The Missionary Herald, 1829年4月, 25巻4号, pp.130-131（Wikipedia「Sati (practice)」の引用経由）"
+  },
+  "discontinued": {
+   "label": "1829 ベンガル規則第17号",
+   "year": 1829,
+   "approx": false,
+   "fact": "1829年12月4日、総督ウィリアム・ベンティンクが参事会とともにベンガル法典1829年規則第17号を発布。正式名称は「A Regulation for declaring the practice of Sati or of Burning or Burying alive the Widows of Hindus, illegal, and punishable by the Criminal Courts」で、刑事裁判所の処罰対象と宣言した",
+   "source": "Wikipedia「Bengal Sati Regulation, 1829」 https://en.wikipedia.org/wiki/Bengal_Sati_Regulation,_1829 ／ Wikipedia「Sati (practice)」が引く Sharma, Arvind (2001) pp.6-7・Marshman (1876) p.374・Dodwell (1932) p.140"
+  },
+  "restocked": null,
+  "trend": "discontinued",
+  "keyfacts": [
+   {
+    "text": "1829年12月4日、ベンガル総督ウィリアム・ベンティンクは参事会とともに規則第17号を発し、サティーを違法とし刑事裁判所の処罰対象とした。",
+    "source": "Wikipedia「Bengal Sati Regulation, 1829」 https://en.wikipedia.org/wiki/Bengal_Sati_Regulation,_1829 ／ Wikipedia「Sati (practice)」が引く Sharma, Arvind (2001) pp.6-7・Marshman (1876) p.374・Dodwell (1932) p.140"
+   },
+   {
+    "text": "規則の正式名称は「ヒンドゥーの寡婦を焼き、または生き埋めにする慣行を違法とし、刑事裁判所で処罰されるべきものと宣言する規則」で、ベンガル法典の1829年規則第17号として編纂された。",
+    "source": "Wikipedia「Bengal Sati Regulation, 1829」 https://en.wikipedia.org/wiki/Bengal_Sati_Regulation,_1829 ／ Wikipedia「Sati (practice)」が引く Sharma, Arvind (2001) pp.6-7・Marshman (1876) p.374・Dodwell (1932) p.140"
+   },
+   {
+    "text": "1829年4月の報告では、ベンガル管区の10年間で5,997件（年平均約600件）、同期間のマドラス・ボンベイ両管区の合計で635件が記録されている。",
+    "source": "The Missionary Herald, 1829年4月, 25巻4号, pp.130-131（Wikipedia「Sati (practice)」の引用経由）"
+   },
+   {
+    "text": "藩王国にも波及し、コールハープルは1841年に禁止の布告を出した。",
+    "source": "Wikipedia「Sati (practice)」が引く R. Hughes Thomas (ed.)『Treaties, Agreements, and Engagements...』Bombay: Government, p.258"
+   },
+   {
+    "text": "1987年9月4日、ラージャスターン州シーカル県デーオラーラーで18歳のループ・カンワルの事件が起き、同年10月1日にラージャスターン州のサティー防止条例が出された。",
+    "source": "Wikipedia「Roop Kanwar」 https://en.wikipedia.org/wiki/Roop_Kanwar ／ Wikipedia「Sati (practice)」 https://en.wikipedia.org/wiki/Sati_(practice)"
+   },
+   {
+    "text": "「サティー実行（防止）法1987」は1988年1月3日に大統領の裁可を受け、1988年法律第3号となった。前文は「サティー、すなわち寡婦または女性を焼き、生き埋めにすることは人間の情に反し、インドのいかなる宗教も義務として命じていない」と述べ、第2条(1)(c)は「自発的と主張されるかどうかを問わない」と定義する。第1条(3)により施行日は州ごとに官報告示で定まり、全国一律の施行日を持たない。",
+    "source": "Wikisource「Commission of Sati (Prevention) Act, 1987」（官報集成 Acts of the Parliament of India 1988 の影印） https://en.wikisource.org/wiki/Commission_of_Sati_(Prevention)_Act,_1987"
+   }
+  ],
+  "curve": null,
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台の「1829年 ベンガル・サティー規制」「1987年 サティー防止法」はどちらも正しい。ただし日付を足すと、規則は1829年12月4日、法律の裁可は1988年1月3日で、法律名は「1987」なのに法律番号は「1988年法律第3号」である。",
+   "1987年法は全国一律の施行日を持たない。第1条(3)が「中央政府が官報で告示する日に州ごとに施行する」と定めているため、「1988年施行」と一括りに書くのは不正確。",
+   "1987年法の新しさは実行の禁止ではなく「栄誉化（glorification）」の禁止にある。第2条(1)(b)は行列・寺院・基金・募金までを対象とする。"
+  ],
+  "confidence": "A",
+  "verdict": "include",
+  "verdict_reason": "廃番日が1829年12月4日という日付まで特定でき、規則の正式名称も確認できる。1988年法は官報集成の影印（Wikisource）で条文そのものに当たれた。",
+  "hitokoto": "美徳とされた寡婦の焼身は、1829年12月4日の規則一枚で刑事犯罪になった。",
+  "body_ja": [
+   "英領インドの当局は、寡婦が夫の遺体とともに焼かれる件数を管区ごとに集計していた。1829年4月の報告では、ベンガル管区の10年間で5,997件、年平均約600件。同じ10年でマドラスとボンベイの両管区は合計635件である。件数の正確さには議論があるが、行政が数えていたという事実が、これが個々の事件ではなく制度だったことを示している。",
+   "1829年12月4日、総督ウィリアム・ベンティンクは参事会とともに規則第17号を発した。名称は「ヒンドゥーの寡婦を焼き、または生き埋めにする慣行を違法とし、刑事裁判所で処罰されるべきものと宣言する規則」。称えられる行為が、日付のある一枚の規則で刑事犯罪に変わった。藩王国にも波及し、コールハープルは1841年に禁止を布告している。",
+   "158年後の1987年9月4日、ラージャスターン州デーオラーラーで18歳の女性の事件が起きる。州は10月1日に条例を出し、国会は「サティー実行（防止）法1987」を可決、1988年1月3日に裁可された。この法が新しく罰したのは実行ではなく栄誉化で、行列・寺院・基金までを対象にした。禁じたあとに残るものを、法はもう一度名指ししている。"
+  ],
+  "sources": [
+   "Wikipedia「Bengal Sati Regulation, 1829」 https://en.wikipedia.org/wiki/Bengal_Sati_Regulation,_1829",
+   "Wikisource「Commission of Sati (Prevention) Act, 1987」（Acts of the Parliament of India 1988 影印） https://en.wikisource.org/wiki/Commission_of_Sati_(Prevention)_Act,_1987",
+   "Wikipedia「Sati (practice)」 https://en.wikipedia.org/wiki/Sati_(practice)（Sharma 2001／Marshman 1876／Dodwell 1932／The Missionary Herald 1829年4月号を引用）",
+   "Wikipedia「Roop Kanwar」 https://en.wikipedia.org/wiki/Roop_Kanwar"
+  ]
+ },
+ {
+  "draft_no": 202,
+  "name_ja": "寡婦は再婚しない",
+  "reading": "かふはさいこんしない",
+  "name_en": "Widows must not remarry",
+  "country": "インド",
+  "country_en": "India",
+  "region": "南アジア",
+  "category": "規範",
+  "shelf": 1,
+  "evidence_type": "law",
+  "made": {
+   "label": "前近代（禁欲的な寡婦生活の規範）",
+   "year": 1800,
+   "approx": true,
+   "fact": "夫を亡くした女性は一生を禁欲と自己否定のうちに送るべきものとされ、再婚は宗教的に無効と見なされていた。この規範を前提に、1856年法は「再婚は有効であり、生まれた子は非嫡出子とみなされない」と宣言する必要があった",
+   "source": "Wikipedia「Hindu Widows' Remarriage Act, 1856」 https://en.wikipedia.org/wiki/Hindu_Widows%27_Remarriage_Act,_1856（Lucy Carroll 2008・Peers 2006・Forbes 1999 を引用）"
+  },
+  "discontinued": {
+   "label": "1856 ヒンドゥー寡婦再婚法（1856年法律第15号）",
+   "year": 1856,
+   "approx": false,
+   "fact": "1856年7月26日制定。東インド会社統治下の全管轄で寡婦の再婚を合法化した。ダルハウジー総督が法案を起草し、カニング総督のもとで成立。第1条で再婚を有効とし子の嫡出性を認めた",
+   "source": "Wikipedia「Hindu Widows' Remarriage Act, 1856」 https://en.wikipedia.org/wiki/Hindu_Widows%27_Remarriage_Act,_1856（Lucy Carroll 2008・Peers 2006・Forbes 1999 を引用）"
+  },
+  "restocked": null,
+  "trend": "discontinued",
+  "keyfacts": [
+   {
+    "text": "ヒンドゥー寡婦再婚法（1856年法律第15号）は1856年7月26日に制定され、東インド会社統治下のインド全管轄で寡婦の再婚を合法とし、その子を非嫡出子とみなさないと定めた。",
+    "source": "Wikipedia「Hindu Widows' Remarriage Act, 1856」 https://en.wikipedia.org/wiki/Hindu_Widows%27_Remarriage_Act,_1856（Lucy Carroll 2008・Peers 2006・Forbes 1999 を引用）"
+   },
+   {
+    "text": "法案はダルハウジー総督が自ら最終稿にし、カニング総督のもとで成立した。イーシュワル・チャンドラ・ヴィディヤーサーガルが立法参事会に請願したが、ラーダーカーント・デーブとダルマ・サバーによる反対請願は署名数でほぼ4倍あった。",
+    "source": "Wikipedia「Hindu Widows' Remarriage Act, 1856」 https://en.wikipedia.org/wiki/Hindu_Widows%27_Remarriage_Act,_1856（Lucy Carroll 2008・Peers 2006・Forbes 1999 を引用）"
+   },
+   {
+    "text": "同法第2条は「寡婦が亡夫の財産に有する一切の権利および利益は、再婚により、そのとき死亡したものとして消滅する」と定めた。再婚を認める法律が、再婚した者の相続権を奪う条文を同時に置いていた。",
+    "source": "Wikipedia「Hindu Widows' Remarriage Act, 1856」 https://en.wikipedia.org/wiki/Hindu_Widows%27_Remarriage_Act,_1856（Lucy Carroll 2008・Peers 2006・Forbes 1999 を引用）"
+   },
+   {
+    "text": "この第2条ゆえに、同法は127年後の「寡婦再婚（廃止）法1983」で廃止された。解放のための法律が、最後は差別条項として消された。",
+    "source": "Wikipedia「Hindu Widows' Remarriage Act, 1856」 https://en.wikipedia.org/wiki/Hindu_Widows%27_Remarriage_Act,_1856（Lucy Carroll 2008・Peers 2006・Forbes 1999 を引用）"
+   },
+   {
+    "text": "日本にも対応する制度がある。明治民法以来、女性にのみ再婚禁止期間が課され、2016年に6か月から100日に短縮、2022年の民法改正（2024年4月1日施行）で廃止された。トルコでも1926年民法第95条が寡婦・離婚女性に300日の待婚期間を課していた。",
+    "source": "日本の再婚禁止期間の経緯（民法733条の改正）／トルコ民法典（1926年法律743号）第95条 https://www.mevzuat.gov.tr/mevzuatmetin/5.3.743.pdf"
+   }
+  ],
+  "curve": null,
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台に挙がっていなかったが、サティー禁止（1829）と同じ系列の、日付で追える項目として追加した。",
+   "1856年法は「7月16日可決・7月26日制定」と記述が分かれる。制定日は1856年7月26日。",
+   "この法律を「寡婦の解放」とだけ書くのは不正確。第2条の相続権喪失条項が理由で1983年に廃止されている。"
+  ],
+  "confidence": "B",
+  "verdict": "include",
+  "verdict_reason": "法律名・法律番号・制定日・条文の趣旨まで確認できたが、原文（官報または法典）そのものには到達できず、学術書（Lucy Carroll ほか）を引く二次資料に依拠している。",
+  "hitokoto": "寡婦の再婚を認めた1856年の法は、再婚すれば相続権を失う条文も置いた。",
+  "body_ja": [
+   "夫を亡くした女性は一生を禁欲のうちに送るべきものとされ、再婚は宗教的に無効と見なされていた。だから1856年の法律は、まず「再婚は有効であり、生まれた子は非嫡出子とみなされない」と書かなければならなかった。規範の強さは、それを打ち消すために必要とされた条文の素朴さにあらわれる。",
+   "ヒンドゥー寡婦再婚法は1856年法律第15号として同年7月26日に制定された。ダルハウジー総督が法案を自ら最終稿にし、カニング総督のもとで成立した。ヴィディヤーサーガルが立法参事会に請願したが、ダルマ・サバーの反対請願は署名数でほぼ4倍あった。反対の側にも数はあった、ということである。",
+   "ただし同じ法律の第2条は、寡婦が亡夫の財産に持つ権利は再婚によって「そのとき死亡したものとして」消滅すると定めていた。再婚を認める代わりに相続権を取り上げる設計である。この条文のために、法律そのものが1983年の廃止法で消された。解放の道具が127年後に差別条項として片づけられた。"
+  ],
+  "sources": [
+   "Wikipedia「Hindu Widows' Remarriage Act, 1856」 https://en.wikipedia.org/wiki/Hindu_Widows%27_Remarriage_Act,_1856（Lucy Carroll 2008・Peers 2006・Forbes 1999 を引用）",
+   "Wikipedia「Ishwar Chandra Vidyasagar」 https://en.wikipedia.org/wiki/Ishwar_Chandra_Vidyasagar",
+   "トルコ民法典（1926年法律743号）廃止条項集 https://www.mevzuat.gov.tr/mevzuatmetin/5.3.743.pdf"
+  ]
+ },
+ {
+  "draft_no": 203,
+  "name_ja": "不可触制",
+  "reading": "ふかしょくせい",
+  "name_en": "Untouchability",
+  "country": "インド",
+  "country_en": "India",
+  "region": "南アジア",
+  "category": "判断基準",
+  "shelf": 1,
+  "evidence_type": "law",
+  "made": {
+   "label": "前近代（生まれで接触可否が決まる序列）",
+   "year": 1800,
+   "approx": true,
+   "fact": "生まれによって、寺院・井戸・店・宿・公共の場への立ち入りや飲食の可否が分かれる扱いが慣行として存在した。1955年法が罰則を置いた行為の一覧（礼拝所への立ち入り、聖池や井戸の使用、店・宿・食堂の利用など）が、何が禁じられていたかの目録になっている",
+   "source": "Wikisource「Untouchability (Offences) Act, 1955」（官報影印） https://en.wikisource.org/wiki/Untouchability_(Offences)_Act,_1955"
+  },
+  "discontinued": {
+   "label": "1950 憲法第17条（1949年11月26日採択／1950年1月26日施行）",
+   "year": 1950,
+   "approx": false,
+   "fact": "インド憲法第17条は「『不可触制』は廃止され、いかなる形態のその実践も禁止される。『不可触制』から生ずるいかなる不利益の強制も、法により処罰される犯罪とする」と定める。憲法起草委員会の委員長はB・R・アンベードカルが務めた",
+   "source": "Constitution of India（CLPR / Azim Premji University）「Article 17: Abolition of Untouchability」 https://www.constitutionofindia.net/articles/article-17-abolition-of-untouchability/"
+  },
+  "restocked": null,
+  "trend": "discontinued",
+  "keyfacts": [
+   {
+    "text": "インド憲法第17条の原文は「'Untouchability' is abolished and its practice in any form is forbidden. The enforcement of any disability arising out of 'Untouchability' shall be an offence punishable in accordance with law.」である。",
+    "source": "Constitution of India（CLPR / Azim Premji University）「Article 17: Abolition of Untouchability」 https://www.constitutionofindia.net/articles/article-17-abolition-of-untouchability/"
+   },
+   {
+    "text": "第17条は1948年憲法草案の第11条にあたり、1948年11月29日に憲法制定会議で審議・採択された。憲法自体の採択は1949年11月26日、施行は1950年1月26日。",
+    "source": "Constitution of India（CLPR / Azim Premji University）「Article 17: Abolition of Untouchability」 https://www.constitutionofindia.net/articles/article-17-abolition-of-untouchability/"
+   },
+   {
+    "text": "罰則法は「不可触制（犯罪）法1955」（1955年法律第22号、1955年5月8日裁可）。前文は「『不可触制』の実践およびそれから生ずる不利益の強制に対して刑罰を定める法律」と述べる。",
+    "source": "Wikisource「Untouchability (Offences) Act, 1955」（官報影印） https://en.wikisource.org/wiki/Untouchability_(Offences)_Act,_1955"
+   },
+   {
+    "text": "同法第3条は、礼拝所への立ち入り、礼拝、聖池・井戸・泉・水路の使用を不可触制の理由で妨げた者を6か月以下の拘禁または500ルピー以下の罰金、もしくは併科と定めた。第2条は「店」「宿」「公共娯楽施設」「礼拝所」を細かく定義している。",
+    "source": "Wikisource「Untouchability (Offences) Act, 1955」（官報影印） https://en.wikisource.org/wiki/Untouchability_(Offences)_Act,_1955"
+   },
+   {
+    "text": "同法は1976年の改正で「市民権保護法1955」に改称された（改正法の番号は今回確認できていない）。",
+    "source": "改称の事実は複数の二次資料で一致するが、改正法の法律番号・公布日は今回到達した資料では確認できなかった"
+   },
+   {
+    "text": "日本にも対応がある。1871年（明治4）に身分呼称を廃する太政官布告が出され、制度上の身分区分は消えた。法で廃止した年と、慣行が実際に消える年は別だという構図は共通している。",
+    "source": "太政官布告（明治4年）。日本側の詳細は本図鑑の「生まれで決まる」の項に準ずる"
+   }
+  ],
+  "curve": null,
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台の「1950年 インド憲法第17条で不可触制廃止」は正しい。ただし条文が制定会議で採択されたのは1948年11月29日（草案第11条）、憲法採択は1949年11月26日、施行は1950年1月26日で、三つの日付を区別する必要がある。",
+   "叩き台の「アンベードカル」は憲法起草委員会委員長として関与したという意味で正しいが、第17条を単独で起草したという書き方は避けるべき。",
+   "罰則法の正式名称は制定時は「不可触制（犯罪）法1955」（1955年法律第22号、1955年5月8日）で、「市民権保護法」は1976年の改正後の名前である。"
+  ],
+  "confidence": "A",
+  "verdict": "include",
+  "verdict_reason": "憲法条文・採択日・施行日と、罰則法の法律番号・裁可日・条文本文まで一次資料で確認できた。ただし現在も差別が続く題材なので、記述は制度と日付に限り、いまの国や集団の評価には踏み込まない前提で採否を判断してほしい。",
+  "hitokoto": "不可触制は、1950年施行の憲法第17条に一行で「廃止する」と書かれた。",
+  "body_ja": [
+   "何が禁じられていたのかは、廃止する側の条文を読むとわかる。1955年の罰則法が並べたのは、礼拝所への立ち入り、礼拝すること、聖池や井戸や泉の水を使うこと、店や宿や食堂を利用すること。第2条はわざわざ「店」「宿」「公共娯楽施設」を定義している。禁止の目録が、そのまま慣行の目録になっている。",
+   "インド憲法第17条は「『不可触制』は廃止され、いかなる形態のその実践も禁止される」と書く。憲法草案では第11条で、1948年11月29日に制定会議で採択された。憲法そのものの採択は1949年11月26日、施行は1950年1月26日。起草委員会の委員長はB・R・アンベードカルだった。",
+   "罰則は「不可触制（犯罪）法1955」（1955年法律第22号、1955年5月8日裁可）が定め、1976年の改正で「市民権保護法」に改称された。法が廃止を宣言した日付と、慣行が消える時期は別である。日本でも1871年に身分呼称を廃する布告が出ているが、同じ構図をたどっている。"
+  ],
+  "sources": [
+   "Constitution of India（CLPR / Azim Premji University）「Article 17: Abolition of Untouchability」 https://www.constitutionofindia.net/articles/article-17-abolition-of-untouchability/",
+   "Wikisource「Untouchability (Offences) Act, 1955」（官報影印） https://en.wikisource.org/wiki/Untouchability_(Offences)_Act,_1955",
+   "Wikipedia「Untouchability」 https://en.wikipedia.org/wiki/Untouchability"
+  ]
+ },
+ {
+  "draft_no": 204,
+  "name_ja": "児童婚",
+  "reading": "じどうこん",
+  "name_en": "Child marriage",
+  "country": "インド",
+  "country_en": "India",
+  "region": "南アジア",
+  "category": "規範",
+  "shelf": 1,
+  "evidence_type": "curve",
+  "made": {
+   "label": "前近代（年齢の下限がなかった時代）",
+   "year": 1800,
+   "approx": true,
+   "fact": "結婚に年齢の下限を置く法は1929年まで存在しなかった。1929年法が女子14歳・男子18歳という線を初めて引いたこと自体が、それ以前に線がなかったことの証拠になる",
+   "source": "Wikipedia「Child Marriage Restraint Act」 https://en.wikipedia.org/wiki/Child_Marriage_Restraint_Act"
+  },
+  "discontinued": {
+   "label": "1929 児童婚制限法（サルダ法）／1978 改正で女子18歳",
+   "year": 1929,
+   "approx": false,
+   "fact": "児童婚制限法は1929年9月28日に可決され、1930年4月1日に施行。英領インド全域に適用され、女子14歳・男子18歳を下限とした。提案者はハル・ビラース・サルダで、通称サルダ法。1949年改正で女子15歳、1978年改正で女子18歳・男子21歳に引き上げられ、2006年児童婚禁止法で置き換えられた",
+   "source": "Wikipedia「Child Marriage Restraint Act」 https://en.wikipedia.org/wiki/Child_Marriage_Restraint_Act"
+  },
+  "restocked": null,
+  "trend": "down",
+  "keyfacts": [
+   {
+    "text": "児童婚制限法（サルダ法）は1929年9月28日に可決され、1930年4月1日に施行された。女子14歳・男子18歳を婚姻の下限としたインド最初の法である。提案者はハル・ビラース・サルダで、1927年に中央立法議会へ法案を提出していた。",
+    "source": "Wikipedia「Child Marriage Restraint Act」 https://en.wikipedia.org/wiki/Child_Marriage_Restraint_Act"
+   },
+   {
+    "text": "下限は1949年改正で女子15歳、1978年改正で女子18歳・男子21歳に引き上げられ、2006年児童婚禁止法が1929年法を置き換えた。",
+    "source": "Wikipedia「Child Marriage Restraint Act」 https://en.wikipedia.org/wiki/Child_Marriage_Restraint_Act"
+   },
+   {
+    "text": "NFHS-5（2019-21）の表6.2によると、18歳になる前に結婚した女性の割合は、調査時45〜49歳の層で47.0%、20〜24歳の層で23.3%だった。男性が21歳前に結婚した割合も45〜49歳の8.7%に対し25〜29歳は4.7%である。",
+    "source": "IIPS／インド保健家族福祉省『National Family Health Survey (NFHS-5), 2019-21, India Report, Volume I』Table 6.2「Age at first marriage」p.217 https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf"
+   },
+   {
+    "text": "同じ「20〜24歳の女性が18歳前に結婚した割合」は、NFHS-4（2015-16）で26.8%、NFHS-5（2019-21）で23.3%。調査をまたいでも下がっている。",
+    "source": "IIPS／インド保健家族福祉省『National Family Health Survey (NFHS-4), 2015-16, India』Table 6.2「Age at first marriage」 https://dhsprogram.com/pubs/pdf/FR339/FR339.pdf ／ IIPS／インド保健家族福祉省『National Family Health Survey (NFHS-5), 2019-21, India Report, Volume I』Table 6.2「Age at first marriage」p.217 https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf"
+   },
+   {
+    "text": "20〜49歳の女性の初婚年齢の中位数は2015-16年の19.0歳から2019-21年の19.2歳へ、男性（25〜49歳）は24.5歳から24.9歳へ動いた。",
+    "source": "IIPS／インド保健家族福祉省『National Family Health Survey (NFHS-5), 2019-21, India Report, Volume I』Table 6.2「Age at first marriage」p.217 https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf"
+   },
+   {
+    "text": "日本にも対応がある。明治民法（1898年施行）は男17歳・女15歳、1947年改正民法は男18歳・女16歳、2018年の民法改正（2022年4月1日施行）で男女とも18歳になった。婚姻年齢に男女差がなくなったのは、インドの1978年改正より44年あとである。",
+    "source": "民法第731条の改正経緯（明治民法765条・昭和22年改正・平成30年改正）"
+   }
+  ],
+  "curve": {
+   "title": "18歳になる前に結婚したインド女性の割合（NFHS-5の年齢層別。横軸はその層が18歳になった概算年）",
+   "unit": "%",
+   "source": "IIPS／インド保健家族福祉省『NFHS-5, 2019-21, India Report Vol.I』Table 6.2, p.217",
+   "points": [
+    [
+     1991,
+     47.0
+    ],
+    [
+     1996,
+     47.7
+    ],
+    [
+     2001,
+     45.5
+    ],
+    [
+     2006,
+     39.6
+    ],
+    [
+     2011,
+     32.2
+    ],
+    [
+     2016,
+     23.3
+    ]
+   ]
+  },
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台の「1929年 児童婚制限法＝サルダ法」は正しい。可決は1929年9月28日、施行は1930年4月1日で、可決年と施行年がずれる。",
+   "叩き台の「1978年・2006年の改正」は、1978年は1929年法の改正（女子18歳・男子21歳）、2006年は1929年法を廃止して置き換えた新法（児童婚禁止法）で、性格が違う。1949年の改正（女子15歳）も間に入る。",
+   "「児童婚が禁止された年」を一つ挙げるのは無理がある。1929・1949・1978・2006の四段階で下限が動いている。"
+  ],
+  "confidence": "A",
+  "verdict": "include",
+  "verdict_reason": "法の日付が特定でき、かつ政府統計（NFHS-5 表6.2）で実数のカーブが引ける。カーブの横軸は年齢層から18歳到達年を概算したもので、その旨をタイトルに明記した。",
+  "hitokoto": "結婚できる最低年齢が初めて法で決まったのは1929年。女子は14歳だった。",
+  "body_ja": [
+   "1929年9月28日に可決され1930年4月1日に施行された児童婚制限法は、婚姻に年齢の下限を置いた最初の法だった。線は女子14歳・男子18歳。提案者ハル・ビラース・サルダの名から通称サルダ法と呼ばれる。線が引かれたということは、それまで線がなかったということである。",
+   "下限はその後三度動く。1949年に女子15歳、1978年に女子18歳・男子21歳、そして2006年に1929年法自体が児童婚禁止法に置き換わった。「いつ禁止されたか」を一つの年で答えることはできない。法定年齢は一度に決まるものではなく、四段階にわたって上がっていった。",
+   "政府統計は下がり方を年齢層で見せる。NFHS-5（2019-21）では、18歳前に結婚した女性は45〜49歳の層で47.0%、20〜24歳の層で23.3%。1990年代までほぼ横ばいだった値が、2000年代以降に落ちている。日本で婚姻年齢の男女差が消えたのは2022年で、インドの1978年より44年あとである。"
+  ],
+  "sources": [
+   "Wikipedia「Child Marriage Restraint Act」 https://en.wikipedia.org/wiki/Child_Marriage_Restraint_Act",
+   "IIPS／インド保健家族福祉省『National Family Health Survey (NFHS-5), 2019-21, India Report, Volume I』Table 6.2「Age at first marriage」p.217 https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf",
+   "IIPS／インド保健家族福祉省『National Family Health Survey (NFHS-4), 2015-16, India』Table 6.2「Age at first marriage」 https://dhsprogram.com/pubs/pdf/FR339/FR339.pdf"
+  ]
+ },
+ {
+  "draft_no": 205,
+  "name_ja": "ダウリー（持参金）",
+  "reading": "だうりー",
+  "name_en": "Dowry",
+  "country": "インド",
+  "country_en": "India",
+  "region": "南アジア",
+  "category": "規範",
+  "shelf": 2,
+  "evidence_type": "law",
+  "made": {
+   "label": "近代（婚姻の「対価」としての授受）",
+   "year": 1900,
+   "approx": true,
+   "fact": "1961年法は「ダウリー」を、婚姻の前後に一方の当事者または親などから他方へ渡される「婚姻の対価（consideration for the marriage）としての財産または有価物」と定義した。法が名前をつけて定義するまで、制度としての輪郭は法文上に存在しなかった。ただし「近代に拡大した」という説を裏づける一次資料には今回到達できていない",
+   "source": "Wikisource「The Dowry Prohibition Act, 1961」第2条"
+  },
+  "discontinued": {
+   "label": "1961 ダウリー禁止法（1961年法律第28号）",
+   "year": 1961,
+   "approx": false,
+   "fact": "1961年5月20日に大統領裁可、1961年5月21日付インド官報（Extraordinary, Part II-Section 1, No.32）で公布。1961年法律第28号。第3条はダウリーの授受および教唆に6か月以下の拘禁または5,000ルピー以下の罰金、もしくは併科を定めた。施行日は第1条(3)により官報告示に委ねられ、1961年7月1日から施行された",
+   "source": "Wikisource「The Dowry Prohibition Act, 1961」 ／ Wikipedia「Dowry system in India」"
+  },
+  "restocked": null,
+  "trend": "steady",
+  "keyfacts": [
+   {
+    "text": "ダウリー禁止法は1961年5月20日に大統領の裁可を受け、1961年5月21日付のインド官報（Extraordinary, Part II-Section 1, No.32）に掲載された。1961年法律第28号で、前文は「ダウリーの授受を禁止する法律」と一行だけ書いている。",
+    "source": "Wikisource「The Dowry Prohibition Act, 1961」（The Gazette of India, Extraordinary, Part II-Section 1, No.32, 1961年5月21日 の影印） https://en.wikisource.org/wiki/Dowry_Prohibition_Act,_1961"
+   },
+   {
+    "text": "第2条の定義は「婚姻の対価として、婚姻の際・前・後に渡される財産または有価物」。ただしムスリム身分法が適用される者のダワル（マハル）は除外され、現金・装身具・衣服などの結婚祝いも「対価として渡された場合を除き」ダウリーに当たらないと明記された。禁止法自体が広い抜け道を条文で用意している。",
+    "source": "Wikisource「The Dowry Prohibition Act, 1961」（The Gazette of India, Extraordinary, Part II-Section 1, No.32, 1961年5月21日 の影印） https://en.wikisource.org/wiki/Dowry_Prohibition_Act,_1961"
+   },
+   {
+    "text": "第3条の罰は6か月以下の拘禁または5,000ルピー以下の罰金、もしくは併科。第4条は要求そのものを罰する。",
+    "source": "Wikisource「The Dowry Prohibition Act, 1961」（The Gazette of India, Extraordinary, Part II-Section 1, No.32, 1961年5月21日 の影印） https://en.wikisource.org/wiki/Dowry_Prohibition_Act,_1961"
+   },
+   {
+    "text": "1980年代の刑法改正で、夫や親族による虐待（刑法498A条）と「ダウリー死」（刑法304B条）が新設された。ただし挿入年について資料が1983年・1986年で分かれており、今回は特定できなかった。",
+    "source": "Wikipedia「Dowry system in India」（498A・304Bの挿入年を1983年とする記述あり。要検証）"
+   },
+   {
+    "text": "インド犯罪記録局（NCRB）に登録されたダウリー死の件数は、1998年7,146件、2008年8,172件、2011年8,331件。NCRB公式サイトの該当表には今回到達できず、いずれも二次引用である。",
+    "source": "Wikipedia「Dowry death」が引く NCRB『Crime in India』各年版"
+   }
+  ],
+  "curve": null,
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台の「1961年 ダウリー禁止法」は正しい。裁可日は1961年5月20日、官報掲載は5月21日、施行は1961年7月1日。",
+   "叩き台の「いまも続いている度合いも統計で」は、今回は満たせなかった。NCRB公式サイトの該当表がエラーで取得できず、得られたのは1998・2008・2011年の二次引用のみ。直近年の公式数値は未取得。",
+   "刑法304B条（ダウリー死）と498A条の新設年は、参照した資料が1983年と1986年で分かれる。断定しない形にした。"
+  ],
+  "confidence": "B",
+  "verdict": "include",
+  "verdict_reason": "法の日付・法律番号・条文は官報影印で確認できA級だが、この項目は「消えた」ではなく「禁じられたが続いている」型で、依頼の優先条件（消えた／変わったもの）からは外れる。公式統計に到達できなかったのでカーブも引けていない。採否は編集側で判断してほしい。",
+  "hitokoto": "ダウリーを禁じた1961年の法律は、同じ条文で除外される贈り物も並べている。",
+  "body_ja": [
+   "ダウリー禁止法は1961年5月20日に裁可され、翌日のインド官報に載った。1961年法律第28号。前文は「ダウリーの授受を禁止する法律」の一行だけである。第3条の罰は6か月以下の拘禁または5,000ルピー以下の罰金。要求そのものも第4条で罰せられる。",
+   "面白いのは第2条の定義だ。ダウリーとは「婚姻の対価として渡される財産または有価物」であり、ムスリム身分法上のマハルは除外、現金・装身具・衣服などの結婚祝いも「対価として渡された場合を除き」該当しない、と書いてある。何を禁じないかを、禁止法が自分で列挙している。",
+   "だからこれは「廃番になった価値観」ではない。1980年代には刑法にダウリー死と虐待の条文が足され、犯罪記録局に登録された件数は1998年の7,146件から2011年の8,331件へ増えている（統計の増減は通報の増減も含む）。禁止の日付だけが、はっきりしている。"
+  ],
+  "sources": [
+   "Wikisource「The Dowry Prohibition Act, 1961」（The Gazette of India, Extraordinary, Part II-Section 1, No.32, 1961年5月21日 の影印） https://en.wikisource.org/wiki/Dowry_Prohibition_Act,_1961",
+   "Wikipedia「Dowry system in India」 https://en.wikipedia.org/wiki/Dowry_system_in_India",
+   "Wikipedia「Dowry death」 https://en.wikipedia.org/wiki/Dowry_death（NCRB『Crime in India』各年版を引用）"
+  ]
+ },
+ {
+  "draft_no": 206,
+  "name_ja": "フェズ（トルコ帽）をかぶる",
+  "reading": "ふぇずをかぶる",
+  "name_en": "Wearing the fez",
+  "country": "トルコ",
+  "country_en": "Turkey",
+  "region": "中東",
+  "category": "規範",
+  "shelf": 1,
+  "evidence_type": "law",
+  "made": {
+   "label": "1829 マフムト2世の服装令",
+   "year": 1829,
+   "approx": false,
+   "fact": "1827年、マフムト2世は新設の常備軍のためにチュニスからフェズ5万個を発注した。1829年には文官にも無地のフェズの着用を命じ、ターバンの着用を禁じた。ターバンは出身や宗派の標識として人を分けるため、それを消して均一化する近代化政策だった",
+   "source": "Wikipedia「Fez (hat)」 https://en.wikipedia.org/wiki/Fez_(hat)（Jirousek 2005「Islamic Clothing」Encyclopedia of Islam／Mansel 2011／Deringil 1993「The Invention of Tradition as Public Image in the Late Ottoman Empire, 1808 to 1908」CSSH を引用）"
+  },
+  "discontinued": {
+   "label": "1925 帽子法（法律671号）",
+   "year": 1925,
+   "approx": false,
+   "fact": "「ŞAPKA İKTİSASI HAKKINDA KANUN」法律番号671。可決1925年11月25日、官報（Resmî Gazete）1925年11月28日第230号。第1条は、国会議員および一般・特別・地方行政と全機関の官吏・職員に「トルコ国民が採用した帽子」の着用を義務づけ、「トルコ住民の一般的な被り物も帽子であり、これに反する習慣の継続は政府が禁ずる」と定めた。第2条により公布日から施行",
+   "source": "トルコ共和国法令データベース（mevzuat.gov.tr）「ŞAPKA İKTİSASI HAKKINDA KANUN」法律番号671、可決1925年11月25日、官報1925年11月28日第230号 https://www.mevzuat.gov.tr/mevzuatmetin/1.3.671.pdf"
+  },
+  "restocked": null,
+  "trend": "discontinued",
+  "keyfacts": [
+   {
+    "text": "1827年、マフムト2世は新設の常備軍アサーキル・マンスーレのためにチュニスからフェズ5万個を発注し、1829年には文官にも無地のフェズを命じてターバンを禁じた。フェズは伝統ではなく近代化の道具として導入された。",
+    "source": "Wikipedia「Fez (hat)」 https://en.wikipedia.org/wiki/Fez_(hat)（Jirousek 2005「Islamic Clothing」Encyclopedia of Islam／Mansel 2011／Deringil 1993「The Invention of Tradition as Public Image in the Late Ottoman Empire, 1808 to 1908」CSSH を引用）"
+   },
+   {
+    "text": "帽子法（Şapka İktisası Hakkında Kanun）は法律番号671、可決1925年11月25日、官報1925年11月28日第230号、Düstur第3輯第7巻108頁。",
+    "source": "トルコ共和国法令データベース（mevzuat.gov.tr）「ŞAPKA İKTİSASI HAKKINDA KANUN」法律番号671、可決1925年11月25日、官報1925年11月28日第230号 https://www.mevzuat.gov.tr/mevzuatmetin/1.3.671.pdf"
+   },
+   {
+    "text": "帽子法第1条は、国会議員と全機関の官吏・職員に「トルコ国民が採用した帽子」の着用を義務づけ、「トルコ住民の一般的な被り物も帽子であり、これに反する習慣の継続は政府が禁ずる」と定める。全3条しかない。",
+    "source": "トルコ共和国法令データベース（mevzuat.gov.tr）「ŞAPKA İKTİSASI HAKKINDA KANUN」法律番号671、可決1925年11月25日、官報1925年11月28日第230号 https://www.mevzuat.gov.tr/mevzuatmetin/1.3.671.pdf"
+   },
+   {
+    "text": "第2条は「本法は公布の日から施行する」と定め、猶予期間を置かなかった。",
+    "source": "トルコ共和国法令データベース（mevzuat.gov.tr）「ŞAPKA İKTİSASI HAKKINDA KANUN」法律番号671、可決1925年11月25日、官報1925年11月28日第230号 https://www.mevzuat.gov.tr/mevzuatmetin/1.3.671.pdf"
+   },
+   {
+    "text": "法は男性のフェズとターバンを対象とし、女性のスカーフには踏み込まなかった。施行後は教科書の挿絵でフェズをかぶった男性の図が帽子の図に差し替えられた。",
+    "source": "Wikipedia「Atatürk's reforms」が引く Yılmaz, Hale『Becoming Turkish』Syracuse University Press"
+   },
+   {
+    "text": "日本にも対応がある。1871年（明治4）の散髪脱刀令で髷は「切ってよいもの」になり、1876年の廃刀令で帯刀が禁じられた。近代国家が最初に手をつけるのは頭と腰だという点は共通している。",
+    "source": "散髪脱刀令（明治4年太政官布告）・廃刀令（明治9年太政官布告）"
+   }
+  ],
+  "curve": null,
+  "lineage": {
+   "from": "ターバン",
+   "to": "西洋式の帽子",
+   "note": "1829年にターバンを廃してフェズを義務づけ、1925年にそのフェズを廃して帽子を義務づけた。同じ国が二度、頭に載せるものを法で決めている。"
+  },
+  "draft_corrections": [
+   "叩き台には入っていなかったが、「伝統に見えて実は新しい」という企画の核に最も近い中東の例として追加した。フェズ自体が1829年の近代化政策で持ち込まれたもので、1925年に「後進の象徴」として禁じられている。",
+   "帽子法を「フェズ禁止法」と呼ぶのは通称。条文にフェズという語はなく、帽子の着用義務と「これに反する習慣」の禁止という書き方になっている。",
+   "「1925年の帽子革命」という言い方が流通しているが、法律の可決は1925年11月25日、官報掲載は11月28日、施行は公布日である。"
+  ],
+  "confidence": "A",
+  "verdict": "include",
+  "verdict_reason": "法律番号・可決日・官報番号・条文本文をトルコ政府の法令データベースの原文で確認できた。製造年の1829年も学術的な二次資料で裏づけがある。",
+  "hitokoto": "1829年に近代化の印としてかぶらされた帽子が、1925年に法律で禁じられた。",
+  "body_ja": [
+   "フェズは伝統ではない。1827年、マフムト2世は新設の常備軍のためにチュニスからフェズ5万個を発注し、1829年には文官にも無地のフェズを命じてターバンを禁じた。ターバンは出身や宗派を示す標識で、人を分けてしまう。それを消して国民を均一に見せるための、近代化の道具だった。",
+   "96年後、同じ国が同じやり方で逆を命じる。1925年11月25日可決、11月28日官報掲載の法律671号「帽子着用に関する法律」は全3条しかない。第1条は国会議員と全機関の官吏・職員に「トルコ国民が採用した帽子」の着用を義務づけ、「これに反する習慣の継続は政府が禁ずる」と書く。第2条、公布の日から施行。",
+   "対象は男性の頭だけで、女性のスカーフには触れていない。施行後は教科書の挿絵のフェズが帽子に差し替えられた。日本でも1871年の散髪脱刀令で髷が「切ってよいもの」になり、1876年に帯刀が禁じられている。近代国家がまず手をつけるのは、頭と腰である。"
+  ],
+  "sources": [
+   "トルコ共和国法令データベース（mevzuat.gov.tr）「ŞAPKA İKTİSASI HAKKINDA KANUN」法律番号671、可決1925年11月25日、官報1925年11月28日第230号 https://www.mevzuat.gov.tr/mevzuatmetin/1.3.671.pdf",
+   "Wikipedia「Fez (hat)」 https://en.wikipedia.org/wiki/Fez_(hat)（Jirousek 2005「Islamic Clothing」Encyclopedia of Islam／Mansel 2011／Deringil 1993「The Invention of Tradition as Public Image in the Late Ottoman Empire, 1808 to 1908」CSSH を引用）",
+   "Wikipedia「Atatürk's reforms」 https://en.wikipedia.org/wiki/Atat%C3%BCrk%27s_reforms"
+  ]
+ },
+ {
+  "draft_no": 207,
+  "name_ja": "一夫多妻",
+  "reading": "いっぷたさい",
+  "name_en": "Polygamy",
+  "country": "トルコ",
+  "country_en": "Turkey",
+  "region": "中東",
+  "category": "規範",
+  "shelf": 1,
+  "evidence_type": "law",
+  "made": {
+   "label": "前近代（オスマン帝国の家族法のもとで許容）",
+   "year": 1800,
+   "approx": true,
+   "fact": "オスマン帝国では一定の条件のもとで複数の妻を持つことが認められていた。1926年民法典が「再婚には前婚の終了の証明が必要」と書くまで、複数婚を妨げる条文は存在しなかった",
+   "source": "Wikipedia「Atatürk's reforms」／トルコ民法典（1926年法律743号）第93条"
+  },
+  "discontinued": {
+   "label": "1926 トルコ民法典（法律743号）第93条",
+   "year": 1926,
+   "approx": false,
+   "fact": "「TÜRK KANUNU MEDENİSİ」法律番号743、可決1926年2月17日、官報1926年4月4日第339号。第936条「本法は公布の日から6か月後に施行する」により1926年10月4日施行。第93条は「再度婚姻しようとする者は、その婚姻が死亡・離婚または婚姻無効の判決によって消滅したことを証明しなければならない」と定め、複数婚を条文上不可能にした",
+   "source": "トルコ共和国法令データベース（mevzuat.gov.tr）「TÜRK KANUNU MEDENİSİ」法律番号743、可決1926年2月17日、官報1926年4月4日第339号 https://www.mevzuat.gov.tr/mevzuatmetin/5.3.743.pdf"
+  },
+  "restocked": null,
+  "trend": "discontinued",
+  "keyfacts": [
+   {
+    "text": "トルコ民法典は法律番号743、可決1926年2月17日、官報1926年4月4日第339号、Düstur第3輯第7巻237頁。スイス民法典を範に取った近代法典である。",
+    "source": "トルコ共和国法令データベース（mevzuat.gov.tr）「TÜRK KANUNU MEDENİSİ」法律番号743、可決1926年2月17日、官報1926年4月4日第339号 https://www.mevzuat.gov.tr/mevzuatmetin/5.3.743.pdf"
+   },
+   {
+    "text": "第936条は「本法は公布の日から6か月後に施行する」と定める。官報掲載が1926年4月4日なので、施行は1926年10月4日である。",
+    "source": "トルコ共和国法令データベース（mevzuat.gov.tr）「TÜRK KANUNU MEDENİSİ」法律番号743、可決1926年2月17日、官報1926年4月4日第339号 https://www.mevzuat.gov.tr/mevzuatmetin/5.3.743.pdf"
+   },
+   {
+    "text": "第93条は「再度婚姻しようとする者は、その婚姻が死亡・離婚または婚姻無効の判決によって消滅したことを証明しなければならない」。多妻を禁ずるという文言ではなく、証明義務という形で複数婚を閉じている。",
+    "source": "トルコ共和国法令データベース（mevzuat.gov.tr）「TÜRK KANUNU MEDENİSİ」法律番号743、可決1926年2月17日、官報1926年4月4日第339号 https://www.mevzuat.gov.tr/mevzuatmetin/5.3.743.pdf"
+   },
+   {
+    "text": "制定時の第88条は「男は18歳、女は17歳を満了しなければ婚姻できない」とし、裁判官は例外的な事情がある場合に15歳を満了した者の婚姻を許可できると定めた。婚姻年齢の下限も同じ法典で初めて置かれた。",
+    "source": "トルコ共和国法令データベース（mevzuat.gov.tr）「TÜRK KANUNU MEDENİSİ」法律番号743、可決1926年2月17日、官報1926年4月4日第339号 https://www.mevzuat.gov.tr/mevzuatmetin/5.3.743.pdf"
+   },
+   {
+    "text": "第95条は、夫の死亡・離婚・婚姻無効の判決から300日を経ないと女性は再婚できないと定めていた（出産により期間は終了する）。日本の再婚禁止期間（2024年廃止）と同じ型の規定である。",
+    "source": "トルコ共和国法令データベース（mevzuat.gov.tr）「TÜRK KANUNU MEDENİSİ」法律番号743、可決1926年2月17日、官報1926年4月4日第339号 https://www.mevzuat.gov.tr/mevzuatmetin/5.3.743.pdf"
+   },
+   {
+    "text": "この民法典によって、トルコは当時の中東で一夫多妻を廃止した唯一の国になった。",
+    "source": "Wikipedia「Atatürk's reforms」 https://en.wikipedia.org/wiki/Atat%C3%BCrk%27s_reforms"
+   }
+  ],
+  "curve": null,
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台の「ハレム／奴隷制（オスマン帝国。1908年前後の廃止過程）」は日付で押さえられなかったため落とし、同じ地域・同じ時期で法令の日付が特定できるこの項目に差し替えた。",
+   "「1926年に一夫多妻が禁止された」は正確には「1926年2月17日可決・1926年10月4日施行の民法典第93条が、再婚に前婚終了の証明を要求した」である。禁止条文ではなく証明義務の形をとる。"
+  ],
+  "confidence": "A",
+  "verdict": "include",
+  "verdict_reason": "法律番号・可決日・官報番号・施行日（第936条の6か月規定から算出）・該当条文の本文をトルコ政府の法令データベースの原文で確認できた。",
+  "hitokoto": "1926年のトルコ民法93条が、一夫多妻を条文ひとつで終わらせた。",
+  "body_ja": [
+   "オスマン帝国では一定の条件のもとで複数の妻を持つことが認められていた。これを終わらせたのは「多妻を禁ずる」という条文ではない。1926年トルコ民法典第93条は「再度婚姻しようとする者は、その婚姻が死亡・離婚または婚姻無効の判決によって消滅したことを証明しなければならない」と書いただけである。",
+   "法律番号743、可決は1926年2月17日、官報掲載は同年4月4日第339号。第936条が「公布の日から6か月後に施行する」と定めているので、施行日は1926年10月4日と計算できる。スイス民法典を範にとった翻訳法典で、これによりトルコは当時の中東で一夫多妻を廃した唯一の国になった。",
+   "同じ法典は婚姻年齢の下限も初めて置いた。制定時の第88条は男18歳・女17歳、裁判官は例外的な事情があれば15歳からの婚姻を許可できる。第95条は、夫の死亡や離婚から300日を経ないと女性は再婚できないと定めている。日本の再婚禁止期間が消えたのは2024年である。"
+  ],
+  "sources": [
+   "トルコ共和国法令データベース（mevzuat.gov.tr）「TÜRK KANUNU MEDENİSİ」法律番号743、可決1926年2月17日、官報1926年4月4日第339号 https://www.mevzuat.gov.tr/mevzuatmetin/5.3.743.pdf",
+   "Wikipedia「Atatürk's reforms」 https://en.wikipedia.org/wiki/Atat%C3%BCrk%27s_reforms"
+  ]
+ },
+ {
+  "draft_no": 208,
+  "name_ja": "ヘジャーブを禁じる／義務づける",
+  "reading": "へじゃーぶをきんじる",
+  "name_en": "Banning and then mandating the hijab",
+  "country": "イラン",
+  "country_en": "Iran",
+  "region": "中東",
+  "category": "規範",
+  "shelf": 2,
+  "evidence_type": "law",
+  "made": {
+   "label": "1936 ヘジャーブ禁止令（カシュフ・ヒジャーブ）",
+   "year": 1936,
+   "approx": false,
+   "fact": "1936年1月8日、レザー・シャーがヘジャーブおよびチャードルを含むすべてのヴェールを禁じる令を発した。警察は公共の場でヴェールを着けた女性からそれを物理的に外すよう命じられた。男性の伝統的な衣服も同時に禁じられ、1935年夏の山高帽の義務化はマシュハドで大規模な抗議を招き、推定100〜500人が死亡した",
+   "source": "Wikipedia「Kashf-e hijab」 https://en.wikipedia.org/wiki/Kashf-e_hijab（Hoodfar／Milani／Paidar／Majd を引用）"
+  },
+  "discontinued": {
+   "label": "1941 禁止の緩和",
+   "year": 1941,
+   "approx": false,
+   "fact": "1941年、レザー・シャーの退位後、後継のモハンマド・レザー・パフラヴィーのもとで禁止は緩められ、スカーフやチャードルの着用は違法ではなくなった",
+   "source": "Wikipedia「Hijab in Iran」 https://en.wikipedia.org/wiki/Hijab_in_Iran（1980年7月の官庁からの排除は Justice for Iran の報告書を引用）"
+  },
+  "restocked": {
+   "label": "1980 官庁からの排除にはじまる着用義務化",
+   "year": 1980,
+   "as": "ヘジャーブ着用義務",
+   "fact": "1979年3月のホメイニーの発言を受け、1980年7月の「官庁のイスラーム化」でヴェールを着けない女性は官庁・公共建物への入場を拒まれ、職場で解雇の対象となった。現行のイスラーム刑法第638条は公共の場でヘジャーブを着けない行為を処罰対象としている",
+   "source": "Wikipedia「Hijab in Iran」 https://en.wikipedia.org/wiki/Hijab_in_Iran（1980年7月の官庁からの排除は Justice for Iran の報告書を引用）"
+  },
+  "trend": "restocked",
+  "keyfacts": [
+   {
+    "text": "1936年1月8日、レザー・シャーがヘジャーブとチャードルを含むすべてのヴェールを禁じる令を発した。警察は公共の場でヴェールを着けた女性からそれを外すよう命じられた。",
+    "source": "Wikipedia「Kashf-e hijab」 https://en.wikipedia.org/wiki/Kashf-e_hijab（Hoodfar／Milani／Paidar／Majd を引用）"
+   },
+   {
+    "text": "服装の統制は男性にも及んだ。1935年夏の山高帽の義務化はマシュハドで大規模な抗議を招き、推定100〜500人が死亡した。",
+    "source": "Wikipedia「Kashf-e hijab」 https://en.wikipedia.org/wiki/Kashf-e_hijab（Hoodfar／Milani／Paidar／Majd を引用）"
+   },
+   {
+    "text": "1941年のレザー・シャー退位後、禁止は緩和され、スカーフやチャードルの着用は違法ではなくなった。以後1979年まで、服装は事実上自由だった。",
+    "source": "Wikipedia「Hijab in Iran」 https://en.wikipedia.org/wiki/Hijab_in_Iran（1980年7月の官庁からの排除は Justice for Iran の報告書を引用）"
+   },
+   {
+    "text": "1980年7月の「官庁のイスラーム化」で、ヴェールを着けない女性は官庁・公共建物への入場を拒まれ、職場でヴェールなしで現れることを禁じられ、解雇の対象となった。",
+    "source": "Wikipedia「Hijab in Iran」 https://en.wikipedia.org/wiki/Hijab_in_Iran（1980年7月の官庁からの排除は Justice for Iran の報告書を引用）"
+   },
+   {
+    "text": "現行のイスラーム刑法第638条は、公共の場で宗教上の禁忌を公然と犯す行為を処罰対象とし、ヘジャーブを着けずに現れることもこれに含まれると運用されている。",
+    "source": "Wikipedia「Hijab in Iran」 https://en.wikipedia.org/wiki/Hijab_in_Iran（1980年7月の官庁からの排除は Justice for Iran の報告書を引用）"
+   },
+   {
+    "text": "2024年9月、マスード・ペゼシュキアン大統領は、風紀警察がヘジャーブについて女性を「困らせる」ことはもうないと述べた。同じ衣服をめぐる規制は、1936年から数えて三度向きを変えている。",
+    "source": "Wikipedia「Hijab in Iran」 https://en.wikipedia.org/wiki/Hijab_in_Iran（1980年7月の官庁からの排除は Justice for Iran の報告書を引用）"
+   }
+  ],
+  "curve": null,
+  "lineage": {
+   "from": "ヘジャーブ禁止（1936）",
+   "to": "ヘジャーブ着用義務（1980以降）",
+   "note": "同じ一枚の布について、国家が1936年には「脱げ」と命じ、1980年以降は「着けろ」と命じた。二度とも、服装は国家が国民の見た目を作り替えるための最初の手段として使われている。"
+  },
+  "draft_corrections": [
+   "叩き台の「1936年 ヘジャーブ禁止令 → 1979年以降の義務化」は方向として正しいが、日付を詰めると三段階になる。1936年1月8日の禁止令、1941年の緩和、1980年7月の官庁からの排除にはじまる義務化である。1979年は革命の年で、義務化の法的な起点ではない。",
+   "禁止令の対象は女性のヴェールだけではない。男性の伝統的な衣服も禁じられ、1935年夏の山高帽義務化はマシュハドで死者を出す抗議に発展している。",
+   "義務化の根拠として挙げられることが多い1983年の刑法は、今回の調査では条文原文に到達できなかった。確認できたのは現行刑法第638条までである。"
+  ],
+  "confidence": "B",
+  "verdict": "include",
+  "verdict_reason": "「同じ国で価値観が二度ひっくり返った」例として日付の骨格（1936年1月8日／1941年／1980年7月）は確認できたが、いずれも学術書・報告書を引く二次資料で、法令原文（1936年の令、1983年の刑法）には到達できていない。",
+  "hitokoto": "同じ布について、1936年は脱げと命じ、1980年は着けろと命じた。",
+  "body_ja": [
+   "1936年1月8日、レザー・シャーはヘジャーブとチャードルを含むすべてのヴェールを禁じる令を発した。警察は公共の場でヴェールを着けた女性からそれを物理的に外すよう命じられた。統制は男性にも及び、1935年夏の山高帽の義務化はマシュハドで大規模な抗議を招いて推定100〜500人が死亡している。",
+   "1941年のレザー・シャー退位後、禁止は緩められ、スカーフやチャードルの着用は違法ではなくなった。以後40年ほど、服装は事実上自由だった。向きが変わるのは1980年7月の「官庁のイスラーム化」からで、ヴェールを着けない女性は官庁や公共建物に入れず、職場では解雇の対象になった。",
+   "現行のイスラーム刑法第638条は、公共の場で宗教上の禁忌を公然と犯す行為を処罰対象とし、ヘジャーブを着けない行為もそこに含めて運用されている。2024年9月には大統領が風紀警察はもう女性を困らせないと述べた。同じ一枚の布について、命令の向きは三度変わっている。"
+  ],
+  "sources": [
+   "Wikipedia「Kashf-e hijab」 https://en.wikipedia.org/wiki/Kashf-e_hijab（Hoodfar／Milani／Paidar／Majd を引用）",
+   "Wikipedia「Hijab in Iran」 https://en.wikipedia.org/wiki/Hijab_in_Iran（1980年7月の官庁からの排除は Justice for Iran の報告書を引用）"
+  ]
+ },
+ {
+  "draft_no": 209,
+  "name_ja": "女性は運転しない",
+  "reading": "じょせいはうんてんしない",
+  "name_en": "Women do not drive",
+  "country": "サウジアラビア",
+  "country_en": "Saudi Arabia",
+  "region": "中東",
+  "category": "規範",
+  "shelf": 3,
+  "evidence_type": "law",
+  "made": {
+   "label": "1957 リヤドで禁止が言明される",
+   "year": 1957,
+   "approx": true,
+   "fact": "研究者デイヴィッド・コミンズによれば、1957年にリヤドが女性の運転の禁止を言明した。禁止は「女性は運転してはならない」という条文ではなく、女性に運転免許を発給しないという運用で維持された",
+   "source": "Wikipedia「Women to drive movement」 https://en.wikipedia.org/wiki/Women_to_drive_movement（1957年の禁止言明は David Commins『The Wahhabi Mission and Saudi Arabia』2009 を引用）"
+  },
+  "discontinued": {
+   "label": "2018年6月24日 禁止の終了",
+   "year": 2018,
+   "approx": false,
+   "fact": "2017年9月26日、サルマーン国王が女性の運転を認める命令を出し、免許発給は2018年6月までに実施すると告げた。2018年6月24日に禁止は終了し、同日から女性への免許発給が始まった",
+   "source": "Wikipedia「Women to drive movement」 https://en.wikipedia.org/wiki/Women_to_drive_movement（1957年の禁止言明は David Commins『The Wahhabi Mission and Saudi Arabia』2009 を引用）"
+  },
+  "restocked": null,
+  "trend": "discontinued",
+  "keyfacts": [
+   {
+    "text": "デイヴィッド・コミンズによれば、1957年にリヤドが女性の運転の禁止を言明した。ただし「女性は運転してはならない」という成文の条項は確認されておらず、禁止は免許を発給しないという運用で維持された。",
+    "source": "Wikipedia「Women to drive movement」 https://en.wikipedia.org/wiki/Women_to_drive_movement（1957年の禁止言明は David Commins『The Wahhabi Mission and Saudi Arabia』2009 を引用）"
+   },
+   {
+    "text": "1990年11月6日、47人の女性がリヤドで車を運転して抗議し、1日拘束されたうえ旅券を没収された。",
+    "source": "Wikipedia「Women to drive movement」 https://en.wikipedia.org/wiki/Women_to_drive_movement（1957年の禁止言明は David Commins『The Wahhabi Mission and Saudi Arabia』2009 を引用）"
+   },
+   {
+    "text": "2017年9月26日、サルマーン国王が「シャリーアに則って」女性の運転を認める命令を出した。指針を整備して2018年6月までに実施するとされた。",
+    "source": "Wikipedia「Women to drive movement」 https://en.wikipedia.org/wiki/Women_to_drive_movement（1957年の禁止言明は David Commins『The Wahhabi Mission and Saudi Arabia』2009 を引用）"
+   },
+   {
+    "text": "禁止が終わったのは2018年6月24日で、同日から女性への免許発給が始まった。1957年から数えると61年、1990年の抗議から数えると28年である。",
+    "source": "Wikipedia「Women to drive movement」 https://en.wikipedia.org/wiki/Women_to_drive_movement（1957年の禁止言明は David Commins『The Wahhabi Mission and Saudi Arabia』2009 を引用） ／ Wikipedia「Women's rights in Saudi Arabia」 https://en.wikipedia.org/wiki/Women%27s_rights_in_Saudi_Arabia"
+   },
+   {
+    "text": "日本にも「女性はこの働き方をしない」という制度があった。1947年の労働基準法は女性の深夜業と時間外労働を規制し、この規制は1997年の改正（1999年4月1日施行）で撤廃された。禁止の終わりに日付があるという点は同じである。",
+    "source": "労働基準法の女子保護規定の撤廃（平成9年改正、1999年4月1日施行）"
+   }
+  ],
+  "curve": null,
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台の「2018年6月 解禁」は正しい。正確には2017年9月26日の国王命令と2018年6月24日の実施という二段階である。",
+   "「禁止法があった」という書き方は避けるべき。今回の調査では、禁止を定めた成文の条項は確認できず、免許を女性に発給しないという運用が禁止の実体だったと記述する資料しか得られなかった。",
+   "禁止の起点は1957年（コミンズ）とされるが、これは学術書の記述で、日付までは特定できない。1990年11月6日の抗議は日付が特定できる。"
+  ],
+  "confidence": "B",
+  "verdict": "include",
+  "verdict_reason": "廃番日（2018年6月24日）と国王命令の日（2017年9月26日）は日付まで特定できるが、製造年（1957年）は学術書の記述にとどまり、禁止を定めた成文の条項そのものには到達できなかった。",
+  "hitokoto": "禁止の条文はなく、免許を出さないという運用が61年続いた。",
+  "body_ja": [
+   "禁止の条文は見つからない。研究者デイヴィッド・コミンズによれば1957年にリヤドが禁止を言明したとされるが、実体は「女性に運転免許を発給しない」という運用だった。条文のない禁止は、廃止する対象も持たない。だから終わらせるには、条文を消すのではなく免許を出すという行為が必要になる。",
+   "1990年11月6日、47人の女性がリヤドで車を運転した。全員が1日拘束され、旅券を没収された。この日付は資料で特定できる。禁止が始まった日よりも、それに抗議した日のほうがはっきり残っている。条文を持たない禁止は、破られたときにだけ輪郭を見せるということである。",
+   "2017年9月26日、サルマーン国王が女性の運転を認める命令を出し、2018年6月までに実施すると告げた。禁止が終わったのは2018年6月24日、同日から免許の発給が始まった。日本でも女性の深夜業を規制した労働基準法の規定が1999年4月1日に撤廃されている。"
+  ],
+  "sources": [
+   "Wikipedia「Women to drive movement」 https://en.wikipedia.org/wiki/Women_to_drive_movement（1957年の禁止言明は David Commins『The Wahhabi Mission and Saudi Arabia』2009 を引用）",
+   "Wikipedia「Women's rights in Saudi Arabia」 https://en.wikipedia.org/wiki/Women%27s_rights_in_Saudi_Arabia"
+  ]
+ },
+ {
+  "draft_no": 210,
+  "name_ja": "女性の移動には後見人の許可が要る",
+  "reading": "じょせいのいどうにはこうけんにんのきょかがいる",
+  "name_en": "Male guardianship over women's travel",
+  "country": "サウジアラビア",
+  "country_en": "Saudi Arabia",
+  "region": "中東",
+  "category": "規範",
+  "shelf": 3,
+  "evidence_type": "law",
+  "made": {
+   "label": "20世紀（旅券法・身分登録法のもとでの後見人制度）",
+   "year": 1950,
+   "approx": true,
+   "fact": "女性が旅券を取得し出国するには男性後見人（ワリー／マハラム）の許可が必要とされ、女性は男性親族の旅券に併記される扱いだった。2019年の改正が「サウジ国籍を有する者は誰でも旅券を取得できる」と書き替えたことで、それ以前の制度の内容が逆に読み取れる",
+   "source": "Human Rights Watch 2019年8月2日"
+  },
+  "discontinued": {
+   "label": "2019年8月 旅券法・身分登録法の改正",
+   "year": 2019,
+   "approx": false,
+   "fact": "2019年7月31日に閣僚会議決定が採択され、2019年8月1日に官報に掲載、勅令M/134号で裁可された。旅券法（渡航文書法）は「サウジ国籍を有する者は誰でも旅券を取得できる」と改められ、身分登録法と労働法も改正された。実施は2019年8月下旬からとされる",
+   "source": "Human Rights Watch「Saudi Arabia: Important Advances for Saudi Women」2019年8月2日 https://www.hrw.org/news/2019/08/02/saudi-arabia-important-advances-saudi-women"
+  },
+  "restocked": null,
+  "trend": "down",
+  "keyfacts": [
+   {
+    "text": "2019年7月31日に閣僚会議決定が採択され、2019年8月1日に官報に掲載された。勅令M/134号がこれを裁可した。",
+    "source": "Human Rights Watch「Saudi Arabia: Important Advances for Saudi Women」2019年8月2日 https://www.hrw.org/news/2019/08/02/saudi-arabia-important-advances-saudi-women"
+   },
+   {
+    "text": "旅券法（渡航文書法）の改正で「サウジ国籍を有する者は誰でも旅券を取得できる」となり、女性が男性後見人の許可なしに旅券を申請・取得できるようになった。それまで女性は男性親族の旅券に併記される扱いだった。",
+    "source": "Human Rights Watch「Saudi Arabia: Important Advances for Saudi Women」2019年8月2日 https://www.hrw.org/news/2019/08/02/saudi-arabia-important-advances-saudi-women"
+   },
+   {
+    "text": "身分登録法の改正で、女性は子の出生を登録でき、死亡・婚姻・離婚を身分登録局に届け出られるようになった。夫婦は子について共同で「世帯主」とされ、妻が夫と同居すべきとする文言は削除された。",
+    "source": "Human Rights Watch「Saudi Arabia: Important Advances for Saudi Women」2019年8月2日 https://www.hrw.org/news/2019/08/02/saudi-arabia-important-advances-saudi-women"
+   },
+   {
+    "text": "労働法の改正で「労働者」に女性が含まれることが明記され、妊娠・産休・妊娠関連の疾病中の解雇が禁じられ、「市民は性別による差別なく労働の権利について平等である」と定められた。",
+    "source": "Human Rights Watch「Saudi Arabia: Important Advances for Saudi Women」2019年8月2日 https://www.hrw.org/news/2019/08/02/saudi-arabia-important-advances-saudi-women"
+   },
+   {
+    "text": "改正後も、婚姻、刑務所からの出所、シェルターからの退所については男性後見人の承認が必要なまま残った。政府発表は21歳以上の女性の渡航自由を述べたが、閣僚会議決定の本文には渡航の自由への明示的な言及がない。",
+    "source": "Human Rights Watch「Saudi Arabia: Important Advances for Saudi Women」2019年8月2日 https://www.hrw.org/news/2019/08/02/saudi-arabia-important-advances-saudi-women"
+   },
+   {
+    "text": "2021年1月には女性が後見人の許可なく姓・子の名・婚姻状況などの個人情報を変更できるようになり、同年6月からは単身・離婚・死別の女性が後見人の許可なく独立して居住できるようになった。",
+    "source": "Wikipedia「Women's rights in Saudi Arabia」 https://en.wikipedia.org/wiki/Women%27s_rights_in_Saudi_Arabia"
+   },
+   {
+    "text": "日本の明治民法にも、妻が一定の法律行為をするには夫の許可を要するという規定（第14条）があり、1947年の民法改正で削除された。妻や娘の行為能力を後見人に結びつける制度は、日本にもあった。",
+    "source": "明治民法第14条（妻の無能力）と昭和22年の民法改正"
+   }
+  ],
+  "curve": null,
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台の「男性後見人制度（2019年の緩和）」は正しいが、日付と文書名を足せる。閣僚会議決定は2019年7月31日採択、官報掲載は8月1日、裁可は勅令M/134号、実施は8月下旬からである。",
+   "「後見人制度が廃止された」とは書けない。婚姻、刑務所からの出所、シェルターからの退所には後見人の承認が残っている。改正は旅券・身分登録・労働の三法に限られた。",
+   "「21歳以上の女性は許可なく渡航できる」は政府発表にもとづく説明で、閣僚会議決定の本文自体には渡航の自由への明示的な言及がないとHuman Rights Watchは指摘している。"
+  ],
+  "confidence": "B",
+  "verdict": "include",
+  "verdict_reason": "改正の日付（2019年7月31日採択・8月1日官報掲載）、勅令番号（M/134）、改正された三法と残った例外まで特定できたが、官報（ウンム・アルクラー）の原文には到達できず、Human Rights Watchの報告に依拠している。",
+  "hitokoto": "娘や妻の旅券に父や夫の許可が要る制度は、2019年8月に条文から外れた。",
+  "body_ja": [
+   "何が制限されていたかは、改正後の文言から逆算できる。2019年に旅券法（渡航文書法）は「サウジ国籍を有する者は誰でも旅券を取得できる」と書き替えられた。つまりそれまでは、旅券は誰でも取れるものではなかった。女性は男性後見人の許可を要し、男性親族の旅券に併記される扱いだった。",
+   "改正は2019年7月31日の閣僚会議決定として採択され、8月1日に官報に掲載、勅令M/134号で裁可された。旅券法だけでなく身分登録法も変わり、女性は子の出生を登録でき、死亡・婚姻・離婚を届け出られるようになった。妻が夫と同居すべきとする文言も削除された。",
+   "ただし婚姻、刑務所からの出所、シェルターからの退所には後見人の承認が残っている。制度の廃止ではなく、旅券法・身分登録法・労働法という三つの法律の範囲での改正である。日本の明治民法にも、妻が一定の法律行為をするには夫の許可を要するという第14条があり、これは1947年の民法改正で削除された。"
+  ],
+  "sources": [
+   "Human Rights Watch「Saudi Arabia: Important Advances for Saudi Women」2019年8月2日 https://www.hrw.org/news/2019/08/02/saudi-arabia-important-advances-saudi-women",
+   "Wikipedia「Women's rights in Saudi Arabia」 https://en.wikipedia.org/wiki/Women%27s_rights_in_Saudi_Arabia"
+  ]
+ },
+ {
+  "draft_no": 211,
+  "name_ja": "人を所有できる",
+  "reading": "ひとをしょゆうできる",
+  "name_en": "Slaveholding as lawful",
+  "country": "サウジアラビア",
+  "country_en": "Saudi Arabia",
+  "region": "中東",
+  "category": "判断基準",
+  "shelf": 1,
+  "evidence_type": "law",
+  "made": {
+   "label": "前近代（20世紀まで合法だった所有）",
+   "year": 1800,
+   "approx": true,
+   "fact": "アラビア半島では20世紀に入っても人の所有が合法だった。オスマン帝国は1830年の勅令から1889年12月30日のカーヌンナーメまで売買を段階的に禁じたが、奴隷制そのものを廃止する一般法は最後まで出ていない",
+   "source": "Wikipedia「Slavery in the Ottoman Empire」 https://en.wikipedia.org/wiki/Slavery_in_the_Ottoman_Empire（Y. H. Erdem『Slavery in the Ottoman Empire and Its Demise 1800-1909』Palgrave Macmillan, 1996 を引用）"
+  },
+  "discontinued": {
+   "label": "1962 ファイサルの十箇条改革計画による廃止",
+   "year": 1962,
+   "approx": true,
+   "fact": "1962年、当時のファイサル皇太子が示した十箇条の改革計画に「奴隷の解放と、サウジアラビアにおける奴隷制の完全かつ最終的な廃止」が含まれ、廃止が決定された。解放された人数は約1,682人、政府が支払った補償は1人あたり2,000ドルと伝えられる。「1962年11月」とする記述が流通しているが、今回の調査では勅令の番号・公布日を特定できなかった",
+   "source": "Wikipedia「Faisal of Saudi Arabia」 https://en.wikipedia.org/wiki/Faisal_of_Saudi_Arabia（解放人数と補償額は Peter Hobday、米国の圧力については Bruce Riedel を引用）"
+  },
+  "restocked": null,
+  "trend": "discontinued",
+  "keyfacts": [
+   {
+    "text": "1962年、ファイサル皇太子の十箇条の改革計画に「奴隷の解放と、サウジアラビアにおける奴隷制の完全かつ最終的な廃止」が挙げられた。計画は行政区画制度、司法の独立、無償の医療と教育、女子教育の拡充などと同じ一覧に並んでいる。",
+    "source": "Wikipedia「Faisal of Saudi Arabia」 https://en.wikipedia.org/wiki/Faisal_of_Saudi_Arabia（解放人数と補償額は Peter Hobday、米国の圧力については Bruce Riedel を引用）"
+   },
+   {
+    "text": "解放された人数は約1,682人、政府が支払った補償は1人あたり2,000ドルと伝えられる（BBCのピーター・ホブデイによる数字）。",
+    "source": "Wikipedia「Faisal of Saudi Arabia」 https://en.wikipedia.org/wiki/Faisal_of_Saudi_Arabia（解放人数と補償額は Peter Hobday、米国の圧力については Bruce Riedel を引用）"
+   },
+   {
+    "text": "サウジアラビアで奴隷制が正式に廃止されたのは1962年である。ただし勅令の番号と公布日は、今回到達できた資料では特定できなかった。",
+    "source": "Wikipedia「Slavery in Saudi Arabia」 https://en.wikipedia.org/wiki/Slavery_in_Saudi_Arabia"
+   },
+   {
+    "text": "オスマン帝国の側は、1830年の勅令、1847年のイスタンブール奴隷市場の廃止と湾岸での奴隷貿易の抑圧、1854年の勅令、1857年の黒人奴隷貿易禁止令、1880年の英土協定、1889年12月30日のアブデュルハミト2世によるカーヌンナーメと、売買の禁止を段階的に重ねた。奴隷制そのものを廃止する一般法は出ていない。",
+    "source": "Wikipedia「Slavery in the Ottoman Empire」 https://en.wikipedia.org/wiki/Slavery_in_the_Ottoman_Empire（Y. H. Erdem『Slavery in the Ottoman Empire and Its Demise 1800-1909』Palgrave Macmillan, 1996 を引用）"
+   },
+   {
+    "text": "日本にも対応がある。1872年（明治5）10月2日の太政官布告第295号（いわゆる芸娼妓解放令）が人身の売買を禁じた。廃止の日付が特定できるという点は共通している。",
+    "source": "明治5年10月2日 太政官布告第295号"
+   }
+  ],
+  "curve": null,
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台の「ハレム／奴隷制（オスマン帝国。1908年前後の廃止過程）」は、そのままでは成立しない。オスマン帝国は1830年から1889年まで売買の禁止を重ねたが、奴隷制そのものを廃止する一般法を出しておらず、「廃番年」を一つ挙げられない（Erdem 1996）。",
+   "ハレムの解体も1908〜09年の政変に伴う事実上の解散で、今回の調査では法令の名称・日付に到達できなかった。",
+   "そのため、同じ地域で年が特定できるサウジアラビアの1962年の廃止に差し替えた。ただし勅令の番号・公布日は未確認で、「1962年11月」という流通した日付も裏が取れていない。"
+  ],
+  "confidence": "C",
+  "verdict": "include",
+  "verdict_reason": "廃止の年（1962年）、解放人数（約1,682人）、補償額（1人2,000ドル）まで記述があるが、いずれも二次資料で、勅令の番号・公布日に到達できていない。年しか言えないためCとした。企画の他項目と同じ水準（日付まで特定）を求めるなら落としてよい。",
+  "hitokoto": "廃止は1962年。解放された人数と補償額までが記録に残っている。",
+  "body_ja": [
+   "アラビア半島では、20世紀に入っても人の所有が合法だった。オスマン帝国の側は1830年の勅令から1889年12月30日のカーヌンナーメまで、売買を禁じる文書を六十年かけて重ねている。ただし禁じられたのは売買であって、所有そのものを廃止する一般法は帝国の最後まで出ていない。",
+   "サウジアラビアで廃止が決まったのは1962年である。ファイサル皇太子が示した十箇条の改革計画に「奴隷の解放と、サウジアラビアにおける奴隷制の完全かつ最終的な廃止」が入っていた。同じ一覧には行政区画制度、司法の独立、無償の医療と教育、女子教育の拡充が並んでいる。",
+   "解放された人数は約1,682人、政府が支払った補償は1人あたり2,000ドルと伝えられる。数えられる規模だったということである。日本でも1872年10月2日の太政官布告第295号が人身の売買を禁じている。廃止に日付があるという点だけが、どの国でも共通している。"
+  ],
+  "sources": [
+   "Wikipedia「Faisal of Saudi Arabia」 https://en.wikipedia.org/wiki/Faisal_of_Saudi_Arabia（解放人数と補償額は Peter Hobday、米国の圧力については Bruce Riedel を引用）",
+   "Wikipedia「Slavery in Saudi Arabia」 https://en.wikipedia.org/wiki/Slavery_in_Saudi_Arabia",
+   "Wikipedia「Slavery in the Ottoman Empire」 https://en.wikipedia.org/wiki/Slavery_in_the_Ottoman_Empire（Y. H. Erdem『Slavery in the Ottoman Empire and Its Demise 1800-1909』Palgrave Macmillan, 1996 を引用）"
+  ]
+ },
+ {
+  "draft_no": 212,
+  "name_ja": "ハレムと奴隷制（オスマン帝国）",
+  "reading": "はれむとどれいせい",
+  "name_en": "The imperial harem and Ottoman slavery",
+  "country": "トルコ",
+  "country_en": "Turkey (Ottoman Empire)",
+  "region": "中東",
+  "category": "規範",
+  "shelf": 1,
+  "evidence_type": "law",
+  "made": {
+   "label": "前近代",
+   "year": 1800,
+   "approx": true,
+   "fact": "オスマン帝国の宮廷には後宮（ハレム）があり、そこで働く女性や宦官の多くは奴隷身分だった。帝国内で人の所有と売買は合法だった",
+   "source": "Wikipedia「Ottoman Imperial Harem」 https://en.wikipedia.org/wiki/Ottoman_Imperial_Harem"
+  },
+  "discontinued": null,
+  "restocked": null,
+  "trend": "discontinued",
+  "keyfacts": [
+   {
+    "text": "オスマン帝国の奴隷制の縮小は段階的で、1830年の勅令、1847年のイスタンブール奴隷市場の廃止、1847年の湾岸における奴隷貿易の抑圧、1854年の勅令（チェルケス人・グルジア人奴隷貿易の禁止）、1857年の黒人奴隷貿易禁止令、1880年の英土協定、1889年12月30日のカーヌンナーメと続く。",
+    "source": "Wikipedia「Slavery in the Ottoman Empire」 https://en.wikipedia.org/wiki/Slavery_in_the_Ottoman_Empire（Y. H. Erdem『Slavery in the Ottoman Empire and Its Demise 1800-1909』Palgrave Macmillan, 1996／The Palgrave Handbook of Global Slavery Throughout History, 2023, p.536 を引用）"
+   },
+   {
+    "text": "1889年12月30日、アブデュルハミト2世は英国の圧力を受けてアフリカ人奴隷貿易を禁ずるカーヌンナーメを公布したが、この法も名目的で売買は続いた（Erdem 1996, p.144）。",
+    "source": "Wikipedia「Slavery in the Ottoman Empire」 https://en.wikipedia.org/wiki/Slavery_in_the_Ottoman_Empire（Y. H. Erdem『Slavery in the Ottoman Empire and Its Demise 1800-1909』Palgrave Macmillan, 1996／The Palgrave Handbook of Global Slavery Throughout History, 2023, p.536 を引用）"
+   },
+   {
+    "text": "1857年の禁止令は、先立つ1854年の勅令がヒジャーズで反乱を招いた経緯から、ヒジャーズでの奴隷貿易を適用除外とした。禁止は地域ごとに穴を持っていた。",
+    "source": "Wikipedia「Slavery in the Ottoman Empire」 https://en.wikipedia.org/wiki/Slavery_in_the_Ottoman_Empire（Y. H. Erdem『Slavery in the Ottoman Empire and Its Demise 1800-1909』Palgrave Macmillan, 1996／The Palgrave Handbook of Global Slavery Throughout History, 2023, p.536 を引用）"
+   },
+   {
+    "text": "これらはいずれも奴隷「貿易」の禁止で、奴隷制そのものを廃止する一般法はオスマン帝国では制定されていない。西欧の外交圧力による部分的な制限が19世紀末まで重ねられ、実態は20世紀初頭まで大きく変わらなかった。",
+    "source": "Wikipedia「Slavery in the Ottoman Empire」 https://en.wikipedia.org/wiki/Slavery_in_the_Ottoman_Empire（Y. H. Erdem『Slavery in the Ottoman Empire and Its Demise 1800-1909』Palgrave Macmillan, 1996／The Palgrave Handbook of Global Slavery Throughout History, 2023, p.536 を引用）"
+   },
+   {
+    "text": "後宮についても、今回到達できた資料には解散を定めた法令の名称・公布日がない。1922年の帝国解体まで機能していたという記述にとどまる。",
+    "source": "Wikipedia「Ottoman Imperial Harem」 https://en.wikipedia.org/wiki/Ottoman_Imperial_Harem"
+   }
+  ],
+  "curve": null,
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台の「ハレム／奴隷制（オスマン帝国。1908年前後の廃止過程）」は、この形では成立しない。1908年ないし1909年に奴隷制やハレムを廃止した法令は確認できなかった。",
+   "確認できたのは奴隷「貿易」の段階的禁止（1830／1847／1854／1857／1880／1889年12月30日）で、奴隷制そのものを廃止する一般法は帝国の最後まで出ていない。",
+   "後宮の解散についても、法令の名称・日付に到達できなかった。"
+  ],
+  "confidence": "C",
+  "verdict": "drop",
+  "verdict_reason": "「廃番年」を日付で言えないため落とす。オスマン帝国は奴隷貿易の禁止を1830年から1889年まで重ねたが、奴隷制そのものの一般的廃止法を制定していない。1908〜09年に廃止されたという叩き台の前提は、今回到達できた資料では裏づけられなかった。同じ主題で年が言える例としてサウジアラビアの1962年（項目211）に差し替えた。",
+  "hitokoto": "禁じられたのは売買だけで、所有を廃止する法は帝国の最後まで出なかった。",
+  "body_ja": [
+   "オスマン帝国は奴隷貿易の禁止を六十年かけて重ねた。1830年の勅令、1847年のイスタンブール奴隷市場の廃止と湾岸での抑圧、1854年の勅令、1857年の黒人奴隷貿易禁止令、1880年の英土協定、そして1889年12月30日のカーヌンナーメ。日付はいくつも並ぶ。",
+   "しかし禁じられたのはいずれも売買であって、所有そのものを廃止する一般法は帝国の最後まで出ていない。1857年の禁止令はヒジャーズを適用除外にし、1889年の法も名目的で売買は続いた。後宮の解散についても、法令の名称と公布日に到達できなかった。この図鑑の形式では廃番年を書けないため、項目としては落とす。"
+  ],
+  "sources": [
+   "Wikipedia「Slavery in the Ottoman Empire」 https://en.wikipedia.org/wiki/Slavery_in_the_Ottoman_Empire（Y. H. Erdem『Slavery in the Ottoman Empire and Its Demise 1800-1909』Palgrave Macmillan, 1996／The Palgrave Handbook of Global Slavery Throughout History, 2023, p.536 を引用）",
+   "Wikipedia「Ottoman Imperial Harem」 https://en.wikipedia.org/wiki/Ottoman_Imperial_Harem"
+  ]
+ },
+ {
+  "draft_no": 213,
+  "name_ja": "カースト別の職業世襲",
+  "reading": "かーすとべつのしょくぎょうせいしゅう",
+  "name_en": "Hereditary caste occupations",
+  "country": "インド",
+  "country_en": "India",
+  "region": "南アジア",
+  "category": "判断基準",
+  "shelf": 1,
+  "evidence_type": "curve",
+  "made": {
+   "label": "前近代",
+   "year": 1800,
+   "approx": true,
+   "fact": "生まれた家の職を継ぐという前提が広く共有されていたが、これを制度として定めた成文法にも、終わらせた成文法にも、今回は到達できなかった",
+   "source": "（出典を特定できず）"
+  },
+  "discontinued": null,
+  "restocked": null,
+  "trend": "down",
+  "keyfacts": [
+   {
+    "text": "憲法第17条（1950年1月26日施行）と不可触制（犯罪）法1955（1955年法律第22号）が対象としているのは不可触制の実践とそこから生ずる不利益の強制であり、職業の世襲そのものではない。",
+    "source": "Wikisource「Untouchability (Offences) Act, 1955」 https://en.wikisource.org/wiki/Untouchability_(Offences)_Act,_1955 ／ Constitution of India「Article 17」 https://www.constitutionofindia.net/articles/article-17-abolition-of-untouchability/"
+   },
+   {
+    "text": "職業世襲を終わらせた単一の法令は特定できなかった。したがってこの図鑑の「廃番年」に入れる日付が存在しない。",
+    "source": "（該当する法令を確認できず）"
+   },
+   {
+    "text": "カーブ型として扱うには世代間の職業移動率の統計が必要だが、今回の調査ではインド政府統計の該当表に到達できなかった。",
+    "source": "（統計未取得）"
+   }
+  ],
+  "curve": null,
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台の「カースト別の職業世襲」は、法令の日付で終わりを言える題材ではない。憲法第17条と1955年法は不可触制を対象としており、職業世襲を廃止した条文ではない。",
+   "カーブ型にするなら世代間の職業移動率が必要だが、今回は公式統計に到達できなかった。"
+  ],
+  "confidence": "C",
+  "verdict": "drop",
+  "verdict_reason": "law型の「廃番年」もcurve型の実データ点も得られなかったため落とす。内容は項目203（不可触制）の文脈に収容されている。",
+  "hitokoto": "終わらせた法令も、終わり方を測る統計も、今回は見つからなかった。",
+  "body_ja": [
+   "生まれた家の職を継ぐという前提は、法令で作られたものではなく、法令で終わったものでもない。憲法第17条と1955年の罰則法が対象としたのは不可触制の実践とそこから生ずる不利益の強制であって、職業の世襲そのものではない。",
+   "この図鑑は廃番年か実データ点のどちらかを要求する。前者に入れる法令の日付がなく、後者にあたる世代間職業移動率の公式統計にも今回は到達できなかった。したがって単独項目としては落とし、制度の文脈は不可触制の項に置いた。"
+  ],
+  "sources": [
+   "Wikisource「Untouchability (Offences) Act, 1955」 https://en.wikisource.org/wiki/Untouchability_(Offences)_Act,_1955",
+   "Constitution of India「Article 17: Abolition of Untouchability」 https://www.constitutionofindia.net/articles/article-17-abolition-of-untouchability/"
+  ]
+ },
+ {
+  "draft_no": 214,
+  "name_ja": "チャウパディ（月経中の隔離）",
+  "reading": "ちゃうぱでぃ",
+  "name_en": "Chhaupadi",
+  "country": "ネパール",
+  "country_en": "Nepal",
+  "region": "南アジア",
+  "category": "規範",
+  "shelf": 1,
+  "evidence_type": "law",
+  "made": {
+   "label": "前近代",
+   "year": 1800,
+   "approx": true,
+   "fact": "月経中の女性を家の外の小屋などに隔離する慣行。起源となる成文の規定は特定できなかった",
+   "source": "Wikipedia「Chhaupadi」 https://en.wikipedia.org/wiki/Chhaupadi"
+  },
+  "discontinued": null,
+  "restocked": null,
+  "trend": "down",
+  "keyfacts": [
+   {
+    "text": "今回参照したWikipedia「Chhaupadi」には、法的な経緯として2025年3月21日にネパール国民議会が月経差別の終結に関する決議動議を全会一致で可決したという記述しかなく、2005年の最高裁判断や2017年の刑法規定に相当する記述がなかった。",
+    "source": "Wikipedia「Chhaupadi」 https://en.wikipedia.org/wiki/Chhaupadi"
+   },
+   {
+    "text": "広く引用される「2017年の刑法典で犯罪化（2018年8月施行、3か月以下の拘禁または3,000ルピー以下の罰金）」という情報は、ネパール法務委員会の公式英訳など一次資料に到達できず、条番号・公布日・施行日を確認できなかった。",
+    "source": "（一次資料に到達できず）"
+   },
+   {
+    "text": "ネパールのサティー廃止（1920年）と奴隷制廃止（1924年）についても、チャンドラ・シャムシェル首相による改革として言及されるだけで、日付・文書名・解放人数に到達できなかった。",
+    "source": "Wikipedia「Chandra Shumsher Jung Bahadur Rana」 https://en.wikipedia.org/wiki/Chandra_Shumsher_Jung_Bahadur_Rana"
+   },
+   {
+    "text": "そのため南アジアの国の幅を広げる候補としては保留する。ネパール法務委員会（lawcommission.gov.np）の国家刑法典2017の英訳に当たれば、条番号と施行日の確認は可能と見込まれる。",
+    "source": "（次回調査の手がかり）"
+   }
+  ],
+  "curve": null,
+  "lineage": null,
+  "draft_corrections": [
+   "叩き台には入っていない候補として調べたが、法令の条番号・公布日・施行日の裏が取れなかったため落とす。",
+   "ネパールのサティー廃止（1920年）・奴隷制廃止（1924年）も、日付の裏が取れなかった。"
+  ],
+  "confidence": "C",
+  "verdict": "drop",
+  "verdict_reason": "年号の裏が取れないものは落とすという方針に従った。インド以外の南アジアの国を加える候補だったが、法令名・条番号・公布日に到達できなかった。次回、ネパール法務委員会の国家刑法典2017英訳に当たれば復活できる見込み。",
+  "hitokoto": "犯罪化の年は流通しているが、条番号と公布日の裏が取れなかった。",
+  "body_ja": [
+   "月経中の女性を家の外に隔離する慣行について、2017年の刑法典で犯罪化されたという情報は広く流通している。しかし今回の調査では、ネパール法務委員会の公式英訳など一次資料に到達できず、条番号・公布日・施行日を確認できなかった。",
+   "ネパールのサティー廃止（1920年）と奴隷制廃止（1924年）も、改革として言及される以上の記述に届かなかった。年号を推測で埋めない方針に従い、いずれも落とす。次回はネパール法務委員会の法令英訳に直接当たるのが早い。"
+  ],
+  "sources": [
+   "Wikipedia「Chhaupadi」 https://en.wikipedia.org/wiki/Chhaupadi",
+   "Wikipedia「Chandra Shumsher Jung Bahadur Rana」 https://en.wikipedia.org/wiki/Chandra_Shumsher_Jung_Bahadur_Rana"
+  ]
+ }
+]

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { Value, Category, Trend, Evidence, ShelfId } from "@/data/types";
+import type { Value, Category, Trend, Evidence, ShelfId, Region } from "@/data/types";
 import { shelves } from "@/data/shelves";
 import { type Lang } from "@/i18n/lang";
 import { t, type UIKey } from "@/i18n/ui";
@@ -13,6 +13,9 @@ import ColumnGrid from "./ColumnGrid";
 type SortKey = "no" | "made" | "disc";
 
 const CATS: Category[] = ["規範", "人生観", "判断基準"];
+
+/** 分類の chip に出す言葉 */
+const CAT_KEYS = { 規範: "cNorm", 人生観: "cLife", 判断基準: "cJudge" } as const;
 const TRENDS: Trend[] = ["up", "steady", "down", "discontinued", "restocked"];
 const EVS: Evidence[] = ["law", "curve"];
 
@@ -35,12 +38,44 @@ const TREND_KEYS = {
 /** 証拠の chip に出す言葉 */
 const EV_KEYS = { law: "evLaw", curve: "evCurve" } as const;
 
+/** 地域｡日本を先頭に､東から西へ並べる */
+const REGIONS: Region[] = [
+  "日本",
+  "東アジア",
+  "南アジア",
+  "中東",
+  "ヨーロッパ",
+  "北米",
+  "中南米",
+  "アフリカ",
+  "オセアニア",
+];
+
+/** 地域の chip に出す言葉 */
+const REGION_KEYS = {
+  日本: "rJapan",
+  東アジア: "rEastAsia",
+  南アジア: "rSouthAsia",
+  中東: "rMideast",
+  ヨーロッパ: "rEurope",
+  北米: "rNorthAmerica",
+  中南米: "rLatinAmerica",
+  アフリカ: "rAfrica",
+  オセアニア: "rOceania",
+} as const;
+
 function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
     <button type="button" onClick={onClick} className={`vl-chip${on ? " is-on" : ""}`} aria-pressed={on}>
       {children}
     </button>
   );
+}
+
+/** 国名｡英語のときはデータの英語名を使う */
+function countryName(lang: Lang, values: Value[], country: string) {
+  if (lang === "ja") return country;
+  return values.find((v) => v.country === country)?.countryEn ?? country;
 }
 
 function toggle<T>(set: Set<T>, x: T) {
@@ -57,6 +92,8 @@ export default function IndexView({ values: raw, lang }: { values: Value[]; lang
   const [catF, setCatF] = useState<Set<Category>>(new Set());
   const [trendF, setTrendF] = useState<Set<Trend>>(new Set());
   const [evF, setEvF] = useState<Set<Evidence>>(new Set());
+  const [regF, setRegF] = useState<Set<Region>>(new Set());
+  const [cF, setCF] = useState<Set<string>>(new Set());
   const [sort, setSort] = useState<SortKey>("no");
   const [open, setOpen] = useState(false);
 
@@ -66,7 +103,9 @@ export default function IndexView({ values: raw, lang }: { values: Value[]; lang
         (shelfF.size === 0 || shelfF.has(v.shelf)) &&
         (catF.size === 0 || catF.has(v.category)) &&
         (trendF.size === 0 || trendF.has(v.trend)) &&
-        (evF.size === 0 || evF.has(v.evidence)),
+        (evF.size === 0 || evF.has(v.evidence)) &&
+        (regF.size === 0 || regF.has(v.region)) &&
+        (cF.size === 0 || cF.has(v.country)),
     );
     if (sort === "made") list = list.slice().sort((a, b) => (a.made?.year ?? 9999) - (b.made?.year ?? 9999));
     else if (sort === "disc")
@@ -77,7 +116,18 @@ export default function IndexView({ values: raw, lang }: { values: Value[]; lang
             (a.discontinued?.year ?? a.restocked?.year ?? 9999) - (b.discontinued?.year ?? b.restocked?.year ?? 9999),
         );
     return list;
-  }, [values, shelfF, catF, trendF, evF, sort]);
+  }, [values, shelfF, catF, trendF, evF, regF, cF, sort]);
+
+  /**
+   * 国の chip｡24か国あるので一度に全部は出さない｡
+   * 地域を選ぶと､その地域の国だけが下に出る｡
+   */
+  const countries = useMemo(() => {
+    if (regF.size === 0) return [];
+    const n = new Map<string, number>();
+    for (const v of values) if (regF.has(v.region)) n.set(v.country, (n.get(v.country) ?? 0) + 1);
+    return [...n.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "ja"));
+  }, [values, regF]);
 
   // グループごとに分けて並べる（並べ替えはグループの中でかかる）
   const sections = shelves
@@ -85,12 +135,22 @@ export default function IndexView({ values: raw, lang }: { values: Value[]; lang
     .map((s) => ({ shelf: s, items: filtered.filter((v) => v.shelf === s.id) }))
     .filter((g) => g.items.length > 0);
 
-  const active = shelfF.size + catF.size + trendF.size + evF.size;
+  const active = shelfF.size + catF.size + trendF.size + evF.size + regF.size + cF.size;
   const reset = () => {
     setShelfF(new Set());
     setCatF(new Set());
     setTrendF(new Set());
     setEvF(new Set());
+    setRegF(new Set());
+    setCF(new Set());
+  };
+
+  /** 地域を外したら､その地域の国の選択も一緒に外す */
+  const toggleRegion = (r: Region) => {
+    const next = toggle(regF, r);
+    setRegF(next);
+    if (next.size === 0) setCF(new Set());
+    else setCF(new Set([...cF].filter((c) => values.some((v) => v.country === c && next.has(v.region)))));
   };
 
   return (
@@ -135,17 +195,39 @@ export default function IndexView({ values: raw, lang }: { values: Value[]; lang
                 .filter((s) => !s.virtual)
                 .map((s) => (
                   <Chip key={String(s.id)} on={shelfF.has(s.id)} onClick={() => setShelfF(toggle(shelfF, s.id))}>
-                    {s.no}. {s.name}
+                    {s.no}. {shelfName(lang, s)}
                   </Chip>
                 ))}
             </div>
           </div>
           <div className="vl-filters__row">
+            <span>{t(lang, "region")}</span>
+            <div>
+              {REGIONS.map((r) => (
+                <Chip key={r} on={regF.has(r)} onClick={() => toggleRegion(r)}>
+                  {tIndex(lang, REGION_KEYS[r])}
+                </Chip>
+              ))}
+            </div>
+          </div>
+          {countries.length > 1 && (
+            <div className="vl-filters__row">
+              <span>{t(lang, "country")}</span>
+              <div>
+                {countries.map(([c, n]) => (
+                  <Chip key={c} on={cF.has(c)} onClick={() => setCF(toggle(cF, c))}>
+                    {countryName(lang, values, c)} <span className="vl-chip__n">{n}</span>
+                  </Chip>
+                ))}
+              </div>
+            </div>
+          )}
+          <div className="vl-filters__row">
             <span>{t(lang, "category")}</span>
             <div>
               {CATS.map((c) => (
                 <Chip key={c} on={catF.has(c)} onClick={() => setCatF(toggle(catF, c))}>
-                  {c}
+                  {tIndex(lang, CAT_KEYS[c])}
                 </Chip>
               ))}
             </div>

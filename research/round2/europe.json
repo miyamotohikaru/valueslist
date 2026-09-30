@@ -1,0 +1,1287 @@
+[
+  {
+    "draft_no": 1,
+    "name_ja": "決闘",
+    "reading": "けっとう",
+    "name_en": "Duel (code of honour)",
+    "country": "フランス",
+    "country_en": "France",
+    "region": "ヨーロッパ",
+    "category": "規範",
+    "shelf": 1,
+    "evidence_type": "law",
+    "made": {
+      "label": "16世紀 名誉の作法として成立",
+      "year": 1550,
+      "approx": true,
+      "fact": "ルネサンス期のイタリアで決闘作法の成文化（code duello）が始まり、フランスがそれを国家規模の名誉の作法として整えた。侮辱を受けた貴族は介添人を立てて相手に償いを求め、剣で決着をつけた。アンリ2世からアンリ4世の治世にかけての決闘死者は、同時代の推計で6000人（アンリ2世）・8000人（アンリ4世）、1606年に2000人、1607年に4000人と伝えられ、宗教戦争の戦死者を上回るとも言われた。ただしこれらは同時代の推計値であり実数の裏づけはない",
+      "source": "fr.wikipedia「Duel」 https://fr.wikipedia.org/wiki/Duel"
+    },
+    "discontinued": {
+      "label": "1626 ルイ13世の決闘禁止勅令",
+      "year": 1626,
+      "approx": false,
+      "fact": "1626年6月2日、ルイ13世（リシュリュー主導）の勅令が、介添人を立てた決闘に死刑を、武器を持った対決に爵位と年金の剥奪を定めた。リシュリュー自身が弟を決闘で失っていた。翌1627年6月21日には、パリのプラス・ロワイヤルで白昼あえて決闘したフランソワ・ド・モンモランシー＝ブートヴィルが実際に処刑された",
+      "source": "fr.wikipedia「Duel」 https://fr.wikipedia.org/wiki/Duel"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1626年6月2日のルイ13世の勅令は、介添人を立てた決闘に死刑、武器を持った対決に爵位と年金の剥奪を定めた。翌1627年6月21日にブートヴィルが処刑された",
+        "source": "fr.wikipedia「Duel」 https://fr.wikipedia.org/wiki/Duel"
+      },
+      {
+        "text": "ルイ14世は1643年6月から1711年10月までに11本以上の決闘禁止勅令を出し、決闘を国王大権への侵害（lèse-majesté）と同視した。それでも1685年から1716年にフランス将校は約1万回決闘し、400人以上が死んでいる",
+        "source": "en.wikipedia「Duel」 https://en.wikipedia.org/wiki/Duel ／ fr.wikipedia「Duel」"
+      },
+      {
+        "text": "イングランドで死者を出した最後の決闘は1852年、イングルフィールド・グリーン近くでのフランス人亡命政治家フレデリック・クールネとエマニュエル・バルテルミの決闘だった",
+        "source": "en.wikipedia「Duel」 https://en.wikipedia.org/wiki/Duel"
+      },
+      {
+        "text": "プロイセンは1851年に決闘を禁じ、この禁止は1871年のドイツ帝国刑法典に引き継がれた。学生の儀礼的フェンシング（メンズーア）は非致死の形で生き残った",
+        "source": "en.wikipedia「Duel」 https://en.wikipedia.org/wiki/Duel"
+      },
+      {
+        "text": "ロシアではピョートル1世の1715年軍律第139条が「すべての挑戦、喧嘩、決闘をここに最も厳しく禁ずる」と定め、無傷で終わっても絞首刑とした。エカチェリーナ2世は1787年の宣言で決闘を「外来の植え付け」と呼び、罰金とシベリア流刑を課した",
+        "source": "ru.wikipedia「Дуэль」 https://ru.wikipedia.org/wiki/Дуэль"
+      },
+      {
+        "text": "それでもプーシキンは1837年にジョルジュ・ダンテスとの決闘で、レールモントフは1841年に同僚将校ニコライ・マルトゥイノフとの決闘で死んだ。さらにロシア陸軍では1894年の法により、決闘を行うべきか否かの判断が将校団の名誉審判（将校社会裁判）に委ねられた。禁じる側から容認する側への転換である",
+        "source": "ru.wikipedia「Дуэль」／ru.wikipedia「Суд общества офицеров」 https://ru.wikipedia.org/wiki/Суд_общества_офицеров（1894年の規程の正式名称と裁可日は本調査では一次資料に当てられなかった）"
+      },
+      {
+        "text": "フランスで名誉のための決闘が最後に行われたのは1967年4月21日、ヌイイ＝シュル＝セーヌの私邸でガストン・デフェールとルネ・リビエールが剣を交えた一件である。国民議会の議場でデフェールがリビエールを「ばか」と呼んだことが発端で、リビエールが二度傷を負って立会人が止めた",
+        "source": "fr.wikipedia「Gaston Defferre」 https://fr.wikipedia.org/wiki/Gaston_Defferre"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "名誉は自分の血で回復する",
+      "to": "名誉毀損は裁判で争う",
+      "note": "仇討ちが幕府の届出制で公認されたのに対し、決闘は国王が繰り返し禁じながら貴族社会が守り続けた。公認と非公認が逆である"
+    },
+    "draft_corrections": [
+      "叩き台の「禁令の年」は一つに絞れない。フランスの代表は1626年6月2日のルイ13世勅令だが、ルイ14世が1643年から1711年に11本以上を重ねており、200年以上「禁じても続く」状態が続いた。",
+      "叩き台の「日本の仇討ちと対になる」は構図としては成り立つが、非対称がある。仇討ちは幕府が届出制で公認した制度であり、決闘は国王が禁じ続けた非合法の慣行だった。",
+      "アンリ4世期の決闘死者数（4000人など）は同時代の推計で、実数として断定できない。"
+    ],
+    "confidence": "B",
+    "verdict": "include",
+    "verdict_reason": "禁止勅令の日付（1626年6月2日）と最後の決闘の日付（1967年4月21日）の両方が特定でき、しかも341年の落差そのものが企画のFLIPになる。既存001「仇討ち」と対にできる。",
+    "hitokoto": "禁止令を11本以上重ねても、名誉は300年、血で贖われ続けた。",
+    "body_ja": [
+      "ルネサンス期のイタリアで決闘の作法が成文化され、フランスがそれを国家規模の名誉の作法に育てた。侮辱を受けた貴族は介添人を立てて相手に償いを求め、剣で決着をつけた。裁判に訴えるのは臆病の証とされ、名誉は法廷ではなく自分の血で回復するものだった。アンリ4世の治世には年に数千人が決闘で死んだという同時代の推計が残っている。",
+      "王権はこれを国王大権への侵害と見た。1626年6月2日、ルイ13世は介添人つきの決闘に死刑を定め、翌年にはプラス・ロワイヤルで白昼決闘した貴族ブートヴィルを実際に処刑した。ルイ14世は1643年から1711年までに11本以上の禁止勅令を重ねている。それでも1685年から1716年にフランス将校は約1万回決闘し、400人以上が死んだ。",
+      "禁令の効き方は国ごとに違った。イングランドでは1852年の一件を最後に死者の出る決闘が消え、プロイセンは1851年に禁じた。ロシアは逆で、1894年の法が決闘の可否を将校団の名誉審判に委ねている。禁じる側と容認する側が入れ替わった。フランスで名誉の決闘が最後に行われたのは1967年4月21日、現職の国会議員二人による剣の勝負だった。"
+    ],
+    "sources": [
+      "fr.wikipedia「Duel」 https://fr.wikipedia.org/wiki/Duel",
+      "en.wikipedia「Duel」 https://en.wikipedia.org/wiki/Duel",
+      "ru.wikipedia「Дуэль」 https://ru.wikipedia.org/wiki/Дуэль",
+      "ru.wikipedia「Суд общества офицеров」 https://ru.wikipedia.org/wiki/Суд_общества_офицеров",
+      "fr.wikipedia「Gaston Defferre」 https://fr.wikipedia.org/wiki/Gaston_Defferre"
+    ]
+  },
+  {
+    "draft_no": 2,
+    "name_ja": "魔女は焼く",
+    "reading": "まじょはやく",
+    "name_en": "Witch trials",
+    "country": "スイス",
+    "country_en": "Switzerland",
+    "region": "ヨーロッパ",
+    "category": "判断基準",
+    "shelf": 1,
+    "evidence_type": "law",
+    "made": {
+      "label": "1484 教皇勅書が審問官に権限を与える",
+      "year": 1484,
+      "approx": false,
+      "fact": "1484年12月5日、教皇インノケンティウス8世は勅書『スミス・デシデランテス・アフェクティブス』で、ドミニコ会審問官ハインリヒ・クラーマー（インスティトリス）とヤーコプ・シュプレンガーに、マインツ・ケルン・トリーア・ザルツブルク・ブレーメンの5司教区における妖術と異端の審問権を確認した。クラーマーは現地の協力を得られず、自説を『魔女に与える鉄槌』（Malleus Maleficarum、1486年成立・1487年シュパイアー刊）にまとめた",
+      "source": "en.wikipedia「Summis desiderantes affectibus」 https://en.wikipedia.org/wiki/Summis_desiderantes_affectibus ／ en.wikipedia「Malleus Maleficarum」 https://en.wikipedia.org/wiki/Malleus_Maleficarum"
+    },
+    "discontinued": {
+      "label": "1782 スイス・グラールスの処刑が最後",
+      "year": 1782,
+      "approx": false,
+      "fact": "1782年6月13日、スイス・グラールス邦でアンナ・ゲルディが斬首された。ヨーロッパで魔女として処刑された最後の一人とされる。ただし判決の罪名は妖術ではなく毒殺だった（パンと牛乳に超自然の手段で針を混ぜたという告発）。2007年9月20日にスイス連邦議会が誤判と認め、2008年8月27日にグラールス邦が「違法な裁判」だったとして正式に名誉を回復した。226年後である",
+      "source": "en.wikipedia「Anna Göldi」 https://en.wikipedia.org/wiki/Anna_G%C3%B6ldi"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1484年12月5日、教皇インノケンティウス8世の勅書『スミス・デシデランテス・アフェクティブス』が、ライン川流域の5司教区での妖術審問権をクラーマーとシュプレンガーに確認した",
+        "source": "en.wikipedia「Summis desiderantes affectibus」 https://en.wikipedia.org/wiki/Summis_desiderantes_affectibus"
+      },
+      {
+        "text": "『魔女に与える鉄槌』は1486年に成立し1487年にシュパイアーで刊行され、1486年から1600年に28版を重ねた。ただしケルン大学神学部は手続きが違法で教会の悪魔論と矛盾すると断じ、クラーマー自身も1490年に審問所から断罪されている。教皇勅書が本の序文に刷られたため「教皇のお墨付き」と誤読された",
+        "source": "en.wikipedia「Malleus Maleficarum」 https://en.wikipedia.org/wiki/Malleus_Maleficarum"
+      },
+      {
+        "text": "近世ヨーロッパで妖術の訴追を受けたのは約10万人、処刑されたのは4万〜6万人と推計される。ピークは1560年から1630年で、この期間だけで4万人以上が死んだ。有罪となった者のおよそ8割、告発された者の75〜85％が女性だった",
+        "source": "en.wikipedia「Witch trials in the early modern period」 https://en.wikipedia.org/wiki/Witch_trials_in_the_early_modern_period"
+      },
+      {
+        "text": "各国の最後の処刑はイングランドでジェイン・ウェナム（1712年、のち恩赦）、スコットランドでジャネット・ホーン（1727年）、オーストリアでマリア・パウアー（1750年）、そしてスイスでアンナ・ゲルディ（1782年6月13日）だった",
+        "source": "en.wikipedia「Witch trials in the early modern period」／en.wikipedia「Anna Göldi」"
+      },
+      {
+        "text": "1735年妖術法（Witchcraft Act 1735、9 Geo. 2 c. 5）は、1604年のイングランド法（1 Jas. 1 c. 12）と1563年のスコットランド法を廃止し、代わりに「妖術を行うふりをする」行為を1年の禁錮（保釈なし）と市場町での四半期ごと1時間のさらし刑で罰した。施行は1736年6月24日。国家は魔女の存在自体を法から消し、魔女を騙る者を罰する側に回った",
+        "source": "en.wikisource「Witchcraft Act 1735」 https://en.wikisource.org/wiki/Witchcraft_Act_1735 ／ legislation.gov.uk 9 Geo. 2 c. 5 https://www.legislation.gov.uk/apgb/Geo2/9/5/contents"
+      },
+      {
+        "text": "アンナ・ゲルディの名誉回復は2008年8月27日にグラールス邦が決定した。スイス連邦議会は前年2007年9月20日に誤判と認めていた",
+        "source": "en.wikipedia「Anna Göldi」 https://en.wikipedia.org/wiki/Anna_G%C3%B6ldi"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "魔女は実在し、焼かねばならない",
+      "to": "魔女を騙る者を詐欺として罰する",
+      "note": "1735年妖術法が、処罰の対象を「魔女」から「魔女のふりをする者」に入れ替えた"
+    },
+    "draft_corrections": [
+      "叩き台の「1782年スイス・アンナ ゲルディ」は年は正しい。処刑日は1782年6月13日。",
+      "重要な留保として、ゲルディの判決の罪名は妖術ではなく毒殺だった。「最後の魔女処刑」は通称であり、ドイツのバルバラ・ツドゥンクなど別の候補も挙げられるため「最後とされる」と書くのが正確。",
+      "『魔女に与える鉄槌』は教会公認ではない。ケルン大学神学部が断じ、著者クラーマーは1490年に審問所から断罪されている。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "成立（1484年12月5日の勅書）、廃番（1735年の妖術法と1782年6月13日の処刑）、名誉回復（2008年8月27日）のすべてが日付で特定できる。1735年法の「魔女を騙る者を罰する」という転換がFLIPとして強い。",
+    "hitokoto": "1735年、国家は魔女を法から消し、魔女を騙る者を罰する側に回った。",
+    "body_ja": [
+      "1484年12月5日、教皇インノケンティウス8世は勅書を出し、二人のドミニコ会審問官にライン流域5司教区での妖術審問権を確認した。現地の協力を得られなかった審問官クラーマーは、自説を『魔女に与える鉄槌』にまとめ、1487年に刊行した。この本は1600年までに28版を重ねる。近世ヨーロッパで訴追されたのは約10万人、処刑されたのは4万から6万人と推計される。",
+      "興味深いのは、終わり方が「無罪」ではなく「対象の入れ替え」だった点である。1735年妖術法は1604年のイングランド法と1563年のスコットランド法を廃止し、代わりに妖術を行うふりをする者を1年の禁錮とさらし刑で罰した。魔女は法の世界から消え、魔女を騙る詐欺師が新しい被告になった。施行は1736年6月24日である。",
+      "現実の処刑はもう少し続いた。1782年6月13日、スイスのグラールス邦でアンナ・ゲルディが斬首される。ヨーロッパで魔女として処刑された最後の一人とされるが、判決の罪名は妖術ではなく毒殺だった。2007年9月20日に連邦議会が誤判と認め、2008年8月27日にグラールス邦が「違法な裁判」として名誉を回復した。226年後である。"
+    ],
+    "sources": [
+      "en.wikipedia「Anna Göldi」 https://en.wikipedia.org/wiki/Anna_G%C3%B6ldi",
+      "en.wikisource「Witchcraft Act 1735」 https://en.wikisource.org/wiki/Witchcraft_Act_1735",
+      "legislation.gov.uk「The Witchcraft Act 1735」9 Geo. 2 c. 5 https://www.legislation.gov.uk/apgb/Geo2/9/5/contents",
+      "en.wikipedia「Summis desiderantes affectibus」 https://en.wikipedia.org/wiki/Summis_desiderantes_affectibus",
+      "en.wikipedia「Malleus Maleficarum」 https://en.wikipedia.org/wiki/Malleus_Maleficarum",
+      "en.wikipedia「Witch trials in the early modern period」 https://en.wikipedia.org/wiki/Witch_trials_in_the_early_modern_period"
+    ]
+  },
+  {
+    "draft_no": 3,
+    "name_ja": "人は土地に付いてくる",
+    "reading": "ひとはとちについてくる",
+    "name_en": "Serfdom",
+    "country": "ロシア",
+    "country_en": "Russia",
+    "region": "ヨーロッパ",
+    "category": "判断基準",
+    "shelf": 1,
+    "evidence_type": "law",
+    "made": {
+      "label": "1649 会議法典が逃亡追及の期限を撤廃",
+      "year": 1649,
+      "approx": false,
+      "fact": "1649年の会議法典（ソボールノエ・ウロジェーニエ）が、農民を領地に結びつけ、逃亡農民を追及できる期限を撤廃した。1658年には逃亡そのものが刑事犯罪となった。それ以前は1497年の法典（スデーブニク）が移動できる時期を聖ユーリーの日の前後1週間に限り、1550年の法典が離村料（ポジーロエ）を引き上げ、1597年のボリス・ゴドゥノフの諸令が「禁止年」を導入して、段階的に縛りを強めていた",
+      "source": "en.wikipedia「Serfdom in Russia」 https://en.wikipedia.org/wiki/Serfdom_in_Russia"
+    },
+    "discontinued": {
+      "label": "1861 農奴解放令",
+      "year": 1861,
+      "approx": false,
+      "fact": "1861年2月19日（旧暦。新暦3月3日）、皇帝アレクサンドル2世が解放令（マニフェスト）と「農奴の身分を離れる農民に関する規程」を発布した。2300万人以上が解放された。1857年の人口調査では私有農奴は6250万人中2310万人、人口の37.7％を占めていた",
+      "source": "en.wikipedia「Emancipation reform of 1861」 https://en.wikipedia.org/wiki/Emancipation_reform_of_1861 ／ en.wikipedia「Serfdom in Russia」"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1649年の会議法典が逃亡農民の追及期限を撤廃し、1658年に逃亡が刑事犯罪になった。1678年と1719年の人口調査ではロシア農民の約5分の4が農奴だった",
+        "source": "en.wikipedia「Serfdom in Russia」 https://en.wikipedia.org/wiki/Serfdom_in_Russia"
+      },
+      {
+        "text": "1798年にウクライナの地主が、1841年には土地を持たない貴族が、土地と切り離して農奴を売ることを禁じられた。禁止する法が必要だったこと自体が、土地なしの人身売買が広く行われていたことを示している",
+        "source": "en.wikipedia「Serfdom in Russia」 https://en.wikipedia.org/wiki/Serfdom_in_Russia"
+      },
+      {
+        "text": "1857年の人口調査で私有農奴は6250万人中2310万人、人口の37.7％だった",
+        "source": "en.wikipedia「Serfdom in Russia」 https://en.wikipedia.org/wiki/Serfdom_in_Russia"
+      },
+      {
+        "text": "解放は無償ではなかった。政府が土地代金の75％を債券で地主に立替え、農民は49年かけて利息つきで政府に返済した。全額を買えない者は耕地の4分の1にあたる「貧者の分与地」を無償で受けた",
+        "source": "en.wikipedia「Emancipation reform of 1861」 https://en.wikipedia.org/wiki/Emancipation_reform_of_1861"
+      },
+      {
+        "text": "1881年の勅令が、まだ買戻しに入っていない村（ミール）に買戻しを強制した。1883年には滞納増加を受けて返済率が平均13％引き下げられ、買戻金そのものが廃止されたのは1907年である。解放から46年後だった",
+        "source": "en.wikipedia「Emancipation reform of 1861」 https://en.wikipedia.org/wiki/Emancipation_reform_of_1861"
+      },
+      {
+        "text": "1861年の解放令はグルジアとカルムィクを除いた。グルジアの農奴が解放されるのは1864年から1871年、カルムィクの農奴制が残ったのは1892年までである",
+        "source": "en.wikipedia「Serfdom in Russia」 https://en.wikipedia.org/wiki/Serfdom_in_Russia"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "人は土地に付いてくる",
+      "to": "人は移動できる（ただし49年の借金つき）",
+      "note": "解放は買戻金という債務に置き換えられた。金銭債務が消えるのは1907年"
+    },
+    "draft_corrections": [
+      "叩き台には挙がっていなかったが、ヨーロッパ担当として農奴制を加えた。ロシアの農奴制は「前近代成立・法令の日付で失効」の条件を最もきれいに満たす。",
+      "「解放」を一点の出来事として書くと誤る。1861年に人身の縛りが解かれ、1881年に買戻し強制、1907年に買戻金廃止、辺境では1892年まで農奴制が残った。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1649年の法典と1861年2月19日の解放令という二つの日付が立ち、1798年・1841年の「土地なしで売るのを禁じる法」が価値観の内容を逆算させる。既存006「生まれで決まる」の世界版として置ける。",
+    "hitokoto": "土地なしで人を売るのを禁じる法が要った。つまりそれが普通だった。",
+    "body_ja": [
+      "ロシアの農奴制は一度に作られたのではない。1497年の法典が農民の移動を聖ユーリーの日の前後1週間に限り、1550年の法典が離村料を引き上げ、1597年の諸令が「禁止年」を置いた。決定的だったのは1649年の会議法典で、逃亡農民を追及できる期限そのものを撤廃した。1658年には逃亡が刑事犯罪になる。人は土地の付属物になった。",
+      "18世紀から19世紀にかけて、地主の支配はほぼ無制限に近づいた。1798年にウクライナの地主が、1841年には土地を持たない貴族が、土地と切り離して農奴を売ることを禁じられている。禁止する法が要ったという事実が、その売買が珍しくなかったことを示す。1857年の調査では6250万人のうち2310万人、人口の37.7％が私有農奴だった。",
+      "1861年2月19日、アレクサンドル2世が解放令を発した。ただし土地は買い取らせた。政府が代金の75％を債券で地主に立替え、農民は49年かけて利息つきで返す。1881年には買戻しが強制され、買戻金が消えたのは1907年である。グルジアの解放は1864年から71年、カルムィクの農奴制は1892年まで残った。"
+    ],
+    "sources": [
+      "en.wikipedia「Serfdom in Russia」 https://en.wikipedia.org/wiki/Serfdom_in_Russia",
+      "en.wikipedia「Emancipation reform of 1861」 https://en.wikipedia.org/wiki/Emancipation_reform_of_1861"
+    ]
+  },
+  {
+    "draft_no": 4,
+    "name_ja": "異端は火で正す",
+    "reading": "いたんはひでただす",
+    "name_en": "Inquisition (Spanish)",
+    "country": "スペイン",
+    "country_en": "Spain",
+    "region": "ヨーロッパ",
+    "category": "判断基準",
+    "shelf": 1,
+    "evidence_type": "law",
+    "made": {
+      "label": "1478 教皇勅書がスペイン国王に審問所を与える",
+      "year": 1478,
+      "approx": false,
+      "fact": "1478年11月1日、教皇シクストゥス4世の勅書『エクシジット・シンケラエ・デウォティオニス・アフェクトゥス』がスペイン国王に審問官の任命権を与え、スペイン異端審問所が成立した。最初のアウト・デ・フェ（信仰の審判）は1481年2月6日セビーリャで行われ、6人が生きたまま焼かれた",
+      "source": "es.wikipedia「Inquisición española」 https://es.wikipedia.org/wiki/Inquisici%C3%B3n_espa%C3%B1ola ／ en.wikipedia「Spanish Inquisition」 https://en.wikipedia.org/wiki/Spanish_Inquisition"
+    },
+    "discontinued": {
+      "label": "1834年7月15日 王令で最終的に廃止",
+      "year": 1834,
+      "approx": false,
+      "fact": "1834年7月15日、マリア・クリスティーナ・デ・ボルボン摂政下の王令によって、スペイン異端審問所は王国全域で最終的に廃止された。イサベル2世の治世の始まりと重なる。それ以前にも1808年12月4日のナポレオンのチャマルティン諸令で一度廃止されていたが、フェルナンド7世の復位とともに復活していた",
+      "source": "es.wikipedia「Inquisición española」 https://es.wikipedia.org/wiki/Inquisici%C3%B3n_espa%C3%B1ola ／ en.wikipedia「Spanish Inquisition」（Disbanded: 15 July 1834）"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1478年11月1日、教皇シクストゥス4世の勅書がスペイン異端審問所を成立させた。最初のアウト・デ・フェは1481年2月6日セビーリャで、6人が生きたまま焼かれた",
+        "source": "es.wikipedia「Inquisición española」／en.wikipedia「Spanish Inquisition」 https://en.wikipedia.org/wiki/Spanish_Inquisition"
+      },
+      {
+        "text": "異端審問で処刑された最後の一人は、バレンシアの学校教師カエターノ・リポルである。生徒に理神論を教えカトリックの教義を否定したとして、1826年7月26日に処刑された",
+        "source": "en.wikipedia「Cayetano Ripoll」 https://en.wikipedia.org/wiki/Cayetano_Ripoll"
+      },
+      {
+        "text": "リポルの件で教会側の信仰審査会（フンタ・デ・フェ）は火刑を求めたが、世俗の当局は絞首を選んだ。教会の判決は国家を法的に拘束しなかった。処刑後、遺体は炎を描いた樽に入れられて非聖別地に埋められたと伝えられる",
+        "source": "en.wikipedia「Cayetano Ripoll」 https://en.wikipedia.org/wiki/Cayetano_Ripoll"
+      },
+      {
+        "text": "1808年12月4日、ナポレオンのチャマルティン諸令が異端審問所を一度廃止した。フェルナンド7世の復位で復活し、1834年7月15日の王令でようやく決着した",
+        "source": "es.wikipedia「Inquisición española」 https://es.wikipedia.org/wiki/Inquisici%C3%B3n_espa%C3%B1ola"
+      },
+      {
+        "text": "処刑者数の推計は研究によって幅がある。ヘンリー・ケイメンは最も激しかった1480年から1530年の処刑を約2000人と見る。より広くとって初期50年間に3000〜5000人が世俗権力に引き渡されたという推計もある",
+        "source": "en.wikipedia「Spanish Inquisition」 https://en.wikipedia.org/wiki/Spanish_Inquisition ／ es.wikipedia「Inquisición española」"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "信仰の誤りは国家が正す",
+      "to": "信仰は私事である",
+      "note": "1826年の最後の処刑で教会が火刑を求め世俗権力が絞首を選んだ時点で、すでに主導権は国家に移っていた"
+    },
+    "draft_corrections": [
+      "叩き台には挙がっていなかったが、魔女裁判と並べるべき制度として加えた。異端審問は魔女裁判と違い、成立日（1478年11月1日の勅書）と廃止日（1834年7月15日の王令）の両方が確定している。",
+      "「異端審問が人を焼いた」という言い方は正確でない。審問所は有罪を認定し、執行は世俗権力に引き渡した。1826年のリポルでは教会が火刑を求め、世俗当局が絞首を選んでいる。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "成立と廃止の両方が日付で特定でき、最後の一人（1826年7月26日、学校教師）という具体名まで取れる。魔女裁判と機能が違う（教会制度と世俗裁判）ので重複しない。",
+    "hitokoto": "最後に処刑されたのは、生徒に理神論を教えた学校の先生だった。1826年。",
+    "body_ja": [
+      "1478年11月1日、教皇シクストゥス4世の勅書がスペイン国王に審問官の任命権を与えた。最初のアウト・デ・フェは1481年2月6日、セビーリャで6人が生きたまま焼かれている。審問所は自ら人を焼いたのではなく、有罪を認定して世俗権力に引き渡した。処刑者数の推計は幅があり、ヘンリー・ケイメンは1480年から1530年の分を約2000人と見ている。",
+      "終わり方は一度ではなかった。1808年12月4日のナポレオンのチャマルティン諸令が審問所を廃止し、フェルナンド7世の復位で復活する。最終的な廃止は1834年7月15日、マリア・クリスティーナ摂政下の王令による。356年続いた制度が、王令一本で閉じた。",
+      "最後に処刑されたのはバレンシアの学校教師カエターノ・リポルだった。生徒に理神論を教えカトリックの教義を否定したとして、1826年7月26日に死んでいる。教会側の信仰審査会は火刑を求めたが、世俗当局は絞首を選んだ。教会の判決が国家を拘束しなくなっていたことが、この一件から読める。"
+    ],
+    "sources": [
+      "es.wikipedia「Inquisición española」 https://es.wikipedia.org/wiki/Inquisici%C3%B3n_espa%C3%B1ola",
+      "en.wikipedia「Spanish Inquisition」 https://en.wikipedia.org/wiki/Spanish_Inquisition",
+      "en.wikipedia「Cayetano Ripoll」 https://en.wikipedia.org/wiki/Cayetano_Ripoll"
+    ]
+  },
+  {
+    "draft_no": 5,
+    "name_ja": "読んでよい本は教会が決める",
+    "reading": "よんでよいほんはきょうかいがきめる",
+    "name_en": "Index Librorum Prohibitorum",
+    "country": "バチカン",
+    "country_en": "Vatican",
+    "region": "ヨーロッパ",
+    "category": "判断基準",
+    "shelf": 1,
+    "evidence_type": "law",
+    "made": {
+      "label": "1559 ローマ教皇庁の禁書目録",
+      "year": 1559,
+      "approx": false,
+      "fact": "教皇パウルス4世の下で最初のローマ禁書目録（いわゆるパウロ版）が作られた。日付は1558年12月30日、公表は1559年である。1564年にはトリエント公会議の授権により教皇ピウス4世の下でトリエント版目録が出た。以後、ローマ教皇庁が信徒の読んでよい本を列挙する体制が400年続いた",
+      "source": "it.wikipedia「Indice dei libri proibiti」 https://it.wikipedia.org/wiki/Indice_dei_libri_proibiti ／ en.wikipedia「Index Librorum Prohibitorum」 https://en.wikipedia.org/wiki/Index_Librorum_Prohibitorum"
+    },
+    "discontinued": {
+      "label": "1966年6月14日 教理省の告示",
+      "year": 1966,
+      "approx": false,
+      "fact": "1966年6月14日、教理省（Congregazione per la Dottrina della Fede）の告示（Notificazione）が、禁書目録はもはや教会法としての効力を持たないと述べた。付随する罰も消えたが、目録には「道徳的な拘束力」が残るとされた。1965年に枢機卿アルフレード・オッタヴィアーニが目録が教理省の管轄に残るかを問われて否定的に答えており、廃止は予告されていた",
+      "source": "en.wikipedia「Index Librorum Prohibitorum」 https://en.wikipedia.org/wiki/Index_Librorum_Prohibitorum ／ it.wikipedia「Indice dei libri proibiti」 https://it.wikipedia.org/wiki/Indice_dei_libri_proibiti"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "最初のローマ禁書目録は教皇パウルス4世の下、1558年12月30日付・1559年公表。1564年にトリエント公会議の授権でトリエント版が出た",
+        "source": "it.wikipedia「Indice dei libri proibiti」／en.wikipedia「Index Librorum Prohibitorum」"
+      },
+      {
+        "text": "最終版は1948年の第20版で、約4000点が理由つきで検閲対象に挙げられていた",
+        "source": "en.wikipedia「Index Librorum Prohibitorum」 https://en.wikipedia.org/wiki/Index_Librorum_Prohibitorum"
+      },
+      {
+        "text": "収録された著者にはデカルト、ガリレオ、カント、ロック、コペルニクス、マキアヴェッリ、ヴォルテール、ルソーが含まれる。近代哲学と近代天文学の主要人物がほぼ揃っている",
+        "source": "en.wikipedia「Index Librorum Prohibitorum」 https://en.wikipedia.org/wiki/Index_Librorum_Prohibitorum"
+      },
+      {
+        "text": "1966年6月14日の教理省告示は、目録が「もはや教会法としての効力を持たない」と述べた。イタリア語版Wikipediaはこの告示の効力発生を1966年11月15日とする",
+        "source": "it.wikipedia「Indice dei libri proibiti」 https://it.wikipedia.org/wiki/Indice_dei_libri_proibiti"
+      },
+      {
+        "text": "1965年、枢機卿オッタヴィアーニは目録が教理省の管轄に残るかを問われて否定的に答えた。第二バチカン公会議の直後である",
+        "source": "en.wikipedia「Index Librorum Prohibitorum」 https://en.wikipedia.org/wiki/Index_Librorum_Prohibitorum"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "読んでよい本は教会が決める",
+      "to": "読むかどうかは各自の判断",
+      "note": "1966年の告示は禁止を撤回したのではなく、法的効力だけを外し道徳的拘束力を残した"
+    },
+    "draft_corrections": [
+      "叩き台には挙がっていなかったが、異端審問と別枠で立てられる制度として加えた。目録は人を罰する制度ではなく、読書の可否を国際的に列挙した制度である。",
+      "1966年の告示は「禁書目録の廃止」と要約されがちだが、正確には教会法としての効力と罰則を外し、道徳的拘束力は残すという書き方だった。",
+      "最終版の版数と年について、英語版は1948年の第20版（約4000点）、イタリア語版は1959年の補遺（Index additus librorum prohibitorum）を最後とする。本調査では『使徒座官報』（AAS）の原典に当てられなかったため confidence はBとする。"
+    ],
+    "confidence": "B",
+    "verdict": "include",
+    "verdict_reason": "1559年成立・1966年6月14日失効という407年の商品寿命が日付で言える。ただし廃止告示の原典（AAS）に当てられていないため confidence はB。",
+    "hitokoto": "教会が読書の可否を決める仕組みは、1966年6月14日に効力を失った。",
+    "body_ja": [
+      "1558年12月30日付で作られ翌1559年に公表された最初のローマ禁書目録は、信徒が読んでよい本と読んではならない本を国際的に列挙する制度の始まりだった。1564年にはトリエント公会議の授権によりトリエント版が出る。以後400年、目録は版を重ね、最終版となった1948年の第20版には約4000点が並んでいた。",
+      "そこに載った名前を見ると、制度の射程がわかる。デカルト、ガリレオ、カント、ロック、コペルニクス、マキアヴェッリ、ヴォルテール、ルソー。近代の哲学と天文学を作った人々がほぼ揃っている。読書の可否を中央で決めるという発想が、どの範囲まで及んだかという記録でもある。",
+      "終わりは1966年6月14日の教理省告示だった。ただし文言は慎重で、目録はもはや教会法としての効力を持たず罰も消えるが、道徳的な拘束力は残るとされた。前年に枢機卿オッタヴィアーニが管轄を問われて否定的に答えており、第二バチカン公会議の直後という時期に合わせて静かに畳まれた形である。"
+    ],
+    "sources": [
+      "en.wikipedia「Index Librorum Prohibitorum」 https://en.wikipedia.org/wiki/Index_Librorum_Prohibitorum",
+      "it.wikipedia「Indice dei libri proibiti」 https://it.wikipedia.org/wiki/Indice_dei_libri_proibiti"
+    ]
+  },
+  {
+    "draft_no": 6,
+    "name_ja": "土地は長男が丸ごと取る",
+    "reading": "とちはちょうなんがまるごととる",
+    "name_en": "Primogeniture",
+    "country": "イギリス",
+    "country_en": "United Kingdom",
+    "region": "ヨーロッパ",
+    "category": "規範",
+    "shelf": 1,
+    "evidence_type": "law",
+    "made": {
+      "label": "中世コモンロー 相続の法準則",
+      "year": 1200,
+      "approx": true,
+      "fact": "イングランドのコモンローでは、自由保有地（freehold）は長男が単独で相続する「相続の法準則（canons of descent）」に従った。ケントのガヴェルカインド（分割相続）やバラ・イングリッシュ（末子相続）などの地域慣習が例外として各地に残っていた。1925年遺産管理法45条が「現存するすべての相続の態様・準則・法準則」を廃止したという条文自体が、それまでそれらが生きていたことの証拠になっている",
+      "source": "legislation.gov.uk「Administration of Estates Act 1925」s.45 https://www.legislation.gov.uk/ukpga/Geo5/15-16/23/section/45/enacted"
+    },
+    "discontinued": {
+      "label": "1925 遺産管理法45条（施行1926年1月1日）",
+      "year": 1925,
+      "approx": false,
+      "fact": "1925年遺産管理法（Administration of Estates Act 1925、15 & 16 Geo. 5 c. 23）45条1項は、本法施行後に死亡した者の不動産と人的相続財産について、(a)現存するすべての相続の態様・準則・法準則（ガヴェルカインドやバラ・イングリッシュなどの地域慣習を含む）、(b)夫の寡夫権（curtesy）、(c)妻の寡婦産（dower, freebench）、(d)相続人不在による国王・ランカスター公領・コーンウォール公への復帰（escheat）を廃止した。同法58条2項は「本法は1926年1月1日に施行する」と定める。適用範囲はイングランドとウェールズ",
+      "source": "legislation.gov.uk s.45 https://www.legislation.gov.uk/ukpga/Geo5/15-16/23/section/45/enacted ／ s.58 https://www.legislation.gov.uk/ukpga/Geo5/15-16/23/section/58/enacted"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1925年遺産管理法45条1項は、相続の態様・準則・法準則、寡夫権、寡婦産、復帰（escheat）を一括して廃止した。ガヴェルカインドやバラ・イングリッシュといった地域慣習も同時に消えた",
+        "source": "legislation.gov.uk s.45 https://www.legislation.gov.uk/ukpga/Geo5/15-16/23/section/45/enacted"
+      },
+      {
+        "text": "同法58条2項は「本法は1926年1月1日に施行する」と定め、58条3項で適用をイングランドとウェールズに限った",
+        "source": "legislation.gov.uk s.58 https://www.legislation.gov.uk/ukpga/Geo5/15-16/23/section/58/enacted"
+      },
+      {
+        "text": "ただし45条2項は「本条は限嗣不動産権（entailed interest）の相続には影響しない」と留保した。家督相続の骨組みは、法定相続からは消えても設定行為による限嗣という形で残された",
+        "source": "legislation.gov.uk s.45 https://www.legislation.gov.uk/ukpga/Geo5/15-16/23/section/45/enacted"
+      },
+      {
+        "text": "同法46条が不動産（real estate）と動産（personal estate）で別だった無遺言相続の順位を一本にまとめた。45条が旧秩序を消し、46条が新しい順位を置くという二段構えだった",
+        "source": "legislation.gov.uk「Administration of Estates Act 1925」目次 https://www.legislation.gov.uk/ukpga/Geo5/15-16/23/contents"
+      },
+      {
+        "text": "王位継承では男子優先の長子相続が2013年王位継承法（Succession to the Crown Act 2013、2013 c. 20）1条まで続いた。同条は「王位継承の決定において、2011年10月28日より後に生まれた者の性別は、その者またはその子孫に、他の者（生年を問わない）に対する優先を与えない」と定める。施行は2015年3月26日（S.I. 2015/894 第2条）",
+        "source": "legislation.gov.uk「Succession to the Crown Act 2013」s.1 https://www.legislation.gov.uk/ukpga/2013/20/section/1"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "土地は長男が丸ごと取る",
+      "to": "遺産は法定の順位で分ける",
+      "note": "私人の相続は1926年に、王位は2015年に転換した。89年の時差がある"
+    },
+    "draft_corrections": [
+      "叩き台の「イングランド 1925年財産法など」は法令名が正確でない。長子相続を廃止したのは1925年遺産管理法（Administration of Estates Act 1925）45条である。1925年財産法（Law of Property Act 1925）は別の法律。",
+      "「廃止」の範囲も注意が要る。45条2項が限嗣不動産権を除外したため、設定行為による家督継承は残った。",
+      "王位の男子優先長子相続が終わるのは2013年法1条（施行2015年3月26日）で、私人の相続より89年遅い。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "条文番号・施行日・除外規定まで一次資料（legislation.gov.uk）で取れる。既存005「家名の存続がすべて」の世界版として、しかも「王位は2015年まで残った」というオチがつく。",
+    "hitokoto": "長男が土地を丸ごと取る準則は、1926年1月1日に一括で廃止された。",
+    "body_ja": [
+      "イングランドのコモンローでは、自由保有地は長男が単独で相続した。ケントのガヴェルカインドのような分割相続、バラ・イングリッシュのような末子相続が地域慣習として各地に残り、土地の行き先は生まれの順で決まっていた。この仕組みが一枚の条文で消える。1925年遺産管理法45条1項である。",
+      "45条1項は「現存するすべての相続の態様・準則・法準則」を廃止すると書いた。地域慣習も、夫の寡夫権も、妻の寡婦産も、相続人不在のときに国王へ戻る復帰も、まとめて対象にしている。58条2項は施行日を1926年1月1日と定めた。ただし45条2項は限嗣不動産権を除外し、設定行為による家督継承は残している。",
+      "私人の相続が変わっても、王位は変わらなかった。男子優先の長子相続は2013年王位継承法1条まで続き、しかも同条は2011年10月28日より後に生まれた者にしか及ばない。施行は2015年3月26日である。土地について1926年に終わった原則が、王位については89年遅れて終わった。"
+    ],
+    "sources": [
+      "legislation.gov.uk「Administration of Estates Act 1925」s.45 https://www.legislation.gov.uk/ukpga/Geo5/15-16/23/section/45/enacted",
+      "legislation.gov.uk「Administration of Estates Act 1925」s.58 https://www.legislation.gov.uk/ukpga/Geo5/15-16/23/section/58/enacted",
+      "legislation.gov.uk「Administration of Estates Act 1925」目次 https://www.legislation.gov.uk/ukpga/Geo5/15-16/23/contents",
+      "legislation.gov.uk「Succession to the Crown Act 2013」s.1 https://www.legislation.gov.uk/ukpga/2013/20/section/1"
+    ]
+  },
+  {
+    "draft_no": 7,
+    "name_ja": "自殺は犯罪",
+    "reading": "じさつははんざい",
+    "name_en": "Suicide as a crime",
+    "country": "イギリス",
+    "country_en": "United Kingdom",
+    "region": "ヨーロッパ",
+    "category": "判断基準",
+    "shelf": 1,
+    "evidence_type": "law",
+    "made": {
+      "label": "中世コモンロー 自己に対する重罪",
+      "year": 1200,
+      "approx": true,
+      "fact": "イングランドのコモンローでは自殺は felo de se（自己に対する重罪）とされた。1961年自殺法1条が「人が自殺することを犯罪とする法準則は、これにより廃止する」と定めており、この条文自体が、それまで自殺が犯罪であり続けたことの証拠になっている。1823年までは自殺者の遺体を街道や十字路に、体に杭を打って埋める扱いが法で前提とされていた",
+      "source": "legislation.gov.uk「Suicide Act 1961」s.1 https://www.legislation.gov.uk/ukpga/1961/60/section/1 ／ en.wikipedia「Burial of Suicide Act 1823」 https://en.wikipedia.org/wiki/Burial_of_Suicide_Act_1823"
+    },
+    "discontinued": {
+      "label": "1961 自殺法1条",
+      "year": 1961,
+      "approx": false,
+      "fact": "1961年自殺法（Suicide Act 1961、9 & 10 Eliz. 2 c. 60）1条は一文である。「人が自殺することを犯罪とする法準則は、これにより廃止する（The rule of law whereby it is a crime for a person to commit suicide is hereby abrogated）」。適用範囲はイングランドとウェールズ。ただし2条で他人の自殺を援助・教唆する行為は犯罪として残され、最高14年の拘禁刑とされた（現行2条の文言は後の改正後のもの）",
+      "source": "legislation.gov.uk「Suicide Act 1961」s.1 https://www.legislation.gov.uk/ukpga/1961/60/section/1 ／ s.2 https://www.legislation.gov.uk/ukpga/1961/60/section/2"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1961年自殺法1条の全文は一文である。「人が自殺することを犯罪とする法準則は、これにより廃止する」。適用範囲はイングランドとウェールズ",
+        "source": "legislation.gov.uk s.1 https://www.legislation.gov.uk/ukpga/1961/60/section/1"
+      },
+      {
+        "text": "同法2条は他人の自殺または自殺未遂を励まし、または援助する行為を犯罪として残し、正式起訴で最高14年の拘禁刑とした。自殺は非犯罪化されたが、自殺への関与は犯罪のまま残った",
+        "source": "legislation.gov.uk s.2 https://www.legislation.gov.uk/ukpga/1961/60/section/2"
+      },
+      {
+        "text": "1823年自殺者埋葬法（Burial of Suicide Act 1823、4 Geo. 4 c. 52、1823年7月8日裁可）の正式名称は「felo de se と認定された者の遺体の埋葬に関する法を改正する法律」である。同法が街道への埋葬と遺体に杭を打つ慣行を禁じた。つまり1823年まではそれが行われていた",
+        "source": "en.wikipedia「Burial of Suicide Act 1823」 https://en.wikipedia.org/wiki/Burial_of_Suicide_Act_1823"
+      },
+      {
+        "text": "1823年法が禁じたのは場所と杭だけで、埋葬は検死審問の終結から24時間以内、午後9時から深夜0時のあいだ、キリスト教の儀式なしで行うことを求め続けた。この制限が消えたのは1882年7月3日施行の1882年埋葬（felo de se）法である",
+        "source": "en.wikipedia「Burial of Suicide Act 1823」 https://en.wikipedia.org/wiki/Burial_of_Suicide_Act_1823"
+      },
+      {
+        "text": "自殺の非犯罪化（1961年）と、儀式なし・深夜埋葬の義務の廃止（1882年）と、街道埋葬・杭の禁止（1823年）は、すべて別の法律の別の日付である。一度で終わった話ではない",
+        "source": "legislation.gov.uk「Suicide Act 1961」／en.wikipedia「Burial of Suicide Act 1823」"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "自殺は自己に対する重罪",
+      "to": "自殺は犯罪ではない（援助は犯罪）",
+      "note": "1823年に埋葬の扱い、1882年に儀式の扱い、1961年に犯罪性が、それぞれ別の法律で外れた"
+    },
+    "draft_corrections": [
+      "叩き台には挙がっていなかったが、条文が短く証拠として強いので加えた。1961年自殺法1条は一文で、条文自身が「それまで犯罪だった」ことを証明している。",
+      "「1961年に自殺が合法になった」という要約は不正確。2条で自殺への援助・教唆は犯罪として残された。",
+      "適用範囲はイングランドとウェールズに限られる。スコットランドではコモンロー上そもそも自殺が犯罪とされていなかったとされる点は本調査では確認していない。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1961年自殺法1条という一文の条文が、価値観の廃番を最短で証明する。1823年法と1882年法で埋葬の扱いまで日付で追える。",
+    "hitokoto": "1823年、自殺者を十字路に杭で埋めるのを禁じる法律ができた。",
+    "body_ja": [
+      "イングランドのコモンローでは自殺は felo de se、すなわち自己に対する重罪だった。罪であるから、遺体の扱いも罰の一部になる。1823年自殺者埋葬法は、街道や十字路への埋葬と遺体に杭を打つ慣行を禁じた。禁じる法が要ったという事実が、それが行われていたことを示している。裁可は1823年7月8日である。",
+      "1823年法が外したのは場所と杭だけだった。埋葬は検死審問の終結から24時間以内、午後9時から深夜0時のあいだ、キリスト教の儀式なしで行うことがなお義務づけられた。この制限が消えるのは1882年7月3日施行の埋葬（felo de se）法である。死者の扱いが普通になるまでに59年かかった。",
+      "犯罪そのものが消えたのは1961年である。自殺法1条は一文しかない。「人が自殺することを犯罪とする法準則は、これにより廃止する」。条文が短いのは、廃止する対象が制定法ではなくコモンローの法準則だったからだ。ただし2条は他人の自殺を励まし援助する行為を犯罪として残し、最高14年の拘禁刑と定めている。"
+    ],
+    "sources": [
+      "legislation.gov.uk「Suicide Act 1961」s.1 https://www.legislation.gov.uk/ukpga/1961/60/section/1",
+      "legislation.gov.uk「Suicide Act 1961」s.2 https://www.legislation.gov.uk/ukpga/1961/60/section/2",
+      "en.wikipedia「Burial of Suicide Act 1823」 https://en.wikipedia.org/wiki/Burial_of_Suicide_Act_1823"
+    ]
+  },
+  {
+    "draft_no": 8,
+    "name_ja": "処刑は見世物",
+    "reading": "しょけいはみせもの",
+    "name_en": "Public execution as spectacle",
+    "country": "イギリス",
+    "country_en": "United Kingdom",
+    "region": "ヨーロッパ",
+    "category": "規範",
+    "shelf": 1,
+    "evidence_type": "law",
+    "made": {
+      "label": "近世 公開の絞首刑",
+      "year": 1700,
+      "approx": true,
+      "fact": "死刑は公開で執行され、群衆が集まる見世物だった。1868年の法律が「監獄の壁の内側で」執行するよう命じたこと自体が、それまで公開が原則だったことを示している。同法は遺体を監獄の敷地内に埋めることも命じた",
+      "source": "en.wikipedia「Capital Punishment Amendment Act 1868」 https://en.wikipedia.org/wiki/Capital_Punishment_Amendment_Act_1868"
+    },
+    "discontinued": {
+      "label": "1868年5月29日 死刑執行を監獄内に限る法律",
+      "year": 1868,
+      "approx": false,
+      "fact": "1868年5月29日裁可の死刑修正法（Capital Punishment Amendment Act 1868、31 & 32 Vict. c. 24）は、正式名称を「監獄内での死刑執行に備える法律」とし、殺人罪で死刑を宣告された者はすべて収監されている監獄の壁の内側で処刑され、遺体は監獄の敷地内に埋葬されると定めた",
+      "source": "en.wikipedia「Capital Punishment Amendment Act 1868」 https://en.wikipedia.org/wiki/Capital_Punishment_Amendment_Act_1868"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1868年5月29日裁可の死刑修正法（31 & 32 Vict. c. 24）は、死刑をすべて監獄の壁の内側で執行し、遺体を監獄の敷地内に埋めることを命じた",
+        "source": "en.wikipedia「Capital Punishment Amendment Act 1868」 https://en.wikipedia.org/wiki/Capital_Punishment_Amendment_Act_1868"
+      },
+      {
+        "text": "英国最後の公開絞首刑は1868年5月26日、クラーケンウェル爆破事件で有罪となったフェニアンのマイケル・バレットを、ニューゲイト監獄前で執行人ウィリアム・カルクラフトが処刑したものである",
+        "source": "en.wikipedia「Capital Punishment Amendment Act 1868」 https://en.wikipedia.org/wiki/Capital_Punishment_Amendment_Act_1868"
+      },
+      {
+        "text": "最後の公開処刑（5月26日）から法律の裁可（5月29日）までは3日しかない。公開を見た最後の群衆と、公開を禁じる法律は同じ週にあった",
+        "source": "en.wikipedia「Capital Punishment Amendment Act 1868」 https://en.wikipedia.org/wiki/Capital_Punishment_Amendment_Act_1868"
+      },
+      {
+        "text": "同法のもとで最初の非公開絞首刑は1868年8月13日、メイドストン監獄で行われた。ドーヴァー・プライオリ駅の駅長エドワード・ウォルシュを殺害したとして有罪となった18歳のトマス・ウェルズを、同じくカルクラフトが処刑した",
+        "source": "en.wikipedia「Capital Punishment Amendment Act 1868」 https://en.wikipedia.org/wiki/Capital_Punishment_Amendment_Act_1868"
+      },
+      {
+        "text": "法律の正式名称は「監獄内での死刑執行に備える法律（An Act to provide for carrying out of Capital Punishment within Prisons）」であり、死刑の廃止ではなく執行場所の変更を目的としていた",
+        "source": "en.wikipedia「Capital Punishment Amendment Act 1868」 https://en.wikipedia.org/wiki/Capital_Punishment_Amendment_Act_1868"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "処刑は公衆が見て学ぶもの",
+      "to": "処刑は壁の内側で行うもの",
+      "note": "廃止されたのは死刑ではなく「見せること」だった"
+    },
+    "draft_corrections": [
+      "叩き台の「1868年 英国で公開絞首刑廃止」は正しい。法令名は死刑修正法（Capital Punishment Amendment Act 1868、31 & 32 Vict. c. 24）、裁可は1868年5月29日。",
+      "この法律が廃止したのは死刑ではなく公開性である。正式名称は「監獄内での死刑執行に備える法律」。",
+      "最後の公開絞首刑は1868年5月26日で、法律の裁可のわずか3日前だった。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "最後の公開処刑（5月26日）と禁止法の裁可（5月29日）が3日差という事実が、それ自体で読ませる。最初の非公開処刑（8月13日、18歳）まで特定できる。",
+    "hitokoto": "最後の公開絞首刑の3日後に、公開を禁じる法律が成立した。",
+    "body_ja": [
+      "死刑は見せるものだった。絞首台は町の広場や監獄の前に組まれ、群衆が集まり、罪と罰の関係を目で確認する行事として機能していた。1868年の法律が「監獄の壁の内側で執行せよ」と命じたこと自体が、それまで公開が原則だったことの証拠である。同法は遺体を監獄の敷地内に埋めることも命じている。",
+      "英国最後の公開絞首刑は1868年5月26日だった。クラーケンウェル爆破事件で有罪となったマイケル・バレットが、ニューゲイト監獄の前で処刑された。その3日後、1868年5月29日に死刑修正法が裁可される。公開を見た最後の群衆と、公開を禁じる法律は、同じ週のうちにあった。",
+      "この法律が廃止したのは死刑ではなく、見せることだった。正式名称は「監獄内での死刑執行に備える法律」である。新しい方式による最初の処刑は1868年8月13日、メイドストン監獄で18歳のトマス・ウェルズに対して行われた。執行人は最後の公開処刑と同じウィリアム・カルクラフトだった。"
+    ],
+    "sources": [
+      "en.wikipedia「Capital Punishment Amendment Act 1868」 https://en.wikipedia.org/wiki/Capital_Punishment_Amendment_Act_1868"
+    ]
+  },
+  {
+    "draft_no": 9,
+    "name_ja": "子どもは9歳から工場で働く",
+    "reading": "こどもはきゅうさいからこうじょうではたらく",
+    "name_en": "Child labour as normal",
+    "country": "イギリス",
+    "country_en": "United Kingdom",
+    "region": "ヨーロッパ",
+    "category": "判断基準",
+    "shelf": 1,
+    "evidence_type": "law",
+    "made": {
+      "label": "18世紀末 工場労働の標準",
+      "year": 1802,
+      "approx": true,
+      "fact": "1802年徒弟健康道徳法（Health and Morals of Apprentices Act 1802、42 Geo. 3 c. 73、ロバート・ピール提出）が、綿工場の徒弟の労働を1日12時間に制限し、午後9時から午前6時の夜業を禁じ、換気用の窓と年2回の清掃、最初の4年間の読み書き算術の教育を義務づけた。制限を法で定める必要があったこと自体が、それ以前は制限がなかったことを示している",
+      "source": "en.wikipedia「Factory Acts」 https://en.wikipedia.org/wiki/Factory_Acts"
+    },
+    "discontinued": {
+      "label": "1833年8月29日 工場法（9歳未満の就業禁止）",
+      "year": 1833,
+      "approx": false,
+      "fact": "1833年8月29日裁可・1834年1月1日施行の工場法（Labour of Children, etc., in Factories Act 1833、3 & 4 Will. 4 c. 103、通称オールソープ法）は、9歳未満の就業を禁止（絹工場を除く）、9歳から13歳を週48時間・1日8時間（昼休み1時間）、14歳から18歳を1日12時間（昼休み1時間）に制限し、18歳未満の午後8時半から午前5時半の夜業を禁じた。あわせて内務省所属の専門の工場監督官（Factory Inspectorate）を創設し、抜き打ち立入りと治安判事としての権限を与えた",
+      "source": "en.wikipedia「Factory Acts」 https://en.wikipedia.org/wiki/Factory_Acts"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1802年徒弟健康道徳法（42 Geo. 3 c. 73）は綿工場の徒弟を1日12時間に制限し、午後9時から午前6時の夜業を禁じた。12時間が「制限」として書かれている",
+        "source": "en.wikipedia「Factory Acts」 https://en.wikipedia.org/wiki/Factory_Acts"
+      },
+      {
+        "text": "1819年綿工場法（59 Geo. 3 c. 66）は9歳未満の就業を禁じ9歳から16歳を1日12時間に制限したが、治安判事が立ち入るには宣誓証言が必要で実効性がなかった",
+        "source": "en.wikipedia「Factory Acts」 https://en.wikipedia.org/wiki/Factory_Acts"
+      },
+      {
+        "text": "1833年工場法（3 & 4 Will. 4 c. 103）は1833年8月29日に裁可され1834年1月1日に施行された。9歳未満の就業禁止、9〜13歳は1日8時間・週48時間、14〜18歳は1日12時間",
+        "source": "en.wikipedia「Factory Acts」 https://en.wikipedia.org/wiki/Factory_Acts"
+      },
+      {
+        "text": "1833年法の決定的な違いは執行だった。英国で初めて専門の工場監督官を内務省の下に置き、抜き打ち立入りと入場を要求する権限、治安判事としての権限、内務大臣とは独立に執行規則を作る権限を与えた",
+        "source": "en.wikipedia「Factory Acts」 https://en.wikipedia.org/wiki/Factory_Acts"
+      },
+      {
+        "text": "1842年鉱山法（Mines and Collieries Act 1842）は、女性と子どもの坑内労働を禁じた。アシュリー卿（のちシャフツベリ伯）の運動と王立委員会の報告を受けたものである",
+        "source": "en.wikipedia「Factory Acts」 https://en.wikipedia.org/wiki/Factory_Acts"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "子どもは働き手である",
+      "to": "子どもは学校に行くものである",
+      "note": "1819年法は条文だけで実効性がなく、1833年法が監督官という執行装置を作って初めて動いた"
+    },
+    "draft_corrections": [
+      "叩き台の「1833年 工場法、年齢制限の推移」は正しい。正式名称は Labour of Children, etc., in Factories Act 1833（3 & 4 Will. 4 c. 103）、裁可1833年8月29日、施行1834年1月1日。",
+      "ただし年齢制限を最初に置いたのは1833年法ではなく1819年綿工場法（9歳未満禁止）である。1833年法の新しさは制限そのものより、専門の工場監督官という執行装置を作ったことにある。",
+      "1802年法が12時間労働を「制限」として書いている点が、それ以前の状態を逆算させる。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1802年・1819年・1833年・1842年と法令名・章番号・年齢・時間が具体的に取れる。「9歳未満を禁じる法が要った」という事実が一言で効く。",
+    "hitokoto": "9歳未満を禁じる法律が要った。つまり9歳未満が働いていた。",
+    "body_ja": [
+      "1802年徒弟健康道徳法は、綿工場の徒弟の労働を1日12時間に制限し、午後9時から午前6時の夜業を禁じた。12時間が「制限」として書かれていることが、それ以前の状態を教える。同法は換気用の窓と年2回の清掃、最初の4年間の読み書き算術の教育も義務づけた。子どもが働くこと自体は前提のままである。",
+      "1819年綿工場法は9歳未満の就業を禁じ、9歳から16歳を1日12時間に制限した。ただし治安判事が工場に立ち入るには宣誓証言が必要で、ほとんど動かなかった。条文があっても執行がなければ価値観は変わらない。転機は1833年8月29日に裁可され翌年1月1日に施行された工場法だった。",
+      "1833年法は9歳未満の就業を禁じ、9歳から13歳を1日8時間・週48時間、14歳から18歳を1日12時間に制限した。だが本当の新しさは、内務省の下に専門の工場監督官を置き、抜き打ち立入りと治安判事としての権限を与えたことにある。1842年鉱山法は女性と子どもの坑内労働を禁じた。"
+    ],
+    "sources": [
+      "en.wikipedia「Factory Acts」 https://en.wikipedia.org/wiki/Factory_Acts"
+    ]
+  },
+  {
+    "draft_no": 10,
+    "name_ja": "カストラート",
+    "reading": "カストラート",
+    "name_en": "Castrato",
+    "country": "イタリア",
+    "country_en": "Italy",
+    "region": "ヨーロッパ",
+    "category": "判断基準",
+    "shelf": 1,
+    "evidence_type": "law",
+    "made": {
+      "label": "1589 教皇勅書が聖歌隊をカストラート込みで再編",
+      "year": 1589,
+      "approx": false,
+      "fact": "1589年、教皇シクストゥス5世は勅書『クム・プロ・ノストロ・パストラリ・ムネレ』でローマのサン・ピエトロ大聖堂の聖歌隊を、カストラートを含む編成に再組織した。システィーナ礼拝堂の聖歌隊に正式に加わった最初のカストラートは1599年のピエトロ・パオロ・フォリニャートとジローラモ・ロジーニである（1558年に入隊したエルナンド・ブスタマンテなど、それ以前の在籍例もある）",
+      "source": "en.wikipedia「Castrato」 https://en.wikipedia.org/wiki/Castrato"
+    },
+    "discontinued": {
+      "label": "1903年11月22日 ピウス10世の自発教令",
+      "year": 1903,
+      "approx": false,
+      "fact": "1903年11月22日（聖チェチリアの日）、教皇ピウス10世は自発教令『トラ・レ・ソッレチトゥディニ』で、ソプラノとアルトの高声部は「教会の最も古い慣習に従い」少年（fanciulli）が歌わなければならないと指示した。これが教会におけるカストラートの慣行を事実上終わらせた。先立って1878年に教皇レオ13世が新たなカストラートの雇用を禁じていたが、在職者はシスティーナ礼拝堂などに残っていた",
+      "source": "en.wikipedia「Castrato」 https://en.wikipedia.org/wiki/Castrato"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1589年、教皇シクストゥス5世の勅書『クム・プロ・ノストロ・パストラリ・ムネレ』がサン・ピエトロ大聖堂の聖歌隊をカストラートを含む編成に再組織した",
+        "source": "en.wikipedia「Castrato」 https://en.wikipedia.org/wiki/Castrato"
+      },
+      {
+        "text": "1861年のイタリア統一後、サルデーニャ王国刑法の採用により去勢は国内で違法になった。教会の慣行と国家の法は40年以上ずれたまま並存した",
+        "source": "en.wikipedia「Castrato」 https://en.wikipedia.org/wiki/Castrato"
+      },
+      {
+        "text": "1878年、教皇レオ13世が新たなカストラートの雇用を禁じた。ただし在職者はシスティーナ礼拝堂やほかの教皇大聖堂に残った",
+        "source": "en.wikipedia「Castrato」 https://en.wikipedia.org/wiki/Castrato"
+      },
+      {
+        "text": "1903年11月22日の自発教令『トラ・レ・ソッレチトゥディニ』は、ソプラノとアルトの高声部を少年が歌うよう指示した。これが決定打になった",
+        "source": "en.wikipedia「Castrato」 https://en.wikipedia.org/wiki/Castrato"
+      },
+      {
+        "text": "最後のシスティーナのカストラート、アレッサンドロ・モレスキ（1858〜1922）は独唱の録音を残した唯一のカストラートで、録音は1902年と1904年、引退は1913年3月である。禁令の年をまたいで録音が残った",
+        "source": "en.wikipedia「Castrato」 https://en.wikipedia.org/wiki/Castrato"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "高い声は作るもの",
+      "to": "高い声は少年が出すもの",
+      "note": "1861年に国家が去勢を違法化してから、教会が慣行をやめる1903年まで42年ある"
+    },
+    "draft_corrections": [
+      "叩き台の「1903年 教皇の禁令」は正しいが、形式は禁令ではなく自発教令（motu proprio）『トラ・レ・ソッレチトゥディニ』であり、内容も「カストラート禁止」と直接書いたのではなく「高声部は少年が歌う」と定めたものである。",
+      "新たなカストラートの雇用を禁じたのは1878年の教皇レオ13世で、1903年より25年早い。",
+      "去勢自体は1861年のイタリア統一後に国内で違法になっており、教会の慣行が国家の法より42年長く続いた。",
+      "なお本調査ではバチカン公式サイトの自発教令原文URLが404で取得できず、Wikipedia経由の確認にとどまった。"
+    ],
+    "confidence": "B",
+    "verdict": "include",
+    "verdict_reason": "1589年・1861年・1878年・1903年と段階の日付がすべて取れ、しかも1902年と1904年の録音という物証が残っている。ただし教令原文に当てられなかったため confidence はB。",
+    "hitokoto": "教会の高い声は、1903年11月22日の一通の教令で少年の声に戻った。",
+    "body_ja": [
+      "1589年、教皇シクストゥス5世の勅書がサン・ピエトロ大聖堂の聖歌隊をカストラートを含む編成に再組織した。システィーナ礼拝堂に正式に加わった最初のカストラートは1599年のフォリニャートとロジーニである。女性が教会で歌えない体制のもとで、高い声は作られるものになった。この慣行は300年続く。",
+      "終わりは段階を踏んだ。1861年のイタリア統一後、サルデーニャ王国刑法の採用で去勢は国内で違法になる。1878年に教皇レオ13世が新たなカストラートの雇用を禁じたが、在職者はそのまま残った。国家の法と教会の慣行が、40年以上ずれたまま並存していたことになる。",
+      "1903年11月22日、聖チェチリアの日に、ピウス10世は自発教令『トラ・レ・ソッレチトゥディニ』で、ソプラノとアルトの高声部は教会の最も古い慣習に従って少年が歌うべきだと指示した。最後のシスティーナのカストラート、アレッサンドロ・モレスキは1902年と1904年に録音を残し、1913年3月に引退した。声だけが物証として残っている。"
+    ],
+    "sources": [
+      "en.wikipedia「Castrato」 https://en.wikipedia.org/wiki/Castrato"
+    ]
+  },
+  {
+    "draft_no": 11,
+    "name_ja": "女に選挙権はいらない",
+    "reading": "おんなにせんきょけんはいらない",
+    "name_en": "Women excluded from the vote",
+    "country": "スイス",
+    "country_en": "Switzerland",
+    "region": "ヨーロッパ",
+    "category": "判断基準",
+    "shelf": 2,
+    "evidence_type": "law",
+    "made": {
+      "label": "1848/1874 連邦憲法「すべてのスイス人」",
+      "year": 1874,
+      "approx": false,
+      "fact": "1848年連邦憲法63条と1874年連邦憲法74条は、ともに「満20歳に達したすべてのスイス人（jeder Schweizer）は投票権を持つ」と定めた。女性を排除する文言はどこにもなかったが、Schweizer は男性のみを指すと解釈された。近代の普通選挙が「男子普通選挙」として作られたことを示す典型例である",
+      "source": "de.wikipedia「Frauenstimmrecht in der Schweiz」 https://de.wikipedia.org/wiki/Frauenstimmrecht_in_der_Schweiz"
+    },
+    "discontinued": {
+      "label": "1971年2月7日 国民投票で女性参政権",
+      "year": 1971,
+      "approx": false,
+      "fact": "1971年2月7日の連邦国民投票で賛成65.7％（621,109対323,882）、22.5邦のうち15.5邦が賛成し、女性の連邦レベルの選挙権と被選挙権が成立した。1971年10月31日の総選挙で11人の女性が国民議会に入り（200議席の5.5％）、リズ・ジラルダンが元老院に選ばれた",
+      "source": "de.wikipedia「Frauenstimmrecht in der Schweiz」 https://de.wikipedia.org/wiki/Frauenstimmrecht_in_der_Schweiz"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1848年連邦憲法63条と1874年連邦憲法74条は「満20歳に達したすべてのスイス人は投票権を持つ」と書いた。女性を排除する文言はなく、Schweizer という語が男性のみを指すと解釈された",
+        "source": "de.wikipedia「Frauenstimmrecht in der Schweiz」 https://de.wikipedia.org/wiki/Frauenstimmrecht_in_der_Schweiz"
+      },
+      {
+        "text": "1923年、ベルンの女性たちが市町村・邦・連邦の選挙権を求めて憲法異議を申し立てたが、連邦裁判所は慣習法（Gewohnheitsrecht）を理由に退けた。排除の根拠は条文ではなく慣習だった",
+        "source": "de.wikipedia「Frauenstimmrecht in der Schweiz」 https://de.wikipedia.org/wiki/Frauenstimmrecht_in_der_Schweiz"
+      },
+      {
+        "text": "1952年、1414人の女性が選挙人名簿への登録を求めたが、連邦裁判所はまた慣習法の先例を引いて拒んだ。同じ論理が29年後にも通用した",
+        "source": "de.wikipedia「Frauenstimmrecht in der Schweiz」 https://de.wikipedia.org/wiki/Frauenstimmrecht_in_der_Schweiz"
+      },
+      {
+        "text": "1959年2月1日の国民投票では賛成33％、反対67％で否決された。1971年2月7日には賛成65.7％。12年で賛否がほぼ入れ替わった",
+        "source": "de.wikipedia「Frauenstimmrecht in der Schweiz」 https://de.wikipedia.org/wiki/Frauenstimmrecht_in_der_Schweiz"
+      },
+      {
+        "text": "最後まで残ったアッペンツェル・インナーローデン邦は、1990年4月29日のラントスゲマインデ（男性のみの住民集会）が邦レベルの女性参政権を否決したが、1990年11月27日に連邦裁判所の判決がこれを覆した",
+        "source": "de.wikipedia「Frauenstimmrecht in der Schweiz」 https://de.wikipedia.org/wiki/Frauenstimmrecht_in_der_Schweiz"
+      },
+      {
+        "text": "ヨーロッパの他国では、フィンランドが1906年に女性の選挙権と被選挙権を同時に認め、1907年の選挙で19人の女性議員が生まれた。英国は1918年2月6日の国民代表法で30歳以上・財産要件つきの女性850万人に、1928年の同等選挙権法（18 & 19 Geo. 5 c. 12）で21歳以上の全女性（さらに約500万人）に選挙権を与えた。フランスは1944年4月21日のフランス国民解放委員会の命令で認め、実際の投票は1945年4月29日の市町村選挙が最初だった",
+        "source": "en.wikipedia「Women's suffrage in Finland」 https://en.wikipedia.org/wiki/Women%27s_suffrage_in_Finland ／ en.wikipedia「Representation of the People Act 1918」 https://en.wikipedia.org/wiki/Representation_of_the_People_Act_1918 ／ en.wikipedia「Women's suffrage in France」 https://en.wikipedia.org/wiki/Women%27s_suffrage_in_France"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "政治は男の仕事",
+      "to": "参政権は性別を問わない",
+      "note": "スイスでは条文が性別に中立だったため、排除の根拠は明文ではなく「慣習法」だった。連邦裁判所が1923年と1952年に二度そう述べている"
+    },
+    "draft_corrections": [
+      "叩き台の年号はいずれも確認できた。ただし「1893年 ニュージーランド」はヨーロッパ外なので本ファイルでは扱わない。",
+      "「1918/1928年 英国」を1918年だけで書くと誤解を招く。1918年は30歳以上かつ財産要件つきで、21歳以上の男女平等になるのは1928年である。",
+      "「1971年 スイス」は正しいが、邦レベルで最後まで残ったアッペンツェル・インナーローデンは1990年11月27日の連邦裁判所判決まで続いた。",
+      "スイスの憲法条文には女性を排除する文言がなかった。連邦裁判所は1923年と1952年に「慣習法」を排除の根拠とした。この点が制度論として一番おもしろい。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1959年（賛成33％）と1971年（賛成65.7％）という数字で価値観の反転が測れ、1923年・1952年の連邦裁判所判決で排除の法的根拠まで特定できる。",
+    "hitokoto": "連邦裁判所は二度、女を除く根拠として「慣習」を挙げた。1923年と1952年。",
+    "body_ja": [
+      "スイスの1848年連邦憲法63条と1874年憲法74条は、満20歳に達した「すべてのスイス人」に投票権を与えると書いた。条文に女性を排除する文言はない。それでも Schweizer という語は男性のみを指すと読まれた。近代の普通選挙が最初から男子普通選挙として作られたことが、文言の中立さのせいでかえってはっきり見える。",
+      "1923年、ベルンの女性たちが選挙権を求めて憲法異議を申し立てると、連邦裁判所は慣習法を理由に退けた。1952年に1414人の女性が選挙人名簿への登録を求めたときも、同じ先例が引かれた。条文ではなく慣習が根拠だと司法が明言していたことになる。1959年2月1日の国民投票は賛成33％で否決された。",
+      "1971年2月7日、賛成65.7％、22.5邦のうち15.5邦の賛成で女性の連邦参政権が成立する。12年で賛否がほぼ入れ替わった。同年10月31日の総選挙で11人の女性が国民議会に入った。邦レベルで最後まで残ったアッペンツェル・インナーローデンは、1990年11月27日の連邦裁判所判決でようやく変わった。"
+    ],
+    "sources": [
+      "de.wikipedia「Frauenstimmrecht in der Schweiz」 https://de.wikipedia.org/wiki/Frauenstimmrecht_in_der_Schweiz",
+      "en.wikipedia「Women's suffrage in Finland」 https://en.wikipedia.org/wiki/Women%27s_suffrage_in_Finland",
+      "en.wikipedia「Representation of the People Act 1918」 https://en.wikipedia.org/wiki/Representation_of_the_People_Act_1918",
+      "en.wikipedia「Women's suffrage in France」 https://en.wikipedia.org/wiki/Women%27s_suffrage_in_France"
+    ]
+  },
+  {
+    "draft_no": 12,
+    "name_ja": "同性愛は犯罪",
+    "reading": "どうせいあいははんざい",
+    "name_en": "Criminalisation of homosexuality",
+    "country": "イギリス",
+    "country_en": "United Kingdom",
+    "region": "ヨーロッパ",
+    "category": "判断基準",
+    "shelf": 2,
+    "evidence_type": "law",
+    "made": {
+      "label": "1885年8月14日 重大猥褻罪（ラブシェア修正）",
+      "year": 1885,
+      "approx": false,
+      "fact": "1885年8月14日裁可の刑法改正法（Criminal Law Amendment Act 1885）11条（ラブシェア修正）は、男性間の「重大猥褻（gross indecency）」を、私的な場での行為も含めて2年以下の禁錮（重労働を付すこともできる）で処罰した。男性同士の性行為を、既遂の肛門性交に限らず広く犯罪化した条文である",
+      "source": "en.wikipedia「Criminal Law Amendment Act 1885」 https://en.wikipedia.org/wiki/Criminal_Law_Amendment_Act_1885 ／ en.wikipedia「Gross indecency」 https://en.wikipedia.org/wiki/Gross_indecency"
+    },
+    "discontinued": {
+      "label": "1967年7月27日 性犯罪法",
+      "year": 1967,
+      "approx": false,
+      "fact": "1967年7月27日裁可の性犯罪法（Sexual Offences Act 1967 c. 60）が、21歳に達した男性二人が私的に同意して行う行為を非犯罪化した。適用範囲はイングランドとウェールズのみで、スコットランド、北アイルランド、商船隊、軍は明示的に除外された。1957年のウォルフェンデン報告の勧告から10年後である",
+      "source": "en.wikipedia「Sexual Offences Act 1967」 https://en.wikipedia.org/wiki/Sexual_Offences_Act_1967 ／ legislation.gov.uk 1967 c.60 https://www.legislation.gov.uk/ukpga/1967/60/section/1"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1885年8月14日裁可の刑法改正法11条（ラブシェア修正）は、男性間の重大猥褻を私的な場での行為も含めて2年以下の禁錮で処罰した",
+        "source": "en.wikipedia「Criminal Law Amendment Act 1885」 https://en.wikipedia.org/wiki/Criminal_Law_Amendment_Act_1885"
+      },
+      {
+        "text": "11条のもとで1895年にオスカー・ワイルドが有罪となった。1952年にはアラン・チューリングが有罪答弁をし、保護観察と女性ホルモン投与（化学的去勢）を条件とされ、1954年6月7日に死んだ",
+        "source": "en.wikipedia「Gross indecency」 https://en.wikipedia.org/wiki/Gross_indecency ／ en.wikipedia「Alan Turing」 https://en.wikipedia.org/wiki/Alan_Turing"
+      },
+      {
+        "text": "重大猥褻の罪は1956年性犯罪法に引き継がれ、11条自体はイングランド・ウェールズでは1957年1月1日、スコットランドでは1976年12月15日に廃止された。罪が消えたのではなく置き換わった",
+        "source": "en.wikipedia「Criminal Law Amendment Act 1885」 https://en.wikipedia.org/wiki/Criminal_Law_Amendment_Act_1885"
+      },
+      {
+        "text": "1967年法の非犯罪化は「21歳以上」「私的に」「二人だけで」という条件つきで、イングランドとウェールズのみ。スコットランド、北アイルランド、商船隊、軍は除外された",
+        "source": "en.wikipedia「Sexual Offences Act 1967」 https://en.wikipedia.org/wiki/Sexual_Offences_Act_1967"
+      },
+      {
+        "text": "スコットランドの非犯罪化は1980年刑事司法（スコットランド）法で施行は1981年2月1日。北アイルランドは1981年の欧州人権裁判所ダジョン対英国判決を受けた1982年同性愛犯罪（北アイルランド）令による。1967年法から15年遅れている",
+        "source": "en.wikipedia「Sexual Offences Act 1967」 https://en.wikipedia.org/wiki/Sexual_Offences_Act_1967"
+      },
+      {
+        "text": "2013年に女王がチューリングに恩赦を与え、2017年1月31日裁可の警察・犯罪法（Policing and Crime Act 2017）第9部第1章164〜172条が、同意にもとづく私的行為で有罪となった男性に一律の恩赦を与えた。2017年1月時点で約4万9000人が死後恩赦の対象とされた。北アイルランドでの施行は2018年6月28日",
+        "source": "en.wikipedia「Alan Turing law」 https://en.wikipedia.org/wiki/Alan_Turing_law"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "同性愛は犯罪",
+      "to": "私的・同意・21歳以上なら罪に問わない",
+      "note": "1885年に作られた罪名が82年使われ、1967年に条件つきで外れ、2017年に約4万9000人が死後恩赦を受けた"
+    },
+    "draft_corrections": [
+      "叩き台の「1967年 イングランド・ウェールズの部分的非犯罪化」は正しい。裁可は1967年7月27日。",
+      "「部分的」の中身を書かないと過大に読める。21歳以上・私的・二人のみに限られ、スコットランド、北アイルランド、商船隊、軍は除外された。",
+      "チューリングの有罪は1952年だが、本調査では判決日（一般に3月31日とされる）を一次資料で確認できなかったため年のみを記した。有罪の根拠条文は1885年法11条である。",
+      "重大猥褻罪は1957年1月1日に11条が廃止されたあとも1956年性犯罪法に引き継がれている。1957年に罪が消えたわけではない。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1885年8月14日から1967年7月27日まで82年という商品寿命が日付で言える。2017年の死後恩赦（約4万9000人）まで追えるため、廃番後の処理まで書ける。既存003「衆道」と対にできる。",
+    "hitokoto": "1885年に作られた罪名は、1967年に外れるまで82年使われた。",
+    "body_ja": [
+      "1885年8月14日、刑法改正法11条が成立した。提案者の名から「ラブシェア修正」と呼ばれるこの条文は、男性間の「重大猥褻」を、私的な場での行為も含めて2年以下の禁錮で処罰した。従来は既遂の行為に限られていた処罰範囲が、証明しやすい形に広がった。この罪名のもとで1895年にオスカー・ワイルドが、1952年にアラン・チューリングが有罪になる。",
+      "チューリングは有罪答弁をし、保護観察と女性ホルモン投与を条件とされ、1954年6月7日に死んだ。1957年のウォルフェンデン報告が21歳以上の男性間の私的な行為の非犯罪化を勧告し、10年後の1967年7月27日に性犯罪法が裁可される。ただし条件つきで、対象はイングランドとウェールズのみ、商船隊と軍は除外された。",
+      "残りは順に外れていった。スコットランドは1981年2月1日、北アイルランドは欧州人権裁判所のダジョン判決を受けた1982年の命令で、1967年法から15年遅れて非犯罪化する。2017年1月31日裁可の警察・犯罪法は、同意にもとづく私的行為で有罪となった男性に一律の恩赦を与えた。対象は約4万9000人だった。"
+    ],
+    "sources": [
+      "en.wikipedia「Criminal Law Amendment Act 1885」 https://en.wikipedia.org/wiki/Criminal_Law_Amendment_Act_1885",
+      "en.wikipedia「Gross indecency」 https://en.wikipedia.org/wiki/Gross_indecency",
+      "en.wikipedia「Sexual Offences Act 1967」 https://en.wikipedia.org/wiki/Sexual_Offences_Act_1967",
+      "legislation.gov.uk「Sexual Offences Act 1967」 https://www.legislation.gov.uk/ukpga/1967/60/section/1",
+      "en.wikipedia「Alan Turing」 https://en.wikipedia.org/wiki/Alan_Turing",
+      "en.wikipedia「Alan Turing law」 https://en.wikipedia.org/wiki/Alan_Turing_law"
+    ]
+  },
+  {
+    "draft_no": 13,
+    "name_ja": "汚された名誉は結婚で消える",
+    "reading": "よごされためいよはけっこんできえる",
+    "name_en": "Matrimonio riparatore / delitto d'onore",
+    "country": "イタリア",
+    "country_en": "Italy",
+    "region": "ヨーロッパ",
+    "category": "規範",
+    "shelf": 2,
+    "evidence_type": "law",
+    "made": {
+      "label": "1930 ロッコ刑法典544条・587条",
+      "year": 1930,
+      "approx": false,
+      "fact": "1930年のロッコ刑法典544条は、性犯罪について「犯人と被害者の結婚は、共犯者についても犯罪を消滅させる。有罪判決を受けていた場合はその執行と刑の効果が止む」と定めた。同587条は「配偶者、娘、または姉妹の不法な肉体関係を発見したその場で、自己または家族の名誉を汚されたことによる激情の状態でその死をもたらした者は、3年から7年の拘禁に処する」と定め、通常の殺人より大幅に軽い刑を用意した",
+      "source": "it.wikipedia「Matrimonio riparatore」 https://it.wikipedia.org/wiki/Matrimonio_riparatore ／ it.wikipedia「Delitto d'onore」 https://it.wikipedia.org/wiki/Delitto_d%27onore"
+    },
+    "discontinued": {
+      "label": "1981年8月5日法律442号（名誉という動機の刑法的意味の廃止）",
+      "year": 1981,
+      "approx": false,
+      "fact": "1981年8月5日法律第442号「名誉という動機の刑法的意味の廃止（Abrogazione della rilevanza penale della causa d'onore）」は、その1条で刑法544条、587条、592条を廃止した。効力発生は1981年9月5日",
+      "source": "Normattiva「Legge 5 agosto 1981, n. 442」 https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1981-08-05;442 ／ it.wikipedia「Matrimonio riparatore」"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1981年8月5日法律第442号の正式名称は「名誉という動機の刑法的意味の廃止」であり、1条で刑法544条・587条・592条を廃止した",
+        "source": "Normattiva「Legge 5 agosto 1981, n. 442」 https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1981-08-05;442"
+      },
+      {
+        "text": "廃止された刑法544条は、犯人と被害者の結婚が性犯罪を消滅させ、共犯者にもその効果が及ぶと定めていた。有罪判決を受けていた場合も執行と刑の効果が止んだ",
+        "source": "it.wikipedia「Matrimonio riparatore」 https://it.wikipedia.org/wiki/Matrimonio_riparatore"
+      },
+      {
+        "text": "廃止された刑法587条の原文は「Chiunque cagiona la morte del coniuge, della figlia o della sorella, nell'atto in cui ne scopre la illegittima relazione carnale e nello stato d'ira determinato dall'offesa recata all'onor suo o della famiglia, è punito con la reclusione da tre a sette anni」。刑は3年から7年で、通常の殺人より大幅に軽い",
+        "source": "it.wikipedia「Delitto d'onore」 https://it.wikipedia.org/wiki/Delitto_d%27onore"
+      },
+      {
+        "text": "1948年1月9日生まれのフランカ・ヴィオラは、1965年12月26日にフィリッポ・メロディアに誘拐され8日間監禁された。彼女は「修復結婚」を拒み誘拐として告発した。イタリアで公然とこれを拒んだ最初の女性とされる",
+        "source": "it.wikipedia「Franca Viola」 https://it.wikipedia.org/wiki/Franca_Viola"
+      },
+      {
+        "text": "メロディアは1966年12月17日に11年の刑を受け、1967年7月10日の控訴審で10年とモデナ近郊での2年の居住義務に減軽、1969年5月30日に破毀院が確定させた。544条が廃止されるのはそれから12年後の1981年である",
+        "source": "it.wikipedia「Franca Viola」 https://it.wikipedia.org/wiki/Franca_Viola"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "汚された名誉は結婚で消える",
+      "to": "性犯罪は本人に対する犯罪である",
+      "note": "544条の論理では被害者は「名誉を汚された家」の一部で、結婚が修復手段だった。1981年にこの論理が刑法から消えた"
+    },
+    "draft_corrections": [
+      "叩き台には挙がっていなかったが、ヨーロッパの「消えた価値観」として日付が最も明確なもののひとつとして加えた。",
+      "1981年法律442号は「修復結婚」だけでなく、名誉殺人の減軽規定（587条）も同時に廃止している。この二つは同じ論理の表と裏である。",
+      "フランカ・ヴィオラの一件は1965年12月26日の誘拐、1966年12月17日の第一審判決。しばしば1966年と1968年が混同されるので注意が要る。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "Normattiva の原文で法律番号・公布日・廃止条文まで確定できる。条文の文言そのものが価値観の内容を示すため body で引用できる。",
+    "hitokoto": "1981年まで、結婚すれば強姦の罪は消えると刑法に書かれていた。",
+    "body_ja": [
+      "1930年のロッコ刑法典544条は、性犯罪について「犯人と被害者の結婚は犯罪を消滅させる」と定めていた。すでに有罪判決を受けていても、結婚すれば執行と刑の効果が止む。共犯者にも同じ効果が及んだ。この制度は「修復結婚（matrimonio riparatore）」と呼ばれ、被害を受けたのは本人ではなく家の名誉だという前提の上に立っていた。",
+      "同じ前提は587条にも書かれている。配偶者、娘、姉妹の不法な肉体関係を発見したその場で、名誉を汚された激情から死をもたらした者は3年から7年の拘禁。通常の殺人より大幅に軽い。名誉が結婚で修復でき、名誉のための殺人が軽く済む。544条と587条は同じ論理の表と裏だった。",
+      "1965年12月26日、シチリアで17歳のフランカ・ヴィオラが誘拐され8日間監禁された。彼女は修復結婚を拒み、誘拐として告発した。犯人は1966年12月17日に11年の刑を受けている。条文そのものが消えるのはそれから15年後、1981年8月5日法律第442号「名誉という動機の刑法的意味の廃止」による。"
+    ],
+    "sources": [
+      "Normattiva「Legge 5 agosto 1981, n. 442」 https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1981-08-05;442",
+      "it.wikipedia「Matrimonio riparatore」 https://it.wikipedia.org/wiki/Matrimonio_riparatore",
+      "it.wikipedia「Delitto d'onore」 https://it.wikipedia.org/wiki/Delitto_d%27onore",
+      "it.wikipedia「Franca Viola」 https://it.wikipedia.org/wiki/Franca_Viola"
+    ]
+  },
+  {
+    "draft_no": 14,
+    "name_ja": "離婚は憲法が禁じる",
+    "reading": "りこんはけんぽうがきんじる",
+    "name_en": "Constitutional ban on divorce",
+    "country": "アイルランド",
+    "country_en": "Ireland",
+    "region": "ヨーロッパ",
+    "category": "規範",
+    "shelf": 2,
+    "evidence_type": "law",
+    "made": {
+      "label": "1937 憲法41条3項2号",
+      "year": 1937,
+      "approx": false,
+      "fact": "1937年のアイルランド憲法41条3項2号は「婚姻の解消を認める法律は制定してはならない（No law shall be enacted providing for the grant of a dissolution of marriage）」と定めた。離婚を禁じたのではなく、離婚を認める法律を作ることを禁じた。立法府の手を縛る書き方である",
+      "source": "en.wikipedia「Fifteenth Amendment of the Constitution of Ireland」 https://en.wikipedia.org/wiki/Fifteenth_Amendment_of_the_Constitution_of_Ireland"
+    },
+    "discontinued": {
+      "label": "1995年11月24日 国民投票（9114票差）",
+      "year": 1995,
+      "approx": false,
+      "fact": "1995年11月24日の国民投票で、賛成818,842票（50.28％）、反対809,728票（49.72％）、投票率62.15％（総投票1,633,942票）。差は9114票だった。第15次憲法改正法は1996年6月17日に署名され、1996年家族法（離婚）法は1996年11月27日に署名、1997年2月27日に施行された。最初の離婚は1997年1月17日、末期の病にあった男性に対し、憲法改正を直接の根拠として認められた",
+      "source": "en.wikipedia「Fifteenth Amendment of the Constitution of Ireland」 https://en.wikipedia.org/wiki/Fifteenth_Amendment_of_the_Constitution_of_Ireland"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1937年憲法41条3項2号は「婚姻の解消を認める法律は制定してはならない」と定めた。禁じられたのは離婚そのものではなく、離婚を認める立法である",
+        "source": "en.wikipedia「Fifteenth Amendment of the Constitution of Ireland」 https://en.wikipedia.org/wiki/Fifteenth_Amendment_of_the_Constitution_of_Ireland"
+      },
+      {
+        "text": "1986年6月26日の最初の国民投票（第10次憲法改正案）は、賛成538,279票（36.52％）、反対935,843票（63.48％）、投票率60.84％で否決された",
+        "source": "en.wikipedia「Tenth Amendment of the Constitution Bill 1986」 https://en.wikipedia.org/wiki/Tenth_Amendment_of_the_Constitution_Bill_1986"
+      },
+      {
+        "text": "1995年11月24日の二度目の国民投票は賛成50.28％、反対49.72％、差は9114票。9年で賛成が36.52％から50.28％に動いた",
+        "source": "en.wikipedia「Fifteenth Amendment of the Constitution of Ireland」 https://en.wikipedia.org/wiki/Fifteenth_Amendment_of_the_Constitution_of_Ireland"
+      },
+      {
+        "text": "第15次憲法改正法の署名は1996年6月17日、1996年家族法（離婚）法の署名は1996年11月27日、施行は1997年2月27日。ただし最初の離婚は1997年1月17日に、憲法改正を直接の根拠として先に認められた",
+        "source": "en.wikipedia「Fifteenth Amendment of the Constitution of Ireland」 https://en.wikipedia.org/wiki/Fifteenth_Amendment_of_the_Constitution_of_Ireland"
+      },
+      {
+        "text": "マルタでは2011年5月28日の国民投票で賛成53.16％、投票率71.57％。議会は2011年7月25日に離婚法を可決し、民法改正法（2011年法律第14号、Civil Code (Amendment) Act 2011）が2011年7月29日に公布、2011年10月1日に施行された",
+        "source": "en.wikipedia「2011 Maltese divorce referendum」 https://en.wikipedia.org/wiki/2011_Maltese_divorce_referendum ／ legislation.mt「Act XIV of 2011」 https://legislation.mt/eli/act/2011/14/eng"
+      },
+      {
+        "text": "2011年のマルタの国民投票の時点で、離婚制度を持たない国は世界でマルタ、フィリピン、バチカン市国の3つだけだった",
+        "source": "en.wikipedia「2011 Maltese divorce referendum」 https://en.wikipedia.org/wiki/2011_Maltese_divorce_referendum"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "婚姻は解消できない",
+      "to": "離婚は認められる（要件つき）",
+      "note": "アイルランドは1986年に否決して1995年に可決した。同じ問いで9年、賛成は14ポイント動いた"
+    },
+    "draft_corrections": [
+      "叩き台の「アイルランド 1995年国民投票・1996年施行」は、施行年が正確でない。憲法改正法の署名は1996年6月17日だが、1996年家族法（離婚）法の施行は1997年2月27日である。",
+      "最初の離婚は1997年1月17日に、法律の施行を待たず憲法改正を直接の根拠として認められた。",
+      "「マルタ 2011年」は正しい。国民投票2011年5月28日、議会可決7月25日、法律公布7月29日、施行10月1日。",
+      "1986年6月26日の最初の国民投票（63.48％が反対）を落とすと、9年間の世論の移動が見えなくなる。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1937年の条文、1986年と1995年の投票数、1996年と1997年の施行日がすべて数字で取れる。9114票差という事実が一言で効く。",
+    "hitokoto": "9114票。アイルランドで離婚を可能にした差である。1995年。",
+    "body_ja": [
+      "1937年のアイルランド憲法41条3項2号は、独特な書き方をしていた。「婚姻の解消を認める法律は制定してはならない」。離婚そのものを禁じるのではなく、離婚を認める立法を封じる。憲法を変えないかぎり議会が動けない構造になっていたため、この価値観は58年間、憲法の条文として据え置かれた。",
+      "最初の国民投票は1986年6月26日に行われ、賛成36.52％、反対63.48％で否決された。二度目は1995年11月24日。賛成818,842票、反対809,728票、投票率62.15％。差は9114票だった。9年で賛成は14ポイント動き、ぎりぎりで逆転した。第15次憲法改正法の署名は1996年6月17日である。",
+      "法律の整備はもう少しかかった。1996年家族法（離婚）法の施行は1997年2月27日だが、最初の離婚は1997年1月17日に、施行を待たず憲法改正を直接の根拠として認められている。末期の病にあった男性の再婚を急ぐ事案だった。マルタが離婚を認めるのはさらに14年後、2011年10月1日である。"
+    ],
+    "sources": [
+      "en.wikipedia「Fifteenth Amendment of the Constitution of Ireland」 https://en.wikipedia.org/wiki/Fifteenth_Amendment_of_the_Constitution_of_Ireland",
+      "en.wikipedia「Tenth Amendment of the Constitution Bill 1986」 https://en.wikipedia.org/wiki/Tenth_Amendment_of_the_Constitution_Bill_1986",
+      "en.wikipedia「2011 Maltese divorce referendum」 https://en.wikipedia.org/wiki/2011_Maltese_divorce_referendum",
+      "legislation.mt「Act XIV of 2011 – Civil Code (Amendment) Act」 https://legislation.mt/eli/act/2011/14/eng"
+    ]
+  },
+  {
+    "draft_no": 15,
+    "name_ja": "子どもは叩いて育てる",
+    "reading": "こどもはたたいてそだてる",
+    "name_en": "Corporal punishment of children",
+    "country": "スウェーデン",
+    "country_en": "Sweden",
+    "region": "ヨーロッパ",
+    "category": "規範",
+    "shelf": 1,
+    "evidence_type": "law",
+    "made": {
+      "label": "前近代 親と教師の懲戒権",
+      "year": 1700,
+      "approx": true,
+      "fact": "親と教師が子どもを叩く権利は、慣行としてだけでなく法の後ろ盾を持っていた。スウェーデンでは学校の体罰が段階的に禁じられ（1918年ギムナジウム、1928年国立中等学校、1958年すべての学校）、刑法上の親の懲戒権は1957年に、親子法（föräldrabalken）の規定は1966年に削られた。1979年の全面禁止は、この長い削り取りの最後の一手である",
+      "source": "sv.wikipedia「Barnaga」 https://sv.wikipedia.org/wiki/Barnaga ／ End Corporal Punishment「Sweden」 https://endcorporalpunishment.org/reports-on-every-state-and-territory/sweden/"
+    },
+    "discontinued": {
+      "label": "1979年7月1日 家庭内を含む体罰の全面禁止（世界初）",
+      "year": 1979,
+      "approx": false,
+      "fact": "1979年7月1日、スウェーデンは親子法（Föräldrabalken）の改正を施行し「子は世話、安全、良い養育を受ける権利を持つ。子はその人格と個性を尊重して扱われなければならず、体罰その他の侮辱的な取扱いを受けてはならない」と定めた。家庭内を含む体罰の全面禁止を法に書いた世界最初の国である。現行規定は1983年の改正（Lag 1983:47）により親子法6章1条に置かれている",
+      "source": "sv.wikipedia「Barnaga」 https://sv.wikipedia.org/wiki/Barnaga ／ Riksdagen「Föräldrabalk (1949:381)」 https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/foraldrabalk-1949381_sfs-1949-381/"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1979年7月1日、スウェーデンは家庭内を含む子どもへの体罰を全面的に禁じた世界最初の国になった",
+        "source": "sv.wikipedia「Barnaga」 https://sv.wikipedia.org/wiki/Barnaga"
+      },
+      {
+        "text": "現行の親子法6章1条の条文は「Barn skall behandlas med aktning för sin person och egenart och får inte utsättas för kroppslig bestraffning eller annan kränkande behandling」。この条番号と文言は1983年の改正（Lag 1983:47）によるもので、1979年の条文そのままではない",
+        "source": "Riksdagen「Föräldrabalk (1949:381)」 https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/foraldrabalk-1949381_sfs-1949-381/"
+      },
+      {
+        "text": "スウェーデンの学校体罰禁止は段階的だった。1918年にギムナジウム、1928年に国立中等学校、1958年にすべての学校（国民学校を含む）",
+        "source": "End Corporal Punishment「Sweden」 https://endcorporalpunishment.org/reports-on-every-state-and-territory/sweden/"
+      },
+      {
+        "text": "世界で最初に学校の体罰を禁じたのはポーランドで1783年である。スウェーデンの1958年より175年早い",
+        "source": "en.wikipedia「School corporal punishment」 https://en.wikipedia.org/wiki/School_corporal_punishment"
+      },
+      {
+        "text": "スウェーデンに続いた国はフィンランド1984年、ノルウェー1987年、オーストリア1989年、キプロス1994年、デンマークとポーランド1997年、ラトビア1998年、クロアチア1999年、ブルガリア・イスラエル・ドイツ2000年、アイスランド2003年、ウクライナ・ルーマニア2004年。2021年時点でEU27か国のうち22か国が禁止している",
+        "source": "en.wikipedia「Corporal punishment in the home」 https://en.wikipedia.org/wiki/Corporal_punishment_in_the_home"
+      },
+      {
+        "text": "英国では1986年教育法（第2号）が公立学校の体罰を禁じ（議会可決は1986年7月22日）、私立校はイングランドで1998年、スコットランドで2000年、北アイルランドで2003年に禁止された。家庭内については、スコットランドが2019年児童（暴行からの平等な保護）法（2019 asp 16）で「合理的な懲戒」の抗弁を廃止し、同法4条により成立から12か月後に施行された。ウェールズも2020年に同じ抗弁を廃止する法を成立させたが、イングランドでは家庭内の体罰はなお違法化されていない",
+        "source": "en.wikipedia「School corporal punishment」 https://en.wikipedia.org/wiki/School_corporal_punishment ／ legislation.gov.uk「Children (Equal Protection from Assault) (Scotland) Act 2019」s.4 https://www.legislation.gov.uk/asp/2019/16/section/4 ／ en.wikipedia「Corporal punishment in the home」"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "子どもは叩いて育てる",
+      "to": "子どもは侮辱的な扱いを受けない権利を持つ",
+      "note": "スウェーデンは学校（1958年）から家庭（1979年）へ、21年かけて順に禁じた"
+    },
+    "draft_corrections": [
+      "叩き台の「1979年 スウェーデンが世界初の全面禁止」は正しい。施行日は1979年7月1日。",
+      "ただし現行の条文番号（親子法6章1条）と文言は1983年の改正（Lag 1983:47）によるもので、1979年の条文そのままではない。1979年の改正番号（SFS 1979:122とされる）は本調査では原典で確認できなかった。",
+      "「世界初」は家庭内を含む全面禁止についての話である。学校の体罰を最初に禁じたのはポーランドで1783年、スウェーデンの学校での全面禁止は1958年。",
+      "棚について。この価値観の成立は前近代で、失効が1979年である。棚の判定ルール（成立時期で決める）に従い棚1に置いたが、体感的には棚3に近い。編集側で判断されたい。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1979年7月1日という施行日と「世界初」という位置づけが取れ、続いた国の年表と英国内の最近の日付（スコットランド2019年法）まで並べられる。",
+    "hitokoto": "家で子を叩くのを法で禁じた最初の国はスウェーデン。1979年7月1日。",
+    "body_ja": [
+      "親と教師が子どもを叩くことは、慣行であるだけでなく法の後ろ盾を持っていた。スウェーデンではその後ろ盾が順に外されていく。学校の体罰は1918年にギムナジウム、1928年に国立中等学校、1958年にすべての学校で禁じられた。刑法上の親の懲戒権は1957年に、親子法の規定は1966年に削られている。",
+      "1979年7月1日、スウェーデンは親子法の改正を施行した。「子は世話、安全、良い養育を受ける権利を持つ。子はその人格と個性を尊重して扱われなければならず、体罰その他の侮辱的な取扱いを受けてはならない」。家庭のなかまで含めて体罰を全面的に禁じた世界最初の法である。現行の条文は1983年の改正で6章1条に置かれた。",
+      "続いた国はフィンランド1984年、ノルウェー1987年、オーストリア1989年と並び、2021年時点でEU27か国のうち22か国が禁じている。英国は遅い。公立学校の禁止は1986年、家庭内はスコットランドが2019年の法で「合理的な懲戒」という抗弁を廃止し、ウェールズが2020年に続いた。イングランドでは今もその抗弁が残っている。"
+    ],
+    "sources": [
+      "sv.wikipedia「Barnaga」 https://sv.wikipedia.org/wiki/Barnaga",
+      "Riksdagen「Föräldrabalk (1949:381)」 https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/foraldrabalk-1949381_sfs-1949-381/",
+      "End Corporal Punishment「Sweden」 https://endcorporalpunishment.org/reports-on-every-state-and-territory/sweden/",
+      "en.wikipedia「School corporal punishment」 https://en.wikipedia.org/wiki/School_corporal_punishment",
+      "en.wikipedia「Corporal punishment in the home」 https://en.wikipedia.org/wiki/Corporal_punishment_in_the_home",
+      "legislation.gov.uk「Children (Equal Protection from Assault) (Scotland) Act 2019」 https://www.legislation.gov.uk/asp/2019/16/section/4"
+    ]
+  },
+  {
+    "draft_no": 16,
+    "name_ja": "初夜権",
+    "reading": "しょやけん",
+    "name_en": "Droit du seigneur (ius primae noctis)",
+    "country": "フランス",
+    "country_en": "France",
+    "region": "ヨーロッパ",
+    "category": "規範",
+    "shelf": "meta",
+    "evidence_type": "law",
+    "made": {
+      "label": "1762 ヴォルテールの戯曲で名前がつく",
+      "year": 1762,
+      "approx": false,
+      "fact": "「droit du seigneur」という語が使われたのはヴォルテールの戯曲『Le droit du seigneur』（1762年執筆、1779年初演）が最初とされる。中世の法にこの権利を定めたものはなく、中世の用語でもない。19世紀の反教権・反封建の著述家がこの話を膨らませ、「中世の常識」として流通させた",
+      "source": "en.wikipedia「Droit du seigneur」 https://en.wikipedia.org/wiki/Droit_du_seigneur"
+    },
+    "discontinued": {
+      "label": "1995 アラン・ブローが偽史として決着させる",
+      "year": 1995,
+      "approx": false,
+      "fact": "アラン・ブロー『Le droit de cuissage: la fabrication d'un mythe (XIIIe-XXe siècle)』（Albin Michel、1995年。英訳 The Lord's First Night: The Myth of the Droit de Cuissage、シカゴ大学出版、1998年）が、この「権利」が中世の慣行ではなく13世紀から20世紀にかけて作られた神話であることを論証した。先立って1854年にルイ・ヴュイヨが存在を否定し、1881年にドイツの法学者カール・シュミットが「学者の思い込み」と結論している",
+      "source": "en.wikipedia「Droit du seigneur」 https://en.wikipedia.org/wiki/Droit_du_seigneur"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "中世の領主権のうち結婚に関わるものは金銭の徴収だった。農奴が領主の土地を離れて結婚するときに払う婚姻税（merchet、formariage）や、初夜の同衾を禁じる教会の規定を免除してもらう献金が、後に「初夜の権利」として語り直された",
+        "source": "en.wikipedia「Droit du seigneur」 https://en.wikipedia.org/wiki/Droit_du_seigneur"
+      },
+      {
+        "text": "「droit du seigneur」という語自体はヴォルテールの戯曲（1762年執筆、1779年初演）が初出とされる。中世の用語ではない",
+        "source": "en.wikipedia「Droit du seigneur」 https://en.wikipedia.org/wiki/Droit_du_seigneur"
+      },
+      {
+        "text": "1854年にルイ・ヴュイヨが存在を否定し、1881年にドイツの法学者カール・シュミットが「学者の思い込み」と結論した。それでも19世紀後半のフランスの著述家は、ほかにも架空の封建的権利をいくつも作り出している",
+        "source": "en.wikipedia「Droit du seigneur」 https://en.wikipedia.org/wiki/Droit_du_seigneur"
+      },
+      {
+        "text": "アラン・ブロー『Le droit de cuissage: la fabrication d'un mythe (XIIIe-XXe siècle)』（Albin Michel、1995年／英訳1998年、シカゴ大学出版）が、史料的根拠のなさと神話形成の過程を示した決定版とされる",
+        "source": "en.wikipedia「Droit du seigneur」 https://en.wikipedia.org/wiki/Droit_du_seigneur ／ Alain Boureau, The Lord's First Night: The Myth of the Droit de Cuissage, University of Chicago Press, 1998"
+      },
+      {
+        "text": "現代の研究者は、この「権利」の歴史的存在をおおむね否定している。実体は封建領主が結婚にかけた各種の金銭徴収であり、性的な権利ではなかった",
+        "source": "en.wikipedia「Droit du seigneur」 https://en.wikipedia.org/wiki/Droit_du_seigneur"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "婚姻税（merchet / formariage）",
+      "to": "領主の初夜権",
+      "note": "金銭の徴収が、反封建の論争のなかで性的な権利として語り直された"
+    },
+    "draft_corrections": [
+      "叩き台の「近代に作られた俗説の疑いが強い」は控えめすぎる。疑いではなく学術的にほぼ決着している。ヴォルテールが1762年に名前を与え、19世紀の反封建・反教権の著述家が広め、1881年にカール・シュミットが、1995年にアラン・ブローが否定した。",
+      "実体は結婚に関する金銭徴収（merchet / formariage）と、教会の初夜同衾禁止規定の免除献金である。性的な権利を定めた中世の法は見つかっていない。",
+      "したがって棚は meta（偽史）に置くのが正しい。既存048「江戸しぐさ」と並ぶ。"
+    ],
+    "confidence": "B",
+    "verdict": "include",
+    "verdict_reason": "「存在しなかった慣行が中世の常識として流通した」典型例で、偽史棚に置ける。名前がついた年（1762年）と否定された年（1881年、1995年）が特定できる点が既存048と同じ構造。ブローの原著に当たれていないため confidence はB。",
+    "hitokoto": "中世にはなかった。名前をつけたのはヴォルテール、1762年である。",
+    "body_ja": [
+      "領主が農民の花嫁の初夜を奪う権利。封建制の野蛮さを示す話として広く知られてきたが、それを定めた中世の法は見つかっていない。実体として確認できるのは金銭の徴収である。農奴が領主の土地を離れて結婚するときの婚姻税（merchet、formariage）と、初夜の同衾を禁じる教会の規定を免除してもらう献金だった。",
+      "「droit du seigneur」という語が最初に使われたのは、ヴォルテールの戯曲『Le droit du seigneur』である。1762年に書かれ、1779年に初演された。中世の用語ではない。19世紀の反教権・反封建の著述家がこの話を膨らませ、同じころほかにも架空の封建的権利をいくつも作り出している。",
+      "否定の側も古い。1854年にルイ・ヴュイヨが存在を否定し、1881年にドイツの法学者カール・シュミットが「学者の思い込み」と結論した。決定版はアラン・ブロー『Le droit de cuissage: la fabrication d'un mythe』（1995年）で、13世紀から20世紀にかけて神話が作られていく過程そのものを追っている。"
+    ],
+    "sources": [
+      "en.wikipedia「Droit du seigneur」 https://en.wikipedia.org/wiki/Droit_du_seigneur",
+      "Alain Boureau, Le droit de cuissage: la fabrication d'un mythe (XIIIe-XXe siècle), Albin Michel, 1995 ／ 英訳 The Lord's First Night: The Myth of the Droit de Cuissage, University of Chicago Press, 1998"
+    ]
+  },
+  {
+    "draft_no": 17,
+    "name_ja": "時は金なり（時計時間の成立）",
+    "reading": "ときはかねなり",
+    "name_en": "Time is money / clock time",
+    "country": "イギリス",
+    "country_en": "United Kingdom",
+    "region": "ヨーロッパ",
+    "category": "判断基準",
+    "shelf": 2,
+    "evidence_type": "law",
+    "made": null,
+    "discontinued": null,
+    "restocked": null,
+    "trend": "steady",
+    "keyfacts": [
+      {
+        "text": "この項目は、E. P. Thompson の古典的論文「Time, Work-Discipline, and Industrial Capitalism」（Past & Present, no. 38, 1967年12月）を土台にした叩き台である。論文は、仕事の区切りで時間を測る社会から時計で時間を測る社会への転換を論じたもので、価値観の「製造過程」の説明としては使える",
+        "source": "E. P. Thompson, Time, Work-Discipline, and Industrial Capitalism, Past & Present, no. 38 (December 1967), pp. 56-97（本調査では書誌のみで、本文に当たっていない）"
+      },
+      {
+        "text": "今回の条件は「いま消えた／変わったもの」だが、時計時間と「時は金なり」はいずれも現役であり、失効の日付が立たない",
+        "source": "BRIEF-round2.md の条件に照らした判断"
+      },
+      {
+        "text": "逆向きに「町ごとに時間が違ってよい」という価値観の失効として立て直せば、法令の日付（英国の1880年時刻定義法など）が取れる可能性がある。ただし本調査では一次資料に当てられなかったため、年号を書かない",
+        "source": "未確認（要追加調査）"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「『時は金なり』と時計時間の成立（E.P. トンプソン）」は、テーマとしては正しく重要だが、今回の企画条件（消えた／変わった価値観、失効の日付が立つもの）に合わない。",
+      "既存48点のうち012「時間厳守」、026「石の上にも三年」、038「タイパ」と主題が重なる。日本側で同じ論点がすでに立っている。"
+    ],
+    "confidence": "C",
+    "verdict": "drop",
+    "verdict_reason": "(1) 既存012「時間厳守」および038「タイパ」と主題が重複する。(2) 時計時間と「時は金なり」は現役であり、廃番年が立たない。(3) 「町ごとに時間が違ってよい」という失効側の価値観に組み替えれば法令の日付（英国1880年時刻定義法など）が取れる見込みはあるが、本調査では一次資料に当てられなかった。よって年号を推測で埋めず drop とする。keyfacts も4件に届かないが、これは調査不足ではなく「立てるべき事実がない」ことの結果である。",
+    "hitokoto": "",
+    "body_ja": [],
+    "sources": [
+      "E. P. Thompson, Time, Work-Discipline, and Industrial Capitalism, Past & Present, no. 38 (December 1967), pp. 56-97"
+    ]
+  }
+]

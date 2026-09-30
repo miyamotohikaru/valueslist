@@ -11,6 +11,15 @@ import { PLATES_A } from "./plates-a";
 import { PLATES_B } from "./plates-b";
 import { PLATES_C } from "./plates-c";
 import { PLATES_D } from "./plates-d";
+// 第2次（追加76枚）
+import { PLATES_E } from "./plates-e";
+import { PLATES_F } from "./plates-f";
+import { PLATES_G } from "./plates-g";
+import { PLATES_H } from "./plates-h";
+import { PLATES_I } from "./plates-i";
+import { PLATES_J } from "./plates-j";
+import { PLATES_K } from "./plates-k";
+import { PLATES_L } from "./plates-l";
 
 /** 仇討ち｡鞘を払った打刀 */
 const katana: Draw = (g, s) => {
@@ -345,4 +354,12 @@ export const PLATES: Record<string, Draw> = {
   ...PLATES_B,
   ...PLATES_C,
   ...PLATES_D,
+  ...PLATES_E,
+  ...PLATES_F,
+  ...PLATES_G,
+  ...PLATES_H,
+  ...PLATES_I,
+  ...PLATES_J,
+  ...PLATES_K,
+  ...PLATES_L,
 };

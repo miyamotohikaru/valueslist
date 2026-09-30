@@ -24,7 +24,7 @@ const mono = Roboto_Mono({
 });
 
 const DESCRIPTION =
-  "その価値観には､成立年がある｡日本の価値観を､成立・失効・復活の年で並べ､一次資料で裏を取った一覧｡";
+  "その価値観には､成立年がある｡日本と世界の価値観を､成立・失効・復活の年で並べ､一次資料で裏を取った一覧｡";
 
 
 export const metadata: Metadata = {

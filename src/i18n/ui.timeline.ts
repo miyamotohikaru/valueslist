@@ -22,7 +22,7 @@ const D = {
 
   // 物差し
   rulerAria: { ja: "この年表の物差し", en: "The scale of this timeline" },
-  rulerSqueeze: { ja: "668年を､ここに縮めている", en: "668 years, squeezed in here" },
+  rulerSqueeze: { ja: "1368年を､ここに縮めている", en: "1,368 years, squeezed in here" },
   rulerWide: { ja: "明治からの162年を広く", en: "162 years since Meiji, spread wide" },
   rulerNote: {
     ja: "目盛りの間隔は均等ではない｡この物差しで全部を並べる｡",

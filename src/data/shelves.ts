@@ -12,9 +12,9 @@ export const shelves: ShelfMeta[] = [
   {
     id: 2,
     no: "2",
-    name: "明治成立ゾーン",
-    en: "ESTABLISHED IN MEIJI",
-    lead: "人間の本性に見えて､◇じつは明治・大正に成立された価値観｡",
+    name: "近代成立ゾーン",
+    en: "ESTABLISHED IN THE MODERN AGE",
+    lead: "人間の本性に見えて､◇じつは近代に成立された価値観｡◇日本では明治・大正｡",
     evidenceNote: "証拠＝翻訳語の初出・法令の施行日｡",
   },
   {

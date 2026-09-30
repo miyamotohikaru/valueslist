@@ -29,6 +29,8 @@ export const UI = {
   category: { ja: "分類", en: "Category" },
   trend: { ja: "傾向", en: "Trend" },
   evidence: { ja: "証拠", en: "Evidence" },
+  region: { ja: "地域", en: "Region" },
+  country: { ja: "国", en: "Country" },
   empty: { ja: "該当するカードがありません｡", en: "No cards match." },
   countUnit: { ja: "点", en: " items" },
 

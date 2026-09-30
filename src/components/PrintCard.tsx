@@ -167,7 +167,10 @@ export default function PrintCard({
         }}
       >
         <div className="vl-print__top">
-          <span className="vl-print__no">NO.{v.no}</span>
+          <span className="vl-print__no">
+            NO.{v.no}
+            <span className="vl-print__where">{lang === "en" ? v.countryEn : v.country}</span>
+          </span>
           <span className={`vl-print__state${v.trend === "discontinued" ? " is-eol" : ""}`}>{t(lang, STATE[v.trend])}</span>
         </div>
 

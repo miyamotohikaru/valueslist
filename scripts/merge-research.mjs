@@ -3,10 +3,13 @@
  *
  *   node scripts/merge-research.mjs
  *
- * 1. research/shelf*.json を読み、研究側で drop のもの・本文のない検証メモ・EXCLUDE を落とす
+ * 1. research/shelf*.json（第1次）と research/round2/*.json（第2次）を読み、
+ *    研究側で drop のもの・本文のない検証メモ・EXCLUDE を落とす
  * 2. scripts/editorial.mjs の EDITS を当てる（置換前の文字列が見つからなければ止まる）
  * 3. scripts/curve-map.mjs でグラフを組む（datasets.json の全年次を優先）
- * 4. 棚順 → 叩き台の番号順に並べて NO.001〜 を振る
+ * 4. 第1次 → 第2次の順、その中で棚順 → 叩き台の番号順に並べて NO.001〜 を振る
+ *    （**第1次の48枚は 001〜048 のまま動かさない。** 番号が動くと URL も図版の
+ *    割り当てもずれる。第2次は 049 から後ろに足す）
  * 5. research/audit/*.json（独立した監査の修正案）を当てる
  * 6. scripts/final-overrides.mjs を重ねる
  */
@@ -22,6 +25,8 @@ const RESEARCH = path.join(ROOT, "research");
 const OUT = path.join(ROOT, "src/data/values.json");
 
 const files = fs.readdirSync(RESEARCH).filter((f) => /^shelf.*\.json$/.test(f)).sort();
+const ROUND2 = path.join(RESEARCH, "round2");
+const files2 = fs.existsSync(ROUND2) ? fs.readdirSync(ROUND2).filter((f) => f.endsWith(".json")).sort() : [];
 const datasets = JSON.parse(fs.readFileSync(path.join(RESEARCH, "datasets.json"), "utf8"));
 const problems = [];
 
@@ -135,21 +140,41 @@ function buildCurves(it) {
 
 // ── 読み込み → 整形 ────────────────────────────────────
 let items = [];
-for (const f of files) {
-  for (const raw of JSON.parse(fs.readFileSync(path.join(RESEARCH, f), "utf8"))) {
+function take(dir, f, round) {
+  for (const raw of JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"))) {
     if (!raw.name_ja || !raw.body_ja || !raw.hitokoto) continue; // 検証メモ
     if (raw.verdict === "drop") continue;
     if (EXCLUDE.has(raw.name_ja)) continue;
     const it = structuredClone(raw);
+    it._round = round;
     const e = EDITS[it.name_ja];
-    if (!e) problems.push(`[${it.name_ja}] EDITS がない（英名・札ラベルが未整理）`);
-    else applyEdits(it, e);
+    // 第2次はリサーチ側で英名も札ラベルも揃っているので EDITS は任意
+    if (!e) {
+      if (round === 1) problems.push(`[${it.name_ja}] EDITS がない（英名・札ラベルが未整理）`);
+    } else applyEdits(it, e);
     items.push(it);
   }
 }
+for (const f of files) take(RESEARCH, f, 1);
+for (const f of files2) take(ROUND2, f, 2);
 
 const shelfOrder = (s) => (s === "meta" ? 99 : Number(s));
-items.sort((a, b) => shelfOrder(a.shelf) - shelfOrder(b.shelf) || (a.draft_no ?? 999) - (b.draft_no ?? 999));
+// **第1次が先。** 48枚の番号を動かさないため
+items.sort(
+  (a, b) =>
+    a._round - b._round ||
+    shelfOrder(a.shelf) - shelfOrder(b.shelf) ||
+    (a.draft_no ?? 999) - (b.draft_no ?? 999),
+);
+
+// 同じ名前が2つあると系譜も絞り込みも壊れる
+{
+  const seen = new Set();
+  for (const it of items) {
+    if (seen.has(it.name_ja)) problems.push(`[${it.name_ja}] 名前が重複している`);
+    seen.add(it.name_ja);
+  }
+}
 
 const dp = (d) =>
   d
@@ -174,6 +199,9 @@ const values = items.map((it, i) => {
     en: it.name_en ?? "",
     category: it.category,
     shelf: it.shelf === "meta" ? "meta" : Number(it.shelf),
+    country: it.country ?? "日本",
+    countryEn: it.country_en ?? "Japan",
+    region: it.region ?? "日本",
     evidence: it.evidence_type === "curve" && curve ? "curve" : "law",
     trend: it.trend,
     made: dp(it.made),

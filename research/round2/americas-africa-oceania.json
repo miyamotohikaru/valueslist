@@ -1,0 +1,1468 @@
+[
+  {
+    "draft_no": 1,
+    "name_ja": "禁酒法",
+    "reading": "きんしゅほう",
+    "name_en": "Prohibition",
+    "category": "規範",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "アメリカ",
+    "country_en": "United States",
+    "region": "北米",
+    "made": {
+      "label": "1920 修正第18条施行",
+      "year": 1920,
+      "approx": false,
+      "fact": "憲法修正第18条は1917年12月18日に連邦議会が発議し、1919年1月16日に批准された。条文が「この条項の批准から1年後」と定めていたため、効力が生じたのは1920年1月17日である。",
+      "source": "National Archives, The Constitution: Amendments 11-27 https://www.archives.gov/founding-docs/amendments-11-27"
+    },
+    "discontinued": {
+      "label": "1933 修正第21条",
+      "year": 1933,
+      "approx": false,
+      "fact": "憲法修正第21条は1933年2月20日に議会が発議し、同年12月5日に批准された。第1節は「合衆国憲法修正第18条はこれを廃止する」の一文だけである。",
+      "source": "National Archives, The Constitution: Amendments 11-27 https://www.archives.gov/founding-docs/amendments-11-27"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "憲法修正第18条は、酒類の「製造・販売・輸送、合衆国への輸入、合衆国からの輸出」を飲用目的で禁じた。1917年12月18日発議、1919年1月16日批准。",
+        "source": "National Archives, The Constitution: Amendments 11-27 https://www.archives.gov/founding-docs/amendments-11-27"
+      },
+      {
+        "text": "条文に「批准から1年後」とあるため、禁酒が実際に始まったのは1920年1月17日である。",
+        "source": "National Archives, The Constitution: Amendments 11-27 https://www.archives.gov/founding-docs/amendments-11-27"
+      },
+      {
+        "text": "罰則を定めたのは憲法ではなく別の法律で、国家禁酒法（ヴォルステッド法、H.R.6810）は1919年10月28日に議会が大統領の拒否権を覆して成立した。提案者はミネソタ州のアンドリュー・ヴォルステッド下院司法委員長。",
+        "source": "U.S. House of Representatives, History, Art & Archives: The Volstead Act https://history.house.gov/Historical-Highlights/1901-1950/The-Volstead-Act/"
+      },
+      {
+        "text": "ヴォルステッド法は1919年7月22日に下院を287対100で通過していた。",
+        "source": "U.S. House of Representatives, History, Art & Archives: The Volstead Act https://history.house.gov/Historical-Highlights/1901-1950/The-Volstead-Act/"
+      },
+      {
+        "text": "憲法修正第21条（1933年12月5日批准）は、修正条項が別の修正条項を明文で廃止した例である。禁酒はおよそ14年で終わった。",
+        "source": "National Archives, The Constitution: Amendments 11-27 https://www.archives.gov/founding-docs/amendments-11-27"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「1920年施行〜1933年 憲法修正第21条で廃止」は正しい。ただし憲法修正第18条の批准は1919年1月16日で、施行はその1年後の1920年1月17日。「1920年施行」と「1919年批准」は別の日付なので混同しないこと。",
+      "禁酒の中身（何がどれだけ違法か）を決めたのは憲法ではなくヴォルステッド法（1919年10月28日成立）である。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "発議日・批准日・施行日・廃止日のすべてが米国国立公文書館の公開資料で特定できる。法令型の見本のような案件。",
+    "hitokoto": "一国が酒を憲法で禁じ、十三年で憲法から取り消した。",
+    "body_ja": [
+      "1917年12月18日に連邦議会が発議し、1919年1月16日に批准された憲法修正第18条は、酒類の製造・販売・輸送を飲用目的で禁じた。条文に「批准から1年後」とあったため、酒が実際に違法になったのは1920年1月17日である。禁酒という規範が、日付をもって国の最高法規に書き込まれた。",
+      "憲法は禁じただけで、何をどれだけ罰するかは別の法律が担った。国家禁酒法（ヴォルステッド法）は1919年7月22日に下院を287対100で通過し、同年10月28日に議会が大統領の拒否権を覆して成立した。この法律が「酒類」の線引きをした瞬間から、密造と密売が一つの産業になった。",
+      "1933年2月20日に議会が発議した憲法修正第21条は、同年12月5日に批准された。その第1節はわずか一文で、「合衆国憲法修正第18条はこれを廃止する」と述べる。修正条項が別の修正条項を明文で取り消した例であり、規範の製造年と廃番年が同じ文書の中に並んで残った。"
+    ],
+    "sources": [
+      "National Archives, The Constitution: Amendments 11-27 https://www.archives.gov/founding-docs/amendments-11-27",
+      "U.S. House of Representatives, History, Art & Archives: The Volstead Act https://history.house.gov/Historical-Highlights/1901-1950/The-Volstead-Act/"
+    ]
+  },
+  {
+    "draft_no": 2,
+    "name_ja": "分離すれど平等",
+    "reading": "ぶんりすれどびょうどう",
+    "name_en": "Separate but Equal",
+    "category": "判断基準",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "アメリカ",
+    "country_en": "United States",
+    "region": "北米",
+    "made": {
+      "label": "1896 プレッシー判決",
+      "year": 1896,
+      "approx": false,
+      "fact": "1896年5月18日、連邦最高裁はプレッシー対ファーガソン（163 U.S. 537）で、鉄道車両の人種別区分を義務づけたルイジアナ州法（Acts 1890, No. 111）を合憲とした。",
+      "source": "Plessy v. Ferguson, 163 U.S. 537 (1896) — Cornell LII https://www.law.cornell.edu/supremecourt/text/163/537"
+    },
+    "discontinued": {
+      "label": "1964 公民権法",
+      "year": 1964,
+      "approx": false,
+      "fact": "1964年7月2日に成立した公民権法は、第2編で公共施設における人種による分離を禁じ、第7編で雇用差別を禁じた。",
+      "source": "National Archives, Milestone Documents: Civil Rights Act (1964) https://www.archives.gov/milestone-documents/civil-rights-act"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "問題になった法律はルイジアナ州の1890年法律第111号で、鉄道に「平等だが分離した設備（equal but separate accommodations）」を義務づけていた。",
+        "source": "Plessy v. Ferguson, 163 U.S. 537 (1896) — Cornell LII https://www.law.cornell.edu/supremecourt/text/163/537"
+      },
+      {
+        "text": "1896年5月18日のプレッシー判決は「接触しうる場所で両者を分離することを許し、あるいは義務づける法は、一方が他方に劣ることを必ずしも含意しない」と述べ、分離は修正第14条に違反しないとした。",
+        "source": "Plessy v. Ferguson, 163 U.S. 537 (1896) — Cornell LII https://www.law.cornell.edu/supremecourt/text/163/537"
+      },
+      {
+        "text": "1954年5月17日のブラウン対教育委員会（347 U.S. 483）は「分離された教育施設は本質的に不平等である」と述べ、「『分離すれど平等』の法理は公教育に場所を持たない」とした。",
+        "source": "National Archives, Milestone Documents: Brown v. Board of Education (1954) https://www.archives.gov/milestone-documents/brown-v-board-of-education"
+      },
+      {
+        "text": "判例が覆っても分離はすぐには終わらず、法律が追いついたのは10年後である。1964年7月2日の公民権法第2編は、ホテル・飲食店・劇場などで「人種、皮膚の色、宗教、出身国」による差別と分離を禁じた。",
+        "source": "National Archives, Milestone Documents: Civil Rights Act (1964) https://www.archives.gov/milestone-documents/civil-rights-act"
+      },
+      {
+        "text": "公民権法第7編は雇用における差別を禁じ、これを執行する雇用機会均等委員会（EEOC）を設けた。",
+        "source": "National Archives, Milestone Documents: Civil Rights Act (1964) https://www.archives.gov/milestone-documents/civil-rights-act"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「1896年 プレッシー判決 → 1954年 ブラウン判決 → 1964年 公民権法」は三点すべて正しい。日付はそれぞれ1896年5月18日、1954年5月17日、1964年7月2日。",
+      "「separate but equal」という言い方は後世の定着で、争われたルイジアナ州法の文言は「equal but separate accommodations」（平等だが分離した設備）である。ブラウン判決が引用して否定したのは「separate but equal」の側。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "判例名・巻号頁・判決日・法律の成立日がすべて一次資料で特定できる。製造年と廃番年の間が68年あり、図鑑としての振れ幅も大きい。",
+    "hitokoto": "判例が1896年に作った言葉を、1954年の判例が消した。",
+    "body_ja": [
+      "1896年5月18日、連邦最高裁はプレッシー対ファーガソンで、鉄道車両を人種別に分けるよう義務づけたルイジアナ州の1890年法律第111号を合憲とした。多数意見は「接触しうる場所で両者を分離する法は、一方が他方に劣ることを必ずしも含意しない」と述べた。分離は差別ではない、という判断基準がここで判決文の言葉になった。",
+      "この法理はおよそ60年もった。1954年5月17日、ブラウン対教育委員会は「分離された教育施設は本質的に不平等である」と述べ、「『分離すれど平等』の法理は公教育に場所を持たない」とした。判決が覆した相手は、州法ではなく、州法を支えていた一つの言葉である。",
+      "ただし判例が変わっても現実はすぐには動かず、法律が追いついたのは10年後だった。1964年7月2日に成立した公民権法は、ホテル・飲食店・劇場などでの分離を第2編で、雇用差別を第7編で禁じ、執行機関として雇用機会均等委員会を置いた。廃番の日付は、判例と法律で二つある。"
+    ],
+    "sources": [
+      "Plessy v. Ferguson, 163 U.S. 537 (1896) — Cornell LII https://www.law.cornell.edu/supremecourt/text/163/537",
+      "National Archives, Milestone Documents: Brown v. Board of Education (1954) https://www.archives.gov/milestone-documents/brown-v-board-of-education",
+      "National Archives, Milestone Documents: Civil Rights Act (1964) https://www.archives.gov/milestone-documents/civil-rights-act"
+    ]
+  },
+  {
+    "draft_no": 3,
+    "name_ja": "異人種間の結婚は無効",
+    "reading": "いじんしゅかんのけっこんはむこう",
+    "name_en": "Anti-miscegenation Laws",
+    "category": "規範",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "アメリカ",
+    "country_en": "United States",
+    "region": "北米",
+    "made": {
+      "label": "1924 人種純潔法",
+      "year": 1924,
+      "approx": false,
+      "fact": "ラヴィング判決が無効とした条文は、ヴァージニア州の1924年人種純潔法（Racial Integrity Act）に由来する州法典第20条58項（州外に出て法を免れる行為）と第20条59項（結婚に対する刑罰）である。",
+      "source": "Loving v. Virginia, 388 U.S. 1 (1967) — Cornell LII https://www.law.cornell.edu/supremecourt/text/388/1"
+    },
+    "discontinued": {
+      "label": "1967 ラヴィング判決",
+      "year": 1967,
+      "approx": false,
+      "fact": "1967年6月12日、連邦最高裁はラヴィング対ヴァージニア（388 U.S. 1）で、異人種間結婚を禁じる州法は修正第14条の平等保護条項および適正手続条項に違反するとした。",
+      "source": "Loving v. Virginia, 388 U.S. 1 (1967) — Cornell LII https://www.law.cornell.edu/supremecourt/text/388/1"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1967年6月12日のラヴィング対ヴァージニア（388 U.S. 1）は、ヴァージニア州法典第20条58項・第20条59項を修正第14条違反として無効とした。",
+        "source": "Loving v. Virginia, 388 U.S. 1 (1967) — Cornell LII https://www.law.cornell.edu/supremecourt/text/388/1"
+      },
+      {
+        "text": "これらの条文は1924年の人種純潔法に由来する。結婚そのものに刑罰を定め、州外で結婚して戻る行為も処罰対象としていた。",
+        "source": "Loving v. Virginia, 388 U.S. 1 (1967) — Cornell LII https://www.law.cornell.edu/supremecourt/text/388/1"
+      },
+      {
+        "text": "判決の時点で、ヴァージニアを含む16の州が異人種間結婚を禁じる法を維持していた。",
+        "source": "Loving v. Virginia, 388 U.S. 1 (1967) — Cornell LII https://www.law.cornell.edu/supremecourt/text/388/1"
+      },
+      {
+        "text": "ウォーレン首席裁判官は「他の人種の者と結婚するか結婚しないかの自由は個人に属し、州がこれを侵すことはできない」と述べ、こうした州法を「修正第14条に反する」とした。",
+        "source": "Loving v. Virginia, 388 U.S. 1 (1967) — Cornell LII https://www.law.cornell.edu/supremecourt/text/388/1"
+      },
+      {
+        "text": "同じ価値観は南アフリカでは判例ではなく法律の改廃で終わった（1949年法律第55号 → 1985年法律第72号）。北米では裁判所が、南アフリカでは議会が終わらせた。",
+        "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "異人種間の結婚は無効（アメリカ 1967まで）",
+      "to": "人種をまたぐ結婚は犯罪（南アフリカ 1985まで）",
+      "note": "同じ内容の規範が、北米では1967年に判決で、南アフリカでは1985年に法改正で終わった。終わり方の型が違う。"
+    },
+    "draft_corrections": [
+      "叩き台の「1967年 ラヴィング対ヴァージニア判決」は正しい（1967年6月12日、388 U.S. 1）。",
+      "「植民地期（1664年メリーランド州法）に始まる」という説明は広く流通しているが、本セッションでは1664年法を一次資料で確認できなかったため、製造年は確認できたヴァージニア州1924年人種純潔法に置いた。植民地期からの系譜として書くなら、その旨を別に裏取りすること。",
+      "判決時に同種の法を残していた州の数は16（ヴァージニアを含む）。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "判決日・巻号頁・無効とされた条文番号・残存州数がすべて判決文から取れる。製造年は1924年法に限定して確認済み。",
+    "hitokoto": "1967年まで、十六の州で人種をまたぐ結婚は犯罪だった。",
+    "body_ja": [
+      "ヴァージニア州は1924年の人種純潔法で、白人と他の人種の結婚を無効とし、結婚そのものに刑罰を定めた。州法典第20条59項が結婚に対する罰を、第20条58項が州外で結婚して戻る行為の罰を規定していた。法を避けるために州境を越えることまで、あらかじめ禁じられていた。",
+      "1967年6月12日、連邦最高裁はラヴィング対ヴァージニアでこの二条を無効とした。ウォーレン首席裁判官は、他の人種の者と結婚するかしないかの自由は個人に属し、州が侵すことはできないと述べた。判決の時点で、同種の法を維持していた州はヴァージニアを含めて16あった。",
+      "同じ規範は南アフリカでは1949年法律第55号として作られ、1985年法律第72号で消えた。北米では裁判所が判例で、南アフリカでは議会が法改正で終わらせた。同じ内容の規範が、別の仕組みで、別の年に廃番になっている。どちらも「いつ終わったか」が一日単位で公文書に残っている点は共通する。"
+    ],
+    "sources": [
+      "Loving v. Virginia, 388 U.S. 1 (1967) — Cornell LII https://www.law.cornell.edu/supremecourt/text/388/1",
+      "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+    ]
+  },
+  {
+    "draft_no": 4,
+    "name_ja": "複婚は信仰の務め",
+    "reading": "ふくこんはしんこうのつとめ",
+    "name_en": "Plural Marriage",
+    "category": "規範",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "アメリカ",
+    "country_en": "United States",
+    "region": "北米",
+    "made": {
+      "label": "19世紀半ば",
+      "year": 1852,
+      "approx": true,
+      "fact": "教会の公式解説は、複婚の命令がジョセフ・スミスに始まり、ユタで実践されたとする。公然と教えられ始めた年（1852年とされる）は本セッションでは一次資料で確認できなかったため概数とする。",
+      "source": "Gospel Topics Essay「The Manifesto and the End of Plural Marriage」https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/the-manifesto-and-the-end-of-plural-marriage"
+    },
+    "discontinued": {
+      "label": "1890 マニフェスト",
+      "year": 1890,
+      "approx": false,
+      "fact": "1890年9月24日付のマニフェスト（Official Declaration 1）でウィルフォード・ウッドラフ会長が連邦法に従う意思を宣言し、同年10月6日の総大会で正式に受け入れられた。",
+      "source": "Official Declaration 1（1890年マニフェスト原文）https://www.churchofjesuschrist.org/study/scriptures/dc-testament/od/1"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1878年のレイノルズ対合衆国（98 U.S. 145）は、連邦法が「単なる意見に対する立法権を奪われている」としても「行為（practices）」には及ぶと述べ、信仰を理由に重婚罪を免れることはできないとした。対象は1862年制定の連邦法（合衆国改正法典第5352条）。",
+        "source": "Reynolds v. United States, 98 U.S. 145 (1878) — Cornell LII https://www.law.cornell.edu/supremecourt/text/98/145"
+      },
+      {
+        "text": "1882年のエドマンズ法は「不法な同居」を6か月の拘禁と300ドルの罰金の対象とした。",
+        "source": "Gospel Topics Essay「The Manifesto and the End of Plural Marriage」https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/the-manifesto-and-the-end-of-plural-marriage"
+      },
+      {
+        "text": "1887年のエドマンズ＝タッカー法は教会法人を解散させ、5万ドルを超える教会財産を政府に没収するよう定めた。",
+        "source": "Gospel Topics Essay「The Manifesto and the End of Plural Marriage」https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/the-manifesto-and-the-end-of-plural-marriage"
+      },
+      {
+        "text": "マニフェスト（Official Declaration 1）の文言は「議会が複婚を禁ずる法を制定し、最終審の裁判所がこれを合憲と宣したのであるから、私はここにそれらの法に従う意思を宣言する」。日付は1890年9月24日、公表は9月25日、総大会での受け入れは10月6日。",
+        "source": "Official Declaration 1（1890年マニフェスト原文）https://www.churchofjesuschrist.org/study/scriptures/dc-testament/od/1"
+      },
+      {
+        "text": "マニフェスト一本では終わらず、1904年4月にジョセフ・F・スミス会長が第二マニフェストを出し、新たな複婚には破門をもって臨むとした。ユタが州になったのは1896年で、その州憲法は複婚を禁じていた。",
+        "source": "Gospel Topics Essay「The Manifesto and the End of Plural Marriage」https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/the-manifesto-and-the-end-of-plural-marriage"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「1890年 マニフェスト」は正しい。ただし文書の日付は1890年9月24日、総大会での受け入れは10月6日で、10月6日だけを廃番日とすると文書の成立日を落とす。",
+      "マニフェスト一本で終わったわけではない。新たな複婚に破門を宣告したのは1904年4月の第二マニフェスト（ジョセフ・F・スミス）である。",
+      "公然と教えられ始めた年（通説では1852年）は本セッションでは一次資料で確認できなかった。製造年を日付まで書くなら追加の裏取りが必要。"
+    ],
+    "confidence": "B",
+    "verdict": "include",
+    "verdict_reason": "廃番側（1890年マニフェスト、1904年第二マニフェスト）と、それを追い込んだ連邦法・判例は一次資料で確認できる。製造年だけが概数なので confidence は B。書くときは「制度と日付の話」に徹し、いまの信仰集団の評価には踏み込まないこと。",
+    "hitokoto": "信仰は行為を免責しないと、1878年の判決が決めた。",
+    "body_ja": [
+      "19世紀半ばのユタで、複数の妻をもつ結婚は宗教上の務めとして実践されていた。連邦政府はこれを刑事の問題として扱い、1862年に重婚を犯罪とする法を置いた。1878年のレイノルズ対合衆国は、法は「単なる意見」には及ばないが「行為」には及ぶと述べ、信仰を理由に重婚罪を免れることはできないとした。",
+      "その後の立法は教会そのものに向かった。1882年のエドマンズ法は「不法な同居」を6か月の拘禁と300ドルの罰金の対象とし、1887年のエドマンズ＝タッカー法は教会法人を解散させ、5万ドルを超える教会財産を政府に没収するよう定めた。信仰の実践を、財産と法人格を通して締め上げる設計である。",
+      "1890年9月24日付のマニフェストで、ウィルフォード・ウッドラフ会長は「それらの法に従う意思を宣言する」と述べ、同年10月6日の総大会がこれを受け入れた。ただし完全な終点は1904年4月の第二マニフェストで、ここで新たな複婚に破門が宣告された。廃番は一度ではなく二度に分かれている。"
+    ],
+    "sources": [
+      "Official Declaration 1（1890年マニフェスト原文）https://www.churchofjesuschrist.org/study/scriptures/dc-testament/od/1",
+      "Gospel Topics Essay「The Manifesto and the End of Plural Marriage」https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/the-manifesto-and-the-end-of-plural-marriage",
+      "Reynolds v. United States, 98 U.S. 145 (1878) — Cornell LII https://www.law.cornell.edu/supremecourt/text/98/145"
+    ]
+  },
+  {
+    "draft_no": 5,
+    "name_ja": "贈り与えるのは野蛮",
+    "reading": "おくりあたえるのはやばん",
+    "name_en": "The Potlatch Ban",
+    "category": "判断基準",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "カナダ",
+    "country_en": "Canada",
+    "region": "北米",
+    "made": {
+      "label": "1885 ポトラッチ禁止",
+      "year": 1885,
+      "approx": false,
+      "fact": "連邦政府は1884年4月19日にインディアン法を改正し、1885年1月1日に施行した。条文は「ポトラッチとして知られるインディアンの祭礼、またはタマナワスと呼ばれる踊りに参加し、あるいはその挙行を助ける者はすべて軽罪を犯したものとし、拘禁に処する」。",
+      "source": "The Canadian Encyclopedia「Potlatch Ban」https://www.thecanadianencyclopedia.ca/en/article/potlatch-ban"
+    },
+    "discontinued": {
+      "label": "1951 インディアン法改正",
+      "year": 1951,
+      "approx": false,
+      "fact": "1951年のインディアン法の大改正で、ポトラッチ禁止規定が削除された。",
+      "source": "The Canadian Encyclopedia「Potlatch Ban」https://www.thecanadianencyclopedia.ca/en/article/potlatch-ban"
+    },
+    "restocked": {
+      "label": "1952 最初の合法ポトラッチ",
+      "year": 1952,
+      "as": "ポトラッチ",
+      "fact": "禁止解除の翌年、クワクワカワクゥのマンゴ・マーティン首長がヴィクトリア（ブリティッシュコロンビア州）で1885年以来はじめての「合法な」ポトラッチを開いた。",
+      "source": "The Canadian Encyclopedia「Potlatch Ban」https://www.thecanadianencyclopedia.ca/en/article/potlatch-ban"
+    },
+    "trend": "restocked",
+    "keyfacts": [
+      {
+        "text": "禁止は1884年4月19日のインディアン法改正として成立し、1885年1月1日に施行された。インディアン法そのものは1876年に作られ、1951年版に置き換えられた。",
+        "source": "The Canadian Encyclopedia「Potlatch Ban」https://www.thecanadianencyclopedia.ca/en/article/potlatch-ban"
+      },
+      {
+        "text": "条文は「ポトラッチ」の語を定義していなかったため、最初の起訴のとき、ブリティッシュコロンビア州首席裁判官マシュー・ベグビーは執行不能と判断した。それでも条文は残り、踊ったことを理由とする逮捕が起きた。",
+        "source": "The Canadian Encyclopedia「Potlatch Ban」https://www.thecanadianencyclopedia.ca/en/article/potlatch-ban"
+      },
+      {
+        "text": "1921年12月25日、ダン・クランマー首長がヴィレッジ島（ʼMimkwa̱mlis）で約300人を集めたポトラッチを開き、参加者が起訴された。約半数が2〜3か月の拘禁、残る約20人は儀礼用具の引き渡しに応じて拘禁を免れた。",
+        "source": "The Canadian Encyclopedia「Potlatch Ban」https://www.thecanadianencyclopedia.ca/en/article/potlatch-ban"
+      },
+      {
+        "text": "没収された品は推計約600点で、オタワの国立博物館（現・カナダ歴史博物館）、トロントのロイヤル・オンタリオ博物館、ニューヨークのアメリカ・インディアン国立博物館に大半が渡った。1970年代から返還の取り組みが始まった。",
+        "source": "The Canadian Encyclopedia「Potlatch Ban」https://www.thecanadianencyclopedia.ca/en/article/potlatch-ban"
+      },
+      {
+        "text": "禁止した側の理由づけは、儀礼の歌と踊りをキリスト教と相容れないものと見なし、先住民の文化・社会・政治を権威への脅威と見なす判断であった。",
+        "source": "The Canadian Encyclopedia「Potlatch Ban」https://www.thecanadianencyclopedia.ca/en/article/potlatch-ban"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「1885年〜1951年」は正しい。ただし改正が成立したのは1884年4月19日で、施行が1885年1月1日。制定年と施行年が1年ずれる。",
+      "禁じられたのはポトラッチだけでなく「タマナワス」と呼ばれる踊りも条文に含まれていた。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "成立日・施行日・条文の文言・廃止年・復活の年まで揃う。しかも「国家が価値観を明文で禁じた」という企画の趣旨に最も近い一件。書き方は禁じた側の制度を主語にし、儀礼そのものを説明の対象にしないこと。",
+    "hitokoto": "1885年から1951年まで、贈与の儀礼は刑罰の対象だった。",
+    "body_ja": [
+      "カナダ連邦政府は1884年4月19日にインディアン法を改正し、翌1885年1月1日に施行した。条文は「ポトラッチとして知られるインディアンの祭礼、またはタマナワスと呼ばれる踊りに参加し、あるいはその挙行を助ける者はすべて軽罪を犯したものとし、拘禁に処する」と定めた。財を分け与える儀礼が、法律の上で犯罪になった。",
+      "条文は「ポトラッチ」を定義していなかった。最初の起訴のとき、ブリティッシュコロンビア州首席裁判官マシュー・ベグビーはこの規定を執行不能と判断した。それでも条文は残り、踊ったことを理由とする逮捕が起きた。1921年12月25日のダン・クランマー首長のポトラッチでは参加者が起訴され、約半数が2〜3か月の拘禁、残りは儀礼用具の引き渡しに応じた。没収品は推計約600点で、三つの国立博物館に渡った。",
+      "1951年のインディアン法の大改正で、禁止規定は削除された。翌1952年、マンゴ・マーティン首長がヴィクトリアで1885年以来はじめての「合法な」ポトラッチを開いた。66年かけて禁じられた側が残り、禁じた側の条文が消えた。返還の取り組みは1970年代に始まり、まだ終わっていない。"
+    ],
+    "sources": [
+      "The Canadian Encyclopedia「Potlatch Ban」https://www.thecanadianencyclopedia.ca/en/article/potlatch-ban"
+    ]
+  },
+  {
+    "draft_no": 6,
+    "name_ja": "子は親から離して育てる",
+    "reading": "こはおやからはなしてそだてる",
+    "name_en": "Residential Schools",
+    "category": "規範",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "カナダ",
+    "country_en": "Canada",
+    "region": "北米",
+    "made": {
+      "label": "1920 就学の義務化",
+      "year": 1920,
+      "approx": false,
+      "fact": "1920年、インディアン法は条約上の地位をもつ7歳から15歳の子について、寄宿学校への出席を義務とした。",
+      "source": "National Centre for Truth and Reconciliation（NCTR）Residential School History https://nctr.ca/education/teaching-resources/residential-school-history/"
+    },
+    "discontinued": {
+      "label": "1996 最後の連邦資金校の閉鎖",
+      "year": 1996,
+      "approx": false,
+      "fact": "ランキン・インレット（現ヌナブト準州）のキバリク・ホールが1996年に閉鎖された。これが連邦が資金を出した最後の寄宿学校である。連邦が認定した最後の学校は1997年に閉じた。",
+      "source": "The Canadian Encyclopedia「Residential Schools in Canada」https://www.thecanadianencyclopedia.ca/en/article/residential-schools"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "最初の教会運営の寄宿学校は1831年に開かれ、1880年代に連邦政府が全国の寄宿学校に資金を出す公式方針を採った。明示された意図は、子どもを家族と文化から引き離すことだった。",
+        "source": "National Centre for Truth and Reconciliation（NCTR）Residential School History https://nctr.ca/education/teaching-resources/residential-school-history/"
+      },
+      {
+        "text": "1920年のインディアン法で、条約上の地位をもつ7歳から15歳の子の出席が義務になった。",
+        "source": "National Centre for Truth and Reconciliation（NCTR）Residential School History https://nctr.ca/education/teaching-resources/residential-school-history/"
+      },
+      {
+        "text": "推計15万人の先住民（ファースト・ネーション、イヌイット、メティ）の子どもが寄宿学校に通った。真実和解委員会（TRC）は少なくとも3,200人の子どもが学校で死亡したとしている。",
+        "source": "The Canadian Encyclopedia「Residential Schools in Canada」https://www.thecanadianencyclopedia.ca/en/article/residential-schools"
+      },
+      {
+        "text": "TRCは寄宿学校を「先住民の文化と言語を破壊し、先住民を同化させて独立した民族として存在しなくさせようとする、体系的で政府が後援した試み」と結論し、その意図を「文化的ジェノサイド」と呼んだ。",
+        "source": "National Centre for Truth and Reconciliation（NCTR）Residential School History https://nctr.ca/education/teaching-resources/residential-school-history/"
+      },
+      {
+        "text": "連邦資金の最後の学校キバリク・ホールは1996年に閉鎖、連邦が認定した最後の学校は1997年に閉鎖。2008年6月11日にスティーヴン・ハーパー首相が政府を代表して謝罪し、同化政策は「誤りであり、大きな害をなし、この国に場所を持たない」と認めた。TRC最終報告は2015年に出た。",
+        "source": "The Canadian Encyclopedia「Residential Schools in Canada」https://www.thecanadianencyclopedia.ca/en/article/residential-schools"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「1970年代まで」は誤り。カナダでは連邦資金の最後の寄宿学校キバリク・ホール（ランキン・インレット）が1996年に閉鎖され、連邦が認定した最後の学校は1997年に閉じている。20世紀の終わりまで続いた制度である。",
+      "義務化の年は1920年（インディアン法、対象は条約上の地位をもつ7歳〜15歳）。制度の始まりは1831年の最初の教会運営校、連邦の公式方針は1880年代から。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "義務化の年、閉鎖の年、謝罪の日、TRCの結論が公的機関（NCTR・カナダ百科事典が引くTRC最終報告）で確認できる。叩き台の年代が20年以上ずれていた点が最大の訂正。重い題材なので煽らず、制度と日付だけで書く。",
+    "hitokoto": "同化のための学校は、1996年まで開いていた。",
+    "body_ja": [
+      "最初の教会運営の寄宿学校は1831年に開かれ、1880年代にカナダ連邦政府が全国の寄宿学校へ資金を出す公式方針を採った。明示されていた意図は、子どもを家族と文化から引き離すことだった。1920年、インディアン法は条約上の地位をもつ7歳から15歳の子について、寄宿学校への出席を義務とした。",
+      "推計15万人の子どもが通い、真実和解委員会（TRC）は少なくとも3,200人が学校で死亡したとしている。TRCはこの制度を「先住民の文化と言語を破壊し、独立した民族として存在しなくさせようとする、体系的で政府が後援した試み」と結論し、その意図を「文化的ジェノサイド」と呼んだ。",
+      "終わりは近い。連邦が資金を出した最後の学校キバリク・ホールは1996年に閉鎖され、連邦が認定した最後の学校は1997年に閉じた。2008年6月11日、スティーヴン・ハーパー首相が政府を代表して謝罪し、同化政策は「誤りであり、大きな害をなし、この国に場所を持たない」と述べた。TRCの最終報告は2015年に出た。"
+    ],
+    "sources": [
+      "National Centre for Truth and Reconciliation（NCTR）Residential School History https://nctr.ca/education/teaching-resources/residential-school-history/",
+      "The Canadian Encyclopedia「Residential Schools in Canada」https://www.thecanadianencyclopedia.ca/en/article/residential-schools"
+    ]
+  },
+  {
+    "draft_no": 7,
+    "name_ja": "不適格者は子を残すな",
+    "reading": "ふてきかくしゃはこをのこすな",
+    "name_en": "Compulsory Sterilization",
+    "category": "判断基準",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "アメリカ",
+    "country_en": "United States",
+    "region": "北米",
+    "made": {
+      "label": "1927 バック対ベル判決",
+      "year": 1927,
+      "approx": false,
+      "fact": "1927年5月2日、連邦最高裁はバック対ベル（274 U.S. 200）で、遺伝性の精神欠陥をもつ者の不妊手術を認めたヴァージニア州の1924年3月20日承認の法律（Laws 1924, c. 394）を8対1で合憲とした。",
+      "source": "Buck v. Bell, 274 U.S. 200 (1927) — Cornell LII https://www.law.cornell.edu/supremecourt/text/274/200"
+    },
+    "discontinued": {
+      "label": "1942 スキナー判決（ただしバック判決は覆らず）",
+      "year": 1942,
+      "approx": false,
+      "fact": "1942年6月1日のスキナー対オクラホマ（316 U.S. 535）は、オクラホマ州の常習犯不妊手術法（1935年）を平等保護違反として無効とし、生殖を「人の基本的な市民的権利」と述べた。ただし同判決はバック対ベルを明示的に維持し、区別して扱った。",
+      "source": "Skinner v. Oklahoma, 316 U.S. 535 (1942) — Cornell LII https://www.law.cornell.edu/supremecourt/text/316/535"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "バック対ベル（1927年5月2日、274 U.S. 200）の対象はヴァージニア州の1924年3月20日承認の法律（Laws 1924, c. 394）。判決は8対1で、バトラー裁判官のみが反対した。",
+        "source": "Buck v. Bell, 274 U.S. 200 (1927) — Cornell LII https://www.law.cornell.edu/supremecourt/text/274/200"
+      },
+      {
+        "text": "ホームズ裁判官は「退化した子孫が罪を犯すのを待って処刑し、あるいはその知的障害ゆえに飢えるに任せるより、明らかに不適格な者がその種を継ぐのを社会が防げるほうが、世界のすべてにとってよい」と書いた。",
+        "source": "Buck v. Bell, 274 U.S. 200 (1927) — Cornell LII https://www.law.cornell.edu/supremecourt/text/274/200"
+      },
+      {
+        "text": "同判決は強制種痘の判例を引き、それを支える原理は「卵管を切断することを覆うに足るほど広い」と述べた。結びの一文は「三世代にわたる知的障害者で十分である」。",
+        "source": "Buck v. Bell, 274 U.S. 200 (1927) — Cornell LII https://www.law.cornell.edu/supremecourt/text/274/200"
+      },
+      {
+        "text": "1942年6月1日のスキナー対オクラホマは、窃盗の有罪者を不妊手術の対象としながら横領の有罪者を除外する扱いを平等保護違反とし、オクラホマ州の1935年常習犯不妊手術法を無効とした。ダグラス裁判官は生殖を「人の基本的な市民的権利」と述べた。",
+        "source": "Skinner v. Oklahoma, 316 U.S. 535 (1942) — Cornell LII https://www.law.cornell.edu/supremecourt/text/316/535"
+      },
+      {
+        "text": "スキナー判決はバック対ベルを覆していない。判断の根拠を法の不平等な適用に置き、不妊手術そのものが違憲だとはしなかった。バック対ベルは正式には覆されていない。",
+        "source": "Skinner v. Oklahoma, 316 U.S. 535 (1942) — Cornell LII https://www.law.cornell.edu/supremecourt/text/316/535"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台にはない項目（北米の追加候補として立てた）。",
+      "この項目には「法令の廃止日」という形の廃番がない。判例の向きが変わったのは1942年6月1日のスキナー判決だが、同判決はバック対ベルを明示的に維持しているため、1927年の判決は正式には覆っていない。廃番を日付で言い切る企画方針に合わない可能性があるので、採否は編集側で判断してほしい。",
+      "1907年インディアナ州法が最初の強制不妊手術法とされる説、および各州法の廃止年（ヴァージニア州1974年など）、手術を受けた人数（6万人規模とされる）は、本セッションでは一次資料で確認できなかったため書いていない。"
+    ],
+    "confidence": "B",
+    "verdict": "include",
+    "verdict_reason": "製造側（1924年州法・1927年判決）と転回点（1942年判決）は判決文で完全に裏が取れる。ただし「廃番の日付」が存在しない構造なので confidence は B。採用するなら、覆っていないこと自体を売りにする書き方になる。",
+    "hitokoto": "1927年のこの判決は、いまも正式には覆されていない。",
+    "body_ja": [
+      "ヴァージニア州は1924年3月20日に承認された法律で、遺伝性の精神欠陥をもつとされた者への不妊手術を認めた。1927年5月2日、連邦最高裁はバック対ベルでこれを8対1で合憲とした。反対したのはバトラー裁判官一人である。優生学は当時、科学的な行政の道具として扱われていた。",
+      "ホームズ裁判官の多数意見は、強制種痘の判例を引き、それを支える原理は「卵管を切断することを覆うに足るほど広い」と述べた。結びの一文は「三世代にわたる知的障害者で十分である」。判決文に残ったこの一文が、以後この判例の代名詞になった。",
+      "向きが変わったのは1942年6月1日のスキナー対オクラホマである。窃盗の有罪者を手術の対象としながら横領の有罪者を除く扱いを平等保護違反とし、生殖を「人の基本的な市民的権利」と述べた。ただし同判決はバック対ベルを明示的に維持しており、1927年の判決は正式には覆っていない。廃番の印のない在庫として残っている。"
+    ],
+    "sources": [
+      "Buck v. Bell, 274 U.S. 200 (1927) — Cornell LII https://www.law.cornell.edu/supremecourt/text/274/200",
+      "Skinner v. Oklahoma, 316 U.S. 535 (1942) — Cornell LII https://www.law.cornell.edu/supremecourt/text/316/535"
+    ]
+  },
+  {
+    "draft_no": 8,
+    "name_ja": "人は財産である",
+    "reading": "ひとはざいさんである",
+    "name_en": "Slavery in Brazil",
+    "category": "判断基準",
+    "shelf": 1,
+    "evidence_type": "law",
+    "country": "ブラジル",
+    "country_en": "Brazil",
+    "region": "中南米",
+    "made": {
+      "label": "植民地期",
+      "year": 1550,
+      "approx": true,
+      "fact": "ブラジルの奴隷制は植民地期に成立した。開始年を一次資料で一点に特定することはできないため、16世紀半ばを概数とする。制度の存在は、後の廃止法の条文自体が前提として示している。",
+      "source": "Lei nº 3.353, de 13 de maio de 1888（黄金法・原文）Presidência da República https://www.planalto.gov.br/ccivil_03/leis/lim/LIM3353.htm"
+    },
+    "discontinued": {
+      "label": "1888 黄金法",
+      "year": 1888,
+      "approx": false,
+      "fact": "1888年5月13日の法律第3.353号「ブラジルにおける奴隷制の消滅を宣言する」。第1条は「本法の日付をもって、ブラジルにおける奴隷制は消滅したものと宣言する」、第2条は「これに反する規定はすべて廃止する」。摂政イザベル皇女が裁可した。",
+      "source": "Lei nº 3.353, de 13 de maio de 1888（黄金法・原文）Presidência da República https://www.planalto.gov.br/ccivil_03/leis/lim/LIM3353.htm"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1888年5月13日の法律第3.353号は本文が二条しかない。第1条「本法の日付をもって、ブラジルにおける奴隷制は消滅したものと宣言する」、第2条「これに反する規定はすべて廃止する」。",
+        "source": "Lei nº 3.353, de 13 de maio de 1888（黄金法・原文）Presidência da República https://www.planalto.gov.br/ccivil_03/leis/lim/LIM3353.htm"
+      },
+      {
+        "text": "裁可したのは皇帝ペドロ2世ではなく、摂政であったイザベル皇女である（署名は「PRINCEZA IMPERIAL REGENTE」）。副署は農業・商業・公共事業大臣ロドリゴ・アウグスト・ダ・シルヴァ。",
+        "source": "Lei nº 3.353, de 13 de maio de 1888（黄金法・原文）Presidência da República https://www.planalto.gov.br/ccivil_03/leis/lim/LIM3353.htm"
+      },
+      {
+        "text": "廃止は一度に来ていない。1850年9月4日の法律第581号（エウゼービオ・ジ・ケイロス法）が「この帝国におけるアフリカ人取引の抑圧のための措置」を定め、輸入の側を止めた。",
+        "source": "Lei nº 581, de 4 de setembro de 1850（エウゼービオ・ジ・ケイロス法・原文）https://www.planalto.gov.br/ccivil_03/leis/lim/LIM581.htm"
+      },
+      {
+        "text": "1871年9月28日の法律第2.040号（自由胎児法）は「本法の日付以後に奴隷の女から生まれた子は自由の身分である」と宣言し、国有の奴隷らを解放した。生まれてくる者から先に自由にする設計である。",
+        "source": "Lei nº 2.040, de 28 de setembro de 1871（自由胎児法・原文）https://www.planalto.gov.br/ccivil_03/leis/lim/LIM2040.htm"
+      },
+      {
+        "text": "1850年（取引の禁止）から1888年（制度の廃止）まで38年かかっている。1888年という年号は、制度としての奴隷制が19世紀の終わりまで法の上に残っていたことを示す。",
+        "source": "Lei nº 3.353, de 13 de maio de 1888（黄金法・原文）Presidência da República https://www.planalto.gov.br/ccivil_03/leis/lim/LIM3353.htm"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台にはない項目（中南米の追加候補として立てた）。",
+      "黄金法（Lei Áurea）は通称で、正式には1888年5月13日の法律第3.353号。裁可者はペドロ2世ではなく摂政イザベル皇女。",
+      "「南北アメリカで最後に奴隷制を廃止した国」という説明は広く流通しているが、本セッションでは他国との比較を一次資料で裏取りしていないため書いていない。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "廃止法・前段の二法すべて、ブラジル大統領府（Planalto）の法令データベースで原文を確認した。廃番日は1888年5月13日で一日単位。製造年だけが概数。",
+    "hitokoto": "奴隷制を廃した法律は、本文が二条しかない。",
+    "body_ja": [
+      "1888年5月13日の法律第3.353号は、本文が二条しかない。第1条「本法の日付をもって、ブラジルにおける奴隷制は消滅したものと宣言する」。第2条「これに反する規定はすべて廃止する」。裁可したのは皇帝ペドロ2世ではなく、摂政であったイザベル皇女である。",
+      "この二条に至るまでに38年がかかっている。1850年9月4日の法律第581号は「この帝国におけるアフリカ人取引の抑圧のための措置」を定め、供給の側を止めた。1871年9月28日の法律第2.040号は「本法の日付以後に奴隷の女から生まれた子は自由の身分である」として、これから生まれてくる者から先に自由にした。",
+      "段階を踏んだこと自体が、この制度が経済の骨格として扱われていたことを示している。人を財産として数える判断基準が法の上から消えたのは1888年で、19世紀が終わる12年前である。「昔のこと」と言うときの昔は、思っているほど遠くない。"
+    ],
+    "sources": [
+      "Lei nº 3.353, de 13 de maio de 1888（黄金法・原文）Presidência da República https://www.planalto.gov.br/ccivil_03/leis/lim/LIM3353.htm",
+      "Lei nº 2.040, de 28 de setembro de 1871（自由胎児法・原文）https://www.planalto.gov.br/ccivil_03/leis/lim/LIM2040.htm",
+      "Lei nº 581, de 4 de setembro de 1850（エウゼービオ・ジ・ケイロス法・原文）https://www.planalto.gov.br/ccivil_03/leis/lim/LIM581.htm"
+    ]
+  },
+  {
+    "draft_no": 9,
+    "name_ja": "妻は半分だけの大人",
+    "reading": "つまははんぶんだけのおとな",
+    "name_en": "The Relative Incapacity of Married Women",
+    "category": "規範",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "ブラジル",
+    "country_en": "Brazil",
+    "region": "中南米",
+    "made": {
+      "label": "1916 民法",
+      "year": 1916,
+      "approx": false,
+      "fact": "1916年1月1日の法律第3.071号（ブラジル民法）第6条は「一定の行為について、またはその行為の仕方について相対的に無能力な者」を列挙し、その第2号に「既婚の女性、夫婦共同体が存続するあいだ」を挙げた。同条の他の号は16歳以上21歳未満の者、浪費者、先住民である。",
+      "source": "Lei nº 3.071, de 1º de janeiro de 1916（1916年民法・原文、改正履歴つき）https://www.planalto.gov.br/ccivil_03/leis/l3071.htm"
+    },
+    "discontinued": {
+      "label": "1962 既婚女性法",
+      "year": 1962,
+      "approx": false,
+      "fact": "1962年8月27日の法律第4.121号「既婚女性の法的地位について定める」が民法第6条を書き換え、「既婚の女性」の号を削除した。改正後の第6条は16歳以上21歳未満の者、浪費者、先住民の三号のみである。",
+      "source": "Lei nº 4.121, de 27 de agosto de 1962（既婚女性法・原文）https://www.planalto.gov.br/ccivil_03/leis/1950-1969/L4121.htm"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1916年民法第6条第2号は「既婚の女性、夫婦共同体が存続するあいだ」を相対的無能力者として列挙した。同じ条に並ぶのは16歳以上21歳未満の者、浪費者、先住民である。",
+        "source": "Lei nº 3.071, de 1º de janeiro de 1916（1916年民法・原文、改正履歴つき）https://www.planalto.gov.br/ccivil_03/leis/l3071.htm"
+      },
+      {
+        "text": "同法第233条は「夫は夫婦共同体の長である」と定め、その第4号に「妻の職業および夫婦の屋根の外での居住を許可する権利」を挙げた。第242条第7号は、妻は夫の許可なく「職業に従事すること」ができないと定めた。",
+        "source": "Lei nº 3.071, de 1º de janeiro de 1916（1916年民法・原文、改正履歴つき）https://www.planalto.gov.br/ccivil_03/leis/l3071.htm"
+      },
+      {
+        "text": "同法第1.299条は「既婚の女性は夫の許可なく委任を受けることができない」、第36条但書は「既婚の女性は夫の住所を自己の住所とする」と定めた。",
+        "source": "Lei nº 3.071, de 1º de janeiro de 1916（1916年民法・原文、改正履歴つき）https://www.planalto.gov.br/ccivil_03/leis/l3071.htm"
+      },
+      {
+        "text": "1962年8月27日の法律第4.121号は民法第6条・第233条・第242条ほか計14条と民事訴訟法第469条を改め、第6条から「既婚の女性」を外し、第242条の禁止事項から「職業に従事すること」を削除した。第233条は「夫は夫婦共同体の長であり、その職務を夫婦および子の共同の利益のために妻の協力を得て行う」に改まった。",
+        "source": "Lei nº 4.121, de 27 de agosto de 1962（既婚女性法・原文）https://www.planalto.gov.br/ccivil_03/leis/1950-1969/L4121.htm"
+      },
+      {
+        "text": "「夫は長である」という建前が消えるのはさらに26年後で、1988年10月5日公布の憲法第226条第5項が「夫婦共同体に関する権利と義務は、男と女が等しく行使する」と定めた。",
+        "source": "Constituição da República Federativa do Brasil de 1988（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "妻は半分だけの大人（1916年民法）",
+      "to": "夫婦は対等（1988年憲法第226条第5項）",
+      "note": "1962年に「無能力者」の枠から外れ、1988年に「夫は長である」が消えた。二段階で終わっている。"
+    },
+    "draft_corrections": [
+      "叩き台の「マチスモ（中南米。法制度の変化で裏が取れるか）」に対する回答がこの項目。「マチスモ」という語そのものには法令の日付がないので、裏の取れる形に落とすとこうなる。",
+      "1962年の法律第4.121号は「既婚女性法（Estatuto da Mulher Casada）」の通称で呼ばれるが、正式名は「既婚女性の法的地位について定める法律」。",
+      "1962年改正は無能力の枠を外しただけで、「夫は夫婦共同体の長」という規定は残った。それが消えたのは1988年憲法である。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1916年民法の原文（改正履歴つき）、1962年法の原文、1988年憲法の原文をすべてブラジル大統領府の法令データベースで確認した。条文番号と公布日が一日単位で取れる。マチスモを「裏の取れる一件」に置き換えた代案として最も強い。",
+    "hitokoto": "妻は法律上、十六歳の者と同じ「相対的無能力者」だった。",
+    "body_ja": [
+      "1916年1月1日の法律第3.071号、ブラジル民法の第6条は「相対的に無能力な者」を四つ挙げた。16歳以上21歳未満の者、既婚の女性、浪費者、先住民である。既婚の女性には「夫婦共同体が存続するあいだ」という限定が付いた。結婚が、法律上の能力を減らす出来事として書かれていた。",
+      "同じ民法の第233条は「夫は夫婦共同体の長である」とし、妻の職業と居住を許可する権利を夫に与えた。第242条第7号は、妻は夫の許可なく職業に従事できないと定めた。第1.299条では委任を受けることも、第36条では住所を選ぶことも、夫を経由する仕組みになっていた。",
+      "1962年8月27日の法律第4.121号が第6条から「既婚の女性」の号を削り、第242条の禁止事項から「職業に従事すること」を外した。それでも「夫は長である」は残り、消えたのは1988年10月5日公布の憲法第226条第5項「夫婦共同体に関する権利と義務は、男と女が等しく行使する」である。廃番は1962年と1988年の二度に分かれている。"
+    ],
+    "sources": [
+      "Lei nº 3.071, de 1º de janeiro de 1916（1916年民法・原文、改正履歴つき）https://www.planalto.gov.br/ccivil_03/leis/l3071.htm",
+      "Lei nº 4.121, de 27 de agosto de 1962（既婚女性法・原文）https://www.planalto.gov.br/ccivil_03/leis/1950-1969/L4121.htm",
+      "Constituição da República Federativa do Brasil de 1988（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+    ]
+  },
+  {
+    "draft_no": 10,
+    "name_ja": "結婚は解けない",
+    "reading": "けっこんはとけない",
+    "name_en": "Indissoluble Marriage",
+    "category": "規範",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "ブラジル",
+    "country_en": "Brazil",
+    "region": "中南米",
+    "made": {
+      "label": "1934 憲法",
+      "year": 1934,
+      "approx": false,
+      "fact": "1934年7月16日の憲法第144条は「解消できない婚姻によって構成される家族は、国家の特別な保護のもとにある」と定めた。1967年憲法第175条第1項はさらに端的に「婚姻は解消できない」と書いている。",
+      "source": "Constituição da República dos Estados Unidos do Brasil de 16 de julho de 1934（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao34.htm"
+    },
+    "discontinued": {
+      "label": "1977 憲法改正第9号",
+      "year": 1977,
+      "approx": false,
+      "fact": "1977年6月28日の憲法改正第9号が第175条第1項を「婚姻は、法律に明示された場合に限り、3年を超える先行の裁判上の別居があるときに解消することができる」に書き換えた。これを受けて1977年12月26日の法律第6.515号（離婚法）が手続を定めた。",
+      "source": "Emenda Constitucional nº 9, de 28 de junho de 1977（原文）https://www.planalto.gov.br/ccivil_03/constituicao/Emendas/Emc_anterior1988/emc09-77.htm"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1934年7月16日の憲法第144条は「解消できない婚姻によって構成される家族は、国家の特別な保護のもとにある」と定めた。",
+        "source": "Constituição da República dos Estados Unidos do Brasil de 16 de julho de 1934（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao34.htm"
+      },
+      {
+        "text": "1967年憲法第175条第1項は「婚姻は解消できない」の一文である。離婚がないことが、法律ではなく憲法に書かれていた。",
+        "source": "Constituição da República Federativa do Brasil de 1967（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao67.htm"
+      },
+      {
+        "text": "1977年6月28日の憲法改正第9号が第175条第1項を書き換え、「3年を超える先行の裁判上の別居」を条件に婚姻の解消を認めた。別居は事実上のものでもよく、改正前からのものは5年とされた。",
+        "source": "Emenda Constitucional nº 9, de 28 de junho de 1977（原文）https://www.planalto.gov.br/ccivil_03/constituicao/Emendas/Emc_anterior1988/emc09-77.htm"
+      },
+      {
+        "text": "1977年12月26日の法律第6.515号（離婚法）は第1条で、その解消が「1977年6月28日の憲法改正第9号が定めるもの」であると明記し、手続を定めた。",
+        "source": "Lei nº 6.515, de 26 de dezembro de 1977（離婚法・原文）https://www.planalto.gov.br/ccivil_03/leis/l6515.htm"
+      },
+      {
+        "text": "待ち期間はさらに短くなり、最後に消えた。1988年憲法第226条第6項は「1年を超える裁判上の別居」または「2年を超える事実上の別居」とし、2010年の憲法改正第66号はこれを「民事婚は離婚によって解消することができる」の一文に改めた。",
+        "source": "Constituição da República Federativa do Brasil de 1988（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台にはない項目（中南米の追加候補として立てた）。",
+      "ブラジルの離婚解禁は1977年だが、その年に二つの法令がある。憲法改正第9号（1977年6月28日）が禁止を解き、法律第6.515号（1977年12月26日）が手続を作った。片方だけを廃番日にしないこと。",
+      "「離婚できない」は法律ではなく憲法に書かれていた（1934年憲法第144条、1967年憲法第175条第1項）。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1934年憲法・1967年憲法・1977年憲法改正第9号・1977年離婚法・1988年憲法のすべてをブラジル大統領府の法令データベースで原文確認した。憲法の条文が価値観そのものを述べている珍しい例。",
+    "hitokoto": "憲法に「婚姻は解消できない」と書いてあった国がある。",
+    "body_ja": [
+      "1934年7月16日のブラジル憲法第144条は「解消できない婚姻によって構成される家族は、国家の特別な保護のもとにある」と定めた。1967年憲法の第175条第1項はさらに短く、「婚姻は解消できない」の一文である。離婚がないことが、法律ではなく憲法に書かれていた。",
+      "1977年6月28日、憲法改正第9号がこの一文を書き換えた。「婚姻は、法律に明示された場合に限り、3年を超える先行の裁判上の別居があるときに解消することができる」。半年後の12月26日、法律第6.515号がその手続を定め、第1条で自らの根拠を憲法改正第9号だと明記した。",
+      "待ち期間はその後も短くなった。1988年憲法は裁判上の別居1年または事実上の別居2年とし、2010年の憲法改正第66号は条件をすべて削って「民事婚は離婚によって解消することができる」の一文に改めた。「結婚は死ぬまで解けない」という規範が、憲法の条文の上で33年かけて縮んでいく過程が残っている。"
+    ],
+    "sources": [
+      "Constituição da República dos Estados Unidos do Brasil de 16 de julho de 1934（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao34.htm",
+      "Constituição da República Federativa do Brasil de 1967（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao67.htm",
+      "Emenda Constitucional nº 9, de 28 de junho de 1977（原文）https://www.planalto.gov.br/ccivil_03/constituicao/Emendas/Emc_anterior1988/emc09-77.htm",
+      "Lei nº 6.515, de 26 de dezembro de 1977（離婚法・原文）https://www.planalto.gov.br/ccivil_03/leis/l6515.htm",
+      "Constituição da República Federativa do Brasil de 1988（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+    ]
+  },
+  {
+    "draft_no": 11,
+    "name_ja": "認知できない子がいる",
+    "reading": "にんちできないこがいる",
+    "name_en": "Children Who Could Not Be Acknowledged",
+    "category": "規範",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "ブラジル",
+    "country_en": "Brazil",
+    "region": "中南米",
+    "made": {
+      "label": "1916 民法第358条",
+      "year": 1916,
+      "approx": false,
+      "fact": "1916年1月1日の法律第3.071号（ブラジル民法）第358条は「近親の子および不倫の子は認知することができない」と定めた。",
+      "source": "Lei nº 3.071, de 1º de janeiro de 1916（1916年民法・原文、改正履歴つき）https://www.planalto.gov.br/ccivil_03/leis/l3071.htm"
+    },
+    "discontinued": {
+      "label": "1988 憲法／1989 法律第7.841号",
+      "year": 1988,
+      "approx": false,
+      "fact": "1988年10月5日公布の憲法第227条第6項が「子は、婚姻関係から生まれたか否か、また養子であるかを問わず、同じ権利と資格をもち、親子関係に関する差別的な呼称はすべて禁じられる」と定め、翌1989年の法律第7.841号が民法第358条を廃止した。",
+      "source": "Constituição da República Federativa do Brasil de 1988（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1916年民法第358条は「近親の子および不倫の子は認知することができない」の一文である。親が認知したいと望んでも、法律がそれを禁じていた。",
+        "source": "Lei nº 3.071, de 1º de janeiro de 1916（1916年民法・原文、改正履歴つき）https://www.planalto.gov.br/ccivil_03/leis/l3071.htm"
+      },
+      {
+        "text": "民法の原文の履歴には第358条に「法律第7.841号（1989年）により廃止」と注記されている。条文が生きていた期間は73年である。",
+        "source": "Lei nº 3.071, de 1º de janeiro de 1916（1916年民法・原文、改正履歴つき）https://www.planalto.gov.br/ccivil_03/leis/l3071.htm"
+      },
+      {
+        "text": "1988年10月5日公布の憲法第227条第6項は「子は、婚姻関係から生まれたか否か、また養子であるかを問わず、同じ権利と資格をもち、親子関係に関する差別的な呼称はすべて禁じられる」と定めた。禁じたのは扱いの差だけでなく「呼び名」である。",
+        "source": "Constituição da República Federativa do Brasil de 1988（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+      },
+      {
+        "text": "同じ民法は第359条以下で「非嫡出の子」という区分を用いており、区分そのものが制度の一部だった。憲法第227条第6項が禁じた「差別的な呼称」はこの語法を指す。",
+        "source": "Lei nº 3.071, de 1º de janeiro de 1916（1916年民法・原文、改正履歴つき）https://www.planalto.gov.br/ccivil_03/leis/l3071.htm"
+      },
+      {
+        "text": "同じ1988年憲法の第226条第5項で「夫婦共同体に関する権利と義務は、男と女が等しく行使する」と定められている。家族に関する旧民法の建前が、同じ憲法の隣り合う条文でまとめて外された。",
+        "source": "Constituição da República Federativa do Brasil de 1988（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台にはない項目（中南米の追加候補として立てた）。",
+      "廃番の日付は二つある。憲法第227条第6項（1988年10月5日公布）が原則を立て、民法第358条そのものを消したのは1989年の法律第7.841号である。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1916年民法の原文（第358条と廃止注記）と1988年憲法の原文をブラジル大統領府の法令データベースで確認した。条文一文で価値観が言い切れる、図鑑向きの一件。ただしブラジルの項目が4件に偏るので、地域バランスの調整でこれを落とすのは妥当。",
+    "hitokoto": "民法に「認知できない子」という条文があった。1989年まで。",
+    "body_ja": [
+      "1916年1月1日のブラジル民法第358条は、たった一文である。「近親の子および不倫の子は認知することができない」。親が認知したいと望んでも、法律の側がそれを禁じていた。禁じられていたのは差別ではなく、差別をやめることである。子の身分を、生まれ方によって永久に固定する条文だった。",
+      "この条文は73年生きた。消したのは1989年の法律第7.841号で、その一年前、1988年10月5日公布の憲法が原則を先に立てている。第227条第6項「子は、婚姻関係から生まれたか否か、また養子であるかを問わず、同じ権利と資格をもち、親子関係に関する差別的な呼称はすべて禁じられる」。",
+      "禁じられたのは扱いの差だけではない。「差別的な呼称」、つまり旧民法が第359条以下で用いていた「非嫡出の子」という語法そのものが禁じられた。区分の名前を法律から取り上げることで、区分そのものを終わらせる書き方である。同じ憲法の隣り合う条文では、夫婦の対等も同時に定められている。"
+    ],
+    "sources": [
+      "Lei nº 3.071, de 1º de janeiro de 1916（1916年民法・原文、改正履歴つき）https://www.planalto.gov.br/ccivil_03/leis/l3071.htm",
+      "Constituição da República Federativa do Brasil de 1988（原文）https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+    ]
+  },
+  {
+    "draft_no": 12,
+    "name_ja": "人種は登録される",
+    "reading": "じんしゅはとうろくされる",
+    "name_en": "Apartheid",
+    "category": "判断基準",
+    "shelf": 3,
+    "evidence_type": "law",
+    "country": "南アフリカ",
+    "country_en": "South Africa",
+    "region": "アフリカ",
+    "made": {
+      "label": "1950 人口登録法・集団地域法",
+      "year": 1950,
+      "approx": false,
+      "fact": "1950年法律第30号（人口登録法）はすべての南アフリカ人を「白人・黒人・カラード」のいずれかに分類することを定め、1950年法律第41号（集団地域法）は集団ごとに不動産の所有・居住・就労の場所を定めた。両法はいずれも1950年7月7日施行。1948年5月26日の選挙で国民党が政権を取ったのが起点である。",
+      "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+    },
+    "discontinued": {
+      "label": "1991 人口登録法廃止法",
+      "year": 1991,
+      "approx": false,
+      "fact": "1991年法律第114号（人口登録法廃止法）第1条が人口登録法を廃止し、1991年法律第108号（人種に基づく土地措置廃止法）第1条が1913年原住民土地法を廃止した。",
+      "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1948年5月26日の選挙で、D・F・マランの国民党はN・C・ハフェンハのアフリカーナー党と組み、全体の得票の40%で5議席差の多数を得た。この選挙の勝者がアパルトヘイトを制度化した。",
+        "source": "South African History Online「National Party (NP)」https://www.sahistory.org.za/article/national-party-np"
+      },
+      {
+        "text": "1950年法律第30号（人口登録法、1950年7月7日施行）は全国民を白人・黒人・カラードに分類し、分類の基準を「外見、社会的受容、血統」に置いた。白人の定義には「習慣、話し方、教育、態度、挙措」が含まれた。",
+        "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+      },
+      {
+        "text": "1950年法律第41号（集団地域法、1950年7月7日施行）は集団別に不動産の所有・居住・就労の場所を定め、伝統的な財産権を横断して数千人規模の強制退去を生んだ。1953年法律第49号（別個施設留保法、1953年10月9日施行）は便所・公園・海岸を集団別に分け、さらに「同じ質である必要はない」と定めた。",
+        "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+      },
+      {
+        "text": "廃止は段階的である。1985年法律第72号（異人種間の結婚・性交の禁止の解除）、1986年法律第68号（流入規制廃止法）、1990年法律第100号（公共施設に関する差別的立法廃止法）、1991年法律第114号（人口登録法廃止法）、1991年法律第108号（人種に基づく土地措置廃止法）。",
+        "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+      },
+      {
+        "text": "南アフリカが最初の民主的な選挙を行ったのは1994年4月、暫定憲法のもとである。ANCが62%を得て、マンデラが初の民主的に選ばれた大統領となった。1986年にはパス法が撤廃されている。",
+        "source": "South African Government「History」https://www.gov.za/about-sa/history"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「1948年〜1991年の法廃止、1994年の選挙」は正しい。ただし「アパルトヘイト法」は単一の法ではなく、1949年から1953年にかけて積み上げられた法の束である（1949年法律第55号、1950年法律第30号・第41号・第21号、1953年法律第49号など）。",
+      "廃止も一度ではない。1985年（結婚・性交）→1986年（流入規制・パス法）→1990年（公共施設）→1991年（人口登録・土地）と4段階に分かれる。廃番年を1991年とするなら「人口登録の廃止」に限った話だと明記すること。",
+      "1948年の選挙で国民党が得たのは得票40%で5議席差の多数。「圧勝で始まった」という書き方は事実に合わない。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "法令番号・施行日・廃止法の番号が South African History Online の法令一覧（Dugard 1978 / Horrell 1978 に基づく）で特定でき、選挙年は南ア政府サイトで裏が取れる。制度の束として書けば、特定集団を貶める書き方を避けられる。",
+    "hitokoto": "生まれた人全員に人種を登録する法律が、四十一年あった。",
+    "body_ja": [
+      "1948年5月26日の選挙で、D・F・マランの国民党が全体の得票の40%、5議席差の多数で政権を取った。ここから積み上がった法の束が、人を人種ごとに数え、分け、置く場所を決める仕組みになった。単一の「アパルトヘイト法」は存在しない。",
+      "骨格は1950年に置かれた。同年7月7日施行の法律第30号（人口登録法）は全国民を白人・黒人・カラードに分類し、その基準を「外見、社会的受容、血統」とした。白人の定義には「習慣、話し方、教育、態度、挙措」まで含まれた。同日施行の法律第41号（集団地域法）が、集団ごとに所有・居住・就労の場所を定めた。",
+      "廃止も一度ではない。1985年法律第72号が結婚と性交の禁止を解き、1986年法律第68号が流入規制を廃し、1990年法律第100号が公共施設の分離を消し、1991年に法律第114号が人口登録法を、法律第108号が1913年原住民土地法を廃止した。最初の民主的な選挙は1994年4月である。"
+    ],
+    "sources": [
+      "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s",
+      "South African History Online「National Party (NP)」https://www.sahistory.org.za/article/national-party-np",
+      "South African Government「History」https://www.gov.za/about-sa/history"
+    ]
+  },
+  {
+    "draft_no": 13,
+    "name_ja": "人種をまたぐ結婚は犯罪",
+    "reading": "じんしゅをまたぐけっこんははんざい",
+    "name_en": "Prohibition of Mixed Marriages",
+    "category": "規範",
+    "shelf": 3,
+    "evidence_type": "law",
+    "country": "南アフリカ",
+    "country_en": "South Africa",
+    "region": "アフリカ",
+    "made": {
+      "label": "1949 異人種間結婚禁止法",
+      "year": 1949,
+      "approx": false,
+      "fact": "1949年法律第55号（異人種間結婚禁止法）は、白人と他の人種集団との結婚を禁じた。翌1950年法律第21号（不道徳行為改正法）が白人と黒人のあいだの性交渉を禁じた。",
+      "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+    },
+    "discontinued": {
+      "label": "1985 法律第72号",
+      "year": 1985,
+      "approx": false,
+      "fact": "1985年法律第72号（不道徳行為および異人種間結婚禁止改正法）が、1968年法律第21号を含む一連の規定を廃止した。",
+      "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1949年法律第55号は白人と他の人種集団の結婚を禁じた。議会の審議で示された動機は、白人集団へのカラードの流入への懸念であった。",
+        "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+      },
+      {
+        "text": "この法律が作られた1949年当時、記録されていた「異人種間の結婚」は全国で約75件、白人同士の結婚は約28,000件である。禁じる対象は、全体の0.3%に満たない件数だった。",
+        "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+      },
+      {
+        "text": "1950年法律第21号（不道徳行為改正法）は姦通、その未遂、および白人と黒人のあいだの性交渉といった行為を禁じた。1957年に法律第23号として改正された。",
+        "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+      },
+      {
+        "text": "1968年法律第21号（異人種間結婚禁止改正法、1968年3月27日施行）は、南アフリカ国外で男性市民が他の人種集団の女性と結んだ結婚も無効とした。国外で結婚して戻る道を塞ぐ設計である。",
+        "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+      },
+      {
+        "text": "これらを廃止したのは1985年法律第72号（不道徳行為および異人種間結婚禁止改正法）である。アパルトヘイト法の束のうち、結婚と性に関する部分が最初に外れた。人口登録法が廃止されるのはその6年後、1991年である。",
+        "source": "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "異人種間の結婚は無効（アメリカ 1967まで）",
+      "to": "人種をまたぐ結婚は犯罪（南アフリカ 1985まで）",
+      "note": "同じ規範が、北米では1967年に最高裁の判決で、南アフリカでは1985年に議会の法改正で終わった。終わり方の型が違う。"
+    },
+    "draft_corrections": [
+      "叩き台のアパルトヘイト項目から、結婚と性に関する部分を別立てにした。廃止年が人口登録（1991年）とは6年ずれるため、同じ項目にまとめると廃番年が書けない。",
+      "1949年法律第55号の対象は「白人と他の人種集団」で、白人以外の集団同士の結婚は対象外である。「すべての人種間の結婚を禁じた」という書き方は正確でない。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1949年・1950年・1968年の法令番号と1985年の廃止法の番号が特定でき、1949年時点の件数（約75件対約28,000件）という具体的な数字も取れた。北米のラヴィング判決と対にすると「終わり方の型の違い」が見える。",
+    "hitokoto": "法ができた1949年、その結婚は全国で約七十五件だった。",
+    "body_ja": [
+      "1949年法律第55号（異人種間結婚禁止法）は、白人と他の人種集団との結婚を禁じた。議会の審議で示された動機は、白人集団へのカラードの流入への懸念である。翌1950年、法律第21号（不道徳行為改正法）が白人と黒人のあいだの性交渉を禁じ、結婚の前の段階から法の対象になった。",
+      "この法律が作られた1949年当時、記録されていた「異人種間の結婚」は全国で約75件だった。同じ年の白人同士の結婚は約28,000件である。全体の0.3%に満たない件数のために、法律が一本作られた。1968年法律第21号は、国外で結んだ結婚まで無効とし、抜け道を塞いだ。",
+      "これらが廃止されたのは1985年法律第72号である。アパルトヘイト法の束のうち、結婚と性に関する部分が最初に外れ、人口登録法が消えるのはその6年後の1991年だった。同じ規範を、アメリカでは1967年に最高裁が終わらせ、南アフリカでは1985年に議会が終わらせた。"
+    ],
+    "sources": [
+      "South African History Online「Apartheid Legislation 1850s-1970s」（Dugard 1978 / Horrell 1978 に基づく法令一覧）https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"
+    ]
+  },
+  {
+    "draft_no": 14,
+    "name_ja": "文明国が導いてやる",
+    "reading": "ぶんめいこくがみちびいてやる",
+    "name_en": "The Civilising Mission",
+    "category": "判断基準",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "アフリカ各地",
+    "country_en": "Africa",
+    "region": "アフリカ",
+    "made": {
+      "label": "1885 ベルリン会議",
+      "year": 1885,
+      "approx": true,
+      "fact": "1885年のベルリン会議一般議定書によって列強がアフリカの分割の手続を取り決めた、というのが標準的な説明である。本セッションでは議定書の署名日（1885年2月26日とされる）を一次資料で確認できなかったため、年のみを概数として置く。",
+      "source": "United Nations Audiovisual Library of International Law「Declaration on the Granting of Independence to Colonial Countries and Peoples」https://legal.un.org/avl/ha/dicc/dicc.html"
+    },
+    "discontinued": {
+      "label": "1960 国連総会決議1514",
+      "year": 1960,
+      "approx": false,
+      "fact": "1960年12月14日、国連総会第15会期第947回本会議で、43か国提案の「植民地諸国および諸人民に対する独立付与に関する宣言」（決議1514（XV））が89対0、棄権9で採択された。反対は一つもなかった。",
+      "source": "United Nations Audiovisual Library of International Law「Declaration on the Granting of Independence to Colonial Countries and Peoples」https://legal.un.org/avl/ha/dicc/dicc.html"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "決議1514（XV）は1960年12月14日、総会第15会期第947回本会議で採択された。票は89対0、棄権9。反対票は一つもない。議長はアイルランドのH・ボランド。",
+        "source": "United Nations Audiovisual Library of International Law「Declaration on the Granting of Independence to Colonial Countries and Peoples」https://legal.un.org/avl/ha/dicc/dicc.html"
+      },
+      {
+        "text": "この議題は1960年9月23日、ソ連のフルシチョフ閣僚会議議長が総会演説で提起し、同日付の書簡（A/4501）と宣言草案（A/4502）として提出された。最終的に採択されたのは11月28日にカンボジアがアジア・アフリカ26か国を代表して出し、のちに43か国が共同提案国となった別案（A/L.323）である。ソ連案とその修正案は否決された。",
+        "source": "United Nations Audiovisual Library of International Law「Declaration on the Granting of Independence to Colonial Countries and Peoples」https://legal.un.org/avl/ha/dicc/dicc.html"
+      },
+      {
+        "text": "1960年に総会へ新たに加盟した国は19。1955年に16か国が一度に加盟したことで加盟国は76になり、この構成の変化が決議の採択を可能にした。総会の顔ぶれが変わったことが、規範の廃番の条件だった。",
+        "source": "United Nations Audiovisual Library of International Law「Declaration on the Granting of Independence to Colonial Countries and Peoples」https://legal.un.org/avl/ha/dicc/dicc.html"
+      },
+      {
+        "text": "「宣言」という形式が選ばれた理由の一つは、否決票を法的効果のない棄権に変えるという戦術的な計算にある。文書の型自体が交渉の産物である。",
+        "source": "United Nations Audiovisual Library of International Law「Declaration on the Granting of Independence to Colonial Countries and Peoples」https://legal.un.org/avl/ha/dicc/dicc.html"
+      },
+      {
+        "text": "決議1514はその後の一連の決議を生んだ。決議1515（XV）（1960年12月15日、自国の富と天然資源を処分する主権的権利）、決議1803（XVII）（1962年12月14日、天然資源に対する恒久的主権）。1961年11月27日の決議1654（XVI）は、実施を監視する17か国の特別委員会を設けた。",
+        "source": "United Nations Audiovisual Library of International Law「Declaration on the Granting of Independence to Colonial Countries and Peoples」https://legal.un.org/avl/ha/dicc/dicc.html"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台にはない項目（アフリカの追加候補として立てた）。先住民や被支配側の慣習を「遅れたもの」として書かないという指示に合わせ、禁じた側・支配した側の価値観を項目にした。",
+      "製造年の1885年（ベルリン会議一般議定書）は、本セッションでは署名日を一次資料で確認できなかった。年のみ概数として扱っている。日付まで書くなら追加の裏取りが必要。",
+      "`country` に国名が入らない唯一の項目。価値観の主体が個々の国ではなく列強の側にあるため、「アフリカ各地」としてある。絞り込みの欄の仕様に合わないなら、編集側で扱いを決めてほしい。"
+    ],
+    "confidence": "B",
+    "verdict": "include",
+    "verdict_reason": "廃番側は国連の国際法音声映像ライブラリー（legal.un.org）で採択日・会議番号・票数まで一次資料相当で確認できた。製造年が概数なので confidence は B。アフリカの項目が南アフリカ2件に偏るのを避ける意味でも価値がある。",
+    "hitokoto": "「まだ準備ができていない」は理由にならないと決議された。",
+    "body_ja": [
+      "19世紀の終わりから20世紀の半ばまで、植民地支配は「文明国の義務」として語られていた。1885年のベルリン会議一般議定書で列強がアフリカ分割の手続を取り決めたことが、その標準的な起点とされる。導いてやる側と導かれる側があるという前提が、外交文書の語彙になっていた。",
+      "1960年12月14日、国連総会第15会期第947回本会議で、43か国提案の「植民地諸国および諸人民に対する独立付与に関する宣言」が採択された。票は89対0、棄権9。反対票は一つもなかった。提起したのは同年9月23日のフルシチョフだが、採択されたのはカンボジアがアジア・アフリカ26か国を代表して出した別案である。",
+      "この採択を可能にしたのは総会の顔ぶれの変化だった。1955年に16か国、1960年だけで19か国が加盟し、加盟国数は倍近くになっていた。つまり規範が終わったのは、それを支持しない者が多数になったからである。判断基準の廃番日が、票数として残っている珍しい例である。"
+    ],
+    "sources": [
+      "United Nations Audiovisual Library of International Law「Declaration on the Granting of Independence to Colonial Countries and Peoples」https://legal.un.org/avl/ha/dicc/dicc.html"
+    ]
+  },
+  {
+    "draft_no": 15,
+    "name_ja": "白豪主義",
+    "reading": "はくごうしゅぎ",
+    "name_en": "The White Australia Policy",
+    "category": "判断基準",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "オーストラリア",
+    "country_en": "Australia",
+    "region": "オセアニア",
+    "made": {
+      "label": "1901 移民制限法",
+      "year": 1901,
+      "approx": false,
+      "fact": "1901年法律第17号（移民制限法）は1901年12月23日に裁可された。正式名は「移民に一定の制限を課し、および禁止移民の連邦からの退去について定める法律」。",
+      "source": "Immigration Restriction Act 1901, No. 17 of 1901（原文PDF）Federal Register of Legislation https://www.legislation.gov.au/C1901A00017/asmade/text"
+    },
+    "discontinued": {
+      "label": "1958 移民法（1901年法の失効）",
+      "year": 1958,
+      "approx": false,
+      "fact": "1901年法はたびたび改正されながら1958年まで効力を保った。1958年法律第62号（移民法）が1958年10月8日から施行され、1901年法に代わった。",
+      "source": "Documenting a Democracy（Museum of Australian Democracy / 豪州政府）「Immigration Restriction Act 1901 (Cth)」https://www.foundingdocs.gov.au/item-did-16.html"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "1901年法律第17号（移民制限法）は1901年12月23日に裁可された。条文第3条(a)は、禁止移民として「officer に求められたとき、officer が指定するヨーロッパの言語で50語の長さの文章を書き取りのうえ officer の面前で署名することができなかった者」を挙げる。",
+        "source": "Immigration Restriction Act 1901, No. 17 of 1901（原文PDF）Federal Register of Legislation https://www.legislation.gov.au/C1901A00017/asmade/text"
+      },
+      {
+        "text": "法の条文には模範とした先例が欄外に注記されている。ナタール1897年法律第1号第3条、西オーストラリア1897年法律第13号第2条、ニューサウスウェールズ1898年法律第3号第3条。南アフリカのナタールで使われた仕組みを持ち込んだものである。",
+        "source": "Immigration Restriction Act 1901, No. 17 of 1901（原文PDF）Federal Register of Legislation https://www.legislation.gov.au/C1901A00017/asmade/text"
+      },
+      {
+        "text": "書き取り試験という形式が選ばれたのは、人種を表に出す選別が英国に反対され、英国の同盟国である日本に嫌われたためである。当初は英語のみとする案だったが、ヨーロッパからの移民を遠ざけ日本人やアフリカ系アメリカ人に有利になるという議論が出て「ヨーロッパの言語」とされた。1905年には日本への配慮から「指定された言語」に改められた。",
+        "source": "Documenting a Democracy（Museum of Australian Democracy / 豪州政府）「Immigration Restriction Act 1901 (Cth)」https://www.foundingdocs.gov.au/item-did-16.html"
+      },
+      {
+        "text": "書き取り試験は1902〜03年に805回行われ、合格者は46人。1904〜09年には554回行われ、合格者は6人。1909年以降、この試験に合格した者は一人もいない。不合格者は入国を拒まれるか国外に送られた。",
+        "source": "Documenting a Democracy（Museum of Australian Democracy / 豪州政府）「Immigration Restriction Act 1901 (Cth)」https://www.foundingdocs.gov.au/item-did-16.html"
+      },
+      {
+        "text": "1932年からは入国後5年のあいだ、何回でも試験を課せるようになった。1901年法は「たびたび改正されながら1958年まで効力を保った」。代わったのは1958年法律第62号（移民法、1958年10月8日施行）である。",
+        "source": "Documenting a Democracy（Museum of Australian Democracy / 豪州政府）「Immigration Restriction Act 1901 (Cth)」https://www.foundingdocs.gov.au/item-did-16.html"
+      },
+      {
+        "text": "1901年法は単独ではなく、非ヨーロッパ系移民を排除する一連の立法の一部だった。同年の太平洋諸島労働者法と、郵便電信法第15条（連邦が補助する郵便船は白人労働者のみを雇うこと）がこれに含まれる。",
+        "source": "Documenting a Democracy（Museum of Australian Democracy / 豪州政府）「Immigration Restriction Act 1901 (Cth)」https://www.foundingdocs.gov.au/item-did-16.html"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「1901年 移民制限法〜1973年の撤廃」について。1901年法律第17号の裁可は1901年12月23日で、この法律自体は1958年（1958年法律第62号・移民法、1958年10月8日施行）に失効している。1973年という年は「政策としての白豪主義の終わり」を指す通説だが、本セッションではその根拠（ホイットラム政権の措置、1975年人種差別禁止法）を一次資料で確認できなかった。",
+      "したがって廃番年は、確認できた1958年（1901年法の失効）に置いた。1973年を廃番にするなら別途裏取りが必要。",
+      "白豪主義は1901年法一本ではない。同年の太平洋諸島労働者法と郵便電信法第15条（郵便船は白人労働者のみ）も同じ束に含まれる。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "1901年法の原文PDF（豪州連邦法令登録簿）で裁可日と書き取り試験の条文を確認し、豪州政府の Documenting a Democracy で運用実績（1909年以降の合格者ゼロ）と1958年の失効を確認した。1973年の扱いだけ保留。",
+    "hitokoto": "1909年以降、この試験に合格した者は一人もいない。",
+    "body_ja": [
+      "1901年12月23日に裁可されたオーストラリア連邦法律第17号（移民制限法）は、「禁止移民」の第一に、officer が指定するヨーロッパの言語で50語を書き取れなかった者を挙げた。人種の語は条文にない。書き取り試験という形が選ばれたのは、人種を表に出す選別が英国に反対され、英国の同盟国である日本に嫌われたためである。",
+      "条文の欄外には模範とした先例が注記されている。ナタール1897年法律第1号、西オーストラリア1897年法律第13号、ニューサウスウェールズ1898年法律第3号。仕組みそのものが輸入品だった。当初は英語のみとする案だったが、ヨーロッパ移民を遠ざけると議論され「ヨーロッパの言語」に、1905年には日本への配慮から「指定された言語」に改められた。",
+      "運用の記録が残っている。1902〜03年に805回行われて合格者は46人、1904〜09年に554回行われて合格者は6人。1909年以降、合格者は一人もいない。試験は選抜ではなく門を閉じる装置として働いた。1901年法は改正を重ねて1958年まで効力を保ち、同年10月8日施行の移民法に代わった。"
+    ],
+    "sources": [
+      "Immigration Restriction Act 1901, No. 17 of 1901（原文PDF）Federal Register of Legislation https://www.legislation.gov.au/C1901A00017/asmade/text",
+      "Documenting a Democracy（Museum of Australian Democracy / 豪州政府）「Immigration Restriction Act 1901 (Cth)」https://www.foundingdocs.gov.au/item-did-16.html",
+      "Migration Act 1958, No. 62 of 1958 — Federal Register of Legislation https://www.legislation.gov.au/C1958A00062/asmade/text"
+    ]
+  },
+  {
+    "draft_no": 16,
+    "name_ja": "先住民は人口に数えない",
+    "reading": "せんじゅうみんはじんこうにかぞえない",
+    "name_en": "Section 127",
+    "category": "判断基準",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "オーストラリア",
+    "country_en": "Australia",
+    "region": "オセアニア",
+    "made": {
+      "label": "1901 憲法第127条",
+      "year": 1901,
+      "approx": false,
+      "fact": "オーストラリア憲法第127条は「連邦、州、または連邦のその他の部分の人民の数を算定する際には、原住民は数に入れない」と定めていた。連邦の成立は1901年である。",
+      "source": "Parliamentary Education Office（オーストラリア連邦議会）「1967 referendum」https://peo.gov.au/understand-our-parliament/history-of-parliament/1967-referendum/"
+    },
+    "discontinued": {
+      "label": "1967 憲法改正（原住民）法",
+      "year": 1967,
+      "approx": false,
+      "fact": "1967年5月27日の国民投票で約90%が賛成し、憲法改正（原住民）1967年法律第55号として1967年8月10日に成立した。第127条は削除され、第51条(26)の「いずれかの州における原住民の人種を除く」の文言も削られた。",
+      "source": "Constitution Alteration (Aboriginals) 1967, No. 55 of 1967 — Federal Register of Legislation https://www.legislation.gov.au/C1967A00055/asmade/text"
+    },
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [
+      {
+        "text": "憲法第127条の文言は「連邦、州、または連邦のその他の部分の人民の数を算定する際には、原住民は数に入れない」。統計の取り方という形で書かれた排除である。",
+        "source": "Parliamentary Education Office（オーストラリア連邦議会）「1967 referendum」https://peo.gov.au/understand-our-parliament/history-of-parliament/1967-referendum/"
+      },
+      {
+        "text": "憲法第51条(26)は連邦議会が特別法を作れる対象を「いずれかの州における原住民の人種を除く、いずれかの人種の人民」と定めていた。除外されていたため、連邦は先住民のための立法ができなかった。",
+        "source": "Parliamentary Education Office（オーストラリア連邦議会）「1967 referendum」https://peo.gov.au/understand-our-parliament/history-of-parliament/1967-referendum/"
+      },
+      {
+        "text": "1967年5月27日の国民投票で、約90%が賛成した。オーストラリア史上もっとも大きな賛成票である。",
+        "source": "Parliamentary Education Office（オーストラリア連邦議会）「1967 referendum」https://peo.gov.au/understand-our-parliament/history-of-parliament/1967-referendum/"
+      },
+      {
+        "text": "改正は憲法改正（原住民）1967年、1967年法律第55号として1967年8月10日に成立した。国民投票の日と法律の成立日は2か月半ずれる。",
+        "source": "Constitution Alteration (Aboriginals) 1967, No. 55 of 1967 — Federal Register of Legislation https://www.legislation.gov.au/C1967A00055/asmade/text"
+      },
+      {
+        "text": "「国勢調査で先住民を数えるように憲法を変える」ことが、この国民投票の争点として説明されている。数に入れるという最低限の変更に、90%という数字がついた。",
+        "source": "Parliamentary Education Office（オーストラリア連邦議会）「1967 referendum」https://peo.gov.au/understand-our-parliament/history-of-parliament/1967-referendum/"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台にはない項目（オセアニアの追加候補として立てた）。叩き台の「盗まれた世代」は裏取りできなかったため（別記）、オーストラリアからはこの項目を推す。",
+      "国民投票の日（1967年5月27日）と法律の成立日（1967年8月10日、法律第55号）は別である。廃番日をどちらにするかを決めておくこと。",
+      "賛成率は「約90%」。90.77%という数字が広く引かれているが、本セッションでは小数点以下を選挙管理委員会の資料で確認できなかった。"
+    ],
+    "confidence": "A",
+    "verdict": "include",
+    "verdict_reason": "第127条の文言はオーストラリア連邦議会の議会教育局（PEO）で、改正法の番号と成立日は連邦法令登録簿で確認した。条文一行がそのまま価値観になっている、図鑑向きの一件。",
+    "hitokoto": "憲法に「原住民は数に入れない」と書いてあった。1967年まで。",
+    "body_ja": [
+      "オーストラリア憲法第127条は、こう書かれていた。「連邦、州、または連邦のその他の部分の人民の数を算定する際には、原住民は数に入れない」。差別の禁止や権利の制限ではなく、統計の取り方という形で書かれた排除である。連邦の成立は1901年で、この条文は最初からあった。",
+      "もう一つ、第51条(26)は連邦議会が特別法を作れる対象を「いずれかの州における原住民の人種を除く、いずれかの人種の人民」と定めていた。除外されていたため、連邦は先住民のための立法ができなかった。数に入れず、法の対象にもしない、という二重の構えになっていた。",
+      "1967年5月27日の国民投票で、約90%が賛成した。オーストラリア史上もっとも大きな賛成票である。改正は憲法改正（原住民）1967年、1967年法律第55号として同年8月10日に成立し、第127条は削除された。数に入れるという最低限の変更に、90%という数字がついている。"
+    ],
+    "sources": [
+      "Parliamentary Education Office（オーストラリア連邦議会）「1967 referendum」https://peo.gov.au/understand-our-parliament/history-of-parliament/1967-referendum/",
+      "Constitution Alteration (Aboriginals) 1967, No. 55 of 1967 — Federal Register of Legislation https://www.legislation.gov.au/C1967A00055/asmade/text"
+    ]
+  },
+  {
+    "draft_no": 17,
+    "name_ja": "公の言葉は英語だけ",
+    "reading": "おおやけのことばはえいごだけ",
+    "name_en": "English Only",
+    "category": "規範",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "ニュージーランド",
+    "country_en": "New Zealand",
+    "region": "オセアニア",
+    "made": {
+      "label": "植民地期以降",
+      "year": 1867,
+      "approx": true,
+      "fact": "学校と公の場でマオリ語が排除された起点は、1867年先住民学校法とされる。本セッションではこの法律の条文を一次資料で確認できなかったため、年は概数とする。確実に言えるのは、1987年の法律が公用語としての地位と法廷で話す権利をはじめて与えたこと、つまりそれまでその地位と権利がなかったことである。",
+      "source": "Maori Language Act 1987 (1987 No 176) — New Zealand Legislation https://www.legislation.govt.nz/act/public/1987/0176/latest/DLM124116.html"
+    },
+    "discontinued": {
+      "label": "1987 マオリ語法",
+      "year": 1987,
+      "approx": false,
+      "fact": "1987年法律第176号（マオリ語法）第3条は「マオリ語をニュージーランドの公用語とする」、第4条は「法的手続においてマオリ語を話す権利」を定めた。同法はマオリ語委員会を設けた。",
+      "source": "Maori Language Act 1987 (1987 No 176) — New Zealand Legislation https://www.legislation.govt.nz/act/public/1987/0176/latest/DLM124116.html"
+    },
+    "restocked": {
+      "label": "1987 te reo Māori",
+      "year": 1987,
+      "as": "te reo Māori（公用語）",
+      "fact": "1987年法律第176号第3条により、マオリ語はニュージーランドの公用語となった。同法はのちに Te Ture mō Te Reo Māori に置き換えられている。",
+      "source": "Maori Language Act 1987 (1987 No 176) — New Zealand Legislation https://www.legislation.govt.nz/act/public/1987/0176/latest/DLM124116.html"
+    },
+    "trend": "restocked",
+    "keyfacts": [
+      {
+        "text": "1987年法律第176号（マオリ語法）第3条の見出しは「Māori language to be an official language of New Zealand」。この条文で、マオリ語はニュージーランドの公用語になった。",
+        "source": "Maori Language Act 1987 (1987 No 176) — New Zealand Legislation https://www.legislation.govt.nz/act/public/1987/0176/latest/DLM124116.html"
+      },
+      {
+        "text": "同法第4条の見出しは「Right to speak Māori in legal proceedings」。法的手続でマオリ語を話す権利が、1987年に法律で作られた。逆に言えば、それまでその権利は法の上に存在しなかった。",
+        "source": "Maori Language Act 1987 (1987 No 176) — New Zealand Legislation https://www.legislation.govt.nz/act/public/1987/0176/latest/DLM124116.html"
+      },
+      {
+        "text": "同法第5条は「recognition の効果」を定め、第6条以下でマオリ語委員会（Māori Language Commission）を設け、その職務・権限、マオリ語の能力証明書の発給を定めた。制度として組み立てられている。",
+        "source": "Maori Language Act 1987 (1987 No 176) — New Zealand Legislation https://www.legislation.govt.nz/act/public/1987/0176/latest/DLM124116.html"
+      },
+      {
+        "text": "1987年法律第176号は現在は廃止されており、後継の法律（Te Ture mō Te Reo Māori）に置き換えられている。ニュージーランド法令データベース上で「Repealed」と表示される。",
+        "source": "Maori Language Act 1987 (1987 No 176) — New Zealand Legislation https://www.legislation.govt.nz/act/public/1987/0176/latest/DLM124116.html"
+      }
+    ],
+    "curve": null,
+    "lineage": {
+      "from": "公の言葉は英語だけ",
+      "to": "te reo Māori（公用語）",
+      "note": "禁じられていた側の言語が、1987年に法律の側から公用語として置き直された。廃番と再入荷が同じ法律の中にある。"
+    },
+    "draft_corrections": [
+      "叩き台にはない項目（オセアニアの追加候補として立てた。オーストラリアに偏らせないためにニュージーランドから拾った）。",
+      "「1867年先住民学校法が学校でのマオリ語使用を禁じた」という説明は広く流通しているが、本セッションでは同法の条文を一次資料で確認できなかった。製造年は概数として扱っている。日付まで書くなら追加の裏取りが必要。",
+      "確認できたのは1987年法律第176号の第3条・第4条・第6条以下で、廃番側は堅い。製造側が弱い構造なので、書き方は「1987年に権利ができた＝それまでなかった」から立てるのが安全。"
+    ],
+    "confidence": "B",
+    "verdict": "include",
+    "verdict_reason": "廃番（1987年法律第176号）はニュージーランド法令データベースで条文の見出しまで確認できた。製造年（1867年）が確認できないため confidence は B。オセアニアがオーストラリア2件に偏るのを避ける意味がある。落とす場合はオセアニアが2件になる。",
+    "hitokoto": "法廷でマオリ語を話す権利は、1987年の法律でできた。",
+    "body_ja": [
+      "1987年法律第176号（マオリ語法）の第3条には、見出しがこうある。「マオリ語をニュージーランドの公用語とする」。第4条は「法的手続においてマオリ語を話す権利」。権利を作る条文があるということは、それまでその権利が法の上に存在しなかったということである。",
+      "同法は第5条で承認の効果を定め、第6条以下でマオリ語委員会を設け、その職務と権限、マオリ語の能力証明書の発給までを規定した。宣言だけでなく、行政の器を伴う作りになっている。公用語という地位が、看板ではなく制度として組み立てられた。同法はのちに後継の法律に置き換えられている。",
+      "学校と公の場からマオリ語が排除された起点は1867年の先住民学校法とされるが、条文そのものはここでは確認できていない。確実なのは、120年ほどのあいだ公の場に居場所がなかった言語が、1987年に法律の側から置き直されたことである。廃番と再入荷が、同じ法律の中に並んでいる。"
+    ],
+    "sources": [
+      "Maori Language Act 1987 (1987 No 176) — New Zealand Legislation https://www.legislation.govt.nz/act/public/1987/0176/latest/DLM124116.html"
+    ]
+  },
+  {
+    "draft_no": 18,
+    "name_ja": "ウブントゥ",
+    "reading": "うぶんとぅ",
+    "name_en": "Ubuntu",
+    "category": "人生観",
+    "shelf": 3,
+    "evidence_type": "law",
+    "country": "南アフリカ",
+    "country_en": "South Africa",
+    "region": "アフリカ",
+    "made": {
+      "label": "1993 暫定憲法の末文",
+      "year": 1993,
+      "approx": false,
+      "fact": "1993年南アフリカ共和国憲法法（法律第200号）の末文「国民の統合と和解」に「復讐ではなく理解を、報復ではなく賠償を、迫害ではなくウブントゥを必要としている（there is a need for ubuntu but not for victimisation）」とある。同憲法は1994年4月27日に施行された。",
+      "source": "Constitution of the Republic of South Africa Act 200 of 1993（暫定憲法・原文）https://www.gov.za/documents/constitution/constitution-republic-south-africa-act-200-1993"
+    },
+    "discontinued": null,
+    "restocked": null,
+    "trend": "steady",
+    "keyfacts": [
+      {
+        "text": "「ubuntu」の語は、1993年南アフリカ共和国憲法法（法律第200号）の末文に一度だけ現れる。「復讐ではなく理解を、報復ではなく賠償を、迫害ではなくウブントゥを必要としている」。",
+        "source": "Constitution of the Republic of South Africa Act 200 of 1993（暫定憲法・原文）https://www.gov.za/documents/constitution/constitution-republic-south-africa-act-200-1993"
+      },
+      {
+        "text": "同法第251条(1)は「本法は1993年南アフリカ共和国憲法と称し、1994年4月27日に施行する」と定める。ウブントゥが法文に入ったのは、南アフリカが最初の民主的な選挙を行った日である。",
+        "source": "Constitution of the Republic of South Africa Act 200 of 1993（暫定憲法・原文）https://www.gov.za/documents/constitution/constitution-republic-south-africa-act-200-1993"
+      },
+      {
+        "text": "同じ末文は、1990年10月8日より後、1993年12月6日より前の日を期限として、政治目的に関わる行為への恩赦の法律を議会が作ることを定めた。ウブントゥの語は、真実和解委員会を生む文脈の中に置かれている。",
+        "source": "Constitution of the Republic of South Africa Act 200 of 1993（暫定憲法・原文）https://www.gov.za/documents/constitution/constitution-republic-south-africa-act-200-1993"
+      },
+      {
+        "text": "1996年の最終憲法にはウブントゥの語がない。法文上の登場は1993年の暫定憲法の末文だけである。「価値観が法文に入り、次の憲法で消えた」という二つの日付は言える。",
+        "source": "Constitution of the Republic of South Africa Act 200 of 1993（暫定憲法・原文）https://www.gov.za/documents/constitution/constitution-republic-south-africa-act-200-1993"
+      }
+    ],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の指示どおり「いま現役なので、依頼の条件『消えた／変わった』に合うか」を判定した。判定は「合わない」。ウブントゥは現在も生きている価値観であり、失効の日付が存在しない。",
+      "ただし調べた結果として、硬い日付の組は一つ見つかった。1993年暫定憲法（法律第200号）の末文に一度だけ書かれ、1996年の最終憲法には入っていない。「法文の中での居場所が変わった」という読み方をするなら、この二点で成立する。採否は編集側で判断してほしい。"
+    ],
+    "confidence": "A",
+    "verdict": "drop",
+    "verdict_reason": "事実の確度はA（暫定憲法の原文で末文の文言と施行日を確認）。しかし依頼の条件「いま消えた／変わったもの」に合わない。ウブントゥは現役の価値観で、廃番年がない。『1993年に憲法に入り1996年の憲法から消えた』という変化として立てることは可能だが、それは価値観の変化ではなく法文の変化なので、この図鑑の趣旨からは外れると判断した。",
+    "hitokoto": "憲法に一度だけ書かれ、次の憲法には入らなかった言葉。",
+    "body_ja": [
+      "1993年南アフリカ共和国憲法法（法律第200号）の末文「国民の統合と和解」に、この語は一度だけ現れる。「復讐ではなく理解を、報復ではなく賠償を、迫害ではなくウブントゥを必要としている」。同法第251条(1)は施行日を1994年4月27日、最初の民主的な選挙の日と定めていた。",
+      "この末文は同時に、1990年10月8日より後、1993年12月6日より前を期限として、政治目的に関わる行為への恩赦の法律を議会が作ることを定めている。ウブントゥの語は、真実和解委員会を生む文脈の中に置かれていた。慣習の倫理が、移行期の司法の設計図に組み込まれた形である。",
+      "1996年の最終憲法にはこの語がない。法文上の登場は1993年の末文だけである。ただしウブントゥ自体は消えていない。この図鑑が集めているのは失効の日付がある価値観であり、現役のものは対象外になる。調べた結果として記録し、採否は編集に委ねる。"
+    ],
+    "sources": [
+      "Constitution of the Republic of South Africa Act 200 of 1993（暫定憲法・原文）https://www.gov.za/documents/constitution/constitution-republic-south-africa-act-200-1993"
+    ]
+  },
+  {
+    "draft_no": 19,
+    "name_ja": "女性器切除（FGM）",
+    "reading": "じょせいきせつじょ",
+    "name_en": "Female Genital Mutilation",
+    "category": "規範",
+    "shelf": 3,
+    "evidence_type": "law",
+    "country": "（複数国）",
+    "country_en": "(multiple countries)",
+    "region": "アフリカ",
+    "made": null,
+    "discontinued": null,
+    "restocked": null,
+    "trend": "down",
+    "keyfacts": [],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「扱うなら制度と日付の話として、被害を軽く扱わず、煽らず。無理なら drop」という条件に照らして判断した。drop とする。",
+      "理由は二つ。(1) 本セッションでは法令の日付を一次資料で一件も確認できなかった（エジプトの1996年保健省令、2008年児童法改正、ケニアの2011年法、スーダンの2020年刑法改正など、通説として知られる日付をどれも裏取りできていない）。推測で年号を埋めない方針に従い、キーファクトを空にしてある。",
+      "(2) 裏が取れたとしても、この図鑑の並びに置くと「アフリカの項目＝この慣習」という読み方を誘発する。アフリカの枠には、禁じた側・支配した側の制度を書く項目（アパルトヘイト、人種をまたぐ結婚の禁止、文明国が導いてやる）を入れてある。そちらで地域は足りている。"
+    ],
+    "confidence": "C",
+    "verdict": "drop",
+    "verdict_reason": "法令名・公布日を一件も一次資料で確認できなかったため、そもそも記述できない。加えて、確認できたとしても地域と慣習を結びつけて読ませる副作用が企画の趣旨に反する。日付の裏が取れた場合でも、単独項目ではなく別の扱いを検討してほしい。",
+    "hitokoto": "",
+    "body_ja": [],
+    "sources": []
+  },
+  {
+    "draft_no": 20,
+    "name_ja": "マチスモ",
+    "reading": "まちすも",
+    "name_en": "Machismo",
+    "category": "規範",
+    "shelf": 3,
+    "evidence_type": "law",
+    "country": "（中南米全域）",
+    "country_en": "(Latin America)",
+    "region": "中南米",
+    "made": null,
+    "discontinued": null,
+    "restocked": null,
+    "trend": "down",
+    "keyfacts": [],
+    "curve": null,
+    "lineage": {
+      "from": "マチスモ（語としては日付がない）",
+      "to": "妻は半分だけの大人（ブラジル1916年民法→1962年）",
+      "note": "裏の取れる形に落とすと、条文の話になる。"
+    },
+    "draft_corrections": [
+      "叩き台の「マチスモ（中南米。法制度の変化で裏が取れるか）」に対する回答。裏は取れない。「マチスモ」は語そのものに成立年も失効年もなく、法令の日付に落ちない。",
+      "そこで、同じ内容を条文で言い切れる形に置き換えた。ブラジル1916年民法第6条第2号「既婚の女性、夫婦共同体が存続するあいだ」を相対的無能力者とする規定と、それを消した1962年8月27日の法律第4.121号、そして1988年憲法第226条第5項である（本ファイルの draft_no 9 を参照）。",
+      "同じ趣旨の別案として、ブラジルの離婚禁止（1934年憲法→1977年憲法改正第9号、draft_no 10）と、認知できない子（1916年民法第358条→1989年法律第7.841号、draft_no 11）も立てた。"
+    ],
+    "confidence": "C",
+    "verdict": "drop",
+    "verdict_reason": "語としてのマチスモには法令の日付がなく、「いつ始まっていつ終わったか」が言えない。同じ価値観を条文で言い切れる代替項目（draft_no 9・10・11）に置き換えた。",
+    "hitokoto": "",
+    "body_ja": [],
+    "sources": [
+      "Lei nº 3.071, de 1º de janeiro de 1916（1916年民法・原文、改正履歴つき）https://www.planalto.gov.br/ccivil_03/leis/l3071.htm",
+      "Lei nº 4.121, de 27 de agosto de 1962（既婚女性法・原文）https://www.planalto.gov.br/ccivil_03/leis/1950-1969/L4121.htm"
+    ]
+  },
+  {
+    "draft_no": 21,
+    "name_ja": "盗まれた世代",
+    "reading": "ぬすまれたせだい",
+    "name_en": "The Stolen Generations",
+    "category": "規範",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "オーストラリア",
+    "country_en": "Australia",
+    "region": "オセアニア",
+    "made": null,
+    "discontinued": null,
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「先住民の同化政策（カナダ・オーストラリアの寄宿学校／盗まれた世代。1970年代まで）」のうち、カナダ側は裏が取れたので独立項目にした（draft_no 6）。オーストラリア側は裏が取れなかったので drop とする。",
+      "確認できなかったもの：1909年先住民保護法（ニューサウスウェールズ、法律第25号）と、裁判所の命令なしに子を引き離す権限を先住民保護委員会に与えた1915年の改正法。1897年先住民保護およびアヘン販売制限法（クイーンズランド）。『Bringing Them Home』報告の国会提出日（1997年5月26日とされる）。2008年2月13日の国民への謝罪。1910年から1970年のあいだに引き離された子の割合（3人に1人から10人に1人のあいだ、とされる）。",
+      "取得を試みて失敗したサイト：humanrights.gov.au（403）、legislation.nsw.gov.au（応答なし）、aiatsis.gov.au（応答なし）、nma.gov.au（403）、aph.gov.au（本文がスクリプト生成で取れない）。本セッションでは WebSearch も使えなかった。",
+      "重い題材なので、確認できていない年号と法令名を並べるのは避けた。次のセッションで上記サイトに到達できれば、そのまま項目として立てられる見込みは高い。"
+    ],
+    "confidence": "C",
+    "verdict": "drop",
+    "verdict_reason": "法令名・法令番号・報告書の提出日・謝罪の日を一つも一次資料で確認できなかった。推測で年号を埋めない方針に従って落とす。同じ価値観（子を親から引き離して同化させる）はカナダの寄宿学校（draft_no 6、裏取り済み）で扱った。オーストラリアの枠は白豪主義（15）と憲法第127条（16）で埋めてある。",
+    "hitokoto": "",
+    "body_ja": [],
+    "sources": []
+  },
+  {
+    "draft_no": 22,
+    "name_ja": "カプ（タブー）",
+    "reading": "かぷ",
+    "name_en": "The Kapu System",
+    "category": "規範",
+    "shelf": 1,
+    "evidence_type": "law",
+    "country": "ハワイ王国",
+    "country_en": "Kingdom of Hawaii",
+    "region": "オセアニア",
+    "made": null,
+    "discontinued": null,
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台の「タブー／タプー（ポリネシア。1819年 ハワイの カプ 制度の廃止）」について。裏が取れなかったので drop とする。",
+      "確認できなかったもの：1819年11月にカメハメハ2世（リホリホ）が ʻai kapu を破ったこと、カアフマヌとケオープーオラニの役割、ʻainoa（自由な食事）という語、1819年12月のクアモオの戦い。「taboo」が英語に入った経路（クックの1777年の航海日誌、1784年刊行）も確認できていない。",
+      "取得を試みて失敗したサイト：nps.gov（該当ページなし／404）、ksbe.edu（本文がスクリプト生成で取れない）、britannica.com（404・応答なし）、hawaiihistory.org（応答なし）。本セッションでは WebSearch も使えなかった。",
+      "先住民の慣習を「遅れたもの」として書かないという指示があるので、もし次のセッションで裏が取れたとしても、書き方は「王権の側が内側から廃止した」という事実（外から禁じられたのではない）を軸にするのが適切。この点は歴史的にも正確である。"
+    ],
+    "confidence": "C",
+    "verdict": "drop",
+    "verdict_reason": "1819年のカプ廃止を、信頼できる機関の公開資料で一点も確認できなかった。年号を推測で埋めない方針に従って落とす。オセアニアの枠は白豪主義（15）、憲法第127条（16）、マオリ語（17）で埋めてある。",
+    "hitokoto": "",
+    "body_ja": [],
+    "sources": []
+  },
+  {
+    "draft_no": 23,
+    "name_ja": "土地は売り買いしない（エヒード）",
+    "reading": "とちはうりかいしない",
+    "name_en": "The Ejido",
+    "category": "判断基準",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "メキシコ",
+    "country_en": "Mexico",
+    "region": "中南米",
+    "made": null,
+    "discontinued": null,
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台にはない項目だが、中南米をブラジルだけにしないために立てようとした候補。裏が取れなかったので drop とする。",
+      "確認できなかったもの：1917年憲法第27条がエヒード（共同保有地）を譲渡・抵当・売却できないものとしたこと、1992年1月6日に連邦官報（DOF）で公布された第27条の改正、1992年2月26日公布の農地法（Ley Agraria）。",
+      "取得を試みて失敗したサイト：diputados.gob.mx（タイムアウト／接続拒否、150秒でも取得できず）、dof.gob.mx（証明書のホスト名不一致。www なしに変えると別文書が返る）、ordenjuridico.gob.mx（内容なし）。本セッションでは WebSearch も使えなかった。",
+      "「土地は売り買いするものではない」という価値観が1992年という日付で終わる、という構図は中南米の項目として強い。次のセッションでメキシコ政府のサイトに到達できれば立てられる見込みが高い。"
+    ],
+    "confidence": "C",
+    "verdict": "drop",
+    "verdict_reason": "メキシコ政府の法令サイトに一つも到達できず、1917年・1992年の日付を一次資料で確認できなかった。結果として中南米の採用分はブラジル4件に偏っている。メキシコが立てられれば、ブラジルのうち1件（draft_no 11 が候補）を落として入れ替えるのが望ましい。",
+    "hitokoto": "",
+    "body_ja": [],
+    "sources": []
+  },
+  {
+    "draft_no": 24,
+    "name_ja": "臣民と市民は違う（アンディジェナ制）",
+    "reading": "しんみんとしみんはちがう",
+    "name_en": "Régime de l'indigénat",
+    "category": "判断基準",
+    "shelf": 2,
+    "evidence_type": "law",
+    "country": "フランス領アフリカ",
+    "country_en": "French Colonial Africa",
+    "region": "アフリカ",
+    "made": null,
+    "discontinued": null,
+    "restocked": null,
+    "trend": "discontinued",
+    "keyfacts": [],
+    "curve": null,
+    "lineage": null,
+    "draft_corrections": [
+      "叩き台にはない項目だが、アフリカを南アフリカだけにしないために立てようとした候補。裏が取れなかったので drop とする。",
+      "確認できなかったもの：アンディジェナ制（régime de l'indigénat）を作った法令（1881年のアルジェリアの政令、1887年の一般化とされる）、廃止の法令と日付（1945年12月22日のオルドナンス説、1946年5月7日のラミーヌ・ゲイ法説、1946年4月11日の法律第46-645号〔ウフェ＝ボワニ法、強制労働の廃止〕説、1946年10月27日憲法説が並存する）。どれが「アンディジェナ制の廃止」に当たるのかを確定できなかった。",
+      "取得を試みて失敗したサイト：senat.fr（該当なし）、persee.fr（内容なし）。legifrance.gouv.fr・assemblee-nationale.fr・gallica.bnf.fr は未到達。本セッションでは WebSearch も使えなかった。",
+      "代わりにアフリカの枠には、国連総会決議1514（1960年12月14日、裏取り済み）を使った「文明国が導いてやる」（draft_no 14）を入れた。同じ価値観を、廃番日が一日単位で特定できる形で扱っている。"
+    ],
+    "confidence": "C",
+    "verdict": "drop",
+    "verdict_reason": "廃止の法令が複数説あり、どれが正しいかを一次資料で確定できなかった。法令名と日付が特定できないものは書かない方針に従って落とす。同じ趣旨は draft_no 14 で扱った。",
+    "hitokoto": "",
+    "body_ja": [],
+    "sources": []
+  }
+]

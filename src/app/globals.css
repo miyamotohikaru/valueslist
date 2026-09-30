@@ -1628,13 +1628,37 @@ a.vl-print-wrap:hover {
   inset: 0;
   display: block;
 }
-/* 上に乗る墨の版｡p が進むと下から消えて､色の版が出る */
+/* 上に乗る墨の版｡上から削れて色の版が出て､また戻る（GIF のように回る）｡
+   スクロールには繋がない｡刷るのは一度きりで､動かすのは切り抜きだけなので軽い */
+@keyframes vl-wipe {
+  0%,
+  8% {
+    clip-path: inset(0 0 0 0);
+  }
+  46%,
+  58% {
+    clip-path: inset(100% 0 0 0);
+  }
+  96%,
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
 .vl-print__layer--ink {
-  clip-path: inset(calc(var(--p, 0) * 100%) 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+/* 画面に入っているあいだだけ回す */
+.vl-print__art[data-on] .vl-print__layer--ink {
+  animation: vl-wipe 8s ease-in-out infinite;
+  animation-delay: var(--art-delay, 0s);
+}
+/* 枠ごと色に染まる札はゆっくり */
+.vl-print__art[data-flip][data-on] .vl-print__layer--ink {
+  animation-duration: 20s;
 }
 @media (prefers-reduced-motion: reduce) {
-  .vl-print__layer--ink {
-    clip-path: none;
+  .vl-print__art[data-on] .vl-print__layer--ink {
+    animation: none;
   }
 }
 

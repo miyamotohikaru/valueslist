@@ -118,6 +118,21 @@ function nameSize(name: string) {
   return Math.min(NAME_MAX, (89.8 / em) * 0.97);
 }
 
+/**
+ * 欧文と読みの行が1行に収まるかを見る｡
+ * 収まらない札は2行に組み直す（globals.css の `[data-wrap]`）｡
+ * ここは等幅なので欧字は 0.65em（送り0.6＋字間0.05）､和字は 1.05em｡
+ */
+function latinEm(s: string) {
+  let em = 0;
+  for (const ch of s) em += NARROW.test(ch) ? 0.65 : 1.05;
+  return em;
+}
+function latinWraps(v: Value, lang: Lang) {
+  const gap = lang === "en" ? 0 : latinEm(v.en.toUpperCase()) + 1;
+  return (latinEm(v.reading) + gap) * 3.7 > 89.8;
+}
+
 export default function PrintCard({
   v,
   lang,
@@ -141,6 +156,8 @@ export default function PrintCard({
     <Wrap className="vl-print-wrap" {...(wrapProps as { href: string })}>
       <article
         className="vl-print"
+        // 読みが長くて1行に収まらない札は2行に組む
+        data-wrap={latinWraps(v, lang) ? "1" : undefined}
         style={{
           // 題が長い札だけ小さく組む｡図版の大きさは全部の札で揃える
           ["--name-fs" as string]: `${nameSize(v.name).toFixed(2)}cqw`,

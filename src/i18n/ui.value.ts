@@ -36,7 +36,7 @@ const D = {
 
   // グループの名前（shelves.ts の英語は判子用の大文字なので､画面にはこちらを出す）
   shelf1: { ja: "前近代成立・失効ゾーン", en: "Pre-modern, lapsed" },
-  shelf2: { ja: "明治成立ゾーン", en: "Established in Meiji" },
+  shelf2: { ja: "近代成立ゾーン", en: "Established in the modern age" },
   shelf3: { ja: "戦後成立・下落ゾーン", en: "Postwar, falling" },
   shelf4: { ja: "現役・上昇ゾーン", en: "Current, rising" },
   shelf5: { ja: "長距離復活ゾーン", en: "Revived" },

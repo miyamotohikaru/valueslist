@@ -13,6 +13,9 @@ import ColumnGrid from "./ColumnGrid";
 type SortKey = "no" | "made" | "disc";
 
 const CATS: Category[] = ["規範", "人生観", "判断基準"];
+
+/** 分類の chip に出す言葉 */
+const CAT_KEYS = { 規範: "cNorm", 人生観: "cLife", 判断基準: "cJudge" } as const;
 const TRENDS: Trend[] = ["up", "steady", "down", "discontinued", "restocked"];
 const EVS: Evidence[] = ["law", "curve"];
 
@@ -192,7 +195,7 @@ export default function IndexView({ values: raw, lang }: { values: Value[]; lang
                 .filter((s) => !s.virtual)
                 .map((s) => (
                   <Chip key={String(s.id)} on={shelfF.has(s.id)} onClick={() => setShelfF(toggle(shelfF, s.id))}>
-                    {s.no}. {s.name}
+                    {s.no}. {shelfName(lang, s)}
                   </Chip>
                 ))}
             </div>
@@ -224,7 +227,7 @@ export default function IndexView({ values: raw, lang }: { values: Value[]; lang
             <div>
               {CATS.map((c) => (
                 <Chip key={c} on={catF.has(c)} onClick={() => setCatF(toggle(catF, c))}>
-                  {c}
+                  {tIndex(lang, CAT_KEYS[c])}
                 </Chip>
               ))}
             </div>

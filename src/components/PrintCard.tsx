@@ -101,6 +101,23 @@ function dates(v: Value, lang: Lang) {
   return [mfd, { k: t(lang, "now"), t: t(lang, "nowValue") }];
 }
 
+/**
+ * 題の字数から組む大きさを決める｡
+ *
+ * 題が2行になると､その1行ぶんだけ図版が縮んで札ごとに図版の大きさが変わる｡
+ * それを避けるため､**題の枠は常に1行ぶんの高さに固定**して（globals.css）､
+ * 長い題は1行に収まる大きさまで落とす｡和字は全角1つぶん､欧字は半分強で数える｡
+ *
+ * 札の内側は 89.8cqw｡ふだんの題は 7.4cqw｡
+ */
+const NARROW = /[\u0000-\u04FF\uFF61-\uFF9F]/;
+const NAME_MAX = 7.4;
+function nameSize(name: string) {
+  let em = 0;
+  for (const ch of name) em += NARROW.test(ch) ? 0.56 : 1;
+  return Math.min(NAME_MAX, (89.8 / em) * 0.97);
+}
+
 export default function PrintCard({
   v,
   lang,
@@ -125,6 +142,8 @@ export default function PrintCard({
       <article
         className="vl-print"
         style={{
+          // 題が長い札だけ小さく組む｡図版の大きさは全部の札で揃える
+          ["--name-fs" as string]: `${nameSize(v.name).toFixed(2)}cqw`,
           ["--card" as string]: r.card,
           ["--panel" as string]: r.panel,
           ["--bar" as string]: bar,

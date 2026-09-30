@@ -1629,17 +1629,15 @@ a.vl-print-wrap:hover {
   display: block;
 }
 /* 上に乗る墨の版｡上から削れて色の版が出て､また戻る（GIF のように回る）｡
-   スクロールには繋がない｡刷るのは一度きりで､動かすのは切り抜きだけなので軽い */
+   スクロールには繋がない｡刷るのは一度きりで､動かすのは切り抜きだけなので軽い｡
+   止まっている時間を作らないよう､途中で留めずに一定の速さで往復する */
 @keyframes vl-wipe {
-  0%,
-  8% {
+  0% {
     clip-path: inset(0 0 0 0);
   }
-  46%,
-  58% {
+  50% {
     clip-path: inset(100% 0 0 0);
   }
-  96%,
   100% {
     clip-path: inset(0 0 0 0);
   }
@@ -1647,14 +1645,11 @@ a.vl-print-wrap:hover {
 .vl-print__layer--ink {
   clip-path: inset(0 0 0 0);
 }
-/* 画面に入っているあいだだけ回す */
+/* 画面に入っているあいだだけ回す｡札はすべて同じ拍子で一斉に動く */
 .vl-print__art[data-on] .vl-print__layer--ink {
-  animation: vl-wipe 8s ease-in-out infinite;
+  animation: vl-wipe 8s linear infinite;
+  /* 途中から画面に入った札も同じ位相に合わせる（負の遅延） */
   animation-delay: var(--art-delay, 0s);
-}
-/* 枠ごと色に染まる札はゆっくり */
-.vl-print__art[data-flip][data-on] .vl-print__layer--ink {
-  animation-duration: 20s;
 }
 @media (prefers-reduced-motion: reduce) {
   .vl-print__art[data-on] .vl-print__layer--ink {
@@ -1662,13 +1657,20 @@ a.vl-print-wrap:hover {
   }
 }
 
+/* 題｡**枠の高さは1行ぶんで固定する｡**
+   2行になると その1行ぶんだけ図版が縮んで､札ごとに図版の大きさが変わってしまう｡
+   長い題は1行に収まる大きさまで落とす（PrintCard の nameSize が --name-fs を渡す） */
 .vl-print__name {
   margin-top: 3.2cqw;
+  display: grid;
+  align-content: center;
+  height: 8.88cqw;
   font-family: var(--font-sans), "Hiragino Sans", sans-serif;
   font-weight: 700;
-  font-size: 7.4cqw;
+  font-size: var(--name-fs, 7.4cqw);
   line-height: 1.2;
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 .vl-print__latin {
   display: flex;

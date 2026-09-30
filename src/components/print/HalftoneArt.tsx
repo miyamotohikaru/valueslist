@@ -12,9 +12,14 @@ import { makePlate, screenPlate, type Technique } from "./screen";
  * 刷り直していたが､点刻だと1枚で2万近い点を打つので､48枚ぶんが
  * スクロール中ずっと走って重かった｡
  *
- * 刷るのは画面に入ってから｡出たら animation を止める｡
+ * 動かすのは画面に入っているあいだだけ｡ただし札ごとに時計を持たせると
+ * 入ってきた順にずれていくので､ページ共通の時計（document.timeline）から
+ * 今の位相を出して負の遅延で合わせる｡どの札も同じ拍子で一斉に動く｡
  */
 const PLATE_SIZE = 320;
+
+/** 図版が一巡する時間（秒）｡globals.css の vl-wipe と揃えること */
+const CYCLE = 8;
 
 export type ArtInk = {
   /** 墨の版 */
@@ -81,11 +86,17 @@ export default function HalftoneArt({
     const ro = new ResizeObserver(() => print());
     ro.observe(el);
 
-    // 動かすのは画面に入っているあいだだけ
+    // 動かすのは画面に入っているあいだだけ｡
+    // 途中から動き出しても他の札と足並みが揃うよう､共通の時計から位相を出す
     const io = new IntersectionObserver(
       (es) => {
-        if (es[0].isIntersecting) el.dataset.on = "1";
-        else delete el.dataset.on;
+        if (es[0].isIntersecting) {
+          const now = Number(document.timeline.currentTime ?? 0) / 1000;
+          el.style.setProperty("--art-delay", `${(-(now % CYCLE)).toFixed(3)}s`);
+          el.dataset.on = "1";
+        } else {
+          delete el.dataset.on;
+        }
       },
       { rootMargin: "200px" },
     );
@@ -97,18 +108,8 @@ export default function HalftoneArt({
     };
   }, [no, tech, ink.inkFg, ink.inkBg, ink.colorFg, ink.colorBg]);
 
-  // 並べたとき一斉に動かないよう､型番で始まりをずらす｡
-  // 枠全体が色に染まる札は変化が強いので､ゆっくり回す
-  const flip = ink.colorBg !== "transparent";
-  const delay = `${((Number(no) * 1.7) % 6).toFixed(2)}s`;
-
   return (
-    <div
-      ref={wrap}
-      className={`vl-print__art ${className}`}
-      data-flip={flip ? "1" : undefined}
-      style={{ ["--art-delay" as string]: delay }}
-    >
+    <div ref={wrap} className={`vl-print__art ${className}`}>
       <canvas ref={cColor} className="vl-print__layer" aria-hidden />
       <canvas ref={cInk} className="vl-print__layer vl-print__layer--ink" aria-hidden />
     </div>

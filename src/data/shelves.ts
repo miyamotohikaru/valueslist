@@ -23,7 +23,7 @@ export const shelves: ShelfMeta[] = [
     name: "戦後成立・下落ゾーン",
     en: "POSTWAR / FALLING",
     lead: "高度成長期に標準装備になった価値観｡◇下がったものと､◇意外に下がっていないものがある｡",
-    evidenceNote: "証拠＝世論調査・統計の推移（カーブ）｡",
+    evidenceNote: "証拠＝世論調査・統計の推移(カーブ)｡",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ export const shelves: ShelfMeta[] = [
     name: "現役・上昇ゾーン",
     en: "CURRENT / RISING",
     lead: "成立年が流行語・書籍・政策文書で､◇日付まで特定できる｡◇いちばん新しいもの｡",
-    evidenceNote: "証拠＝初出の記録◆（流行語大賞・答申・書籍）｡",
+    evidenceNote: "証拠＝初出の記録◆(流行語大賞・答申・書籍)｡",
   },
   {
     id: 5,

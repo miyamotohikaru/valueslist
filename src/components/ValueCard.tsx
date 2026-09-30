@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Value, Trend } from "@/data/types";
+import type { Value, Trend, ShelfId } from "@/data/types";
 import { categoryMeta } from "@/data/shelves";
 import Art from "./art";
 
@@ -41,6 +41,15 @@ export const SHELF_ACCENT: Record<string, { bg: string; fg: string; bar: string;
   "5": { bg: "var(--vl-lavender)", fg: "var(--vl-ink)", bar: "var(--vl-ink)", line: "#6f62a8" },
   meta: { bg: "var(--vl-sumi)", fg: "var(--vl-paper)", bar: "var(--vl-paper)", line: "#1c1b19" },
 };
+
+/**
+ * 紙の地に引く帯の色｡
+ * メタ標本の `bar` は暗い地（棚の見出し）に置くための紙色なので､
+ * 札や年表の紙の上にそのまま引くと見えない｡そこだけ墨に落とす｡
+ */
+export function barOnPaper(shelf: ShelfId) {
+  return shelf === "meta" ? "var(--vl-ink)" : SHELF_ACCENT[String(shelf)].bar;
+}
 
 /** 名前を読点のあとで行に分ける */
 export function nameLines(name: string): string[] {
@@ -110,7 +119,7 @@ export default function ValueCard({
     ? { k: "成立 MFD", t: `${v.made.approx ? "c." : ""}${v.made.year}` }
     : { k: "成立 MFD", t: "—" };
   const right = v.restocked
-    ? { k: "復活 RESTOCK", t: String(v.restocked.year) }
+    ? { k: "復活 REVIVE", t: String(v.restocked.year) }
     : v.discontinued
       ? { k: "失効 EOL", t: String(v.discontinued.year) }
       : { k: "現行 NOW", t: "NOW" };

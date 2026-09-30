@@ -14,7 +14,7 @@ type Kind = "made" | "discontinued" | "restocked";
 const KIND_EN: Record<Kind, string> = {
   made: "MFD.",
   discontinued: "DISC.",
-  restocked: "RESTOCK",
+  restocked: "REVIVED",
 };
 
 const KIND_KEY: Record<Kind, "specMade" | "specEnded" | "specRestock"> = {

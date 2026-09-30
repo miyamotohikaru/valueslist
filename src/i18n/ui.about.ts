@@ -40,7 +40,7 @@ const D = {
 
   // 01 この図鑑は何か
   whatBody: {
-    ja: "この図鑑は､日本と世界の価値観（規範・人生観・判断基準）を､成立年・失効年・復活年を出典にあたって特定し､カードにしたものだ｡｢昔からの伝統｣に見えるものほど成立年が新しく､｢新品｣に見えるものが中世のものの再出荷だったりする｡それを年代順に並べて､目で見えるようにするのが目的である｡",
+    ja: "この図鑑は､日本と世界の価値観(規範・人生観・判断基準)を､成立年・失効年・復活年を出典にあたって特定し､カードにしたものだ｡｢昔からの伝統｣に見えるものほど成立年が新しく､｢新品｣に見えるものが中世のものの再出荷だったりする｡それを年代順に並べて､目で見えるようにするのが目的である｡",
     en: "This catalogue takes values from Japan and from around the world — norms, life views, criteria for judgement — and puts each on a card, with the year it was made, the year it was ended and the year it came back, every date checked against a source. The ones that look like ancient tradition turn out to be the newest; the ones that look brand new are often medieval stock, reissued. Setting them out by year is what makes that visible.",
   },
   threeYears: { ja: "三つの年", en: "Three years" },
@@ -81,7 +81,7 @@ const D = {
     ja: "禁止令の日付､翻訳語の初出､◆制度の廃止年｡年月日まで特定できる一点で､◆成立か失効の年を決める｡",
     en: "The date of a ban, the first use of a translated word, ◆the year a rule was abolished. One point you can date to the day ◆fixes the year made or ended.",
   },
-  evLawNote: { ja: "太政官布告第37号（復讐禁止令）", en: "Daijokan Decree No.37 (revenge banned)" },
+  evLawNote: { ja: "太政官布告第37号(復讐禁止令)", en: "Daijokan Decree No.37 (revenge banned)" },
   evCurveHead: { ja: "｢線｣で語る", en: "Told as a line" },
   evCurveLead: {
     ja: "世論調査の賛成率､統計の推移｡実際の数値を結んだ線で､◆上昇か下落かを決める｡",
@@ -130,13 +130,13 @@ const D = {
     ja: "高度成長期に標準装備になった価値観｡◇下がったものと､◇意外に下がっていないものがある｡",
     en: "Standard equipment from the boom years.◇Some have fallen,◇some have barely moved.",
   },
-  shelf3Note: { ja: "証拠＝世論調査・統計の推移（カーブ）｡", en: "Evidence = the curve of polls and statistics." },
+  shelf3Note: { ja: "証拠＝世論調査・統計の推移(カーブ)｡", en: "Evidence = the curve of polls and statistics." },
 
   shelf4Lead: {
     ja: "成立年が流行語・書籍・政策文書で､◇日付まで特定できる｡◇いちばん新しいもの｡",
     en: "Made on a date you can name:◇a buzzword, a book, a policy paper.◇The newest stock here.",
   },
-  shelf4Note: { ja: "証拠＝初出の記録◆（流行語大賞・答申・書籍）｡", en: "Evidence = the record of first use ◆(buzzword award, report, book)." },
+  shelf4Note: { ja: "証拠＝初出の記録◆(流行語大賞・答申・書籍)｡", en: "Evidence = the record of first use ◆(buzzword award, report, book)." },
 
   shelf5Lead: {
     ja: "古いものが､◇別の名前でグループに戻ってきたもの｡◇元のものと復活したものを､◆1枚の半券で結ぶ｡",

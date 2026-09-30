@@ -33,7 +33,7 @@ const sec = (id: SecId) => SECTIONS.find((s) => s.id === id)!;
 const DATES: { en: string; name: AboutKey; text: AboutKey }[] = [
   { en: "MFD.", name: "dateMade", text: "dateMadeText" },
   { en: "DISC.", name: "dateDisc", text: "dateDiscText" },
-  { en: "RESTOCK", name: "dateRestock", text: "dateRestockText" },
+  { en: "REVIVE", name: "dateRestock", text: "dateRestockText" },
 ];
 
 const byName = (name: string) => values.find((v) => v.name === name)!;

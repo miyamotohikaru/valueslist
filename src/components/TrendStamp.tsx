@@ -44,7 +44,7 @@ export default function TrendStamp({
     <span
       className={`vl-trend-stamp ${className}`}
       style={{ color: COLOR[trend], transform: `rotate(${stampTilt(seed)}deg)` }}
-      aria-label={lang === "ja" ? `${label}（${m.en}）` : label}
+      aria-label={lang === "ja" ? `${label}(${m.en})` : label}
     >
       <span className="vl-trend-stamp__mark" aria-hidden>
         {m.mark}

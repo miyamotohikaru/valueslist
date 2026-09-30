@@ -269,5 +269,179 @@
     "yearLabel": "2011 READYFOR"
    }
   ]
+ },
+ "shiken": {
+  "title": "Imperial Exams → Rising in the World → Credentialism → Red over Expert",
+  "en": "Chosen by Examination",
+  "lead": "Choosing people by examination rather than by birth begins in China in 598. It ran for 1,300 years, stopped with a single edict on 2 September 1905, and came back in 1952 as the gaokao. Japan's Education System Order of 1872 preached that \"learning is the capital by which one makes one's way\", and the phrase \"credential society\" settled in during the 1960s. In China, for eleven and a half years after 1966, university entrance had no examination at all.",
+  "span": "1,379 yrs",
+  "spanLabel": "From the edict of 598 to the return of the exam",
+  "nodes": [
+   {
+    "label": "Imperial Exams",
+    "note": "Officials chosen on results, not on family.",
+    "yearLabel": "598 Sui edict"
+   },
+   {
+    "label": "Rising in the World",
+    "note": "\"Learning is the capital by which one makes one's way.\"",
+    "yearLabel": "1872 Education System Order"
+   },
+   {
+    "label": "The exams stop",
+    "note": "All provincial and metropolitan sittings halted from the 1906 cycle.",
+    "yearLabel": "2 Sep 1905 edict"
+   },
+   {
+    "label": "The gaokao",
+    "note": "The exam returns 47 years after it stopped.",
+    "yearLabel": "1952 national exam"
+   },
+   {
+    "label": "Credentialism",
+    "note": "\"Credential society\" enters common use.",
+    "yearLabel": "1960s"
+   },
+   {
+    "label": "Red over Expert",
+    "note": "Recommendation replaced the exam; it returned in 1977.",
+    "yearLabel": "1966 exams cancelled"
+   }
+  ]
+ },
+ "shoyu": {
+  "title": "Serfdom → Bound by Indenture → Slavery in Brazil → Slaveholding as Lawful",
+  "en": "The End of Owning People",
+  "lead": "The premise that a person can be owned ended on a different date in each country. Russia by the emancipation manifesto of 1861, Japan by Grand Council Proclamation No. 295 of 1872, Brazil by the Golden Law of 1888, Saudi Arabia in 1962. In every case a single piece of legislation ended it, and the text is short. The Golden Law has two articles.",
+  "span": "101 yrs",
+  "spanLabel": "From the Russian manifesto to the Saudi abolition",
+  "nodes": [
+   {
+    "label": "Serfdom",
+    "note": "More than 23 million people were covered.",
+    "yearLabel": "1861 emancipation"
+   },
+   {
+    "label": "Bound by Indenture",
+    "note": "Trafficking in persons was declared strictly forbidden.",
+    "yearLabel": "1872 Proclamation 295"
+   },
+   {
+    "label": "Slavery in Brazil",
+    "note": "Two articles, and that is all.",
+    "yearLabel": "1888 Golden Law"
+   },
+   {
+    "label": "Slaveholding as Lawful",
+    "note": "The number freed and the compensation are on the record.",
+    "yearLabel": "1962 ten-point plan"
+   }
+  ]
+ },
+ "karada": {
+  "title": "Blackened Teeth → The Queue → Foot Binding",
+  "en": "The State Comes for the Body",
+  "lead": "Modernisation reached the look of the body first. Japan stopped the blackening of teeth and the shaving of brows for the nobility in 1870, and the order of the following year allowed the topknot to be cut. In China the queue, which in 1645 you died for not shaving, became unlawful to keep on 5 March 1912. Eight days later came the order against foot binding. In each case a single proclamation ended a custom of the body.",
+  "span": "42 yrs",
+  "spanLabel": "From the 1870 order to the cutting of queues",
+  "nodes": [
+   {
+    "label": "Blackened Teeth",
+    "note": "What was forbidden was the coming-of-age of the nobility.",
+    "yearLabel": "1870 order"
+   },
+   {
+    "label": "Cropped hair, swords off",
+    "note": "The topknot could now be cut.",
+    "yearLabel": "1871 Order No. 399"
+   },
+   {
+    "label": "The Queue",
+    "note": "In 1645 not shaving it was a capital offence.",
+    "yearLabel": "5 Mar 1912"
+   },
+   {
+    "label": "Foot Binding",
+    "note": "Eight days after the order on queues.",
+    "yearLabel": "13 Mar 1912"
+   }
+  ]
+ },
+ "ie": {
+  "title": "The House Name First → The Hoju System",
+  "en": "The Household, Exported",
+  "lead": "Japan's house system became law in the Meiji Civil Code of 1898 and was gone between 1947 and 1948. In between, on 1 July 1923, the Government-General of Korea amended the Korean Civil Ordinance and put the Japanese household register into force. The transplanted house system outlived the country that made it: it was abolished on 1 January 2008, sixty years after Japan let it go.",
+  "span": "110 yrs",
+  "spanLabel": "From the Meiji Civil Code to the Korean abolition",
+  "nodes": [
+   {
+    "label": "The House Name First",
+    "note": "House head and succession become articles of law.",
+    "yearLabel": "1898 Meiji Civil Code"
+   },
+   {
+    "label": "The register goes to Korea",
+    "note": "The 1909 minjeok act is replaced by the Japanese register.",
+    "yearLabel": "1 Jul 1923"
+   },
+   {
+    "label": "Japan's house system ends",
+    "note": "By the emergency measures act and the revised Civil Code.",
+    "yearLabel": "1948 revised Code"
+   },
+   {
+    "label": "The Hoju System",
+    "note": "Sixty years after Japan let it go.",
+    "yearLabel": "1 Jan 2008 abolished"
+   }
+  ]
+ },
+ "sanseiken": {
+  "title": "Politics Is for Men → No Vote for Women",
+  "en": "When Women Got the Vote",
+  "lead": "New Zealand was the first country to let women vote, in 1893. In Japan, article 5 of the Public Order and Police Act of 1900 barred women from political associations; \"women\" stood in the same list as soldiers and police. It was repealed on 21 November 1945. The Swiss federal constitution said \"every Swiss\" and did not mean women, and the federal court twice gave custom as the reason. It was settled by the referendum of 7 February 1971.",
+  "span": "78 yrs",
+  "spanLabel": "From New Zealand to Switzerland",
+  "nodes": [
+   {
+    "label": "New Zealand",
+    "note": "The first country to let women vote.",
+    "yearLabel": "1893"
+   },
+   {
+    "label": "Politics Is for Men",
+    "note": "Thirty-nine women were elected the following April.",
+    "yearLabel": "1945 act repealed"
+   },
+   {
+    "label": "No Vote for Women",
+    "note": "65.7% in favour.",
+    "yearLabel": "7 Feb 1971 referendum"
+   }
+  ]
+ },
+ "taibatsu": {
+  "title": "Smacking Children → Discipline by Force",
+  "en": "Ending the Right to Hit",
+  "lead": "A parent's right to hit a child was not merely custom; it had the law behind it. In Japan corporal punishment in schools was forbidden in 1879, while the right to chastise at home became article 882 of the Meiji Civil Code in 1898. The home outlasted the school. Sweden was the first country to forbid it outright, home included, on 1 July 1979; Japan deleted article 822 on 16 December 2022.",
+  "span": "143 yrs",
+  "spanLabel": "From the school ban to the deletion at home",
+  "nodes": [
+   {
+    "label": "Schools forbidden to hit",
+    "note": "The home had 143 years left.",
+    "yearLabel": "1879 Education Order"
+   },
+   {
+    "label": "Smacking Children",
+    "note": "The first outright ban, home included.",
+    "yearLabel": "1 Jul 1979 world first"
+   },
+   {
+    "label": "Discipline by Force",
+    "note": "The article on chastisement is gone.",
+    "yearLabel": "16 Dec 2022 article 822 deleted"
+   }
+  ]
  }
 }

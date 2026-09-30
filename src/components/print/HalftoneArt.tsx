@@ -24,11 +24,22 @@ const PLATE_SIZE = 320;
 /** 墨を削る向き｡globals.css の keyframes と揃えること */
 const WIPES = ["vl-wipe-d", "vl-wipe-r", "vl-wipe-u", "vl-wipe-l"] as const;
 
-/** 型番から動き方を配る｡隣どうしが同じ組み合わせにならないよう37を掛けて散らす */
+/** 一巡の長さ｡速い札と遅い札がはっきり違って見えるよう4倍まで開く */
+const CYCLES = [4.5, 6, 8.5, 11.5, 15, 18];
+
+/**
+ * 型番から動き方を配る｡向き（4）・速さ（6）・始まり（13）を別々に散らす｡
+ * 向きに `n/4` を足しているのは､図鑑が横4列だから｡
+ * 掛け算だけだと縦に4つ飛びで同じ向きが並んでしまう｡
+ */
 function motionOf(no: string) {
-  const h = (Number(no) * 37) % 97;
-  const cycle = 6 + (h % 5) * 1.6;
-  return { wipe: WIPES[h % 4], cycle, offset: ((h % 13) / 13) * cycle };
+  const n = Number(no);
+  const cycle = CYCLES[(n * 5) % CYCLES.length];
+  return {
+    wipe: WIPES[(n * 3 + Math.floor(n / 4)) % 4],
+    cycle,
+    offset: (((n * 7) % 13) / 13) * cycle,
+  };
 }
 
 export type ArtInk = {

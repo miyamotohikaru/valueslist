@@ -118,7 +118,7 @@ function RestockBadge({ lang }: { lang: Lang }) {
         ↻
       </text>
       <text y="14" textAnchor="middle" fontSize="9" letterSpacing="0.6" fill="var(--vl-paper)" fontFamily="var(--font-sans), sans-serif">
-        RESTOCKED
+        REVIVED
       </text>
     </svg>
   );

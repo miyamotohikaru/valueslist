@@ -79,7 +79,7 @@ function Ticket({ p, lang }: { p: Pair; lang: Lang }) {
         {/* 復活したもの */}
         <div className="flex min-w-0 flex-col items-end gap-1 p-4 text-right @container">
           <span className="font-type border-2 border-vl-red px-1.5 py-0.5 text-[11px] font-bold tracking-[0.1em] text-vl-red-deep">
-            RESTOCK
+            REVIVED
           </span>
           {p.to ? (
             <Link

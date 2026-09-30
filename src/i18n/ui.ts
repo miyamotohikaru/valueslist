@@ -73,7 +73,7 @@ export const UI = {
 
   // 系譜
   lineageTitle: { ja: "系譜", en: "Lineage" },
-  lineageEn: { ja: "BACK IN STOCK", en: "REVIVED" },
+  lineageEn: { ja: "REVIVED", en: "REVIVED" },
   toc: { ja: "目次", en: "Contents" },
   tocCount: { ja: "本の系譜", en: " lineages" },
   event: { ja: "出来事", en: "Event" },

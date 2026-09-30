@@ -119,7 +119,7 @@ export default function ValueCard({
     ? { k: "成立 MFD", t: `${v.made.approx ? "c." : ""}${v.made.year}` }
     : { k: "成立 MFD", t: "—" };
   const right = v.restocked
-    ? { k: "復活 RESTOCK", t: String(v.restocked.year) }
+    ? { k: "復活 REVIVE", t: String(v.restocked.year) }
     : v.discontinued
       ? { k: "失効 EOL", t: String(v.discontinued.year) }
       : { k: "現行 NOW", t: "NOW" };

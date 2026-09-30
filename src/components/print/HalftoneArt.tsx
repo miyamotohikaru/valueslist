@@ -12,14 +12,24 @@ import { makePlate, screenPlate, type Technique } from "./screen";
  * 刷り直していたが､点刻だと1枚で2万近い点を打つので､48枚ぶんが
  * スクロール中ずっと走って重かった｡
  *
- * 動かすのは画面に入っているあいだだけ｡ただし札ごとに時計を持たせると
- * 入ってきた順にずれていくので､ページ共通の時計（document.timeline）から
- * 今の位相を出して負の遅延で合わせる｡どの札も同じ拍子で一斉に動く｡
+ * 動かすのは画面に入っているあいだだけ｡
+ *
+ * **動き方は札ごとに変える｡** 削る向き4つ・一巡の長さ5つを型番から配り､
+ * 始まりの位相もずらす｡ただし基準はページ共通の時計（document.timeline）に
+ * 取るので､あとから画面に入ってきた札も他の札と足並みが崩れない
+ * （札ごとに時計を持たせると､入ってきた順に固まって同じ動きをしてしまう）｡
  */
 const PLATE_SIZE = 320;
 
-/** 図版が一巡する時間（秒）｡globals.css の vl-wipe と揃えること */
-const CYCLE = 8;
+/** 墨を削る向き｡globals.css の keyframes と揃えること */
+const WIPES = ["vl-wipe-d", "vl-wipe-r", "vl-wipe-u", "vl-wipe-l"] as const;
+
+/** 型番から動き方を配る｡隣どうしが同じ組み合わせにならないよう37を掛けて散らす */
+function motionOf(no: string) {
+  const h = (Number(no) * 37) % 97;
+  const cycle = 6 + (h % 5) * 1.6;
+  return { wipe: WIPES[h % 4], cycle, offset: ((h % 13) / 13) * cycle };
+}
 
 export type ArtInk = {
   /** 墨の版 */
@@ -41,6 +51,7 @@ export default function HalftoneArt({
   ink: ArtInk;
   className?: string;
 }) {
+  const m = motionOf(no);
   const wrap = useRef<HTMLDivElement>(null);
   const cColor = useRef<HTMLCanvasElement>(null);
   const cInk = useRef<HTMLCanvasElement>(null);
@@ -87,12 +98,12 @@ export default function HalftoneArt({
     ro.observe(el);
 
     // 動かすのは画面に入っているあいだだけ｡
-    // 途中から動き出しても他の札と足並みが揃うよう､共通の時計から位相を出す
+    // 途中から画面に入った札も同じ流れに乗るよう､共通の時計から位相を出す
     const io = new IntersectionObserver(
       (es) => {
         if (es[0].isIntersecting) {
           const now = Number(document.timeline.currentTime ?? 0) / 1000;
-          el.style.setProperty("--art-delay", `${(-(now % CYCLE)).toFixed(3)}s`);
+          el.style.setProperty("--art-delay", `${(-((now + m.offset) % m.cycle)).toFixed(3)}s`);
           el.dataset.on = "1";
         } else {
           delete el.dataset.on;
@@ -106,10 +117,17 @@ export default function HalftoneArt({
       ro.disconnect();
       io.disconnect();
     };
-  }, [no, tech, ink.inkFg, ink.inkBg, ink.colorFg, ink.colorBg]);
+  }, [no, tech, ink.inkFg, ink.inkBg, ink.colorFg, ink.colorBg, m.cycle, m.offset]);
 
   return (
-    <div ref={wrap} className={`vl-print__art ${className}`}>
+    <div
+      ref={wrap}
+      className={`vl-print__art ${className}`}
+      style={{
+        ["--art-wipe" as string]: m.wipe,
+        ["--art-cycle" as string]: `${m.cycle.toFixed(1)}s`,
+      }}
+    >
       <canvas ref={cColor} className="vl-print__layer" aria-hidden />
       <canvas ref={cInk} className="vl-print__layer vl-print__layer--ink" aria-hidden />
     </div>

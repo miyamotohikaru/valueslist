@@ -22,7 +22,7 @@ export default function OgCard() {
         header, footer, nav, nextjs-portal { display: none !important }
         main { padding: 0 !important }
         body { overflow: hidden }
-        /* 図版は色が回りきった状態で焼く（スクロールに依らないように） */
+        /* 図版は色が回りきった状態で焼く(スクロールに依らないように) */
         .vl-print__layer--ink { clip-path: inset(100% 0 0 0) !important }
       `}</style>
 

@@ -91,7 +91,7 @@ export function categoryName(lang: Lang, c: Category): string {
 
 /** 復活のときの新しい名前｡｢（〜 として）｣ */
 export function asName(lang: Lang, as: string): string {
-  return lang === "ja" ? `（${as} として）` : `(as ${as})`;
+  return lang === "ja" ? `(${as} として)` : `(as ${as})`;
 }
 
 /** 帳票の見出し｡2行に割って返す */

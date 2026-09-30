@@ -12,7 +12,7 @@ import {
 import { scaleYear, ERAS, ERA_MAX, ERA_MIN } from "@/lib/timescale";
 import { type Lang, path, t } from "@/i18n";
 import { tTimeline, eraName, fill } from "@/i18n/ui.timeline";
-import { SHELF_ACCENT } from "./ValueCard";
+import { SHELF_ACCENT, barOnPaper } from "./ValueCard";
 import { localize } from "@/data/i18n";
 import { localizeLineage } from "@/data/lineages.i18n";
 import { recipeOf } from "./PrintCard";
@@ -214,7 +214,7 @@ function Row({ v, loop, lang }: { v: Value; loop: boolean; lang: Lang }) {
                   right: `${100 - start}%`,
                   width: 18,
                   maxWidth: `${start}%`,
-                  background: hatch(acc.bar),
+                  background: hatch(barOnPaper(v.shelf)),
                 }}
               />
             )}
@@ -234,7 +234,7 @@ function Row({ v, loop, lang }: { v: Value; loop: boolean; lang: Lang }) {
                 width: active
                   ? `max(6px, calc(${Math.max(0, end - start)}% - 10px))`
                   : `${Math.max(0, end - start)}%`,
-                background: acc.bar,
+                background: barOnPaper(v.shelf),
                 boxShadow:
                   v.shelf === 3 ? "inset 0 0 0 1.5px var(--vl-ink)" : undefined,
               }}
@@ -262,12 +262,12 @@ function Row({ v, loop, lang }: { v: Value; loop: boolean; lang: Lang }) {
                   style={{
                     left: `calc(${end}% + 8px)`,
                     right: 8,
-                    borderColor: v.shelf === 3 ? "var(--vl-ink)" : acc.bar,
+                    borderColor: v.shelf === 3 ? "var(--vl-ink)" : barOnPaper(v.shelf),
                   }}
                 />
                 <span className="absolute top-1/2 right-0 h-3 w-[8px] -translate-y-1/2">
                   <ArrowMark
-                    color={v.shelf === 3 ? "var(--vl-ink)" : acc.bar}
+                    color={v.shelf === 3 ? "var(--vl-ink)" : barOnPaper(v.shelf)}
                     className="block h-full w-full"
                   />
                 </span>
@@ -281,7 +281,7 @@ function Row({ v, loop, lang }: { v: Value; loop: boolean; lang: Lang }) {
                 style={{ left: `calc(${end}% - 10px)` }}
               >
                 <ArrowMark
-                  color={v.shelf === 3 ? "var(--vl-ink)" : acc.bar}
+                  color={v.shelf === 3 ? "var(--vl-ink)" : barOnPaper(v.shelf)}
                   className="block h-full w-full"
                 />
               </span>

@@ -63,7 +63,7 @@ export const UI = {
   undated: { ja: "成立年が特定できず､年表に載せていないもの", en: "Not dated, so not on the timeline" },
 
   // 凡例
-  legendSpan: { ja: "期間（成立→失効）", en: "Span (made → ended)" },
+  legendSpan: { ja: "期間(成立→失効)", en: "Span (made → ended)" },
   legendApprox: { ja: "成立年は概算", en: "Year is approximate" },
   legendEol: { ja: "失効", en: "Lapsed" },
   legendAfter: { ja: "制度の廃止後も残る", en: "Outlives the rule" },

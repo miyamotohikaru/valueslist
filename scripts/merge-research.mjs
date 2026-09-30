@@ -300,10 +300,26 @@ for (const [name, text] of Object.entries(MEANING)) {
   else v.meaning = text;
 }
 
-// 句読点とかぎ括弧は半角で組む（掲載用。research の原本は全角のまま）
-const HALF = { "。": "｡", "、": "､", "「": "｢", "」": "｣", "｛": "{", "｝": "}" };
+// 句読点・かぎ括弧・丸括弧は半角で組む（掲載用。research の原本は全角のまま）。
+// 〔〕【】〈〉《》 は半角の相手がいないのでそのまま（法令の引用符号や中国語の書名号）。
+const HALF = {
+  "。": "｡",
+  "、": "､",
+  "「": "｢",
+  "」": "｣",
+  "｛": "{",
+  "｝": "}",
+  "（": "(",
+  "）": ")",
+  "［": "[",
+  "］": "]",
+  "：": ":",
+  "；": ";",
+  "！": "!",
+  "？": "?",
+};
 const toHalf = (o) => {
-  if (typeof o === "string") return o.replace(/[。、「」｛｝]/g, (c) => HALF[c]);
+  if (typeof o === "string") return o.replace(/[。、「」｛｝（）［］：；！？]/g, (c) => HALF[c]);
   if (Array.isArray(o)) return o.map(toHalf);
   if (o && typeof o === "object") {
     for (const k of Object.keys(o)) if (k !== "points") o[k] = toHalf(o[k]);

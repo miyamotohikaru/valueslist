@@ -6,7 +6,7 @@ import { localize } from "@/data/i18n";
 import { path, type Lang } from "@/i18n/lang";
 import { t } from "@/i18n/ui";
 import { tValue, shelfName } from "@/i18n/ui.value";
-import { SHELF_ACCENT, nameLines } from "@/components/ValueCard";
+import { SHELF_ACCENT, nameLines, barOnPaper } from "@/components/ValueCard";
 import PrintCard, { recipeOf } from "@/components/PrintCard";
 import SpanStrip from "@/components/SpanStrip";
 import TrendStamp from "@/components/TrendStamp";
@@ -261,7 +261,7 @@ export default function ValuePage({ v: raw, lang }: { v: Value; lang: Lang }) {
             </figure>
           )}
           <DetailSpec v={v} lang={lang} />
-          <SpanBox v={v} lang={lang} accent={acc.bar} outline={v.shelf === 3} />
+          <SpanBox v={v} lang={lang} accent={barOnPaper(v.shelf)} outline={v.shelf === 3} />
         </div>
         <Reveal>{hasCurve ? <CurveChart curve={v.curve!} /> : <LawTimeline v={v} lang={lang} />}</Reveal>
       </section>

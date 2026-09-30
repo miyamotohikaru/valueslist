@@ -69,7 +69,7 @@ export default function FactList({ v, lang }: { v: Value; lang: Lang }) {
           {/* 英語は判子の A/B/C と続けて読めるよう､ダッシュでつなぐ */}
           <p className="mt-3 text-[13px] font-bold">
             {t(lang, "confidence")} {v.confidence}
-            {lang === "ja" ? "：" : " — "}
+            {lang === "ja" ? ":" : " — "}
             {t(lang, stamp.key)}
           </p>
           <p className="mt-6 text-[12px] font-bold text-vl-ink-soft">{t(lang, "sources")}</p>

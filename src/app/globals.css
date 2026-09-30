@@ -1647,10 +1647,10 @@ a.vl-print-wrap:hover {
   width: 100%;
   height: 100%;
 }
-/* 上に乗る墨の版｡削れて色の版が出て､また戻る（GIF のように回る）｡
+/* 上に乗る墨の版｡上から削れて色の版が出て､また戻る（GIF のように回る）｡
    スクロールには繋がない｡刷るのは一度きりで､動かすのは切り抜きだけなので軽い｡
    止まっている時間を作らないよう､途中で留めずに一定の速さで往復する｡
-   削る向きは4つ｡どれを使うかは札ごと（HalftoneArt の motionOf） */
+   **向きは全部そろえて上下だけ｡** 速さと始まりが札ごとに違う */
 @keyframes vl-wipe-d {
   0% {
     clip-path: inset(0 0 0 0);
@@ -1662,43 +1662,10 @@ a.vl-print-wrap:hover {
     clip-path: inset(0 0 0 0);
   }
 }
-@keyframes vl-wipe-u {
-  0% {
-    clip-path: inset(0 0 0 0);
-  }
-  50% {
-    clip-path: inset(0 0 100% 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-@keyframes vl-wipe-r {
-  0% {
-    clip-path: inset(0 0 0 0);
-  }
-  50% {
-    clip-path: inset(0 0 0 100%);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-@keyframes vl-wipe-l {
-  0% {
-    clip-path: inset(0 0 0 0);
-  }
-  50% {
-    clip-path: inset(0 100% 0 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
 .vl-print__layer--ink {
   clip-path: inset(0 0 0 0);
 }
-/* 画面に入っているあいだだけ回す｡向きも速さも始まりも札ごとに違う */
+/* 画面に入っているあいだだけ回す｡速さと始まりが札ごとに違う */
 .vl-print__art[data-on] .vl-print__layer--ink {
   animation-name: var(--art-wipe, vl-wipe-d);
   animation-duration: var(--art-cycle, 8s);

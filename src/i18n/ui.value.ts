@@ -27,7 +27,7 @@ const D = {
   spanNow: { ja: "いま", en: "now" },
 
   // 日付の帳票
-  stillInStock: { ja: "いまも現役", en: "Still in stock" },
+  stillInStock: { ja: "いまも現役", en: "Still current" },
   nothingFollows: { ja: "以下余白", en: "Nothing follows" },
 
   // 裏取りメモ

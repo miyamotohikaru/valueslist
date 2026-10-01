@@ -50,7 +50,7 @@ export const UI = {
 
   // 年表
   timelineTitle: { ja: "年表", en: "Timeline" },
-  timelineEn: { ja: "INVENTORY BY YEAR", en: "BY YEAR OF MAKING" },
+  timelineEn: { ja: "BY YEAR OF ESTABLISHMENT", en: "BY YEAR OF ESTABLISHMENT" },
   byMade: { ja: "成立年順", en: "By year made" },
   barIsSpan: { ja: "帯が期間｡", en: "The bar is the span." },
   barEnds: { ja: "左端が成立､右端が失効｡", en: "Left edge is made, right edge is ended." },

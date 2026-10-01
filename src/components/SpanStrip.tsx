@@ -124,7 +124,8 @@ export default function SpanStrip({
       </svg>
       {showLabels && (
         <div className="relative mt-1 h-[1.3em] text-[12px] leading-none text-vl-ink-soft">
-          {ERAS.map((e, i) => (
+          {/* 狭い時代（古代は全体の7%）に名前を置くと､隣の名前と重なる */}
+          {ERAS.filter((e) => (scaleYear(e.to) - scaleYear(e.from)) * 100 >= 12).map((e, i) => (
             <span
               key={e.ja}
               className="absolute top-0 whitespace-nowrap"

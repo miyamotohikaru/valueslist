@@ -7,6 +7,7 @@ import type { Lang } from "./lang";
 
 const D = {
   // 時代の名前｡キーは timescale.ts の ERAS の from の年
+  era500: { ja: "古代", en: "Ancient" },
   era1200: { ja: "中世", en: "Medieval" },
   era1600: { ja: "近世", en: "Edo" },
   era1868: { ja: "明治〜戦前", en: "Meiji–prewar" },
@@ -14,6 +15,7 @@ const D = {
   era1989: { ja: "平成・令和", en: "Heisei–Reiwa" },
 
   // 時間軸のヘッダーは帯の幅が狭い｡携帯だと英語がはみ出すので､そこだけ短くする
+  eraAxis500: { ja: "古代", en: "Ancient" },
   eraAxis1200: { ja: "中世", en: "Medieval" },
   eraAxis1600: { ja: "近世", en: "Edo" },
   eraAxis1868: { ja: "明治〜戦前", en: "Meiji–prewar" },

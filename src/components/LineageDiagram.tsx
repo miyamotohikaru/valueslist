@@ -175,7 +175,7 @@ function Layer({ node, badge, lang }: { node: LineageNode; badge: boolean; lang:
             <p
               className={`min-w-0 flex-1 ${
                 isLatin(label)
-                  ? "font-display-en text-[13px] leading-tight tracking-[0.03em] uppercase md:text-[26px]"
+                  ? "font-display-en text-[13px] leading-tight tracking-[0.03em] wrap-anywhere uppercase md:text-[26px]"
                   : "font-display-ja text-[13px] leading-tight break-keep wrap-anywhere md:text-[24px]"
               }`}
             >

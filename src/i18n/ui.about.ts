@@ -17,7 +17,7 @@ const D = {
   // 見出し
   heroEn1: { ja: "HOW TO READ", en: "NOTATION" },
   heroEn2: { ja: "THIS CATALOG", en: "& SYMBOLS" },
-  heroLead: { ja: "並んだカードを､どう読むか｡", en: "How to read the cards on the shelves." },
+  heroLead: { ja: "並んだカードを､どう読むか｡", en: "How to read the cards in the groups." },
   heroSub: {
     ja: "カードの部位､証拠の二種､傾向の印､グループの分け方｡",
     en: "The parts of a card, the two kinds of evidence, the trend stamps, and how the groups are split.",
@@ -41,7 +41,7 @@ const D = {
   // 01 この図鑑は何か
   whatBody: {
     ja: "この図鑑は､日本と世界の価値観(規範・人生観・判断基準)を､成立年・失効年・復活年を出典にあたって特定し､カードにしたものだ｡｢昔からの伝統｣に見えるものほど成立年が新しく､｢新品｣に見えるものが中世のものの再出荷だったりする｡それを年代順に並べて､目で見えるようにするのが目的である｡",
-    en: "This catalogue takes values from Japan and from around the world — norms, life views, criteria for judgement — and puts each on a card, with the year it was made, the year it was ended and the year it came back, every date checked against a source. The ones that look like ancient tradition turn out to be the newest; the ones that look brand new are often medieval stock, reissued. Setting them out by year is what makes that visible.",
+    en: "This catalogue takes values from Japan and from around the world — norms, life views, criteria for judgement — and puts each on a card, with the year it was made, the year it was ended and the year it came back, every date checked against a source. The ones that look like ancient tradition turn out to be the newest; the ones that look brand new are often medieval, come back under another name. Setting them out by year is what makes that visible.",
   },
   threeYears: { ja: "三つの年", en: "Three years" },
   dateMade: { ja: "成立年", en: "Established" },

@@ -21,6 +21,8 @@ import { countByEra } from "./EraBars";
 
 /** 年の目盛（ヘッダーに数字で出す年） */
 const TICKS = [500, 1200, 1600, 1868, 1945, 2000];
+/** 数字を出さない目盛り｡500 と近すぎて重なる */
+const TICK_MUTE = new Set([1200]);
 /** 左カラム（グループ・型番・図版・名前）の幅｡PC のみ */
 const LEFT = "372px";
 
@@ -114,9 +116,11 @@ function AxisHeader({ lang }: { lang: Lang }) {
                   width: `${pct(e.to) - pct(e.from)}%`,
                 }}
               >
-                <span className="absolute left-[5px] top-[4px] whitespace-nowrap text-[11px] font-bold">
-                  {eraName(lang, e, "axis")}
-                </span>
+                {pct(e.to) - pct(e.from) >= 12 && (
+                  <span className="absolute left-[5px] top-[4px] whitespace-nowrap text-[11px] font-bold">
+                    {eraName(lang, e, "axis")}
+                  </span>
+                )}
               </div>
             ))}
             <div className="absolute right-0 top-0 h-[22px] border-l border-vl-line" />
@@ -128,13 +132,15 @@ function AxisHeader({ lang }: { lang: Lang }) {
                 style={{ left: `${pct(y)}%` }}
               >
                 <span className="absolute bottom-0 left-0 h-[7px] border-l border-vl-ink" />
-                <span
-                  className={`font-type absolute bottom-[8px] left-0 whitespace-nowrap text-[11px] font-bold ${
-                    i === 0 ? "" : "-translate-x-1/2"
-                  }`}
-                >
-                  {y}
-                </span>
+                {!TICK_MUTE.has(y) && (
+                  <span
+                    className={`font-type absolute bottom-[8px] left-0 whitespace-nowrap text-[11px] font-bold ${
+                      i === 0 ? "" : "-translate-x-1/2"
+                    }`}
+                  >
+                    {y}
+                  </span>
+                )}
               </div>
             ))}
           </div>
@@ -197,7 +203,8 @@ function Row({ v, loop, lang }: { v: Value; loop: boolean; lang: Lang }) {
           <span className="vl-tl-thumb" style={{ ["--panel" as string]: r.panel }} aria-hidden>
             <HalftoneArt no={v.no} tech={r.tech} ink={r.ink} />
           </span>
-          <span className="min-w-0 truncate text-[14px] leading-none font-bold md:text-[15px]">
+          {/* leading-none と truncate が重なると､英語の g・y・p の下が切れる */}
+          <span className="min-w-0 truncate text-[14px] leading-[1.3] font-bold md:text-[15px]">
             {v.name}
           </span>
           {loop && <LoopTag />}
@@ -636,28 +643,28 @@ function EraRuler({ lang }: { lang: Lang }) {
           stroke="var(--vl-ink)"
           strokeWidth="3"
         />
-        {ERAS.map((e, i) => (
-          <g key={e.from}>
-            <rect
-              x={X(e.from)}
-              y="57"
-              width={X(e.to) - X(e.from)}
-              height="30"
-              fill={fills[i % 2]}
-            />
-            <text
-              x={(X(e.from) + X(e.to)) / 2}
-              y="78"
-              textAnchor="middle"
-              fontSize="15"
-              fontWeight="700"
-              fill="var(--vl-ink)"
-              fontFamily="var(--font-sans), sans-serif"
-            >
-              {eraName(lang, e)}
-            </text>
-          </g>
-        ))}
+        {ERAS.map((e, i) => {
+          const w = X(e.to) - X(e.from);
+          return (
+            <g key={e.from}>
+              <rect x={X(e.from)} y="57" width={w} height="30" fill={fills[i % 2]} />
+              {/* 狭い帯に名前を置くと隣に被って切れる（古代は全体の7%しかない） */}
+              {w >= 58 && (
+                <text
+                  x={(X(e.from) + X(e.to)) / 2}
+                  y="78"
+                  textAnchor="middle"
+                  fontSize="15"
+                  fontWeight="700"
+                  fill="var(--vl-ink)"
+                  fontFamily="var(--font-sans), sans-serif"
+                >
+                  {eraName(lang, e)}
+                </text>
+              )}
+            </g>
+          );
+        })}
         <line
           x1="6"
           y1="87"
